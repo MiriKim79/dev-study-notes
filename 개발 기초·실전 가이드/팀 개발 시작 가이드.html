@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>팀 개발 시작 가이드 · 개발 학습·실전 노트</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 기초·실전 가이드.html">개발 기초·실전 가이드</a> <span>›</span><span class="current">팀 개발 시작 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">목차</div>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a><ul class="toc-h2-list"><li><a href="#0-1-기획-개발-진행">0.1 기획·개발 진행</a></li><li><a href="#0-2-Git-협업">0.2 Git·협업</a></li><li><a href="#0-3-환경-배포">0.3 환경·배포</a></li><li><a href="#0-4-AI-개발">0.4 AI 개발</a></li></ul></li><li class="toc-h1"><a href="#1-개발을-시작할-때-가장-먼저-기억할-원칙">1. 개발을 시작할 때 가장 먼저 기억할 원칙</a><ul class="toc-h2-list"><li><a href="#1-1-바로-코딩하지-않는다">1.1 바로 코딩하지 않는다</a></li><li><a href="#1-2-큰-기능을-작은-작업으로-나눈다">1.2 큰 기능을 작은 작업으로 나눈다</a></li><li><a href="#1-3-동작하는-최소-기능을-먼저-만든다">1.3 동작하는 최소 기능을 먼저 만든다</a></li><li><a href="#1-4-모르는-상태에서-추측으로-연결하지-않는다">1.4 모르는 상태에서 추측으로 연결하지 않는다</a></li></ul></li><li class="toc-h1"><a href="#2-모든-개발에-공통으로-적용하는-전체-순서">2. 모든 개발에 공통으로 적용하는 전체 순서</a></li><li class="toc-h1"><a href="#3-1단계-요구사항-확인">3. 1단계: 요구사항 확인</a><ul class="toc-h2-list"><li><a href="#3-1-요구사항이란">3.1 요구사항이란?</a></li><li><a href="#3-2-요구사항-확인-체크리스트">3.2 요구사항 확인 체크리스트</a></li></ul></li><li class="toc-h1"><a href="#4-2단계-MVP-범위-결정">4. 2단계: MVP 범위 결정</a><ul class="toc-h2-list"><li><a href="#범위를-결정할-때-사용하는-기준">범위를 결정할 때 사용하는 기준</a></li></ul></li><li class="toc-h1"><a href="#5-3단계-사용자-흐름-정리">5. 3단계: 사용자 흐름 정리</a></li><li class="toc-h1"><a href="#6-4단계-기술과-구조-결정">6. 4단계: 기술과 구조 결정</a><ul class="toc-h2-list"><li><a href="#6-1-기술을-선택할-때-기준">6.1 기술을 선택할 때 기준</a></li><li><a href="#6-2-폴더-구조를-정하는-이유">6.2 폴더 구조를 정하는 이유</a></li></ul></li><li class="toc-h1"><a href="#7-5단계-데이터와-API-계약">7. 5단계: 데이터와 API 계약</a><ul class="toc-h2-list"><li><a href="#7-1-API-계약이란">7.1 API 계약이란?</a></li><li><a href="#7-2-API가-확정되지-않았을-때">7.2 API가 확정되지 않았을 때</a></li></ul></li><li class="toc-h1"><a href="#8-6단계-저장소와-브랜치-준비">8. 6단계: 저장소와 브랜치 준비</a><ul class="toc-h2-list"><li><a href="#8-1-저장소와-브랜치의-차이">8.1 저장소와 브랜치의 차이</a></li><li><a href="#8-2-브랜치-구조는-팀이-선택한다">8.2 브랜치 구조는 팀이 선택한다</a></li><li><a href="#8-3-작업-시작-순서">8.3 작업 시작 순서</a></li><li><a href="#8-4-작업-종료-순서">8.4 작업 종료 순서</a></li></ul></li><li class="toc-h1"><a href="#9-7단계-개발-환경-설정">9. 7단계: 개발 환경 설정</a><ul class="toc-h2-list"><li><a href="#공통-확인-항목">공통 확인 항목</a></li><li><a href="#자주-사용하는-명령의-의미">자주 사용하는 명령의 의미</a></li><li><a href="#환경변수">환경변수</a></li></ul></li><li class="toc-h1"><a href="#10-프론트엔드-개발-행동-순서">10. 프론트엔드 개발 행동 순서</a><ul class="toc-h2-list"><li><a href="#프론트엔드가-알아야-할-기본-지식">프론트엔드가 알아야 할 기본 지식</a></li><li><a href="#프론트엔드-상식">프론트엔드 상식</a></li></ul></li><li class="toc-h1"><a href="#11-백엔드-개발-행동-순서">11. 백엔드 개발 행동 순서</a><ul class="toc-h2-list"><li><a href="#백엔드가-알아야-할-기본-지식">백엔드가 알아야 할 기본 지식</a></li><li><a href="#백엔드-상식">백엔드 상식</a></li></ul></li><li class="toc-h1"><a href="#12-AI-기능-개발-행동-순서">12. AI 기능 개발 행동 순서</a><ul class="toc-h2-list"><li><a href="#AI-기능-시작-전-질문">AI 기능 시작 전 질문</a></li><li><a href="#AI-개발-기본-지식">AI 개발 기본 지식</a></li><li><a href="#AI-개발-상식">AI 개발 상식</a></li></ul></li><li class="toc-h1"><a href="#13-프론트엔드-백엔드-AI가-연결되는-구조">13. 프론트엔드·백엔드·AI가 연결되는 구조</a><ul class="toc-h2-list"><li><a href="#역할-구분">역할 구분</a></li></ul></li><li class="toc-h1"><a href="#14-구현-중-행동-요령">14. 구현 중 행동 요령</a><ul class="toc-h2-list"><li><a href="#작업-시작-전">작업 시작 전</a></li><li><a href="#작업-중">작업 중</a></li><li><a href="#작업-종료-전">작업 종료 전</a></li></ul></li><li class="toc-h1"><a href="#15-디버깅-행동-순서">15. 디버깅 행동 순서</a><ul class="toc-h2-list"><li><a href="#오류-영역-구분">오류 영역 구분</a></li><li><a href="#좋은-오류-질문-형식">좋은 오류 질문 형식</a></li></ul></li><li class="toc-h1"><a href="#16-HTTP-상태-코드-기본-상식">16. HTTP 상태 코드 기본 상식</a></li><li class="toc-h1"><a href="#17-인증과-보안-기본-상식">17. 인증과 보안 기본 상식</a><ul class="toc-h2-list"><li><a href="#인증과-인가">인증과 인가</a></li><li><a href="#보안-기본-규칙">보안 기본 규칙</a></li></ul></li><li class="toc-h1"><a href="#18-배포-전에-알아야-할-내용">18. 배포 전에 알아야 할 내용</a><ul class="toc-h2-list"><li><a href="#실행과-배포의-차이">실행과 배포의 차이</a></li><li><a href="#배포-체크리스트">배포 체크리스트</a></li></ul></li><li class="toc-h1"><a href="#19-협업-기본-상식">19. 협업 기본 상식</a><ul class="toc-h2-list"><li><a href="#팀원이-알아야-하는-것">팀원이 알아야 하는 것</a></li><li><a href="#반드시-공유해야-하는-변경">반드시 공유해야 하는 변경</a></li><li><a href="#좋은-공유-예시">좋은 공유 예시</a></li></ul></li><li class="toc-h1"><a href="#20-AI-코딩-도구를-사용할-때-행동-요령">20. AI 코딩 도구를 사용할 때 행동 요령</a><ul class="toc-h2-list"><li><a href="#AI에게-제공할-정보">AI에게 제공할 정보</a></li><li><a href="#좋은-요청-예시">좋은 요청 예시</a></li><li><a href="#AI-코드를-받은-뒤-확인할-것">AI 코드를 받은 뒤 확인할 것</a></li><li><a href="#AI-사용-시-금지">AI 사용 시 금지</a></li></ul></li><li class="toc-h1"><a href="#21-하지-말아야-할-행동">21. 하지 말아야 할 행동</a></li><li class="toc-h1"><a href="#22-개발자가-기본적으로-익혀야-할-지식">22. 개발자가 기본적으로 익혀야 할 지식</a><ul class="toc-h2-list"><li><a href="#공통">공통</a></li><li><a href="#프론트엔드-2">프론트엔드</a></li><li><a href="#백엔드-2">백엔드</a></li><li><a href="#AI-2">AI</a></li></ul></li><li class="toc-h1"><a href="#23-초보자-학습-순서">23. 초보자 학습 순서</a><ul class="toc-h2-list"><li><a href="#1단계-공통-기초">1단계: 공통 기초</a></li><li><a href="#2단계-담당-분야-기초">2단계: 담당 분야 기초</a></li><li><a href="#3단계-협업과-배포">3단계: 협업과 배포</a></li></ul></li><li class="toc-h1"><a href="#24-기능-시작-전-작성하는-간단-템플릿">24. 기능 시작 전 작성하는 간단 템플릿</a></li><li class="toc-h1"><a href="#25-버그-기록-템플릿">25. 버그 기록 템플릿</a></li><li class="toc-h1"><a href="#26-하루-작업-보고-템플릿">26. 하루 작업 보고 템플릿</a></li><li class="toc-h1"><a href="#27-프로젝트-종료-후-회고">27. 프로젝트 종료 후 회고</a></li><li class="toc-h1"><a href="#28-이-문서의-사용-방법">28. 이 문서의 사용 방법</a></li><li class="toc-h1"><a href="#29-프로젝트를-처음-받은-날-실제-행동-순서">29. 프로젝트를 처음 받은 날 실제 행동 순서</a><ul class="toc-h2-list"><li><a href="#처음-저장소를-열었을-때-반드시-확인할-파일">처음 저장소를 열었을 때 반드시 확인할 파일</a></li><li><a href="#코드가-안-돌아간다-면-먼저-구분하기">“코드가 안 돌아간다”면 먼저 구분하기</a></li></ul></li><li class="toc-h1"><a href="#30-최종-체크-이-문서를-이해했다면">30. 최종 체크 — 이 문서를 이해했다면</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-start);">
+        <span class="page-kicker">🚀 개발 기초·실전 가이드</span>
+        <h1 class="page-title">팀 개발 시작 가이드</h1>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 처음 팀 개발을 진행하는 프론트엔드·백엔드·AI 담당자</div><div class="intro-row"><strong>목적:</strong> 새 프로젝트를 시작할 때 무엇을 확인하고, 어떤 순서로 개발하며, 팀원과 무엇을 합의해야 하는지 한 번에 확인하는 공통 가이드</div><div class="intro-row"><strong>사용법:</strong> 처음에는 전체 흐름을 읽고, 실제 작업 중에는 체크리스트처럼 필요한 장만 다시 확인합니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 개발을 시작할 때 가장 먼저 기억할 원칙</li><li>2. 모든 개발에 공통으로 적용하는 전체 순서</li><li>3. 1단계: 요구사항 확인</li><li>4. 2단계: MVP 범위 결정</li><li>5. 3단계: 사용자 흐름 정리</li><li>6. 4단계: 기술과 구조 결정</li><li>7. 5단계: 데이터와 API 계약</li><li>8. 6단계: 저장소와 브랜치 준비</li><li>9. 7단계: 개발 환경 설정</li><li>10. 프론트엔드 개발 행동 순서</li><li>11. 백엔드 개발 행동 순서</li><li>12. AI 기능 개발 행동 순서</li><li>13. 프론트엔드·백엔드·AI가 연결되는 구조</li><li>14. 구현 중 행동 요령</li><li>15. 디버깅 행동 순서</li><li>16. HTTP 상태 코드 기본 상식</li><li>17. 인증과 보안 기본 상식</li><li>18. 배포 전에 알아야 할 내용</li><li>19. 협업 기본 상식</li><li>20. AI 코딩 도구를 사용할 때 행동 요령</li><li>21. 하지 말아야 할 행동</li><li>22. 개발자가 기본적으로 익혀야 할 지식</li><li>23. 초보자 학습 순서</li><li>24. 기능 시작 전 작성하는 간단 템플릿</li><li>25. 버그 기록 템플릿</li><li>26. 하루 작업 보고 템플릿</li><li>27. 프로젝트 종료 후 회고</li><li>28. 이 문서의 사용 방법</li><li>29. 프로젝트를 처음 받은 날 실제 행동 순서</li><li>30. 최종 체크 — 이 문서를 이해했다면</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>이 문서는 프론트엔드·백엔드·AI 전체를 아우르므로, 분야별 상세 용어는 짝 문서에서 더 자세히 다룹니다.</p>
+<ul><li>HTML/CSS/JS/브라우저 용어 → <strong>프론트엔드 기초 가이드</strong> 0장</li><li>서버/DB/API 용어 → <strong>백엔드 기초 가이드</strong> 0장</li><li>프롬프트·토큰·모델 선택 등 AI 개발 상세 용어 → <strong>생성형 AI 기능 개발 기초 가이드</strong> 0장</li><li>Git 명령어·인증·충돌 해결 상세 → <strong>Git·GitHub 기초 가이드</strong></li></ul>
+<p>여기서는 이 문서에서만 나오는 기획·협업·AI 용어를 정리합니다.</p>
+<h3 class="section-h2" id="0-1-기획-개발-진행">0.1 기획·개발 진행<a class="heading-anchor" href="#0-1-기획-개발-진행" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>요구사항(Requirement)</td><td>사용자가 무엇을 할 수 있어야 하는지 적은 문장. 예: “사용자는 이메일로 로그인할 수 있다.”</td></tr><tr><td>MVP (Minimum Viable Product)</td><td>“이것만 있으면 서비스가 성립한다”고 할 수 있는 최소 기능 묶음.</td></tr><tr><td>사용자 흐름(User Flow)</td><td>사용자가 서비스 안에서 움직이는 순서(예: 회원가입 → 로그인 → 강의 검색 → 수강 신청).</td></tr><tr><td>API 계약(API Contract)</td><td>프론트와 백엔드가 미리 합의한 “요청·응답이 정확히 어떤 모양인지”의 약속. 한쪽이 마음대로 바꾸면 다른 쪽 화면이 즉시 깨집니다.</td></tr><tr><td>폴더 구조</td><td>코드 파일을 어디에 둘지에 대한 규칙.</td></tr></tbody></table></div>
+<h3 class="section-h2" id="0-2-Git-협업">0.2 Git·협업<a class="heading-anchor" href="#0-2-Git-협업" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>저장소(Repository, repo)</td><td>프로젝트 코드 전체와 변경 이력이 저장된 공간.</td></tr><tr><td>브랜치(Branch)</td><td>저장소 안에서 독립적으로 작업하는 작업선. 내 작업은 내 브랜치에서.</td></tr><tr><td>커밋(Commit)</td><td>변경 내용을 저장하는 단위. 게임의 세이브 포인트에 비유할 수 있습니다.</td></tr><tr><td>Push / Pull</td><td>내 커밋을 원격 저장소에 올리는 것 / 남의 커밋을 받아오는 것.</td></tr><tr><td>Pull Request(PR)</td><td>“내 브랜치를 기준 브랜치에 합쳐 달라”는 요청이자 코드 리뷰가 이루어지는 곳.</td></tr><tr><td>머지(Merge)</td><td>PR이 승인되어 실제로 두 브랜치가 합쳐지는 것.</td></tr><tr><td>충돌(Conflict)</td><td>같은 부분을 두 사람이 고쳐서 Git이 자동으로 합치지 못하는 상태.</td></tr></tbody></table></div>
+<h3 class="section-h2" id="0-3-환경-배포">0.3 환경·배포<a class="heading-anchor" href="#0-3-환경-배포" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>환경변수(Environment Variable)</td><td>비밀번호·API 키 등 환경마다 달라지는 값을 코드 밖에 분리해 관리하는 방법.</td></tr><tr><td>개발/테스트/운영 환경</td><td>각각 “내 컴퓨터에서 확인”, “배포 전 검증”, “실제 사용자가 쓰는 곳”을 뜻합니다.</td></tr><tr><td>빌드(Build) / 배포(Deploy)</td><td>배포 가능한 형태로 만드는 것 / 실제 서버에 올리는 것.</td></tr></tbody></table></div>
+<h3 class="section-h2" id="0-4-AI-개발">0.4 AI 개발<a class="heading-anchor" href="#0-4-AI-개발" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>모델(Model)</td><td>학습이 끝난 AI 프로그램 자체(예: GPT, Claude 같은 이름이 곧 모델 이름).</td></tr><tr><td>API (AI 맥락)</td><td>내 코드가 AI 모델을 호출할 수 있게 열어둔 창구. 대부분 인터넷 너머에 있는 모델을 호출합니다.</td></tr><tr><td>프롬프트(Prompt)</td><td>AI 모델에게 보내는 입력 텍스트(지시문).</td></tr><tr><td>토큰(Token, AI 맥락)</td><td>AI가 텍스트를 처리하는 단위. 단어나 음절 정도의 조각이며, 요금은 보통 토큰 수로 계산됩니다.</td></tr><tr><td>구조화된 출력</td><td>AI 응답을 자유 텍스트가 아니라 JSON처럼 정해진 형식으로 강제해서 받는 것.</td></tr><tr><td>환각(Hallucination)</td><td>AI가 사실이 아닌 내용을 그럴듯하게 지어내는 현상.</td></tr><tr><td>지연 시간(Latency)</td><td>요청부터 응답까지 걸리는 시간. AI 응답은 일반 API보다 느린 경우가 많습니다.</td></tr><tr><td>평가 데이터</td><td>AI 결과가 잘 나오는지 확인하기 위해 미리 준비해둔 입력·정답 쌍.</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="1-개발을-시작할-때-가장-먼저-기억할-원칙">1. 개발을 시작할 때 가장 먼저 기억할 원칙<a class="heading-anchor" href="#1-개발을-시작할-때-가장-먼저-기억할-원칙" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="1-1-바로-코딩하지-않는다">1.1 바로 코딩하지 않는다<a class="heading-anchor" href="#1-1-바로-코딩하지-않는다" aria-label="이 섹션 링크">#</a></h3>
+<p>개발은 코드를 입력하는 일보다 <strong>무엇을 만들지 정확히 정하는 일</strong>이 먼저입니다.</p>
+<p>개발 시작 전 최소한 다음 질문에 답할 수 있어야 합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 누가 사용하는 기능인가?
+2. 사용자가 무엇을 할 수 있어야 하는가?
+3. 성공한 상태는 무엇인가?
+4. 어떤 데이터가 필요한가?
+5. 다른 기능이나 팀원의 작업과 어디에서 연결되는가?
+6. 이번 기간 안에 반드시 구현할 범위는 어디까지인가?</code></pre></div>
+<p>기능이 명확하지 않은 상태에서 코딩을 시작하면 다음 문제가 생깁니다.</p>
+<ul><li>필요한 기능과 불필요한 기능이 섞임</li><li>프론트엔드와 백엔드의 데이터 형식이 달라짐</li><li>같은 기능을 두 명이 중복 구현함</li><li>파일 구조가 계속 바뀜</li><li>마지막에 통합할 때 많은 코드를 다시 작성함</li></ul>
+<hr>
+<h3 class="section-h2" id="1-2-큰-기능을-작은-작업으로-나눈다">1.2 큰 기능을 작은 작업으로 나눈다<a class="heading-anchor" href="#1-2-큰-기능을-작은-작업으로-나눈다" aria-label="이 섹션 링크">#</a></h3>
+<p>좋지 않은 작업 단위:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>로그인 완성하기
+강의 기능 만들기
+AI 추천 시스템 구현하기</code></pre></div>
+<p>좋은 작업 단위:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>로그인 페이지 입력창 만들기
+이메일 형식 검사 추가하기
+로그인 API 함수 만들기
+로그인 성공 시 토큰 저장하기
+로그인 실패 메시지 표시하기</code></pre></div>
+<p>작업 하나는 가능하면 <strong>몇 시간 안에 구현하고 직접 확인할 수 있는 크기</strong>로 나눕니다.</p>
+<hr>
+<h3 class="section-h2" id="1-3-동작하는-최소-기능을-먼저-만든다">1.3 동작하는 최소 기능을 먼저 만든다<a class="heading-anchor" href="#1-3-동작하는-최소-기능을-먼저-만든다" aria-label="이 섹션 링크">#</a></h3>
+<p>처음부터 완벽한 디자인, 모든 예외 처리, 고급 기능을 넣지 않습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>기본 동작
+→ 데이터 연결
+→ 오류 처리
+→ 디자인 개선
+→ 부가 기능</code></pre></div>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>강의 카드 한 개 표시
+→ 더미 데이터 여러 개 표시
+→ 백엔드 강의 목록 연결
+→ 로딩·오류 처리
+→ 반응형 디자인 적용</code></pre></div>
+<hr>
+<h3 class="section-h2" id="1-4-모르는-상태에서-추측으로-연결하지-않는다">1.4 모르는 상태에서 추측으로 연결하지 않는다<a class="heading-anchor" href="#1-4-모르는-상태에서-추측으로-연결하지-않는다" aria-label="이 섹션 링크">#</a></h3>
+<p>특히 다음 내용은 상대 팀 또는 명세와 반드시 확인합니다.</p>
+<ul><li>API 주소</li><li>요청 메서드</li><li>요청 필드명</li><li>응답 필드명</li><li>인증 방식</li><li>오류 응답 형식</li><li>데이터베이스 컬럼</li><li>이미지 URL 형식</li><li>배포 주소와 포트</li></ul>
+<p>추측으로 작성한 코드는 나중에 대부분 다시 수정하게 됩니다.</p>
+<hr>
+<h2 class="section-h1" id="2-모든-개발에-공통으로-적용하는-전체-순서">2. 모든 개발에 공통으로 적용하는 전체 순서<a class="heading-anchor" href="#2-모든-개발에-공통으로-적용하는-전체-순서" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 요구사항 확인
+2. MVP 범위 결정
+3. 사용자 흐름 정리
+4. 기술과 구조 결정
+5. 데이터 및 API 계약 확정
+6. 저장소·브랜치·환경 설정
+7. 작업 단위와 담당자 분배
+8. 최소 기능 구현
+9. 단위 확인
+10. 팀 코드와 통합
+11. 전체 테스트와 오류 수정
+12. 배포
+13. 문서화와 회고</code></pre></div>
+<hr>
+<h2 class="section-h1" id="3-1단계-요구사항-확인">3. 1단계: 요구사항 확인<a class="heading-anchor" href="#3-1단계-요구사항-확인" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="3-1-요구사항이란">3.1 요구사항이란?<a class="heading-anchor" href="#3-1-요구사항이란" aria-label="이 섹션 링크">#</a></h3>
+<p>사용자가 무엇을 할 수 있어야 하는지 설명한 내용입니다.</p>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>사용자는 이메일과 비밀번호로 로그인할 수 있다.
+사용자는 강의 제목으로 강의를 검색할 수 있다.
+로그인한 사용자는 무료 강의를 수강 신청할 수 있다.</code></pre></div>
+<h3 class="section-h2" id="3-2-요구사항-확인-체크리스트">3.2 요구사항 확인 체크리스트<a class="heading-anchor" href="#3-2-요구사항-확인-체크리스트" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>사용자 대상이 누구인지 확인</li><li>필수 기능과 선택 기능 구분</li><li>완료 조건 확인</li><li>제한 시간 확인</li><li>사용할 기술 확인</li><li>배포 필요 여부 확인</li><li>팀원별 역할 확인</li><li>실제 데이터가 필요한지 확인</li><li>외부 API나 AI 모델 사용 여부 확인</li></ul>
+<hr>
+<h2 class="section-h1" id="4-2단계-MVP-범위-결정">4. 2단계: MVP 범위 결정<a class="heading-anchor" href="#4-2단계-MVP-범위-결정" aria-label="이 섹션 링크">#</a></h2>
+<p>MVP는 사용자가 핵심 가치를 경험할 수 있는 최소 기능입니다.</p>
+<p>예를 들어 온라인 강의 플랫폼의 MVP는 다음과 같습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>회원가입
+로그인
+강의 목록
+강의 상세
+수강 신청
+내 강의 확인</code></pre></div>
+<p>다음 기능은 시간이 남을 때 추가할 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>찜하기
+리뷰
+장바구니
+결제
+강사 관리
+추천 시스템</code></pre></div>
+<h3 class="section-h2" id="범위를-결정할-때-사용하는-기준">범위를 결정할 때 사용하는 기준<a class="heading-anchor" href="#범위를-결정할-때-사용하는-기준" aria-label="이 섹션 링크">#</a></h3>
+<ol><li>없으면 서비스 흐름이 끊기는가?</li><li>발표에서 핵심 기능으로 보여줘야 하는가?</li><li>현재 기간 안에 구현할 수 있는가?</li><li>다른 기능보다 먼저 완성되어야 하는가?</li><li>실패했을 때 다른 기능까지 막히는가?</li></ol>
+<hr>
+<h2 class="section-h1" id="5-3단계-사용자-흐름-정리">5. 3단계: 사용자 흐름 정리<a class="heading-anchor" href="#5-3단계-사용자-흐름-정리" aria-label="이 섹션 링크">#</a></h2>
+<p>사용자가 서비스에서 움직이는 순서를 먼저 적습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>메인 접속
+→ 회원가입
+→ 로그인
+→ 강의 검색
+→ 강의 상세
+→ 수강 신청
+→ 마이페이지
+→ 로그아웃</code></pre></div>
+<p>각 단계에는 필요한 화면과 API를 연결합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>사용자 행동</th><th>프론트엔드 화면</th><th>백엔드 기능</th></tr></thead><tbody><tr><td>로그인</td><td>로그인 페이지</td><td>사용자 확인, JWT 발급</td></tr><tr><td>강의 조회</td><td>강의 목록</td><td>강의 목록 조회</td></tr><tr><td>강의 선택</td><td>강의 상세</td><td>특정 강의 조회</td></tr><tr><td>수강 신청</td><td>수강 버튼</td><td>수강 정보 저장</td></tr><tr><td>내 강의 확인</td><td>마이페이지</td><td>사용자별 수강 목록 조회</td></tr></tbody></table></div>
+<p>이 표가 있으면 프론트엔드와 백엔드가 서로 무엇을 기다리는지 알 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="6-4단계-기술과-구조-결정">6. 4단계: 기술과 구조 결정<a class="heading-anchor" href="#6-4단계-기술과-구조-결정" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="6-1-기술을-선택할-때-기준">6.1 기술을 선택할 때 기준<a class="heading-anchor" href="#6-1-기술을-선택할-때-기준" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>팀원이 사용할 수 있는가?</li><li>프로젝트 기간 안에 익힐 수 있는가?</li><li>핵심 기능 구현에 실제로 필요한가?</li><li>공식 문서와 사례가 충분한가?</li><li>배포가 가능한가?</li><li>다른 기술과 잘 연결되는가?</li></ul>
+<p>새 기술이 멋있어 보인다는 이유만으로 추가하지 않습니다.</p>
+<h3 class="section-h2" id="6-2-폴더-구조를-정하는-이유">6.2 폴더 구조를 정하는 이유<a class="heading-anchor" href="#6-2-폴더-구조를-정하는-이유" aria-label="이 섹션 링크">#</a></h3>
+<p>파일 위치와 역할이 명확하면 다음 장점이 있습니다.</p>
+<ul><li>팀원이 코드를 쉽게 찾음</li><li>같은 기능을 중복 작성하지 않음</li><li>파일 충돌이 줄어듦</li><li>코드가 커져도 관리하기 쉬움</li></ul>
+<p>폴더 구조는 처음부터 지나치게 복잡하게 만들지 않습니다.</p>
+<hr>
+<h2 class="section-h1" id="7-5단계-데이터와-API-계약">7. 5단계: 데이터와 API 계약<a class="heading-anchor" href="#7-5단계-데이터와-API-계약" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="7-1-API-계약이란">7.1 API 계약이란?<a class="heading-anchor" href="#7-1-API-계약이란" aria-label="이 섹션 링크">#</a></h3>
+<p>프론트엔드와 백엔드가 데이터를 주고받는 규칙입니다.</p>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>POST /api/auth/login</code></pre></div>
+<p>요청:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>{
+  &quot;email&quot;: &quot;user@example.com&quot;,
+  &quot;password&quot;: &quot;password&quot;
+}</code></pre></div>
+<p>응답:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>{
+  &quot;accessToken&quot;: &quot;token&quot;,
+  &quot;user&quot;: {
+    &quot;id&quot;: 1,
+    &quot;nickname&quot;: &quot;사용자&quot;
+  }
+}</code></pre></div>
+<p>프론트엔드와 백엔드는 다음을 정확히 맞춰야 합니다.</p>
+<ul><li>HTTP 메서드</li><li>URL</li><li>요청 데이터</li><li>응답 데이터</li><li>상태 코드</li><li>인증 필요 여부</li><li>오류 메시지</li></ul>
+<h3 class="section-h2" id="7-2-API가-확정되지-않았을-때">7.2 API가 확정되지 않았을 때<a class="heading-anchor" href="#7-2-API가-확정되지-않았을-때" aria-label="이 섹션 링크">#</a></h3>
+<p>프론트엔드는 더미 데이터를 사용해 화면을 먼저 만듭니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>const mockCourse = {
+  id: 1,
+  title: &quot;React 입문&quot;,
+  price: 0,
+};</code></pre></div>
+<p>백엔드는 임시 API 응답을 만들어 테스트할 수 있습니다.</p>
+<p>그러나 실제 API가 확정되기 전까지 필드명을 프로젝트 전체에 흩어놓지 않습니다.</p>
+<hr>
+<h2 class="section-h1" id="8-6단계-저장소와-브랜치-준비">8. 6단계: 저장소와 브랜치 준비<a class="heading-anchor" href="#8-6단계-저장소와-브랜치-준비" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="8-1-저장소와-브랜치의-차이">8.1 저장소와 브랜치의 차이<a class="heading-anchor" href="#8-1-저장소와-브랜치의-차이" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>저장소
+= 프로젝트 전체 코드와 변경 기록이 저장되는 공간
+
+브랜치
+= 같은 저장소 안에서 특정 기능을 독립적으로 작업하는 작업선</code></pre></div>
+<h3 class="section-h2" id="8-2-브랜치-구조는-팀이-선택한다">8.2 브랜치 구조는 팀이 선택한다<a class="heading-anchor" href="#8-2-브랜치-구조는-팀이-선택한다" aria-label="이 섹션 링크">#</a></h3>
+<p>브랜치 구조는 모든 프로젝트가 똑같이 써야 하는 규칙이 아닙니다. 아래는 <strong>GitFlow 축소판을 선택한 팀의 예시</strong>입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>main
+└── develop
+    ├── feat/frontend-auth
+    ├── feat/backend-auth
+    ├── feat/course-api
+    └── feat/ai-recommendation</code></pre></div>
+<ul><li><code class="inline-code">main</code>: 배포 가능한 안정된 코드</li><li><code class="inline-code">develop</code>: 기능을 합치는 개발 기준 브랜치</li><li><code class="inline-code">feat/...</code>: 기능 개발</li><li><code class="inline-code">fix/...</code>: 오류 수정</li><li><code class="inline-code">refactor/...</code>: 기능 변화 없는 구조 개선</li><li><code class="inline-code">hotfix/...</code>: 운영 서비스의 긴급 수정</li></ul>
+<p>작은 팀은 <code class="inline-code">main + 기능 브랜치</code>만 쓰는 GitHub Flow가 더 단순할 수 있습니다. <strong>중요한 것은 브랜치 개수가 아니라 “어디서 분기하고 어디로 PR을 보낼지”를 팀 전체가 같은 규칙으로 쓰는 것</strong>입니다. 선택 기준은 <strong>개발 협업 방식 선택 가이드</strong>를 참고합니다.</p>
+<h3 class="section-h2" id="8-3-작업-시작-순서">8.3 작업 시작 순서<a class="heading-anchor" href="#8-3-작업-시작-순서" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git switch develop
+git pull origin develop
+git switch -c feat/기능명</code></pre></div>
+<h3 class="section-h2" id="8-4-작업-종료-순서">8.4 작업 종료 순서<a class="heading-anchor" href="#8-4-작업-종료-순서" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git status
+git add 변경파일
+git commit -m &quot;Feat: 기능 설명&quot;
+git push -u origin feat/기능명</code></pre></div>
+<p>그다음 Pull Request를 생성합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>feat/기능명
+→ develop</code></pre></div>
+<hr>
+<h2 class="section-h1" id="9-7단계-개발-환경-설정">9. 7단계: 개발 환경 설정<a class="heading-anchor" href="#9-7단계-개발-환경-설정" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="공통-확인-항목">공통 확인 항목<a class="heading-anchor" href="#공통-확인-항목" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>필요한 언어 설치</li><li>언어 버전 확인</li><li>패키지 매니저 확인</li><li>프로젝트 의존성 설치</li><li>환경변수 파일 준비</li><li>개발 서버 실행</li><li>데이터베이스 연결 확인</li><li>Git 브랜치 확인</li><li><code class="inline-code">.gitignore</code> 확인</li></ul>
+<h4 class="section-h3" id="실제로-확인하는-명령어">실제로 확인하는 명령어<a class="heading-anchor" href="#실제로-확인하는-명령어" aria-label="이 섹션 링크">#</a></h4>
+<p>터미널에 아래 명령을 입력해 버전이 출력되면 설치가 된 것입니다. “command not found” 같은 오류가 뜨면 설치가 안 된 것이니 공식 사이트에서 설치합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git --version        # Git이 설치됐는지 확인
+node --version        # Node.js 버전 확인 (프론트엔드)
+npm --version          # npm(패키지 매니저) 버전 확인
+python --version       # Python 버전 확인 (백엔드가 Python 계열일 때)</code></pre></div>
+<p>프로젝트마다 실행 명령이 다릅니다. <strong>먼저 저장소의 <code class="inline-code">README</code>, <code class="inline-code">package.json</code>, <code class="inline-code">requirements.txt</code>, <code class="inline-code">pyproject.toml</code>, <code class="inline-code">build.gradle</code> 같은 설정 파일을 확인</strong>합니다.</p>
+<h4 class="section-h3" id="Node-js-프론트엔드-예시">Node.js/프론트엔드 예시<a class="heading-anchor" href="#Node-js-프론트엔드-예시" aria-label="이 섹션 링크">#</a></h4>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">npm</span> install
+<span class="tok-keyword">npm</span> run
+<span class="tok-keyword">npm</span> run dev</code></pre></div>
+<p><code class="inline-code">npm run</code>은 <code class="inline-code">package.json</code>의 <code class="inline-code">scripts</code>에 등록된 실행 명령을 보여줍니다. <code class="inline-code">npm run dev</code>에서 <code class="inline-code">Missing script: "dev"</code>가 나오면 서버 문제가 아니라 <strong>현재 폴더의 <code class="inline-code">package.json</code>에 <code class="inline-code">dev</code> 스크립트가 없거나, 잘못된 폴더에서 명령을 실행한 것</strong>일 가능성이 큽니다.</p>
+<h4 class="section-h3" id="Python-백엔드-예시">Python 백엔드 예시<a class="heading-anchor" href="#Python-백엔드-예시" aria-label="이 섹션 링크">#</a></h4>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">python</span> -m venv .venv
+
+<span class="tok-comment"># Windows PowerShell</span>
+.\.venv\Scripts\Activate.ps1
+
+<span class="tok-comment"># macOS/Linux</span>
+<span class="tok-keyword">source</span> .venv/bin/activate
+
+<span class="tok-keyword">pip</span> install -r requirements.txt
+<span class="tok-keyword">python</span> app.py</code></pre></div>
+<p>프로젝트에 따라 <code class="inline-code">flask run</code>, <code class="inline-code">uvicorn ...</code>, <code class="inline-code">python manage.py runserver</code>처럼 실행 명령이 달라집니다.</p>
+<h4 class="section-h3" id="Java-Spring-예시">Java/Spring 예시<a class="heading-anchor" href="#Java-Spring-예시" aria-label="이 섹션 링크">#</a></h4>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># Windows</span>
+gradlew.bat bootRun
+
+<span class="tok-comment"># macOS/Linux</span>
+./gradlew bootRun</code></pre></div>
+<p><strong>문서에 적힌 실행 명령을 그대로 확인한 뒤 실행하는 습관</strong>이 중요합니다.</p>
+<h3 class="section-h2" id="자주-사용하는-명령의-의미">자주 사용하는 명령의 의미<a class="heading-anchor" href="#자주-사용하는-명령의-의미" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>install
+→ 필요한 패키지를 설치
+
+run / start
+→ 프로그램 실행
+
+build
+→ 배포 가능한 결과물 생성
+
+test
+→ 테스트 실행
+
+lint
+→ 코드 문법과 규칙 검사</code></pre></div>
+<h3 class="section-h2" id="환경변수">환경변수<a class="heading-anchor" href="#환경변수" aria-label="이 섹션 링크">#</a></h3>
+<p>환경에 따라 달라지는 값을 코드와 분리해 저장합니다.</p>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>API_BASE_URL=http://localhost:5000
+DATABASE_URL=mysql://...
+SECRET_KEY=...</code></pre></div>
+<p>주의:</p>
+<ul><li><code class="inline-code">.env</code>는 GitHub에 올리지 않기</li><li><code class="inline-code">.env.example</code>에는 변수 이름만 공유</li><li>비밀번호, API Key, 토큰을 코드에 직접 작성하지 않기</li></ul>
+<hr>
+<h2 class="section-h1" id="10-프론트엔드-개발-행동-순서">10. 프론트엔드 개발 행동 순서<a class="heading-anchor" href="#10-프론트엔드-개발-행동-순서" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 페이지와 사용자 흐름 확인
+2. 라우팅 생성
+3. 화면 뼈대 작성
+4. 공통 컴포넌트 분리
+5. 더미 데이터로 화면 완성
+6. 입력값과 상태 관리
+7. API 함수 작성
+8. 실제 API 연결
+9. 로딩·빈 결과·오류 처리
+10. 로그인과 권한 처리
+11. 반응형 및 디자인 정리
+12. 통합 테스트</code></pre></div>
+<h3 class="section-h2" id="프론트엔드가-알아야-할-기본-지식">프론트엔드가 알아야 할 기본 지식<a class="heading-anchor" href="#프론트엔드가-알아야-할-기본-지식" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>HTML 구조</li><li>CSS 선택자와 레이아웃</li><li>JavaScript 변수·함수·배열·객체</li><li><code class="inline-code">map</code>, <code class="inline-code">filter</code>, <code class="inline-code">find</code></li><li><code class="inline-code">async</code>, <code class="inline-code">await</code></li><li>컴포넌트</li><li>Props</li><li>State</li><li>이벤트</li><li>라우팅</li><li>HTTP 요청</li><li>브라우저 개발자 도구</li><li>로컬 스토리지</li><li>CORS</li><li>빌드와 배포</li></ul>
+<h3 class="section-h2" id="프론트엔드-상식">프론트엔드 상식<a class="heading-anchor" href="#프론트엔드-상식" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>프론트엔드는 데이터베이스에 직접 접근하지 않음</li><li>화면에 표시되는 값과 서버 데이터는 다를 수 있음</li><li>사용자 입력값은 항상 검증해야 함</li><li>API 요청은 실패할 수 있다고 가정해야 함</li><li>로딩 중과 빈 결과는 서로 다른 상태임</li><li>새로고침 후 상태가 사라지는지 확인해야 함</li><li>모바일 화면도 확인해야 함</li><li>브라우저 Console 오류를 방치하지 않음</li></ul>
+<hr>
+<h2 class="section-h1" id="11-백엔드-개발-행동-순서">11. 백엔드 개발 행동 순서<a class="heading-anchor" href="#11-백엔드-개발-행동-순서" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 요구사항과 데이터 확인
+2. ERD와 테이블 관계 설계
+3. API 목록 작성
+4. 요청·응답 형식 결정
+5. 프로젝트와 DB 연결
+6. 모델 작성
+7. 서비스 로직 작성
+8. 라우트 또는 컨트롤러 작성
+9. 인증·권한 적용
+10. 정상·오류 응답 구현
+11. API 직접 테스트
+12. 프론트엔드와 연동
+13. 로그·보안·배포 설정</code></pre></div>
+<h3 class="section-h2" id="백엔드가-알아야-할-기본-지식">백엔드가 알아야 할 기본 지식<a class="heading-anchor" href="#백엔드가-알아야-할-기본-지식" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>HTTP와 REST</li><li>요청과 응답</li><li>JSON</li><li>상태 코드</li><li>데이터베이스와 SQL</li><li>기본키와 외래키</li><li>트랜잭션</li><li>ORM</li><li>인증과 인가</li><li>비밀번호 해싱</li><li>환경변수</li><li>CORS</li><li>로그</li><li>배포 서버</li></ul>
+<h3 class="section-h2" id="백엔드-상식">백엔드 상식<a class="heading-anchor" href="#백엔드-상식" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>비밀번호를 원문으로 저장하지 않음</li><li>클라이언트가 보낸 값을 그대로 믿지 않음</li><li>인증과 권한은 다른 개념임</li><li>API 오류에도 일관된 형식을 사용함</li><li>데이터베이스 변경은 마이그레이션으로 관리함</li><li>민감한 값은 응답에 포함하지 않음</li><li>중복 요청과 잘못된 요청을 처리해야 함</li><li>서버 오류의 상세 내용을 사용자에게 그대로 노출하지 않음</li></ul>
+<hr>
+<h2 class="section-h1" id="12-AI-기능-개발-행동-순서">12. AI 기능 개발 행동 순서<a class="heading-anchor" href="#12-AI-기능-개발-행동-순서" aria-label="이 섹션 링크">#</a></h2>
+<p>AI 기능은 일반 기능보다 먼저 확인할 내용이 많습니다. (프롬프트 작성법, 토큰·비용, 환각·평가 등 상세 내용은 <strong>생성형 AI 기능 개발 기초 가이드</strong> 참고)</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. AI가 해결할 문제를 한 문장으로 정의
+2. 입력과 출력 형식 결정
+3. 평가 기준 결정
+4. 필요한 데이터 확인
+5. 규칙 기반 또는 일반 코드로 가능한지 검토
+6. 사용할 모델이나 API 결정
+7. 최소 예제로 성능 확인
+8. 프롬프트 또는 전처리 설계
+9. 백엔드 API로 감싸기
+10. 프론트엔드와 연결
+11. 실패·지연·비용 처리
+12. 결과 평가와 개선</code></pre></div>
+<h3 class="section-h2" id="AI-기능-시작-전-질문">AI 기능 시작 전 질문<a class="heading-anchor" href="#AI-기능-시작-전-질문" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>AI가 꼭 필요한가?</li><li>입력 데이터는 무엇인가?</li><li>결과 형식은 무엇인가?</li><li>정답을 어떻게 평가할 것인가?</li><li>잘못된 결과가 나오면 어떤 위험이 있는가?</li><li>한 번 요청할 때 시간과 비용은 얼마인가?</li><li>개인정보나 민감정보가 포함되는가?</li><li>모델을 사용할 수 없을 때 대체 흐름이 있는가?</li></ul>
+<h3 class="section-h2" id="AI-개발-기본-지식">AI 개발 기본 지식<a class="heading-anchor" href="#AI-개발-기본-지식" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>모델과 API의 차이</li><li>프롬프트</li><li>입력 토큰과 출력 토큰</li><li>구조화된 출력</li><li>데이터 전처리</li><li>평가 데이터</li><li>정확도와 일관성</li><li>환각</li><li>지연 시간</li><li>요청 비용</li><li>개인정보 보호</li><li>모델 버전 변경 가능성</li></ul>
+<h3 class="section-h2" id="AI-개발-상식">AI 개발 상식<a class="heading-anchor" href="#AI-개발-상식" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>AI 응답은 항상 맞지 않음</li><li>같은 입력에도 결과가 달라질 수 있음</li><li>결과를 그대로 데이터베이스에 확정 저장하지 않음</li><li>중요한 판단에는 검증 단계가 필요함</li><li>비밀번호와 개인정보를 프롬프트에 넣지 않음</li><li>모델 이름보다 평가 결과가 중요함</li><li>좋은 프롬프트만으로 모든 문제가 해결되지 않음</li><li>실패 시 사용자에게 재시도 또는 대체 방법을 제공해야 함</li></ul>
+<hr>
+<h2 class="section-h1" id="13-프론트엔드-백엔드-AI가-연결되는-구조">13. 프론트엔드·백엔드·AI가 연결되는 구조<a class="heading-anchor" href="#13-프론트엔드-백엔드-AI가-연결되는-구조" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>사용자
+↓
+프론트엔드 화면
+↓
+백엔드 API
+├── 데이터베이스
+└── AI 모델 또는 외부 AI API
+↓
+백엔드에서 결과 정리
+↓
+프론트엔드에 JSON 응답
+↓
+사용자에게 화면으로 표시</code></pre></div>
+<h3 class="section-h2" id="역할-구분">역할 구분<a class="heading-anchor" href="#역할-구분" aria-label="이 섹션 링크">#</a></h3>
+<h4 class="section-h3" id="프론트엔드">프론트엔드<a class="heading-anchor" href="#프론트엔드" aria-label="이 섹션 링크">#</a></h4>
+<ul><li>사용자 입력 받기</li><li>요청 보내기</li><li>결과 표시</li><li>로딩과 오류 처리</li></ul>
+<h4 class="section-h3" id="백엔드">백엔드<a class="heading-anchor" href="#백엔드" aria-label="이 섹션 링크">#</a></h4>
+<ul><li>입력값 검증</li><li>인증과 권한 확인</li><li>DB 조회·저장</li><li>AI 요청 관리</li><li>결과 가공</li><li>오류 응답</li></ul>
+<h4 class="section-h3" id="AI">AI<a class="heading-anchor" href="#AI" aria-label="이 섹션 링크">#</a></h4>
+<ul><li>분류</li><li>추천</li><li>요약</li><li>생성</li><li>예측</li><li>자연어 처리</li></ul>
+<p>프론트엔드에서 비밀 API Key를 직접 사용하지 않습니다. AI API Key는 백엔드 환경변수로 관리합니다.</p>
+<hr>
+<h2 class="section-h1" id="14-구현-중-행동-요령">14. 구현 중 행동 요령<a class="heading-anchor" href="#14-구현-중-행동-요령" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="작업-시작-전">작업 시작 전<a class="heading-anchor" href="#작업-시작-전" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>현재 브랜치 확인</li><li>최신 <code class="inline-code">develop</code> pull</li><li>오늘 구현할 기능 한두 개 결정</li><li>관련 요구사항과 API 확인</li><li>수정할 공통 파일 확인</li><li>팀원에게 알려야 하는 작업인지 확인</li></ul>
+<h3 class="section-h2" id="작업-중">작업 중<a class="heading-anchor" href="#작업-중" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>한 번에 작은 단위로 구현</li><li>실행하면서 확인</li><li>오류 메시지 읽기</li><li>이해하지 못한 코드는 바로 묻기</li><li>다른 팀원의 파일을 함부로 수정하지 않기</li><li>임시 코드는 표시해두기</li><li>기능 단위로 커밋</li></ul>
+<h3 class="section-h2" id="작업-종료-전">작업 종료 전<a class="heading-anchor" href="#작업-종료-전" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>정상 동작 확인</li><li>잘못된 입력도 확인</li><li>Console과 서버 로그 확인</li><li>다른 화면이나 API가 깨지지 않았는지 확인</li><li><code class="inline-code">git status</code> 확인</li><li>커밋과 push</li><li>변경 내용을 팀에 공유</li></ul>
+<hr>
+<h2 class="section-h1" id="15-디버깅-행동-순서">15. 디버깅 행동 순서<a class="heading-anchor" href="#15-디버깅-행동-순서" aria-label="이 섹션 링크">#</a></h2>
+<p>오류가 발생하면 코드를 무작정 바꾸지 않습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 오류를 다시 재현
+2. 오류 메시지를 정확히 읽음
+3. 어느 영역의 오류인지 구분
+4. 입력값과 실제 값을 출력
+5. 가장 작은 원인부터 확인
+6. 한 번에 하나만 수정
+7. 수정 후 다시 재현
+8. 원인과 해결 방법 기록</code></pre></div>
+<h3 class="section-h2" id="오류-영역-구분">오류 영역 구분<a class="heading-anchor" href="#오류-영역-구분" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>화면 문제
+→ HTML, CSS, React 컴포넌트
+
+브라우저 JavaScript 오류
+→ Console
+
+API 요청 문제
+→ Network 탭
+
+인증 문제
+→ 토큰, 헤더, 상태 코드
+
+백엔드 문제
+→ 서버 로그
+
+데이터 문제
+→ DB 데이터와 쿼리
+
+배포 문제
+→ 포트, 환경변수, 프로세스, 방화벽</code></pre></div>
+<h3 class="section-h2" id="좋은-오류-질문-형식">좋은 오류 질문 형식<a class="heading-anchor" href="#좋은-오류-질문-형식" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>하려던 작업:
+실행한 명령:
+예상 결과:
+실제 결과:
+오류 메시지 전체:
+현재 브랜치:
+관련 파일:
+이미 시도한 방법:</code></pre></div>
+<hr>
+<h2 class="section-h1" id="16-HTTP-상태-코드-기본-상식">16. HTTP 상태 코드 기본 상식<a class="heading-anchor" href="#16-HTTP-상태-코드-기본-상식" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>코드</th><th>의미</th></tr></thead><tbody><tr><td><code class="inline-code">200</code></td><td>요청 성공</td></tr><tr><td><code class="inline-code">201</code></td><td>데이터 생성 성공</td></tr><tr><td><code class="inline-code">204</code></td><td>성공했지만 응답 본문 없음</td></tr><tr><td><code class="inline-code">400</code></td><td>요청값이 잘못됨</td></tr><tr><td><code class="inline-code">401</code></td><td>인증되지 않음</td></tr><tr><td><code class="inline-code">403</code></td><td>인증은 되었지만 권한 없음</td></tr><tr><td><code class="inline-code">404</code></td><td>주소 또는 데이터 없음</td></tr><tr><td><code class="inline-code">409</code></td><td>중복 또는 충돌</td></tr><tr><td><code class="inline-code">422</code></td><td>요청 형식은 맞지만 값 검증 실패</td></tr><tr><td><code class="inline-code">500</code></td><td>서버 내부 오류</td></tr></tbody></table></div>
+<p>상태 코드만 보고 판단하지 않고 응답 본문과 서버 로그도 함께 확인합니다.</p>
+<hr>
+<h2 class="section-h1" id="17-인증과-보안-기본-상식">17. 인증과 보안 기본 상식<a class="heading-anchor" href="#17-인증과-보안-기본-상식" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="인증과-인가">인증과 인가<a class="heading-anchor" href="#인증과-인가" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>인증(Authentication)
+= 누구인지 확인
+
+인가(Authorization)
+= 무엇을 할 수 있는지 확인</code></pre></div>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>로그인 성공
+→ 인증
+
+관리자만 강의 삭제
+→ 인가</code></pre></div>
+<h3 class="section-h2" id="보안-기본-규칙">보안 기본 규칙<a class="heading-anchor" href="#보안-기본-규칙" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>비밀번호를 코드나 문서에 적지 않기</li><li>API Key를 GitHub에 올리지 않기</li><li><code class="inline-code">.env</code>를 <code class="inline-code">.gitignore</code>에 포함</li><li>비밀번호 해싱</li><li>사용자 입력 검증</li><li>인증 토큰 만료 처리</li><li>권한을 프론트 화면만으로 제한하지 않기</li><li>개인정보를 로그에 남기지 않기</li><li>실제 비밀값이 커밋되면 즉시 폐기하고 재발급</li></ul>
+<hr>
+<h2 class="section-h1" id="18-배포-전에-알아야-할-내용">18. 배포 전에 알아야 할 내용<a class="heading-anchor" href="#18-배포-전에-알아야-할-내용" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="실행과-배포의-차이">실행과 배포의 차이<a class="heading-anchor" href="#실행과-배포의-차이" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>개발 실행
+= 내 컴퓨터에서 확인
+
+빌드
+= 배포 가능한 결과물 생성
+
+배포
+= 다른 사용자가 접속할 수 있는 서버에 올림</code></pre></div>
+<h3 class="section-h2" id="배포-체크리스트">배포 체크리스트<a class="heading-anchor" href="#배포-체크리스트" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>운영용 환경변수</li><li>DB 연결</li><li>프론트 API 주소</li><li>CORS</li><li>포트</li><li>방화벽 또는 보안그룹</li><li>프로세스 상시 실행</li><li>새로고침 라우팅</li><li>로그 확인</li><li>실제 사용자 흐름 테스트</li><li>비밀값 노출 여부</li></ul>
+<hr>
+<h2 class="section-h1" id="19-협업-기본-상식">19. 협업 기본 상식<a class="heading-anchor" href="#19-협업-기본-상식" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="팀원이-알아야-하는-것">팀원이 알아야 하는 것<a class="heading-anchor" href="#팀원이-알아야-하는-것" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>내가 어떤 기능을 작업 중인지</li><li>어떤 파일을 수정했는지</li><li>API나 데이터 구조가 바뀌었는지</li><li>다른 팀원이 기다리는 작업인지</li><li>머지 가능한 상태인지</li><li>아직 해결하지 못한 문제가 무엇인지</li></ul>
+<h3 class="section-h2" id="반드시-공유해야-하는-변경">반드시 공유해야 하는 변경<a class="heading-anchor" href="#반드시-공유해야-하는-변경" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>공통 파일 수정</li><li>API URL 또는 필드 변경</li><li>DB 컬럼 변경</li><li>인증 방식 변경</li><li>패키지 추가</li><li>환경변수 추가</li><li>브랜치 머지</li><li>배포 설정 변경</li></ul>
+<h3 class="section-h2" id="좋은-공유-예시">좋은 공유 예시<a class="heading-anchor" href="#좋은-공유-예시" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>작업 브랜치: feat/frontend-auth
+완료: 로그인 화면과 입력값 검증
+미완료: 실제 로그인 API 연결
+변경 파일: LoginPage.jsx, LoginPage.module.css
+필요한 정보: 로그인 요청·응답 필드
+공통 파일 수정: 없음</code></pre></div>
+<hr>
+<h2 class="section-h1" id="20-AI-코딩-도구를-사용할-때-행동-요령">20. AI 코딩 도구를 사용할 때 행동 요령<a class="heading-anchor" href="#20-AI-코딩-도구를-사용할-때-행동-요령" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="AI에게-제공할-정보">AI에게 제공할 정보<a class="heading-anchor" href="#AI에게-제공할-정보" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>프로젝트 목적</li><li>기술 스택</li><li>현재 폴더 구조</li><li>담당 기능</li><li>관련 파일 코드</li><li>기대하는 동작</li><li>실제 오류</li><li>수정 가능한 범위</li><li>초보자 설명 필요 여부</li></ul>
+<h3 class="section-h2" id="좋은-요청-예시">좋은 요청 예시<a class="heading-anchor" href="#좋은-요청-예시" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>React + Vite 프로젝트입니다.
+로그인 페이지에서 이메일과 비밀번호를 useState로 관리합니다.
+현재 LoginPage.jsx 코드는 아래와 같습니다.
+백엔드 API는 아직 확정되지 않았으므로 실제 Axios 요청은 작성하지 말고,
+입력값 검증과 submit 함수 구조만 구현해주세요.
+파일 전체 코드와 각 부분의 역할도 설명해주세요.</code></pre></div>
+<h3 class="section-h2" id="AI-코드를-받은-뒤-확인할-것">AI 코드를 받은 뒤 확인할 것<a class="heading-anchor" href="#AI-코드를-받은-뒤-확인할-것" aria-label="이 섹션 링크">#</a></h3>
+<ol><li>어떤 파일을 수정하는가?</li><li>새 패키지가 필요한가?</li><li>함수는 언제 실행되는가?</li><li>입력과 출력은 무엇인가?</li><li>오류 처리가 있는가?</li><li>프로젝트 기존 구조와 맞는가?</li><li>실제로 실행해봤는가?</li><li>내가 설명할 수 있는가?</li></ol>
+<h3 class="section-h2" id="AI-사용-시-금지">AI 사용 시 금지<a class="heading-anchor" href="#AI-사용-시-금지" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>비밀번호·API Key 입력</li><li>전체 프로젝트를 이해하지 못한 채 대규모 수정 허용</li><li>오류 확인 없이 같은 코드를 반복 적용</li><li>존재하지 않는 API를 사실처럼 사용</li><li>테스트하지 않고 바로 <code class="inline-code">develop</code> 또는 <code class="inline-code">main</code>에 머지</li><li>AI가 작성했다는 이유로 검토 생략</li></ul>
+<hr>
+<h2 class="section-h1" id="21-하지-말아야-할-행동">21. 하지 말아야 할 행동<a class="heading-anchor" href="#21-하지-말아야-할-행동" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>요구사항 확인 없이 코딩 시작</li><li><code class="inline-code">main</code>과 <code class="inline-code">develop</code>에서 직접 기능 개발</li><li>여러 기능을 한 커밋에 모두 넣기</li><li>오류 메시지 일부만 보고 추측</li><li>팀원 코드 무단 삭제</li><li>API 필드 임의 확정</li><li>비밀번호와 Key를 GitHub에 업로드</li><li>패키지를 알리지 않고 추가</li><li>작동하지 않는 코드를 머지</li><li>이해하지 못한 AI 코드를 그대로 사용</li><li>디자인부터 완벽하게 만들기</li><li>모든 파일을 처음부터 빈 파일로 생성</li><li>오류를 숨기기 위해 예외를 무조건 무시</li></ul>
+<hr>
+<h2 class="section-h1" id="22-개발자가-기본적으로-익혀야-할-지식">22. 개발자가 기본적으로 익혀야 할 지식<a class="heading-anchor" href="#22-개발자가-기본적으로-익혀야-할-지식" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="공통">공통<a class="heading-anchor" href="#공통" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>파일과 폴더</li><li>터미널</li><li>운영체제 경로</li><li>프로그램과 프로세스</li><li>포트</li><li>환경변수</li><li>Git과 GitHub</li><li>브랜치와 커밋</li><li>HTTP</li><li>JSON</li><li>API</li><li>데이터베이스</li><li>로그</li><li>개발·테스트·운영 환경</li></ul>
+<h3 class="section-h2" id="프론트엔드-2">프론트엔드<a class="heading-anchor" href="#프론트엔드-2" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>DOM과 이벤트</li><li>컴포넌트</li><li>상태</li><li>라우팅</li><li>API 요청</li><li>브라우저 개발자 도구</li></ul>
+<h3 class="section-h2" id="백엔드-2">백엔드<a class="heading-anchor" href="#백엔드-2" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>서버</li><li>라우팅</li><li>요청 검증</li><li>데이터베이스</li><li>ORM</li><li>인증·인가</li><li>오류 처리</li><li>서버 로그</li><li>배포</li></ul>
+<h3 class="section-h2" id="AI-2">AI<a class="heading-anchor" href="#AI-2" aria-label="이 섹션 링크">#</a></h3>
+<ul><li>모델과 API</li><li>프롬프트</li><li>데이터</li><li>평가</li><li>환각</li><li>비용</li><li>지연 시간</li><li>개인정보</li><li>실패 대응</li></ul>
+<hr>
+<h2 class="section-h1" id="23-초보자-학습-순서">23. 초보자 학습 순서<a class="heading-anchor" href="#23-초보자-학습-순서" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="1단계-공통-기초">1단계: 공통 기초<a class="heading-anchor" href="#1단계-공통-기초" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>파일과 폴더
+→ 터미널
+→ Git과 GitHub
+→ HTTP와 JSON
+→ API 요청과 응답</code></pre></div>
+<h3 class="section-h2" id="2단계-담당-분야-기초">2단계: 담당 분야 기초<a class="heading-anchor" href="#2단계-담당-분야-기초" aria-label="이 섹션 링크">#</a></h3>
+<h4 class="section-h3" id="프론트엔드-3">프론트엔드<a class="heading-anchor" href="#프론트엔드-3" aria-label="이 섹션 링크">#</a></h4>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>HTML
+→ CSS
+→ JavaScript
+→ React
+→ Router
+→ Axios</code></pre></div>
+<h4 class="section-h3" id="백엔드-3">백엔드<a class="heading-anchor" href="#백엔드-3" aria-label="이 섹션 링크">#</a></h4>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Python
+→ Flask
+→ SQL
+→ ORM
+→ REST API
+→ JWT</code></pre></div>
+<h4 class="section-h3" id="AI-3">AI<a class="heading-anchor" href="#AI-3" aria-label="이 섹션 링크">#</a></h4>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Python
+→ 데이터 처리
+→ 모델 또는 AI API
+→ 프롬프트
+→ 평가
+→ 백엔드 연동</code></pre></div>
+<h3 class="section-h2" id="3단계-협업과-배포">3단계: 협업과 배포<a class="heading-anchor" href="#3단계-협업과-배포" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Branch
+→ Commit
+→ Pull Request
+→ Merge
+→ 환경변수
+→ 서버 배포
+→ 로그 확인</code></pre></div>
+<hr>
+<h2 class="section-h1" id="24-기능-시작-전-작성하는-간단-템플릿">24. 기능 시작 전 작성하는 간단 템플릿<a class="heading-anchor" href="#24-기능-시작-전-작성하는-간단-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 기능명
+
+### 목적
+사용자가 무엇을 할 수 있게 만드는가?
+
+### 완료 조건
+-[ ]
+-[ ]
+
+### 담당자
+
+### 관련 화면
+
+### 관련 API
+
+### 필요한 데이터
+
+### 수정 예상 파일
+
+### 다른 팀과 확인할 내용
+
+### 테스트 방법
+
+### 미해결 사항</code></pre></div>
+<hr>
+<h2 class="section-h1" id="25-버그-기록-템플릿">25. 버그 기록 템플릿<a class="heading-anchor" href="#25-버그-기록-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 버그 제목
+
+### 발생 환경
+-브랜치:
+-실행 환경:
+-URL:
+
+### 재현 순서
+1.
+2.
+3.
+
+### 예상 결과
+
+### 실제 결과
+
+### 오류 메시지
+
+### 원인
+
+### 해결 방법
+
+### 수정 파일
+
+### 재발 방지</code></pre></div>
+<hr>
+<h2 class="section-h1" id="26-하루-작업-보고-템플릿">26. 하루 작업 보고 템플릿<a class="heading-anchor" href="#26-하루-작업-보고-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 오늘 작업
+
+### 완료
+-
+
+### 진행 중
+-
+
+### 문제
+-
+
+### 다른 팀에 필요한 정보
+-
+
+### 내일 작업
+-</code></pre></div>
+<hr>
+<h2 class="section-h1" id="27-프로젝트-종료-후-회고">27. 프로젝트 종료 후 회고<a class="heading-anchor" href="#27-프로젝트-종료-후-회고" aria-label="이 섹션 링크">#</a></h2>
+<p>프로젝트가 끝나면 다음 내용을 기록합니다.</p>
+<ul><li>잘된 점</li><li>어려웠던 점</li><li>가장 오래 걸린 문제</li><li>다시 한다면 바꿀 순서</li><li>팀 협업에서 개선할 점</li><li>새롭게 배운 기술</li><li>AI가 실제로 도움이 된 부분</li><li>AI 때문에 문제가 생긴 부분</li><li>다음 프로젝트 전에 공부할 내용</li></ul>
+<p>회고는 실패를 기록하는 문서가 아니라 다음 프로젝트의 시행착오를 줄이는 문서입니다.</p>
+<hr>
+<h2 class="section-h1" id="28-이-문서의-사용-방법">28. 이 문서의 사용 방법<a class="heading-anchor" href="#28-이-문서의-사용-방법" aria-label="이 섹션 링크">#</a></h2>
+<p>이 문서는 특정 프로젝트의 상세 API 문서가 아니라 모든 개발 프로젝트에 적용하는 공통 행동 지침입니다.</p>
+<p>권장 저장 위치:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>프로젝트 저장소/
+├── README.md
+├── docs/
+│   ├── 팀 개발 시작 가이드
+│   ├── api-spec.md
+│   └── troubleshooting.md
+├── frontend/
+└── backend/</code></pre></div>
+<p>문서 역할:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>README.md
+→ 프로젝트 전체 소개와 실행 방법
+
+docs/팀 개발 시작 가이드
+→ 개발 시작 순서, 행동 요령, 기본 지식
+
+docs/api-spec.md
+→ 프론트엔드와 백엔드 API 계약
+
+docs/troubleshooting.md
+→ 실제 오류와 해결 과정</code></pre></div>
+<p>프로젝트별로 달라지는 기술, API, 배포 정보는 별도 문서에 작성하고 이 공통 지침서는 반복해서 사용합니다.</p>
+<hr>
+<h2 class="section-h1" id="29-프로젝트를-처음-받은-날-실제-행동-순서">29. 프로젝트를 처음 받은 날 실제 행동 순서<a class="heading-anchor" href="#29-프로젝트를-처음-받은-날-실제-행동-순서" aria-label="이 섹션 링크">#</a></h2>
+<p>완전 초보라면 아래 순서를 그대로 따라가면 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 저장소를 clone한다.
+2. README를 끝까지 읽는다.
+3. 폴더 구조를 훑는다.
+4. 현재 브랜치와 원격 브랜치를 확인한다.
+5. 필요한 언어·런타임 버전을 확인한다.
+6. 의존성을 설치한다.
+7. 환경변수 예시 파일을 확인한다.
+8. 프론트/백엔드/DB를 각각 실행해본다.
+9. 기존 기능 하나를 직접 눌러 정상 동작을 확인한다.
+10. 내가 맡은 기능의 화면·API·DB를 찾아본다.
+11. 기능을 작은 이슈로 나눈다.
+12. 내 브랜치를 만든 뒤 가장 작은 기능부터 수정한다.
+13. 직접 테스트하고 커밋한다.
+14. push → PR → 리뷰 → 머지한다.
+15. 다른 파트와 통합 테스트한다.</code></pre></div>
+<h3 class="section-h2" id="처음-저장소를-열었을-때-반드시-확인할-파일">처음 저장소를 열었을 때 반드시 확인할 파일<a class="heading-anchor" href="#처음-저장소를-열었을-때-반드시-확인할-파일" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>파일/폴더</th><th>왜 보는가</th></tr></thead><tbody><tr><td><code class="inline-code">README.md</code></td><td>설치·실행·프로젝트 설명 확인</td></tr><tr><td><code class="inline-code">package.json</code></td><td>Node 프로젝트 의존성과 실행 스크립트 확인</td></tr><tr><td><code class="inline-code">requirements.txt</code>, <code class="inline-code">pyproject.toml</code></td><td>Python 의존성 확인</td></tr><tr><td><code class="inline-code">build.gradle</code>, <code class="inline-code">pom.xml</code></td><td>Java 의존성과 빌드 방식 확인</td></tr><tr><td><code class="inline-code">.env.example</code></td><td>필요한 환경변수 이름 확인</td></tr><tr><td><code class="inline-code">.gitignore</code></td><td>올리면 안 되는 파일 확인</td></tr><tr><td><code class="inline-code">docs/</code></td><td>요구사항·API·ERD·협업 규칙 확인</td></tr><tr><td><code class="inline-code">.github/</code></td><td>Issue·PR·CI 규칙 확인</td></tr></tbody></table></div>
+<h3 class="section-h2" id="코드가-안-돌아간다-면-먼저-구분하기">“코드가 안 돌아간다”면 먼저 구분하기<a class="heading-anchor" href="#코드가-안-돌아간다-면-먼저-구분하기" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>설치가 안 됨
+→ 언어/런타임/패키지 매니저 문제
+
+명령 자체가 없음
+→ 잘못된 폴더 또는 scripts/실행 설정 문제
+
+서버는 켜졌지만 페이지 접속 안 됨
+→ 포트/주소/방화벽/프로세스 문제
+
+페이지는 뜨지만 데이터가 안 나옴
+→ API/CORS/인증/백엔드/DB 문제
+
+API는 성공하지만 화면이 이상함
+→ 프론트 상태/렌더링/데이터 매핑 문제</code></pre></div>
+<p>오류 메시지를 보기 전에 코드를 많이 바꾸지 않습니다. <strong>현재 어느 단계까지 정상인지부터 한 단계씩 확인</strong>합니다.</p>
+<hr>
+<h2 class="section-h1" id="30-최종-체크-이-문서를-이해했다면">30. 최종 체크 — 이 문서를 이해했다면<a class="heading-anchor" href="#30-최종-체크-이-문서를-이해했다면" aria-label="이 섹션 링크">#</a></h2>
+<p>다음 질문을 자기 말로 설명할 수 있으면 충분합니다.</p>
+<ul><li>요구사항과 구현 방법은 왜 다른가?</li><li>MVP를 먼저 정하는 이유는 무엇인가?</li><li>사용자 흐름과 API 계약은 왜 코딩보다 먼저 필요한가?</li><li>브랜치 전략은 왜 프로젝트마다 다를 수 있는가?</li><li>환경변수는 왜 Git에 올리면 안 되는가?</li><li>프론트·백엔드·AI가 각각 어디까지 책임지는가?</li><li>오류가 났을 때 어느 계층부터 확인해야 하는가?</li><li>“내 컴퓨터에서 실행됨”과 “배포됨”은 무엇이 다른가?</li></ul>
+<p>모두 외우는 것이 목표가 아니라, <strong>필요할 때 이 문서의 어느 장으로 돌아가야 하는지 아는 것</strong>이 목표입니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="../개발 기초·실전 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">개발 기초·실전 가이드</span></a><a class="doc-nav-link next" href="Git·GitHub 기초 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">Git·GitHub 기초 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발 협업 방식 선택 가이드 · 개발 학습·실전 노트</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="index.html">대시보드</a> <span>›</span><span class="current">개발 협업 방식 선택 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">목차</div>
+      <ul class="toc"><li class="toc-h1"><a href="#목차">목차</a></li><li class="toc-h1"><a href="#1-브랜치-전략">1. 브랜치 전략</a><ul class="toc-h2-list"><li><a href="#1-1-GitFlow-축소판-예시-방식">1.1 GitFlow 축소판 — 예시 방식</a></li><li><a href="#1-2-GitHub-Flow">1.2 GitHub Flow</a></li><li><a href="#1-3-트렁크-기반-개발-Trunk-Based-Development">1.3 트렁크 기반 개발 (Trunk-Based Development)</a></li><li><a href="#1-4-스택-PR-Stacked-PRs">1.4 스택 PR (Stacked PRs)</a></li></ul></li><li class="toc-h1"><a href="#2-리뷰-머지-방식">2. 리뷰·머지 방식</a></li><li class="toc-h1"><a href="#3-작업-착수-전-합의-방식">3. 작업 착수 전 합의 방식</a></li><li class="toc-h1"><a href="#4-실시간-협업-방식">4. 실시간 협업 방식</a></li><li class="toc-h1"><a href="#5-작업-추적-도구">5. 작업 추적 도구</a></li><li class="toc-h1"><a href="#6-저장소-구조">6. 저장소 구조</a></li><li class="toc-h1"><a href="#7-선택-가이드">7. 선택 가이드</a><ul class="toc-h2-list"><li><a href="#먼저-묻는-질문">먼저 묻는 질문</a></li><li><a href="#상황별-시작점">상황별 시작점</a></li><li><a href="#인원수는-보조-기준일-뿐">인원수는 보조 기준일 뿐</a></li></ul></li><li class="toc-h1"><a href="#8-초보-팀에-가장-중요한-협업-원칙">8. 초보 팀에 가장 중요한 협업 원칙</a></li></ul>
+      <a class="sidebar-footer-link" href="index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-collab);">
+        <span class="page-kicker">🧭 협업 방식</span>
+        <h1 class="page-title">개발 협업 방식 선택 가이드</h1>
+        
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>목차</li><li>1. 브랜치 전략</li><li>2. 리뷰·머지 방식</li><li>3. 작업 착수 전 합의 방식</li><li>4. 실시간 협업 방식</li><li>5. 작업 추적 도구</li><li>6. 저장소 구조</li><li>7. 선택 가이드</li><li>8. 초보 팀에 가장 중요한 협업 원칙</li></ol></div>
+        
+        <p>GitFlow 축소판 + 이슈 기반 + PR 리뷰 + Squash merge는 여러 협업 방식 중 하나입니다. <strong>팀 인원수만으로 정답을 고르는 것이 아니라 배포 빈도, 자동화 테스트, 브랜치 수명, Git 숙련도, 리뷰 방식, 장애 위험을 함께 보고 선택</strong>하기 위한 비교 자료입니다.</p>
+<h2 class="section-h1" id="목차">목차<a class="heading-anchor" href="#목차" aria-label="이 섹션 링크">#</a></h2>
+<ol><li>브랜치 전략</li><li>리뷰·머지 방식</li><li>작업 착수 전 합의 방식</li><li>실시간 협업 방식</li><li>작업 추적 도구</li><li>저장소 구조</li><li>선택 가이드</li></ol>
+<hr>
+<h2 class="section-h1" id="1-브랜치-전략">1. 브랜치 전략<a class="heading-anchor" href="#1-브랜치-전략" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="1-1-GitFlow-축소판-예시-방식">1.1 GitFlow 축소판 — 예시 방식<a class="heading-anchor" href="#1-1-GitFlow-축소판-예시-방식" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>main ─ develop ─ feat/* , fix/* , refactor/*
+  └─ hotfix/*</code></pre></div>
+<ul><li><strong>특징</strong>: 배포 브랜치(<code class="inline-code">main</code>)와 개발 기준 브랜치(<code class="inline-code">develop</code>)를 분리. 기능은 <code class="inline-code">develop</code>에서 분기해 다시 <code class="inline-code">develop</code>로 합류.</li><li><strong>장점</strong>: 배포 가능한 상태(<code class="inline-code">main</code>)와 개발 중인 상태(<code class="inline-code">develop</code>)가 항상 분리되어 안전함. 규칙이 명확해 초급 팀·AI 에이전트가 따라 하기 쉬움.</li><li><strong>단점</strong>: 브랜치가 하나 더 많아 소규모 팀에는 다소 번거로움. 배포를 하루에 여러 번 하는 서비스에는 무겁다.</li><li><strong>적합</strong>: 정해진 기간에 한 번(또는 며칠 단위로) 배포하는 프로젝트, 팀원 다수가 Git이 익숙하지 않은 경우.</li></ul>
+<h3 class="section-h2" id="1-2-GitHub-Flow">1.2 GitHub Flow<a class="heading-anchor" href="#1-2-GitHub-Flow" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>main ─ feat/*</code></pre></div>
+<ul><li><strong>특징</strong>: <code class="inline-code">develop</code> 없이 <code class="inline-code">main</code> 하나만 기준으로 씀. 기능 브랜치를 만들고 PR 리뷰 후 바로 <code class="inline-code">main</code>에 머지, 머지되면 곧 배포.</li><li><strong>장점</strong>: 브랜치가 단순함. CI/CD가 잘 갖춰진 팀에서 배포 속도가 빠름.</li><li><strong>단점</strong>: <code class="inline-code">main</code>이 곧 배포 기준이라 리뷰·테스트가 허술하면 바로 사고로 이어짐.</li><li><strong>적합</strong>: 하루에도 여러 번 배포하는 서비스, 자동화된 테스트가 탄탄한 팀.</li></ul>
+<h3 class="section-h2" id="1-3-트렁크-기반-개발-Trunk-Based-Development">1.3 트렁크 기반 개발 (Trunk-Based Development)<a class="heading-anchor" href="#1-3-트렁크-기반-개발-Trunk-Based-Development" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>main (거의 모든 작업이 여기로 자주, 작게 머지됨)</code></pre></div>
+<ul><li><strong>특징</strong>: 브랜치 수명을 최대한 짧게(하루 이내) 가져가고 <code class="inline-code">main</code>에 자주 합류. 미완성 기능은 배포는 하되 코드로 숨기는 <strong>feature flag</strong>로 관리.</li><li><strong>장점</strong>: 브랜치 간 충돌(merge conflict)이 크게 줄어듦. 통합이 항상 최신 상태.</li><li><strong>단점</strong>: feature flag 관리 비용이 생기고, 테스트 자동화 없이는 위험함.</li><li><strong>적합</strong>: 짧은 브랜치와 잦은 통합을 감당할 자동화 테스트·CI가 있고, feature flag 같은 운영 방식에 익숙한 팀. 인원수 자체보다 이런 운영 역량이 더 중요합니다.</li></ul>
+<h3 class="section-h2" id="1-4-스택-PR-Stacked-PRs">1.4 스택 PR (Stacked PRs)<a class="heading-anchor" href="#1-4-스택-PR-Stacked-PRs" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>feat/step-1 → feat/step-2 (step-1 위에 얹음) → feat/step-3 …</code></pre></div>
+<ul><li><strong>특징</strong>: 큰 기능을 순서가 있는 여러 개의 작은 PR로 쪼개서 차례로 쌓아 올림. Graphite, git-spice 같은 도구로 관리.</li><li><strong>장점</strong>: 리뷰 단위가 작아져 리뷰 속도·품질이 올라감.</li><li><strong>단점</strong>: 툴 없이 수동으로 관리하면 복잡함. 학습 곡선 있음.</li><li><strong>적합</strong>: 리뷰 대기 시간이 병목인 팀, 기능 하나가 며칠씩 걸리는 프로젝트.</li></ul>
+<hr>
+<h2 class="section-h1" id="2-리뷰-머지-방식">2. 리뷰·머지 방식<a class="heading-anchor" href="#2-리뷰-머지-방식" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>방식</th><th>설명</th><th>적합한 경우</th></tr></thead><tbody><tr><td><strong>PR 승인 후 Squash merge</strong></td><td>리뷰 승인 뒤 커밋을 하나로 뭉쳐서 머지</td><td>히스토리를 깔끔하게 유지하고 싶을 때</td></tr><tr><td><strong>Merge commit</strong></td><td>커밋 이력을 그대로 보존하며 머지</td><td>세부 커밋 이력이 디버깅에 중요할 때</td></tr><tr><td><strong>Rebase merge</strong></td><td>커밋을 선형으로 재배치 후 머지</td><td>히스토리를 깔끔하되 커밋 단위는 유지하고 싶을 때</td></tr><tr><td><strong>Merge Queue</strong></td><td>PR을 큐에 넣으면 최신 <code class="inline-code">main</code> 기준으로 자동 재테스트 후 순차 머지</td><td>동시에 여러 PR이 몰리는 팀, GitHub 자체 기능으로 지원</td></tr><tr><td><strong>셀프 머지 허용</strong></td><td>리뷰 없이 본인이 바로 머지</td><td>1인 프로젝트, 극초기 프로토타입만 (팀 프로젝트에는 비권장)</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="3-작업-착수-전-합의-방식">3. 작업 착수 전 합의 방식<a class="heading-anchor" href="#3-작업-착수-전-합의-방식" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>이슈 기반</strong>: 모든 작업은 GitHub Issue로 시작, 브랜치·커밋·PR에 이슈 번호 연결. 소규모 팀에 가장 단순하고 효과적.</li><li><strong>RFC / 설계 문서 선행</strong>: 코드를 짜기 전에 문제 정의·설계안을 문서로 써서 팀 합의를 받음. 되돌리기 어려운 결정(DB 스키마, API 설계, 아키텍처)이 많을 때 유용. 이슈 기반과 병행 가능 (큰 결정만 RFC로, 나머지는 이슈로).</li><li><strong>스프린트 계획 회의</strong>: 매 스프린트 시작 시 전원이 모여 작업을 분배. 팀 규모가 커지고 일정이 길어질수록 유용.</li></ul>
+<hr>
+<h2 class="section-h1" id="4-실시간-협업-방식">4. 실시간 협업 방식<a class="heading-anchor" href="#4-실시간-협업-방식" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>페어 프로그래밍</strong>: 두 명이 한 코드를 동시에 짬 (드라이버/네비게이터 역할 교대). 작성 과정에서 지속적인 검토가 이루어져 별도 리뷰 부담을 줄일 수 있지만, 중요한 변경은 팀의 PR·리뷰 정책을 그대로 적용하는 편이 안전합니다. 지식 공유와 온보딩에 특히 유용합니다.</li><li><strong>몹 프로그래밍</strong>: 팀 전체가 한 화면을 보며 함께 짬. 온보딩이나 어려운 문제를 풀 때 짧게 활용.</li><li><strong>비동기 협업</strong>: 각자 이슈를 맡아 독립적으로 작업 후 PR로 통합. 시간대가 다르거나 개인 속도로 일하고 싶은 팀에 적합.</li></ul>
+<hr>
+<h2 class="section-h1" id="5-작업-추적-도구">5. 작업 추적 도구<a class="heading-anchor" href="#5-작업-추적-도구" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>도구</th><th>특징</th></tr></thead><tbody><tr><td><strong>GitHub Issues</strong></td><td>코드 저장소와 붙어 있어 브랜치·PR과 자동 연결됨. 소규모 팀에 충분</td></tr><tr><td><strong>GitHub Projects (칸반 보드)</strong></td><td>Issues를 보드 형태로 시각화. 이슈 수가 많아지고 우선순위 관리가 필요할 때 병행</td></tr><tr><td><strong>Jira / Linear</strong></td><td>더 무거운 워크플로우, 스프린트·리포팅 기능이 강력. 팀·조직 규모가 커질 때</td></tr><tr><td><strong>Notion / 위키</strong></td><td>기획·회의록·문서 중심. 이슈 추적보다는 지식 축적용</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="6-저장소-구조">6. 저장소 구조<a class="heading-anchor" href="#6-저장소-구조" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>모노레포</strong> (예시 방식: <code class="inline-code">/frontend</code>, <code class="inline-code">/backend</code>, <code class="inline-code">/docs</code> 한 저장소): 한 번에 전체를 보기 쉽고, 초기 설정이 간단함. 소규모 팀·짧은 프로젝트에 적합.</li><li><strong>멀티레포</strong>: FE/BE를 별도 저장소로 분리. 팀이 커지고 배포 주기가 서로 달라질 때, 접근 권한을 분리하고 싶을 때 유용. 대신 두 저장소 간 API 계약 동기화 비용이 생김.</li><li><strong>모노레포 + 도구(Nx, Turborepo 등)</strong>: 저장소는 하나지만 빌드·배포 파이프라인을 패키지별로 독립시킴. 팀·서비스가 커졌을 때 고려.</li></ul>
+<hr>
+<h2 class="section-h1" id="7-선택-가이드">7. 선택 가이드<a class="heading-anchor" href="#7-선택-가이드" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="먼저-묻는-질문">먼저 묻는 질문<a class="heading-anchor" href="#먼저-묻는-질문" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. main에 머지되면 바로 배포되는가?
+2. 자동 테스트가 어느 정도 있는가?
+3. 기능 브랜치를 얼마나 오래 유지하는가?
+4. Git에 익숙하지 않은 팀원이 많은가?
+5. 배포 중인 코드와 개발 중인 코드를 분리해야 하는가?
+6. 동시에 PR이 많이 올라오는가?
+7. 큰 설계 결정을 문서로 먼저 합의할 필요가 있는가?</code></pre></div>
+<h3 class="section-h2" id="상황별-시작점">상황별 시작점<a class="heading-anchor" href="#상황별-시작점" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>상황</th><th>시작하기 좋은 조합</th><th>이유</th></tr></thead><tbody><tr><td>Git 초보가 많은 단기 팀 프로젝트</td><td>GitFlow 축소판 또는 단순 GitHub Flow + Issue + PR 리뷰 + Squash merge</td><td>규칙을 명확하게 만들기 쉬움</td></tr><tr><td>1~2인 프로토타입</td><td>GitHub Flow + 작은 PR 또는 페어 프로그래밍</td><td><code class="inline-code">develop</code>을 둘 실익이 적을 수 있음</td></tr><tr><td>main이 자주 배포되는 서비스</td><td>GitHub Flow 또는 Trunk-Based + 자동 테스트</td><td>오래된 브랜치를 줄이고 통합을 자주 함</td></tr><tr><td>여러 PR이 동시에 몰려 main 최신 상태 검증이 중요</td><td>Merge Queue 검토</td><td>머지 직전 최신 기준으로 재검증 가능</td></tr><tr><td>큰 기능을 리뷰 가능한 작은 단계로 쪼개야 함</td><td>Stacked PR 검토</td><td>PR 하나의 크기를 줄일 수 있음</td></tr><tr><td>DB·API·아키텍처처럼 되돌리기 어려운 결정이 많음</td><td>Issue + RFC/설계 문서 병행</td><td>구현 전에 중요한 합의를 남길 수 있음</td></tr><tr><td>FE/BE가 완전히 다른 배포·권한 체계를 가짐</td><td>멀티레포 검토</td><td>독립 운영 이점이 커질 수 있음</td></tr></tbody></table></div>
+<h3 class="section-h2" id="인원수는-보조-기준일-뿐">인원수는 보조 기준일 뿐<a class="heading-anchor" href="#인원수는-보조-기준일-뿐" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>6명이라고 무조건 Trunk-Based가 필요한 것도 아니고,
+3명이라고 무조건 GitFlow가 맞는 것도 아닙니다.</code></pre></div>
+<p>같은 4인 팀이라도:</p>
+<ul><li>Git 초보 + 3일 프로젝트 → 명확한 GitFlow 축소판이 편할 수 있음</li><li>Git 숙련 + CI 충분 + 자주 배포 → GitHub Flow가 더 단순할 수 있음</li></ul>
+<p>따라서 <strong>프로젝트마다 CONTRIBUTING.md에 이번 팀의 규칙을 확정</strong>하고, 이 문서는 선택 근거로만 사용합니다.</p>
+<hr>
+<h2 class="section-h1" id="8-초보-팀에-가장-중요한-협업-원칙">8. 초보 팀에 가장 중요한 협업 원칙<a class="heading-anchor" href="#8-초보-팀에-가장-중요한-협업-원칙" aria-label="이 섹션 링크">#</a></h2>
+<p>브랜치 전략 이름보다 아래가 더 중요합니다.</p>
+<ol><li><strong>기준 브랜치에 직접 작업하지 않기</strong></li><li><strong>작업을 작은 단위로 나누기</strong></li><li><strong>작업 시작 전에 담당 범위 합의하기</strong></li><li><strong>API·DB·환경변수 변경은 바로 공유하기</strong></li><li><strong>PR을 너무 크게 만들지 않기</strong></li><li><strong>머지 전에 실행·테스트 결과 남기기</strong></li><li><strong>충돌을 피하려고 소통을 생략하지 않기</strong></li><li><strong>팀원이 이해하지 못한 AI 생성 코드를 그대로 머지하지 않기</strong></li></ol>
+<p>협업 방식은 팀을 돕기 위한 도구입니다. 규칙이 복잡해져 개발보다 규칙 관리에 시간이 더 많이 든다면 <strong>현재 프로젝트 규모에 비해 과한 방식인지 다시 확인</strong>합니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="개발 기초·실전 가이드/생성형 AI 기능 개발 기초 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">생성형 AI 기능 개발 기초 가이드</span></a><a class="doc-nav-link next" href="GitHub 팀 협업 템플릿.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">GitHub 팀 협업 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="assets/main.js" defer></script>
+</body>
+</html>

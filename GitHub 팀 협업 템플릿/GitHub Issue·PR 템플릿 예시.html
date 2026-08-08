@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Issue·PR 템플릿 예시 · 개발 학습·실전 노트</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../GitHub 팀 협업 템플릿.html">GitHub 팀 협업 가이드</a> <span>›</span><span class="current">GitHub Issue·PR 템플릿 예시</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">목차</div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-기능-Issue-템플릿">1. 기능 Issue 템플릿</a></li><li class="toc-h1"><a href="#2-버그-Issue-템플릿">2. 버그 Issue 템플릿</a></li><li class="toc-h1"><a href="#3-Pull-Request-템플릿">3. Pull Request 템플릿</a></li><li class="toc-h1"><a href="#4-템플릿-사용-원칙">4. 템플릿 사용 원칙</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-github);">
+        <span class="page-kicker">🏷️ GitHub 팀 협업 가이드</span>
+        <h1 class="page-title">GitHub Issue·PR 템플릿 예시</h1>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>용도:</strong> 새 저장소의 <code class="inline-code">.github/ISSUE_TEMPLATE/</code>와 <code class="inline-code">pull_request_template.md</code>를 만들 때 복사해서 쓰는 기본 예시입니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 기능 Issue 템플릿</li><li>2. 버그 Issue 템플릿</li><li>3. Pull Request 템플릿</li><li>4. 템플릿 사용 원칙</li></ol></div>
+        
+        <h2 class="section-h1" id="1-기능-Issue-템플릿">1. 기능 Issue 템플릿<a class="heading-anchor" href="#1-기능-Issue-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<p>파일 예: <code class="inline-code">.github/ISSUE_TEMPLATE/feature.md</code></p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>---
+name: 기능 구현
+about: 새로운 기능 작업
+title: &quot;[Feat] &quot;
+labels: &quot;&quot;
+assignees: &quot;&quot;
+---
+
+## 목적
+이 기능이 왜 필요한지 적습니다.
+
+## 구현 범위
+- [ ]
+- [ ]
+
+## 완료 조건
+- [ ]
+- [ ]
+
+## 관련 화면 / API
+- 화면:
+- API:
+
+## 다른 파트와 합의할 내용
+- [ ]
+
+## 참고 자료
+-</code></pre></div>
+<hr>
+<h2 class="section-h1" id="2-버그-Issue-템플릿">2. 버그 Issue 템플릿<a class="heading-anchor" href="#2-버그-Issue-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<p>파일 예: <code class="inline-code">.github/ISSUE_TEMPLATE/bug.md</code></p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>---
+name: 버그
+about: 오류 수정
+title: &quot;[Bug] &quot;
+labels: &quot;bug&quot;
+assignees: &quot;&quot;
+---
+
+## 발생 상황
+
+## 재현 순서
+1.
+2.
+3.
+
+## 예상 결과
+
+## 실제 결과
+
+## 오류 메시지 / 로그
+```text
+붙여넣기
+```
+
+## 발생 환경
+- 브랜치:
+- OS:
+- 브라우저/런타임:
+- 관련 버전:
+
+## 원인
+확인 후 작성
+
+## 해결
+확인 후 작성</code></pre></div>
+<hr>
+<h2 class="section-h1" id="3-Pull-Request-템플릿">3. Pull Request 템플릿<a class="heading-anchor" href="#3-Pull-Request-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<p>파일 예: <code class="inline-code">.github/pull_request_template.md</code></p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 관련 Issue
+Closes #
+
+## 변경 내용
+-
+-
+
+## 변경 이유
+
+## 확인 방법
+1.
+2.
+
+## 테스트
+- [ ] 로컬 실행 확인
+- [ ] 관련 기능 정상 동작
+- [ ] 오류/예외 케이스 확인
+- [ ] build/lint/test 실행 (프로젝트에 있는 항목만)
+
+## 공유가 필요한 변경
+- [ ] API 변경
+- [ ] DB/마이그레이션 변경
+- [ ] 환경변수 추가
+- [ ] 패키지 추가
+- [ ] 없음
+
+## 스크린샷
+UI 변경 시 첨부
+
+## 리뷰어가 특히 봐야 할 부분
+-</code></pre></div>
+<hr>
+<h2 class="section-h1" id="4-템플릿-사용-원칙">4. 템플릿 사용 원칙<a class="heading-anchor" href="#4-템플릿-사용-원칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>체크박스를 많이 만드는 것보다 <strong>실제로 팀이 확인할 항목만</strong> 둡니다.</li><li>UI 변경은 스크린샷을 첨부하면 리뷰가 빨라집니다.</li><li>API·DB·환경변수 변경은 PR에서 눈에 띄게 표시합니다.</li><li>“테스트 완료”라고 체크했다면 실제로 어떤 명령/흐름을 확인했는지 적습니다.</li><li>AI 코딩 에이전트가 작성한 PR도 같은 템플릿을 사용합니다.</li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="기획·API·일정 템플릿 (PLANNING.md).html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">기획·API·일정 템플릿 (PLANNING.md)</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

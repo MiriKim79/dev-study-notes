@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 코딩 에이전트 작업 규칙 (AGENTS.md) · 개발 학습·실전 노트</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../GitHub 팀 협업 템플릿.html">GitHub 팀 협업 가이드</a> <span>›</span><span class="current">AI 코딩 에이전트 작업 규칙 (AGENTS.md)</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">목차</div>
+      <ul class="toc"><li class="toc-h1"><a href="#프로젝트-개요">프로젝트 개요</a></li><li class="toc-h1"><a href="#필수-규칙">필수 규칙</a></li><li class="toc-h1"><a href="#분업-경계">분업 경계</a></li><li class="toc-h1"><a href="#작업-방식">작업 방식</a></li><li class="toc-h1"><a href="#선택-도구별-전용-파일">(선택) 도구별 전용 파일</a></li><li class="toc-h1"><a href="#작업-전-확인">작업 전 확인</a></li><li class="toc-h1"><a href="#작업-후-확인">작업 후 확인</a></li><li class="toc-h1"><a href="#절대-하지-말-것">절대 하지 말 것</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-github);">
+        <span class="page-kicker">🧠 GitHub 팀 협업 가이드</span>
+        <h1 class="page-title">AI 코딩 에이전트 작업 규칙 (AGENTS.md)</h1>
+        
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>프로젝트 개요</li><li>필수 규칙</li><li>분업 경계</li><li>작업 방식</li><li>(선택) 도구별 전용 파일</li><li>작업 전 확인</li><li>작업 후 확인</li><li>절대 하지 말 것</li></ol></div>
+        
+        <p>이 저장소에서 작업하는 AI 코딩 에이전트를 위한 지침 템플릿입니다. 사람용 상세 규칙은 <code class="inline-code">CONTRIBUTING.md</code>, 기획·명세는 <code class="inline-code">docs/PLANNING.md</code>에 있습니다.</p>
+<blockquote><p>도구마다 <code class="inline-code">AGENTS.md</code> 지원 방식이 다를 수 있습니다. 사용하는 코딩 도구가 이 파일을 자동으로 읽는지 공식 문서를 확인하고, 필요하면 도구 전용 지침 파일에서 명시적으로 참조합니다.</p></blockquote>
+<h2 class="section-h1" id="프로젝트-개요">프로젝트 개요<a class="heading-anchor" href="#프로젝트-개요" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>{{프로젝트 한 줄 설명}}. {{팀 인원 구성}}이 {{기간}} 안에 완성하는 프로젝트입니다.</li><li>확정 스택: {{언어/프레임워크}} (<code class="inline-code">/{{frontend-dir}}</code>), {{백엔드 스택}} (<code class="inline-code">/{{backend-dir}}</code>), {{DB}}, {{배포 환경}}</li><li>모노레포/멀티레포: {{디렉터리 구조}}. 구조가 아직 없다면 스캐폴드 전 단계이므로 임의로 만들지 말고 사용자와 합의합니다.</li></ul>
+<h2 class="section-h1" id="필수-규칙">필수 규칙<a class="heading-anchor" href="#필수-규칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>기준 브랜치는 <code class="inline-code">{{develop 등}}</code>입니다. <code class="inline-code">{{main}}</code>에 직접 커밋·push하지 않습니다. <code class="inline-code">hotfix/*</code>만 <code class="inline-code">{{main}}</code>에서 분기합니다.</li><li>브랜치 이름: <code class="inline-code">feat|fix|refactor|hotfix/&lt;내용-kebab-case&gt;-#&lt;이슈번호&gt;</code> — 예: <code class="inline-code">feat/social-login-#5</code></li><li>커밋 형식: <code class="inline-code">머릿말: 설명 (#이슈번호)</code> — 예: <code class="inline-code">Feat: 로그인 기능 구현 (#5)</code> + 머릿말은 첫 글자 대문자: <code class="inline-code">Feat</code> <code class="inline-code">Fix</code> <code class="inline-code">Refactor</code> <code class="inline-code">Style</code> <code class="inline-code">Comment</code> <code class="inline-code">Docs</code> <code class="inline-code">Test</code> <code class="inline-code">Chore</code> <code class="inline-code">Rename</code> <code class="inline-code">Remove</code> (소문자 <code class="inline-code">feat:</code> 금지) + 제목·본문은 {{한글/영어}}로 쓰고, 제목 끝에 마침표를 붙이지 않으며, 본문에는 무엇을 왜 바꿨는지 씁니다.</li><li>PR은 <code class="inline-code">{{develop}}</code>을 base로 하고(<code class="inline-code">hotfix/*</code>만 <code class="inline-code">{{main}}</code>) 본문에 <code class="inline-code">Closes #이슈번호</code>를 넣습니다. 사람 리뷰 승인 없이 병합하지 않습니다.</li></ul>
+<h2 class="section-h1" id="분업-경계">분업 경계<a class="heading-anchor" href="#분업-경계" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><code class="inline-code">/{{frontend-dir}}</code>는 {{담당}} 소유, <code class="inline-code">/{{backend-dir}}</code>는 {{담당}} 소유입니다. 요청받은 작업이 다른 파트 디렉터리 수정을 요구하면 진행 전에 사용자에게 확인합니다.</li><li>API 명세({{문서 경로}})는 FE/BE 간 계약입니다. 임의로 바꾸지 말고, 변경이 필요하면 사용자에게 알린 뒤 문서 갱신을 함께 합니다.</li></ul>
+<h2 class="section-h1" id="작업-방식">작업 방식<a class="heading-anchor" href="#작업-방식" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>새 라이브러리 도입은 팀 합의 사항입니다. 임의로 추가하지 말고 먼저 제안합니다.</li><li>시크릿(.env, DB 비밀번호, 클라우드 키)을 커밋하지 않습니다.</li><li>{{프로젝트 기간}} 일정의 프로젝트입니다. 요청 범위를 넘는 리팩토링이나 구조 변경을 하지 않습니다.</li></ul>
+<h2 class="section-h1" id="선택-도구별-전용-파일">(선택) 도구별 전용 파일<a class="heading-anchor" href="#선택-도구별-전용-파일" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>Claude Code를 쓴다면 <code class="inline-code">CLAUDE.md</code>를 만들고 <code class="inline-code">@AGENTS.md</code> 한 줄로 이 파일을 불러오게 합니다. 도구 전용 지침(예: 커스텀 스킬 사용법)만 CLAUDE.md에 추가로 적습니다.</li><li>브랜치 생성·커밋/PR 작성을 스킬(슬래시 커맨드)로 자동화하면 규칙 준수가 훨씬 안정적입니다. (예: <code class="inline-code">/new-branch</code>, <code class="inline-code">/commit-pr</code>)</li></ul>
+<h2 class="section-h1" id="작업-전-확인">작업 전 확인<a class="heading-anchor" href="#작업-전-확인" aria-label="이 섹션 링크">#</a></h2>
+<p>AI 에이전트는 코드를 수정하기 전에 최소한 다음을 확인합니다.</p>
+<ol><li>현재 브랜치</li><li><code class="inline-code">git status</code></li><li>관련 README/기획/API 문서</li><li>수정 대상 파일과 호출 관계</li><li>기존 테스트 또는 실행 방법</li></ol>
+<h2 class="section-h1" id="작업-후-확인">작업 후 확인<a class="heading-anchor" href="#작업-후-확인" aria-label="이 섹션 링크">#</a></h2>
+<ol><li>변경한 파일 목록 확인</li><li>불필요한 포맷 변경·대규모 리팩토링이 섞이지 않았는지 확인</li><li>가능한 테스트·lint·build 실행</li><li>API/DB/환경변수 변경 시 문서 반영</li><li>새 시크릿이나 개인정보가 diff에 없는지 확인</li><li>무엇을 검증하지 못했는지 사람에게 명시</li></ol>
+<h2 class="section-h1" id="절대-하지-말-것">절대 하지 말 것<a class="heading-anchor" href="#절대-하지-말-것" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>테스트가 통과했다고 거짓으로 말하지 않기</li><li>읽지 않은 파일 내용을 추측해 수정하지 않기</li><li>요청 없이 <code class="inline-code">main</code>/<code class="inline-code">develop</code> force push 또는 이력 재작성하지 않기</li><li>사용자 승인 없이 운영 데이터 삭제·배포·결제 등 고위험 작업을 실행하지 않기</li><li><code class="inline-code">.env</code>나 실제 API Key를 문서·코드·커밋에 넣지 않기</li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="팀 GitHub 협업 규칙 (CONTRIBUTING.md).html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">팀 GitHub 협업 규칙 (CONTRIBUTING.md)</span></a><a class="doc-nav-link next" href="Claude Code 작업 규칙 (CLAUDE.md).html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">Claude Code 작업 규칙 (CLAUDE.md)</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

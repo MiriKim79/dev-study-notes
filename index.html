@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발 공부 가이드 · 개발 학습·실전 노트</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="메뉴" style="visibility:hidden;">☰</button>
+    <a class="brand" href="index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><span class="current">학습 대시보드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="page-shell">
+  <div class="dashboard-shell">
+    <div class="dashboard-intro">
+      <h1 class="dashboard-title">개발 공부 가이드</h1>
+      <p class="dashboard-desc">개발 분야별 기초를 따로 외우기보다, 프로젝트 전체 흐름 속에서 프론트엔드·백엔드·생성형 AI·Git이 어떻게 연결되는지 이해하기 위한 학습 자료입니다. 원본 Markdown 내용을 그대로, 목차·핵심 개념 박스·코드 하이라이트가 있는 학습 화면으로 볼 수 있습니다.</p>
+    </div>
+
+    <div class="section-heading">학습 자료 한눈에 보기</div>
+    <div class="overview-table-wrap"><table class="overview-table"><thead><tr><th>학습 자료</th><th>배우는 내용</th><th>추천 대상</th></tr></thead><tbody><tr><td class="name-cell"><a href="개발 기초·실전 가이드/팀 개발 시작 가이드.html">팀 개발 시작 가이드</a></td><td>요구사항 확인, MVP 범위, 사용자 흐름, 기술·구조 결정, 구현, 테스트, 배포, 회고까지 전체 순서</td><td>처음 팀 프로젝트를 시작할 때</td></tr><tr><td class="name-cell"><a href="개발 기초·실전 가이드/프론트엔드 기초 가이드.html">프론트엔드 기초 가이드</a></td><td>HTML·CSS·JavaScript부터 React, API 통신, 상태 관리, 인증, 배포까지 공통 기초</td><td>프론트엔드를 처음 공부할 때</td></tr><tr><td class="name-cell"><a href="개발 기초·실전 가이드/백엔드 기초 가이드.html">백엔드 기초 가이드</a></td><td>서버, HTTP/REST, DB, 인증·인가, 보안, 테스트, 운영·배포의 기본 원리</td><td>백엔드를 처음 공부할 때</td></tr><tr><td class="name-cell"><a href="개발 기초·실전 가이드/생성형 AI 기능 개발 기초 가이드.html">생성형 AI 기능 개발 기초 가이드</a></td><td>프롬프트, 구조화 출력, 평가, RAG, Tool Calling, Agent, 보안, 비용·지연시간</td><td>AI 기능을 서비스에 붙이고 싶을 때</td></tr><tr><td class="name-cell"><a href="개발 기초·실전 가이드/Git·GitHub 기초 가이드.html">Git·GitHub 기초 가이드</a></td><td>저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증</td><td>Git을 처음 사용할 때</td></tr><tr><td class="name-cell"><a href="개발 협업 방식 선택 가이드.html">개발 협업 방식 선택 가이드</a></td><td>브랜치 전략, 리뷰·머지 방식, 실시간 협업, 저장소 구조 비교</td><td>팀 Git 협업 방식을 정할 때</td></tr><tr><td class="name-cell"><a href="GitHub 팀 협업 템플릿.html">GitHub 팀 협업 가이드</a></td><td>CONTRIBUTING, AGENTS, CLAUDE, PLANNING, Issue·PR 템플릿</td><td>실제 팀 프로젝트를 진행할 때</td></tr></tbody></table></div>
+
+    <div class="section-heading">처음 개발을 시작한다면 — 추천 학습 순서</div>
+    <div class="step-flow"><div class="step-item"><div class="step-num">1</div><div class="step-body"><div class="step-title"><a href="개발 기초·실전 가이드/팀 개발 시작 가이드.html">팀 개발 시작 가이드</a></div><div class="step-sub">무엇을 확인하고 어떤 순서로 개발할지 먼저 파악</div></div></div><div class="step-arrow">↓</div><div class="step-item"><div class="step-num">2</div><div class="step-body"><div class="step-title"><a href="개발 기초·실전 가이드/Git·GitHub 기초 가이드.html">Git · GitHub 기초 가이드</a></div><div class="step-sub">버전 관리와 협업의 공통 기초 익히기</div></div></div><div class="step-arrow">↓</div><div class="step-item"><div class="step-num">3</div><div class="step-body"><div class="step-title">원하는 개발 분야 선택</div></div></div><div class="step-branches"><a class="step-branch" href="개발 기초·실전 가이드/프론트엔드 기초 가이드.html">🎨 프론트엔드 기초 가이드</a><a class="step-branch" href="개발 기초·실전 가이드/백엔드 기초 가이드.html">🛠️ 백엔드 기초 가이드</a><a class="step-branch" href="개발 기초·실전 가이드/생성형 AI 기능 개발 기초 가이드.html">🤖 생성형 AI 기능 개발 기초 가이드</a></div><div class="step-arrow">↓</div><div class="step-item"><div class="step-num">4</div><div class="step-body"><div class="step-title"><a href="개발 협업 방식 선택 가이드.html">개발 협업 방식 선택 가이드</a></div><div class="step-sub">팀에 맞는 브랜치·리뷰 방식 정하기</div></div></div><div class="step-arrow">↓</div><div class="step-item"><div class="step-num">5</div><div class="step-body"><div class="step-title"><a href="GitHub 팀 협업 템플릿.html">GitHub 팀 협업 가이드</a></div><div class="step-sub">CONTRIBUTING·AGENTS 등 실전 협업 규칙 적용</div></div></div></div>
+
+    <div class="section-heading">학습 자료</div>
+    <div class="card-grid"><a class="study-card" href="개발 기초·실전 가이드/팀 개발 시작 가이드.html" style="--card-accent: var(--cat-start);"><span class="study-card-icon">🚀</span><div class="study-card-title">팀 개발 시작 가이드</div><div class="study-card-desc">요구사항 확인, MVP 범위, 사용자 흐름, 기술·구조 결정, 구현, 테스트, 배포, 회고까지 전체 순서</div><span class="study-card-tag">팀 개발 시작 →</span></a><a class="study-card" href="개발 기초·실전 가이드/프론트엔드 기초 가이드.html" style="--card-accent: var(--cat-frontend);"><span class="study-card-icon">🎨</span><div class="study-card-title">프론트엔드 기초 가이드</div><div class="study-card-desc">HTML·CSS·JavaScript부터 React, API 통신, 상태 관리, 인증, 배포까지 공통 기초</div><span class="study-card-tag">프론트엔드 →</span></a><a class="study-card" href="개발 기초·실전 가이드/백엔드 기초 가이드.html" style="--card-accent: var(--cat-backend);"><span class="study-card-icon">🛠️</span><div class="study-card-title">백엔드 기초 가이드</div><div class="study-card-desc">서버, HTTP/REST, DB, 인증·인가, 보안, 테스트, 운영·배포의 기본 원리</div><span class="study-card-tag">백엔드 →</span></a><a class="study-card" href="개발 기초·실전 가이드/생성형 AI 기능 개발 기초 가이드.html" style="--card-accent: var(--cat-ai);"><span class="study-card-icon">🤖</span><div class="study-card-title">생성형 AI 기능 개발 기초 가이드</div><div class="study-card-desc">프롬프트, 구조화 출력, 평가, RAG, Tool Calling, Agent, 보안, 비용·지연시간</div><span class="study-card-tag">생성형 AI →</span></a><a class="study-card" href="개발 기초·실전 가이드/Git·GitHub 기초 가이드.html" style="--card-accent: var(--cat-git);"><span class="study-card-icon">🌿</span><div class="study-card-title">Git·GitHub 기초 가이드</div><div class="study-card-desc">저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증</div><span class="study-card-tag">Git·GitHub →</span></a><a class="study-card" href="개발 협업 방식 선택 가이드.html" style="--card-accent: var(--cat-collab);"><span class="study-card-icon">🧭</span><div class="study-card-title">개발 협업 방식 선택 가이드</div><div class="study-card-desc">브랜치 전략, 리뷰·머지 방식, 실시간 협업, 저장소 구조 비교</div><span class="study-card-tag">협업 방식 →</span></a><a class="study-card" href="GitHub 팀 협업 템플릿.html" style="--card-accent: var(--cat-github);"><span class="study-card-icon">🤝</span><div class="study-card-title">GitHub 팀 협업 가이드</div><div class="study-card-desc">CONTRIBUTING, AGENTS, CLAUDE, PLANNING, Issue·PR 템플릿</div><span class="study-card-tag">GitHub 팀 협업 →</span></a></div>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="assets/main.js" defer></script>
+</body>
+</html>

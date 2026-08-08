@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>팀 GitHub 협업 규칙 (CONTRIBUTING.md) · 개발 학습·실전 노트</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../GitHub 팀 협업 템플릿.html">GitHub 팀 협업 가이드</a> <span>›</span><span class="current">팀 GitHub 협업 규칙 (CONTRIBUTING.md)</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">목차</div>
+      <ul class="toc"><li class="toc-h1"><a href="#브랜치-전략">브랜치 전략</a><ul class="toc-h2-list"><li><a href="#브랜치-이름">브랜치 이름</a></li></ul></li><li class="toc-h1"><a href="#커밋-컨벤션">커밋 컨벤션</a></li><li class="toc-h1"><a href="#이슈">이슈</a><ul class="toc-h2-list"><li><a href="#스프린트-구조-이슈-계층-선택">스프린트 구조 (이슈 계층, 선택)</a></li></ul></li><li class="toc-h1"><a href="#PR-규칙">PR 규칙</a></li><li class="toc-h1"><a href="#분업과-코드-소유권">분업과 코드 소유권</a></li><li class="toc-h1"><a href="#저장소-설정-체크리스트-관리자">저장소 설정 체크리스트 (관리자)</a></li><li class="toc-h1"><a href="#AI-에이전트-사용-규칙">AI 에이전트 사용 규칙</a></li><li class="toc-h1"><a href="#PR-작성-전-최종-체크">PR 작성 전 최종 체크</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-github);">
+        <span class="page-kicker">📋 GitHub 팀 협업 가이드</span>
+        <h1 class="page-title">팀 GitHub 협업 규칙 (CONTRIBUTING.md)</h1>
+        
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>브랜치 전략</li><li>커밋 컨벤션</li><li>이슈</li><li>PR 규칙</li><li>분업과 코드 소유권</li><li>저장소 설정 체크리스트 (관리자)</li><li>AI 에이전트 사용 규칙</li><li>PR 작성 전 최종 체크</li></ol></div>
+        
+        <p>{{프로젝트명}} 팀의 협업 규칙 템플릿입니다. 기획·명세는 <code class="inline-code">docs/PLANNING.md</code>, AI 코딩 에이전트 규칙은 <code class="inline-code">AGENTS.md</code>를 참고합니다.</p>
+<blockquote><p>아래 GitFlow 축소판은 <strong>예시 기본값</strong>입니다. 프로젝트에 GitHub Flow나 다른 방식을 쓰기로 했다면 브랜치 전략·PR base 규칙을 함께 수정하세요.</p></blockquote>
+<h2 class="section-h1" id="브랜치-전략">브랜치 전략<a class="heading-anchor" href="#브랜치-전략" aria-label="이 섹션 링크">#</a></h2>
+<p><a href="https://techblog.woowahan.com/2553/" target="_blank" rel="noopener">깃 플로우</a>를 프로젝트 규모에 맞게 축소했습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>main ─── develop ─── feat/…
+  └─ hotfix/…       ├─ fix/…
+                    └─ refactor/…</code></pre></div>
+<div class="table-scroll"><table><thead><tr><th>브랜치</th><th>용도</th><th>분기 기준</th></tr></thead><tbody><tr><td><code class="inline-code">main</code></td><td>서비스(배포) 브랜치. 직접 push 금지</td><td>—</td></tr><tr><td><code class="inline-code">develop</code></td><td>기본(default) 브랜치. 개발·테스트·릴리즈의 기준</td><td><code class="inline-code">main</code></td></tr><tr><td><code class="inline-code">feat/*</code></td><td>기능 단위 구현</td><td><code class="inline-code">develop</code></td></tr><tr><td><code class="inline-code">fix/*</code></td><td>버그 수정·에러 해결</td><td><code class="inline-code">develop</code></td></tr><tr><td><code class="inline-code">refactor/*</code></td><td>기능 변경 없는 코드 구조 개선</td><td><code class="inline-code">develop</code></td></tr><tr><td><code class="inline-code">hotfix/*</code></td><td>서비스 중 긴급 수정</td><td><code class="inline-code">main</code></td></tr></tbody></table></div>
+<h3 class="section-h2" id="브랜치-이름">브랜치 이름<a class="heading-anchor" href="#브랜치-이름" aria-label="이 섹션 링크">#</a></h3>
+<p><code class="inline-code">&lt;머릿말&gt;/&lt;내용-kebab-case&gt;-#&lt;이슈번호&gt;</code></p>
+<ul><li>예: <code class="inline-code">feat/social-login-#5</code>, <code class="inline-code">fix/login-error-#8</code>, <code class="inline-code">refactor/remove-duplication-#12</code></li><li>이슈 번호는 항상 마지막에 붙입니다.</li></ul>
+<h2 class="section-h1" id="커밋-컨벤션">커밋 컨벤션<a class="heading-anchor" href="#커밋-컨벤션" aria-label="이 섹션 링크">#</a></h2>
+<p>형식: <code class="inline-code">머릿말: 설명 (#이슈번호)</code> — 예: <code class="inline-code">Feat: 로그인 기능 구현 (#5)</code></p>
+<div class="table-scroll"><table><thead><tr><th>머릿말</th><th>설명</th></tr></thead><tbody><tr><td><code class="inline-code">Feat</code></td><td>새로운 기능 추가</td></tr><tr><td><code class="inline-code">Fix</code></td><td>버그 수정</td></tr><tr><td><code class="inline-code">Refactor</code></td><td>코드 리팩토링 (기능 변경 없음)</td></tr><tr><td><code class="inline-code">Style</code></td><td>코드 포매팅, 세미콜론 누락 등 동작 변경이 없는 경우</td></tr><tr><td><code class="inline-code">Comment</code></td><td>필요한 주석 추가 및 변경</td></tr><tr><td><code class="inline-code">Docs</code></td><td>문서 수정</td></tr><tr><td><code class="inline-code">Test</code></td><td>테스트 코드 추가·수정</td></tr><tr><td><code class="inline-code">Chore</code></td><td>패키지 매니저 수정, 그 외 기타 수정 (예: .gitignore)</td></tr><tr><td><code class="inline-code">Rename</code></td><td>파일·폴더명 수정이나 이동만 있는 경우</td></tr><tr><td><code class="inline-code">Remove</code></td><td>파일 삭제만 있는 경우</td></tr><tr><td><code class="inline-code">Feat!</code> / <code class="inline-code">Fix!</code> 등</td><td>기존 사용 방식과 호환되지 않는 breaking change가 있을 때 <code class="inline-code">!</code>를 붙이는 팀 규칙으로 사용 가능</td></tr><tr><td><code class="inline-code">Fix</code></td><td><code class="inline-code">hotfix/*</code> 브랜치의 긴급 수정도 커밋 내용이 버그 수정이라면 보통 <code class="inline-code">Fix</code> 사용</td></tr></tbody></table></div>
+<p>규칙:</p>
+<ol><li>머릿말은 첫 글자 대문자로 씁니다. (<code class="inline-code">feat:</code> ❌ → <code class="inline-code">Feat:</code> ⭕)</li><li>제목과 본문은 {{한글/영어}}로 쓰고, 빈 줄로 분리합니다.</li><li>제목 끝에 마침표를 붙이지 않고, 영문 기준 50자 이내로 씁니다.</li><li>본문에는 어떻게보다 <strong>무엇을, 왜</strong> 바꿨는지 씁니다. 항목이 여럿이면 글머리 기호로 나열합니다.</li><li>이슈 번호를 제목 끝에 <code class="inline-code">(#번호)</code> 형태로 붙입니다.</li><li>breaking change가 있다면 제목의 type 뒤에 <code class="inline-code">!</code>를 붙이거나 본문/푸터에 명확히 기록합니다. 예: <code class="inline-code">Feat!: 인증 API 응답 구조 변경 (#18)</code>.</li></ol>
+<blockquote><p>이 커밋 형식은 팀이 정한 커스텀 규칙입니다. Conventional Commits를 엄격히 따르고 싶다면 type의 대소문자·footer 규칙을 별도로 맞추세요.</p></blockquote>
+<h2 class="section-h1" id="이슈">이슈<a class="heading-anchor" href="#이슈" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>모든 작업은 이슈 생성에서 시작합니다. (기능 단위 1이슈)</li><li>이슈는 <code class="inline-code">.github/ISSUE_TEMPLATE/</code>의 템플릿으로 만듭니다: <strong>✨ 기능 구현</strong> (요약·문제 상황·구현 범위·완료 조건) / <strong>🐞 버그</strong> / <strong>🏁 스프린트</strong></li><li>브랜치 이름과 커밋 제목에 이슈 번호를 연결합니다.</li></ul>
+<h3 class="section-h2" id="스프린트-구조-이슈-계층-선택">스프린트 구조 (이슈 계층, 선택)<a class="heading-anchor" href="#스프린트-구조-이슈-계층-선택" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>[스프린트] 전체 — 프로젝트 목표          ← 최상위 1개
+ ├─ [스프린트] {{기간 단위}} 1 — {{목표}}
+ │   ├─ [{{파트}}] {{기능}} ({{ID}})
+ │   └─ …
+ └─ …</code></pre></div>
+<ul><li>스프린트 이슈의 <strong>하위 이슈 체크리스트</strong>(<code class="inline-code">#번호</code>)에 기능 이슈를 넣으면 GitHub이 진행률 바를 표시하고 하위 이슈에 상위 이슈를 자동 연결합니다.</li><li>기능 이슈를 먼저 만들어 번호를 받은 뒤, 스프린트 이슈에 번호를 채우는 순서가 편합니다.</li></ul>
+<h2 class="section-h1" id="PR-규칙">PR 규칙<a class="heading-anchor" href="#PR-규칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>base는 <code class="inline-code">develop</code>입니다. <code class="inline-code">hotfix/*</code>만 <code class="inline-code">main</code>으로 보냅니다.</li><li>제목은 커밋과 같은 형식: <code class="inline-code">Feat: 로그인 기능 구현 (#5)</code></li><li>본문에 변경 요약·이유·확인 방법을 쓰고 <code class="inline-code">Closes #이슈번호</code>로 이슈를 연결합니다. (<code class="inline-code">.github/pull_request_template.md</code>가 있으면 자동 적용)</li><li><strong>팀원 1명 이상의 승인</strong> 후에 병합합니다. 셀프 머지는 금지합니다.</li><li>병합은 <strong>Squash merge</strong>를 사용해 <code class="inline-code">develop</code> 히스토리를 커밋 컨벤션 단위로 유지합니다.</li></ul>
+<h2 class="section-h1" id="분업과-코드-소유권">분업과 코드 소유권<a class="heading-anchor" href="#분업과-코드-소유권" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>경로</th><th>담당</th></tr></thead><tbody><tr><td><code class="inline-code">/{{frontend-dir}}</code></td><td>{{담당자}}</td></tr><tr><td><code class="inline-code">/{{backend-dir}}</code></td><td>{{담당자}}</td></tr><tr><td><code class="inline-code">/docs</code>, 루트 문서</td><td>전원</td></tr></tbody></table></div>
+<ul><li>자기 파트 밖 디렉터리를 수정해야 하면 해당 파트 담당자와 <strong>먼저 합의</strong>합니다.</li><li><code class="inline-code">.github/CODEOWNERS</code>에 팀원 GitHub ID를 채우면 PR에 리뷰어가 자동 지정됩니다.</li><li><strong>API 명세는 FE/BE 간 계약</strong>입니다. 변경은 전원 합의 후 문서 갱신과 함께 진행합니다.</li></ul>
+<h2 class="section-h1" id="저장소-설정-체크리스트-관리자">저장소 설정 체크리스트 (관리자)<a class="heading-anchor" href="#저장소-설정-체크리스트-관리자" aria-label="이 섹션 링크">#</a></h2>
+<ol><li><p><strong>default 브랜치를</strong> <code class="inline-code">develop</code><strong>으로 변경</strong></p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>gh repo edit {{owner}}/{{repo}} --default-branch develop</code></pre></div></li><li><strong>브랜치 보호/Ruleset 확인</strong> * GitHub Free의 <strong>public repository</strong>에서는 보호 브랜치를 사용할 수 있습니다. * <strong>private repository</strong>에서 보호 브랜치 기능을 사용하려면 GitHub Pro/Team/Enterprise 계열 플랜이 필요할 수 있습니다. * 기능을 사용할 수 없다면 팀 규칙으로 <code class="inline-code">main</code>/<code class="inline-code">develop</code> 직접 push·force push 금지, PR 리뷰 후 머지를 운영합니다. * 플랜 정책은 바뀔 수 있으므로 저장소 생성 시 GitHub 공식 문서를 다시 확인합니다.</li><li><code class="inline-code">.github/CODEOWNERS</code>의 자리표시 ID를 팀원 실제 GitHub ID로 교체</li><li>팀원을 저장소 Collaborator로 초대 (Write 권한)</li></ol>
+<h2 class="section-h1" id="AI-에이전트-사용-규칙">AI 에이전트 사용 규칙<a class="heading-anchor" href="#AI-에이전트-사용-규칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>Claude Code, Codex 등 AI 코딩 에이전트는 프로젝트의 <code class="inline-code">AGENTS.md</code>와 도구 전용 지침을 따릅니다.</li><li>에이전트가 만든 커밋·PR도 사람과 동일한 컨벤션과 리뷰를 적용하며, <strong>사람 리뷰 없이 병합하지 않습니다.</strong></li><li>시크릿(.env, DB 비밀번호, 클라우드 키)은 에이전트에게도 커밋을 요청하지 않습니다.</li></ul>
+<hr>
+<h2 class="section-h1" id="PR-작성-전-최종-체크">PR 작성 전 최종 체크<a class="heading-anchor" href="#PR-작성-전-최종-체크" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>내 브랜치가 올바른 기준 브랜치에서 시작했는가?</span></li><li><input type="checkbox" disabled><span>관련 없는 파일까지 함께 수정하지 않았는가?</span></li><li><input type="checkbox" disabled><span><code class="inline-code">.env</code>, 키, 토큰이 포함되지 않았는가?</span></li><li><input type="checkbox" disabled><span>로컬에서 실행 또는 테스트했는가?</span></li><li><input type="checkbox" disabled><span>API/DB/환경변수 변경을 문서에 반영했는가?</span></li><li><input type="checkbox" disabled><span>PR 설명만 읽어도 리뷰어가 “무엇을 왜 바꿨는지” 알 수 있는가?</span></li><li><input type="checkbox" disabled><span>큰 PR이라면 기능을 더 작은 PR로 나눌 수 없는가?</span></li></ul>
+<p>PR은 “코드를 합치는 버튼”이 아니라 <strong>팀원이 변경 의도를 검토하는 문서</strong>입니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="../GitHub 팀 협업 템플릿.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">GitHub 팀 협업 가이드</span></a><a class="doc-nav-link next" href="AI 코딩 에이전트 작업 규칙 (AGENTS.md).html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">AI 코딩 에이전트 작업 규칙 (AGENTS.md)</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>
