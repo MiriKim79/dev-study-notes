@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git·GitHub 중급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="Git·GitHub 중급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="기초 가이드에서 다루지 않은 이력 정리, 문제 추적, 자동화 도구를 실무 상황과 함께 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EC%A4%91%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C/Git%C2%B7GitHub%20%EC%A4%91%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git·GitHub 중급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="기초 가이드에서 다루지 않은 이력 정리, 문제 추적, 자동화 도구를 실무 상황과 함께 정리합니다">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 중급 가이드.html">개발 중급 가이드</a> <span>›</span><span class="current">Git·GitHub 중급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-Interactive-Rebase-커밋-이력-정리하기">1. Interactive Rebase — 커밋 이력 정리하기</a></li><li class="toc-h1"><a href="#2-Cherry-pick-특정-커밋만-가져오기">2. Cherry-pick — 특정 커밋만 가져오기</a></li><li class="toc-h1"><a href="#3-Bisect-버그가-생긴-커밋-찾기">3. Bisect — 버그가 생긴 커밋 찾기</a></li><li class="toc-h1"><a href="#4-Reflog-잃어버린-커밋-복구">4. Reflog — 잃어버린 커밋 복구</a></li><li class="toc-h1"><a href="#5-Worktree-브랜치-여러-개-동시에-작업">5. Worktree — 브랜치 여러 개 동시에 작업</a></li><li class="toc-h1"><a href="#6-대용량-파일-관리-Git-LFS">6. 대용량 파일 관리 — Git LFS</a></li><li class="toc-h1"><a href="#7-GitHub-Actions-기초-첫-자동화-워크플로우">7. GitHub Actions 기초 — 첫 자동화 워크플로우</a></li><li class="toc-h1"><a href="#8-브랜치-보호-규칙-심화">8. 브랜치 보호 규칙 심화</a></li><li class="toc-h1"><a href="#9-커밋-서명-GPG-SSH-Signing">9. 커밋 서명 (GPG/SSH Signing)</a></li><li class="toc-h1"><a href="#10-자주-하는-실수">10. 자주 하는 실수</a></li><li class="toc-h1"><a href="#11-실전-체크리스트">11. 실전 체크리스트</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-git);">
+        <span class="page-kicker">🌿 개발 중급 가이드</span>
+        <h1 class="page-title">Git·GitHub 중급 가이드</h1>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <code class="inline-code">add</code>/<code class="inline-code">commit</code>/<code class="inline-code">push</code>/<code class="inline-code">pull</code>/<code class="inline-code">branch</code>/<code class="inline-code">merge</code>는 손에 익었고, 이제 커밋 이력을 다듬거나 자동화를 붙이고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 기초 가이드에서 다루지 않은 이력 정리, 문제 추적, 자동화 도구를 실무 상황과 함께 정리합니다</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. Interactive Rebase — 커밋 이력 정리하기</li><li>2. Cherry-pick — 특정 커밋만 가져오기</li><li>3. Bisect — 버그가 생긴 커밋 찾기</li><li>4. Reflog — 잃어버린 커밋 복구</li><li>5. Worktree — 브랜치 여러 개 동시에 작업</li><li>6. 대용량 파일 관리 — Git LFS</li><li>7. GitHub Actions 기초 — 첫 자동화 워크플로우</li><li>8. 브랜치 보호 규칙 심화</li><li>9. 커밋 서명 (GPG/SSH Signing)</li><li>10. 자주 하는 실수</li><li>11. 실전 체크리스트</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-Interactive-Rebase-커밋-이력-정리하기">1. Interactive Rebase — 커밋 이력 정리하기<a class="heading-anchor" href="#1-Interactive-Rebase-커밋-이력-정리하기" aria-label="이 섹션 링크">#</a></h2>
+<p>PR을 올리기 전에, 작업하면서 쌓인 지저분한 커밋(<code class="inline-code">fix typo</code>, <code class="inline-code">wip</code>, <code class="inline-code">다시 시도</code>)을 정리하는 데 씁니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> rebase -i HEAD~5   <span class="tok-comment"># 최근 5개 커밋을 대상으로</span></code></pre></div>
+<p>에디터가 열리면 각 커밋 앞에 명령을 바꿔 씁니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>pick   → 그대로 유지
+reword → 메시지만 수정
+squash → 바로 위 커밋에 합치기 (메시지도 합쳐서 편집)
+fixup  → 바로 위 커밋에 합치기 (메시지는 버림)
+drop   → 커밋 자체를 삭제
+edit   → 이 커밋에서 멈춰서 내용을 수정</code></pre></div>
+<p>예를 들어 아래처럼 5개 커밋을 1개로 정리할 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>pick a1b2c3 Feat: 로그인 폼 추가
+fixup d4e5f6 fix typo
+fixup g7h8i9 wip
+fixup j1k2l3 다시 시도
+reword m4n5o6 Feat: 에러 메시지 추가</code></pre></div>
+<p><strong>실무 팁</strong> - 이미 <code class="inline-code">push</code>해서 다른 사람이 받아간 브랜치는 rebase하지 않습니다. 커밋ID가 전부 바뀌어서 팀원과 이력이 어긋납니다. <strong>내 로컬에만 있는 브랜치</strong>에서만 씁니다. - rebase 도중 충돌이 나면 <code class="inline-code">git rebase --abort</code>로 언제든 원래 상태로 되돌릴 수 있습니다. - PR을 이미 올린 브랜치를 rebase해야 한다면 <code class="inline-code">git push --force-with-lease</code> (그냥 <code class="inline-code">--force</code>보다 안전 — 내가 마지막으로 받은 이후 원격에 다른 커밋이 추가됐으면 실패해서 덮어쓰기 사고를 막아줍니다).</p>
+<hr>
+<h2 class="section-h1" id="2-Cherry-pick-특정-커밋만-가져오기">2. Cherry-pick — 특정 커밋만 가져오기<a class="heading-anchor" href="#2-Cherry-pick-특정-커밋만-가져오기" aria-label="이 섹션 링크">#</a></h2>
+<p>다른 브랜치의 커밋 하나만 지금 브랜치로 가져오고 싶을 때 씁니다. 예: <code class="inline-code">hotfix</code> 브랜치에서 만든 버그 수정을 <code class="inline-code">develop</code>에도 반영해야 할 때.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> log other-branch --oneline     <span class="tok-comment"># 가져올 커밋ID 확인</span>
+<span class="tok-keyword">git</span> cherry-pick a1b2c3d</code></pre></div>
+<p>충돌이 나면 일반 병합 충돌처럼 해결한 뒤 <code class="inline-code">git cherry-pick --continue</code>, 그만두려면 <code class="inline-code">git cherry-pick --abort</code>.</p>
+<hr>
+<h2 class="section-h1" id="3-Bisect-버그가-생긴-커밋-찾기">3. Bisect — 버그가 생긴 커밋 찾기<a class="heading-anchor" href="#3-Bisect-버그가-생긴-커밋-찾기" aria-label="이 섹션 링크">#</a></h2>
+<p>"예전엔 됐는데 언제부터인가 안 된다"를 이진 탐색으로 찾습니다. 커밋이 수백 개라도 로그 대신 사람은 최대 10번 안팎만 확인하면 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> bisect start
+<span class="tok-keyword">git</span> bisect bad                <span class="tok-comment"># 지금 커밋은 버그가 있음</span>
+<span class="tok-keyword">git</span> bisect good v1.2.0        <span class="tok-comment"># 이 태그(또는 커밋)는 정상이었음</span>
+<span class="tok-comment"># Git이 중간 지점으로 자동 checkout</span>
+<span class="tok-comment"># 그 지점에서 직접 테스트한 뒤:</span>
+<span class="tok-keyword">git</span> bisect good   <span class="tok-comment"># 또는 git bisect bad</span>
+<span class="tok-comment"># 위 과정을 반복하면 Git이 &quot;이 커밋이 원인&quot;이라고 알려줌</span>
+<span class="tok-keyword">git</span> bisect reset  <span class="tok-comment"># 탐색 종료, 원래 브랜치로 복귀</span></code></pre></div>
+<p>테스트 스크립트가 있다면 <code class="inline-code">git bisect run ./test.sh</code>로 전체를 자동화할 수도 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="4-Reflog-잃어버린-커밋-복구">4. Reflog — 잃어버린 커밋 복구<a class="heading-anchor" href="#4-Reflog-잃어버린-커밋-복구" aria-label="이 섹션 링크">#</a></h2>
+<p><code class="inline-code">reset --hard</code>를 잘못 쓰거나 브랜치를 실수로 삭제해도, Git은 한동안(기본 90일) 이력을 <code class="inline-code">reflog</code>에 남겨둡니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> reflog
+<span class="tok-comment"># a1b2c3d HEAD@{0}: reset: moving to HEAD~3</span>
+<span class="tok-comment"># d4e5f6g HEAD@{1}: commit: Feat: 결제 기능 추가   ← 이게 사라진 것처럼 보였던 커밋</span>
+
+<span class="tok-keyword">git</span> checkout d4e5f6g          <span class="tok-comment"># 확인</span>
+<span class="tok-keyword">git</span> branch recovered d4e5f6g  <span class="tok-comment"># 이 지점에서 새 브랜치 생성</span></code></pre></div>
+<p><strong>기본 상식</strong>: <code class="inline-code">reflog</code>는 로컬 저장소에만 있는 안전망입니다. 원격(GitHub)에는 없으므로, 심각한 실수를 했을 때는 먼저 <code class="inline-code">git reflog</code>부터 확인하는 습관을 들입니다.</p>
+<hr>
+<h2 class="section-h1" id="5-Worktree-브랜치-여러-개-동시에-작업">5. Worktree — 브랜치 여러 개 동시에 작업<a class="heading-anchor" href="#5-Worktree-브랜치-여러-개-동시에-작업" aria-label="이 섹션 링크">#</a></h2>
+<p>브랜치를 전환할 때마다 <code class="inline-code">stash</code>하기 귀찮다면, 같은 저장소를 여러 폴더에 동시에 펼쳐둘 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> worktree add ../my-app-hotfix hotfix/urgent-bug
+<span class="tok-comment"># ../my-app-hotfix 폴더가 새로 생기고, 그 브랜치가 체크아웃된 채로 열림</span>
+<span class="tok-comment"># 원래 폴더에서 하던 작업은 그대로 유지됨</span>
+
+<span class="tok-keyword">git</span> worktree list             <span class="tok-comment"># 현재 연결된 worktree 목록</span>
+<span class="tok-keyword">git</span> worktree remove ../my-app-hotfix   <span class="tok-comment"># 다 쓰면 정리</span></code></pre></div>
+<p>급한 hotfix가 생겼는데 지금 작업 중인 내용을 커밋하기도 stash하기도 애매할 때 유용합니다.</p>
+<hr>
+<h2 class="section-h1" id="6-대용량-파일-관리-Git-LFS">6. 대용량 파일 관리 — Git LFS<a class="heading-anchor" href="#6-대용량-파일-관리-Git-LFS" aria-label="이 섹션 링크">#</a></h2>
+<p>이미지·모델 가중치처럼 큰 바이너리 파일을 그냥 커밋하면 저장소 용량이 급격히 커지고 clone이 느려집니다. Git LFS(Large File Storage)는 실제 파일은 별도 저장소에 두고, Git에는 포인터만 남깁니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> lfs install
+<span class="tok-keyword">git</span> lfs track &quot;*.psd&quot; &quot;*.mp4&quot;
+<span class="tok-keyword">git</span> add .gitattributes
+<span class="tok-keyword">git</span> add design.psd
+<span class="tok-keyword">git</span> commit -m &quot;Chore: 디자인 원본 추가 (LFS)&quot;</code></pre></div>
+<p><strong>기본 상식</strong>: 이미 일반 커밋으로 올라간 대용량 파일은 LFS로 바꿔도 과거 이력에 그대로 남아 저장소가 무거워집니다. 처음부터 <code class="inline-code">.gitattributes</code>로 추적 대상을 정해두는 것이 좋습니다.</p>
+<hr>
+<h2 class="section-h1" id="7-GitHub-Actions-기초-첫-자동화-워크플로우">7. GitHub Actions 기초 — 첫 자동화 워크플로우<a class="heading-anchor" href="#7-GitHub-Actions-기초-첫-자동화-워크플로우" aria-label="이 섹션 링크">#</a></h2>
+<p><code class="inline-code">push</code>할 때마다 테스트를 자동으로 돌리는 최소 예제입니다. <code class="inline-code">.github/workflows/test.yml</code>에 저장합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">yaml</span><button class="copy-btn" type="button">복사</button></div><pre><code>name: test
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm test</code></pre></div>
+<ul><li><code class="inline-code">on</code>: 언제 실행할지 (push, pull_request 등 이벤트)</li><li><code class="inline-code">jobs.test.steps</code>: 위에서 아래로 순서대로 실행되는 작업 목록</li><li><code class="inline-code">uses</code>: 다른 사람이 만들어둔 재사용 가능한 작업(action)을 가져다 씀</li><li><code class="inline-code">run</code>: 셸 명령어를 직접 실행</li></ul>
+<p>PR을 만들면 GitHub이 이 워크플로우를 자동 실행하고, 성공/실패를 PR 화면에 체크 표시로 보여줍니다.</p>
+<hr>
+<h2 class="section-h1" id="8-브랜치-보호-규칙-심화">8. 브랜치 보호 규칙 심화<a class="heading-anchor" href="#8-브랜치-보호-규칙-심화" aria-label="이 섹션 링크">#</a></h2>
+<p>기초 가이드에서 다룬 "리뷰 승인 필수" 규칙에 실무에서는 보통 이런 조건을 더합니다.</p>
+<ul><li><strong>Require status checks to pass</strong>: 위 GitHub Actions 같은 자동 테스트가 통과해야만 머지 버튼이 활성화됨</li><li><strong>CODEOWNERS 연동</strong>: <code class="inline-code">.github/CODEOWNERS</code> 파일로 특정 폴더는 특정 팀원의 승인이 항상 필요하도록 지정</li></ul>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code># .github/CODEOWNERS
+/backend/          @backend-team-lead
+/frontend/          @frontend-team-lead
+*.md                 @docs-owner</code></pre></div>
+<ul><li><strong>Require branches to be up to date</strong>: 머지 전에 기준 브랜치의 최신 커밋을 반영하도록 강제 — 오래된 브랜치가 몰래 머지되는 것을 막습니다.</li></ul>
+<hr>
+<h2 class="section-h1" id="9-커밋-서명-GPG-SSH-Signing">9. 커밋 서명 (GPG/SSH Signing)<a class="heading-anchor" href="#9-커밋-서명-GPG-SSH-Signing" aria-label="이 섹션 링크">#</a></h2>
+<p>GitHub에서 "Verified" 배지가 붙은 커밋을 본 적이 있을 겁니다. 커밋 작성자를 암호학적으로 증명하는 기능으로, 오픈소스나 보안이 중요한 조직에서 요구합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> config --global commit.gpgsign true
+<span class="tok-keyword">git</span> config --global user.signingkey &lt;키ID&gt;</code></pre></div>
+<p>개인·소규모 팀 프로젝트에서는 필수는 아니지만, "이 커밋이 정말 그 사람이 작성한 게 맞는지"가 중요한 프로젝트에서는 표준 관행입니다.</p>
+<hr>
+<h2 class="section-h1" id="10-자주-하는-실수">10. 자주 하는 실수<a class="heading-anchor" href="#10-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>이미 push한 공유 브랜치를 rebase해서 팀원과 이력이 어긋남</li><li><code class="inline-code">--force</code>로 강제 push해서 동료의 커밋을 날림 (<code class="inline-code">--force-with-lease</code>를 대신 씁니다)</li><li>bisect 도중 <code class="inline-code">good</code>/<code class="inline-code">bad</code> 판단을 서두르다 잘못 표시해 탐색이 꼬임</li><li>이미 일반 커밋으로 올라간 대용량 파일을 뒤늦게 LFS로 옮기려다 이력 정리가 더 복잡해짐</li><li>CI가 실패했는데 "로컬에서는 됐다"며 그냥 머지</li></ul>
+<hr>
+<h2 class="section-h1" id="11-실전-체크리스트">11. 실전 체크리스트<a class="heading-anchor" href="#11-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>PR 올리기 전 지저분한 커밋을 rebase -i로 정리했는가</span></li><li><input type="checkbox" disabled><span>공유 브랜치를 rebase하지 않았는가</span></li><li><input type="checkbox" disabled><span>강제 push가 필요하다면 <code class="inline-code">--force-with-lease</code>를 썼는가</span></li><li><input type="checkbox" disabled><span>CI(GitHub Actions)가 통과한 뒤에만 머지했는가</span></li><li><input type="checkbox" disabled><span>저장소에 대용량 바이너리가 있다면 LFS 적용을 검토했는가</span></li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="팀 협업 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">팀 협업 중급 가이드</span></a><a class="doc-nav-link next" href="프론트엔드 중급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">프론트엔드 중급 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

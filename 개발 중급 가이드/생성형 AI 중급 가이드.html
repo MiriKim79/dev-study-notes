@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>생성형 AI 중급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="생성형 AI 중급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="프롬프트만으로 부족할 때의 다음 단계와, 비용·품질을 실무 수준으로 관리하는 방법을 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EC%A4%91%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EC%83%9D%EC%84%B1%ED%98%95%20AI%20%EC%A4%91%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="생성형 AI 중급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="프롬프트만으로 부족할 때의 다음 단계와, 비용·품질을 실무 수준으로 관리하는 방법을 정리합니다">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 중급 가이드.html">개발 중급 가이드</a> <span>›</span><span class="current">생성형 AI 중급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-파인튜닝은-언제-필요한가">1. 파인튜닝은 언제 필요한가</a><ul class="toc-h2-list"><li><a href="#LoRA-가볍게-파인튜닝하기">LoRA — 가볍게 파인튜닝하기</a></li></ul></li><li class="toc-h1"><a href="#2-벡터-DB-심화">2. 벡터 DB 심화</a><ul class="toc-h2-list"><li><a href="#인덱스-종류">인덱스 종류</a></li><li><a href="#하이브리드-검색">하이브리드 검색</a></li></ul></li><li class="toc-h1"><a href="#3-프롬프트-체이닝과-워크플로우">3. 프롬프트 체이닝과 워크플로우</a></li><li class="toc-h1"><a href="#4-비용-최적화-심화">4. 비용 최적화 심화</a><ul class="toc-h2-list"><li><a href="#프롬프트-캐싱">프롬프트 캐싱</a></li><li><a href="#모델-라우팅">모델 라우팅</a></li><li><a href="#배치-처리">배치 처리</a></li></ul></li><li class="toc-h1"><a href="#5-관찰가능성-Observability">5. 관찰가능성 (Observability)</a></li><li class="toc-h1"><a href="#6-평가-자동화">6. 평가 자동화</a><ul class="toc-h2-list"><li><a href="#LLM-as-judge">LLM-as-judge</a></li></ul></li><li class="toc-h1"><a href="#7-자주-하는-실수">7. 자주 하는 실수</a></li><li class="toc-h1"><a href="#8-실전-체크리스트">8. 실전 체크리스트</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-ai);">
+        <span class="page-kicker">🤖 개발 중급 가이드</span>
+        <h1 class="page-title">생성형 AI 중급 가이드</h1>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 기초 RAG나 Tool Calling을 한 번 붙여본 사람</div><div class="intro-row"><strong>목적:</strong> 프롬프트만으로 부족할 때의 다음 단계와, 비용·품질을 실무 수준으로 관리하는 방법을 정리합니다</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 파인튜닝은 언제 필요한가</li><li>2. 벡터 DB 심화</li><li>3. 프롬프트 체이닝과 워크플로우</li><li>4. 비용 최적화 심화</li><li>5. 관찰가능성 (Observability)</li><li>6. 평가 자동화</li><li>7. 자주 하는 실수</li><li>8. 실전 체크리스트</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-파인튜닝은-언제-필요한가">1. 파인튜닝은 언제 필요한가<a class="heading-anchor" href="#1-파인튜닝은-언제-필요한가" aria-label="이 섹션 링크">#</a></h2>
+<p>프롬프트만으로 안 되는 경우에만 검토합니다. 순서대로 확인합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 프롬프트를 더 구체적으로 다듬어도 안 되는가?
+2. Few-shot 예시를 넣어도 안 되는가?
+3. RAG로 필요한 정보를 검색해서 넣어도 안 되는가?
+4. 그래도 안 된다면 → 파인튜닝 검토</code></pre></div>
+<p>파인튜닝이 실제로 필요한 대표적인 경우: 특정 말투·형식을 아주 일관되게 내야 함, 특정 도메인 용어를 프롬프트 설명 없이 이해해야 함, 응답 속도·비용 때문에 작은 모델을 그 작업에 맞게 최적화해야 함.</p>
+<h3 class="section-h2" id="LoRA-가볍게-파인튜닝하기">LoRA — 가볍게 파인튜닝하기<a class="heading-anchor" href="#LoRA-가볍게-파인튜닝하기" aria-label="이 섹션 링크">#</a></h3>
+<p>전체 모델 가중치를 다시 학습하는 대신, 작은 추가 파라미터(어댑터)만 학습하는 방식입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>전체 파인튜닝: 모델 전체(수십~수백억 개 파라미터)를 다시 학습 → 비용·시간 큼
+LoRA: 모델은 고정하고, 작은 추가 행렬만 학습 → 훨씬 적은 데이터·비용으로 가능</code></pre></div>
+<p><strong>기본 상식</strong>: 파인튜닝은 "새로운 지식을 넣는 것"보다 "행동 방식을 바꾸는 것"에 더 적합합니다. 최신 정보나 회사 내부 문서처럼 자주 바뀌는 지식은 파인튜닝보다 RAG가 낫습니다.</p>
+<hr>
+<h2 class="section-h1" id="2-벡터-DB-심화">2. 벡터 DB 심화<a class="heading-anchor" href="#2-벡터-DB-심화" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="인덱스-종류">인덱스 종류<a class="heading-anchor" href="#인덱스-종류" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>방식</th><th>특징</th></tr></thead><tbody><tr><td>Flat (전수 비교)</td><td>정확하지만 데이터가 많아지면 느림</td></tr><tr><td>HNSW</td><td>그래프 구조로 근사 검색 — 빠르고 대부분의 실무에서 충분히 정확함</td></tr><tr><td>IVF</td><td>데이터를 클러스터로 나눠 탐색 범위를 줄임</td></tr></tbody></table></div>
+<p>대부분의 벡터 DB(Pinecone, Weaviate, pgvector 등)는 기본값으로 HNSW를 씁니다. 정확도와 속도의 트레이드오프를 조절하는 파라미터(<code class="inline-code">ef_search</code> 등)만 필요에 따라 조정하면 되는 경우가 많습니다.</p>
+<h3 class="section-h2" id="하이브리드-검색">하이브리드 검색<a class="heading-anchor" href="#하이브리드-검색" aria-label="이 섹션 링크">#</a></h3>
+<p>의미 기반 검색(임베딩)만으로는 고유명사·코드·정확한 숫자 검색이 약합니다. 키워드 검색(BM25 등)과 함께 씁니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>사용자 질문: &quot;INFLN-2024 계약서 조항 3.2&quot;
+
+임베딩 검색만: 의미는 비슷한데 문서 번호가 다른 문서를 가져올 수 있음
+키워드 검색만: &quot;계약서&quot;, &quot;조항&quot; 등 일반 단어에 묻혀 정확한 문서를 놓칠 수 있음
+하이브리드: 두 점수를 함께 반영해 순위를 매김 → 정확도 향상</code></pre></div>
+<hr>
+<h2 class="section-h1" id="3-프롬프트-체이닝과-워크플로우">3. 프롬프트 체이닝과 워크플로우<a class="heading-anchor" href="#3-프롬프트-체이닝과-워크플로우" aria-label="이 섹션 링크">#</a></h2>
+<p>복잡한 작업을 한 번의 프롬프트로 다 시키지 않고, 여러 단계로 나눠 각 단계의 결과를 다음 단계의 입력으로 씁니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>&quot;이 강의 리뷰 100개를 분석해서 개선 제안 보고서를 써줘&quot; (나쁜 예 — 한 번에 다 시킴)
+
+1단계: 리뷰 100개를 감정(긍정/부정/중립)별로 분류
+2단계: 부정 리뷰만 모아서 공통 불만 주제 추출
+3단계: 추출된 주제를 바탕으로 개선 제안 작성
+(좋은 예 — 단계별로 나눔, 각 단계 결과를 검증할 수 있음)</code></pre></div>
+<p><strong>실무 팁</strong>: 단계를 나누면 각 단계의 출력을 구조화된 형식(JSON)으로 강제하기 쉬워지고, 중간 결과를 검증·재시도할 수 있어 전체 품질이 안정적입니다. 다만 단계가 늘어날수록 지연 시간과 비용도 함께 늘어나므로, 꼭 나눠야 하는 작업만 나눕니다.</p>
+<hr>
+<h2 class="section-h1" id="4-비용-최적화-심화">4. 비용 최적화 심화<a class="heading-anchor" href="#4-비용-최적화-심화" aria-label="이 섹션 링크">#</a></h2>
+<p>기초 가이드의 "짧은 프롬프트, 저렴한 모델" 수준을 넘어서는 방법입니다.</p>
+<h3 class="section-h2" id="프롬프트-캐싱">프롬프트 캐싱<a class="heading-anchor" href="#프롬프트-캐싱" aria-label="이 섹션 링크">#</a></h3>
+<p>시스템 프롬프트나 긴 참고 문서처럼 매 요청마다 반복되는 부분을 모델 제공사가 캐시해서, 같은 내용을 다시 처리할 때 비용을 줄여주는 기능입니다. 자주 쓰이는 긴 컨텍스트(문서 전문, few-shot 예시)는 요청마다 같은 순서로 배치해 캐시 적중률을 높입니다.</p>
+<h3 class="section-h2" id="모델-라우팅">모델 라우팅<a class="heading-anchor" href="#모델-라우팅" aria-label="이 섹션 링크">#</a></h3>
+<p>모든 요청에 가장 비싼 모델을 쓰지 않고, 작업 난이도에 따라 모델을 나눕니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>간단한 분류·요약 → 저렴하고 빠른 모델
+복잡한 추론·코드 생성 → 고성능 모델</code></pre></div>
+<p>간단한 분류기(또는 규칙)로 요청의 난이도를 먼저 판단한 뒤, 적절한 모델로 라우팅하는 구조입니다.</p>
+<h3 class="section-h2" id="배치-처리">배치 처리<a class="heading-anchor" href="#배치-처리" aria-label="이 섹션 링크">#</a></h3>
+<p>실시간 응답이 필요 없는 대량 작업(야간 배치로 리뷰 100만 개 분류 등)은 배치 API를 쓰면 실시간 API보다 훨씬 저렴한 경우가 많습니다.</p>
+<hr>
+<h2 class="section-h1" id="5-관찰가능성-Observability">5. 관찰가능성 (Observability)<a class="heading-anchor" href="#5-관찰가능성-Observability" aria-label="이 섹션 링크">#</a></h2>
+<p>AI 기능이 운영에 들어가면 "왜 이런 답이 나왔는지" 추적할 수 있어야 합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>기록해야 할 것
+- 요청 ID, 사용자(또는 세션) ID
+- 실제로 모델에 전달된 최종 프롬프트 (변수가 채워진 상태)
+- 모델 응답 원문
+- 입력/출력 토큰 수, 지연 시간, 비용
+- 재시도 여부, 실패 사유</code></pre></div>
+<p>이 기록이 있어야 "특정 사용자가 이상한 답을 받았다"는 문의가 왔을 때 실제로 어떤 프롬프트가 전달됐는지 재현할 수 있습니다. LangSmith, Langfuse 같은 LLM 전용 트레이싱 도구를 쓰면 이 과정을 자동화할 수 있습니다.</p>
+<p><strong>기본 상식</strong>: 개인정보가 포함된 입력·출력 전체를 그대로 로그에 남기지 않습니다. 기초 가이드 15장의 원칙(민감정보 로그 금지)이 여기서도 그대로 적용됩니다.</p>
+<hr>
+<h2 class="section-h1" id="6-평가-자동화">6. 평가 자동화<a class="heading-anchor" href="#6-평가-자동화" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="LLM-as-judge">LLM-as-judge<a class="heading-anchor" href="#LLM-as-judge" aria-label="이 섹션 링크">#</a></h3>
+<p>사람이 매번 결과를 채점하기 어려울 때, 다른(또는 같은) LLM에게 "이 응답이 기준을 만족하는지" 채점을 맡기는 방법입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>평가 프롬프트 예시:
+
+다음 요약이 원문의 핵심 내용을 정확히 담고 있는지 1~5점으로 평가하세요.
+원문: {원문}
+요약: {요약}
+평가 기준: 정확성, 간결성, 원문에 없는 내용을 지어내지 않았는지
+점수와 이유를 JSON으로 답하세요.</code></pre></div>
+<p><strong>기본 상식</strong>: LLM-as-judge는 완벽하지 않습니다. 사람이 채점한 소수 샘플과 LLM 채점 결과를 주기적으로 비교해서, 채점 기준 자체가 신뢰할 만한지 검증합니다. 결제·의료처럼 중요한 판단에는 사람 검수를 대체하지 않습니다.</p>
+<hr>
+<h2 class="section-h1" id="7-자주-하는-실수">7. 자주 하는 실수<a class="heading-anchor" href="#7-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>RAG로 해결 가능한 문제를 파인튜닝부터 시도해 비용과 시간을 낭비</li><li>프롬프트 체이닝 단계를 지나치게 잘게 나눠 지연 시간이 크게 늘어남</li><li>모든 요청에 가장 비싼 모델을 사용해 비용이 예상보다 커짐</li><li>실제 프롬프트·응답을 기록하지 않아 문제가 생겨도 원인을 재현할 수 없음</li><li>LLM-as-judge 결과를 검증 없이 그대로 신뢰</li></ul>
+<hr>
+<h2 class="section-h1" id="8-실전-체크리스트">8. 실전 체크리스트<a class="heading-anchor" href="#8-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>파인튜닝 전에 프롬프트·Few-shot·RAG로 먼저 시도했는가</span></li><li><input type="checkbox" disabled><span>검색 정확도가 중요한 기능이라면 하이브리드 검색을 검토했는가</span></li><li><input type="checkbox" disabled><span>복잡한 작업을 단계별로 나눠 각 단계를 검증할 수 있는가</span></li><li><input type="checkbox" disabled><span>작업 난이도에 따라 모델을 나눠 쓰고 있는가</span></li><li><input type="checkbox" disabled><span>실제 프롬프트·응답·비용을 추적할 수 있는 로그가 있는가</span></li><li><input type="checkbox" disabled><span>평가 기준과 평가 데이터를 만들어 프롬프트 변경 전후를 비교하는가</span></li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="백엔드 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">백엔드 중급 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

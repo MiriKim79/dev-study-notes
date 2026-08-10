@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>기획·API·일정 템플릿 (PLANNING.md) · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="기획·API·일정 템플릿 (PLANNING.md) · 개발 학습·실전 노트">
+<meta property="og:description" content="프로젝트의 요구사항·화면·API·DB·일정·결정사항을 한곳에 모으는 템플릿입니다.">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/GitHub%20%ED%8C%80%20%ED%98%91%EC%97%85%20%ED%85%9C%ED%94%8C%EB%A6%BF/%EA%B8%B0%ED%9A%8D%C2%B7API%C2%B7%EC%9D%BC%EC%A0%95%20%ED%85%9C%ED%94%8C%EB%A6%BF%20%28PLANNING.md%29.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="기획·API·일정 템플릿 (PLANNING.md) · 개발 학습·실전 노트">
+<meta name="twitter:description" content="프로젝트의 요구사항·화면·API·DB·일정·결정사항을 한곳에 모으는 템플릿입니다.">
 <script src="../assets/search-index.js" defer></script>
 </head>
 <body data-root-prefix="../">
@@ -22,10 +31,14 @@
   </div>
 </header>
 <div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
 <div class="page-shell">
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-title">목차</div>
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
       <ul class="toc"><li class="toc-h1"><a href="#1-프로젝트-개요">1. 프로젝트 개요</a><ul class="toc-h2-list"><li><a href="#한-줄-설명">한 줄 설명</a></li><li><a href="#목표">목표</a></li><li><a href="#이번-프로젝트에서-하지-않는-것">이번 프로젝트에서 하지 않는 것</a></li></ul></li><li class="toc-h1"><a href="#2-사용자와-핵심-흐름">2. 사용자와 핵심 흐름</a><ul class="toc-h2-list"><li><a href="#주요-사용자">주요 사용자</a></li><li><a href="#핵심-사용자-흐름">핵심 사용자 흐름</a></li></ul></li><li class="toc-h1"><a href="#3-기능-목록과-우선순위">3. 기능 목록과 우선순위</a></li><li class="toc-h1"><a href="#4-화면-설계">4. 화면 설계</a></li><li class="toc-h1"><a href="#5-API-계약">5. API 계약</a><ul class="toc-h2-list"><li><a href="#METHOD-path">`{{METHOD}} {{/path}}`</a></li></ul></li><li class="toc-h1"><a href="#6-데이터베이스-ERD">6. 데이터베이스 / ERD</a><ul class="toc-h2-list"><li><a href="#핵심-엔티티">핵심 엔티티</a></li><li><a href="#관계">관계</a></li></ul></li><li class="toc-h1"><a href="#7-환경변수">7. 환경변수</a></li><li class="toc-h1"><a href="#8-기술-스택">8. 기술 스택</a></li><li class="toc-h1"><a href="#9-일정">9. 일정</a></li><li class="toc-h1"><a href="#10-결정-기록">10. 결정 기록</a><ul class="toc-h2-list"><li><a href="#날짜-결정-제목">{{날짜}} — {{결정 제목}}</a></li></ul></li><li class="toc-h1"><a href="#11-미해결-사항">11. 미해결 사항</a></li><li class="toc-h1"><a href="#12-배포-정보">12. 배포 정보</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
@@ -143,7 +156,7 @@ DB:
 </div>
 <div class="search-overlay" id="search-overlay">
   <div class="search-panel">
-    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
     <div class="search-results" id="search-results"></div>
   </div>
 </div>

@@ -11,14 +11,17 @@ import html
 import json
 import re
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent
+SITE_BASE_URL = "https://mirikim79.github.io/dev-study-notes/"
 
 # ==========================================================================
 # 1. 사이트에 포함되는 문서 목록(메타데이터) — 실제 파일명을 기준으로 한다.
 # ==========================================================================
 PLAYBOOK_DIR = "개발 기초·실전 가이드"
 TEMPLATE_DIR = "GitHub 팀 협업 템플릿"
+MID_DIR = "개발 중급 가이드"
 
 PAGES = [
     {
@@ -140,6 +143,61 @@ PAGES = [
         "icon": "🏷️",
         "hub": "github-hub",
     },
+    {
+        "key": "mid-hub",
+        "src": f"{MID_DIR}.md",
+        "title": "개발 중급 가이드",
+        "kicker": "가이드 모음",
+        "cat": "start",
+        "icon": "📈",
+        "hub": None,
+        "hub_children": ["git-mid", "frontend-mid", "backend-mid", "ai-mid", "team-mid"],
+    },
+    {
+        "key": "git-mid",
+        "src": f"{MID_DIR}/Git·GitHub 중급 가이드.md",
+        "title": "Git·GitHub 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "git",
+        "icon": "🌿",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "frontend-mid",
+        "src": f"{MID_DIR}/프론트엔드 중급 가이드.md",
+        "title": "프론트엔드 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "frontend",
+        "icon": "🎨",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "backend-mid",
+        "src": f"{MID_DIR}/백엔드 중급 가이드.md",
+        "title": "백엔드 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "backend",
+        "icon": "🛠️",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "ai-mid",
+        "src": f"{MID_DIR}/생성형 AI 중급 가이드.md",
+        "title": "생성형 AI 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "ai",
+        "icon": "🤖",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "team-mid",
+        "src": f"{MID_DIR}/팀 협업 중급 가이드.md",
+        "title": "팀 협업 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "start",
+        "icon": "🚀",
+        "hub": "mid-hub",
+    },
 ]
 PAGES_BY_KEY = {p["key"]: p for p in PAGES}
 
@@ -159,6 +217,12 @@ STUDY_ORDER = [
     "claude",
     "planning",
     "issue-pr",
+    "mid-hub",
+    "team-mid",
+    "git-mid",
+    "frontend-mid",
+    "backend-mid",
+    "ai-mid",
 ]
 
 CAT_LABEL = {
@@ -425,6 +489,24 @@ def extract_intro(lines):
         rows.append(raw.rstrip())
         i += 1
     return rows, i
+
+
+def og_description_for(page, intro_rows):
+    """공유 미리보기(OG/Twitter 카드)에 쓸 한 줄 설명. 문서 소개 박스의 '목적' 줄을 우선 사용한다."""
+    if intro_rows:
+        for row in intro_rows:
+            m = LABEL_RE.match(row.strip())
+            if m and m.group(1) == "목적":
+                return m.group(2).strip()
+        first = LABEL_RE.match(intro_rows[0].strip())
+        if first:
+            return first.group(2).strip()
+        if intro_rows[0].strip():
+            return intro_rows[0].strip()
+    fallback = next((learn for k, _, learn, _ in OVERVIEW_ROWS if k == page["key"]), None)
+    if fallback:
+        return fallback
+    return "개발 공부 가이드 — 개발 분야별 기초를 실전 흐름 속에서 이해하는 학습 자료입니다."
 
 
 # ==========================================================================
@@ -800,7 +882,16 @@ PAGE_HTML_TMPL = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="{prefix}assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="{title} · 개발 학습·실전 노트">
+<meta property="og:description" content="{og_description}">
+<meta property="og:url" content="{og_url}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{title} · 개발 학습·실전 노트">
+<meta name="twitter:description" content="{og_description}">
 <script src="{prefix}assets/search-index.js" defer></script>
 </head>
 <body data-root-prefix="{prefix}">
@@ -818,10 +909,14 @@ PAGE_HTML_TMPL = """<!doctype html>
   </div>
 </header>
 <div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
 <div class="page-shell">
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-title">목차</div>
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
       {sidebar}
       <a class="sidebar-footer-link" href="{prefix}index.html">← 학습 대시보드로</a>
     </aside>
@@ -840,7 +935,7 @@ PAGE_HTML_TMPL = """<!doctype html>
 </div>
 <div class="search-overlay" id="search-overlay">
   <div class="search-panel">
-    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
@@ -869,6 +964,8 @@ def build_content_page(page):
     nav_html = render_prev_next(page["key"])
     breadcrumb_html = render_breadcrumb(page)
     prefix = prefix_of(page["key"])
+    og_description = html.escape(og_description_for(page, intro_rows))
+    og_url = SITE_BASE_URL + quote(page["src"][:-3] + ".html")
 
     html_out = PAGE_HTML_TMPL.format(
         title=html.escape(page["title"]),
@@ -883,6 +980,8 @@ def build_content_page(page):
         hub_links=hub_links_html,
         body=body_html,
         nav=nav_html,
+        og_description=og_description,
+        og_url=og_url,
     )
 
     out_path = ROOT / (page["src"][:-3] + ".html")
@@ -981,6 +1080,16 @@ DASHBOARD_CARDS = [
     "team-start", "frontend", "backend", "ai", "git", "collab-method", "github-hub",
 ]
 
+OVERVIEW_ROWS_MID = [
+    ("git-mid", "Git·GitHub 중급 가이드", "interactive rebase, cherry-pick, bisect, worktree, GitHub Actions, 브랜치 보호 심화", "Git 기본 명령이 손에 익은 뒤"),
+    ("frontend-mid", "프론트엔드 중급 가이드", "성능 최적화, 상태관리 라이브러리 비교, 렌더링 전략(SSR/SSG), 테스트, Core Web Vitals", "화면 하나를 끝까지 만들어본 뒤"),
+    ("backend-mid", "백엔드 중급 가이드", "캐싱, 메시지 큐, N+1 쿼리, API 버저닝, Rate Limiting, 구조화 로깅", "API 서버 하나를 끝까지 만들어본 뒤"),
+    ("ai-mid", "생성형 AI 중급 가이드", "파인튜닝, 벡터 DB 심화, 프롬프트 체이닝, 비용 최적화, 평가 자동화", "기초 RAG·Tool Calling을 붙여본 뒤"),
+    ("team-mid", "팀 협업 중급 가이드", "코드 리뷰 문화, ADR, 기술 부채 관리, 온보딩 문서화, 회고", "여러 명이 함께 개발을 시작한 뒤"),
+]
+
+DASHBOARD_CARDS_MID = ["git-mid", "frontend-mid", "backend-mid", "ai-mid", "team-mid"]
+
 STEP_FLOW = [
     {"title": "팀 개발 시작 가이드", "sub": "무엇을 확인하고 어떤 순서로 개발할지 먼저 파악", "key": "team-start"},
     {"title": "Git · GitHub 기초 가이드", "sub": "버전 관리와 협업의 공통 기초 익히기", "key": "git"},
@@ -990,9 +1099,10 @@ STEP_FLOW = [
 ]
 
 
-def render_overview_table():
+def render_overview_table(data=None):
+    data = OVERVIEW_ROWS if data is None else data
     rows = []
-    for key, name, learn, who in OVERVIEW_ROWS:
+    for key, name, learn, who in data:
         url = url_of(key)
         rows.append(
             '<tr><td class="name-cell"><a href="%s">%s</a></td><td>%s</td><td>%s</td></tr>'
@@ -1030,11 +1140,13 @@ def render_step_flow():
     return "".join(parts)
 
 
-def render_card_grid():
+def render_card_grid(keys=None, data=None):
+    keys = DASHBOARD_CARDS if keys is None else keys
+    data = OVERVIEW_ROWS if data is None else data
     cards = []
-    for key in DASHBOARD_CARDS:
+    for key in keys:
         p = PAGES_BY_KEY[key]
-        desc = next((learn for k, _, learn, _ in OVERVIEW_ROWS if k == key), "")
+        desc = next((learn for k, _, learn, _ in data if k == key), "")
         cards.append(
             '<a class="study-card" href="%s" style="--card-accent: var(--cat-%s);">'
             '<span class="study-card-icon">%s</span>'
@@ -1052,7 +1164,16 @@ DASHBOARD_TMPL = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>개발 공부 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="개발 공부 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="{intro}">
+<meta property="og:url" content="{og_url}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="개발 공부 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="{intro}">
 <script src="assets/search-index.js" defer></script>
 </head>
 <body data-root-prefix="">
@@ -1084,11 +1205,16 @@ DASHBOARD_TMPL = """<!doctype html>
 
     <div class="section-heading">학습 자료</div>
     {card_grid}
+
+    <div class="section-heading" style="margin-top:40px;">📈 중급 학습 자료</div>
+    <p class="dashboard-desc" style="margin-bottom:20px;">기초 가이드로 혼자 힘으로 동작하는 앱을 만들 수 있게 됐다면, 다음은 실무에서 부딪히는 문제를 다루는 <a href="{mid_hub_url}">중급 가이드</a>로 이어집니다.</p>
+    {mid_overview_table}
+    {mid_card_grid}
   </div>
 </div>
 <div class="search-overlay" id="search-overlay">
   <div class="search-panel">
-    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
@@ -1104,6 +1230,10 @@ def build_dashboard():
         overview_table=render_overview_table(),
         step_flow=render_step_flow(),
         card_grid=render_card_grid(),
+        mid_overview_table=render_overview_table(OVERVIEW_ROWS_MID),
+        mid_card_grid=render_card_grid(DASHBOARD_CARDS_MID, OVERVIEW_ROWS_MID),
+        mid_hub_url=url_of("mid-hub"),
+        og_url=SITE_BASE_URL,
     )
     (ROOT / "index.html").write_text(html_out, encoding="utf-8")
 

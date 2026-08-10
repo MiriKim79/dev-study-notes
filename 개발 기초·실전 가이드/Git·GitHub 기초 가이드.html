@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git·GitHub 기초 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="Git·GitHub 기초 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증까지 어떤 언어·프레임워크에서도 공통으로 필요한 버전 관리와 협업 기초를 이해하는 가이드">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/Git%C2%B7GitHub%20%EA%B8%B0%EC%B4%88%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git·GitHub 기초 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증까지 어떤 언어·프레임워크에서도 공통으로 필요한 버전 관리와 협업 기초를 이해하는 가이드">
 <script src="../assets/search-index.js" defer></script>
 </head>
 <body data-root-prefix="../">
@@ -22,10 +31,14 @@
   </div>
 </header>
 <div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
 <div class="page-shell">
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-title">목차</div>
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
       <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-Git과-GitHub의-차이">1. Git과 GitHub의 차이</a></li><li class="toc-h1"><a href="#2-개발-환경-준비">2. 개발 환경 준비</a></li><li class="toc-h1"><a href="#3-버전-관리-흐름">3. 버전 관리 흐름</a></li><li class="toc-h1"><a href="#4-GitHub-인증과-환경설정">4. GitHub 인증과 환경설정</a><ul class="toc-h2-list"><li><a href="#4-1-명령줄에서-가장-많이-쓰는-두-연결-방식">4.1 명령줄에서 가장 많이 쓰는 두 연결 방식</a></li><li><a href="#4-2-커밋-사용자-정보-설정">4.2 커밋 사용자 정보 설정</a></li></ul></li><li class="toc-h1"><a href="#5-프로젝트-시작하기">5. 프로젝트 시작하기</a><ul class="toc-h2-list"><li><a href="#5-1-이미-있는-저장소를-받아올-때">5.1 이미 있는 저장소를 받아올 때</a></li><li><a href="#5-2-로컬에-이미-있는-프로젝트를-저장소로-만들-때">5.2 로컬에 이미 있는 프로젝트를 저장소로 만들 때</a></li><li><a href="#5-3-원격-주소-변경-삭제">5.3 원격 주소 변경·삭제</a></li></ul></li><li class="toc-h1"><a href="#6-gitignore">6. `.gitignore`</a><ul class="toc-h2-list"><li><a href="#이미-추적-중인-파일은-별도-처리">이미 추적 중인 파일은 별도 처리</a></li></ul></li><li class="toc-h1"><a href="#7-기본-명령어">7. 기본 명령어</a><ul class="toc-h2-list"><li><a href="#git-commit-am-주의">`git commit -am` 주의</a></li><li><a href="#git-pull은-항상-merge만-하는-명령이-아니다">`git pull`은 항상 merge만 하는 명령이 아니다</a></li><li><a href="#강제-push-주의">강제 push 주의</a></li></ul></li><li class="toc-h1"><a href="#8-되돌리기-단계별-취소">8. 되돌리기 (단계별 취소)</a></li><li class="toc-h1"><a href="#9-git-pull과-충돌을-이해하기">9. `git pull`과 충돌을 이해하기</a><ul class="toc-h2-list"><li><a href="#가장-안전한-확인-흐름">가장 안전한 확인 흐름</a></li></ul></li><li class="toc-h1"><a href="#10-git-stash-작업-임시-저장">10. `git stash` — 작업 임시 저장</a></li><li class="toc-h1"><a href="#11-git-tag-버전-표시">11. `git tag` — 버전 표시</a></li><li class="toc-h1"><a href="#12-브랜치">12. 브랜치</a><ul class="toc-h2-list"><li><a href="#12-1-브랜치란">12.1 브랜치란</a></li><li><a href="#12-2-브랜치-네이밍-팀마다-다름-자주-쓰이는-예시">12.2 브랜치 네이밍 (팀마다 다름 — 자주 쓰이는 예시)</a></li><li><a href="#12-3-현업에서-흔한-브랜치-작업-순서">12.3 현업에서 흔한 브랜치 작업 순서</a></li><li><a href="#12-4-브랜치-관련-명령어">12.4 브랜치 관련 명령어</a></li></ul></li><li class="toc-h1"><a href="#13-팀-저장소-운영-방식">13. 팀 저장소 운영 방식</a><ul class="toc-h2-list"><li><a href="#13-1-브랜치-보호-규칙-권장">13.1 브랜치 보호 규칙 (권장)</a></li></ul></li><li class="toc-h1"><a href="#14-Merge-전략-merge-rebase-squash">14. Merge 전략 — merge / rebase / squash</a><ul class="toc-h2-list"><li><a href="#Rebase의-안전-기준">Rebase의 안전 기준</a></li><li><a href="#Squash-merge-후-브랜치">Squash merge 후 브랜치</a></li></ul></li><li class="toc-h1"><a href="#15-자주-하는-실수">15. 자주 하는 실수</a></li><li class="toc-h1"><a href="#16-이-문서-사용법">16. 이 문서 사용법</a></li><li class="toc-h1"><a href="#17-처음부터-한-번-해보기-Git-최소-실습">17. 처음부터 한 번 해보기 — Git 최소 실습</a><ul class="toc-h2-list"><li><a href="#1단계-저장소-받기">1단계. 저장소 받기</a></li><li><a href="#2단계-기능-브랜치">2단계. 기능 브랜치</a></li><li><a href="#3단계-파일-수정-후-커밋">3단계. 파일 수정 후 커밋</a></li><li><a href="#4단계-원격에-처음-올리기">4단계. 원격에 처음 올리기</a></li><li><a href="#5단계-add-취소도-해보기">5단계. add 취소도 해보기</a></li><li><a href="#6단계-stash-해보기">6단계. stash 해보기</a></li><li><a href="#7단계-일부러-충돌-경험하기">7단계. 일부러 충돌 경험하기</a></li></ul></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
@@ -329,7 +342,7 @@ force push가 왜 위험한가?</code></pre></div>
 </div>
 <div class="search-overlay" id="search-overlay">
   <div class="search-panel">
-    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
     <div class="search-results" id="search-results"></div>
   </div>
 </div>

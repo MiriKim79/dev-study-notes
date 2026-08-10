@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>개발 협업 방식 선택 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="개발 협업 방식 선택 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="브랜치 전략, 리뷰·머지 방식, 실시간 협업, 저장소 구조 비교">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%ED%98%91%EC%97%85%20%EB%B0%A9%EC%8B%9D%20%EC%84%A0%ED%83%9D%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="개발 협업 방식 선택 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="브랜치 전략, 리뷰·머지 방식, 실시간 협업, 저장소 구조 비교">
 <script src="assets/search-index.js" defer></script>
 </head>
 <body data-root-prefix="">
@@ -22,10 +31,14 @@
   </div>
 </header>
 <div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
 <div class="page-shell">
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-title">목차</div>
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
       <ul class="toc"><li class="toc-h1"><a href="#목차">목차</a></li><li class="toc-h1"><a href="#1-브랜치-전략">1. 브랜치 전략</a><ul class="toc-h2-list"><li><a href="#1-1-GitFlow-축소판-예시-방식">1.1 GitFlow 축소판 — 예시 방식</a></li><li><a href="#1-2-GitHub-Flow">1.2 GitHub Flow</a></li><li><a href="#1-3-트렁크-기반-개발-Trunk-Based-Development">1.3 트렁크 기반 개발 (Trunk-Based Development)</a></li><li><a href="#1-4-스택-PR-Stacked-PRs">1.4 스택 PR (Stacked PRs)</a></li></ul></li><li class="toc-h1"><a href="#2-리뷰-머지-방식">2. 리뷰·머지 방식</a></li><li class="toc-h1"><a href="#3-작업-착수-전-합의-방식">3. 작업 착수 전 합의 방식</a></li><li class="toc-h1"><a href="#4-실시간-협업-방식">4. 실시간 협업 방식</a></li><li class="toc-h1"><a href="#5-작업-추적-도구">5. 작업 추적 도구</a></li><li class="toc-h1"><a href="#6-저장소-구조">6. 저장소 구조</a></li><li class="toc-h1"><a href="#7-선택-가이드">7. 선택 가이드</a><ul class="toc-h2-list"><li><a href="#먼저-묻는-질문">먼저 묻는 질문</a></li><li><a href="#상황별-시작점">상황별 시작점</a></li><li><a href="#인원수는-보조-기준일-뿐">인원수는 보조 기준일 뿐</a></li></ul></li><li class="toc-h1"><a href="#8-초보-팀에-가장-중요한-협업-원칙">8. 초보 팀에 가장 중요한 협업 원칙</a></li></ul>
       <a class="sidebar-footer-link" href="index.html">← 학습 대시보드로</a>
     </aside>
@@ -99,7 +112,7 @@
 </div>
 <div class="search-overlay" id="search-overlay">
   <div class="search-panel">
-    <input type="text" id="search-input" placeholder="키워드로 검색 (예: JWT, State, git commit)">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
