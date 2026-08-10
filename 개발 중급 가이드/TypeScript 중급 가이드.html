@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TypeScript 중급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="TypeScript 중급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="타입을 &quot;귀찮은 표기&quot;가 아니라 &quot;버그를 미리 잡아주는 도구&quot;로 쓰는 방법을 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EC%A4%91%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C/TypeScript%20%EC%A4%91%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript 중급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="타입을 &quot;귀찮은 표기&quot;가 아니라 &quot;버그를 미리 잡아주는 도구&quot;로 쓰는 방법을 정리합니다">
+<script src="../assets/search-index.js" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 중급 가이드.html">개발 중급 가이드</a> <span>›</span><span class="current">TypeScript 중급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-Union-Intersection-Generic">1. Union, Intersection, Generic</a><ul class="toc-h2-list"><li><a href="#Union-이거-아니면-저거">Union — &quot;이거 아니면 저거&quot;</a></li><li><a href="#Intersection-이것도-저것도-다">Intersection — &quot;이것도 저것도 다&quot;</a></li><li><a href="#Generic-타입을-매개변수처럼">Generic — 타입을 매개변수처럼</a></li></ul></li><li class="toc-h1"><a href="#2-interface-vs-type">2. interface vs type</a></li><li class="toc-h1"><a href="#3-유틸리티-타입">3. 유틸리티 타입</a></li><li class="toc-h1"><a href="#4-API-응답을-안전하게-다루기">4. API 응답을 안전하게 다루기</a></li><li class="toc-h1"><a href="#5-any를-피하는-법">5. `any`를 피하는 법</a><ul class="toc-h2-list"><li><a href="#any의-문제">`any`의 문제</a></li><li><a href="#unknown과-타입-가드">`unknown`과 타입 가드</a></li></ul></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-common);">
+        <span class="page-kicker">🔷 개발 중급 가이드</span>
+        <h1 class="page-title">TypeScript 중급 가이드</h1>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> JavaScript 변수·함수·비동기 처리에 익숙하고, TypeScript 기본 타입 표기(<code class="inline-code">: string</code>, <code class="inline-code">: number</code>)는 써봤지만 실전 활용은 처음인 사람</div><div class="intro-row"><strong>목적:</strong> 타입을 "귀찮은 표기"가 아니라 "버그를 미리 잡아주는 도구"로 쓰는 방법을 정리합니다</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. Union, Intersection, Generic</li><li>2. interface vs type</li><li>3. 유틸리티 타입</li><li>4. API 응답을 안전하게 다루기</li><li>5. `any`를 피하는 법</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-Union-Intersection-Generic">1. Union, Intersection, Generic<a class="heading-anchor" href="#1-Union-Intersection-Generic" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="Union-이거-아니면-저거">Union — "이거 아니면 저거"<a class="heading-anchor" href="#Union-이거-아니면-저거" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>type Status = &quot;loading&quot; | &quot;success&quot; | &quot;error&quot;;
+
+<span class="tok-keyword">function</span> renderMessage(status: Status) {
+  <span class="tok-keyword">if</span> (status === &quot;loading&quot;) <span class="tok-keyword">return</span> &quot;불러오는 중...&quot;;
+  <span class="tok-keyword">if</span> (status === &quot;success&quot;) <span class="tok-keyword">return</span> &quot;완료&quot;;
+  <span class="tok-keyword">return</span> &quot;오류가 발생했습니다&quot;;
+}</code></pre></div>
+<p>문자열을 아무거나 받는 대신, 가능한 값을 정해두면 오타(<code class="inline-code">"lodaing"</code>)를 컴파일 시점에 바로 잡아줍니다.</p>
+<h3 class="section-h2" id="Intersection-이것도-저것도-다">Intersection — "이것도 저것도 다"<a class="heading-anchor" href="#Intersection-이것도-저것도-다" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>type Timestamped = { createdAt: string };
+type Course = { id: number; title: string };
+
+type CourseWithTimestamp = Course &amp; Timestamped;
+<span class="tok-comment">// { id, title, createdAt }을 모두 가져야 함</span></code></pre></div>
+<h3 class="section-h2" id="Generic-타입을-매개변수처럼">Generic — 타입을 매개변수처럼<a class="heading-anchor" href="#Generic-타입을-매개변수처럼" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> getFirst&lt;T&gt;(list: T[]): T | <span class="tok-keyword">undefined</span> {
+  <span class="tok-keyword">return</span> list[<span class="tok-number">0</span>];
+}
+
+getFirst&lt;number&gt;([<span class="tok-number">1</span>, <span class="tok-number">2</span>, <span class="tok-number">3</span>]);        <span class="tok-comment">// number | undefined</span>
+getFirst&lt;string&gt;([&quot;a&quot;, &quot;b&quot;]);       <span class="tok-comment">// string | undefined</span></code></pre></div>
+<p>같은 로직을 타입별로 중복 작성하지 않고, "이 함수는 어떤 타입의 배열이든 받아서 같은 타입을 돌려준다"는 관계를 표현합니다.</p>
+<hr>
+<h2 class="section-h1" id="2-interface-vs-type">2. interface vs type<a class="heading-anchor" href="#2-interface-vs-type" aria-label="이 섹션 링크">#</a></h2>
+<p>둘 다 객체의 모양을 정의하지만 용도가 조금 다릅니다.</p>
+<div class="table-scroll"><table><thead><tr><th></th><th><code class="inline-code">interface</code></th><th><code class="inline-code">type</code></th></tr></thead><tbody><tr><td>객체 모양 정의</td><td>가능</td><td>가능</td></tr><tr><td>Union/Intersection</td><td>불가</td><td>가능</td></tr><tr><td>같은 이름 재선언(병합)</td><td>가능 (선언 병합)</td><td>불가</td></tr><tr><td>라이브러리 확장</td><td>유리 (외부 타입에 속성 추가 가능)</td><td>불가</td></tr></tbody></table></div>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>interface Course {
+  id: number;
+  title: string;
+}
+
+type CourseStatus = &quot;draft&quot; | &quot;published&quot;;   <span class="tok-comment">// Union은 interface로 불가능, type만 가능</span></code></pre></div>
+<p><strong>실무 팁</strong>: 팀 컨벤션에 따라 다르지만, "객체·클래스 모양"은 <code class="inline-code">interface</code>, "Union이나 여러 타입을 조합"할 때는 <code class="inline-code">type</code>을 쓰는 것이 흔한 관례입니다. 정답이 하나만 있는 문제는 아니므로 팀 안에서 통일합니다.</p>
+<hr>
+<h2 class="section-h1" id="3-유틸리티-타입">3. 유틸리티 타입<a class="heading-anchor" href="#3-유틸리티-타입" aria-label="이 섹션 링크">#</a></h2>
+<p>이미 정의한 타입을 변형해서 재사용합니다. 매번 새로 타입을 쓰지 않아도 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>interface Course {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+}
+
+type CourseSummary = Pick&lt;Course, &quot;id&quot; | &quot;title&quot;&gt;;
+<span class="tok-comment">// { id: number; title: string }</span>
+
+type CourseWithoutId = Omit&lt;Course, &quot;id&quot;&gt;;
+<span class="tok-comment">// { title, price, description }</span>
+
+type PartialCourse = Partial&lt;Course&gt;;
+<span class="tok-comment">// 모든 속성이 선택적(?)으로 바뀜 — 수정 API의 요청 바디 타입에 유용</span>
+
+type ReadonlyCourse = Readonly&lt;Course&gt;;
+<span class="tok-comment">// 모든 속성을 수정 불가능하게</span></code></pre></div>
+<p><strong>실무 팁</strong>: 강의 생성 API 요청 타입은 <code class="inline-code">Omit&lt;Course, "id"&gt;</code>(id는 서버가 생성), 수정 API 요청 타입은 <code class="inline-code">Partial&lt;Omit&lt;Course, "id"&gt;&gt;</code>(일부 필드만 보내도 됨)처럼 조합해서 쓰면, <code class="inline-code">Course</code> 타입 하나만 정의해두고 여러 상황에 재사용할 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="4-API-응답을-안전하게-다루기">4. API 응답을 안전하게 다루기<a class="heading-anchor" href="#4-API-응답을-안전하게-다루기" aria-label="이 섹션 링크">#</a></h2>
+<p>TypeScript는 컴파일 시점에만 타입을 검사합니다. 서버가 실제로 보내주는 응답이 타입 선언과 다르면(백엔드가 필드를 바꿨거나 버그가 있으면) 런타임에는 조용히 틀린 값이 들어갑니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment">// 이렇게 타입만 선언하는 것은 &quot;이 모양일 것이다&quot;라는 약속일 뿐, 실제 검증은 아님</span>
+type CourseResponse = { id: number; title: string; price: number };
+
+<span class="tok-keyword">const</span> res = <span class="tok-keyword">await</span> fetch(&quot;/api/courses/<span class="tok-number">1</span>&quot;);
+<span class="tok-keyword">const</span> data = (<span class="tok-keyword">await</span> res.json()) as CourseResponse;   <span class="tok-comment">// 실제로는 검증되지 않음</span></code></pre></div>
+<p>zod 같은 런타임 검증 라이브러리를 함께 쓰면, 실제 값이 타입과 다를 때 바로 알아챌 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">import</span> { z } <span class="tok-keyword">from</span> &quot;zod&quot;;
+
+<span class="tok-keyword">const</span> CourseSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  price: z.number(),
+});
+type Course = z.infer&lt;typeof CourseSchema&gt;;   <span class="tok-comment">// 스키마에서 타입을 자동으로 뽑아냄</span>
+
+<span class="tok-keyword">const</span> res = <span class="tok-keyword">await</span> fetch(&quot;/api/courses/<span class="tok-number">1</span>&quot;);
+<span class="tok-keyword">const</span> data = CourseSchema.parse(<span class="tok-keyword">await</span> res.json());   <span class="tok-comment">// 형식이 다르면 여기서 즉시 오류</span></code></pre></div>
+<p><strong>기본 상식</strong>: <code class="inline-code">as CourseResponse</code>(타입 단언)는 "나는 이 값이 이 타입이라고 확신한다"고 TypeScript에게 우기는 것이지, 실제로 그런지 검증해주지 않습니다. 외부(서버, 사용자 입력)에서 오는 데이터는 타입 단언보다 런타임 검증을 우선합니다.</p>
+<hr>
+<h2 class="section-h1" id="5-any를-피하는-법">5. <code class="inline-code">any</code>를 피하는 법<a class="heading-anchor" href="#5-any를-피하는-법" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="any의-문제"><code class="inline-code">any</code>의 문제<a class="heading-anchor" href="#any의-문제" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> process(data: any) {
+  <span class="tok-keyword">return</span> data.value.toUpperCase();  <span class="tok-comment">// data가 실제로 뭔지 몰라도 컴파일 에러가 안 남</span>
+}</code></pre></div>
+<p><code class="inline-code">any</code>는 타입 검사를 사실상 꺼버립니다. 컴파일은 통과하지만 실행 중 오류가 그대로 발생할 수 있어, TypeScript를 쓰는 의미가 없어집니다.</p>
+<h3 class="section-h2" id="unknown과-타입-가드"><code class="inline-code">unknown</code>과 타입 가드<a class="heading-anchor" href="#unknown과-타입-가드" aria-label="이 섹션 링크">#</a></h3>
+<p>정말 타입을 모를 때는 <code class="inline-code">any</code> 대신 <code class="inline-code">unknown</code>을 쓰고, 사용하기 전에 타입을 좁힙니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> process(data: unknown) {
+  <span class="tok-keyword">if</span> (typeof data === &quot;object&quot; &amp;&amp; data !== <span class="tok-keyword">null</span> &amp;&amp; &quot;value&quot; in data) {
+    <span class="tok-comment">// 이 블록 안에서는 data에 value 속성이 있다고 안전하게 좁혀짐</span>
+    console.log((data as { value: string }).value);
+  }
+}</code></pre></div>
+<p><code class="inline-code">unknown</code>은 <code class="inline-code">any</code>와 달리 "무엇인지 확인하기 전까지는 아무 동작도 허용하지 않아서", 검증을 빼먹는 실수를 컴파일 시점에 막아줍니다.</p>
+<hr>
+<h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>타입 에러를 없애려고 습관적으로 <code class="inline-code">any</code>를 붙임</li><li>외부 API 응답 타입을 실제 검증 없이 단언(<code class="inline-code">as</code>)만으로 처리</li><li><code class="inline-code">interface</code>와 <code class="inline-code">type</code>을 프로젝트 안에서 기준 없이 섞어 씀</li><li>제네릭을 안 쓰고 타입별로 거의 같은 함수를 복사해서 여러 개 만듦</li><li>컴파일 에러를 이해하지 않고 에러가 없어질 때까지 코드를 무작정 바꿔봄</li></ul>
+<hr>
+<h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span><code class="inline-code">any</code> 대신 구체적인 타입이나 <code class="inline-code">unknown</code> + 타입 가드를 쓰는가</span></li><li><input type="checkbox" disabled><span>외부에서 오는 데이터(API 응답, 사용자 입력)를 런타임에도 검증하는가</span></li><li><input type="checkbox" disabled><span>반복되는 타입을 유틸리티 타입(<code class="inline-code">Pick</code>/<code class="inline-code">Omit</code>/<code class="inline-code">Partial</code>)으로 재사용하는가</span></li><li><input type="checkbox" disabled><span><code class="inline-code">interface</code>/<code class="inline-code">type</code> 사용 기준이 팀 안에서 통일되어 있는가</span></li><li><input type="checkbox" disabled><span>타입 에러 메시지를 실제로 읽고 원인을 이해한 뒤 수정하는가</span></li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="데이터베이스 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">데이터베이스 중급 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

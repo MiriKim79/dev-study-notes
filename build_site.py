@@ -151,7 +151,10 @@ PAGES = [
         "cat": "start",
         "icon": "📈",
         "hub": None,
-        "hub_children": ["git-mid", "frontend-mid", "backend-mid", "ai-mid", "team-mid"],
+        "hub_children": [
+            "git-mid", "frontend-mid", "backend-mid", "ai-mid", "team-mid",
+            "test-mid", "cicd-mid", "db-mid", "ts-mid",
+        ],
     },
     {
         "key": "git-mid",
@@ -198,6 +201,42 @@ PAGES = [
         "icon": "🚀",
         "hub": "mid-hub",
     },
+    {
+        "key": "test-mid",
+        "src": f"{MID_DIR}/테스트 자동화 중급 가이드.md",
+        "title": "테스트 자동화 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "common",
+        "icon": "🧪",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "cicd-mid",
+        "src": f"{MID_DIR}/CI·CD 중급 가이드.md",
+        "title": "CI·CD 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "common",
+        "icon": "⚙️",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "db-mid",
+        "src": f"{MID_DIR}/데이터베이스 중급 가이드.md",
+        "title": "데이터베이스 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "common",
+        "icon": "🗄️",
+        "hub": "mid-hub",
+    },
+    {
+        "key": "ts-mid",
+        "src": f"{MID_DIR}/TypeScript 중급 가이드.md",
+        "title": "TypeScript 중급 가이드",
+        "kicker": "개발 중급 가이드",
+        "cat": "common",
+        "icon": "🔷",
+        "hub": "mid-hub",
+    },
 ]
 PAGES_BY_KEY = {p["key"]: p for p in PAGES}
 
@@ -223,6 +262,10 @@ STUDY_ORDER = [
     "frontend-mid",
     "backend-mid",
     "ai-mid",
+    "test-mid",
+    "cicd-mid",
+    "db-mid",
+    "ts-mid",
 ]
 
 CAT_LABEL = {
@@ -233,6 +276,7 @@ CAT_LABEL = {
     "git": "Git·GitHub",
     "collab": "협업 방식",
     "github": "GitHub 팀 협업",
+    "common": "공통",
 }
 
 
@@ -1086,9 +1130,16 @@ OVERVIEW_ROWS_MID = [
     ("backend-mid", "백엔드 중급 가이드", "캐싱, 메시지 큐, N+1 쿼리, API 버저닝, Rate Limiting, 구조화 로깅", "API 서버 하나를 끝까지 만들어본 뒤"),
     ("ai-mid", "생성형 AI 중급 가이드", "파인튜닝, 벡터 DB 심화, 프롬프트 체이닝, 비용 최적화, 평가 자동화", "기초 RAG·Tool Calling을 붙여본 뒤"),
     ("team-mid", "팀 협업 중급 가이드", "코드 리뷰 문화, ADR, 기술 부채 관리, 온보딩 문서화, 회고", "여러 명이 함께 개발을 시작한 뒤"),
+    ("test-mid", "테스트 자동화 중급 가이드", "테스트 피라미드, TDD, Mock/Stub, 커버리지의 함정, 플레이키 테스트", "테스트 코드를 체계적으로 짜고 싶을 때"),
+    ("cicd-mid", "CI·CD 중급 가이드", "CI/CD 개념, GitHub Actions 배포 파이프라인, 배포 전략, 시크릿 관리", "배포까지 자동화하고 싶을 때"),
+    ("db-mid", "데이터베이스 중급 가이드", "인덱스 튜닝, 정규화·역정규화, 복제, 샤딩 기초, 백업과 복구", "데이터가 많아져 조회가 느려질 때"),
+    ("ts-mid", "TypeScript 중급 가이드", "Union/Generic, interface vs type, 유틸리티 타입, 런타임 검증, any 피하기", "TypeScript를 실전에 활용하고 싶을 때"),
 ]
 
-DASHBOARD_CARDS_MID = ["git-mid", "frontend-mid", "backend-mid", "ai-mid", "team-mid"]
+DASHBOARD_CARDS_MID = [
+    "git-mid", "frontend-mid", "backend-mid", "ai-mid", "team-mid",
+    "test-mid", "cicd-mid", "db-mid", "ts-mid",
+]
 
 STEP_FLOW = [
     {"title": "팀 개발 시작 가이드", "sub": "무엇을 확인하고 어떤 순서로 개발할지 먼저 파악", "key": "team-start"},
