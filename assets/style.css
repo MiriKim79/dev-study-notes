@@ -501,7 +501,7 @@ table.overview-table td.name-cell { font-weight: 700; white-space: nowrap; color
   .search-box-desktop { display: flex; }
   .search-btn { display: none; }
   .sidebar-collapse-btn { display: inline-flex; }
-  body.sidebar-collapsed .layout { grid-template-columns: 0 minmax(0, 1fr); }
+  body.sidebar-collapsed .layout { grid-template-columns: minmax(0, 1fr); }
   body.sidebar-collapsed .sidebar { display: none; }
   body.sidebar-collapsed .sidebar-reopen-btn { display: flex; }
 }
