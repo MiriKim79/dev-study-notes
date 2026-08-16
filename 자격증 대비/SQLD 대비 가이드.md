@@ -18,6 +18,9 @@
 | 반정규화(De-normalization) | 조회 성능을 위해 일부러 정규화 원칙을 깨는 것 |
 | 윈도우 함수(Window Function) | 행을 그룹으로 묶지 않으면서, 그룹별 순위·누계 같은 계산을 할 수 있게 해주는 SQL 함수 |
 | 계층형 질의(Hierarchical Query) | 조직도처럼 "상위-하위" 관계로 이어진 데이터를 조회하는 SQL 문법 |
+| DDL(데이터 정의어) | `CREATE`/`ALTER`/`DROP`처럼 테이블 등 객체 자체를 만들고 바꾸고 지우는 구문 |
+| DCL(데이터 제어어) | `GRANT`/`REVOKE`처럼 다른 사용자에게 권한을 주거나 뺏는 구문 |
+| TCL(트랜잭션 제어어) | `COMMIT`/`ROLLBACK`처럼 트랜잭션을 확정하거나 되돌리는 구문 |
 
 ---
 
@@ -55,6 +58,26 @@ ERD(Entity Relationship Diagram)는 엔터티 사이의 관계를 그림으로 �
 | 제3정규형(3NF) | 기본키가 아닌 컬럼끼리 서로 종속된 관계를 분리(이행 함수 종속 제거) |
 
 **기본 상식**: 실무에서는 "정규화가 왜 필요한가"라는 개념 이해가 중요하지만, SQLD 시험에서는 "이 예시 테이블은 몇 정규형을 위반했는가"처럼 정의를 정확히 적용하는 문제가 나옵니다. 각 단계의 조건을 예시와 함께 정확히 외워두는 것이 필요합니다.
+
+## 데이터 모델과 SQL — ERD를 실제 테이블로 옮기기
+
+1과목의 마지막 관문은 "그려놓은 ERD를 실제로 어떻게 SQL로 구현하는가"입니다.
+
+```sql
+-- 회원(1) --- (N)주문 관계를 실제 테이블로 구현
+CREATE TABLE member (
+  member_id   INT PRIMARY KEY,
+  name        VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE orders (
+  order_id    INT PRIMARY KEY,
+  member_id   INT NOT NULL,
+  FOREIGN KEY (member_id) REFERENCES member(member_id)   -- 관계를 외래키로 구현
+);
+```
+
+**기본 상식**: 엔터티는 테이블로, 속성은 컬럼으로, 식별자는 기본키(PK)로, 관계는 외래키(FK)로 옮겨집니다. 시험에서는 ERD 그림을 주고 "이걸 구현한 SQL로 맞는 것은?"이라거나, 반대로 테이블 정의(SQL)를 주고 "이 관계를 ERD로 그리면?"을 묻는 식으로 양방향으로 나옵니다.
 
 ---
 
@@ -107,6 +130,28 @@ WHERE salary IS NULL  -- 올바른 문법
 
 **기본 상식**: NULL은 "값이 없다"는 상태 자체이기 때문에 일반 비교 연산자(`=`, `!=`)로는 판정할 수 없고 `IS NULL`/`IS NOT NULL`을 씁니다. `COUNT(컬럼명)`은 NULL을 세지 않지만 `COUNT(*)`는 센다는 차이도 시험에 자주 나옵니다.
 
+## 관리 구문 — SELECT 말고도 SQL이 하는 일
+
+지금까지 다룬 SELECT는 데이터를 "조회"하는 구문(DML)입니다. SQLD는 데이터를 정의하고, 권한을 주고, 트랜잭션을 마무리하는 구문도 따로 다룹니다.
+
+| 분류 | 대표 구문 | 하는 일 |
+| --- | --- | --- |
+| DDL(데이터 정의어) | `CREATE`, `ALTER`, `DROP` | 테이블 등 객체 자체를 만들고 바꾸고 지움 |
+| DML(데이터 조작어) | `SELECT`, `INSERT`, `UPDATE`, `DELETE` | 테이블 안의 데이터를 조회·추가·수정·삭제 |
+| DCL(데이터 제어어) | `GRANT`, `REVOKE` | 다른 사용자에게 권한을 주거나 뺏음 |
+| TCL(트랜잭션 제어어) | `COMMIT`, `ROLLBACK`, `SAVEPOINT` | 트랜잭션을 확정하거나 되돌림 |
+
+```sql
+BEGIN;
+UPDATE accounts SET balance = balance - 1000 WHERE id = 1;
+SAVEPOINT before_deposit;               -- 되돌아올 지점 표시
+UPDATE accounts SET balance = balance + 1000 WHERE id = 2;
+ROLLBACK TO before_deposit;             -- 두 번째 UPDATE만 취소
+COMMIT;                                  -- 첫 번째 UPDATE만 최종 반영
+```
+
+**기본 상식**: `DROP`은 테이블 구조 자체를 삭제(되돌리기 어려움), `DELETE`는 데이터만 삭제(구조는 남음), `TRUNCATE`는 데이터를 전부 비우되 구조는 남기고 삭제 로그를 거의 남기지 않아 `DELETE`보다 빠르다는 차이가 자주 출제됩니다.
+
 ---
 
 # 4. 연습문제
@@ -125,7 +170,13 @@ B) 왼쪽 테이블의 모든 행을 반환하고, 매칭되지 않으면 오른
 C) 오른쪽 테이블의 모든 행을 반환한다
 D) 두 테이블의 교집합만 반환한다
 
-**정답**: 1번 A / 2번 B
+**문제 3.** 테이블의 데이터는 모두 삭제하지만 테이블 구조 자체는 남기고, `DELETE`보다 빠르게 동작하는 구문은?
+A) `DROP TABLE`
+B) `TRUNCATE TABLE`
+C) `ALTER TABLE`
+D) `ROLLBACK`
+
+**정답**: 1번 A / 2번 B / 3번 B
 
 ---
 

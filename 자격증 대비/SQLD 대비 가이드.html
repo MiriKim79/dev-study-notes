@@ -40,7 +40,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-1과목-핵심-데이터-모델링">2. 1과목 핵심 — 데이터 모델링</a><ul class="toc-h2-list"><li><a href="#ERD-읽는-법">ERD 읽는 법</a></li><li><a href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄</a></li></ul></li><li class="toc-h1"><a href="#3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용</a><ul class="toc-h2-list"><li><a href="#실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다</a></li><li><a href="#조인-JOIN-종류">조인(JOIN) 종류</a></li><li><a href="#윈도우-함수">윈도우 함수</a></li><li><a href="#NULL-처리-주의">NULL 처리 주의</a></li></ul></li><li class="toc-h1"><a href="#4-연습문제">4. 연습문제</a></li><li class="toc-h1"><a href="#5-합격-꿀팁">5. 합격 꿀팁</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-진짜-기출문제는-여기서">8. 진짜 기출문제는 여기서</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-1과목-핵심-데이터-모델링">2. 1과목 핵심 — 데이터 모델링</a><ul class="toc-h2-list"><li><a href="#ERD-읽는-법">ERD 읽는 법</a></li><li><a href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄</a></li><li><a href="#데이터-모델과-SQL-ERD를-실제-테이블로-옮기기">데이터 모델과 SQL — ERD를 실제 테이블로 옮기기</a></li></ul></li><li class="toc-h1"><a href="#3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용</a><ul class="toc-h2-list"><li><a href="#실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다</a></li><li><a href="#조인-JOIN-종류">조인(JOIN) 종류</a></li><li><a href="#윈도우-함수">윈도우 함수</a></li><li><a href="#NULL-처리-주의">NULL 처리 주의</a></li><li><a href="#관리-구문-SELECT-말고도-SQL이-하는-일">관리 구문 — SELECT 말고도 SQL이 하는 일</a></li></ul></li><li class="toc-h1"><a href="#4-연습문제">4. 연습문제</a></li><li class="toc-h1"><a href="#5-합격-꿀팁">5. 합격 꿀팁</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-진짜-기출문제는-여기서">8. 진짜 기출문제는 여기서</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -54,7 +54,7 @@
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
 <p>데이터베이스 기초 가이드에서 다룬 테이블·SQL 기본 문법(SELECT/WHERE/JOIN)은 이미 안다고 가정합니다. 여기서는 시험에서 새로 나오는 용어만 정리합니다.</p>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>엔터티(Entity)</td><td>데이터로 관리해야 하는 대상. 테이블로 구현되는 경우가 많음(예: 회원, 주문)</td></tr><tr><td>속성(Attribute)</td><td>엔터티가 가지는 세부 정보 하나(예: 회원의 이름, 이메일)</td></tr><tr><td>관계(Relationship)</td><td>엔터티와 엔터티 사이의 연관성(예: 회원이 주문을 여러 건 가질 수 있음)</td></tr><tr><td>식별자(Identifier)</td><td>엔터티 안의 각 행을 구분하는 값. 기본키(PK)가 대표적</td></tr><tr><td>정규화(Normalization)</td><td>데이터 중복을 없애도록 테이블을 단계적으로 분리하는 설계 원칙</td></tr><tr><td>반정규화(De-normalization)</td><td>조회 성능을 위해 일부러 정규화 원칙을 깨는 것</td></tr><tr><td>윈도우 함수(Window Function)</td><td>행을 그룹으로 묶지 않으면서, 그룹별 순위·누계 같은 계산을 할 수 있게 해주는 SQL 함수</td></tr><tr><td>계층형 질의(Hierarchical Query)</td><td>조직도처럼 "상위-하위" 관계로 이어진 데이터를 조회하는 SQL 문법</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>엔터티(Entity)</td><td>데이터로 관리해야 하는 대상. 테이블로 구현되는 경우가 많음(예: 회원, 주문)</td></tr><tr><td>속성(Attribute)</td><td>엔터티가 가지는 세부 정보 하나(예: 회원의 이름, 이메일)</td></tr><tr><td>관계(Relationship)</td><td>엔터티와 엔터티 사이의 연관성(예: 회원이 주문을 여러 건 가질 수 있음)</td></tr><tr><td>식별자(Identifier)</td><td>엔터티 안의 각 행을 구분하는 값. 기본키(PK)가 대표적</td></tr><tr><td>정규화(Normalization)</td><td>데이터 중복을 없애도록 테이블을 단계적으로 분리하는 설계 원칙</td></tr><tr><td>반정규화(De-normalization)</td><td>조회 성능을 위해 일부러 정규화 원칙을 깨는 것</td></tr><tr><td>윈도우 함수(Window Function)</td><td>행을 그룹으로 묶지 않으면서, 그룹별 순위·누계 같은 계산을 할 수 있게 해주는 SQL 함수</td></tr><tr><td>계층형 질의(Hierarchical Query)</td><td>조직도처럼 "상위-하위" 관계로 이어진 데이터를 조회하는 SQL 문법</td></tr><tr><td>DDL(데이터 정의어)</td><td><code class="inline-code">CREATE</code>/<code class="inline-code">ALTER</code>/<code class="inline-code">DROP</code>처럼 테이블 등 객체 자체를 만들고 바꾸고 지우는 구문</td></tr><tr><td>DCL(데이터 제어어)</td><td><code class="inline-code">GRANT</code>/<code class="inline-code">REVOKE</code>처럼 다른 사용자에게 권한을 주거나 뺏는 구문</td></tr><tr><td>TCL(트랜잭션 제어어)</td><td><code class="inline-code">COMMIT</code>/<code class="inline-code">ROLLBACK</code>처럼 트랜잭션을 확정하거나 되돌리는 구문</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="1-시험-구성">1. 시험 구성<a class="heading-anchor" href="#1-시험-구성" aria-label="이 섹션 링크">#</a></h2>
 <p>SQLD는 2과목으로 나뉩니다.</p>
@@ -70,6 +70,20 @@
 <h3 class="section-h2" id="정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄<a class="heading-anchor" href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄" aria-label="이 섹션 링크">#</a></h3>
 <div class="table-scroll"><table><thead><tr><th>단계</th><th>조건</th></tr></thead><tbody><tr><td>제1정규형(1NF)</td><td>한 칸에 값이 하나만 들어있어야 함(반복 그룹 제거)</td></tr><tr><td>제2정규형(2NF)</td><td>기본키의 일부에만 종속된 컬럼을 분리(부분 함수 종속 제거)</td></tr><tr><td>제3정규형(3NF)</td><td>기본키가 아닌 컬럼끼리 서로 종속된 관계를 분리(이행 함수 종속 제거)</td></tr></tbody></table></div>
 <p><strong>기본 상식</strong>: 실무에서는 "정규화가 왜 필요한가"라는 개념 이해가 중요하지만, SQLD 시험에서는 "이 예시 테이블은 몇 정규형을 위반했는가"처럼 정의를 정확히 적용하는 문제가 나옵니다. 각 단계의 조건을 예시와 함께 정확히 외워두는 것이 필요합니다.</p>
+<h3 class="section-h2" id="데이터-모델과-SQL-ERD를-실제-테이블로-옮기기">데이터 모델과 SQL — ERD를 실제 테이블로 옮기기<a class="heading-anchor" href="#데이터-모델과-SQL-ERD를-실제-테이블로-옮기기" aria-label="이 섹션 링크">#</a></h3>
+<p>1과목의 마지막 관문은 "그려놓은 ERD를 실제로 어떻게 SQL로 구현하는가"입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>-- 회원(1) --- (N)주문 관계를 실제 테이블로 구현
+CREATE TABLE member (
+  member_id   INT PRIMARY KEY,
+  name        VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE orders (
+  order_id    INT PRIMARY KEY,
+  member_id   INT NOT NULL,
+  FOREIGN KEY (member_id) REFERENCES member(member_id)   -- 관계를 외래키로 구현
+);</code></pre></div>
+<p><strong>기본 상식</strong>: 엔터티는 테이블로, 속성은 컬럼으로, 식별자는 기본키(PK)로, 관계는 외래키(FK)로 옮겨집니다. 시험에서는 ERD 그림을 주고 "이걸 구현한 SQL로 맞는 것은?"이라거나, 반대로 테이블 정의(SQL)를 주고 "이 관계를 ERD로 그리면?"을 묻는 식으로 양방향으로 나옵니다.</p>
 <hr>
 <h2 class="section-h1" id="3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용<a class="heading-anchor" href="#3-2과목-핵심-SQL-기본-및-활용" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다<a class="heading-anchor" href="#실행-순서-작성-순서와-다릅니다" aria-label="이 섹션 링크">#</a></h3>
@@ -94,12 +108,23 @@ FROM employees;</code></pre></div>
 WHERE salary = NULL   -- 항상 결과 없음(틀림)
 WHERE salary IS NULL  -- 올바른 문법</code></pre></div>
 <p><strong>기본 상식</strong>: NULL은 "값이 없다"는 상태 자체이기 때문에 일반 비교 연산자(<code class="inline-code">=</code>, <code class="inline-code">!=</code>)로는 판정할 수 없고 <code class="inline-code">IS NULL</code>/<code class="inline-code">IS NOT NULL</code>을 씁니다. <code class="inline-code">COUNT(컬럼명)</code>은 NULL을 세지 않지만 <code class="inline-code">COUNT(*)</code>는 센다는 차이도 시험에 자주 나옵니다.</p>
+<h3 class="section-h2" id="관리-구문-SELECT-말고도-SQL이-하는-일">관리 구문 — SELECT 말고도 SQL이 하는 일<a class="heading-anchor" href="#관리-구문-SELECT-말고도-SQL이-하는-일" aria-label="이 섹션 링크">#</a></h3>
+<p>지금까지 다룬 SELECT는 데이터를 "조회"하는 구문(DML)입니다. SQLD는 데이터를 정의하고, 권한을 주고, 트랜잭션을 마무리하는 구문도 따로 다룹니다.</p>
+<div class="table-scroll"><table><thead><tr><th>분류</th><th>대표 구문</th><th>하는 일</th></tr></thead><tbody><tr><td>DDL(데이터 정의어)</td><td><code class="inline-code">CREATE</code>, <code class="inline-code">ALTER</code>, <code class="inline-code">DROP</code></td><td>테이블 등 객체 자체를 만들고 바꾸고 지움</td></tr><tr><td>DML(데이터 조작어)</td><td><code class="inline-code">SELECT</code>, <code class="inline-code">INSERT</code>, <code class="inline-code">UPDATE</code>, <code class="inline-code">DELETE</code></td><td>테이블 안의 데이터를 조회·추가·수정·삭제</td></tr><tr><td>DCL(데이터 제어어)</td><td><code class="inline-code">GRANT</code>, <code class="inline-code">REVOKE</code></td><td>다른 사용자에게 권한을 주거나 뺏음</td></tr><tr><td>TCL(트랜잭션 제어어)</td><td><code class="inline-code">COMMIT</code>, <code class="inline-code">ROLLBACK</code>, <code class="inline-code">SAVEPOINT</code></td><td>트랜잭션을 확정하거나 되돌림</td></tr></tbody></table></div>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>BEGIN;
+UPDATE accounts SET balance = balance - 1000 WHERE id = 1;
+SAVEPOINT before_deposit;               -- 되돌아올 지점 표시
+UPDATE accounts SET balance = balance + 1000 WHERE id = 2;
+ROLLBACK TO before_deposit;             -- 두 번째 UPDATE만 취소
+COMMIT;                                  -- 첫 번째 UPDATE만 최종 반영</code></pre></div>
+<p><strong>기본 상식</strong>: <code class="inline-code">DROP</code>은 테이블 구조 자체를 삭제(되돌리기 어려움), <code class="inline-code">DELETE</code>는 데이터만 삭제(구조는 남음), <code class="inline-code">TRUNCATE</code>는 데이터를 전부 비우되 구조는 남기고 삭제 로그를 거의 남기지 않아 <code class="inline-code">DELETE</code>보다 빠르다는 차이가 자주 출제됩니다.</p>
 <hr>
 <h2 class="section-h1" id="4-연습문제">4. 연습문제<a class="heading-anchor" href="#4-연습문제" aria-label="이 섹션 링크">#</a></h2>
 <blockquote><p>⚠️ 아래 문제는 개념 이해를 돕기 위해 직접 만든 연습문제이며, 실제 SQLD 기출문제가 아닙니다.</p></blockquote>
 <p><strong>문제 1.</strong> 다음 중 제3정규형(3NF)을 만족하지 않는 상황은? A) 기본키가 아닌 두 컬럼이 서로 종속 관계에 있다 B) 한 컬럼에 여러 값이 들어있다 C) 기본키 일부에만 종속된 컬럼이 있다 D) 모든 컬럼이 기본키에 완전 함수 종속되어 있다</p>
 <p><strong>문제 2.</strong> <code class="inline-code">LEFT OUTER JOIN</code>에 대한 설명으로 옳은 것은? A) 양쪽 테이블에 모두 값이 있는 행만 반환한다 B) 왼쪽 테이블의 모든 행을 반환하고, 매칭되지 않으면 오른쪽 값은 NULL로 채운다 C) 오른쪽 테이블의 모든 행을 반환한다 D) 두 테이블의 교집합만 반환한다</p>
-<p><strong>정답</strong>: 1번 A / 2번 B</p>
+<p><strong>문제 3.</strong> 테이블의 데이터는 모두 삭제하지만 테이블 구조 자체는 남기고, <code class="inline-code">DELETE</code>보다 빠르게 동작하는 구문은? A) <code class="inline-code">DROP TABLE</code> B) <code class="inline-code">TRUNCATE TABLE</code> C) <code class="inline-code">ALTER TABLE</code> D) <code class="inline-code">ROLLBACK</code></p>
+<p><strong>정답</strong>: 1번 A / 2번 B / 3번 B</p>
 <hr>
 <h2 class="section-h1" id="5-합격-꿀팁">5. 합격 꿀팁<a class="heading-anchor" href="#5-합격-꿀팁" aria-label="이 섹션 링크">#</a></h2>
 <ul><li><strong>2과목(SQL)에 시간을 더 배분하세요.</strong> 1과목(모델링)보다 문항 수·배점이 훨씬 큽니다.</li><li>SQL 문제를 풀 때 눈으로만 읽지 말고, 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)대로 손으로 직접 중간 결과를 적어보며 채점하세요. 몇 번만 해보면 몸에 붙습니다.</li><li>정규화 단계·조인 종류처럼 헷갈리는 개념은 나만의 비교표를 직접 만들어두면, 시험장에서 "이게 뭐였더라" 하는 시간을 줄여줍니다.</li><li>가능하면 무료로 설치할 수 있는 DB(MySQL 등)에 연습문제의 쿼리를 직접 돌려보세요. 이론으로만 외운 것과 실제로 결과를 눈으로 본 것은 오래 남는 정도가 다릅니다.</li></ul>
