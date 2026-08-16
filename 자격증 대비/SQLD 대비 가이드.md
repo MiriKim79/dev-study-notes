@@ -21,6 +21,10 @@
 | DDL(데이터 정의어) | `CREATE`/`ALTER`/`DROP`처럼 테이블 등 객체 자체를 만들고 바꾸고 지우는 구문 |
 | DCL(데이터 제어어) | `GRANT`/`REVOKE`처럼 다른 사용자에게 권한을 주거나 뺏는 구문 |
 | TCL(트랜잭션 제어어) | `COMMIT`/`ROLLBACK`처럼 트랜잭션을 확정하거나 되돌리는 구문 |
+| 식별자 관계 | 부모 엔터티의 기본키가 자식 엔터티의 기본키에도 포함되는 강한 종속 관계 |
+| 슈퍼타입/서브타입 | 여러 엔터티가 공통 속성은 슈퍼타입으로 묶고, 다른 속성만 서브타입으로 나누는 모델링 방식 |
+| 상관 서브쿼리(Correlated Subquery) | 바깥 쿼리의 각 행마다 안쪽 서브쿼리가 그 행 값을 참조해서 다시 실행되는 서브쿼리 |
+| ROLLUP | `GROUP BY` 결과에 더해, 더 상위 단계의 소계·전체 합계까지 함께 계산해주는 확장 문법 |
 
 ---
 
@@ -79,6 +83,46 @@ CREATE TABLE orders (
 
 **기본 상식**: 엔터티는 테이블로, 속성은 컬럼으로, 식별자는 기본키(PK)로, 관계는 외래키(FK)로 옮겨집니다. 시험에서는 ERD 그림을 주고 "이걸 구현한 SQL로 맞는 것은?"이라거나, 반대로 테이블 정의(SQL)를 주고 "이 관계를 ERD로 그리면?"을 묻는 식으로 양방향으로 나옵니다.
 
+## 식별자 관계 vs 비식별자 관계
+
+부모 엔터티의 기본키가 자식 엔터티의 기본키에도 포함되는지에 따라 나뉩니다.
+
+```sql
+-- 식별자 관계: 부모(order)의 PK가 자식(order_item)의 PK 일부로도 쓰임
+CREATE TABLE order_item (
+  order_id    INT,
+  item_seq    INT,
+  PRIMARY KEY (order_id, item_seq),              -- 부모 PK가 자식 PK에 포함됨
+  FOREIGN KEY (order_id) REFERENCES orders(order_id)
+);
+
+-- 비식별자 관계: 부모의 PK가 자식의 일반 컬럼(FK)으로만 쓰임
+CREATE TABLE review (
+  review_id   INT PRIMARY KEY,                    -- 자기만의 독립적인 PK를 가짐
+  order_id    INT,
+  FOREIGN KEY (order_id) REFERENCES orders(order_id)
+);
+```
+
+**기본 상식**: 자식 엔터티가 부모 없이는 존재할 의미가 없을 만큼 강하게 종속되면 식별자 관계(예: 주문-주문상세), 부모와 독립적으로도 의미가 있으면 비식별자 관계(예: 주문-리뷰)를 씁니다. 시험에서는 "이 관계는 부모 PK가 자식 PK에 포함되는가"로 둘을 구분하는 문제가 나옵니다.
+
+## 슈퍼타입/서브타입
+
+여러 엔터티가 공통 속성은 공유하고, 일부만 다른 속성을 가질 때 쓰는 모델링 방식입니다.
+
+```text
+슈퍼타입: 회원(공통 속성 — 이름, 이메일, 가입일)
+서브타입: 학생회원(학교명), 기업회원(사업자번호) — 각자만의 속성
+```
+
+| 구현 방식 | 설명 |
+| --- | --- |
+| 1:1 (개별 테이블) | 슈퍼타입과 서브타입을 각각 테이블로 분리, 서브타입 테이블은 PK가 곧 FK |
+| 전체 통합 (단일 테이블) | 슈퍼타입+모든 서브타입 속성을 테이블 하나에 다 넣고, 구분 컬럼으로 서브타입을 구분 |
+| 서브타입 통합 | 슈퍼타입은 없애고 서브타입마다 공통 속성을 중복해서 각자 테이블로 만듦 |
+
+**기본 상식**: 조회가 잦고 서브타입 간 차이가 크면 개별 테이블로, 구조를 단순하게 유지하고 싶으면 단일 테이블로 구현하는 것이 일반적인 선택 기준입니다.
+
 ---
 
 # 3. 2과목 핵심 — SQL 기본 및 활용
@@ -108,6 +152,59 @@ ORDER BY department;
 | LEFT OUTER JOIN | 왼쪽 테이블은 전부, 오른쪽은 매칭되는 값만(없으면 NULL) |
 | RIGHT OUTER JOIN | 오른쪽 테이블은 전부, 왼쪽은 매칭되는 값만 |
 | FULL OUTER JOIN | 양쪽 테이블의 모든 행(매칭 안 되면 NULL) |
+
+## 서브쿼리 — 쿼리 안의 쿼리
+
+| 종류 | 반환하는 값 | 어디서 씀 |
+| --- | --- | --- |
+| 단일 행 서브쿼리 | 값 하나 | `WHERE salary > (SELECT AVG(salary) FROM employees)` |
+| 다중 행 서브쿼리 | 여러 값 | `WHERE department IN (SELECT department FROM ...)` |
+| 다중 컬럼 서브쿼리 | 여러 컬럼 조합 | `WHERE (dept, level) IN (SELECT dept, level FROM ...)` |
+| 상관 서브쿼리(Correlated) | 바깥 쿼리의 각 행마다 다시 실행됨 | `WHERE EXISTS (SELECT 1 FROM orders o WHERE o.member_id = m.id)` |
+
+```sql
+-- 상관 서브쿼리: 바깥 쿼리(m)의 한 행씩 안쪽 서브쿼리에 대입해서 반복 실행
+SELECT m.name
+FROM member m
+WHERE EXISTS (
+  SELECT 1 FROM orders o WHERE o.member_id = m.member_id
+);
+```
+
+**기본 상식**: 단일 행 서브쿼리 자리에 `=` 대신 다중 행이 나오는 서브쿼리를 넣으면 오류가 납니다(`단일-행 하위 질의에 2개 이상의 행이 리턴됩니다` 같은 에러). 서브쿼리가 몇 개의 값을 반환하는지 먼저 파악하는 것이 첫 단계입니다.
+
+## 집합 연산자 — 여러 SELECT 결과를 합치기
+
+| 연산자 | 결과 |
+| --- | --- |
+| `UNION` | 두 결과를 합치고 중복을 제거 |
+| `UNION ALL` | 두 결과를 합치되 중복도 그대로 유지(더 빠름 — 중복 제거 연산이 없어서) |
+| `INTERSECT` | 두 결과의 교집합(둘 다에 있는 행) |
+| `MINUS` (또는 `EXCEPT`) | 첫 번째 결과에서 두 번째 결과에 있는 행을 뺌 |
+
+**기본 상식**: 집합 연산자로 합치는 두 SELECT는 컬럼 개수와 데이터 타입이 서로 맞아야 합니다. 중복 제거가 필요 없다면 `UNION`보다 `UNION ALL`이 성능상 유리하다는 점이 자주 출제됩니다.
+
+## GROUP BY 확장 — ROLLUP
+
+```sql
+SELECT department, position, SUM(salary)
+FROM employees
+GROUP BY ROLLUP(department, position);
+```
+
+일반 `GROUP BY`는 각 그룹의 소계만 보여주지만, `ROLLUP`은 그룹별 소계에 더해 **더 상위 단계의 중간 합계와 전체 합계까지** 한 번에 만들어줍니다(부서+직급별 합계, 부서별 합계, 전체 합계).
+
+## 계층형 질의 — 조직도 같은 상하 구조 조회
+
+```sql
+-- Oracle 문법 예시
+SELECT employee_id, manager_id, name, LEVEL
+FROM employees
+START WITH manager_id IS NULL     -- 최상위(루트)부터 시작
+CONNECT BY PRIOR employee_id = manager_id;   -- 부모-자식 연결 조건
+```
+
+`START WITH`로 시작점(보통 최상위 관리자)을 정하고, `CONNECT BY PRIOR`로 "누가 누구의 부모인지" 연결 규칙을 정합니다. `LEVEL`은 그 행이 몇 단계 깊이에 있는지를 알려줍니다.
 
 ## 윈도우 함수
 
@@ -176,7 +273,19 @@ B) `TRUNCATE TABLE`
 C) `ALTER TABLE`
 D) `ROLLBACK`
 
-**정답**: 1번 A / 2번 B / 3번 B
+**문제 4.** 두 SELECT 결과를 합치되, 중복된 행도 그대로 남기고 싶을 때 쓰는 것은?
+A) `UNION`
+B) `UNION ALL`
+C) `INTERSECT`
+D) `MINUS`
+
+**문제 5.** 바깥 쿼리의 각 행마다 그 값을 참조해서 다시 실행되는 서브쿼리를 가리키는 말은?
+A) 단일 행 서브쿼리
+B) 다중 행 서브쿼리
+C) 상관 서브쿼리
+D) 스칼라 서브쿼리
+
+**정답**: 1번 A / 2번 B / 3번 B / 4번 B / 5번 C
 
 ---
 
@@ -195,15 +304,21 @@ D) `ROLLBACK`
 - SQL 실행 순서를 모르고 작성 순서(SELECT부터)로 착각
 - NULL을 `=`로 비교하려다 오답
 - 조인 종류별 결과 차이를 직접 손으로 안 그려보고 암기만 함
+- 단일 행 서브쿼리 자리에 여러 값을 반환하는 서브쿼리를 넣어 오류
+- `UNION`과 `UNION ALL`을 성능 차이 없이 아무거나 사용
 
 ---
 
 # 7. 실전 체크리스트
 
 - [ ] 정규화 1~3단계 조건을 예시와 함께 설명할 수 있는가
+- [ ] 식별자 관계와 비식별자 관계를 구분할 수 있는가
 - [ ] SQL의 실제 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)를 아는가
 - [ ] 조인 4종류의 결과 차이를 직접 그려서 구분할 수 있는가
+- [ ] 서브쿼리 종류(단일행/다중행/상관)별로 어떤 연산자와 함께 쓰는지 아는가
+- [ ] `UNION`과 `UNION ALL`의 차이를 설명할 수 있는가
 - [ ] 윈도우 함수와 GROUP BY의 차이를 설명할 수 있는가
+- [ ] DDL/DML/DCL/TCL 네 가지 분류와 대표 구문을 아는가
 - [ ] 최신 시험 공고(문항 수, 합격 기준, 접수 일정)를 공식 사이트에서 확인했는가
 
 ---

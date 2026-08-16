@@ -53,7 +53,7 @@
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>NCS (국가직무능력표준)</td><td>실무에서 필요한 능력을 국가가 표준화해 정리한 기준. 정보처리기사 실기 문제의 근거가 됨</td></tr><tr><td>요구사항 분석</td><td>시스템이 무엇을 해야 하는지 정리하는 단계. 이 사이트의 팀 개발 시작 가이드 3장과 같은 개념</td></tr><tr><td>화면 설계</td><td>사용자가 보는 화면의 배치와 흐름을 정리하는 단계</td></tr><tr><td>정규화</td><td>데이터 중복을 없애도록 테이블을 분리하는 설계 원칙(SQLD 대비 가이드 2장 참고)</td></tr><tr><td>프로세스(Process)</td><td>실행 중인 프로그램 하나. 운영체제가 CPU·메모리를 배분하는 단위</td></tr><tr><td>스레드(Thread)</td><td>프로세스 안에서 실제로 작업을 수행하는 흐름 단위</td></tr><tr><td>관계대수(Relational Algebra)</td><td>릴레이션(테이블)에 대한 연산을 수학적으로 표현하는 방법</td></tr><tr><td>소프트웨어 생명주기(SDLC)</td><td>요구사항 분석부터 설계·구현·테스트·유지보수까지 소프트웨어가 만들어지고 관리되는 전체 과정</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>NCS (국가직무능력표준)</td><td>실무에서 필요한 능력을 국가가 표준화해 정리한 기준. 정보처리기사 실기 문제의 근거가 됨</td></tr><tr><td>요구사항 분석</td><td>시스템이 무엇을 해야 하는지 정리하는 단계. 이 사이트의 팀 개발 시작 가이드 3장과 같은 개념</td></tr><tr><td>화면 설계</td><td>사용자가 보는 화면의 배치와 흐름을 정리하는 단계</td></tr><tr><td>정규화</td><td>데이터 중복을 없애도록 테이블을 분리하는 설계 원칙(SQLD 대비 가이드 2장 참고)</td></tr><tr><td>프로세스(Process)</td><td>실행 중인 프로그램 하나. 운영체제가 CPU·메모리를 배분하는 단위</td></tr><tr><td>스레드(Thread)</td><td>프로세스 안에서 실제로 작업을 수행하는 흐름 단위</td></tr><tr><td>관계대수(Relational Algebra)</td><td>릴레이션(테이블)에 대한 연산을 수학적으로 표현하는 방법</td></tr><tr><td>소프트웨어 생명주기(SDLC)</td><td>요구사항 분석부터 설계·구현·테스트·유지보수까지 소프트웨어가 만들어지고 관리되는 전체 과정</td></tr><tr><td>결합도(Coupling)</td><td>모듈 간에 서로 얼마나 의존하는지 나타내는 정도. 낮을수록 좋은 설계</td></tr><tr><td>응집도(Cohesion)</td><td>한 모듈 안의 기능들이 얼마나 밀접하게 관련되는지 나타내는 정도. 높을수록 좋은 설계</td></tr><tr><td>이상현상(Anomaly)</td><td>정규화가 안 된 테이블에서 데이터를 조작할 때 생기는 삽입·갱신·삭제 문제</td></tr><tr><td>OSI 7계층</td><td>네트워크 통신을 7단계로 나눠 표준화한 모델</td></tr><tr><td>CIA(정보보안 3요소)</td><td>기밀성·무결성·가용성 — 정보보안이 지켜야 할 세 가지 목표</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="1-시험-구성">1. 시험 구성<a class="heading-anchor" href="#1-시험-구성" aria-label="이 섹션 링크">#</a></h2>
 <p>정보처리기사는 <strong>필기</strong>와 <strong>실기</strong> 두 단계로 나뉩니다.</p>
@@ -69,23 +69,44 @@
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>요구사항 분석 → 정적/동적 요구사항으로 구분
 UML 다이어그램 → 클래스 다이어그램(구조), 시퀀스 다이어그램(흐름) 등 종류별 용도 구분
 아키텍처 패턴 → MVC, 계층형 아키텍처 등의 개념과 장단점</code></pre></div>
+<h4 class="section-h3" id="결합도와-응집도-좋은-설계를-판단하는-기준">결합도와 응집도 — 좋은 설계를 판단하는 기준<a class="heading-anchor" href="#결합도와-응집도-좋은-설계를-판단하는-기준" aria-label="이 섹션 링크">#</a></h4>
+<div class="table-scroll"><table><thead><tr><th>개념</th><th>좋은 방향</th><th>의미</th></tr></thead><tbody><tr><td>결합도(Coupling)</td><td>낮을수록 좋음</td><td>모듈 간에 얼마나 서로 의존하는가</td></tr><tr><td>응집도(Cohesion)</td><td>높을수록 좋음</td><td>한 모듈 안의 기능들이 얼마나 밀접하게 관련되는가</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: "결합도는 낮게, 응집도는 높게"가 좋은 설계의 기본 원칙입니다. 결합도가 높으면 한 모듈을 고칠 때 다른 모듈까지 영향을 받고, 응집도가 낮으면 한 모듈 안에 관련 없는 기능이 뒤섞여 유지보수가 어려워집니다. 시험에서는 결합도 종류(자료 결합도 &lt; ... &lt; 내용 결합도)나 응집도 종류를 순서대로 묻는 문제가 나옵니다.</p>
 <h3 class="section-h2" id="소프트웨어-개발">소프트웨어 개발<a class="heading-anchor" href="#소프트웨어-개발" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>자료구조: 배열, 연결 리스트, 스택, 큐, 트리 — 각각의 특징과 시간복잡도
 테스트: 화이트박스(내부 로직 기준) vs 블랙박스(입출력 기준) 테스트 구분</code></pre></div>
+<h4 class="section-h3" id="정렬-알고리즘-개요">정렬 알고리즘 개요<a class="heading-anchor" href="#정렬-알고리즘-개요" aria-label="이 섹션 링크">#</a></h4>
+<div class="table-scroll"><table><thead><tr><th>알고리즘</th><th>방식</th><th>평균 시간복잡도</th></tr></thead><tbody><tr><td>버블 정렬</td><td>인접한 두 값을 계속 비교·교환</td><td>O(n²)</td></tr><tr><td>선택 정렬</td><td>매번 최솟값을 찾아 앞으로 보냄</td><td>O(n²)</td></tr><tr><td>삽입 정렬</td><td>이미 정렬된 부분에 값을 하나씩 끼워 넣음</td><td>O(n²)</td></tr><tr><td>퀵 정렬</td><td>기준값(pivot) 기준으로 나눠서 재귀적으로 정렬</td><td>O(n log n)</td></tr></tbody></table></div>
+<p>시험에서는 정렬 알고리즘 코드를 주고 "이건 무슨 정렬인가", "n개일 때 비교 횟수는 몇 번인가"를 묻는 유형이 나옵니다.</p>
 <h3 class="section-h2" id="데이터베이스-구축">데이터베이스 구축<a class="heading-anchor" href="#데이터베이스-구축" aria-label="이 섹션 링크">#</a></h3>
 <p>SQLD 대비 가이드에서 다룬 정규화·SQL 기본 문법과 범위가 많이 겹칩니다. 여기에 더해 <strong>트랜잭션의 4가지 특성(ACID)</strong>이 자주 나옵니다.</p>
 <div class="table-scroll"><table><thead><tr><th>특성</th><th>의미</th></tr></thead><tbody><tr><td>원자성(Atomicity)</td><td>트랜잭션은 전부 실행되거나 전혀 실행되지 않아야 함</td></tr><tr><td>일관성(Consistency)</td><td>트랜잭션 전후로 데이터베이스는 항상 일관된 상태여야 함</td></tr><tr><td>고립성(Isolation)</td><td>동시에 실행되는 트랜잭션들이 서로 영향을 주지 않아야 함</td></tr><tr><td>지속성(Durability)</td><td>커밋된 결과는 시스템 장애가 나도 유지되어야 함</td></tr></tbody></table></div>
+<h4 class="section-h3" id="이상현상-Anomaly-과-정규화">이상현상(Anomaly)과 정규화<a class="heading-anchor" href="#이상현상-Anomaly-과-정규화" aria-label="이 섹션 링크">#</a></h4>
+<p>정규화가 안 된 테이블에서 데이터를 조작할 때 생기는 세 가지 문제입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>삽입 이상: 학생을 등록하려는데 아직 배정된 반이 없어 반 정보를 억지로 NULL로 넣어야 함
+갱신 이상: 같은 정보가 여러 행에 중복 저장돼있어, 하나만 수정하면 나머지와 값이 달라짐
+삭제 이상: 한 행을 지웠더니 그 안에 같이 있던 다른 필요한 정보까지 함께 사라짐</code></pre></div>
+<p>정규화는 바로 이 세 가지 이상현상을 없애기 위한 과정입니다(SQLD 대비 가이드 2장의 정규화 단계와 이어집니다).</p>
 <h3 class="section-h2" id="프로그래밍-언어-활용">프로그래밍 언어 활용<a class="heading-anchor" href="#프로그래밍-언어-활용" aria-label="이 섹션 링크">#</a></h3>
 <p>C/Java/Python 등 여러 언어의 기본 문법(반복문, 조건문, 배열)을 언어 상관없이 읽고 결과를 계산하는 문제가 나옵니다. 특정 언어를 깊이 아는 것보다, <strong>여러 언어의 공통 문법 패턴을 읽어내는 연습</strong>이 중요합니다.</p>
+<h4 class="section-h3" id="OSI-7계층-네트워크-기초">OSI 7계층 — 네트워크 기초<a class="heading-anchor" href="#OSI-7계층-네트워크-기초" aria-label="이 섹션 링크">#</a></h4>
+<div class="table-scroll"><table><thead><tr><th>계층</th><th>이름</th><th>예시</th></tr></thead><tbody><tr><td>7</td><td>응용 계층</td><td>HTTP, FTP</td></tr><tr><td>6</td><td>표현 계층</td><td>데이터 형식 변환, 암호화</td></tr><tr><td>5</td><td>세션 계층</td><td>연결 세션 관리</td></tr><tr><td>4</td><td>전송 계층</td><td>TCP, UDP</td></tr><tr><td>3</td><td>네트워크 계층</td><td>IP, 라우팅</td></tr><tr><td>2</td><td>데이터링크 계층</td><td>MAC 주소, 이더넷</td></tr><tr><td>1</td><td>물리 계층</td><td>케이블, 전기 신호</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: 아래에서 위로 "물-데-네-전-세-표-응"(물리→데이터링크→네트워크→전송→세션→표현→응용)으로 외우는 것이 흔한 암기법입니다. 시험에서는 각 계층의 대표 프로토콜이나 장비(라우터=3계층, 스위치=2계층)를 매칭하는 문제가 나옵니다.</p>
 <h3 class="section-h2" id="정보시스템-구축관리">정보시스템 구축관리<a class="heading-anchor" href="#정보시스템-구축관리" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>보안: 대칭키/비대칭키 암호화 개념, 접근 통제 모델(보안 심화 가이드와 연결)
 프로젝트 관리: WBS(작업 분해 구조), 일정 관리 기법(간트차트 등)</code></pre></div>
+<h4 class="section-h3" id="정보보안의-3요소-CIA">정보보안의 3요소(CIA)<a class="heading-anchor" href="#정보보안의-3요소-CIA" aria-label="이 섹션 링크">#</a></h4>
+<div class="table-scroll"><table><thead><tr><th>요소</th><th>의미</th></tr></thead><tbody><tr><td>기밀성(Confidentiality)</td><td>인가된 사람만 정보에 접근할 수 있어야 함</td></tr><tr><td>무결성(Integrity)</td><td>정보가 허가 없이 변경되지 않아야 함</td></tr><tr><td>가용성(Availability)</td><td>필요할 때 정상적으로 서비스를 이용할 수 있어야 함</td></tr></tbody></table></div>
+<h4 class="section-h3" id="소프트웨어-개발-방법론">소프트웨어 개발 방법론<a class="heading-anchor" href="#소프트웨어-개발-방법론" aria-label="이 섹션 링크">#</a></h4>
+<div class="table-scroll"><table><thead><tr><th>방법론</th><th>특징</th></tr></thead><tbody><tr><td>폭포수 모델(Waterfall)</td><td>요구사항→설계→구현→테스트를 순서대로 한 번에 진행. 계획이 명확할 때 적합</td></tr><tr><td>애자일(Agile)</td><td>짧은 주기로 개발·검토를 반복. 요구사항이 자주 바뀔 때 적합(팀 협업 중급 가이드 참고)</td></tr><tr><td>나선형 모델(Spiral)</td><td>폭포수+반복 개발에 위험 분석을 추가해 점진적으로 완성해나감</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="3-연습문제">3. 연습문제<a class="heading-anchor" href="#3-연습문제" aria-label="이 섹션 링크">#</a></h2>
 <blockquote><p>⚠️ 아래 문제는 개념 이해를 돕기 위해 직접 만든 연습문제이며, 실제 정보처리기사 기출문제가 아닙니다.</p></blockquote>
 <p><strong>문제 1.</strong> 트랜잭션의 ACID 특성 중, "동시에 실행되는 트랜잭션이 서로 영향을 주지 않아야 한다"는 특성은? A) 원자성(Atomicity) B) 일관성(Consistency) C) 고립성(Isolation) D) 지속성(Durability)</p>
 <p><strong>문제 2.</strong> 프로그램 내부 로직 구조를 보고 테스트 케이스를 설계하는 방식은? A) 블랙박스 테스트 B) 화이트박스 테스트 C) 회귀 테스트 D) 인수 테스트</p>
-<p><strong>정답</strong>: 1번 C / 2번 B</p>
+<p><strong>문제 3.</strong> 좋은 소프트웨어 설계의 방향으로 옳은 것은? A) 결합도는 높게, 응집도는 낮게 B) 결합도는 낮게, 응집도는 낮게 C) 결합도는 낮게, 응집도는 높게 D) 결합도는 높게, 응집도는 높게</p>
+<p><strong>문제 4.</strong> OSI 7계층에서 IP 주소와 라우팅을 다루는 계층은? A) 물리 계층 B) 데이터링크 계층 C) 네트워크 계층 D) 전송 계층</p>
+<p><strong>정답</strong>: 1번 C / 2번 B / 3번 C / 4번 C</p>
 <hr>
 <h2 class="section-h1" id="4-합격-꿀팁">4. 합격 꿀팁<a class="heading-anchor" href="#4-합격-꿀팁" aria-label="이 섹션 링크">#</a></h2>
 <ul><li><strong>한 과목도 포기하지 마세요.</strong> 5과목 전부 과락 없이 넘겨야 하므로, 잘하는 과목만 파고 약한 과목을 방치하면 총점이 높아도 떨어집니다.</li><li>필기는 범위를 순서대로 정독하기보다, <strong>최근 몇 회차 기출을 반복해서 푸는 것</strong>이 훨씬 효율적입니다. 기출 변형 문제가 많이 나옵니다.</li><li>필기 합격에는 유효기간이 있습니다. 실기 응시 기한을 캘린더에 미리 표시해두세요.</li><li>실기는 서술형입니다. 개념을 눈으로 읽기만 하지 말고, "이걸 다른 사람에게 말로 설명한다면" 이라는 마음으로 직접 써보는 연습을 미리 해두세요.</li></ul>
@@ -94,7 +115,7 @@ UML 다이어그램 → 클래스 다이어그램(구조), 시퀀스 다이어�
 <ul><li>필기 5과목을 각각 따로 공부하고, 서로 겹치는 부분(DB·보안 등)을 놓침</li><li>ACID 각 특성의 정의를 예시 없이 단어만 외움</li><li>필기 합격 후 실기 응시 기한을 놓쳐 필기를 다시 봐야 하는 상황이 됨</li><li>실기를 필기처럼 암기 위주로만 준비해 서술형 문제에서 감점</li></ul>
 <hr>
 <h2 class="section-h1" id="6-실전-체크리스트">6. 실전 체크리스트<a class="heading-anchor" href="#6-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
-<ul class="checklist"><li><input type="checkbox" disabled><span>5과목의 범위를 이 사이트의 다른 가이드와 연결해서 이해했는가</span></li><li><input type="checkbox" disabled><span>트랜잭션 ACID 4가지를 예시와 함께 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>화이트박스/블랙박스 테스트 차이를 아는가</span></li><li><input type="checkbox" disabled><span>응시 자격과 필기·실기 접수 일정을 공식 사이트에서 확인했는가</span></li><li><input type="checkbox" disabled><span>실기가 서술형이라는 점을 감안해 개념을 "말로 설명하는" 연습을 했는가</span></li></ul>
+<ul class="checklist"><li><input type="checkbox" disabled><span>5과목의 범위를 이 사이트의 다른 가이드와 연결해서 이해했는가</span></li><li><input type="checkbox" disabled><span>결합도·응집도의 의미와 좋은 방향을 아는가</span></li><li><input type="checkbox" disabled><span>트랜잭션 ACID 4가지를 예시와 함께 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>삽입·갱신·삭제 이상현상을 예시로 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>화이트박스/블랙박스 테스트 차이를 아는가</span></li><li><input type="checkbox" disabled><span>OSI 7계층을 순서대로 나열하고 대표 프로토콜을 매칭할 수 있는가</span></li><li><input type="checkbox" disabled><span>정보보안 3요소(기밀성/무결성/가용성)를 아는가</span></li><li><input type="checkbox" disabled><span>응시 자격과 필기·실기 접수 일정을 공식 사이트에서 확인했는가</span></li><li><input type="checkbox" disabled><span>실기가 서술형이라는 점을 감안해 개념을 "말로 설명하는" 연습을 했는가</span></li></ul>
 <hr>
 <h2 class="section-h1" id="7-진짜-기출문제는-여기서">7. 진짜 기출문제는 여기서<a class="heading-anchor" href="#7-진짜-기출문제는-여기서" aria-label="이 섹션 링크">#</a></h2>
 <p>공식 기출문제·시행 공고는 <strong>한국산업인력공단 큐넷(q-net.or.kr)</strong>에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.</p>
