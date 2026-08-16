@@ -168,14 +168,25 @@ body::before {
 .header-inner {
   display: flex; align-items: center; gap: 12px; width: 100%; max-width: 1400px; margin: 0 auto;
 }
-.menu-btn, .search-btn, .theme-btn, .guestbook-btn {
+.menu-btn, .search-btn, .theme-btn {
   background: none; border: 1px solid var(--border-strong); color: var(--text-heading);
   border-radius: var(--radius-sm); width: 36px; height: 36px; display: none; align-items: center; justify-content: center;
   cursor: pointer; font-size: 16px; flex: none;
 }
 .menu-btn { display: inline-flex; }
-.search-btn, .theme-btn, .guestbook-btn { display: inline-flex; }
-.menu-btn:hover, .search-btn:hover, .theme-btn:hover, .guestbook-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); text-decoration: none; }
+.search-btn, .theme-btn { display: inline-flex; }
+.menu-btn:hover, .search-btn:hover, .theme-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); }
+
+.guestbook-btn {
+  display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px;
+  background: none; border: 1px solid var(--border-strong); color: var(--text-heading);
+  border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; font-weight: 600; flex: none; white-space: nowrap;
+}
+.guestbook-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); text-decoration: none; }
+@media (max-width: 480px) {
+  .guestbook-btn-label { display: none; }
+  .guestbook-btn { padding: 0; width: 36px; justify-content: center; }
+}
 
 .breadcrumb {
   flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px;
@@ -414,7 +425,7 @@ body::before {
 
 .hero-cta {
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  max-width: 720px; margin: 20px 0 4px; padding: 16px 20px; border-radius: var(--radius-lg);
+  margin: 20px 0 4px; padding: 16px 20px; border-radius: var(--radius-lg);
   background: linear-gradient(135deg, var(--accent-weak), var(--surface-soft));
   border: 1px solid var(--accent-border-strong); transition: transform .15s ease, box-shadow .15s ease;
 }

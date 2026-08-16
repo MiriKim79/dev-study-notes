@@ -1084,7 +1084,7 @@ PAGE_HTML_TMPL = """<!doctype html>
     <nav class="breadcrumb">{breadcrumb}</nav>
     <div class="header-actions">
       <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
-      <a class="guestbook-btn" href="{prefix}방명록.html" aria-label="방명록">💬</a>
+      <a class="guestbook-btn" href="{prefix}방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
       <button class="search-btn" type="button" aria-label="검색">🔍</button>
       <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
     </div>
@@ -1396,7 +1396,7 @@ DASHBOARD_TMPL = """<!doctype html>
     <nav class="breadcrumb"><span class="current">학습 대시보드</span></nav>
     <div class="header-actions">
       <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
-      <a class="guestbook-btn" href="방명록.html" aria-label="방명록">💬</a>
+      <a class="guestbook-btn" href="방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
       <button class="search-btn" type="button" aria-label="검색">🔍</button>
       <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
     </div>
@@ -1500,7 +1500,7 @@ GUESTBOOK_TMPL = """<!doctype html>
     <nav class="breadcrumb"><a href="index.html">대시보드</a> <span>›</span><span class="current">방명록</span></nav>
     <div class="header-actions">
       <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
-      <a class="guestbook-btn" href="방명록.html" aria-label="방명록">💬</a>
+      <a class="guestbook-btn" href="방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
       <button class="search-btn" type="button" aria-label="검색">🔍</button>
       <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
     </div>
