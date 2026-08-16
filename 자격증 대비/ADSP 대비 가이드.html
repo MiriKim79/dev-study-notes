@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADSP 대비 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=878126ea4b">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="ADSP 대비 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="한국데이터산업진흥원이 주관하는 ADSP 시험 범위를 다루며, 통계·분석 개념을 시험에 나오는 형태로 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EC%9E%90%EA%B2%A9%EC%A6%9D%20%EB%8C%80%EB%B9%84/ADSP%20%EB%8C%80%EB%B9%84%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ADSP 대비 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="한국데이터산업진흥원이 주관하는 ADSP 시험 범위를 다루며, 통계·분석 개념을 시험에 나오는 형태로 정리합니다">
+<script src="../assets/search-index.js?v=878126ea4b" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../자격증 대비.html">자격증 대비</a> <span>›</span><span class="current">ADSP 대비 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-1과목-핵심-데이터와-데이터-사이언스의-이해">2. 1과목 핵심 — 데이터와 데이터 사이언스의 이해</a><ul class="toc-h2-list"><li><a href="#데이터-유형-구분">데이터 유형 구분</a></li><li><a href="#데이터-사이언스의-요구-역량">데이터 사이언스의 요구 역량</a></li></ul></li><li class="toc-h1"><a href="#3-2과목-핵심-분석-기획과-방법론">3. 2과목 핵심 — 분석 기획과 방법론</a><ul class="toc-h2-list"><li><a href="#CRISP-DM-데이터-분석-표준-절차">CRISP-DM — 데이터 분석 표준 절차</a></li><li><a href="#분석-과제-우선순위-시급성과-난이도">분석 과제 우선순위 — 시급성과 난이도</a></li></ul></li><li class="toc-h1"><a href="#4-3과목-핵심-통계와-분석-기법">4. 3과목 핵심 — 통계와 분석 기법</a><ul class="toc-h2-list"><li><a href="#대표값과-산포도">대표값과 산포도</a></li><li><a href="#분석-기법-큰-그림">분석 기법 큰 그림</a></li><li><a href="#과적합-이해">과적합 이해</a></li></ul></li><li class="toc-h1"><a href="#5-연습문제">5. 연습문제</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-진짜-기출문제는-여기서">8. 진짜 기출문제는 여기서</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-cert);">
+        <span class="page-kicker">📊 자격증 대비</span>
+        <h1 class="page-title">ADSP 대비 가이드</h1>
+        <p class="page-tagline">통계·데이터 분석 용어가 낯설다? 시험에 나오는 개념만 추려서 정리했습니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 통계나 데이터 분석을 정식으로 배운 적은 없지만, ADSP(데이터분석 준전문가) 자격증을 준비하는 사람</div><div class="intro-row"><strong>목적:</strong> 한국데이터산업진흥원이 주관하는 ADSP 시험 범위를 다루며, 통계·분석 개념을 시험에 나오는 형태로 정리합니다</div><div class="intro-row"><strong>사용법:</strong> 시험 정보(문항 수, 합격 기준, 접수 일정)는 회차마다 바뀔 수 있으니 이 문서로 개념을 잡은 뒤 반드시 공식 사이트(데이터자격검정 dataq.or.kr)에서 최신 공고를 확인하세요.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 시험 구성</li><li>2. 1과목 핵심 — 데이터와 데이터 사이언스의 이해</li><li>3. 2과목 핵심 — 분석 기획과 방법론</li><li>4. 3과목 핵심 — 통계와 분석 기법</li><li>5. 연습문제</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li><li>8. 진짜 기출문제는 여기서</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>정형 데이터</td><td>표(테이블)처럼 행과 열로 딱 떨어지게 정리된 데이터</td></tr><tr><td>비정형 데이터</td><td>이미지, 영상, 자유 형식 텍스트처럼 정해진 구조가 없는 데이터</td></tr><tr><td>반정형 데이터</td><td>JSON, XML처럼 구조는 있지만 표 형태는 아닌 데이터</td></tr><tr><td>평균(Mean)</td><td>모든 값을 더해 개수로 나눈 대표값</td></tr><tr><td>중앙값(Median)</td><td>값을 크기순으로 줄 세웠을 때 정중앙에 오는 값</td></tr><tr><td>분산(Variance) / 표준편차(Standard Deviation)</td><td>값들이 평균에서 얼마나 흩어져 있는지 나타내는 지표</td></tr><tr><td>상관관계(Correlation)</td><td>두 변수가 함께 움직이는 정도. 상관관계가 있다고 반드시 원인-결과 관계는 아님</td></tr><tr><td>회귀분석(Regression)</td><td>한 변수(들)로 다른 변수의 값을 예측하는 통계 기법</td></tr><tr><td>분류(Classification)</td><td>데이터를 미리 정해진 몇 개의 범주 중 하나로 나누는 것(예: 스팸/정상)</td></tr><tr><td>군집분석(Clustering)</td><td>정답 범주 없이, 비슷한 데이터끼리 스스로 그룹을 짓는 것</td></tr><tr><td>과적합(Overfitting)</td><td>모델이 학습 데이터에만 지나치게 맞춰져서, 새로운 데이터에는 오히려 성능이 떨어지는 현상</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="1-시험-구성">1. 시험 구성<a class="heading-anchor" href="#1-시험-구성" aria-label="이 섹션 링크">#</a></h2>
+<p>ADSP는 3과목으로 나뉩니다.</p>
+<div class="table-scroll"><table><thead><tr><th>과목</th><th>다루는 내용</th></tr></thead><tbody><tr><td>1과목: 데이터 이해</td><td>데이터의 종류, 데이터베이스 기본 개념, 데이터 사이언스의 이해</td></tr><tr><td>2과목: 데이터 분석 기획</td><td>분석 프로젝트를 어떻게 기획하고 관리하는지, 분석 방법론</td></tr><tr><td>3과목: 데이터 분석</td><td>통계 기초, 정형/비정형 데이터 분석 기법 — 배점이 가장 큼</td></tr></tbody></table></div>
+<p>객관식이며, <strong>과목별 최소 점수</strong>와 <strong>전체 평균 최소 점수</strong>를 모두 넘겨야 합격입니다(정확한 문항 수·시간은 공식 공고 기준으로 확인).</p>
+<hr>
+<h2 class="section-h1" id="2-1과목-핵심-데이터와-데이터-사이언스의-이해">2. 1과목 핵심 — 데이터와 데이터 사이언스의 이해<a class="heading-anchor" href="#2-1과목-핵심-데이터와-데이터-사이언스의-이해" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="데이터-유형-구분">데이터 유형 구분<a class="heading-anchor" href="#데이터-유형-구분" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>정형: 회원 테이블, 매출 엑셀
+반정형: API 응답 JSON, 로그 파일
+비정형: 사진, 동영상, 자유 서술형 리뷰 텍스트</code></pre></div>
+<h3 class="section-h2" id="데이터-사이언스의-요구-역량">데이터 사이언스의 요구 역량<a class="heading-anchor" href="#데이터-사이언스의-요구-역량" aria-label="이 섹션 링크">#</a></h3>
+<p>시험에서 자주 나오는 3요소: <strong>분석적 사고(통계·수학)</strong>, <strong>IT 기술(프로그래밍·엔지니어링)</strong>, <strong>비즈니스 이해(도메인 지식)</strong>. 이 세 가지가 겹치는 영역이 데이터 사이언스의 핵심 역량이라는 개념(다이어그램 형태)이 잘 나옵니다.</p>
+<hr>
+<h2 class="section-h1" id="3-2과목-핵심-분석-기획과-방법론">3. 2과목 핵심 — 분석 기획과 방법론<a class="heading-anchor" href="#3-2과목-핵심-분석-기획과-방법론" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="CRISP-DM-데이터-분석-표준-절차">CRISP-DM — 데이터 분석 표준 절차<a class="heading-anchor" href="#CRISP-DM-데이터-분석-표준-절차" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 업무 이해(Business Understanding)
+2. 데이터 이해(Data Understanding)
+3. 데이터 준비(Data Preparation)
+4. 모델링(Modeling)
+5. 평가(Evaluation)
+6. 전개(Deployment)</code></pre></div>
+<p><strong>기본 상식</strong>: 이 6단계는 한 번 쭉 진행하고 끝나는 게 아니라, 앞 단계로 돌아가 반복하는 과정입니다(예: 모델링 중 데이터가 부족하다는 걸 깨달으면 3단계로 되돌아감). 시험에서는 "이 상황은 몇 번째 단계에 해당하는가"를 묻는 식으로 나옵니다.</p>
+<h3 class="section-h2" id="분석-과제-우선순위-시급성과-난이도">분석 과제 우선순위 — 시급성과 난이도<a class="heading-anchor" href="#분석-과제-우선순위-시급성과-난이도" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>시급성(지금 당장 필요한가) × 난이도(구현하기 쉬운가)
+→ 시급성 높고 난이도 낮은 과제부터 우선 진행하는 것이 일반적 원칙</code></pre></div>
+<hr>
+<h2 class="section-h1" id="4-3과목-핵심-통계와-분석-기법">4. 3과목 핵심 — 통계와 분석 기법<a class="heading-anchor" href="#4-3과목-핵심-통계와-분석-기법" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="대표값과-산포도">대표값과 산포도<a class="heading-anchor" href="#대표값과-산포도" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>평균: [10, 20, 30, 1000] → (10+20+30+1000)/4 = 265 — 극단값(1000)에 크게 흔들림
+중앙값: [10, 20, 30, 1000] → 20과 30의 평균인 25 — 극단값 영향이 적음</code></pre></div>
+<p><strong>기본 상식</strong>: 극단값(outlier)이 있는 데이터에서는 평균이 왜곡될 수 있어, 중앙값을 함께 참고합니다. "어느 대표값이 더 적절한가"를 묻는 문제가 자주 나옵니다.</p>
+<h3 class="section-h2" id="분석-기법-큰-그림">분석 기법 큰 그림<a class="heading-anchor" href="#분석-기법-큰-그림" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>기법</th><th>목적</th><th>예시</th></tr></thead><tbody><tr><td>회귀분석</td><td>숫자값 예측</td><td>광고비로 매출 예측</td></tr><tr><td>분류</td><td>범주 예측</td><td>이메일이 스팸인지 아닌지</td></tr><tr><td>군집분석</td><td>그룹 스스로 나누기</td><td>비슷한 구매 패턴의 고객 묶기</td></tr><tr><td>연관규칙분석</td><td>함께 나타나는 패턴 찾기</td><td>"기저귀를 사면 맥주도 산다"</td></tr></tbody></table></div>
+<h3 class="section-h2" id="과적합-이해">과적합 이해<a class="heading-anchor" href="#과적합-이해" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>학습 데이터에서는 정확도 99% → 새 데이터에서는 정확도 60%
+→ 모델이 학습 데이터의 노이즈까지 외워버린 상태(과적합)</code></pre></div>
+<p><strong>기본 상식</strong>: 과적합을 막기 위해 데이터를 학습용과 검증용으로 나눠서, 학습에 쓰지 않은 데이터로 성능을 확인하는 것이 기본 원칙입니다.</p>
+<hr>
+<h2 class="section-h1" id="5-연습문제">5. 연습문제<a class="heading-anchor" href="#5-연습문제" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p>⚠️ 아래 문제는 개념 이해를 돕기 위해 직접 만든 연습문제이며, 실제 ADSP 기출문제가 아닙니다.</p></blockquote>
+<p><strong>문제 1.</strong> 극단값(outlier)이 섞인 데이터의 대표값으로 평균보다 더 안정적인 것은? A) 최댓값 B) 중앙값 C) 표준편차 D) 최빈값</p>
+<p><strong>문제 2.</strong> CRISP-DM에서 모델링 도중 데이터가 부족하다는 것을 알게 됐을 때 가장 적절한 행동은? A) 그대로 평가 단계로 진행한다 B) 데이터 준비 단계로 돌아가 데이터를 보완한다 C) 프로젝트를 종료한다 D) 업무 이해 단계부터 처음부터 다시 시작한다</p>
+<p><strong>정답</strong>: 1번 B / 2번 B</p>
+<hr>
+<h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>평균과 중앙값의 차이를 상황 없이 공식만 외움</li><li>CRISP-DM을 "한 번에 끝나는 순서"로 착각하고 반복 가능성을 놓침</li><li>상관관계와 인과관계를 같은 것으로 혼동</li><li>회귀·분류·군집의 목적 차이를 구분하지 못함</li></ul>
+<hr>
+<h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>정형/반정형/비정형 데이터를 예시와 함께 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>CRISP-DM 6단계를 순서대로 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>평균·중앙값이 각각 어떤 상황에 적절한지 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>회귀·분류·군집·연관규칙분석의 목적 차이를 아는가</span></li><li><input type="checkbox" disabled><span>최신 시험 공고를 공식 사이트에서 확인했는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="8-진짜-기출문제는-여기서">8. 진짜 기출문제는 여기서<a class="heading-anchor" href="#8-진짜-기출문제는-여기서" aria-label="이 섹션 링크">#</a></h2>
+<p>공식 기출문제·자료는 <strong>한국데이터산업진흥원 데이터자격검정(dataq.or.kr)</strong>에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="SQLD 대비 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">SQLD 대비 가이드</span></a><a class="doc-nav-link next" href="정보처리기사 대비 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">정보처리기사 대비 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=878126ea4b" defer></script>
+</body>
+</html>

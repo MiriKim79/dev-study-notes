@@ -38,6 +38,7 @@ PLAYBOOK_DIR = "개발 기초·실전 가이드"
 TEMPLATE_DIR = "GitHub 팀 협업 템플릿"
 MID_DIR = "개발 중급 가이드"
 ADV_DIR = "개발 고급 가이드"
+CERT_DIR = "자격증 대비"
 
 PAGES = [
     {
@@ -360,6 +361,66 @@ PAGES = [
         "hub": "adv-hub",
         "tagline": "AI 기능 하나는 붙여봤다? 여러 에이전트를 조율하고 직접 모델을 서빙하는 단계입니다.",
     },
+    {
+        "key": "cert-hub",
+        "src": f"{CERT_DIR}.md",
+        "title": "자격증 대비",
+        "kicker": "가이드 모음",
+        "cat": "start",
+        "icon": "🏅",
+        "hub": None,
+        "hub_children": ["sqld", "adsp", "infoproc", "infosec", "aws-cert"],
+    },
+    {
+        "key": "sqld",
+        "src": f"{CERT_DIR}/SQLD 대비 가이드.md",
+        "title": "SQLD 대비 가이드",
+        "kicker": "자격증 대비",
+        "cat": "cert",
+        "icon": "🗄️",
+        "hub": "cert-hub",
+        "tagline": "SQL은 좀 짜는데 자격증은 처음? 시험에 나오는 딱 그 범위만 정리했습니다.",
+    },
+    {
+        "key": "adsp",
+        "src": f"{CERT_DIR}/ADSP 대비 가이드.md",
+        "title": "ADSP 대비 가이드",
+        "kicker": "자격증 대비",
+        "cat": "cert",
+        "icon": "📊",
+        "hub": "cert-hub",
+        "tagline": "통계·데이터 분석 용어가 낯설다? 시험에 나오는 개념만 추려서 정리했습니다.",
+    },
+    {
+        "key": "infoproc",
+        "src": f"{CERT_DIR}/정보처리기사 대비 가이드.md",
+        "title": "정보처리기사 대비 가이드",
+        "kicker": "자격증 대비",
+        "cat": "cert",
+        "icon": "💻",
+        "hub": "cert-hub",
+        "tagline": "국내 개발자 지망생이 가장 많이 따는 그 자격증, 범위부터 정리하고 시작하세요.",
+    },
+    {
+        "key": "infosec",
+        "src": f"{CERT_DIR}/정보보안기사·산업기사 대비 가이드.md",
+        "title": "정보보안기사·산업기사 대비 가이드",
+        "kicker": "자격증 대비",
+        "cat": "cert",
+        "icon": "🔐",
+        "hub": "cert-hub",
+        "tagline": "보안 심화 가이드로 개념은 잡았다? 이제 자격증 범위에 맞춰 정리할 차례입니다.",
+    },
+    {
+        "key": "aws-cert",
+        "src": f"{CERT_DIR}/AWS 클라우드 자격증 대비 가이드.md",
+        "title": "AWS 클라우드 자격증 대비 가이드",
+        "kicker": "자격증 대비",
+        "cat": "cert",
+        "icon": "☁️",
+        "hub": "cert-hub",
+        "tagline": "클라우드·IaC 고급 가이드는 봤다? 이제 AWS 자격증으로 검증해볼 차례입니다.",
+    },
 ]
 PAGES_BY_KEY = {p["key"]: p for p in PAGES}
 
@@ -398,6 +459,12 @@ STUDY_ORDER = [
     "perf-adv",
     "leadership-adv",
     "ai-adv",
+    "cert-hub",
+    "sqld",
+    "adsp",
+    "infoproc",
+    "infosec",
+    "aws-cert",
 ]
 
 CAT_LABEL = {
@@ -414,6 +481,7 @@ CAT_LABEL = {
     "security": "보안",
     "perf": "성능·스케일",
     "leadership": "기술 리더십",
+    "cert": "자격증 대비",
 }
 
 
@@ -1300,6 +1368,18 @@ DASHBOARD_CARDS_ADV = [
     "perf-adv", "leadership-adv", "ai-adv",
 ]
 
+OVERVIEW_ROWS_CERT = [
+    ("sqld", "SQLD 대비 가이드", "데이터 모델링, SQL 기본·활용, 자주 나오는 함정 포인트", "SQL은 짤 줄 아는데 SQLD를 준비할 때"),
+    ("adsp", "ADSP 대비 가이드", "데이터 이해, 분석 기획, 통계·분석 기법 개요", "데이터 분석 기초를 자격증으로 검증하고 싶을 때"),
+    ("infoproc", "정보처리기사 대비 가이드", "소프트웨어 설계·개발, DB 구축, 프로그래밍 언어 활용, 정보시스템 구축관리", "국내 개발자 필수 국가자격증을 준비할 때"),
+    ("infosec", "정보보안기사·산업기사 대비 가이드", "시스템·네트워크·애플리케이션 보안, 정보보안 관리", "보안 심화 가이드로 개념을 잡은 뒤 자격증까지 노릴 때"),
+    ("aws-cert", "AWS 클라우드 자격증 대비 가이드", "EC2·S3·IAM·VPC 핵심 개념, Well-Architected Framework 개요", "클라우드·IaC 가이드를 실제 자격증으로 검증하고 싶을 때"),
+]
+
+DASHBOARD_CARDS_CERT = [
+    "sqld", "adsp", "infoproc", "infosec", "aws-cert",
+]
+
 STEP_FLOW = [
     {"title": "Git·GitHub 진짜 최소 기초", "sub": "Git이 처음이라면 여기서 5분만 — branch·commit·PR 감 잡기", "key": "git-min"},
     {"title": "팀 개발 시작 가이드", "sub": "무엇을 확인하고 어떤 순서로 개발할지 먼저 파악", "key": "team-start"},
@@ -1433,6 +1513,11 @@ DASHBOARD_TMPL = """<!doctype html>
     {adv_overview_table}
     {adv_card_grid}
 
+    <div class="section-heading" style="margin-top:40px;">🏅 자격증 대비</div>
+    <p class="dashboard-desc" style="margin-bottom:20px;">개발 실력과는 별개로, 공식적으로 검증받고 싶을 때 참고하는 <a href="{cert_hub_url}">자격증 대비 가이드</a>입니다. 연습문제는 직접 만든 것으로 실제 기출문제가 아니며, 진짜 기출은 각 문서 끝의 공식 링크를 이용하세요.</p>
+    {cert_overview_table}
+    {cert_card_grid}
+
     <div class="dashboard-footer">🐣 미리가 미리미리 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
   </div>
 </div>
@@ -1462,6 +1547,9 @@ def build_dashboard():
         adv_overview_table=render_overview_table(OVERVIEW_ROWS_ADV),
         adv_card_grid=render_card_grid(DASHBOARD_CARDS_ADV, OVERVIEW_ROWS_ADV),
         adv_hub_url=url_of("adv-hub"),
+        cert_overview_table=render_overview_table(OVERVIEW_ROWS_CERT),
+        cert_card_grid=render_card_grid(DASHBOARD_CARDS_CERT, OVERVIEW_ROWS_CERT),
+        cert_hub_url=url_of("cert-hub"),
         og_url=SITE_BASE_URL,
     )
     (ROOT / "index.html").write_text(html_out, encoding="utf-8")

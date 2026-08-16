@@ -75,6 +75,7 @@
   --cat-security: #8B3A62;
   --cat-perf: #3E7A4E;
   --cat-leadership: #5C4A8A;
+  --cat-cert: #A6762E;
 }
 
 /* 다크모드는 부가 기능이며, 시스템 설정과 무관하게 항상 라이트가 기본값이다.

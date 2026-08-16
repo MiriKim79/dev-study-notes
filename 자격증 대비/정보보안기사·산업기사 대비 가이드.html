@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>정보보안기사·산업기사 대비 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=878126ea4b">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="정보보안기사·산업기사 대비 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="정보보안기사·산업기사 시험 범위를 이 사이트의 보안 심화 가이드와 연결해 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EC%9E%90%EA%B2%A9%EC%A6%9D%20%EB%8C%80%EB%B9%84/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%C2%B7%EC%82%B0%EC%97%85%EA%B8%B0%EC%82%AC%20%EB%8C%80%EB%B9%84%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="정보보안기사·산업기사 대비 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="정보보안기사·산업기사 시험 범위를 이 사이트의 보안 심화 가이드와 연결해 정리합니다">
+<script src="../assets/search-index.js?v=878126ea4b" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../자격증 대비.html">자격증 대비</a> <span>›</span><span class="current">정보보안기사·산업기사 대비 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-영역별-핵심-포인트">2. 영역별 핵심 포인트</a><ul class="toc-h2-list"><li><a href="#암호학-기초-대칭키-vs-비대칭키">암호학 기초 — 대칭키 vs 비대칭키</a></li><li><a href="#네트워크-보안-장비">네트워크 보안 장비</a></li><li><a href="#접근-통제-모델">접근 통제 모델</a></li><li><a href="#애플리케이션-보안-보안-심화-가이드와-겹치는-부분">애플리케이션 보안 — 보안 심화 가이드와 겹치는 부분</a></li></ul></li><li class="toc-h1"><a href="#3-연습문제">3. 연습문제</a></li><li class="toc-h1"><a href="#4-자주-하는-실수">4. 자주 하는 실수</a></li><li class="toc-h1"><a href="#5-실전-체크리스트">5. 실전 체크리스트</a></li><li class="toc-h1"><a href="#6-진짜-기출문제는-여기서">6. 진짜 기출문제는 여기서</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-cert);">
+        <span class="page-kicker">🔐 자격증 대비</span>
+        <h1 class="page-title">정보보안기사·산업기사 대비 가이드</h1>
+        <p class="page-tagline">보안 심화 가이드로 개념은 잡았다? 이제 자격증 범위에 맞춰 정리할 차례입니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 보안 심화 가이드로 OWASP·인증·인가 개념은 잡았고, 국가기술자격증으로 검증받고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 정보보안기사·산업기사 시험 범위를 이 사이트의 보안 심화 가이드와 연결해 정리합니다</div><div class="intro-row"><strong>사용법:</strong> 시행 기관, 문항 수, 합격 기준, 응시 자격은 회차마다 달라질 수 있으니 이 문서로 범위를 잡은 뒤 반드시 공식 사이트(큐넷 q-net.or.kr)에서 최신 공고를 확인하세요.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 시험 구성</li><li>2. 영역별 핵심 포인트</li><li>3. 연습문제</li><li>4. 자주 하는 실수</li><li>5. 실전 체크리스트</li><li>6. 진짜 기출문제는 여기서</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>보안 심화 가이드에서 다룬 OWASP·XSS·인증/인가·시크릿 관리 개념은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>대칭키 암호화</td><td>암호화와 복호화에 같은 키를 쓰는 방식. 빠르지만 키를 안전하게 전달하는 게 과제</td></tr><tr><td>비대칭키(공개키) 암호화</td><td>암호화용 키(공개키)와 복호화용 키(개인키)가 다른 방식. 키 전달 문제를 해결하지만 느림</td></tr><tr><td>해시(Hash)</td><td>원본을 되돌릴 수 없는 고정 길이 값으로 변환하는 것. 위·변조 확인이나 비밀번호 저장에 씀</td></tr><tr><td>방화벽(Firewall)</td><td>정해진 규칙에 따라 네트워크 트래픽을 허용·차단하는 장비 또는 소프트웨어</td></tr><tr><td>IDS/IPS</td><td>침입을 탐지(IDS)하거나 탐지와 동시에 차단(IPS)하는 시스템</td></tr><tr><td>VPN (가상사설망)</td><td>공개된 인터넷망 위에 암호화된 전용 통로를 만들어 안전하게 통신하는 기술</td></tr><tr><td>접근 통제 모델</td><td>누가 무엇에 접근할 수 있는지 정하는 방식의 이론적 분류(임의적/강제적/역할 기반 등)</td></tr><tr><td>디지털 포렌식</td><td>침해 사고가 발생했을 때 원인과 증거를 과학적으로 분석·수집하는 과정</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="1-시험-구성">1. 시험 구성<a class="heading-anchor" href="#1-시험-구성" aria-label="이 섹션 링크">#</a></h2>
+<p>정보보안기사·산업기사는 국가기술자격으로, <strong>필기</strong>와 <strong>실기</strong>로 나뉩니다. 산업기사는 기사보다 응시 자격 조건이 완화되어 있고 과목 수도 다소 적습니다(정확한 과목 구성은 공식 공고 기준으로 확인).</p>
+<p>기사 필기 기준 자주 다뤄지는 영역:</p>
+<div class="table-scroll"><table><thead><tr><th>영역</th><th>다루는 내용</th><th>이 사이트와 연결</th></tr></thead><tbody><tr><td>시스템 보안</td><td>운영체제 보안, 악성코드, 접근 통제</td><td>—</td></tr><tr><td>네트워크 보안</td><td>방화벽, IDS/IPS, VPN, 네트워크 공격 유형</td><td>—</td></tr><tr><td>애플리케이션 보안</td><td>웹 취약점(OWASP), 시큐어 코딩</td><td>보안 심화 가이드 2장</td></tr><tr><td>정보보안 일반</td><td>암호학 기초, 인증 기술</td><td>보안 심화 가이드 3장</td></tr><tr><td>정보보안 관리 및 법규</td><td>보안 정책, 관련 법·제도, 위험 관리</td><td>—</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="2-영역별-핵심-포인트">2. 영역별 핵심 포인트<a class="heading-anchor" href="#2-영역별-핵심-포인트" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="암호학-기초-대칭키-vs-비대칭키">암호학 기초 — 대칭키 vs 비대칭키<a class="heading-anchor" href="#암호학-기초-대칭키-vs-비대칭키" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>대칭키(예: AES): 암호화 키 = 복호화 키 → 빠름, 키를 상대방에게 안전하게 전달하는 게 과제
+비대칭키(예: RSA): 공개키로 암호화 → 개인키로만 복호화 가능 → 느리지만 키 전달 문제 해결</code></pre></div>
+<p><strong>기본 상식</strong>: 실무에서는 둘을 섞어 씁니다. 비대칭키로 대칭키(세션 키)를 안전하게 교환한 뒤, 실제 데이터는 빠른 대칭키로 암호화합니다. HTTPS(TLS)가 이 방식으로 동작합니다.</p>
+<h3 class="section-h2" id="네트워크-보안-장비">네트워크 보안 장비<a class="heading-anchor" href="#네트워크-보안-장비" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>장비</th><th>역할</th></tr></thead><tbody><tr><td>방화벽</td><td>정해진 규칙(IP, 포트)으로 트래픽을 허용/차단</td></tr><tr><td>IDS</td><td>침입 패턴을 탐지해 관리자에게 알림(차단은 안 함)</td></tr><tr><td>IPS</td><td>탐지와 동시에 자동으로 차단까지 수행</td></tr></tbody></table></div>
+<h3 class="section-h2" id="접근-통제-모델">접근 통제 모델<a class="heading-anchor" href="#접근-통제-모델" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>임의적 접근 통제(DAC): 자원의 소유자가 접근 권한을 직접 결정
+강제적 접근 통제(MAC): 시스템(관리자)이 미리 정한 보안 등급에 따라 접근 통제
+역할 기반 접근 통제(RBAC): 사용자가 아니라 역할(role)에 권한을 부여 — 보안 심화 가이드의 최소 권한 원칙과 연결</code></pre></div>
+<h3 class="section-h2" id="애플리케이션-보안-보안-심화-가이드와-겹치는-부분">애플리케이션 보안 — 보안 심화 가이드와 겹치는 부분<a class="heading-anchor" href="#애플리케이션-보안-보안-심화-가이드와-겹치는-부분" aria-label="이 섹션 링크">#</a></h3>
+<p>인젝션, XSS, 접근 제어 취약점은 보안 심화 가이드 2장에서 실무 관점으로 이미 다뤘습니다. 시험에서는 여기에 더해 <strong>시큐어 코딩 가이드(행정안전부·KISA 발간)</strong> 기준 용어(예: "입력 데이터 검증 및 표현" 같은 분류 명칭)로 묻는 경우가 있으니, 실무 개념과 시험 용어를 서로 연결해두는 것이 좋습니다.</p>
+<hr>
+<h2 class="section-h1" id="3-연습문제">3. 연습문제<a class="heading-anchor" href="#3-연습문제" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p>⚠️ 아래 문제는 개념 이해를 돕기 위해 직접 만든 연습문제이며, 실제 정보보안기사·산업기사 기출문제가 아닙니다.</p></blockquote>
+<p><strong>문제 1.</strong> 침입을 탐지함과 동시에 자동으로 차단까지 수행하는 시스템은? A) 방화벽 B) IDS C) IPS D) VPN</p>
+<p><strong>문제 2.</strong> 사용자가 아니라 역할(role)에 권한을 부여하는 접근 통제 모델은? A) DAC B) MAC C) RBAC D) ACL</p>
+<p><strong>정답</strong>: 1번 C / 2번 C</p>
+<hr>
+<h2 class="section-h1" id="4-자주-하는-실수">4. 자주 하는 실수<a class="heading-anchor" href="#4-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>대칭키/비대칭키의 장단점을 반대로 외움(비대칭키가 빠르다고 착각)</li><li>IDS와 IPS를 "둘 다 차단한다"고 혼동</li><li>접근 통제 모델 3가지의 "누가 권한을 결정하는가" 기준을 헷갈림</li><li>실무에서 쓰는 용어(OWASP 등)와 시험 교재 용어(시큐어 코딩 가이드 분류)를 따로 외워서 연결을 못함</li></ul>
+<hr>
+<h2 class="section-h1" id="5-실전-체크리스트">5. 실전 체크리스트<a class="heading-anchor" href="#5-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>대칭키·비대칭키 암호화의 차이와 실제로 함께 쓰이는 방식(TLS)을 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>방화벽·IDS·IPS의 역할 차이를 구분하는가</span></li><li><input type="checkbox" disabled><span>DAC·MAC·RBAC 세 가지 접근 통제 모델을 구분하는가</span></li><li><input type="checkbox" disabled><span>보안 심화 가이드에서 다룬 개념(XSS, 인증/인가)을 시험 용어와 연결해뒀는가</span></li><li><input type="checkbox" disabled><span>기사/산업기사 중 어느 쪽에 응시 자격이 맞는지 공식 사이트에서 확인했는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="6-진짜-기출문제는-여기서">6. 진짜 기출문제는 여기서<a class="heading-anchor" href="#6-진짜-기출문제는-여기서" aria-label="이 섹션 링크">#</a></h2>
+<p>공식 기출문제·시행 공고는 <strong>한국산업인력공단 큐넷(q-net.or.kr)</strong>에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="정보처리기사 대비 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">정보처리기사 대비 가이드</span></a><a class="doc-nav-link next" href="AWS 클라우드 자격증 대비 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">AWS 클라우드 자격증 대비 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=878126ea4b" defer></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQLD 대비 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=878126ea4b">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="SQLD 대비 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="한국데이터산업진흥원이 주관하는 SQLD(SQL 개발자) 시험 범위를 정리하고, 실무 SQL 지식을 시험에 나오는 형태로 다시 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EC%9E%90%EA%B2%A9%EC%A6%9D%20%EB%8C%80%EB%B9%84/SQLD%20%EB%8C%80%EB%B9%84%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQLD 대비 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="한국데이터산업진흥원이 주관하는 SQLD(SQL 개발자) 시험 범위를 정리하고, 실무 SQL 지식을 시험에 나오는 형태로 다시 정리합니다">
+<script src="../assets/search-index.js?v=878126ea4b" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../자격증 대비.html">자격증 대비</a> <span>›</span><span class="current">SQLD 대비 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-1과목-핵심-데이터-모델링">2. 1과목 핵심 — 데이터 모델링</a><ul class="toc-h2-list"><li><a href="#ERD-읽는-법">ERD 읽는 법</a></li><li><a href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄</a></li></ul></li><li class="toc-h1"><a href="#3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용</a><ul class="toc-h2-list"><li><a href="#실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다</a></li><li><a href="#조인-JOIN-종류">조인(JOIN) 종류</a></li><li><a href="#윈도우-함수">윈도우 함수</a></li><li><a href="#NULL-처리-주의">NULL 처리 주의</a></li></ul></li><li class="toc-h1"><a href="#4-연습문제">4. 연습문제</a></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-실전-체크리스트">6. 실전 체크리스트</a></li><li class="toc-h1"><a href="#7-진짜-기출문제는-여기서">7. 진짜 기출문제는 여기서</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-cert);">
+        <span class="page-kicker">🗄️ 자격증 대비</span>
+        <h1 class="page-title">SQLD 대비 가이드</h1>
+        <p class="page-tagline">SQL은 좀 짜는데 자격증은 처음? 시험에 나오는 딱 그 범위만 정리했습니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> SELECT/JOIN 정도는 짤 줄 알고, SQLD 자격증을 처음 준비하는 사람</div><div class="intro-row"><strong>목적:</strong> 한국데이터산업진흥원이 주관하는 SQLD(SQL 개발자) 시험 범위를 정리하고, 실무 SQL 지식을 시험에 나오는 형태로 다시 정리합니다</div><div class="intro-row"><strong>사용법:</strong> 시험 정보(문항 수, 합격 기준, 접수 일정)는 회차마다 바뀔 수 있으니 이 문서로 개념을 잡은 뒤 반드시 공식 사이트(데이터자격검정 dataq.or.kr)에서 최신 공고를 확인하세요.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 시험 구성</li><li>2. 1과목 핵심 — 데이터 모델링</li><li>3. 2과목 핵심 — SQL 기본 및 활용</li><li>4. 연습문제</li><li>5. 자주 하는 실수</li><li>6. 실전 체크리스트</li><li>7. 진짜 기출문제는 여기서</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>데이터베이스 기초 가이드에서 다룬 테이블·SQL 기본 문법(SELECT/WHERE/JOIN)은 이미 안다고 가정합니다. 여기서는 시험에서 새로 나오는 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>엔터티(Entity)</td><td>데이터로 관리해야 하는 대상. 테이블로 구현되는 경우가 많음(예: 회원, 주문)</td></tr><tr><td>속성(Attribute)</td><td>엔터티가 가지는 세부 정보 하나(예: 회원의 이름, 이메일)</td></tr><tr><td>관계(Relationship)</td><td>엔터티와 엔터티 사이의 연관성(예: 회원이 주문을 여러 건 가질 수 있음)</td></tr><tr><td>식별자(Identifier)</td><td>엔터티 안의 각 행을 구분하는 값. 기본키(PK)가 대표적</td></tr><tr><td>정규화(Normalization)</td><td>데이터 중복을 없애도록 테이블을 단계적으로 분리하는 설계 원칙</td></tr><tr><td>반정규화(De-normalization)</td><td>조회 성능을 위해 일부러 정규화 원칙을 깨는 것</td></tr><tr><td>윈도우 함수(Window Function)</td><td>행을 그룹으로 묶지 않으면서, 그룹별 순위·누계 같은 계산을 할 수 있게 해주는 SQL 함수</td></tr><tr><td>계층형 질의(Hierarchical Query)</td><td>조직도처럼 "상위-하위" 관계로 이어진 데이터를 조회하는 SQL 문법</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="1-시험-구성">1. 시험 구성<a class="heading-anchor" href="#1-시험-구성" aria-label="이 섹션 링크">#</a></h2>
+<p>SQLD는 2과목으로 나뉩니다.</p>
+<div class="table-scroll"><table><thead><tr><th>과목</th><th>다루는 내용</th></tr></thead><tbody><tr><td>1과목: 데이터 모델링의 이해</td><td>엔터티·속성·관계, 정규화, ERD(개체관계도) 읽고 해석하기</td></tr><tr><td>2과목: SQL 기본 및 활용</td><td>SELECT 기본 문법부터 서브쿼리, 조인, 윈도우 함수, 그룹 함수까지</td></tr></tbody></table></div>
+<p>시험은 객관식이며, <strong>과목별 최소 점수</strong>와 <strong>전체 평균 최소 점수</strong>를 모두 넘겨야 합격입니다(정확한 문항 수·배점·시간은 공식 사이트 공고 기준으로 확인).</p>
+<hr>
+<h2 class="section-h1" id="2-1과목-핵심-데이터-모델링">2. 1과목 핵심 — 데이터 모델링<a class="heading-anchor" href="#2-1과목-핵심-데이터-모델링" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="ERD-읽는-법">ERD 읽는 법<a class="heading-anchor" href="#ERD-읽는-법" aria-label="이 섹션 링크">#</a></h3>
+<p>ERD(Entity Relationship Diagram)는 엔터티 사이의 관계를 그림으로 표현한 것입니다. 시험에서는 ERD를 보고 "이 관계가 1:1인지 1:N인지, 그리고 그게 실제 SQL 테이블 구조로 어떻게 구현되는지"를 묻습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>회원(1) --- (N)주문
+→ 회원 한 명이 여러 주문을 가질 수 있음(1:N)
+→ 실제 구현: 주문 테이블에 회원을 가리키는 외래키(FK)를 둠</code></pre></div>
+<h3 class="section-h2" id="정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄<a class="heading-anchor" href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>단계</th><th>조건</th></tr></thead><tbody><tr><td>제1정규형(1NF)</td><td>한 칸에 값이 하나만 들어있어야 함(반복 그룹 제거)</td></tr><tr><td>제2정규형(2NF)</td><td>기본키의 일부에만 종속된 컬럼을 분리(부분 함수 종속 제거)</td></tr><tr><td>제3정규형(3NF)</td><td>기본키가 아닌 컬럼끼리 서로 종속된 관계를 분리(이행 함수 종속 제거)</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: 실무에서는 "정규화가 왜 필요한가"라는 개념 이해가 중요하지만, SQLD 시험에서는 "이 예시 테이블은 몇 정규형을 위반했는가"처럼 정의를 정확히 적용하는 문제가 나옵니다. 각 단계의 조건을 예시와 함께 정확히 외워두는 것이 필요합니다.</p>
+<hr>
+<h2 class="section-h1" id="3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용<a class="heading-anchor" href="#3-2과목-핵심-SQL-기본-및-활용" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다<a class="heading-anchor" href="#실행-순서-작성-순서와-다릅니다" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>SELECT department, COUNT(*)
+FROM employees
+WHERE salary &gt; 3000
+GROUP BY department
+HAVING COUNT(*) &gt; 5
+ORDER BY department;</code></pre></div>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>실제 실행 순서: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY</code></pre></div>
+<p><code class="inline-code">WHERE</code>는 그룹으로 묶기 *전* 개별 행을 거르고, <code class="inline-code">HAVING</code>은 그룹으로 묶은 *후* 그룹을 거릅니다. 이 실행 순서를 모르면 "왜 SELECT의 별칭을 WHERE에서 못 쓰는지" 같은 문제를 틀리게 됩니다.</p>
+<h3 class="section-h2" id="조인-JOIN-종류">조인(JOIN) 종류<a class="heading-anchor" href="#조인-JOIN-종류" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>종류</th><th>결과</th></tr></thead><tbody><tr><td>INNER JOIN</td><td>양쪽 테이블에 모두 값이 있는 행만</td></tr><tr><td>LEFT OUTER JOIN</td><td>왼쪽 테이블은 전부, 오른쪽은 매칭되는 값만(없으면 NULL)</td></tr><tr><td>RIGHT OUTER JOIN</td><td>오른쪽 테이블은 전부, 왼쪽은 매칭되는 값만</td></tr><tr><td>FULL OUTER JOIN</td><td>양쪽 테이블의 모든 행(매칭 안 되면 NULL)</td></tr></tbody></table></div>
+<h3 class="section-h2" id="윈도우-함수">윈도우 함수<a class="heading-anchor" href="#윈도우-함수" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>SELECT
+  name, department, salary,
+  RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rank
+FROM employees;</code></pre></div>
+<p><code class="inline-code">GROUP BY</code>는 그룹별로 행을 하나로 뭉치지만, 윈도우 함수는 <strong>원래 행을 그대로 유지하면서</strong> 그룹별 순위·누계 같은 계산 결과를 추가로 보여줍니다. <code class="inline-code">PARTITION BY</code>(그룹을 나누는 기준), <code class="inline-code">ORDER BY</code>(그룹 안에서의 정렬)와 함께 자주 나옵니다.</p>
+<h3 class="section-h2" id="NULL-처리-주의">NULL 처리 주의<a class="heading-anchor" href="#NULL-처리-주의" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>-- 주의: NULL은 &#x27;=&#x27;로 비교할 수 없음
+WHERE salary = NULL   -- 항상 결과 없음(틀림)
+WHERE salary IS NULL  -- 올바른 문법</code></pre></div>
+<p><strong>기본 상식</strong>: NULL은 "값이 없다"는 상태 자체이기 때문에 일반 비교 연산자(<code class="inline-code">=</code>, <code class="inline-code">!=</code>)로는 판정할 수 없고 <code class="inline-code">IS NULL</code>/<code class="inline-code">IS NOT NULL</code>을 씁니다. <code class="inline-code">COUNT(컬럼명)</code>은 NULL을 세지 않지만 <code class="inline-code">COUNT(*)</code>는 센다는 차이도 시험에 자주 나옵니다.</p>
+<hr>
+<h2 class="section-h1" id="4-연습문제">4. 연습문제<a class="heading-anchor" href="#4-연습문제" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p>⚠️ 아래 문제는 개념 이해를 돕기 위해 직접 만든 연습문제이며, 실제 SQLD 기출문제가 아닙니다.</p></blockquote>
+<p><strong>문제 1.</strong> 다음 중 제3정규형(3NF)을 만족하지 않는 상황은? A) 기본키가 아닌 두 컬럼이 서로 종속 관계에 있다 B) 한 컬럼에 여러 값이 들어있다 C) 기본키 일부에만 종속된 컬럼이 있다 D) 모든 컬럼이 기본키에 완전 함수 종속되어 있다</p>
+<p><strong>문제 2.</strong> <code class="inline-code">LEFT OUTER JOIN</code>에 대한 설명으로 옳은 것은? A) 양쪽 테이블에 모두 값이 있는 행만 반환한다 B) 왼쪽 테이블의 모든 행을 반환하고, 매칭되지 않으면 오른쪽 값은 NULL로 채운다 C) 오른쪽 테이블의 모든 행을 반환한다 D) 두 테이블의 교집합만 반환한다</p>
+<p><strong>정답</strong>: 1번 A / 2번 B</p>
+<hr>
+<h2 class="section-h1" id="5-자주-하는-실수">5. 자주 하는 실수<a class="heading-anchor" href="#5-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>정규화 단계별 정의를 실무 감각으로만 어림짐작해서 헷갈림</li><li>SQL 실행 순서를 모르고 작성 순서(SELECT부터)로 착각</li><li>NULL을 <code class="inline-code">=</code>로 비교하려다 오답</li><li>조인 종류별 결과 차이를 직접 손으로 안 그려보고 암기만 함</li></ul>
+<hr>
+<h2 class="section-h1" id="6-실전-체크리스트">6. 실전 체크리스트<a class="heading-anchor" href="#6-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>정규화 1~3단계 조건을 예시와 함께 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>SQL의 실제 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)를 아는가</span></li><li><input type="checkbox" disabled><span>조인 4종류의 결과 차이를 직접 그려서 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>윈도우 함수와 GROUP BY의 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>최신 시험 공고(문항 수, 합격 기준, 접수 일정)를 공식 사이트에서 확인했는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="7-진짜-기출문제는-여기서">7. 진짜 기출문제는 여기서<a class="heading-anchor" href="#7-진짜-기출문제는-여기서" aria-label="이 섹션 링크">#</a></h2>
+<p>공식 기출문제·자료는 <strong>한국데이터산업진흥원 데이터자격검정(dataq.or.kr)</strong>에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="../자격증 대비.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">자격증 대비</span></a><a class="doc-nav-link next" href="ADSP 대비 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">ADSP 대비 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=878126ea4b" defer></script>
+</body>
+</html>
