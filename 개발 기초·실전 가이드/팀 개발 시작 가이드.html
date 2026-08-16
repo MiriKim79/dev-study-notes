@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>팀 개발 시작 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/style.css?v=7722163a3d">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="팀 개발 시작 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="팀 개발 시작 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="새 프로젝트를 시작할 때 무엇을 확인하고, 어떤 순서로 개발하며, 팀원과 무엇을 합의해야 하는지 한 번에 확인하는 공통 가이드">
-<script src="../assets/search-index.js" defer></script>
+<script src="../assets/search-index.js?v=7722163a3d" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -46,6 +46,7 @@
       <div class="doc-inner" style="--card-accent: var(--cat-start);">
         <span class="page-kicker">🚀 개발 기초·실전 가이드</span>
         <h1 class="page-title">팀 개발 시작 가이드</h1>
+        <p class="page-tagline">뭐부터 해야 할지 감이 안 잡힌다? 전체 그림부터 여기서 잡고 가세요.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 처음 팀 개발을 진행하는 프론트엔드·백엔드·AI 담당자</div><div class="intro-row"><strong>목적:</strong> 새 프로젝트를 시작할 때 무엇을 확인하고, 어떤 순서로 개발하며, 팀원과 무엇을 합의해야 하는지 한 번에 확인하는 공통 가이드</div><div class="intro-row"><strong>사용법:</strong> 처음에는 전체 흐름을 읽고, 실제 작업 중에는 체크리스트처럼 필요한 장만 다시 확인합니다.</div></div>
         <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 개발을 시작할 때 가장 먼저 기억할 원칙</li><li>2. 모든 개발에 공통으로 적용하는 전체 순서</li><li>3. 1단계: 요구사항 확인</li><li>4. 2단계: MVP 범위 결정</li><li>5. 3단계: 사용자 흐름 정리</li><li>6. 4단계: 기술과 구조 결정</li><li>7. 5단계: 데이터와 API 계약</li><li>8. 6단계: 저장소와 브랜치 준비</li><li>9. 7단계: 개발 환경 설정</li><li>10. 프론트엔드 개발 행동 순서</li><li>11. 백엔드 개발 행동 순서</li><li>12. AI 기능 개발 행동 순서</li><li>13. 프론트엔드·백엔드·AI가 연결되는 구조</li><li>14. 구현 중 행동 요령</li><li>15. 디버깅 행동 순서</li><li>16. HTTP 상태 코드 기본 상식</li><li>17. 인증과 보안 기본 상식</li><li>18. 배포 전에 알아야 할 내용</li><li>19. 협업 기본 상식</li><li>20. AI 코딩 도구를 사용할 때 행동 요령</li><li>21. 하지 말아야 할 행동</li><li>22. 개발자가 기본적으로 익혀야 할 지식</li><li>23. 초보자 학습 순서</li><li>24. 기능 시작 전 작성하는 간단 템플릿</li><li>25. 버그 기록 템플릿</li><li>26. 하루 작업 보고 템플릿</li><li>27. 프로젝트 종료 후 회고</li><li>28. 이 문서의 사용 방법</li><li>29. 프로젝트를 처음 받은 날 실제 행동 순서</li><li>30. 최종 체크 — 이 문서를 이해했다면</li></ol></div>
         
@@ -703,7 +704,7 @@ API는 성공하지만 화면이 이상함
 <p>다음 질문을 자기 말로 설명할 수 있으면 충분합니다.</p>
 <ul><li>요구사항과 구현 방법은 왜 다른가?</li><li>MVP를 먼저 정하는 이유는 무엇인가?</li><li>사용자 흐름과 API 계약은 왜 코딩보다 먼저 필요한가?</li><li>브랜치 전략은 왜 프로젝트마다 다를 수 있는가?</li><li>환경변수는 왜 Git에 올리면 안 되는가?</li><li>프론트·백엔드·AI가 각각 어디까지 책임지는가?</li><li>오류가 났을 때 어느 계층부터 확인해야 하는가?</li><li>“내 컴퓨터에서 실행됨”과 “배포됨”은 무엇이 다른가?</li></ul>
 <p>모두 외우는 것이 목표가 아니라, <strong>필요할 때 이 문서의 어느 장으로 돌아가야 하는지 아는 것</strong>이 목표입니다.</p>
-        <nav class="doc-nav"><a class="doc-nav-link prev" href="../개발 기초·실전 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">개발 기초·실전 가이드</span></a><a class="doc-nav-link next" href="Git·GitHub 기초 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">Git·GitHub 기초 가이드</span></a></nav>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="Git·GitHub 진짜 최소 기초.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">Git·GitHub 진짜 최소 기초</span></a><a class="doc-nav-link next" href="Git·GitHub 기초 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">Git·GitHub 기초 가이드</span></a></nav>
       </div>
     </main>
   </div>
@@ -714,6 +715,6 @@ API는 성공하지만 화면이 이상함
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js" defer></script>
+<script src="../assets/main.js?v=7722163a3d" defer></script>
 </body>
 </html>

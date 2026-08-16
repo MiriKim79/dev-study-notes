@@ -7,6 +7,7 @@ build_site.py — 개발 학습·실전 노트의 Markdown 원본을 학습용 H
 - 실행: python build_site.py
 - Markdown을 수정한 뒤 다시 이 스크립트를 실행하면 HTML이 재생성된다.
 """
+import hashlib
 import html
 import json
 import re
@@ -15,6 +16,20 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent
 SITE_BASE_URL = "https://mirikim79.github.io/dev-study-notes/"
+
+
+def _compute_asset_version():
+    """assets/style.css·main.js 내용이 바뀔 때만 값이 바뀌는 캐시 무효화용 버전 문자열.
+    내용이 그대로면 값도 그대로라 불필요한 캐시 무효화가 없다."""
+    h = hashlib.sha256()
+    for name in ("assets/style.css", "assets/main.js"):
+        p = ROOT / name
+        if p.exists():
+            h.update(p.read_bytes())
+    return h.hexdigest()[:10]
+
+
+ASSET_VERSION = _compute_asset_version()
 
 # ==========================================================================
 # 1. 사이트에 포함되는 문서 목록(메타데이터) — 실제 파일명을 기준으로 한다.
@@ -32,7 +47,17 @@ PAGES = [
         "cat": "start",
         "icon": "📚",
         "hub": None,
-        "hub_children": ["team-start", "frontend", "backend", "ai", "git"],
+        "hub_children": ["git-min", "team-start", "frontend", "backend", "ai", "git"],
+    },
+    {
+        "key": "git-min",
+        "src": f"{PLAYBOOK_DIR}/Git·GitHub 진짜 최소 기초.md",
+        "title": "Git·GitHub 진짜 최소 기초",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "git",
+        "icon": "🔰",
+        "hub": "playbook-hub",
+        "tagline": "Git이 뭔지도 모른다? branch도 처음 들어봤다? 여기부터 시작하세요 — 5분이면 끝나요.",
     },
     {
         "key": "team-start",
@@ -42,6 +67,7 @@ PAGES = [
         "cat": "start",
         "icon": "🚀",
         "hub": "playbook-hub",
+        "tagline": "뭐부터 해야 할지 감이 안 잡힌다? 전체 그림부터 여기서 잡고 가세요.",
     },
     {
         "key": "frontend",
@@ -51,6 +77,7 @@ PAGES = [
         "cat": "frontend",
         "icon": "🎨",
         "hub": "playbook-hub",
+        "tagline": "HTML·CSS·JS가 뭔지도 헷갈린다? 화면 만들기, 여기서 시작하세요.",
     },
     {
         "key": "backend",
@@ -60,6 +87,7 @@ PAGES = [
         "cat": "backend",
         "icon": "🛠️",
         "hub": "playbook-hub",
+        "tagline": "서버가 대체 뭘 하는 건지 감이 안 온다? 여기서부터 차근차근 풀립니다.",
     },
     {
         "key": "ai",
@@ -69,6 +97,7 @@ PAGES = [
         "cat": "ai",
         "icon": "🤖",
         "hub": "playbook-hub",
+        "tagline": "AI 기능 넣고 싶은데 프롬프트가 뭔지도 모른다? 바로 이 문서입니다.",
     },
     {
         "key": "git",
@@ -78,6 +107,7 @@ PAGES = [
         "cat": "git",
         "icon": "🌿",
         "hub": "playbook-hub",
+        "tagline": "add, commit, push를 외우기 전에 원리부터 — 충돌 해결까지 제대로 다룹니다.",
     },
     {
         "key": "collab-method",
@@ -244,6 +274,7 @@ PAGES_BY_KEY = {p["key"]: p for p in PAGES}
 STUDY_ORDER = [
     "index",
     "playbook-hub",
+    "git-min",
     "team-start",
     "git",
     "frontend",
@@ -927,7 +958,7 @@ PAGE_HTML_TMPL = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="{prefix}assets/style.css">
+<link rel="stylesheet" href="{prefix}assets/style.css?v={asset_v}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="{title} · 개발 학습·실전 노트">
@@ -936,7 +967,7 @@ PAGE_HTML_TMPL = """<!doctype html>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{title} · 개발 학습·실전 노트">
 <meta name="twitter:description" content="{og_description}">
-<script src="{prefix}assets/search-index.js" defer></script>
+<script src="{prefix}assets/search-index.js?v={asset_v}" defer></script>
 </head>
 <body data-root-prefix="{prefix}">
 <div id="reading-progress"></div>
@@ -968,6 +999,7 @@ PAGE_HTML_TMPL = """<!doctype html>
       <div class="doc-inner" style="--card-accent: var(--cat-{cat});">
         <span class="page-kicker">{icon} {kicker}</span>
         <h1 class="page-title">{title}</h1>
+        {tagline}
         {intro}
         {outline}
         {hub_links}
@@ -983,7 +1015,7 @@ PAGE_HTML_TMPL = """<!doctype html>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="{prefix}assets/main.js" defer></script>
+<script src="{prefix}assets/main.js?v={asset_v}" defer></script>
 </body>
 </html>
 """
@@ -1001,6 +1033,9 @@ def build_content_page(page):
     blocks = wrap_concept_boxes(blocks)
     body_html = render_blocks(blocks)
 
+    tagline_html = (
+        '<p class="page-tagline">%s</p>' % html.escape(page["tagline"]) if page.get("tagline") else ""
+    )
     intro_html = render_intro_box(intro_rows) if intro_rows else ""
     outline_html = render_outline_box(toc)
     hub_links_html = render_hub_quicklinks(page)
@@ -1014,11 +1049,13 @@ def build_content_page(page):
     html_out = PAGE_HTML_TMPL.format(
         title=html.escape(page["title"]),
         prefix=prefix,
+        asset_v=ASSET_VERSION,
         breadcrumb=breadcrumb_html,
         sidebar=sidebar_html,
         cat=page["cat"],
         icon=page["icon"],
         kicker=html.escape(page["kicker"]),
+        tagline=tagline_html,
         intro=intro_html,
         outline=outline_html,
         hub_links=hub_links_html,
@@ -1111,6 +1148,7 @@ DASHBOARD_INTRO = (
 )
 
 OVERVIEW_ROWS = [
+    ("git-min", "Git·GitHub 진짜 최소 기초", "branch·commit·push·PR·merge·pull이 뭔지 5분 만에 감 잡기", "Git이라는 단어를 오늘 처음 들어봤을 때"),
     ("team-start", "팀 개발 시작 가이드", "요구사항 확인, MVP 범위, 사용자 흐름, 기술·구조 결정, 구현, 테스트, 배포, 회고까지 전체 순서", "처음 팀 프로젝트를 시작할 때"),
     ("frontend", "프론트엔드 기초 가이드", "HTML·CSS·JavaScript부터 React, API 통신, 상태 관리, 인증, 배포까지 공통 기초", "프론트엔드를 처음 공부할 때"),
     ("backend", "백엔드 기초 가이드", "서버, HTTP/REST, DB, 인증·인가, 보안, 테스트, 운영·배포의 기본 원리", "백엔드를 처음 공부할 때"),
@@ -1121,7 +1159,7 @@ OVERVIEW_ROWS = [
 ]
 
 DASHBOARD_CARDS = [
-    "team-start", "frontend", "backend", "ai", "git", "collab-method", "github-hub",
+    "git-min", "team-start", "frontend", "backend", "ai", "git", "collab-method", "github-hub",
 ]
 
 OVERVIEW_ROWS_MID = [
@@ -1142,6 +1180,7 @@ DASHBOARD_CARDS_MID = [
 ]
 
 STEP_FLOW = [
+    {"title": "Git·GitHub 진짜 최소 기초", "sub": "Git이 처음이라면 여기서 5분만 — branch·commit·PR 감 잡기", "key": "git-min"},
     {"title": "팀 개발 시작 가이드", "sub": "무엇을 확인하고 어떤 순서로 개발할지 먼저 파악", "key": "team-start"},
     {"title": "Git · GitHub 기초 가이드", "sub": "버전 관리와 협업의 공통 기초 익히기", "key": "git"},
     {"title": "원하는 개발 분야 선택", "sub": None, "branches": ["frontend", "backend", "ai"]},
@@ -1216,7 +1255,7 @@ DASHBOARD_TMPL = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>개발 공부 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={asset_v}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="개발 공부 가이드 · 개발 학습·실전 노트">
@@ -1225,7 +1264,7 @@ DASHBOARD_TMPL = """<!doctype html>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="개발 공부 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="{intro}">
-<script src="assets/search-index.js" defer></script>
+<script src="assets/search-index.js?v={asset_v}" defer></script>
 </head>
 <body data-root-prefix="">
 <div id="reading-progress"></div>
@@ -1248,6 +1287,11 @@ DASHBOARD_TMPL = """<!doctype html>
       <p class="dashboard-desc">{intro}</p>
     </div>
 
+    <a class="hero-cta" href="{git_min_url}">
+      <span class="hero-cta-text">Git 진짜 하나도 몰라요 😭 — <strong>branch가 뭔지, commit이 뭔지</strong>부터 5분 만에 정리하고 싶다면?</span>
+      <span class="hero-cta-btn">🔰 최소 기초부터 시작하기 →</span>
+    </a>
+
     <div class="section-heading">학습 자료 한눈에 보기</div>
     {overview_table}
 
@@ -1261,6 +1305,8 @@ DASHBOARD_TMPL = """<!doctype html>
     <p class="dashboard-desc" style="margin-bottom:20px;">기초 가이드로 혼자 힘으로 동작하는 앱을 만들 수 있게 됐다면, 다음은 실무에서 부딪히는 문제를 다루는 <a href="{mid_hub_url}">중급 가이드</a>로 이어집니다.</p>
     {mid_overview_table}
     {mid_card_grid}
+
+    <div class="dashboard-footer">🐣 미리(Miri)가 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
   </div>
 </div>
 <div class="search-overlay" id="search-overlay">
@@ -1269,7 +1315,7 @@ DASHBOARD_TMPL = """<!doctype html>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="assets/main.js" defer></script>
+<script src="assets/main.js?v={asset_v}" defer></script>
 </body>
 </html>
 """
@@ -1278,6 +1324,8 @@ DASHBOARD_TMPL = """<!doctype html>
 def build_dashboard():
     html_out = DASHBOARD_TMPL.format(
         intro=html.escape(DASHBOARD_INTRO),
+        asset_v=ASSET_VERSION,
+        git_min_url=url_of("git-min"),
         overview_table=render_overview_table(),
         step_flow=render_step_flow(),
         card_grid=render_card_grid(),
