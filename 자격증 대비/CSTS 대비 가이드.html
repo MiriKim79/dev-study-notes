@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSTS 대비 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=878126ea4b">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="CSTS 대비 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="소프트웨어 테스트의 표준 이론(테스트 레벨, 설계 기법, 결함 관리)을 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EC%9E%90%EA%B2%A9%EC%A6%9D%20%EB%8C%80%EB%B9%84/CSTS%20%EB%8C%80%EB%B9%84%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSTS 대비 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="소프트웨어 테스트의 표준 이론(테스트 레벨, 설계 기법, 결함 관리)을 정리합니다">
+<script src="../assets/search-index.js?v=878126ea4b" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../자격증 대비.html">자격증 대비</a> <span>›</span><span class="current">CSTS 대비 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-소프트웨어-테스트의-기본-원칙">1. 소프트웨어 테스트의 기본 원칙</a></li><li class="toc-h1"><a href="#2-테스트-레벨-V-모델">2. 테스트 레벨 — V-모델</a></li><li class="toc-h1"><a href="#3-테스트-설계-기법">3. 테스트 설계 기법</a><ul class="toc-h2-list"><li><a href="#블랙박스-기법-명세-입출력-기준">블랙박스 기법 — 명세(입출력) 기준</a></li><li><a href="#결정-테이블-조건-조합이-많을-때">결정 테이블 — 조건 조합이 많을 때</a></li><li><a href="#화이트박스-기법-코드-구조-기준">화이트박스 기법 — 코드 구조 기준</a></li></ul></li><li class="toc-h1"><a href="#4-결함-관리-프로세스">4. 결함 관리 프로세스</a></li><li class="toc-h1"><a href="#5-연습문제">5. 연습문제</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-진짜-기출문제-정확한-시험-정보는-여기서">8. 진짜 기출문제·정확한 시험 정보는 여기서</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-cert);">
+        <span class="page-kicker">🧪 자격증 대비</span>
+        <h1 class="page-title">CSTS 대비 가이드</h1>
+        <p class="page-tagline">테스트 코드는 짜봤다? 이제 테스트 설계 기법과 결함 관리 이론으로 검증해볼 차례입니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 테스트 자동화 중급 가이드로 실무 테스트 코드는 짜봤고, 소프트웨어 테스트 전문가(CSTS) 자격증으로 이론까지 검증받고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 소프트웨어 테스트의 표준 이론(테스트 레벨, 설계 기법, 결함 관리)을 정리합니다</div><div class="intro-row"><strong>사용법:</strong> ⚠️ 이 시험은 시행 기관·정확한 과목 구성·문항 수가 이 사이트의 다른 자격증 문서보다 정보 변동이 잦습니다. 반드시 "CSTS 소프트웨어 테스트 전문가"로 검색해 최신 공식 공고(시행 기관, 접수처, 시험 범위)를 직접 확인한 뒤 이 문서를 참고용 개념 정리로 활용하세요. 여기 정리한 내용은 특정 시험 공고가 아니라, 소프트웨어 테스트 분야에서 국제적으로 통용되는 표준 이론(ISTQB 등 테스트 자격 체계가 공통으로 다루는 범위)을 기준으로 했습니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 소프트웨어 테스트의 기본 원칙</li><li>2. 테스트 레벨 — V-모델</li><li>3. 테스트 설계 기법</li><li>4. 결함 관리 프로세스</li><li>5. 연습문제</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li><li>8. 진짜 기출문제·정확한 시험 정보는 여기서</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>테스트 자동화 중급 가이드에서 다룬 단위/통합/E2E 테스트, TDD, Mock/Stub 개념은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 이론 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>오류(Error)</td><td>사람이 실수하는 것(코드를 잘못 짬)</td></tr><tr><td>결함(Defect/Bug)</td><td>그 실수가 코드에 남아있는 상태</td></tr><tr><td>실패(Failure)</td><td>그 결함이 실제 실행 중에 겉으로 드러나는 것(화면에 오류가 뜸)</td></tr><tr><td>테스트 오라클(Test Oracle)</td><td>"이 결과가 맞는지 틀린지" 판단하는 기준(예상 결과)</td></tr><tr><td>V-모델</td><td>개발 단계(요구사항→설계→구현)와 테스트 단계(인수→시스템→통합→단위)를 짝지어 보여주는 모델</td></tr><tr><td>블랙박스 테스트</td><td>내부 코드는 보지 않고, 입력과 출력만으로 테스트 케이스를 설계하는 방식</td></tr><tr><td>화이트박스 테스트</td><td>내부 코드 구조(분기, 경로)를 보고 테스트 케이스를 설계하는 방식</td></tr><tr><td>동등 분할(Equivalence Partitioning)</td><td>비슷하게 동작할 것으로 예상되는 입력값들을 그룹으로 묶어, 그룹당 대표값 하나만 테스트하는 기법</td></tr><tr><td>경계값 분석(Boundary Value Analysis)</td><td>오류가 몰리기 쉬운 값의 경계(최솟값, 최댓값, 경계 바로 앞뒤)를 집중적으로 테스트하는 기법</td></tr><tr><td>결정 테이블(Decision Table)</td><td>여러 조건의 조합에 따라 결과가 달라질 때, 그 조합을 표로 정리해 빠짐없이 테스트하는 기법</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="1-소프트웨어-테스트의-기본-원칙">1. 소프트웨어 테스트의 기본 원칙<a class="heading-anchor" href="#1-소프트웨어-테스트의-기본-원칙" aria-label="이 섹션 링크">#</a></h2>
+<p>테스트 이론에서 공통적으로 다루는 원칙들입니다. 특정 도구나 언어와 무관하게 "테스트를 대하는 태도"에 가깝습니다.</p>
+<div class="table-scroll"><table><thead><tr><th>원칙</th><th>의미</th></tr></thead><tbody><tr><td>결함이 있음을 보여줄 뿐 없음을 증명하지 못함</td><td>테스트를 통과해도 "버그가 없다"가 아니라 "발견한 버그가 없다"는 뜻</td></tr><tr><td>완벽한 테스트는 불가능</td><td>가능한 모든 입력·경로를 다 테스트할 수는 없으므로, 위험도 기준으로 우선순위를 정함</td></tr><tr><td>조기 테스트(Early Testing)</td><td>결함은 발견이 늦어질수록 고치는 비용이 커짐 — 요구사항 단계부터 테스트를 고려</td></tr><tr><td>결함 집중(Defect Clustering)</td><td>결함은 몇몇 모듈에 몰려있는 경향이 있음(파레토 법칙과 유사)</td></tr><tr><td>살충제 패러독스(Pesticide Paradox)</td><td>같은 테스트 케이스를 계속 반복하면 새로운 결함을 못 찾게 됨 — 테스트도 주기적으로 갱신 필요</td></tr><tr><td>테스트는 정황 의존적</td><td>게임 앱과 의료기기 소프트웨어는 테스트 방식·강도가 달라야 함</td></tr><tr><td>오류-부재의 궤변(Absence-of-Errors Fallacy)</td><td>버그를 다 고쳐도,애초에 잘못된 요구사항을 구현했다면 쓸모없는 소프트웨어가 됨</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="2-테스트-레벨-V-모델">2. 테스트 레벨 — V-모델<a class="heading-anchor" href="#2-테스트-레벨-V-모델" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>요구사항 분석 ─────────────── 인수 테스트(Acceptance Test)
+    설계 ──────────────────── 시스템 테스트(System Test)
+        상세 설계 ──────────── 통합 테스트(Integration Test)
+            구현(코딩) ─────── 단위 테스트(Unit Test)</code></pre></div>
+<p>각 개발 단계에서 나온 산출물(요구사항 문서, 설계 문서)이 바로 그 레벨의 테스트 기준이 됩니다. 예를 들어 인수 테스트는 요구사항 문서를 기준으로, 단위 테스트는 코드 자체를 기준으로 통과 여부를 판단합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>레벨</th><th>무엇을 확인하는가</th><th>이 사이트와 연결</th></tr></thead><tbody><tr><td>단위 테스트</td><td>함수·컴포넌트 하나가 의도대로 동작하는가</td><td>테스트 자동화 중급 가이드 1장</td></tr><tr><td>통합 테스트</td><td>여러 모듈이 맞물려 동작하는가</td><td>테스트 자동화 중급 가이드 1장</td></tr><tr><td>시스템 테스트</td><td>전체 시스템이 요구된 기능·성능을 만족하는가</td><td>성능·스케일 고급 가이드(성능 측면)</td></tr><tr><td>인수 테스트</td><td>실제 사용자·발주자 관점에서 받아들일 만한가</td><td>팀 개발 시작 가이드(요구사항 확인)</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="3-테스트-설계-기법">3. 테스트 설계 기법<a class="heading-anchor" href="#3-테스트-설계-기법" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="블랙박스-기법-명세-입출력-기준">블랙박스 기법 — 명세(입출력) 기준<a class="heading-anchor" href="#블랙박스-기법-명세-입출력-기준" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>예: 나이 입력값에 따라 &quot;미성년자/성인&quot; 분류하는 기능 (경계: 19세)
+
+동등 분할: [0~18세] 그룹에서 하나, [19세 이상] 그룹에서 하나 — 총 2개만 테스트해도 충분
+경계값 분석: 18세, 19세(경계 바로 앞뒤)를 정확히 테스트 — 경계 오류(&lt; 를 &lt;= 로 잘못 쓰는 실수)를 가장 잘 잡아냄</code></pre></div>
+<p><strong>기본 상식</strong>: 실무 경험상 버그는 "평범한 값"보다 "경계에 딱 걸치는 값"에서 훨씬 자주 발생합니다. 동등 분할로 테스트 개수를 줄이고, 경계값 분석으로 그 안에서 가장 위험한 지점을 정확히 겨냥하는 것이 효율적인 조합입니다.</p>
+<h3 class="section-h2" id="결정-테이블-조건-조합이-많을-때">결정 테이블 — 조건 조합이 많을 때<a class="heading-anchor" href="#결정-테이블-조건-조합이-많을-때" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>예: &quot;회원 등급&quot;과 &quot;쿠폰 보유 여부&quot;에 따라 할인율이 달라지는 기능
+
+| 회원 등급=VIP | 쿠폰 보유 | 결과      |
+|---------------|-----------|-----------|
+| Y             | Y         | 30% 할인  |
+| Y             | N         | 20% 할인  |
+| N             | Y         | 10% 할인  |
+| N             | N         | 할인 없음 |</code></pre></div>
+<p>조건이 여러 개 얽혀 있을 때, 감으로 케이스를 뽑으면 조합을 빠뜨리기 쉽습니다. 표로 모든 조합을 나열하면 누락 없이 테스트 케이스를 뽑을 수 있습니다.</p>
+<h3 class="section-h2" id="화이트박스-기법-코드-구조-기준">화이트박스 기법 — 코드 구조 기준<a class="heading-anchor" href="#화이트박스-기법-코드-구조-기준" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>구문 커버리지(Statement Coverage): 모든 코드 줄이 최소 한 번은 실행됐는가
+분기 커버리지(Branch Coverage): 모든 if/else 분기가 각각 한 번씩은 실행됐는가</code></pre></div>
+<p>테스트 자동화 중급 가이드에서 다룬 "커버리지의 함정"과 같은 맥락입니다 — 구문 커버리지 100%여도 특정 조건 조합은 안 돌아봤을 수 있어, 분기 커버리지가 더 엄격한 기준입니다.</p>
+<hr>
+<h2 class="section-h1" id="4-결함-관리-프로세스">4. 결함 관리 프로세스<a class="heading-anchor" href="#4-결함-관리-프로세스" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>발견(Detected) → 보고(Reported) → 확인(Confirmed, 담당자 배정)
+→ 수정(Fixed) → 재테스트(Retest) → 종료(Closed)</code></pre></div>
+<p><strong>기본 상식</strong>: 결함을 보고할 때는 "안 된다"가 아니라 재현 절차(어떤 입력을 어떤 순서로 넣었을 때, 무엇을 기대했는데 실제로 무엇이 나왔는지)를 함께 남겨야 담당자가 바로 재현·수정할 수 있습니다. 이 사이트의 팀 개발 시작 가이드에 있는 "버그 기록 템플릿"과 같은 목적입니다.</p>
+<hr>
+<h2 class="section-h1" id="5-연습문제">5. 연습문제<a class="heading-anchor" href="#5-연습문제" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p>⚠️ 아래 문제는 개념 이해를 돕기 위해 직접 만든 연습문제이며, 실제 CSTS 기출문제가 아닙니다.</p></blockquote>
+<p><strong>문제 1.</strong> 같은 테스트 케이스를 계속 반복 실행하면 새로운 결함을 더는 찾지 못하게 되는 현상을 가리키는 원칙은? A) 결함 집중(Defect Clustering) B) 살충제 패러독스(Pesticide Paradox) C) 오류-부재의 궤변 D) 조기 테스트</p>
+<p><strong>문제 2.</strong> "18세, 19세"처럼 경계에 딱 걸치는 값을 집중적으로 테스트하는 기법은? A) 동등 분할 B) 결정 테이블 C) 경계값 분석 D) 상태 전이 테스트</p>
+<p><strong>정답</strong>: 1번 B / 2번 C</p>
+<hr>
+<h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>테스트 통과를 "버그가 없다"는 증명으로 착각</li><li>동등 분할만 하고 경계값을 따로 챙기지 않아 경계 오류를 놓침</li><li>결함 보고서에 재현 절차 없이 "안 됨"만 적어 담당자가 재현을 못함</li><li>구문 커버리지만 보고 분기 커버리지를 확인하지 않음</li><li>조건 조합이 여러 개인데 결정 테이블 없이 감으로 케이스를 뽑아 조합을 빠뜨림</li></ul>
+<hr>
+<h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>오류·결함·실패 세 단어의 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>V-모델에서 각 개발 단계와 짝지어지는 테스트 레벨을 아는가</span></li><li><input type="checkbox" disabled><span>동등 분할과 경계값 분석을 함께 적용해본 적이 있는가</span></li><li><input type="checkbox" disabled><span>조건 조합이 복잡한 기능에 결정 테이블을 그려본 적이 있는가</span></li><li><input type="checkbox" disabled><span>결함 생명주기(발견→보고→확인→수정→재테스트→종료)를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>정확한 시행 기관과 최신 시험 범위를 공식 공고에서 확인했는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="8-진짜-기출문제-정확한-시험-정보는-여기서">8. 진짜 기출문제·정확한 시험 정보는 여기서<a class="heading-anchor" href="#8-진짜-기출문제-정확한-시험-정보는-여기서" aria-label="이 섹션 링크">#</a></h2>
+<p>이 문서는 소프트웨어 테스트 분야의 표준 이론을 정리한 것으로, 특정 회차의 공식 시험 공고를 대체하지 않습니다. "CSTS 소프트웨어 테스트 전문가"로 검색해 시행 기관의 공식 사이트에서 최신 시험 범위·일정·기출 자료를 반드시 확인하세요.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="AWS 클라우드 자격증 대비 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">AWS 클라우드 자격증 대비 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=878126ea4b" defer></script>
+</body>
+</html>

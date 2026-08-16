@@ -369,7 +369,7 @@ PAGES = [
         "cat": "start",
         "icon": "🏅",
         "hub": None,
-        "hub_children": ["sqld", "adsp", "infoproc", "infosec", "aws-cert"],
+        "hub_children": ["sqld", "adsp", "infoproc", "infosec", "aws-cert", "csts"],
     },
     {
         "key": "sqld",
@@ -421,6 +421,16 @@ PAGES = [
         "hub": "cert-hub",
         "tagline": "클라우드·IaC 고급 가이드는 봤다? 이제 AWS 자격증으로 검증해볼 차례입니다.",
     },
+    {
+        "key": "csts",
+        "src": f"{CERT_DIR}/CSTS 대비 가이드.md",
+        "title": "CSTS 대비 가이드",
+        "kicker": "자격증 대비",
+        "cat": "cert",
+        "icon": "🧪",
+        "hub": "cert-hub",
+        "tagline": "테스트 코드는 짜봤다? 이제 테스트 설계 기법과 결함 관리 이론으로 검증해볼 차례입니다.",
+    },
 ]
 PAGES_BY_KEY = {p["key"]: p for p in PAGES}
 
@@ -465,6 +475,7 @@ STUDY_ORDER = [
     "infoproc",
     "infosec",
     "aws-cert",
+    "csts",
 ]
 
 CAT_LABEL = {
@@ -1374,10 +1385,11 @@ OVERVIEW_ROWS_CERT = [
     ("infoproc", "정보처리기사 대비 가이드", "소프트웨어 설계·개발, DB 구축, 프로그래밍 언어 활용, 정보시스템 구축관리", "국내 개발자 필수 국가자격증을 준비할 때"),
     ("infosec", "정보보안기사·산업기사 대비 가이드", "시스템·네트워크·애플리케이션 보안, 정보보안 관리", "보안 심화 가이드로 개념을 잡은 뒤 자격증까지 노릴 때"),
     ("aws-cert", "AWS 클라우드 자격증 대비 가이드", "EC2·S3·IAM·VPC 핵심 개념, Well-Architected Framework 개요", "클라우드·IaC 가이드를 실제 자격증으로 검증하고 싶을 때"),
+    ("csts", "CSTS 대비 가이드", "테스트 원칙, V-모델, 테스트 설계 기법, 결함 관리 프로세스", "테스트 코드는 짜봤지만 이론으로도 검증받고 싶을 때"),
 ]
 
 DASHBOARD_CARDS_CERT = [
-    "sqld", "adsp", "infoproc", "infosec", "aws-cert",
+    "sqld", "adsp", "infoproc", "infosec", "aws-cert", "csts",
 ]
 
 STEP_FLOW = [
