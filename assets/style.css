@@ -178,14 +178,14 @@ body::before {
 .menu-btn:hover, .search-btn:hover, .theme-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); }
 
 .guestbook-btn {
-  display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 12px;
+  display: inline-flex; align-items: center; gap: 5px; height: 36px; padding: 0 10px;
   background: none; border: 1px solid var(--border-strong); color: var(--text-heading);
   border-radius: var(--radius-sm); cursor: pointer; font-size: 13px; font-weight: 600; flex: none; white-space: nowrap;
 }
 .guestbook-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); text-decoration: none; }
-@media (max-width: 480px) {
-  .guestbook-btn-label { display: none; }
-  .guestbook-btn { padding: 0; width: 36px; justify-content: center; }
+@media (max-width: 400px) {
+  .brand { font-size: 14px; }
+  .guestbook-btn { padding: 0 8px; font-size: 12.5px; }
 }
 
 .breadcrumb {
