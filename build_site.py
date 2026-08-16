@@ -369,7 +369,7 @@ PAGES = [
         "cat": "start",
         "icon": "🏅",
         "hub": None,
-        "hub_children": ["sqld", "adsp", "infoproc", "infosec", "aws-cert", "csts"],
+        "hub_children": ["csts", "sqld", "adsp", "infoproc", "infosec", "aws-cert"],
     },
     {
         "key": "sqld",
@@ -470,12 +470,12 @@ STUDY_ORDER = [
     "leadership-adv",
     "ai-adv",
     "cert-hub",
+    "csts",
     "sqld",
     "adsp",
     "infoproc",
     "infosec",
     "aws-cert",
-    "csts",
 ]
 
 CAT_LABEL = {
@@ -1416,16 +1416,16 @@ DASHBOARD_CARDS_ADV = [
 ]
 
 OVERVIEW_ROWS_CERT = [
+    ("csts", "CSTS 대비 가이드", "테스트 원칙, V-모델, 테스트 설계 기법, 결함 관리 프로세스", "테스트 코드는 짜봤지만 이론으로도 검증받고 싶을 때"),
     ("sqld", "SQLD 대비 가이드", "데이터 모델링, SQL 기본·활용, 자주 나오는 함정 포인트", "SQL은 짤 줄 아는데 SQLD를 준비할 때"),
     ("adsp", "ADSP 대비 가이드", "데이터 이해, 분석 기획, 통계·분석 기법 개요", "데이터 분석 기초를 자격증으로 검증하고 싶을 때"),
     ("infoproc", "정보처리기사 대비 가이드", "소프트웨어 설계·개발, DB 구축, 프로그래밍 언어 활용, 정보시스템 구축관리", "국내 개발자 필수 국가자격증을 준비할 때"),
     ("infosec", "정보보안기사·산업기사 대비 가이드", "시스템·네트워크·애플리케이션 보안, 정보보안 관리", "보안 심화 가이드로 개념을 잡은 뒤 자격증까지 노릴 때"),
     ("aws-cert", "AWS 클라우드 자격증 대비 가이드", "EC2·S3·IAM·VPC 핵심 개념, Well-Architected Framework 개요", "클라우드·IaC 가이드를 실제 자격증으로 검증하고 싶을 때"),
-    ("csts", "CSTS 대비 가이드", "테스트 원칙, V-모델, 테스트 설계 기법, 결함 관리 프로세스", "테스트 코드는 짜봤지만 이론으로도 검증받고 싶을 때"),
 ]
 
 DASHBOARD_CARDS_CERT = [
-    "sqld", "adsp", "infoproc", "infosec", "aws-cert", "csts",
+    "csts", "sqld", "adsp", "infoproc", "infosec", "aws-cert",
 ]
 
 STEP_FLOW = [
