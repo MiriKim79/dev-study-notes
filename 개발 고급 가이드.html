@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발 고급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css?v=7976be1644">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="개발 고급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="중급 가이드로 &quot;실무에서 부딪히는 문제&quot;를 다룰 수 있게 됐다면, 다음은 &quot;여러 팀·여러 서버 규모에서 무엇을 판단하고 결정하는가&quot;를 다룰 차례입니다. 정답을 외우는 문서가 아니라, 트레이드오프를 판단하는 기준을 정리합니다.">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="개발 고급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="중급 가이드로 &quot;실무에서 부딪히는 문제&quot;를 다룰 수 있게 됐다면, 다음은 &quot;여러 팀·여러 서버 규모에서 무엇을 판단하고 결정하는가&quot;를 다룰 차례입니다. 정답을 외우는 문서가 아니라, 트레이드오프를 판단하는 기준을 정리합니다.">
+<script src="assets/search-index.js?v=7976be1644" defer></script>
+</head>
+<body data-root-prefix="">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="index.html">대시보드</a> <span>›</span><span class="current">개발 고급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#포함-문서">포함 문서</a></li><li class="toc-h1"><a href="#이-묶음의-전제">이 묶음의 전제</a></li></ul>
+      <a class="sidebar-footer-link" href="index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-start);">
+        <span class="page-kicker">🏔️ 가이드 모음</span>
+        <h1 class="page-title">개발 고급 가이드</h1>
+        
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>목적:</strong> 중급 가이드로 "실무에서 부딪히는 문제"를 다룰 수 있게 됐다면, 다음은 "여러 팀·여러 서버 규모에서 무엇을 판단하고 결정하는가"를 다룰 차례입니다. 정답을 외우는 문서가 아니라, 트레이드오프를 판단하는 기준을 정리합니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>포함 문서</li><li>이 묶음의 전제</li></ol></div>
+        <div class="section-heading" style="margin-top:32px;">바로가기</div><div class="hub-list"><a class="hub-item" href="개발 고급 가이드/시스템 설계 고급 가이드.html"><div><div class="hub-item-title">🏗️ 시스템 설계 고급 가이드</div><div class="hub-item-desc">시스템 설계</div></div><span class="hub-item-arrow">→</span></a><a class="hub-item" href="개발 고급 가이드/클라우드·IaC 고급 가이드.html"><div><div class="hub-item-title">☁️ 클라우드·IaC 고급 가이드</div><div class="hub-item-desc">클라우드·IaC</div></div><span class="hub-item-arrow">→</span></a><a class="hub-item" href="개발 고급 가이드/데이터베이스 고급 가이드.html"><div><div class="hub-item-title">🗄️ 데이터베이스 고급 가이드</div><div class="hub-item-desc">공통</div></div><span class="hub-item-arrow">→</span></a><a class="hub-item" href="개발 고급 가이드/보안 심화 가이드.html"><div><div class="hub-item-title">🔐 보안 심화 가이드</div><div class="hub-item-desc">보안</div></div><span class="hub-item-arrow">→</span></a><a class="hub-item" href="개발 고급 가이드/성능·스케일 고급 가이드.html"><div><div class="hub-item-title">⚡ 성능·스케일 고급 가이드</div><div class="hub-item-desc">성능·스케일</div></div><span class="hub-item-arrow">→</span></a><a class="hub-item" href="개발 고급 가이드/기술 리더십·레거시 마이그레이션 가이드.html"><div><div class="hub-item-title">🧭 기술 리더십·레거시 마이그레이션 가이드</div><div class="hub-item-desc">기술 리더십</div></div><span class="hub-item-arrow">→</span></a><a class="hub-item" href="개발 고급 가이드/생성형 AI 고급 가이드.html"><div><div class="hub-item-title">🤖 생성형 AI 고급 가이드</div><div class="hub-item-desc">생성형 AI</div></div><span class="hub-item-arrow">→</span></a></div>
+        <hr>
+<h2 class="section-h1" id="포함-문서">포함 문서<a class="heading-anchor" href="#포함-문서" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>문서</th><th>핵심 내용</th><th>추천 시점</th></tr></thead><tbody><tr><td><strong>시스템 설계 고급 가이드</strong></td><td>MSA 분리 기준, 이벤트 기반 아키텍처, 서비스 간 통신, 장애 격리</td><td>서버 하나로 감당이 안 되기 시작할 때</td></tr><tr><td><strong>클라우드·IaC 고급 가이드</strong></td><td>Terraform으로 인프라 코드화, 쿠버네티스 기본 개념, 배포 전략</td><td>인프라를 손으로 관리하는 게 한계에 부딪혔을 때</td></tr><tr><td><strong>데이터베이스 고급 가이드</strong></td><td>분산 트랜잭션, 샤딩 실전, 정합성 모델, 대규모 마이그레이션</td><td>복제·샤딩 기초로도 부족해졌을 때</td></tr><tr><td><strong>보안 심화 가이드</strong></td><td>OWASP Top 10, 인증·인가 심화, 시크릿 관리, 보안 점검 루틴</td><td>서비스가 실제 사용자를 받기 시작할 때</td></tr><tr><td><strong>성능·스케일 고급 가이드</strong></td><td>병목 진단, 캐싱 전략, 부하 테스트, 수평·수직 확장</td><td>트래픽이 늘어나는 게 눈에 보일 때</td></tr><tr><td><strong>기술 리더십·레거시 마이그레이션 가이드</strong></td><td>기술 의사결정, ADR, 팀 성장, 레거시 코드 단계적 전환</td><td>기술 결정을 직접 내려야 하는 위치가 됐을 때</td></tr><tr><td><strong>생성형 AI 고급 가이드</strong></td><td>멀티 에이전트 오케스트레이션, 자체 모델 서빙, 대규모 평가·모니터링</td><td>AI 기능 하나로는 부족해졌을 때</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="이-묶음의-전제">이 묶음의 전제<a class="heading-anchor" href="#이-묶음의-전제" aria-label="이 섹션 링크">#</a></h2>
+<p>기초·중급 가이드에서 다룬 내용(서버 하나 만들고 운영하기, 캐싱, N+1, 테스트, 배포 자동화)은 이미 할 수 있다고 가정합니다. 여기서는 <strong>"기술을 어떻게 쓰는지"보다 "왜 이 구조·이 결정을 선택하는지, 그리고 무엇을 포기하는지"</strong>에 집중합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>중급 가이드
+→ 실무 프로젝트를 몇 번 굴려보며 &quot;왜 이게 문제였지&quot; 감을 쌓기
+→ 이 고급 가이드로 판단 기준 채우기</code></pre></div>
+<p>고급 단계에는 "무조건 맞는 답"이 없습니다. 각 문서 끝에는 "언제 쓰고 언제 쓰지 않는지"를 반드시 정리해뒀습니다 — 화려한 기술을 배우는 게 목적이 아니라, <strong>지금 우리 팀·우리 서비스 규모에 필요한지 아닌지를 판단하는 능력</strong>이 목적입니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="개발 중급 가이드/TypeScript 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">TypeScript 중급 가이드</span></a><a class="doc-nav-link next" href="개발 고급 가이드/시스템 설계 고급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">시스템 설계 고급 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="assets/main.js?v=7976be1644" defer></script>
+</body>
+</html>

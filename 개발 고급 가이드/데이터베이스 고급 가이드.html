@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>데이터베이스 고급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=7976be1644">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="데이터베이스 고급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="분산 트랜잭션, 샤딩을 실전에 적용할 때의 함정, 대규모 마이그레이션 전략을 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="데이터베이스 고급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="분산 트랜잭션, 샤딩을 실전에 적용할 때의 함정, 대규모 마이그레이션 전략을 정리합니다">
+<script src="../assets/search-index.js?v=7976be1644" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 고급 가이드.html">개발 고급 가이드</a> <span>›</span><span class="current">데이터베이스 고급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유</a><ul class="toc-h2-list"><li><a href="#2단계-커밋-2PC-이론적-해법과-현실의-한계">2단계 커밋(2PC)— 이론적 해법과 현실의 한계</a></li></ul></li><li class="toc-h1"><a href="#2-샤딩을-실전에-적용할-때의-함정">2. 샤딩을 실전에 적용할 때의 함정</a><ul class="toc-h2-list"><li><a href="#샤드-키를-잘못-고르면">샤드 키를 잘못 고르면</a></li><li><a href="#JOIN이-안-됨">JOIN이 안 됨</a></li><li><a href="#리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다">리샤딩(샤드를 다시 나누는 일)이 매우 비쌉니다</a></li></ul></li><li class="toc-h1"><a href="#3-정합성-모델-이해하기">3. 정합성 모델 이해하기</a></li><li class="toc-h1"><a href="#4-대규모-마이그레이션-전략">4. 대규모 마이그레이션 전략</a><ul class="toc-h2-list"><li><a href="#Expand-Contract-패턴">Expand-Contract 패턴</a></li></ul></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-실전-체크리스트">6. 실전 체크리스트</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-common);">
+        <span class="page-kicker">🗄️ 개발 고급 가이드</span>
+        <h1 class="page-title">데이터베이스 고급 가이드</h1>
+        <p class="page-tagline">복제·샤딩 기초는 안다? 분산 트랜잭션과 샤딩을 실전에 적용할 때의 함정을 다룹니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 인덱스 튜닝·복제·샤딩 기초 개념은 알고, 실제로 여러 서버·여러 서비스에 걸친 데이터 정합성 문제를 겪기 시작한 사람</div><div class="intro-row"><strong>목적:</strong> 분산 트랜잭션, 샤딩을 실전에 적용할 때의 함정, 대규모 마이그레이션 전략을 정리합니다</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 분산 트랜잭션이 어려운 이유</li><li>2. 샤딩을 실전에 적용할 때의 함정</li><li>3. 정합성 모델 이해하기</li><li>4. 대규모 마이그레이션 전략</li><li>5. 자주 하는 실수</li><li>6. 실전 체크리스트</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유<a class="heading-anchor" href="#1-분산-트랜잭션이-어려운-이유" aria-label="이 섹션 링크">#</a></h2>
+<p>한 DB 안에서는 트랜잭션(<code class="inline-code">BEGIN</code> ~ <code class="inline-code">COMMIT</code>)으로 "전부 성공 또는 전부 실패"가 보장됩니다. 하지만 데이터가 여러 DB(또는 여러 서비스)에 나뉘어 있으면 이 보장이 깨집니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>계좌 A에서 출금(DB 1) → 계좌 B로 입금(DB 2)
+DB 1은 성공, DB 2는 네트워크 오류로 실패 → 돈이 사라짐</code></pre></div>
+<h3 class="section-h2" id="2단계-커밋-2PC-이론적-해법과-현실의-한계">2단계 커밋(2PC)— 이론적 해법과 현실의 한계<a class="heading-anchor" href="#2단계-커밋-2PC-이론적-해법과-현실의-한계" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1단계(준비): 모든 참여 DB에게 &quot;커밋할 수 있어?&quot;를 묻고 전부 &quot;예&quot;를 받음
+2단계(커밋): 전부 &quot;예&quot;였으면 실제로 커밋, 하나라도 &quot;아니오&quot;면 전부 롤백</code></pre></div>
+<p>이론적으로는 완벽하지만, 1단계와 2단계 사이에 어느 DB가 응답 없이 멈추면 <strong>다른 모든 참여자도 그 시간 동안 잠긴 채 기다려야</strong> 합니다. 참여 DB가 많아질수록 이 대기 문제가 커져서, 실무에서는 거의 쓰이지 않습니다.</p>
+<p><strong>기본 상식</strong>: 대부분의 실무 시스템은 강한 일관성(2PC) 대신, 앞서 시스템 설계 가이드에서 다룬 <strong>Saga 패턴(보상 트랜잭션)</strong>으로 최종 일관성을 선택합니다. "완벽하게 동시에 맞아떨어짐"보다 "잠깐 어긋나도 결국은 맞게 정리됨"을 목표로 합니다.</p>
+<hr>
+<h2 class="section-h1" id="2-샤딩을-실전에-적용할-때의-함정">2. 샤딩을 실전에 적용할 때의 함정<a class="heading-anchor" href="#2-샤딩을-실전에-적용할-때의-함정" aria-label="이 섹션 링크">#</a></h2>
+<p>샤딩 기초(사용자 ID로 서버를 나누는 것) 자체는 개념이 단순하지만, 실제로 적용하면 여러 문제가 따라옵니다.</p>
+<h3 class="section-h2" id="샤드-키를-잘못-고르면">샤드 키를 잘못 고르면<a class="heading-anchor" href="#샤드-키를-잘못-고르면" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>나쁜 예: 가입일 기준으로 샤딩 → 최근 가입자가 몰린 샤드에 트래픽 집중(핫스팟)
+나은 예: 사용자 ID를 해시(hash)해서 고르게 분산 → 샤드마다 트래픽이 균등</code></pre></div>
+<h3 class="section-h2" id="JOIN이-안-됨">JOIN이 안 됨<a class="heading-anchor" href="#JOIN이-안-됨" aria-label="이 섹션 링크">#</a></h3>
+<p>같은 샤드 안의 데이터끼리는 JOIN이 되지만, 다른 샤드에 있는 데이터끼리는 DB 레벨에서 JOIN할 수 없습니다. 애플리케이션 코드에서 여러 샤드를 각각 조회한 뒤 직접 합쳐야 합니다.</p>
+<h3 class="section-h2" id="리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다">리샤딩(샤드를 다시 나누는 일)이 매우 비쌉니다<a class="heading-anchor" href="#리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>샤드 2개로 시작 → 트래픽이 늘어 샤드 4개로 재분배 필요
+→ 기존 데이터를 새 규칙에 맞게 전부 이동시켜야 하고, 그동안 서비스는 계속 돌아가야 함</code></pre></div>
+<p><strong>기본 상식</strong>: 처음부터 완벽한 샤드 키를 고르기는 어렵습니다. 그래서 많은 팀이 "당장 샤딩하지 않아도 나중에 샤딩하기 쉬운 구조"(예: 샤드 키가 될 만한 컬럼을 처음부터 모든 테이블에 포함)로 설계해두고, 실제 필요해졌을 때 샤딩을 도입합니다.</p>
+<hr>
+<h2 class="section-h1" id="3-정합성-모델-이해하기">3. 정합성 모델 이해하기<a class="heading-anchor" href="#3-정합성-모델-이해하기" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>모델</th><th>의미</th><th>예시</th></tr></thead><tbody><tr><td>강한 일관성(Strong Consistency)</td><td>쓰기 직후 어디서 읽어도 항상 최신값</td><td>계좌 잔액, 재고 수량</td></tr><tr><td>최종 일관성(Eventual Consistency)</td><td>잠깐의 지연 후 결국 모두 같은 값으로 수렴</td><td>좋아요 수, 조회수, 알림</td></tr></tbody></table></div>
+<p>모든 데이터에 강한 일관성을 요구하면 시스템이 느려지고 확장이 어려워집니다. <strong>데이터마다 정말 강한 일관성이 필요한지</strong> 구분하는 것이 설계의 핵심입니다.</p>
+<p><strong>기본 상식</strong>: "결제 금액"과 "동시 접속자 수"에 같은 수준의 정합성이 필요하지 않습니다. 강한 일관성이 필요한 데이터를 먼저 좁게 정의하고, 나머지는 최종 일관성으로 처리해 시스템 전체의 확장성을 확보합니다.</p>
+<hr>
+<h2 class="section-h1" id="4-대규모-마이그레이션-전략">4. 대규모 마이그레이션 전략<a class="heading-anchor" href="#4-대규모-마이그레이션-전략" aria-label="이 섹션 링크">#</a></h2>
+<p>서비스를 운영하며 스키마를 바꾸거나 DB 엔진을 옮겨야 할 때, 서비스를 멈추지 않고 진행하는 방법입니다.</p>
+<h3 class="section-h2" id="Expand-Contract-패턴">Expand-Contract 패턴<a class="heading-anchor" href="#Expand-Contract-패턴" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1단계(Expand): 새 컬럼/테이블을 추가만 함 — 기존 코드는 그대로 동작
+2단계(Migrate): 기존 데이터를 새 구조로 백그라운드에서 서서히 옮김
+3단계(코드 전환): 애플리케이션 코드가 새 구조를 읽고 쓰도록 배포
+4단계(Contract): 아무도 옛 구조를 쓰지 않는 게 확인되면 옛 컬럼/테이블 제거</code></pre></div>
+<p>한 번에 스키마를 바꾸는 대신 여러 단계로 나눠서, 각 단계마다 롤백이 가능한 상태를 유지합니다.</p>
+<p><strong>기본 상식</strong>: "이번 배포에 스키마 변경과 코드 변경을 동시에 넣는 것"이 대규모 장애의 흔한 원인입니다. 스키마 변경(추가)과 코드 변경(그 컬럼을 사용)을 서로 다른 배포로 분리하면, 문제가 생겨도 원인을 좁혀서 되돌릴 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="5-자주-하는-실수">5. 자주 하는 실수<a class="heading-anchor" href="#5-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>강한 일관성이 필요 없는 데이터에도 무조건 트랜잭션·잠금을 걺</li><li>샤드 키를 트래픽 분산이 아니라 구현 편의로 골라 핫스팟 발생</li><li>스키마 변경과 코드 배포를 한 번에 묶어서 롤백이 불가능한 상태를 만듦</li><li>리샤딩·대규모 마이그레이션을 트래픽이 몰리는 시간대에 진행</li><li>"최종 일관성"을 이유로 데이터가 언제 수렴하는지 사용자에게 전혀 알려주지 않음</li></ul>
+<hr>
+<h2 class="section-h1" id="6-실전-체크리스트">6. 실전 체크리스트<a class="heading-anchor" href="#6-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>이 데이터가 정말 강한 일관성이 필요한지, 최종 일관성으로 충분한지 구분했는가</span></li><li><input type="checkbox" disabled><span>여러 DB/서비스에 걸친 작업의 실패 시 보상(되돌리기) 절차가 있는가</span></li><li><input type="checkbox" disabled><span>샤드 키가 실제 트래픽 패턴 기준으로 고르게 분산되는가</span></li><li><input type="checkbox" disabled><span>스키마 변경을 Expand-Contract처럼 단계적으로 배포할 수 있는가</span></li><li><input type="checkbox" disabled><span>마이그레이션을 실제로 되돌려본 적(리허설)이 있는가</span></li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="클라우드·IaC 고급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">클라우드·IaC 고급 가이드</span></a><a class="doc-nav-link next" href="보안 심화 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">보안 심화 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=7976be1644" defer></script>
+</body>
+</html>

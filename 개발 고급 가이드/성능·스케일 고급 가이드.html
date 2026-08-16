@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>성능·스케일 고급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=7976be1644">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="성능·스케일 고급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="병목을 찾는 방법, 캐싱 전략, 부하 테스트, 수평·수직 확장의 판단 기준을 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EC%84%B1%EB%8A%A5%C2%B7%EC%8A%A4%EC%BC%80%EC%9D%BC%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="성능·스케일 고급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="병목을 찾는 방법, 캐싱 전략, 부하 테스트, 수평·수직 확장의 판단 기준을 정리합니다">
+<script src="../assets/search-index.js?v=7976be1644" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 고급 가이드.html">개발 고급 가이드</a> <span>›</span><span class="current">성능·스케일 고급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-추측하지-말고-먼저-측정하기">1. 추측하지 말고 먼저 측정하기</a></li><li class="toc-h1"><a href="#2-병목을-찾는-순서">2. 병목을 찾는 순서</a></li><li class="toc-h1"><a href="#3-캐싱-전략">3. 캐싱 전략</a><ul class="toc-h2-list"><li><a href="#캐시-계층">캐시 계층</a></li><li><a href="#캐시-무효화-캐싱에서-가장-어려운-부분">캐시 무효화 — 캐싱에서 가장 어려운 부분</a></li></ul></li><li class="toc-h1"><a href="#4-부하-테스트">4. 부하 테스트</a></li><li class="toc-h1"><a href="#5-수평-확장-vs-수직-확장">5. 수평 확장 vs 수직 확장</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-perf);">
+        <span class="page-kicker">⚡ 개발 고급 가이드</span>
+        <h1 class="page-title">성능·스케일 고급 가이드</h1>
+        <p class="page-tagline">트래픽이 갑자기 몰리면 어떻게 될까 불안하다? 병목을 찾고 확장하는 실전 방법을 다룹니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 캐싱·인덱싱 등 개별 최적화는 해봤고, 이제 트래픽이 실제로 늘어나는 서비스를 운영하기 시작한 사람</div><div class="intro-row"><strong>목적:</strong> 병목을 찾는 방법, 캐싱 전략, 부하 테스트, 수평·수직 확장의 판단 기준을 정리합니다</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 추측하지 말고 먼저 측정하기</li><li>2. 병목을 찾는 순서</li><li>3. 캐싱 전략</li><li>4. 부하 테스트</li><li>5. 수평 확장 vs 수직 확장</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-추측하지-말고-먼저-측정하기">1. 추측하지 말고 먼저 측정하기<a class="heading-anchor" href="#1-추측하지-말고-먼저-측정하기" aria-label="이 섹션 링크">#</a></h2>
+<p>"느린 것 같다"는 느낌으로 아무 데나 최적화하면 시간만 쓰고 정작 진짜 병목은 그대로 남습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>잘못된 순서: &quot;DB가 느릴 것 같으니&quot; 캐싱부터 추가 → 실제로는 외부 API 호출이 병목이었음
+맞는 순서: 실제 요청의 각 구간(네트워크, 서버, DB, 외부 API) 시간을 측정 → 가장 큰 구간부터 개선</code></pre></div>
+<p><strong>기본 상식</strong>: APM(Application Performance Monitoring) 도구나 분산 트레이싱으로 요청 하나가 어느 구간에서 얼마나 시간을 쓰는지 먼저 확인합니다. "느껴지는 것"이 아니라 "측정된 숫자"로 우선순위를 정합니다.</p>
+<hr>
+<h2 class="section-h1" id="2-병목을-찾는-순서">2. 병목을 찾는 순서<a class="heading-anchor" href="#2-병목을-찾는-순서" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 응답 시간이 느린 API를 특정 (평균이 아니라 상위 5%, 상위 1% 응답 시간 — p95, p99)
+2. 그 API 안에서 시간이 가장 오래 걸리는 구간 특정 (DB 쿼리? 외부 API? 반복 연산?)
+3. 그 구간을 개선
+4. 다시 측정해서 실제로 나아졌는지 확인</code></pre></div>
+<p><strong>기본 상식</strong>: 평균 응답 시간만 보면 소수의 매우 느린 요청이 가려집니다. 사용자가 실제로 "느리다"고 느끼는 건 평균이 아니라 느린 쪽 꼬리(p95, p99)입니다. 평균이 200ms여도 p99가 5초면 100명 중 1명은 5초를 기다리고 있다는 뜻입니다.</p>
+<hr>
+<h2 class="section-h1" id="3-캐싱-전략">3. 캐싱 전략<a class="heading-anchor" href="#3-캐싱-전략" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="캐시-계층">캐시 계층<a class="heading-anchor" href="#캐시-계층" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>브라우저 캐시 (정적 파일)
+→ CDN 캐시 (이미지, JS/CSS, 자주 안 바뀌는 API 응답)
+→ 애플리케이션 캐시 (Redis 등 — 자주 조회되는 DB 결과)
+→ DB 자체 캐시</code></pre></div>
+<p>요청이 앞 단계에서 처리될수록 서버·DB 부하가 줄어듭니다.</p>
+<h3 class="section-h2" id="캐시-무효화-캐싱에서-가장-어려운-부분">캐시 무효화 — 캐싱에서 가장 어려운 부분<a class="heading-anchor" href="#캐시-무효화-캐싱에서-가장-어려운-부분" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>문제: 강의 가격을 수정했는데 캐시된 예전 가격이 계속 보임</code></pre></div>
+<div class="table-scroll"><table><thead><tr><th>전략</th><th>방식</th></tr></thead><tbody><tr><td>TTL(Time To Live)</td><td>일정 시간 후 자동 만료 — 간단하지만 그 시간 동안은 옛 데이터를 보여줄 수 있음</td></tr><tr><td>명시적 무효화</td><td>데이터가 바뀌는 시점에 캐시를 직접 삭제/갱신 — 정확하지만 놓치는 지점이 생기기 쉬움</td></tr><tr><td>Write-Through</td><td>데이터를 쓸 때 캐시도 함께 갱신 — 일관성이 좋지만 쓰기가 느려짐</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: "캐시 무효화와 이름 짓기가 컴퓨터 과학에서 가장 어려운 두 가지"라는 말이 있을 만큼, 캐시는 언제 지울지가 언제 저장할지보다 어렵습니다. 절대 틀리면 안 되는 데이터(가격, 재고)는 TTL을 짧게 잡거나 캐싱 대상에서 제외하는 편이 안전합니다.</p>
+<hr>
+<h2 class="section-h1" id="4-부하-테스트">4. 부하 테스트<a class="heading-anchor" href="#4-부하-테스트" aria-label="이 섹션 링크">#</a></h2>
+<p>실제 트래픽이 오기 전에, 서비스가 얼마나 버티는지 미리 확인합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># 예시: k6로 초당 100명이 5분간 요청을 보내는 시나리오</span>
+k6 run --vus 100 --duration 5m load-test.js</code></pre></div>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>확인할 것:
+- 요청량이 늘 때 응답 시간이 어느 지점부터 급격히 나빠지는가 (한계점)
+- 에러율이 늘기 시작하는 트래픽 수준은 어디인가
+- 그 한계에서 CPU/메모리/DB 커넥션 중 무엇이 먼저 바닥나는가</code></pre></div>
+<p><strong>기본 상식</strong>: 부하 테스트는 실제 운영 트래픽과 비슷한 시나리오(로그인 → 목록 조회 → 상세 조회 비율 등)로 해야 의미가 있습니다. 단순히 같은 엔드포인트 하나만 반복 호출하면 실제 병목과 다른 결과가 나옵니다.</p>
+<hr>
+<h2 class="section-h1" id="5-수평-확장-vs-수직-확장">5. 수평 확장 vs 수직 확장<a class="heading-anchor" href="#5-수평-확장-vs-수직-확장" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>방식</th><th>의미</th><th>장단점</th></tr></thead><tbody><tr><td>수직 확장(Scale Up)</td><td>서버 한 대의 사양(CPU/메모리)을 늘림</td><td>적용이 간단하지만 한계가 있고, 그 서버가 죽으면 전체가 멈춤</td></tr><tr><td>수평 확장(Scale Out)</td><td>서버 대수를 늘림</td><td>한 대가 죽어도 나머지가 버팀(가용성↑), 대신 서버 간 상태 공유 문제가 생김</td></tr></tbody></table></div>
+<p>수평 확장을 하려면 서버가 <strong>무상태(Stateless)</strong>여야 합니다 — 로그인 세션 등을 서버 메모리에 두면 안 되고, Redis 같은 공유 저장소에 둬야 어느 서버로 요청이 가도 동작합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>안 되는 예: 서버 A에 로그인한 세션이 서버 A 메모리에만 있음 → 다음 요청이 서버 B로 가면 로그인 풀림
+되는 예: 세션을 Redis에 저장 → 어느 서버로 요청이 가도 같은 세션을 조회 가능</code></pre></div>
+<p><strong>기본 상식</strong>: 서버를 무상태로 만들어두면, 트래픽이 늘 때 서버 대수만 늘리면 되고(오토스케일링과도 궁합이 좋음) 서버 하나가 죽어도 서비스가 끊기지 않습니다.</p>
+<hr>
+<h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>측정 없이 "느낌"으로 최적화 대상을 정함</li><li>평균 응답 시간만 보고 p95/p99의 심각한 지연을 놓침</li><li>절대 틀리면 안 되는 데이터(가격, 재고)까지 긴 TTL로 캐싱해서 정합성 문제 발생</li><li>부하 테스트를 실제 사용 패턴과 다른 단순 반복 요청으로만 진행</li><li>세션·업로드 파일 등을 서버 로컬에 저장해서 수평 확장이 막힘</li></ul>
+<hr>
+<h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>병목을 실제 측정(APM, 트레이싱)으로 찾았는가</span></li><li><input type="checkbox" disabled><span>평균이 아니라 p95/p99 응답 시간을 확인하는가</span></li><li><input type="checkbox" disabled><span>캐싱 대상마다 무효화 전략(TTL/명시적 삭제)을 정했는가</span></li><li><input type="checkbox" disabled><span>운영 트래픽과 비슷한 시나리오로 부하 테스트를 해봤는가</span></li><li><input type="checkbox" disabled><span>서버가 무상태로 설계되어 수평 확장이 가능한가</span></li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="보안 심화 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">보안 심화 가이드</span></a><a class="doc-nav-link next" href="기술 리더십·레거시 마이그레이션 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">기술 리더십·레거시 마이그레이션 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=7976be1644" defer></script>
+</body>
+</html>

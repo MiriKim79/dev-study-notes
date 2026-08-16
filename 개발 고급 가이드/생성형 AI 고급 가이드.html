@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>생성형 AI 고급 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=7976be1644">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="생성형 AI 고급 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="여러 에이전트를 조율하는 방법, 직접 모델을 서빙하는 선택지, 대규모로 품질을 관리하는 방법을 정리합니다">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EC%83%9D%EC%84%B1%ED%98%95%20AI%20%EA%B3%A0%EA%B8%89%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="생성형 AI 고급 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="여러 에이전트를 조율하는 방법, 직접 모델을 서빙하는 선택지, 대규모로 품질을 관리하는 방법을 정리합니다">
+<script src="../assets/search-index.js?v=7976be1644" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 고급 가이드.html">개발 고급 가이드</a> <span>›</span><span class="current">생성형 AI 고급 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-언제-에이전트-하나-로는-부족해지는가">1. 언제 &quot;에이전트 하나&quot;로는 부족해지는가</a></li><li class="toc-h1"><a href="#2-오케스트레이션-패턴">2. 오케스트레이션 패턴</a><ul class="toc-h2-list"><li><a href="#Orchestrator-Worker">Orchestrator-Worker</a></li><li><a href="#Sequential-순차-vs-Parallel-병렬">Sequential(순차) vs Parallel(병렬)</a></li><li><a href="#실패-처리-에이전트도-실패한다">실패 처리 — 에이전트도 실패한다</a></li></ul></li><li class="toc-h1"><a href="#3-자체-모델-서빙-API-호출이-아니라-직접-운영">3. 자체 모델 서빙 — API 호출이 아니라 직접 운영</a><ul class="toc-h2-list"><li><a href="#언제-검토하는가">언제 검토하는가</a></li><li><a href="#서빙-시-고려할-것">서빙 시 고려할 것</a></li></ul></li><li class="toc-h1"><a href="#4-대규모-평가와-모니터링">4. 대규모 평가와 모니터링</a><ul class="toc-h2-list"><li><a href="#LLM-응답-품질을-어떻게-자동으로-확인하는가">LLM 응답 품질을 어떻게 자동으로 확인하는가</a></li><li><a href="#운영-중-모니터링">운영 중 모니터링</a></li></ul></li><li class="toc-h1"><a href="#5-언제-쓰고-언제-쓰지-않는가">5. 언제 쓰고 언제 쓰지 않는가</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-ai);">
+        <span class="page-kicker">🤖 개발 고급 가이드</span>
+        <h1 class="page-title">생성형 AI 고급 가이드</h1>
+        <p class="page-tagline">AI 기능 하나는 붙여봤다? 여러 에이전트를 조율하고 직접 모델을 서빙하는 단계입니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 파인튜닝·벡터 DB·프롬프트 체이닝 등 중급 개념을 다뤄봤고, AI 기능 하나로는 해결이 안 되는 복잡한 작업을 자동화하려는 사람</div><div class="intro-row"><strong>목적:</strong> 여러 에이전트를 조율하는 방법, 직접 모델을 서빙하는 선택지, 대규모로 품질을 관리하는 방법을 정리합니다</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 언제 &quot;에이전트 하나&quot;로는 부족해지는가</li><li>2. 오케스트레이션 패턴</li><li>3. 자체 모델 서빙 — API 호출이 아니라 직접 운영</li><li>4. 대규모 평가와 모니터링</li><li>5. 언제 쓰고 언제 쓰지 않는가</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-언제-에이전트-하나-로는-부족해지는가">1. 언제 "에이전트 하나"로는 부족해지는가<a class="heading-anchor" href="#1-언제-에이전트-하나-로는-부족해지는가" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>에이전트 하나로 충분한 작업: &quot;이 문서를 요약해줘&quot; — 입력 → 처리 → 출력이 한 번에 끝남
+여러 에이전트가 필요한 작업: &quot;이 버그를 찾아서 고치고 테스트까지 돌려줘&quot;
+  → 코드 탐색 → 원인 분석 → 수정 → 테스트 실행 → 결과 검증, 각 단계마다 다른 판단이 필요</code></pre></div>
+<p>작업이 여러 단계로 나뉘고, 각 단계가 서로 다른 종류의 판단(탐색 vs 실행 vs 검증)을 요구할 때 <strong>멀티 에이전트</strong>를 검토합니다.</p>
+<p><strong>기본 상식</strong>: 에이전트를 무작정 여러 개로 쪼갠다고 성능이 좋아지지 않습니다. 에이전트 간 통신·조율 비용(토큰, 지연시간, 실패 지점 증가)이 늘어나므로, 실제로 "역할이 명확히 다른 단계"가 있을 때만 나눕니다.</p>
+<hr>
+<h2 class="section-h1" id="2-오케스트레이션-패턴">2. 오케스트레이션 패턴<a class="heading-anchor" href="#2-오케스트레이션-패턴" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="Orchestrator-Worker">Orchestrator-Worker<a class="heading-anchor" href="#Orchestrator-Worker" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Orchestrator(지휘자 에이전트): 작업을 하위 작업으로 쪼개고, 각 Worker에게 배분, 결과를 취합
+Worker 에이전트들: 각자 맡은 하위 작업만 독립적으로 수행 (예: 코드 검색 전용, 테스트 실행 전용)</code></pre></div>
+<p>Orchestrator가 전체 흐름을 판단하고, Worker는 좁은 역할에만 집중합니다. 역할이 명확해서 디버깅(어느 단계에서 실패했는지)이 쉬워집니다.</p>
+<h3 class="section-h2" id="Sequential-순차-vs-Parallel-병렬">Sequential(순차) vs Parallel(병렬)<a class="heading-anchor" href="#Sequential-순차-vs-Parallel-병렬" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>순차: 리서치 에이전트 → 결과를 받아 작성 에이전트 → 결과를 받아 검토 에이전트
+병렬: 여러 하위 주제를 동시에 여러 에이전트가 각자 조사 → 마지막에 취합</code></pre></div>
+<p>이전 단계 결과가 다음 단계에 반드시 필요하면 순차, 서로 독립적인 하위 작업이면 병렬로 처리해 시간을 줄입니다.</p>
+<p><strong>기본 상식</strong>: 병렬로 여러 에이전트를 띄우면 빨라지지만 비용(토큰)도 그만큼 늘어납니다. "정말 독립적인 작업인가"를 먼저 확인하지 않으면, 병렬 실행 후 서로 충돌하는 결과를 다시 조율하느라 오히려 느려질 수 있습니다.</p>
+<h3 class="section-h2" id="실패-처리-에이전트도-실패한다">실패 처리 — 에이전트도 실패한다<a class="heading-anchor" href="#실패-처리-에이전트도-실패한다" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Worker 하나가 잘못된 결과를 내면?
+→ Orchestrator가 결과를 검증하는 단계를 반드시 둠 (자체 검토, 다른 에이전트의 교차 검증)
+→ 검증 실패 시 재시도 횟수 상한을 두고, 초과하면 사람에게 에스컬레이션</code></pre></div>
+<p><strong>기본 상식</strong>: 에이전트 체인이 길어질수록 한 단계의 실수가 다음 단계로 그대로 전파되는 위험이 커집니다("에러 전파"). 중간중간 검증 단계를 넣고, 무한 재시도 대신 사람이 개입하는 탈출구를 반드시 설계합니다.</p>
+<hr>
+<h2 class="section-h1" id="3-자체-모델-서빙-API-호출이-아니라-직접-운영">3. 자체 모델 서빙 — API 호출이 아니라 직접 운영<a class="heading-anchor" href="#3-자체-모델-서빙-API-호출이-아니라-직접-운영" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="언제-검토하는가">언제 검토하는가<a class="heading-anchor" href="#언제-검토하는가" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>상황</th><th>판단</th></tr></thead><tbody><tr><td>요청량이 적고 최신 성능이 중요</td><td>관리형 API(호스팅된 모델) 유지</td></tr><tr><td>특정 도메인에 맞춰 파인튜닝된 소형 모델로 충분</td><td>자체 서빙 검토</td></tr><tr><td>데이터가 외부로 나가면 안 되는 규제·보안 요구사항</td><td>자체 서빙 검토</td></tr><tr><td>요청량이 매우 많아 API 비용이 인프라 비용을 초과</td><td>자체 서빙 검토</td></tr></tbody></table></div>
+<h3 class="section-h2" id="서빙-시-고려할-것">서빙 시 고려할 것<a class="heading-anchor" href="#서빙-시-고려할-것" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>지연시간(Latency): 요청 하나의 응답 속도 — 배치 크기, GPU 메모리와 트레이드오프
+처리량(Throughput): 동시에 처리할 수 있는 요청 수 — 배치 처리로 늘릴 수 있음
+GPU 메모리: 모델 크기 + 동시 요청 수만큼의 KV 캐시가 메모리를 차지</code></pre></div>
+<p><strong>기본 상식</strong>: 자체 서빙은 "모델 파일을 다운받아 실행하면 끝"이 아닙니다. 지연시간과 처리량은 반비례 관계에 가까워서, 요청을 배치로 묶어 처리량을 올리면 개별 요청의 지연시간은 늘어납니다. 서비스 특성(실시간 채팅 vs 배치 처리)에 맞는 지점을 찾아야 합니다.</p>
+<hr>
+<h2 class="section-h1" id="4-대규모-평가와-모니터링">4. 대규모 평가와 모니터링<a class="heading-anchor" href="#4-대규모-평가와-모니터링" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="LLM-응답-품질을-어떻게-자동으로-확인하는가">LLM 응답 품질을 어떻게 자동으로 확인하는가<a class="heading-anchor" href="#LLM-응답-품질을-어떻게-자동으로-확인하는가" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>방법 1: 정답이 명확한 작업 — 정답과 직접 비교(정확도 계산)
+방법 2: 정답이 여러 개일 수 있는 작업 — 다른 LLM에게 &quot;이 응답이 기준을 만족하는지&quot; 채점시킴(LLM-as-judge)
+방법 3: 실제 사용자 반응 — 사용자가 응답을 재생성 요청하는 비율, 만족도 클릭 등 간접 지표</code></pre></div>
+<p><strong>기본 상식</strong>: LLM-as-judge는 사람이 일일이 확인하기 어려운 규모에서 유용하지만, 채점 기준(rubric)을 명확히 주지 않으면 채점 결과 자체가 불안정합니다. 채점 기준을 구체적인 항목(예: "요청한 형식을 지켰는가", "사실과 다른 내용이 있는가")으로 쪼개서 평가하면 신뢰도가 올라갑니다.</p>
+<h3 class="section-h2" id="운영-중-모니터링">운영 중 모니터링<a class="heading-anchor" href="#운영-중-모니터링" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>지켜봐야 할 지표: 응답 지연시간, 토큰 사용량(비용), 실패율(타임아웃·형식 오류), 사용자 재시도율
+회귀 감지: 프롬프트나 모델을 바꿨을 때 기존 평가셋에서 품질이 떨어지지 않았는지 자동 확인</code></pre></div>
+<p><strong>기본 상식</strong>: 프롬프트 한 줄만 바꿔도 전혀 다른 답이 나올 수 있는 게 LLM의 특성입니다. 코드에 유닛 테스트가 있듯, AI 기능에도 "이 프롬프트/모델로 바꿨을 때 기존 대표 케이스들이 여전히 잘 처리되는가"를 자동으로 확인하는 평가셋(eval set)을 만들어두고, 배포 전마다 돌립니다.</p>
+<hr>
+<h2 class="section-h1" id="5-언제-쓰고-언제-쓰지-않는가">5. 언제 쓰고 언제 쓰지 않는가<a class="heading-anchor" href="#5-언제-쓰고-언제-쓰지-않는가" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>상황</th><th>권장</th></tr></thead><tbody><tr><td>작업이 한 번의 입력·출력으로 끝남</td><td>에이전트 하나로 충분, 멀티 에이전트는 과함</td></tr><tr><td>단계별로 서로 다른 판단이 필요하고 각 단계 검증이 가능함</td><td>멀티 에이전트 오케스트레이션 검토</td></tr><tr><td>요청량이 적고 최신 모델 성능이 중요함</td><td>관리형 API 유지</td></tr><tr><td>데이터 보안·비용 문제로 외부 API를 쓸 수 없음</td><td>자체 모델 서빙 검토</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>단순 작업까지 여러 에이전트로 쪼개 비용·지연시간만 늘림</li><li>에이전트 체인에 중간 검증 단계 없이 앞 단계 오류가 그대로 전파됨</li><li>무한 재시도만 있고 사람에게 넘기는 탈출구가 없음</li><li>프롬프트/모델을 바꾼 뒤 회귀 테스트 없이 바로 배포</li><li>LLM-as-judge의 채점 기준이 모호해 평가 결과 자체를 신뢰할 수 없음</li></ul>
+<hr>
+<h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<ul class="checklist"><li><input type="checkbox" disabled><span>지금 작업이 정말 여러 에이전트가 필요한 복잡도인지 확인했는가</span></li><li><input type="checkbox" disabled><span>에이전트 체인 중간에 결과를 검증하는 단계가 있는가</span></li><li><input type="checkbox" disabled><span>재시도 상한과 사람에게 넘기는 에스컬레이션 경로가 있는가</span></li><li><input type="checkbox" disabled><span>자체 모델 서빙 시 지연시간·처리량·비용을 실제로 비교해봤는가</span></li><li><input type="checkbox" disabled><span>프롬프트/모델 변경 전후로 자동 평가셋을 돌려 회귀를 확인하는가</span></li></ul>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="기술 리더십·레거시 마이그레이션 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">기술 리더십·레거시 마이그레이션 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/main.js?v=7976be1644" defer></script>
+</body>
+</html>

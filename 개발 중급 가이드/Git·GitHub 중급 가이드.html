@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git·GitHub 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=7722163a3d">
+<link rel="stylesheet" href="../assets/style.css?v=7976be1644">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="Git·GitHub 중급 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git·GitHub 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="기초 가이드에서 다루지 않은 이력 정리, 문제 추적, 자동화 도구를 실무 상황과 함께 정리합니다">
-<script src="../assets/search-index.js?v=7722163a3d" defer></script>
+<script src="../assets/search-index.js?v=7976be1644" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -46,7 +46,7 @@
       <div class="doc-inner" style="--card-accent: var(--cat-git);">
         <span class="page-kicker">🌿 개발 중급 가이드</span>
         <h1 class="page-title">Git·GitHub 중급 가이드</h1>
-        
+        <p class="page-tagline">add·commit·push는 손에 익었다? 이제 이력을 다듬고 자동화를 붙일 차례입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <code class="inline-code">add</code>/<code class="inline-code">commit</code>/<code class="inline-code">push</code>/<code class="inline-code">pull</code>/<code class="inline-code">branch</code>/<code class="inline-code">merge</code>는 손에 익었고, 이제 커밋 이력을 다듬거나 자동화를 붙이고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 기초 가이드에서 다루지 않은 이력 정리, 문제 추적, 자동화 도구를 실무 상황과 함께 정리합니다</div></div>
         <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. Interactive Rebase — 커밋 이력 정리하기</li><li>2. Cherry-pick — 특정 커밋만 가져오기</li><li>3. Bisect — 버그가 생긴 커밋 찾기</li><li>4. Reflog — 잃어버린 커밋 복구</li><li>5. Worktree — 브랜치 여러 개 동시에 작업</li><li>6. 대용량 파일 관리 — Git LFS</li><li>7. GitHub Actions 기초 — 첫 자동화 워크플로우</li><li>8. 브랜치 보호 규칙 심화</li><li>9. 커밋 서명 (GPG/SSH Signing)</li><li>10. 자주 하는 실수</li><li>11. 실전 체크리스트</li></ol></div>
         
@@ -67,7 +67,8 @@ fixup d4e5f6 fix typo
 fixup g7h8i9 wip
 fixup j1k2l3 다시 시도
 reword m4n5o6 Feat: 에러 메시지 추가</code></pre></div>
-<p><strong>실무 팁</strong> - 이미 <code class="inline-code">push</code>해서 다른 사람이 받아간 브랜치는 rebase하지 않습니다. 커밋ID가 전부 바뀌어서 팀원과 이력이 어긋납니다. <strong>내 로컬에만 있는 브랜치</strong>에서만 씁니다. - rebase 도중 충돌이 나면 <code class="inline-code">git rebase --abort</code>로 언제든 원래 상태로 되돌릴 수 있습니다. - PR을 이미 올린 브랜치를 rebase해야 한다면 <code class="inline-code">git push --force-with-lease</code> (그냥 <code class="inline-code">--force</code>보다 안전 — 내가 마지막으로 받은 이후 원격에 다른 커밋이 추가됐으면 실패해서 덮어쓰기 사고를 막아줍니다).</p>
+<p><strong>실무 팁</strong></p>
+<ul><li>이미 <code class="inline-code">push</code>해서 다른 사람이 받아간 브랜치는 rebase하지 않습니다. 커밋ID가 전부 바뀌어서 팀원과 이력이 어긋납니다. <strong>내 로컬에만 있는 브랜치</strong>에서만 씁니다.</li><li>rebase 도중 충돌이 나면 <code class="inline-code">git rebase --abort</code>로 언제든 원래 상태로 되돌릴 수 있습니다.</li><li>PR을 이미 올린 브랜치를 rebase해야 한다면 <code class="inline-code">git push --force-with-lease</code> (그냥 <code class="inline-code">--force</code>보다 안전 — 내가 마지막으로 받은 이후 원격에 다른 커밋이 추가됐으면 실패해서 덮어쓰기 사고를 막아줍니다).</li></ul>
 <hr>
 <h2 class="section-h1" id="2-Cherry-pick-특정-커밋만-가져오기">2. Cherry-pick — 특정 커밋만 가져오기<a class="heading-anchor" href="#2-Cherry-pick-특정-커밋만-가져오기" aria-label="이 섹션 링크">#</a></h2>
 <p>다른 브랜치의 커밋 하나만 지금 브랜치로 가져오고 싶을 때 씁니다. 예: <code class="inline-code">hotfix</code> 브랜치에서 만든 버그 수정을 <code class="inline-code">develop</code>에도 반영해야 할 때.</p>
@@ -169,6 +170,6 @@ jobs:
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=7722163a3d" defer></script>
+<script src="../assets/main.js?v=7976be1644" defer></script>
 </body>
 </html>

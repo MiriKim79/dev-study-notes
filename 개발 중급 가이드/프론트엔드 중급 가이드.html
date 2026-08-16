@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>프론트엔드 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=7722163a3d">
+<link rel="stylesheet" href="../assets/style.css?v=7976be1644">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="프론트엔드 중급 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="프론트엔드 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="&quot;일단 동작하는&quot; 수준을 넘어 성능·테스트·렌더링 전략까지 고려하는 방법을 정리합니다">
-<script src="../assets/search-index.js?v=7722163a3d" defer></script>
+<script src="../assets/search-index.js?v=7976be1644" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -46,7 +46,7 @@
       <div class="doc-inner" style="--card-accent: var(--cat-frontend);">
         <span class="page-kicker">🎨 개발 중급 가이드</span>
         <h1 class="page-title">프론트엔드 중급 가이드</h1>
-        
+        <p class="page-tagline">화면은 일단 동작한다? 이제 성능·테스트·렌더링 전략까지 챙길 차례입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> React로 화면 하나(목록 → 상세 → API 연동)를 끝까지 만들어본 사람</div><div class="intro-row"><strong>목적:</strong> "일단 동작하는" 수준을 넘어 성능·테스트·렌더링 전략까지 고려하는 방법을 정리합니다</div></div>
         <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 성능 최적화</li><li>2. 상태관리 라이브러리 비교</li><li>3. 렌더링 전략 심화 — CSR / SSR / SSG / ISR</li><li>4. 테스트</li><li>5. Core Web Vitals</li><li>6. 웹 접근성 심화</li><li>7. 번들 분석</li><li>8. 자주 하는 실수</li><li>9. 실전 체크리스트</li></ol></div>
         
@@ -138,7 +138,8 @@ test(&quot;버튼을 누르면 onEnroll이 호출된다&quot;, () =&gt; {
 <h2 class="section-h1" id="5-Core-Web-Vitals">5. Core Web Vitals<a class="heading-anchor" href="#5-Core-Web-Vitals" aria-label="이 섹션 링크">#</a></h2>
 <p>Google이 정한 "사용자가 체감하는 성능" 지표입니다.</p>
 <div class="table-scroll"><table><thead><tr><th>지표</th><th>의미</th><th>좋은 기준</th></tr></thead><tbody><tr><td>LCP (Largest Contentful Paint)</td><td>가장 큰 콘텐츠가 화면에 그려지는 시간</td><td>2.5초 이하</td></tr><tr><td>INP (Interaction to Next Paint)</td><td>클릭 등 상호작용 후 화면이 반응하는 시간</td><td>200ms 이하</td></tr><tr><td>CLS (Cumulative Layout Shift)</td><td>로딩 중 레이아웃이 얼마나 갑자기 움직이는가</td><td>0.1 이하</td></tr></tbody></table></div>
-<p><strong>개선 방향</strong> - LCP: 큰 이미지 압축·우선 로드(<code class="inline-code">loading="eager"</code>, <code class="inline-code">fetchpriority="high"</code>), 폰트 로딩 최적화 - INP: 무거운 동기 작업을 쪼개거나 지연 실행, 불필요한 리렌더링 감소 - CLS: 이미지·광고 영역에 미리 <code class="inline-code">width</code>/<code class="inline-code">height</code>(또는 <code class="inline-code">aspect-ratio</code>)를 지정해 공간을 확보</p>
+<p><strong>개선 방향</strong></p>
+<ul><li>LCP: 큰 이미지 압축·우선 로드(<code class="inline-code">loading="eager"</code>, <code class="inline-code">fetchpriority="high"</code>), 폰트 로딩 최적화</li><li>INP: 무거운 동기 작업을 쪼개거나 지연 실행, 불필요한 리렌더링 감소</li><li>CLS: 이미지·광고 영역에 미리 <code class="inline-code">width</code>/<code class="inline-code">height</code>(또는 <code class="inline-code">aspect-ratio</code>)를 지정해 공간을 확보</li></ul>
 <p>브라우저 개발자 도구의 Lighthouse 탭이나 PageSpeed Insights로 실제 점수를 측정할 수 있습니다.</p>
 <hr>
 <h2 class="section-h1" id="6-웹-접근성-심화">6. 웹 접근성 심화<a class="heading-anchor" href="#6-웹-접근성-심화" aria-label="이 섹션 링크">#</a></h2>
@@ -176,6 +177,6 @@ test(&quot;버튼을 누르면 onEnroll이 호출된다&quot;, () =&gt; {
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=7722163a3d" defer></script>
+<script src="../assets/main.js?v=7976be1644" defer></script>
 </body>
 </html>

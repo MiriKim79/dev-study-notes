@@ -37,6 +37,7 @@ ASSET_VERSION = _compute_asset_version()
 PLAYBOOK_DIR = "개발 기초·실전 가이드"
 TEMPLATE_DIR = "GitHub 팀 협업 템플릿"
 MID_DIR = "개발 중급 가이드"
+ADV_DIR = "개발 고급 가이드"
 
 PAGES = [
     {
@@ -194,6 +195,7 @@ PAGES = [
         "cat": "git",
         "icon": "🌿",
         "hub": "mid-hub",
+        "tagline": "add·commit·push는 손에 익었다? 이제 이력을 다듬고 자동화를 붙일 차례입니다.",
     },
     {
         "key": "frontend-mid",
@@ -203,6 +205,7 @@ PAGES = [
         "cat": "frontend",
         "icon": "🎨",
         "hub": "mid-hub",
+        "tagline": "화면은 일단 동작한다? 이제 성능·테스트·렌더링 전략까지 챙길 차례입니다.",
     },
     {
         "key": "backend-mid",
@@ -212,6 +215,7 @@ PAGES = [
         "cat": "backend",
         "icon": "🛠️",
         "hub": "mid-hub",
+        "tagline": "API 서버는 한 번 만들어봤다? 요청이 몰릴 때 무너지지 않는 법을 다룹니다.",
     },
     {
         "key": "ai-mid",
@@ -221,6 +225,7 @@ PAGES = [
         "cat": "ai",
         "icon": "🤖",
         "hub": "mid-hub",
+        "tagline": "RAG를 한 번 붙여봤다? 이제 비용·품질을 실무 수준으로 관리할 차례입니다.",
     },
     {
         "key": "team-mid",
@@ -230,6 +235,7 @@ PAGES = [
         "cat": "start",
         "icon": "🚀",
         "hub": "mid-hub",
+        "tagline": "팀이 커졌다? 코드가 아니라 '함께 오래 일하는 방식'이 문제가 되는 순간입니다.",
     },
     {
         "key": "test-mid",
@@ -239,6 +245,7 @@ PAGES = [
         "cat": "common",
         "icon": "🧪",
         "hub": "mid-hub",
+        "tagline": "매번 손으로 눌러보며 확인한다? 테스트 코드로 그 시간을 되찾는 방법입니다.",
     },
     {
         "key": "cicd-mid",
@@ -248,6 +255,7 @@ PAGES = [
         "cat": "common",
         "icon": "⚙️",
         "hub": "mid-hub",
+        "tagline": "배포를 손으로 한다? 테스트에서 배포까지 잇는 파이프라인을 직접 만들어봅니다.",
     },
     {
         "key": "db-mid",
@@ -257,6 +265,7 @@ PAGES = [
         "cat": "common",
         "icon": "🗄️",
         "hub": "mid-hub",
+        "tagline": "조회가 왜 느려지는지 감이 안 온다? 인덱스부터 백업까지 원인과 해법을 다룹니다.",
     },
     {
         "key": "ts-mid",
@@ -266,6 +275,90 @@ PAGES = [
         "cat": "common",
         "icon": "🔷",
         "hub": "mid-hub",
+        "tagline": "타입 표기가 귀찮은 잔소리처럼 느껴진다? 버그를 미리 잡아주는 도구로 바뀌는 순간을 다룹니다.",
+    },
+    {
+        "key": "adv-hub",
+        "src": f"{ADV_DIR}.md",
+        "title": "개발 고급 가이드",
+        "kicker": "가이드 모음",
+        "cat": "start",
+        "icon": "🏔️",
+        "hub": None,
+        "hub_children": [
+            "system-design-adv", "cloud-adv", "db-adv", "security-adv",
+            "perf-adv", "leadership-adv", "ai-adv",
+        ],
+    },
+    {
+        "key": "system-design-adv",
+        "src": f"{ADV_DIR}/시스템 설계 고급 가이드.md",
+        "title": "시스템 설계 고급 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "system",
+        "icon": "🏗️",
+        "hub": "adv-hub",
+        "tagline": "서버 한 대로는 더 이상 안 된다? MSA와 이벤트 기반 설계로 넘어갈 때 필요한 판단 기준입니다.",
+    },
+    {
+        "key": "cloud-adv",
+        "src": f"{ADV_DIR}/클라우드·IaC 고급 가이드.md",
+        "title": "클라우드·IaC 고급 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "cloud",
+        "icon": "☁️",
+        "hub": "adv-hub",
+        "tagline": "서버 설정을 콘솔에서 손으로 클릭한다? Terraform·쿠버네티스로 코드화하는 법을 다룹니다.",
+    },
+    {
+        "key": "db-adv",
+        "src": f"{ADV_DIR}/데이터베이스 고급 가이드.md",
+        "title": "데이터베이스 고급 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "common",
+        "icon": "🗄️",
+        "hub": "adv-hub",
+        "tagline": "복제·샤딩 기초는 안다? 분산 트랜잭션과 샤딩을 실전에 적용할 때의 함정을 다룹니다.",
+    },
+    {
+        "key": "security-adv",
+        "src": f"{ADV_DIR}/보안 심화 가이드.md",
+        "title": "보안 심화 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "security",
+        "icon": "🔐",
+        "hub": "adv-hub",
+        "tagline": "로그인 기능만 있으면 안전하다고 생각했다? OWASP 기준으로 실제 공격 시나리오를 점검합니다.",
+    },
+    {
+        "key": "perf-adv",
+        "src": f"{ADV_DIR}/성능·스케일 고급 가이드.md",
+        "title": "성능·스케일 고급 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "perf",
+        "icon": "⚡",
+        "hub": "adv-hub",
+        "tagline": "트래픽이 갑자기 몰리면 어떻게 될까 불안하다? 병목을 찾고 확장하는 실전 방법을 다룹니다.",
+    },
+    {
+        "key": "leadership-adv",
+        "src": f"{ADV_DIR}/기술 리더십·레거시 마이그레이션 가이드.md",
+        "title": "기술 리더십·레거시 마이그레이션 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "leadership",
+        "icon": "🧭",
+        "hub": "adv-hub",
+        "tagline": "코드는 잘 짜는데 팀을 어떻게 이끌지 모르겠다? 기술 결정과 낡은 코드 전환의 기준을 다룹니다.",
+    },
+    {
+        "key": "ai-adv",
+        "src": f"{ADV_DIR}/생성형 AI 고급 가이드.md",
+        "title": "생성형 AI 고급 가이드",
+        "kicker": "개발 고급 가이드",
+        "cat": "ai",
+        "icon": "🤖",
+        "hub": "adv-hub",
+        "tagline": "AI 기능 하나는 붙여봤다? 여러 에이전트를 조율하고 직접 모델을 서빙하는 단계입니다.",
     },
 ]
 PAGES_BY_KEY = {p["key"]: p for p in PAGES}
@@ -297,6 +390,14 @@ STUDY_ORDER = [
     "cicd-mid",
     "db-mid",
     "ts-mid",
+    "adv-hub",
+    "system-design-adv",
+    "cloud-adv",
+    "db-adv",
+    "security-adv",
+    "perf-adv",
+    "leadership-adv",
+    "ai-adv",
 ]
 
 CAT_LABEL = {
@@ -308,6 +409,11 @@ CAT_LABEL = {
     "collab": "협업 방식",
     "github": "GitHub 팀 협업",
     "common": "공통",
+    "system": "시스템 설계",
+    "cloud": "클라우드·IaC",
+    "security": "보안",
+    "perf": "성능·스케일",
+    "leadership": "기술 리더십",
 }
 
 
@@ -1179,6 +1285,21 @@ DASHBOARD_CARDS_MID = [
     "test-mid", "cicd-mid", "db-mid", "ts-mid",
 ]
 
+OVERVIEW_ROWS_ADV = [
+    ("system-design-adv", "시스템 설계 고급 가이드", "MSA 분리 기준, 이벤트 기반 아키텍처, 서비스 간 통신, 장애 격리", "서버 하나로 감당이 안 되기 시작할 때"),
+    ("cloud-adv", "클라우드·IaC 고급 가이드", "Terraform으로 인프라 코드화, 쿠버네티스 기본 개념, 배포 전략", "인프라를 손으로 관리하는 게 한계에 부딪혔을 때"),
+    ("db-adv", "데이터베이스 고급 가이드", "분산 트랜잭션, 샤딩 실전, 정합성 모델, 대규모 마이그레이션", "복제·샤딩 기초로도 부족해졌을 때"),
+    ("security-adv", "보안 심화 가이드", "OWASP Top 10, 인증·인가 심화, 시크릿 관리, 보안 점검 루틴", "서비스가 실제 사용자를 받기 시작할 때"),
+    ("perf-adv", "성능·스케일 고급 가이드", "병목 진단, 캐싱 전략, 부하 테스트, 수평·수직 확장", "트래픽이 늘어나는 게 눈에 보일 때"),
+    ("leadership-adv", "기술 리더십·레거시 마이그레이션 가이드", "기술 의사결정, ADR, 팀 성장, 레거시 코드 단계적 전환", "기술 결정을 직접 내려야 하는 위치가 됐을 때"),
+    ("ai-adv", "생성형 AI 고급 가이드", "멀티 에이전트 오케스트레이션, 자체 모델 서빙, 대규모 평가·모니터링", "AI 기능 하나로는 부족해졌을 때"),
+]
+
+DASHBOARD_CARDS_ADV = [
+    "system-design-adv", "cloud-adv", "db-adv", "security-adv",
+    "perf-adv", "leadership-adv", "ai-adv",
+]
+
 STEP_FLOW = [
     {"title": "Git·GitHub 진짜 최소 기초", "sub": "Git이 처음이라면 여기서 5분만 — branch·commit·PR 감 잡기", "key": "git-min"},
     {"title": "팀 개발 시작 가이드", "sub": "무엇을 확인하고 어떤 순서로 개발할지 먼저 파악", "key": "team-start"},
@@ -1306,6 +1427,11 @@ DASHBOARD_TMPL = """<!doctype html>
     {mid_overview_table}
     {mid_card_grid}
 
+    <div class="section-heading" style="margin-top:40px;">🏔️ 고급 학습 자료</div>
+    <p class="dashboard-desc" style="margin-bottom:20px;">중급 가이드로 실무 문제를 다룰 수 있게 됐다면, 다음은 설계 판단과 팀 전체 관점을 다루는 <a href="{adv_hub_url}">고급 가이드</a>로 이어집니다.</p>
+    {adv_overview_table}
+    {adv_card_grid}
+
     <div class="dashboard-footer">🐣 미리(Miri)가 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
   </div>
 </div>
@@ -1332,6 +1458,9 @@ def build_dashboard():
         mid_overview_table=render_overview_table(OVERVIEW_ROWS_MID),
         mid_card_grid=render_card_grid(DASHBOARD_CARDS_MID, OVERVIEW_ROWS_MID),
         mid_hub_url=url_of("mid-hub"),
+        adv_overview_table=render_overview_table(OVERVIEW_ROWS_ADV),
+        adv_card_grid=render_card_grid(DASHBOARD_CARDS_ADV, OVERVIEW_ROWS_ADV),
+        adv_hub_url=url_of("adv-hub"),
         og_url=SITE_BASE_URL,
     )
     (ROOT / "index.html").write_text(html_out, encoding="utf-8")
