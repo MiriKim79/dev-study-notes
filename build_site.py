@@ -504,8 +504,8 @@ def url_of(key):
 
 def prefix_of(key):
     """루트 기준 상대 경로 접두사('' 또는 '../')."""
-    if key == "index":
-        return ""
+    if key == "index" or key not in PAGES_BY_KEY:
+        return ""   # PAGES에 등록되지 않은 루트 페이지(방명록 등)는 루트 기준으로 취급
     src = PAGES_BY_KEY[key]["src"]
     return "../" if "/" in src else ""
 
@@ -1084,6 +1084,40 @@ def render_sidebar_toc(toc):
     return '<ul class="toc">' + "".join(items) + "</ul>"
 
 
+TIER_HUBS = [
+    ("playbook-hub", "🔰", "초급"),
+    ("mid-hub", "📈", "중급"),
+    ("adv-hub", "🏔️", "고급"),
+    ("cert-hub", "🏅", "자격증"),
+]
+
+
+def top_hub_of(key):
+    """페이지가 속한 최상위 허브 key를 반환. 허브 소속이 아니면 None."""
+    seen = set()
+    cur = key
+    while cur and cur not in seen:
+        seen.add(cur)
+        page = PAGES_BY_KEY.get(cur)
+        if not page:
+            return None
+        hub = page.get("hub")
+        if hub is None:
+            return cur
+        cur = hub
+    return None
+
+
+def render_tier_nav(current_key):
+    active_hub = top_hub_of(current_key) if current_key != "index" else None
+    items = []
+    for hub_key, icon, label in TIER_HUBS:
+        cls = "tier-nav-link active" if hub_key == active_hub else "tier-nav-link"
+        href = rel_link(current_key, hub_key)
+        items.append('<a class="%s" href="%s">%s %s</a>' % (cls, href, icon, html.escape(label)))
+    return '<nav class="tier-nav">%s</nav>' % "".join(items)
+
+
 def render_breadcrumb(page):
     parts = ['<a href="%s">대시보드</a>' % rel_link(page["key"], "index")]
     if page.get("hub"):
@@ -1169,6 +1203,7 @@ PAGE_HTML_TMPL = """<!doctype html>
     </div>
   </div>
 </header>
+{tier_nav}
 <div class="sidebar-overlay"></div>
 <button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
 <div class="page-shell">
@@ -1237,6 +1272,7 @@ def build_content_page(page):
         prefix=prefix,
         asset_v=ASSET_VERSION,
         breadcrumb=breadcrumb_html,
+        tier_nav=render_tier_nav(page["key"]),
         sidebar=sidebar_html,
         cat=page["cat"],
         icon=page["icon"],
@@ -1494,6 +1530,7 @@ DASHBOARD_TMPL = """<!doctype html>
     </div>
   </div>
 </header>
+{tier_nav}
 <div class="page-shell">
   <div class="dashboard-shell">
     <div class="dashboard-intro">
@@ -1549,6 +1586,7 @@ def build_dashboard():
     html_out = DASHBOARD_TMPL.format(
         intro=html.escape(DASHBOARD_INTRO),
         asset_v=ASSET_VERSION,
+        tier_nav=render_tier_nav("index"),
         git_min_url=url_of("git-min"),
         overview_table=render_overview_table(),
         step_flow=render_step_flow(),
@@ -1606,6 +1644,7 @@ GUESTBOOK_TMPL = """<!doctype html>
     </div>
   </div>
 </header>
+{tier_nav}
 <div class="page-shell">
   <div class="layout no-sidebar">
     <main class="main-content">
@@ -1674,6 +1713,7 @@ GUESTBOOK_TMPL = """<!doctype html>
 def build_guestbook():
     html_out = GUESTBOOK_TMPL.format(
         asset_v=ASSET_VERSION,
+        tier_nav=render_tier_nav("guestbook"),
         og_url=SITE_BASE_URL + "방명록.html",
         giscus_repo=GISCUS_REPO,
         giscus_repo_id=GISCUS_REPO_ID,
