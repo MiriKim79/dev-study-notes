@@ -168,14 +168,14 @@ body::before {
 .header-inner {
   display: flex; align-items: center; gap: 12px; width: 100%; max-width: 1400px; margin: 0 auto;
 }
-.menu-btn, .search-btn, .theme-btn {
+.menu-btn, .search-btn, .theme-btn, .guestbook-btn {
   background: none; border: 1px solid var(--border-strong); color: var(--text-heading);
   border-radius: var(--radius-sm); width: 36px; height: 36px; display: none; align-items: center; justify-content: center;
   cursor: pointer; font-size: 16px; flex: none;
 }
 .menu-btn { display: inline-flex; }
-.search-btn, .theme-btn { display: inline-flex; }
-.menu-btn:hover, .search-btn:hover, .theme-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); }
+.search-btn, .theme-btn, .guestbook-btn { display: inline-flex; }
+.menu-btn:hover, .search-btn:hover, .theme-btn:hover, .guestbook-btn:hover { background: var(--accent-weak); border-color: var(--accent-border-strong); text-decoration: none; }
 
 .breadcrumb {
   flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px;

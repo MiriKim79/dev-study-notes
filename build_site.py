@@ -1084,6 +1084,7 @@ PAGE_HTML_TMPL = """<!doctype html>
     <nav class="breadcrumb">{breadcrumb}</nav>
     <div class="header-actions">
       <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="{prefix}방명록.html" aria-label="방명록">💬</a>
       <button class="search-btn" type="button" aria-label="검색">🔍</button>
       <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
     </div>
@@ -1248,9 +1249,8 @@ def collect_search_entries(page, blocks):
 # 8. 대시보드(index.html)
 # ==========================================================================
 DASHBOARD_INTRO = (
-    "개발 분야별 기초를 따로 외우기보다, 프로젝트 전체 흐름 속에서 "
-    "프론트엔드·백엔드·생성형 AI·Git이 어떻게 연결되는지 이해하기 위한 학습 자료입니다. "
-    "원본 Markdown 내용을 그대로, 목차·핵심 개념 박스·코드 하이라이트가 있는 학습 화면으로 볼 수 있습니다."
+    "프론트엔드·백엔드·생성형 AI·Git, 실제 팀 프로젝트를 만드는 순서 그대로 배우는 학습 자료입니다. "
+    "초급부터 고급까지 단계별로 정리돼 있으니, 지금 나에게 필요한 단계부터 골라서 보면 됩니다."
 )
 
 OVERVIEW_ROWS = [
@@ -1396,6 +1396,7 @@ DASHBOARD_TMPL = """<!doctype html>
     <nav class="breadcrumb"><span class="current">학습 대시보드</span></nav>
     <div class="header-actions">
       <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="방명록.html" aria-label="방명록">💬</a>
       <button class="search-btn" type="button" aria-label="검색">🔍</button>
       <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
     </div>
@@ -1467,6 +1468,123 @@ def build_dashboard():
 
 
 # ==========================================================================
+# 8-1. 방명록 (giscus — GitHub Discussions 기반)
+# ==========================================================================
+GISCUS_REPO = "MiriKim79/dev-study-notes"
+GISCUS_REPO_ID = "R_kgDOTx7W7g"
+GISCUS_CATEGORY = "General"
+GISCUS_CATEGORY_ID = "DIC_kwDOTx7W7s4DDgCF"
+GISCUS_TERM = "방명록"
+
+GUESTBOOK_TMPL = """<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>방명록 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css?v={asset_v}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="방명록 · 개발 학습·실전 노트">
+<meta property="og:description" content="공부하다 막힌 부분, 하고 싶은 말, 응원 한마디 — 자유롭게 남겨주세요.">
+<meta property="og:url" content="{og_url}">
+<script src="assets/search-index.js?v={asset_v}" defer></script>
+</head>
+<body data-root-prefix="">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="메뉴" style="visibility:hidden;">☰</button>
+    <a class="brand" href="index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="index.html">대시보드</a> <span>›</span><span class="current">방명록</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="방명록.html" aria-label="방명록">💬</a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<div class="page-shell">
+  <div class="layout no-sidebar">
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-start);">
+        <span class="page-kicker">💬 방명록</span>
+        <h1 class="page-title">방명록 & 피드백</h1>
+        <p class="page-tagline">오타 제보, 이해 안 되는 설명, 응원 한마디까지 뭐든 좋아요. GitHub 계정으로 로그인하면 남길 수 있어요 (스팸 방지용) — 댓글에는 미리가 직접 답장합니다.</p>
+        <div id="giscus-comments"></div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="assets/main.js?v={asset_v}" defer></script>
+<script>
+  (function () {{
+    var script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "{giscus_repo}");
+    script.setAttribute("data-repo-id", "{giscus_repo_id}");
+    script.setAttribute("data-category", "{giscus_category}");
+    script.setAttribute("data-category-id", "{giscus_category_id}");
+    script.setAttribute("data-mapping", "specific");
+    script.setAttribute("data-term", "{giscus_term}");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-lang", "ko");
+    var savedTheme = localStorage.getItem("dev-notes-theme");
+    var isDark = savedTheme === "dark" || (!savedTheme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    script.setAttribute("data-theme", isDark ? "dark_dimmed" : "light");
+    script.crossOrigin = "anonymous";
+    script.async = true;
+    document.getElementById("giscus-comments").appendChild(script);
+
+    // 사이트 다크모드 버튼과 giscus 테마를 함께 전환
+    var themeBtn = document.querySelector(".theme-btn");
+    if (themeBtn) {{
+      themeBtn.addEventListener("click", function () {{
+        setTimeout(function () {{
+          var nowDark = document.documentElement.getAttribute("data-theme") === "dark" ||
+            (!document.documentElement.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          var frame = document.querySelector("iframe.giscus-frame");
+          if (frame) {{
+            frame.contentWindow.postMessage(
+              {{ giscus: {{ setConfig: {{ theme: nowDark ? "dark_dimmed" : "light" }} }} }},
+              "https://giscus.app"
+            );
+          }}
+        }}, 50);
+      }});
+    }}
+  }})();
+</script>
+</body>
+</html>
+"""
+
+
+def build_guestbook():
+    html_out = GUESTBOOK_TMPL.format(
+        asset_v=ASSET_VERSION,
+        og_url=SITE_BASE_URL + "방명록.html",
+        giscus_repo=GISCUS_REPO,
+        giscus_repo_id=GISCUS_REPO_ID,
+        giscus_category=GISCUS_CATEGORY,
+        giscus_category_id=GISCUS_CATEGORY_ID,
+        giscus_term=GISCUS_TERM,
+    )
+    (ROOT / "방명록.html").write_text(html_out, encoding="utf-8")
+
+
+# ==========================================================================
 # 9. 실행 진입점
 # ==========================================================================
 def main():
@@ -1478,6 +1596,9 @@ def main():
 
     build_dashboard()
     print("생성: index.html")
+
+    build_guestbook()
+    print("생성: 방명록.html")
 
     assets_dir = ROOT / "assets"
     assets_dir.mkdir(exist_ok=True)
