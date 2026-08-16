@@ -1433,7 +1433,7 @@ DASHBOARD_TMPL = """<!doctype html>
     {adv_overview_table}
     {adv_card_grid}
 
-    <div class="dashboard-footer">🐣 미리(Miri)가 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
+    <div class="dashboard-footer">🐣 미리가 미리미리 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
   </div>
 </div>
 <div class="search-overlay" id="search-overlay">
