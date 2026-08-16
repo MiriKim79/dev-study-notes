@@ -39,7 +39,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#1-내가-제일-잘-짠다-에서-팀이-잘-짜게-만든다-로">1. &quot;내가 제일 잘 짠다&quot;에서 &quot;팀이 잘 짜게 만든다&quot;로</a></li><li class="toc-h1"><a href="#2-ADR-Architecture-Decision-Record-로-결정-기록하기">2. ADR(Architecture Decision Record)로 결정 기록하기</a></li><li class="toc-h1"><a href="#3-기술-부채를-다루는-방법">3. 기술 부채를 다루는 방법</a></li><li class="toc-h1"><a href="#4-레거시-코드를-단계적으로-바꾸는-전략">4. 레거시 코드를 단계적으로 바꾸는 전략</a><ul class="toc-h2-list"><li><a href="#스트랭글러-패턴-Strangler-Fig-Pattern">스트랭글러 패턴(Strangler Fig Pattern)</a></li><li><a href="#왜-이-코드가-이렇게-짜여-있는지-먼저-이해하기">&quot;왜 이 코드가 이렇게 짜여 있는지&quot; 먼저 이해하기</a></li></ul></li><li class="toc-h1"><a href="#5-결정을-팀에-공유하는-방법">5. 결정을 팀에 공유하는 방법</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-내가-제일-잘-짠다-에서-팀이-잘-짜게-만든다-로">1. &quot;내가 제일 잘 짠다&quot;에서 &quot;팀이 잘 짜게 만든다&quot;로</a></li><li class="toc-h1"><a href="#2-ADR-Architecture-Decision-Record-로-결정-기록하기">2. ADR(Architecture Decision Record)로 결정 기록하기</a></li><li class="toc-h1"><a href="#3-기술-부채를-다루는-방법">3. 기술 부채를 다루는 방법</a></li><li class="toc-h1"><a href="#4-레거시-코드를-단계적으로-바꾸는-전략">4. 레거시 코드를 단계적으로 바꾸는 전략</a><ul class="toc-h2-list"><li><a href="#스트랭글러-패턴-Strangler-Fig-Pattern">스트랭글러 패턴(Strangler Fig Pattern)</a></li><li><a href="#왜-이-코드가-이렇게-짜여-있는지-먼저-이해하기">&quot;왜 이 코드가 이렇게 짜여 있는지&quot; 먼저 이해하기</a></li></ul></li><li class="toc-h1"><a href="#5-결정을-팀에-공유하는-방법">5. 결정을 팀에 공유하는 방법</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -48,9 +48,13 @@
         <h1 class="page-title">기술 리더십·레거시 마이그레이션 가이드</h1>
         <p class="page-tagline">코드는 잘 짜는데 팀을 어떻게 이끌지 모르겠다? 기술 결정과 낡은 코드 전환의 기준을 다룹니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 코드는 문제없이 짜지만, 기술 결정을 직접 내리거나 낡은 코드를 어떻게 바꿔야 할지 판단해야 하는 위치가 된 사람</div><div class="intro-row"><strong>목적:</strong> 기술 의사결정을 기록하고 공유하는 방법, 레거시 코드를 안전하게 단계적으로 전환하는 전략을 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. &quot;내가 제일 잘 짠다&quot;에서 &quot;팀이 잘 짜게 만든다&quot;로</li><li>2. ADR(Architecture Decision Record)로 결정 기록하기</li><li>3. 기술 부채를 다루는 방법</li><li>4. 레거시 코드를 단계적으로 바꾸는 전략</li><li>5. 결정을 팀에 공유하는 방법</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. &quot;내가 제일 잘 짠다&quot;에서 &quot;팀이 잘 짜게 만든다&quot;로</li><li>2. ADR(Architecture Decision Record)로 결정 기록하기</li><li>3. 기술 부채를 다루는 방법</li><li>4. 레거시 코드를 단계적으로 바꾸는 전략</li><li>5. 결정을 팀에 공유하는 방법</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
         
         <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>중급 가이드에서 다룬 코드 리뷰·회고 개념은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>ADR (Architecture Decision Record)</td><td>중요한 기술 결정을 "왜 그렇게 정했는지"까지 남기는 짧은 기록 문서</td></tr><tr><td>기술 부채(Technical Debt)</td><td>지금 당장은 동작하지만 나중에 시간을 들여 손봐야 할 임시방편 코드나 설계</td></tr><tr><td>레거시 코드(Legacy Code)</td><td>오래돼서 지금 기준으로는 손대기 어렵거나 이해하기 힘든, 그러나 여전히 운영 중인 코드</td></tr><tr><td>스트랭글러 패턴(Strangler Fig Pattern)</td><td>낡은 시스템을 한 번에 다 바꾸지 않고, 새 시스템이 기능 단위로 조금씩 감싸며 대체해가는 전환 방법</td></tr></tbody></table></div>
+<hr>
 <h2 class="section-h1" id="1-내가-제일-잘-짠다-에서-팀이-잘-짜게-만든다-로">1. "내가 제일 잘 짠다"에서 "팀이 잘 짜게 만든다"로<a class="heading-anchor" href="#1-내가-제일-잘-짠다-에서-팀이-잘-짜게-만든다-로" aria-label="이 섹션 링크">#</a></h2>
 <p>주니어일 때 좋은 개발자의 기준은 "내가 얼마나 잘 짜는가"입니다. 기술적 결정을 내리는 위치가 되면 기준이 바뀝니다 — <strong>"내가 없어도 팀이 같은 기준으로 판단할 수 있는가"</strong>가 됩니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>주니어 관점: 이 코드를 어떻게 짤까

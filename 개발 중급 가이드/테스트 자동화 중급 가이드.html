@@ -39,7 +39,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#1-테스트-피라미드">1. 테스트 피라미드</a></li><li class="toc-h1"><a href="#2-TDD-Red-Green-Refactor">2. TDD — Red, Green, Refactor</a></li><li class="toc-h1"><a href="#3-Mock과-Stub">3. Mock과 Stub</a></li><li class="toc-h1"><a href="#4-테스트-커버리지의-함정">4. 테스트 커버리지의 함정</a></li><li class="toc-h1"><a href="#5-플레이키-Flaky-테스트-다루기">5. 플레이키(Flaky) 테스트 다루기</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-테스트-피라미드">1. 테스트 피라미드</a></li><li class="toc-h1"><a href="#2-TDD-Red-Green-Refactor">2. TDD — Red, Green, Refactor</a></li><li class="toc-h1"><a href="#3-Mock과-Stub">3. Mock과 Stub</a></li><li class="toc-h1"><a href="#4-테스트-커버리지의-함정">4. 테스트 커버리지의 함정</a></li><li class="toc-h1"><a href="#5-플레이키-Flaky-테스트-다루기">5. 플레이키(Flaky) 테스트 다루기</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -48,9 +48,13 @@
         <h1 class="page-title">테스트 자동화 중급 가이드</h1>
         <p class="page-tagline">매번 손으로 눌러보며 확인한다? 테스트 코드로 그 시간을 되찾는 방법입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 컴포넌트·API를 손으로 실행해가며 확인하는 데는 익숙하지만, 테스트 코드를 체계적으로 짜본 적은 적은 사람</div><div class="intro-row"><strong>목적:</strong> 프론트/백엔드 어느 쪽에도 공통으로 적용되는 테스트 전략과 습관을 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 테스트 피라미드</li><li>2. TDD — Red, Green, Refactor</li><li>3. Mock과 Stub</li><li>4. 테스트 커버리지의 함정</li><li>5. 플레이키(Flaky) 테스트 다루기</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 테스트 피라미드</li><li>2. TDD — Red, Green, Refactor</li><li>3. Mock과 Stub</li><li>4. 테스트 커버리지의 함정</li><li>5. 플레이키(Flaky) 테스트 다루기</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
         
         <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>기초 가이드에서 다룬 "테스트가 왜 필요한지" 수준의 개념은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>단위 테스트(Unit Test)</td><td>함수·컴포넌트 하나처럼 가장 작은 단위를 따로 떼어 검증하는 테스트. 가장 빠르고 많이 씀</td></tr><tr><td>통합 테스트(Integration Test)</td><td>여러 모듈(예: API + DB)이 함께 맞물려 잘 동작하는지 검증하는 테스트</td></tr><tr><td>E2E 테스트(End-to-End)</td><td>실제 사용자처럼 화면을 처음부터 끝까지 조작해보며 전체 흐름을 검증하는 테스트</td></tr><tr><td>테스트 피라미드</td><td>단위 테스트를 가장 많이, E2E 테스트를 가장 적게 두는 것이 좋다는 비율 원칙</td></tr><tr><td>TDD (Test-Driven Development)</td><td>코드를 짜기 전에 테스트부터 먼저 작성하는 개발 방식</td></tr><tr><td>Mock</td><td>실제 대신 넣는 가짜 객체 중, 호출 여부·횟수까지 검증할 수 있는 것</td></tr><tr><td>Stub</td><td>정해진 값만 그대로 돌려주는 단순한 가짜 객체</td></tr><tr><td>테스트 커버리지(Coverage)</td><td>테스트가 전체 코드 중 몇 %를 실행했는지 보여주는 숫자</td></tr><tr><td>assert(단언)</td><td>테스트 코드 안에서 "실제 결과가 기대한 값과 같아야 한다"고 확인하는 구문</td></tr><tr><td>플레이키(Flaky) 테스트</td><td>코드는 문제없는데, 실행할 때마다 통과하거나 실패하는 결과가 들쭉날쭉한 불안정한 테스트</td></tr><tr><td>Teardown</td><td>테스트가 끝난 뒤 만들어뒀던 임시 데이터·상태를 정리하는 과정</td></tr></tbody></table></div>
+<hr>
 <h2 class="section-h1" id="1-테스트-피라미드">1. 테스트 피라미드<a class="heading-anchor" href="#1-테스트-피라미드" aria-label="이 섹션 링크">#</a></h2>
 <p>모든 화면·기능을 E2E 테스트로만 덮으려 하면 느리고 깨지기 쉬운 테스트 스위트가 됩니다. 아래로 갈수록 빠르고 저렴하며, 위로 갈수록 실제 사용자 흐름에 가깝지만 느리고 비쌉니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>        /\

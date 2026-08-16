@@ -39,7 +39,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유</a><ul class="toc-h2-list"><li><a href="#2단계-커밋-2PC-이론적-해법과-현실의-한계">2단계 커밋(2PC)— 이론적 해법과 현실의 한계</a></li></ul></li><li class="toc-h1"><a href="#2-샤딩을-실전에-적용할-때의-함정">2. 샤딩을 실전에 적용할 때의 함정</a><ul class="toc-h2-list"><li><a href="#샤드-키를-잘못-고르면">샤드 키를 잘못 고르면</a></li><li><a href="#JOIN이-안-됨">JOIN이 안 됨</a></li><li><a href="#리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다">리샤딩(샤드를 다시 나누는 일)이 매우 비쌉니다</a></li></ul></li><li class="toc-h1"><a href="#3-정합성-모델-이해하기">3. 정합성 모델 이해하기</a></li><li class="toc-h1"><a href="#4-대규모-마이그레이션-전략">4. 대규모 마이그레이션 전략</a><ul class="toc-h2-list"><li><a href="#Expand-Contract-패턴">Expand-Contract 패턴</a></li></ul></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-실전-체크리스트">6. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유</a><ul class="toc-h2-list"><li><a href="#2단계-커밋-2PC-이론적-해법과-현실의-한계">2단계 커밋(2PC)— 이론적 해법과 현실의 한계</a></li></ul></li><li class="toc-h1"><a href="#2-샤딩을-실전에-적용할-때의-함정">2. 샤딩을 실전에 적용할 때의 함정</a><ul class="toc-h2-list"><li><a href="#샤드-키를-잘못-고르면">샤드 키를 잘못 고르면</a></li><li><a href="#JOIN이-안-됨">JOIN이 안 됨</a></li><li><a href="#리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다">리샤딩(샤드를 다시 나누는 일)이 매우 비쌉니다</a></li></ul></li><li class="toc-h1"><a href="#3-정합성-모델-이해하기">3. 정합성 모델 이해하기</a></li><li class="toc-h1"><a href="#4-대규모-마이그레이션-전략">4. 대규모 마이그레이션 전략</a><ul class="toc-h2-list"><li><a href="#Expand-Contract-패턴">Expand-Contract 패턴</a></li></ul></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-실전-체크리스트">6. 실전 체크리스트</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -48,9 +48,13 @@
         <h1 class="page-title">데이터베이스 고급 가이드</h1>
         <p class="page-tagline">복제·샤딩 기초는 안다? 분산 트랜잭션과 샤딩을 실전에 적용할 때의 함정을 다룹니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 인덱스 튜닝·복제·샤딩 기초 개념은 알고, 실제로 여러 서버·여러 서비스에 걸친 데이터 정합성 문제를 겪기 시작한 사람</div><div class="intro-row"><strong>목적:</strong> 분산 트랜잭션, 샤딩을 실전에 적용할 때의 함정, 대규모 마이그레이션 전략을 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 분산 트랜잭션이 어려운 이유</li><li>2. 샤딩을 실전에 적용할 때의 함정</li><li>3. 정합성 모델 이해하기</li><li>4. 대규모 마이그레이션 전략</li><li>5. 자주 하는 실수</li><li>6. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 분산 트랜잭션이 어려운 이유</li><li>2. 샤딩을 실전에 적용할 때의 함정</li><li>3. 정합성 모델 이해하기</li><li>4. 대규모 마이그레이션 전략</li><li>5. 자주 하는 실수</li><li>6. 실전 체크리스트</li></ol></div>
         
         <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>중급 가이드에서 다룬 인덱스·복제·샤딩 기초 개념은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>분산 트랜잭션(Distributed Transaction)</td><td>여러 데이터베이스에 걸친 작업을 "전부 성공 또는 전부 실패"로 묶어 처리하려는 것</td></tr><tr><td>2단계 커밋(2PC, Two-Phase Commit)</td><td>모든 참여 DB에게 먼저 "가능한지" 묻고, 전부 동의해야만 실제로 커밋하는 방식</td></tr><tr><td>Saga 패턴</td><td>분산 트랜잭션을 여러 단계로 나눠 실행하고, 실패하면 이전 단계를 거꾸로 취소하는 방식</td></tr><tr><td>강한 일관성(Strong Consistency)</td><td>데이터를 쓴 직후 어디서 읽어도 항상 최신값이 보장되는 것</td></tr><tr><td>최종 일관성(Eventual Consistency)</td><td>지금 당장은 값이 다를 수 있지만, 시간이 지나면 결국 같은 값으로 맞춰지는 것</td></tr><tr><td>샤드 키(Shard Key)</td><td>데이터를 어느 샤드(분산 서버)로 보낼지 정하는 기준 컬럼</td></tr><tr><td>핫스팟(Hotspot)</td><td>샤드 키를 잘못 골라 특정 샤드에만 트래픽이 몰리는 현상</td></tr><tr><td>리샤딩(Resharding)</td><td>이미 나눠둔 샤드를 새로운 기준으로 다시 나누는 작업. 비용이 매우 큼</td></tr><tr><td>Expand-Contract 패턴</td><td>스키마 변경을 "추가 → 이전 → 코드 전환 → 제거" 여러 단계로 나눠, 서비스를 멈추지 않고 안전하게 진행하는 방법</td></tr></tbody></table></div>
+<hr>
 <h2 class="section-h1" id="1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유<a class="heading-anchor" href="#1-분산-트랜잭션이-어려운-이유" aria-label="이 섹션 링크">#</a></h2>
 <p>한 DB 안에서는 트랜잭션(<code class="inline-code">BEGIN</code> ~ <code class="inline-code">COMMIT</code>)으로 "전부 성공 또는 전부 실패"가 보장됩니다. 하지만 데이터가 여러 DB(또는 여러 서비스)에 나뉘어 있으면 이 보장이 깨집니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>계좌 A에서 출금(DB 1) → 계좌 B로 입금(DB 2)

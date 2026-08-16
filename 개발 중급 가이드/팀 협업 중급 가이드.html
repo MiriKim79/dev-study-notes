@@ -39,7 +39,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#1-코드-리뷰-문화">1. 코드 리뷰 문화</a><ul class="toc-h2-list"><li><a href="#좋은-리뷰-코멘트">좋은 리뷰 코멘트</a></li><li><a href="#리뷰-SLA-얼마나-빨리-봐줄-것인가">리뷰 SLA (얼마나 빨리 봐줄 것인가)</a></li><li><a href="#리뷰-크기">리뷰 크기</a></li></ul></li><li class="toc-h1"><a href="#2-ADR-설계-결정을-기록하기">2. ADR — 설계 결정을 기록하기</a></li><li class="toc-h1"><a href="#3-기술-부채-관리">3. 기술 부채 관리</a><ul class="toc-h2-list"><li><a href="#기술-부채란">기술 부채란</a></li><li><a href="#식별하고-관리하는-방법">식별하고 관리하는 방법</a></li></ul></li><li class="toc-h1"><a href="#4-온보딩-문서화">4. 온보딩 문서화</a></li><li class="toc-h1"><a href="#5-애자일-실전-스프린트-회고-잘하기">5. 애자일 실전 — 스프린트 회고 잘하기</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-코드-리뷰-문화">1. 코드 리뷰 문화</a><ul class="toc-h2-list"><li><a href="#좋은-리뷰-코멘트">좋은 리뷰 코멘트</a></li><li><a href="#리뷰-SLA-얼마나-빨리-봐줄-것인가">리뷰 SLA (얼마나 빨리 봐줄 것인가)</a></li><li><a href="#리뷰-크기">리뷰 크기</a></li></ul></li><li class="toc-h1"><a href="#2-ADR-설계-결정을-기록하기">2. ADR — 설계 결정을 기록하기</a></li><li class="toc-h1"><a href="#3-기술-부채-관리">3. 기술 부채 관리</a><ul class="toc-h2-list"><li><a href="#기술-부채란">기술 부채란</a></li><li><a href="#식별하고-관리하는-방법">식별하고 관리하는 방법</a></li></ul></li><li class="toc-h1"><a href="#4-온보딩-문서화">4. 온보딩 문서화</a></li><li class="toc-h1"><a href="#5-애자일-실전-스프린트-회고-잘하기">5. 애자일 실전 — 스프린트 회고 잘하기</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -48,9 +48,13 @@
         <h1 class="page-title">팀 협업 중급 가이드</h1>
         <p class="page-tagline">팀이 커졌다? 코드가 아니라 &#x27;함께 오래 일하는 방식&#x27;이 문제가 되는 순간입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 이슈 기반으로 브랜치·PR을 주고받는 흐름에는 익숙하고, 팀이 몇 명 이상으로 늘어난 사람</div><div class="intro-row"><strong>목적:</strong> 코드 자체가 아니라 "여러 명이 함께 오래 일하는 방식"에서 부딪히는 문제를 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 코드 리뷰 문화</li><li>2. ADR — 설계 결정을 기록하기</li><li>3. 기술 부채 관리</li><li>4. 온보딩 문서화</li><li>5. 애자일 실전 — 스프린트 회고 잘하기</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 코드 리뷰 문화</li><li>2. ADR — 설계 결정을 기록하기</li><li>3. 기술 부채 관리</li><li>4. 온보딩 문서화</li><li>5. 애자일 실전 — 스프린트 회고 잘하기</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
         
         <hr>
+<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
+<p>기초 가이드에서 다룬 이슈·브랜치·PR·커밋 규칙은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>SLA (Service Level Agreement)</td><td>"이 정도 시간 안에는 처리한다"고 팀이 정해둔 기준. 여기서는 "PR 리뷰를 하루 안에 봐준다" 같은 약속</td></tr><tr><td>ADR (Architecture Decision Record)</td><td>중요한 설계 결정을 "왜 그렇게 정했는지"까지 남기는 짧은 기록 문서</td></tr><tr><td>기술 부채(Technical Debt)</td><td>지금 당장은 동작하지만, 나중에 시간을 들여 손봐야 할 임시방편 코드나 설계</td></tr><tr><td>온보딩(Onboarding)</td><td>새 팀원이 프로젝트에 적응해서 첫 작업을 할 수 있게 되기까지의 과정</td></tr><tr><td>애자일(Agile)</td><td>큰 계획을 한 번에 세우기보다, 짧은 주기로 작업하고 계속 점검·조정해가는 개발 방식</td></tr><tr><td>스프린트(Sprint)</td><td>애자일에서 보통 1~2주 단위로 정하는 작업 기간</td></tr><tr><td>회고(Retrospective)</td><td>스프린트가 끝난 뒤 무엇이 잘됐고 무엇이 문제였는지 팀이 함께 돌아보는 시간</td></tr><tr><td>Keep / Problem / Try</td><td>회고를 진행하는 흔한 형식 — 계속 유지할 것 / 문제였던 것 / 다음에 시도할 것</td></tr></tbody></table></div>
+<hr>
 <h2 class="section-h1" id="1-코드-리뷰-문화">1. 코드 리뷰 문화<a class="heading-anchor" href="#1-코드-리뷰-문화" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="좋은-리뷰-코멘트">좋은 리뷰 코멘트<a class="heading-anchor" href="#좋은-리뷰-코멘트" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>나쁜 예: &quot;이거 이상한데요&quot;
