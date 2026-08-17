@@ -344,6 +344,96 @@ D) 페어와이즈 테스트
 </div>
 </details>
 
+**Q11.** 요구사항 정의부터 시스템 테스트까지 각 개발 단계와 대응하는 테스트 레벨을 V자 모양으로 표현하는 V-모델에서, '시스템 설계' 단계와 대응되는 테스트 레벨은?
+A) 단위 테스트
+B) 통합 테스트
+C) 시스템 테스트
+D) 인수 테스트
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>V-모델에서는 요구사항 분석↔인수 테스트, 아키텍처 설계↔시스템 테스트, 상세(시스템) 설계↔통합 테스트, 모듈 설계↔단위 테스트가 서로 대응됩니다. (교재에 따라 아키텍처/상세설계 명칭 차이가 있을 수 있습니다.)</p>
+</div>
+</details>
+
+**Q12.** 테스트 케이스를 실행한 결과와 기대 결과가 다를 때, 이를 기록하고 추적·관리하는 문서화된 문제를 무엇이라 하는가?
+A) 이슈(Issue)
+B) 결함(Defect)
+C) 리스크(Risk)
+D) 요구사항(Requirement)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>결함(Defect/Bug)은 예상 결과와 실제 결과의 불일치를 가리키는 표준 용어로, 발견부터 수정, 재검증까지의 생명주기를 거쳐 관리됩니다.</p>
+</div>
+</details>
+
+**Q13.** 테스트 대상 프로그램의 실행 흐름을 제어하는 조건문에서, 모든 조건의 참/거짓 조합을 각각 한 번 이상 실행하도록 설계하는 화이트박스 커버리지 기법은?
+A) 문장 커버리지(Statement Coverage)
+B) 분기 커버리지(Branch Coverage)
+C) 조건/결정 커버리지(Condition/Decision Coverage)
+D) 조건 조합 커버리지(Multiple Condition Coverage)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: D</span></p>
+<p>조건 조합 커버리지는 조건문 내 여러 조건들의 모든 참/거짓 조합을 테스트해 가장 높은 수준의 커버리지를 요구합니다. 분기 커버리지는 전체 분기의 참/거짓 결과만 각각 한 번씩 실행되면 충족됩니다.</p>
+</div>
+</details>
+
+**Q14.** 리스크 기반 테스트(Risk-Based Testing)에서 테스트 우선순위를 정할 때 주로 고려하는 두 가지 요소는?
+A) 테스트 케이스 수와 소요 시간
+B) 결함 발생 가능성과 발생 시 영향도(비즈니스 임팩트)
+C) 테스터의 숙련도와 인원 수
+D) 개발 언어와 플랫폼
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>리스크 기반 테스트는 한정된 자원으로 효율적으로 테스트하기 위해, 결함이 발생할 가능성(확률)과 발생했을 때의 비즈니스 영향도를 곱해 우선순위 높은 영역에 테스트를 집중합니다.</p>
+</div>
+</details>
+
+**Q15.** 이미 통과했던 기능이 새로운 코드 변경으로 인해 다시 깨졌는지 확인하기 위해 반복 수행하는 테스트는?
+A) 회귀 테스트(Regression Test)
+B) 스모크 테스트(Smoke Test)
+C) 탐색적 테스트(Exploratory Test)
+D) 인수 테스트(Acceptance Test)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: A</span></p>
+<p>회귀 테스트는 코드 변경(버그 수정, 기능 추가)이 기존에 정상 동작하던 기능에 영향을 주지 않았는지 재확인하는 테스트입니다.</p>
+</div>
+</details>
+
+**Q16.** (OX) 스모크 테스트(Smoke Test)는 배포된 빌드가 기본적인 핵심 기능이라도 동작하는지 짧게 확인해, 본격적인 테스트를 진행할 가치가 있는지 판단하는 목적으로 수행한다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>스모크 테스트는 "이 빌드가 테스트할 가치가 있는 상태인가"를 빠르게 확인하는 최소한의 검증으로, 핵심 기능이 아예 동작하지 않으면 본 테스트를 진행하지 않고 빌드를 반려합니다.</p>
+</div>
+</details>
+
+**Q17.** (단답형) 테스트 프로세스에서 '테스트 계획 → 테스트 분석/설계 → 테스트 구현 → 테스트 실행 → 종료 기준 평가 및 리포팅 → 테스트 종료 활동'의 흐름을 정의한 국제 표준(테스트 프로세스 프레임워크)의 이름은 무엇인가?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: ISTQB(국제소프트웨어테스팅자격위원회) 표준 테스트 프로세스 / ISO/IEC/IEEE 29119</span></p>
+<p>ISTQB 실러버스와 ISO/IEC/IEEE 29119 표준이 이 표준 테스트 프로세스의 근간이 되며, CSTS를 포함한 다수의 테스트 자격증이 이 흐름을 기준으로 출제됩니다.</p>
+</div>
+</details>
+
 ---
 
 # 7. 합격 꿀팁

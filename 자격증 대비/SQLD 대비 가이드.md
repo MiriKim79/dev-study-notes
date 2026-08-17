@@ -422,6 +422,96 @@ D) NTILE()
 </div>
 </details>
 
+**Q11.** 다음 중 집계함수와 함께 사용할 때, GROUP BY로 묶인 결과에 대한 조건을 지정하는 절은?
+A) WHERE
+B) HAVING
+C) ORDER BY
+D) QUALIFY
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>WHERE는 그룹화 전 개별 행을 필터링하고, HAVING은 GROUP BY로 집계된 결과(그룹)에 대한 조건을 지정합니다. 집계함수는 HAVING 절에서만 조건으로 사용할 수 있습니다.</p>
+</div>
+</details>
+
+**Q12.** 정규화 단계 중, 기본키가 아닌 속성이 기본키 전체가 아니라 일부에만 종속되는 부분 함수 종속을 제거하는 단계는?
+A) 제1정규형(1NF)
+B) 제2정규형(2NF)
+C) 제3정규형(3NF)
+D) BCNF
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>제2정규형은 복합키(2개 이상 컬럼으로 구성된 기본키)를 가진 테이블에서, 기본키의 일부에만 종속되는 속성(부분 함수 종속)을 별도 테이블로 분리합니다.</p>
+</div>
+</details>
+
+**Q13.** 다음 중 두 테이블에 공통으로 존재하는 값만 결과로 반환하는 조인은?
+A) LEFT OUTER JOIN
+B) RIGHT OUTER JOIN
+C) INNER JOIN
+D) FULL OUTER JOIN
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>INNER JOIN은 조인 조건을 만족하는(양쪽 테이블에 모두 존재하는) 행만 반환합니다. OUTER JOIN 계열은 한쪽 또는 양쪽에 없는 값도 NULL로 채워 포함합니다.</p>
+</div>
+</details>
+
+**Q14.** `CASE WHEN score >= 90 THEN 'A' WHEN score >= 80 THEN 'B' ELSE 'C' END`와 같은 SQL 구문의 용도로 가장 알맞은 것은?
+A) 여러 테이블을 하나로 합침
+B) 조건에 따라 다른 값을 반환(조건부 분기)
+C) 중복된 행을 제거
+D) 데이터 타입을 변환
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>CASE WHEN 구문은 프로그래밍 언어의 if-else처럼, 조건에 따라 SELECT 결과 값을 다르게 반환하는 조건부 분기 표현식입니다.</p>
+</div>
+</details>
+
+**Q15.** 하나의 엔터티가 자기 자신을 참조하는 관계(예: 직원 테이블에서 상급자도 직원인 경우)를 나타내는 모델링 개념은?
+A) 슈퍼타입/서브타입
+B) 순환관계(Recursive Relationship, 자기참조 관계)
+C) 다대다 관계
+D) 배타적 관계
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>순환관계(자기참조 관계)는 하나의 엔터티 내에서 인스턴스끼리 관계를 맺는 경우로, 조직도의 상하 관계, 게시글의 댓글-대댓글 구조 등이 대표적인 예입니다.</p>
+</div>
+</details>
+
+**Q16.** (OX) 인덱스(Index)를 생성하면 SELECT 조회 성능은 향상되지만, INSERT/UPDATE/DELETE 시에는 인덱스도 함께 갱신해야 하므로 쓰기 성능에는 부담이 될 수 있다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>인덱스는 조회 속도를 높이는 대가로, 데이터 변경 시마다 인덱스 구조(B-Tree 등)도 함께 갱신해야 하므로 쓰기 작업의 오버헤드가 늘어납니다.</p>
+</div>
+</details>
+
+**Q17.** (단답형) 하나의 SQL문 안에 포함된 또 다른 SELECT문으로, 괄호로 감싸 다른 쿼리의 일부(WHERE, FROM 등)로 사용되는 것을 무엇이라 하는가?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 서브쿼리(Subquery)</span></p>
+<p>서브쿼리는 사용 위치에 따라 스칼라 서브쿼리(SELECT 절), 인라인 뷰(FROM 절), 중첩 서브쿼리(WHERE 절) 등으로 구분되며, 바깥 쿼리와의 연관 여부에 따라 상관/비상관 서브쿼리로도 나뉩니다.</p>
+</div>
+</details>
+
 ---
 
 # 6. 합격 꿀팁

@@ -305,6 +305,96 @@ D) Trusted Advisor
 </div>
 </details>
 
+**Q11.** 사용자가 요청한 콘텐츠를 전 세계 여러 지역의 엣지 로케이션에 캐싱해 지연시간을 줄여주는 AWS의 CDN 서비스는?
+A) Amazon Route 53
+B) Amazon CloudFront
+C) AWS Direct Connect
+D) Amazon API Gateway
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>CloudFront는 전 세계 엣지 로케이션에 콘텐츠를 캐싱해 사용자와 가까운 곳에서 응답하는 CDN 서비스입니다. Route 53은 DNS, Direct Connect는 전용선 연결 서비스입니다.</p>
+</div>
+</details>
+
+**Q12.** 서버를 직접 관리하지 않고 코드를 업로드하면 요청이 있을 때만 실행되고 사용한 만큼만 과금되는 컴퓨팅 서비스는?
+A) Amazon EC2
+B) AWS Lambda
+C) Amazon Lightsail
+D) AWS Elastic Beanstalk
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>Lambda는 서버 프로비저닝 없이 이벤트 발생 시에만 코드를 실행하는 서버리스 컴퓨팅 서비스로, 실행 시간과 호출 횟수만큼만 과금됩니다.</p>
+</div>
+</details>
+
+**Q13.** AWS 계정의 루트 사용자 보안을 강화하기 위해 가장 먼저 적용해야 할 조치로 가장 적절한 것은?
+A) 루트 사용자로 매일 로그인해 리소스를 직접 관리
+B) 루트 사용자의 액세스 키를 발급해 애플리케이션에 사용
+C) 다중 인증(MFA)을 활성화하고 평소에는 IAM 사용자를 사용
+D) 루트 사용자 비밀번호를 팀 전체와 공유
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>루트 사용자는 계정의 모든 권한을 가지므로 MFA를 반드시 활성화하고, 평소 작업은 필요한 권한만 가진 IAM 사용자/역할로 수행하는 것이 모범 사례입니다.</p>
+</div>
+</details>
+
+**Q14.** 관계형 데이터베이스를 관리형으로 손쉽게 운영할 수 있게 해주는 AWS 서비스는?
+A) Amazon DynamoDB
+B) Amazon RDS
+C) Amazon Redshift
+D) Amazon Neptune
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>RDS(Relational Database Service)는 MySQL, PostgreSQL 등 관계형 DB의 프로비저닝·백업·패치를 관리형으로 제공합니다. DynamoDB는 NoSQL, Redshift는 데이터 웨어하우스입니다.</p>
+</div>
+</details>
+
+**Q15.** AWS에서 애플리케이션 상태와 성능 지표를 수집·모니터링하고 임계치 초과 시 알람을 보낼 수 있는 서비스는?
+A) AWS CloudTrail
+B) Amazon CloudWatch
+C) AWS Config
+D) AWS Trusted Advisor
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>CloudWatch는 지표 수집, 로그 관리, 알람 설정을 담당합니다. CloudTrail은 API 호출 이력을 기록하는 감사 로그 서비스로 목적이 다릅니다.</p>
+</div>
+</details>
+
+**Q16.** (OX) 가용 영역(Availability Zone)은 하나의 데이터 센터만을 의미하며, 하나의 리전에는 항상 하나의 가용 영역만 존재한다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: X</span></p>
+<p>하나의 리전에는 물리적으로 분리된 여러 개(보통 3개 이상)의 가용 영역이 존재하며, 이를 통해 하나의 가용 영역에 장애가 나도 다른 영역으로 서비스를 유지할 수 있습니다.</p>
+</div>
+</details>
+
+**Q17.** (단답형) 계정 내 AWS API 호출 이력(누가, 언제, 무엇을 했는지)을 기록해 감사·보안 분석에 활용하는 서비스의 이름은?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: AWS CloudTrail</span></p>
+<p>CloudTrail은 계정에서 발생한 모든 API 호출을 기록해, 누가 언제 어떤 리소스에 어떤 작업을 했는지 추적할 수 있게 해주는 감사 로그 서비스입니다.</p>
+</div>
+</details>
+
 ---
 
 # 6. 합격 꿀팁

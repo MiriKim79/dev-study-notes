@@ -359,6 +359,96 @@ D) 추세(Trend)
 </div>
 </details>
 
+**Q11.** 의사결정나무(Decision Tree)에서 가지치기(Pruning)를 하는 주된 목적은?
+A) 학습 속도를 높이기 위해
+B) 과적합을 방지하고 일반화 성능을 높이기 위해
+C) 결측치를 자동으로 채우기 위해
+D) 범주형 변수를 수치형으로 바꾸기 위해
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>가지치기는 나무가 학습 데이터에 지나치게 세분화되어 맞춰지는 것(과적합)을 막기 위해, 불필요하게 깊어진 가지를 잘라내 일반화 성능을 높이는 기법입니다.</p>
+</div>
+</details>
+
+**Q12.** 표본 조사에서 모집단의 모든 원소가 뽑힐 확률이 동일하도록 무작위로 표본을 추출하는 기법은?
+A) 층화추출법
+B) 단순무작위추출법
+C) 군집추출법
+D) 편의추출법
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>단순무작위추출법(Simple Random Sampling)은 모집단의 각 원소가 뽑힐 확률이 모두 동일하게 표본을 뽑는 가장 기본적인 방법입니다. 층화추출은 집단을 나눈 뒤 각 집단에서 추출합니다.</p>
+</div>
+</details>
+
+**Q13.** 두 변수 간의 선형적인 관계의 강도와 방향을 -1에서 1 사이의 값으로 나타내는 통계량은?
+A) 공분산(Covariance)
+B) 상관계수(Correlation Coefficient)
+C) 분산(Variance)
+D) 표준오차(Standard Error)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>상관계수는 공분산을 각 변수의 표준편차로 나눠 단위에 상관없이 -1(완전한 음의 선형관계)에서 1(완전한 양의 선형관계) 사이로 표준화한 값입니다.</p>
+</div>
+</details>
+
+**Q14.** 텍스트 마이닝에서, 문서 내 단어의 중요도를 '해당 문서에는 자주 등장하지만 전체 문서 집합에는 드물게 등장할수록 높게' 계산하는 가중치 기법은?
+A) TF-IDF
+B) Word2Vec
+C) One-Hot Encoding
+D) N-gram
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: A</span></p>
+<p>TF-IDF(Term Frequency-Inverse Document Frequency)는 단어 빈도(TF)와 역문서빈도(IDF)를 곱해, 특정 문서에서만 자주 나오는 단어에 높은 가중치를 부여합니다.</p>
+</div>
+</details>
+
+**Q15.** 데이터 시각화에서 시간의 흐름에 따른 값의 변화 추이를 표현하기에 가장 적합한 그래프는?
+A) 파이 차트
+B) 선 그래프(꺾은선 그래프)
+C) 히스토그램
+D) 산점도
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>선 그래프는 시간 순서에 따른 연속적인 값의 변화(추세)를 표현하는 데 적합합니다. 파이 차트는 비율, 히스토그램은 분포, 산점도는 두 변수 간 관계 파악에 적합합니다.</p>
+</div>
+</details>
+
+**Q16.** (OX) 비지도학습(Unsupervised Learning)은 정답(레이블)이 없는 데이터에서 숨겨진 구조나 패턴을 찾는 학습 방식으로, 군집분석이 대표적이다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>비지도학습은 레이블 없는 데이터의 구조(군집, 차원축소 등)를 스스로 찾아내는 방식이며, 군집분석(Clustering)과 연관규칙분석이 대표적인 예입니다.</p>
+</div>
+</details>
+
+**Q17.** (단답형) 회귀분석에서 독립변수가 하나 늘어날 때마다 결정계수(R²)가 항상 증가하는 문제를 보완하기 위해, 변수 개수에 페널티를 주어 계산하는 지표는?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 수정된 결정계수(Adjusted R²)</span></p>
+<p>일반 R²는 유의미하지 않은 변수를 추가해도 값이 줄어들지 않는 단점이 있어, 변수 개수를 고려해 페널티를 부여한 수정된 결정계수를 함께 확인합니다.</p>
+</div>
+</details>
+
 ---
 
 # 7. 합격 꿀팁

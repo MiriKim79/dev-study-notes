@@ -167,7 +167,7 @@ spec:
 
 ```text
 Primary Region(서울) 장애 시
-→ DR(Disaster Recovery) Region(도쿄 등)으로 트래�스 전환
+→ DR(Disaster Recovery) Region(도쿄 등)으로 트래픽 전환
 ```
 
 | 전략 | RTO(복구 시간) | 비용 |
@@ -178,3 +178,145 @@ Primary Region(서울) 장애 시
 | Active-Active(두 리전 모두 상시 운영) | 거의 없음 | 가장 비쌈 |
 
 **기본 상식**: 모든 서비스가 Active-Active 수준의 재해 복구를 갖출 필요는 없습니다. 서비스 중단이 실제로 얼마나 큰 손해로 이어지는지(RTO/RPO 요구사항)를 먼저 정하고, 그에 맞는 비용 수준의 전략을 선택합니다. 스타트업 초기 단계에서는 정기 백업만으로 충분한 경우가 많습니다.
+
+---
+
+# 10. Terraform 모듈로 재사용성 높이기
+
+같은 코드를 환경마다(개발/스테이징/운영) 복사-붙여넣기 하면 한쪽만 고치고 다른 쪽을 놓치는 실수가 반복됩니다. **모듈(Module)**로 공통 구조를 묶어 재사용합니다.
+
+```hcl
+# modules/web-server/main.tf — 재사용 가능한 모듈 정의
+variable "instance_type" {}
+variable "environment" {}
+
+resource "aws_instance" "web" {
+  ami           = "ami-0abcdef1234567890"
+  instance_type = var.instance_type
+  tags = { Name = "${var.environment}-web" }
+}
+```
+
+```hcl
+# environments/prod/main.tf — 모듈 호출
+module "web_prod" {
+  source        = "../../modules/web-server"
+  instance_type = "t3.medium"
+  environment   = "prod"
+}
+
+module "web_staging" {
+  source        = "../../modules/web-server"
+  instance_type = "t3.micro"
+  environment   = "staging"
+}
+```
+
+**기본 상식**: 모듈화의 기준은 "이 구성을 2번 이상 반복해서 쓰는가"입니다. 한 번만 쓰는 리소스까지 억지로 모듈로 쪼개면 오히려 코드를 따라가기 어려워집니다.
+
+## 워크스페이스로 환경 분리하기
+
+```bash
+terraform workspace new staging
+terraform workspace new prod
+terraform workspace select prod
+terraform apply   # 현재 선택된 workspace의 state만 영향받음
+```
+
+**주의**: workspace는 같은 코드를 여러 state로 나누는 가벼운 방법이지만, 운영·개발처럼 리소스 구성 자체가 크게 다르면 워크스페이스보다 디렉터리(환경별 폴더)로 완전히 분리하는 편이 실수를 줄입니다.
+
+---
+
+# 11. GitOps로 배포 자동화하기
+
+인프라·쿠버네티스 설정 변경을 Git 저장소를 기준(Single Source of Truth)으로 자동 반영하는 방식입니다.
+
+```text
+전통적 배포: 사람이 kubectl apply를 직접 실행 → 누가 언제 뭘 바꿨는지 클러스터 안에만 남음
+GitOps: Git에 설정 변경 PR 병합 → 자동화 도구(ArgoCD 등)가 감지해 클러스터에 자동 반영
+```
+
+```text
+1. 개발자가 deployment.yaml의 image 태그를 새 버전으로 수정하는 PR을 올림
+2. 리뷰·머지되면 ArgoCD가 Git 저장소와 클러스터 상태 차이를 감지
+3. 자동으로 클러스터에 반영(Sync) → 클러스터 상태 = Git 저장소 상태
+4. 문제 생기면 Git revert만으로 이전 상태로 롤백
+```
+
+**기본 상식**: GitOps의 핵심 이점은 "클러스터의 현재 상태를 Git 커밋 이력만 보고 그대로 재구성할 수 있다"는 것입니다. 장애 시 "지금 클러스터에 뭐가 떠있는지" 콘솔을 뒤질 필요 없이 Git 로그가 곧 답입니다.
+
+---
+
+# 12. 시크릿 관리와 오토스케일링
+
+## 시크릿을 코드에 직접 넣지 않기
+
+```hcl
+# 잘못된 예 — 비밀번호가 코드에 그대로 노출, Git 이력에 영구히 남음
+resource "aws_db_instance" "main" {
+  password = "SuperSecret123!"
+}
+```
+
+```hcl
+# 올바른 예 — 별도 시크릿 관리 서비스에서 값을 가져옴
+data "aws_secretsmanager_secret_version" "db" {
+  secret_id = "prod/db/password"
+}
+
+resource "aws_db_instance" "main" {
+  password = data.aws_secretsmanager_secret_version.db.secret_string
+}
+```
+
+**기본 상식**: 시크릿 값 자체는 코드 저장소가 아니라 AWS Secrets Manager, HashiCorp Vault 같은 전용 서비스에 두고, 코드에는 "어디서 가져올지"만 선언합니다. `.tfstate` 파일에도 값이 평문으로 남을 수 있으므로 State 파일 접근 권한도 함께 관리합니다.
+
+## 오토스케일링(Autoscaling)
+
+| 방식 | 기준 | 예시 |
+| --- | --- | --- |
+| 수평적 확장(HPA) | CPU/메모리 사용률, 커스텀 지표 | 사용률 70% 초과 시 Pod 2개 → 5개 |
+| 수직적 확장(VPA) | 컨테이너 하나의 리소스 할당량 자체를 조정 | 메모리 부족이 반복되면 할당량 자동 증가 |
+| 클러스터 오토스케일러 | Pod를 못 띄울 만큼 노드가 부족하면 노드 자체를 추가 | 트래픽 급증 시 서버 대수 자동 증설 |
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+spec:
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+```
+
+**실무 팁**: 오토스케일링을 도입하면 "트래픽이 늘면 알아서 늘어난다"고 안심하기 쉽지만, 새 Pod가 뜨는 데도 시간이 걸립니다(콜드 스타트). 급격한 트래픽 스파이크(이벤트 오픈 등)가 예상된다면 오토스케일링만 믿지 말고 미리 최소 Pod 수를 늘려두는 예방적 스케일링을 함께 씁니다.
+
+---
+
+# 13. 컨테이너 이미지 보안
+
+- 베이스 이미지는 `latest` 태그 대신 **버전을 고정**해서 사용 — 예기치 않은 변경 방지
+- 이미지 빌드 후 취약점 스캐너(Trivy 등)로 알려진 CVE(취약점) 점검을 CI에 포함
+- 컨테이너를 root 권한이 아닌 일반 사용자로 실행하도록 Dockerfile에 명시
+- 불필요한 패키지·빌드 도구는 최종 이미지에서 제거(멀티스테이지 빌드 활용)
+
+```dockerfile
+# 멀티스테이지 빌드 — 빌드 도구는 최종 이미지에 남지 않음
+FROM node:20 AS build
+WORKDIR /app
+COPY . .
+RUN npm ci && npm run build
+
+FROM node:20-slim
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+USER node          # root가 아닌 일반 사용자로 실행
+CMD ["node", "dist/server.js"]
+```
+
+**기본 상식**: 컨테이너가 격리돼 있다고 해서 이미지 자체의 취약점까지 안전한 것은 아닙니다. 베이스 이미지에 알려진 취약점이 있으면 그 컨테이너를 통해 공격 표면이 그대로 넓어집니다.
