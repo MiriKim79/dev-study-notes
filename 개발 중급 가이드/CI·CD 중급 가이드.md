@@ -457,120 +457,7 @@ def health():
 
 ---
 
-# 12. 모노레포 CI 최적화
-
-프론트엔드·백엔드가 한 저장소에 있으면, 백엔드 코드만 고쳤는데도 프론트엔드 테스트까지 매번 전부 돌아 파이프라인이 느려지기 쉽습니다.
-
-```yaml
-jobs:
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      frontend: ${{ steps.filter.outputs.frontend }}
-      backend: ${{ steps.filter.outputs.backend }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            frontend:
-              - 'frontend/**'
-            backend:
-              - 'backend/**'
-
-  test-frontend:
-    needs: changes
-    if: needs.changes.outputs.frontend == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "frontend 디렉터리가 바뀐 경우에만 실행"
-
-  test-backend:
-    needs: changes
-    if: needs.changes.outputs.backend == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "backend 디렉터리가 바뀐 경우에만 실행"
-```
-
-변경된 경로를 감지해 해당하는 job만 실행하면, 관련 없는 부분의 빌드·테스트를 매번 반복하지 않아도 됩니다.
-
-**기본 상식**: 처음부터 이렇게 나눌 필요는 없습니다. 파이프라인이 실제로 몇 분 이상 걸려 답답해지기 시작할 때 도입해도 늦지 않습니다. 너무 이른 최적화는 설정 복잡도만 늘립니다.
-
----
-
-# 13. 컨테이너 이미지 빌드와 배포
-
-서버 환경을 통째로 패키징해서 배포하면 "내 컴퓨터에서는 되는데 서버에서는 안 되는" 문제를 크게 줄일 수 있습니다.
-
-```yaml
-jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Docker 이미지 빌드
-        run: docker build -t my-registry/app:${{ github.sha }} .
-      - name: 레지스트리 로그인
-        run: echo "${{ secrets.REGISTRY_TOKEN }}" | docker login -u user --password-stdin my-registry
-      - name: 이미지 푸시
-        run: docker push my-registry/app:${{ github.sha }}
-```
-
-커밋 해시(`github.sha`)를 이미지 태그로 쓰면, 어떤 커밋이 실제로 배포된 이미지인지 항상 추적할 수 있습니다. `latest` 태그만 쓰면 "지금 서버에 뭐가 떠 있는지" 알 수 없게 됩니다.
-
-**실무 팁**: 이미지 빌드 시간은 레이어 캐싱으로 크게 줄일 수 있습니다. `Dockerfile`에서 자주 바뀌지 않는 부분(의존성 설치)을 자주 바뀌는 부분(소스 코드 복사)보다 앞에 배치하면, 소스만 바뀌었을 때 의존성 설치 레이어는 캐시에서 재사용됩니다.
-
----
-
-# 14. 배포 알림과 관측 연동
-
-배포가 성공했는지 실패했는지 팀원이 CI 탭을 직접 열어보지 않아도 알 수 있게 만듭니다.
-
-```yaml
-- name: 슬랙으로 배포 결과 알림
-  if: always()
-  run: |
-    STATUS="${{ job.status }}"
-    curl -X POST -H 'Content-type: application/json' \
-      --data "{\"text\":\"배포 ${STATUS}: ${{ github.sha }}\"}" \
-      ${{ secrets.SLACK_WEBHOOK_URL }}
-```
-
-`if: always()`를 붙이면 이전 step이 실패해도 알림 step은 실행되어, 실패도 즉시 팀에 공유됩니다. 배포 성공 알림에는 어떤 커밋이 배포됐는지(커밋 메시지, 작성자)를 함께 남기면 "누가 뭘 배포했는지" 추적이 쉬워집니다.
-
-**기본 상식**: 알림이 너무 잦으면(사소한 실패까지 매번 알림) 팀원들이 무시하게 됩니다("알림 피로"). 실패·프로덕션 배포처럼 실제로 확인이 필요한 이벤트만 알림을 보내도록 조정합니다.
-
----
-
-# 15. 매트릭스 빌드로 여러 환경 동시 검증
-
-여러 버전(Node 버전, OS 등)에서 동시에 테스트해야 할 때, job을 여러 번 복사해 쓰지 않고 매트릭스로 한 번에 정의합니다.
-
-```yaml
-jobs:
-  test:
-    strategy:
-      matrix:
-        node-version: [18, 20, 22]
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm test
-```
-
-위 설정은 `node-version 3개 × os 2개 = 6개`의 조합을 자동으로 병렬 실행합니다. 라이브러리처럼 여러 환경에서 동작을 보장해야 하는 프로젝트에서 특히 유용합니다.
-
-**기본 상식**: 조합이 지원 범위를 벗어나면 `strategy.fail-fast: false`를 추가해, 한 조합이 실패해도 나머지 조합은 끝까지 실행되게 할 수 있습니다(기본값은 하나 실패 시 나머지도 즉시 취소).
-
----
-
-# 16. 릴리스 태깅과 버전 자동화
+# 20. 릴리스 태깅과 버전 자동화
 
 배포할 때마다 버전 번호를 수동으로 정하면 실수가 생기기 쉽습니다. 커밋 메시지 규칙을 지키면 버전을 자동으로 계산할 수 있습니다.
 
@@ -595,7 +482,7 @@ BREAKING CHANGE: ... → 메이저 버전 증가 (1.3.0 → 2.0.0)
 
 ---
 
-# 17. 배포 빈도와 DORA 지표
+# 21. 배포 빈도와 DORA 지표
 
 팀의 배포 프로세스가 건강한지 판단하는 데 자주 쓰이는 4가지 지표(DORA metrics)입니다.
 
