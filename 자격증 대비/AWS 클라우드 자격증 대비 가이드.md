@@ -207,3 +207,27 @@ D) 지원 플랜은 모두 동일하다
 # 8. 진짜 기출문제는 여기서
 
 공식 학습 자료와 연습 문제는 **AWS Skill Builder(skillbuilder.aws)**, 자격증 안내는 **AWS Certification(aws.amazon.com/certification)**에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.
+
+---
+
+# 9. 자주 헷갈리는 서비스 비교
+
+| 헷갈리는 짝 | 구분 |
+| --- | --- |
+| S3 vs EBS vs EFS | S3(객체 스토리지, 인터넷으로 접근), EBS(EC2 전용 블록 스토리지, 한 인스턴스에 연결), EFS(여러 EC2가 동시에 공유하는 파일 스토리지) |
+| Security Group vs NACL | Security Group은 인스턴스 단위 방화벽(허용 규칙만, Stateful), NACL은 서브넷 단위 방화벽(허용+거부 규칙, Stateless) |
+| RDS vs DynamoDB | RDS는 관계형(스키마 고정, JOIN 가능), DynamoDB는 NoSQL(스키마 유연, 대규모 트래픽에 수평 확장 유리) |
+| IAM 사용자 vs 역할(Role) | 사용자는 특정 사람/애플리케이션에 고정된 자격 증명, 역할은 필요할 때 임시로 위임받아 쓰는 권한(자격 증명 없이 위임) |
+| CloudFront vs Route 53 | CloudFront는 콘텐츠를 엣지에 캐싱하는 CDN, Route 53은 DNS(도메인 이름을 IP로 변환) 서비스 |
+| Auto Scaling vs ELB | Auto Scaling은 트래픽에 따라 서버 대수를 조절, ELB는 여러 서버로 트래픽을 분산 — 둘은 함께 쓰이는 짝 |
+
+---
+
+# 10. 시험 직전 최종 점검 리스트
+
+- [ ] Region(지역)과 Availability Zone(가용 영역)의 관계를 그림으로 설명할 수 있는가
+- [ ] 온디맨드/예약/스팟 인스턴스의 가격·중단 특성 차이를 아는가
+- [ ] S3의 스토리지 클래스(Standard, IA, Glacier 등)를 비용·접근 빈도 기준으로 구분할 수 있는가
+- [ ] VPC의 퍼블릭/프라이빗 서브넷 개념과 인터넷 게이트웨이 역할을 아는가
+- [ ] 책임 공유 모델(Shared Responsibility Model)에서 AWS와 고객의 책임 경계를 설명할 수 있는가
+- [ ] 프리 티어(Free Tier)의 기본 개념과 청구 알림(Billing Alarm) 설정 목적을 아는가

@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유</a><ul class="toc-h2-list"><li><a href="#2단계-커밋-2PC-이론적-해법과-현실의-한계">2단계 커밋(2PC)— 이론적 해법과 현실의 한계</a></li></ul></li><li class="toc-h1"><a href="#2-샤딩을-실전에-적용할-때의-함정">2. 샤딩을 실전에 적용할 때의 함정</a><ul class="toc-h2-list"><li><a href="#샤드-키를-잘못-고르면">샤드 키를 잘못 고르면</a></li><li><a href="#JOIN이-안-됨">JOIN이 안 됨</a></li><li><a href="#리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다">리샤딩(샤드를 다시 나누는 일)이 매우 비쌉니다</a></li></ul></li><li class="toc-h1"><a href="#3-정합성-모델-이해하기">3. 정합성 모델 이해하기</a></li><li class="toc-h1"><a href="#4-대규모-마이그레이션-전략">4. 대규모 마이그레이션 전략</a><ul class="toc-h2-list"><li><a href="#Expand-Contract-패턴">Expand-Contract 패턴</a></li></ul></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-실전-체크리스트">6. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-분산-트랜잭션이-어려운-이유">1. 분산 트랜잭션이 어려운 이유</a><ul class="toc-h2-list"><li><a href="#2단계-커밋-2PC-이론적-해법과-현실의-한계">2단계 커밋(2PC)— 이론적 해법과 현실의 한계</a></li></ul></li><li class="toc-h1"><a href="#2-샤딩을-실전에-적용할-때의-함정">2. 샤딩을 실전에 적용할 때의 함정</a><ul class="toc-h2-list"><li><a href="#샤드-키를-잘못-고르면">샤드 키를 잘못 고르면</a></li><li><a href="#JOIN이-안-됨">JOIN이 안 됨</a></li><li><a href="#리샤딩-샤드를-다시-나누는-일-이-매우-비쌉니다">리샤딩(샤드를 다시 나누는 일)이 매우 비쌉니다</a></li></ul></li><li class="toc-h1"><a href="#3-정합성-모델-이해하기">3. 정합성 모델 이해하기</a></li><li class="toc-h1"><a href="#4-대규모-마이그레이션-전략">4. 대규모 마이그레이션 전략</a><ul class="toc-h2-list"><li><a href="#Expand-Contract-패턴">Expand-Contract 패턴</a></li></ul></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-실전-체크리스트">6. 실전 체크리스트</a></li><li class="toc-h1"><a href="#7-CAP-정리와-실전-선택">7. CAP 정리와 실전 선택</a></li><li class="toc-h1"><a href="#8-이벤트-소싱과-CQRS-기초">8. 이벤트 소싱과 CQRS 기초</a><ul class="toc-h2-list"><li><a href="#이벤트-소싱-Event-Sourcing">이벤트 소싱(Event Sourcing)</a></li><li><a href="#CQRS-Command-Query-Responsibility-Segregation">CQRS (Command Query Responsibility Segregation)</a></li></ul></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">데이터베이스 고급 가이드</h1>
         <p class="page-tagline">복제·샤딩 기초는 안다? 분산 트랜잭션과 샤딩을 실전에 적용할 때의 함정을 다룹니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 인덱스 튜닝·복제·샤딩 기초 개념은 알고, 실제로 여러 서버·여러 서비스에 걸친 데이터 정합성 문제를 겪기 시작한 사람</div><div class="intro-row"><strong>목적:</strong> 분산 트랜잭션, 샤딩을 실전에 적용할 때의 함정, 대규모 마이그레이션 전략을 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 분산 트랜잭션이 어려운 이유</li><li>2. 샤딩을 실전에 적용할 때의 함정</li><li>3. 정합성 모델 이해하기</li><li>4. 대규모 마이그레이션 전략</li><li>5. 자주 하는 실수</li><li>6. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 분산 트랜잭션이 어려운 이유</li><li>2. 샤딩을 실전에 적용할 때의 함정</li><li>3. 정합성 모델 이해하기</li><li>4. 대규모 마이그레이션 전략</li><li>5. 자주 하는 실수</li><li>6. 실전 체크리스트</li><li>7. CAP 정리와 실전 선택</li><li>8. 이벤트 소싱과 CQRS 기초</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
@@ -99,6 +99,24 @@ DB 1은 성공, DB 2는 네트워크 오류로 실패 → 돈이 사라짐</code
 <hr>
 <h2 class="section-h1" id="6-실전-체크리스트">6. 실전 체크리스트<a class="heading-anchor" href="#6-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>이 데이터가 정말 강한 일관성이 필요한지, 최종 일관성으로 충분한지 구분했는가</span></li><li><input type="checkbox" disabled><span>여러 DB/서비스에 걸친 작업의 실패 시 보상(되돌리기) 절차가 있는가</span></li><li><input type="checkbox" disabled><span>샤드 키가 실제 트래픽 패턴 기준으로 고르게 분산되는가</span></li><li><input type="checkbox" disabled><span>스키마 변경을 Expand-Contract처럼 단계적으로 배포할 수 있는가</span></li><li><input type="checkbox" disabled><span>마이그레이션을 실제로 되돌려본 적(리허설)이 있는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="7-CAP-정리와-실전-선택">7. CAP 정리와 실전 선택<a class="heading-anchor" href="#7-CAP-정리와-실전-선택" aria-label="이 섹션 링크">#</a></h2>
+<p>분산 시스템은 일관성(Consistency), 가용성(Availability), 파티션 허용성(Partition tolerance) 세 가지를 동시에 완벽히 만족할 수 없습니다. 네트워크 분리(파티션)는 항상 일어날 수 있으므로, 실제로는 "파티션이 발생했을 때 일관성과 가용성 중 무엇을 우선할지"의 선택입니다.</p>
+<div class="table-scroll"><table><thead><tr><th>선택</th><th>의미</th><th>예시</th></tr></thead><tbody><tr><td>CP (일관성 우선)</td><td>파티션 발생 시 응답을 거부하더라도 데이터 정합성을 지킴</td><td>결제, 재고 차감</td></tr><tr><td>AP (가용성 우선)</td><td>파티션 발생 시 오래된 값이라도 일단 응답</td><td>상품 조회, 좋아요 수</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: 하나의 서비스 안에서도 데이터 종류에 따라 CP/AP를 다르게 선택할 수 있습니다. "우리 서비스는 CP다/AP다"로 전체를 한 번에 정하기보다, 데이터별로 요구되는 일관성 수준을 판단합니다.</p>
+<hr>
+<h2 class="section-h1" id="8-이벤트-소싱과-CQRS-기초">8. 이벤트 소싱과 CQRS 기초<a class="heading-anchor" href="#8-이벤트-소싱과-CQRS-기초" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="이벤트-소싱-Event-Sourcing">이벤트 소싱(Event Sourcing)<a class="heading-anchor" href="#이벤트-소싱-Event-Sourcing" aria-label="이 섹션 링크">#</a></h3>
+<p>현재 상태만 저장하는 대신, "무슨 일이 일어났는지"를 이벤트로 순서대로 저장하고 현재 상태는 이벤트들을 재생해서 계산합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>일반적인 방식: orders 테이블의 status 컬럼을 직접 UPDATE
+이벤트 소싱: OrderCreated → OrderPaid → OrderShipped 이벤트를 순서대로 저장
+            현재 상태 = 이 이벤트들을 순서대로 적용한 결과</code></pre></div>
+<p><strong>장점</strong>: 과거 상태를 그대로 재현할 수 있고, "왜 이 상태가 됐는지" 이력이 자연스럽게 남습니다. <strong>단점</strong>: 조회가 복잡해지고(이벤트를 재생해야 함), 팀 전체가 익숙해지기까지 학습 비용이 큽니다.</p>
+<h3 class="section-h2" id="CQRS-Command-Query-Responsibility-Segregation">CQRS (Command Query Responsibility Segregation)<a class="heading-anchor" href="#CQRS-Command-Query-Responsibility-Segregation" aria-label="이 섹션 링크">#</a></h3>
+<p>쓰기(Command)와 읽기(Query)의 모델을 분리하는 패턴입니다. 이벤트 소싱과 자주 함께 쓰입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>쓰기: 이벤트를 이벤트 저장소에 기록
+읽기: 이벤트를 조회하기 편한 형태(읽기 전용 테이블)로 미리 가공해둠</code></pre></div>
+<p><strong>기본 상식</strong>: 이벤트 소싱과 CQRS는 강력하지만 복잡도가 크게 늘어납니다. 감사(audit) 이력이 법적으로 중요하거나, 복잡한 도메인 이벤트 흐름을 정확히 추적해야 하는 경우(금융, 재고)에 국한해서 검토하고, 단순 CRUD로 충분한 도메인에는 과한 선택입니다.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="클라우드·IaC 고급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">클라우드·IaC 고급 가이드</span></a><a class="doc-nav-link next" href="보안 심화 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">보안 심화 가이드</span></a></nav>
       </div>
     </main>

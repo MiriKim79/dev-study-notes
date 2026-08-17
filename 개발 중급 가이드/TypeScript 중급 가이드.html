@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-Union-Intersection-Generic">1. Union, Intersection, Generic</a><ul class="toc-h2-list"><li><a href="#Union-이거-아니면-저거">Union — &quot;이거 아니면 저거&quot;</a></li><li><a href="#Intersection-이것도-저것도-다">Intersection — &quot;이것도 저것도 다&quot;</a></li><li><a href="#Generic-타입을-매개변수처럼">Generic — 타입을 매개변수처럼</a></li></ul></li><li class="toc-h1"><a href="#2-interface-vs-type">2. interface vs type</a></li><li class="toc-h1"><a href="#3-유틸리티-타입">3. 유틸리티 타입</a></li><li class="toc-h1"><a href="#4-API-응답을-안전하게-다루기">4. API 응답을 안전하게 다루기</a></li><li class="toc-h1"><a href="#5-any를-피하는-법">5. `any`를 피하는 법</a><ul class="toc-h2-list"><li><a href="#any의-문제">`any`의 문제</a></li><li><a href="#unknown과-타입-가드">`unknown`과 타입 가드</a></li></ul></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-Union-Intersection-Generic">1. Union, Intersection, Generic</a><ul class="toc-h2-list"><li><a href="#Union-이거-아니면-저거">Union — &quot;이거 아니면 저거&quot;</a></li><li><a href="#Intersection-이것도-저것도-다">Intersection — &quot;이것도 저것도 다&quot;</a></li><li><a href="#Generic-타입을-매개변수처럼">Generic — 타입을 매개변수처럼</a></li></ul></li><li class="toc-h1"><a href="#2-interface-vs-type">2. interface vs type</a></li><li class="toc-h1"><a href="#3-유틸리티-타입">3. 유틸리티 타입</a></li><li class="toc-h1"><a href="#4-API-응답을-안전하게-다루기">4. API 응답을 안전하게 다루기</a></li><li class="toc-h1"><a href="#5-any를-피하는-법">5. `any`를 피하는 법</a><ul class="toc-h2-list"><li><a href="#any의-문제">`any`의 문제</a></li><li><a href="#unknown과-타입-가드">`unknown`과 타입 가드</a></li></ul></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-더-많은-유틸리티-타입">8. 더 많은 유틸리티 타입</a></li><li class="toc-h1"><a href="#9-함수-타입과-오버로드">9. 함수 타입과 오버로드</a><ul class="toc-h2-list"><li><a href="#함수-타입-표현">함수 타입 표현</a></li><li><a href="#함수-오버로드-입력에-따라-반환-타입이-달라질-때">함수 오버로드 — 입력에 따라 반환 타입이 달라질 때</a></li></ul></li><li class="toc-h1"><a href="#10-타입-좁히기-Narrowing-심화">10. 타입 좁히기(Narrowing) 심화</a><ul class="toc-h2-list"><li><a href="#판별-유니온-Discriminated-Union">판별 유니온(Discriminated Union)</a></li><li><a href="#is-타입-가드-함수">`is` 타입 가드 함수</a></li></ul></li><li class="toc-h1"><a href="#11-제네릭-제약-Generic-Constraints">11. 제네릭 제약(Generic Constraints)</a></li><li class="toc-h1"><a href="#12-프론트엔드에서-자주-쓰는-타입-패턴">12. 프론트엔드에서 자주 쓰는 타입 패턴</a><ul class="toc-h2-list"><li><a href="#React-컴포넌트-Props-타입">React 컴포넌트 Props 타입</a></li><li><a href="#이벤트-핸들러-타입">이벤트 핸들러 타입</a></li><li><a href="#API-훅의-반환-타입을-제네릭으로">API 훅의 반환 타입을 제네릭으로</a></li></ul></li><li class="toc-h1"><a href="#13-tsconfig-json-핵심-옵션">13. tsconfig.json 핵심 옵션</a></li><li class="toc-h1"><a href="#14-자주-만나는-컴파일-에러-읽는-법">14. 자주 만나는 컴파일 에러 읽는 법</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">TypeScript 중급 가이드</h1>
         <p class="page-tagline">타입 표기가 귀찮은 잔소리처럼 느껴진다? 버그를 미리 잡아주는 도구로 바뀌는 순간을 다룹니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> JavaScript 변수·함수·비동기 처리에 익숙하고, TypeScript 기본 타입 표기(<code class="inline-code">: string</code>, <code class="inline-code">: number</code>)는 써봤지만 실전 활용은 처음인 사람</div><div class="intro-row"><strong>목적:</strong> 타입을 "귀찮은 표기"가 아니라 "버그를 미리 잡아주는 도구"로 쓰는 방법을 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. Union, Intersection, Generic</li><li>2. interface vs type</li><li>3. 유틸리티 타입</li><li>4. API 응답을 안전하게 다루기</li><li>5. `any`를 피하는 법</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. Union, Intersection, Generic</li><li>2. interface vs type</li><li>3. 유틸리티 타입</li><li>4. API 응답을 안전하게 다루기</li><li>5. `any`를 피하는 법</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li><li>8. 더 많은 유틸리티 타입</li><li>9. 함수 타입과 오버로드</li><li>10. 타입 좁히기(Narrowing) 심화</li><li>11. 제네릭 제약(Generic Constraints)</li><li>12. 프론트엔드에서 자주 쓰는 타입 패턴</li><li>13. tsconfig.json 핵심 옵션</li><li>14. 자주 만나는 컴파일 에러 읽는 법</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
@@ -157,6 +157,172 @@ type Course = z.infer&lt;typeof CourseSchema&gt;;   <span class="tok-comment">//
 <hr>
 <h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span><code class="inline-code">any</code> 대신 구체적인 타입이나 <code class="inline-code">unknown</code> + 타입 가드를 쓰는가</span></li><li><input type="checkbox" disabled><span>외부에서 오는 데이터(API 응답, 사용자 입력)를 런타임에도 검증하는가</span></li><li><input type="checkbox" disabled><span>반복되는 타입을 유틸리티 타입(<code class="inline-code">Pick</code>/<code class="inline-code">Omit</code>/<code class="inline-code">Partial</code>)으로 재사용하는가</span></li><li><input type="checkbox" disabled><span><code class="inline-code">interface</code>/<code class="inline-code">type</code> 사용 기준이 팀 안에서 통일되어 있는가</span></li><li><input type="checkbox" disabled><span>타입 에러 메시지를 실제로 읽고 원인을 이해한 뒤 수정하는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="8-더-많은-유틸리티-타입">8. 더 많은 유틸리티 타입<a class="heading-anchor" href="#8-더-많은-유틸리티-타입" aria-label="이 섹션 링크">#</a></h2>
+<p><code class="inline-code">Pick</code>/<code class="inline-code">Omit</code>/<code class="inline-code">Partial</code> 외에도 실무에서 자주 쓰는 유틸리티 타입들이 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>interface Course {
+  id: number;
+  title: string;
+  price: number;
+  tags: string[];
+}
+
+type RequiredCourse = Required&lt;Course&gt;;
+<span class="tok-comment">// 모든 속성을 필수로(반대로 옵셔널을 강제로 채워야 하는 상황에 사용)</span>
+
+type CourseRecord = Record&lt;string, Course&gt;;
+<span class="tok-comment">// { [key: string]: Course } — id를 키로 하는 강의 맵을 표현할 때 유용</span>
+
+type CourseKeys = keyof Course;
+<span class="tok-comment">// &quot;id&quot; | &quot;title&quot; | &quot;price&quot; | &quot;tags&quot; — 속성 이름들의 Union</span>
+
+type PriceType = Course[&quot;price&quot;];
+<span class="tok-comment">// number — 특정 속성의 타입만 뽑아옴(Indexed Access Type)</span>
+
+type Extracted = Extract&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;a&quot; | &quot;c&quot;&gt;;   <span class="tok-comment">// &quot;a&quot; | &quot;c&quot;</span>
+type Excluded = Exclude&lt;&quot;a&quot; | &quot;b&quot; | &quot;c&quot;, &quot;a&quot;&gt;;           <span class="tok-comment">// &quot;b&quot; | &quot;c&quot;</span>
+
+type NonNullableTitle = NonNullable&lt;string | <span class="tok-keyword">null</span> | <span class="tok-keyword">undefined</span>&gt;;  <span class="tok-comment">// string</span></code></pre></div>
+<p><strong>실무 팁</strong>: <code class="inline-code">Record&lt;string, Course&gt;</code>처럼 "id를 키로 하는 맵"을 다룰 때는, 검색 속도(배열의 <code class="inline-code">find</code>보다 객체 조회가 빠름)를 챙기면서도 <code class="inline-code">keyof</code>/<code class="inline-code">Record</code>로 타입 안전성을 유지할 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="9-함수-타입과-오버로드">9. 함수 타입과 오버로드<a class="heading-anchor" href="#9-함수-타입과-오버로드" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="함수-타입-표현">함수 타입 표현<a class="heading-anchor" href="#함수-타입-표현" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>type Fetcher = (url: string) =&gt; Promise&lt;Response&gt;;
+
+<span class="tok-keyword">const</span> fetchCourse: Fetcher = <span class="tok-keyword">async</span> (url) =&gt; {
+  <span class="tok-keyword">return</span> fetch(url);
+};
+
+<span class="tok-comment">// 콜백 함수의 타입도 명시적으로</span>
+<span class="tok-keyword">function</span> onSuccess(callback: (data: Course) =&gt; void) {
+  <span class="tok-comment">// ...</span>
+}</code></pre></div>
+<h3 class="section-h2" id="함수-오버로드-입력에-따라-반환-타입이-달라질-때">함수 오버로드 — 입력에 따라 반환 타입이 달라질 때<a class="heading-anchor" href="#함수-오버로드-입력에-따라-반환-타입이-달라질-때" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> getCourse(id: number): Course;
+<span class="tok-keyword">function</span> getCourse(ids: number[]): Course[];
+<span class="tok-keyword">function</span> getCourse(idOrIds: number | number[]): Course | Course[] {
+  <span class="tok-keyword">if</span> (Array.isArray(idOrIds)) {
+    <span class="tok-keyword">return</span> idOrIds.map((id) =&gt; findCourse(id));
+  }
+  <span class="tok-keyword">return</span> findCourse(idOrIds);
+}
+
+<span class="tok-keyword">const</span> one = getCourse(<span class="tok-number">1</span>);       <span class="tok-comment">// Course</span>
+<span class="tok-keyword">const</span> many = getCourse([<span class="tok-number">1</span>, <span class="tok-number">2</span>]); <span class="tok-comment">// Course[]</span></code></pre></div>
+<p>호출하는 쪽에서 넘긴 인자 형태에 따라 TypeScript가 정확한 반환 타입을 추론해 줍니다. Union으로만 처리하면 호출부에서 매번 타입을 좁혀야 하는 번거로움을 줄일 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="10-타입-좁히기-Narrowing-심화">10. 타입 좁히기(Narrowing) 심화<a class="heading-anchor" href="#10-타입-좁히기-Narrowing-심화" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="판별-유니온-Discriminated-Union">판별 유니온(Discriminated Union)<a class="heading-anchor" href="#판별-유니온-Discriminated-Union" aria-label="이 섹션 링크">#</a></h3>
+<p>여러 타입이 섞인 Union을 다룰 때, 공통 필드(태그)로 분기하면 각 분기 안에서 타입이 정확히 좁혀집니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>type LoadingState = { status: &quot;loading&quot; };
+type SuccessState = { status: &quot;success&quot;; data: Course[] };
+type ErrorState = { status: &quot;error&quot;; message: string };
+
+type FetchState = LoadingState | SuccessState | ErrorState;
+
+<span class="tok-keyword">function</span> render(state: FetchState) {
+  switch (state.status) {
+    case &quot;loading&quot;:
+      <span class="tok-keyword">return</span> &quot;불러오는 중...&quot;;
+    case &quot;success&quot;:
+      <span class="tok-keyword">return</span> state.data.map((c) =&gt; c.title).join(&quot;, &quot;);   <span class="tok-comment">// data 접근 가능</span>
+    case &quot;error&quot;:
+      <span class="tok-keyword">return</span> state.message;                                 <span class="tok-comment">// message 접근 가능</span>
+  }
+}</code></pre></div>
+<p>각 <code class="inline-code">case</code> 블록 안에서는 TypeScript가 <code class="inline-code">state</code>를 해당 타입으로 정확히 좁혀주므로, <code class="inline-code">success</code>가 아닌데 <code class="inline-code">data</code>에 접근하는 실수를 컴파일 시점에 막아줍니다. <code class="inline-code">switch</code>에 없는 케이스가 생기면(새 상태 추가) 아래처럼 컴파일 에러로 알아챌 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> assertNever(x: never): never {
+  throw <span class="tok-keyword">new</span> Error(&quot;처리하지 않은 케이스: &quot; + x);
+}
+<span class="tok-comment">// switch의 default에서 assertNever(state)를 호출하면,</span>
+<span class="tok-comment">// 새 상태를 추가했는데 분기 처리를 빠뜨렸을 때 컴파일 에러가 발생합니다.</span></code></pre></div>
+<h3 class="section-h2" id="is-타입-가드-함수"><code class="inline-code">is</code> 타입 가드 함수<a class="heading-anchor" href="#is-타입-가드-함수" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> isCourse(value: unknown): value is Course {
+  <span class="tok-keyword">return</span> (
+    typeof value === &quot;object&quot; &amp;&amp;
+    value !== <span class="tok-keyword">null</span> &amp;&amp;
+    &quot;id&quot; in value &amp;&amp;
+    &quot;title&quot; in value
+  );
+}
+
+<span class="tok-keyword">function</span> handle(data: unknown) {
+  <span class="tok-keyword">if</span> (isCourse(data)) {
+    console.log(data.title);  <span class="tok-comment">// 이 블록 안에서는 Course로 좁혀짐</span>
+  }
+}</code></pre></div>
+<hr>
+<h2 class="section-h1" id="11-제네릭-제약-Generic-Constraints">11. 제네릭 제약(Generic Constraints)<a class="heading-anchor" href="#11-제네릭-제약-Generic-Constraints" aria-label="이 섹션 링크">#</a></h2>
+<p>제네릭이 아무 타입이나 받으면 그 안에서 쓸 수 있는 기능이 제한됩니다. <code class="inline-code">extends</code>로 "최소한 이런 속성은 있어야 한다"는 제약을 걸 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>interface HasId {
+  id: number;
+}
+
+<span class="tok-keyword">function</span> findById&lt;T <span class="tok-keyword">extends</span> HasId&gt;(list: T[], id: number): T | <span class="tok-keyword">undefined</span> {
+  <span class="tok-keyword">return</span> list.find((item) =&gt; item.id === id);
+  <span class="tok-comment">// T가 HasId를 확장하므로 item.id 접근이 안전함이 보장됨</span>
+}
+
+findById&lt;Course&gt;(courses, <span class="tok-number">1</span>);</code></pre></div>
+<p>제약이 없으면(<code class="inline-code">function findById&lt;T&gt;(...)</code>) <code class="inline-code">item.id</code>에 접근하는 순간 컴파일 에러가 납니다. TypeScript는 "T가 무엇이든 id라는 속성을 가진다"는 보장이 없다고 보기 때문입니다.</p>
+<hr>
+<h2 class="section-h1" id="12-프론트엔드에서-자주-쓰는-타입-패턴">12. 프론트엔드에서 자주 쓰는 타입 패턴<a class="heading-anchor" href="#12-프론트엔드에서-자주-쓰는-타입-패턴" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="React-컴포넌트-Props-타입">React 컴포넌트 Props 타입<a class="heading-anchor" href="#React-컴포넌트-Props-타입" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code>interface CourseCardProps {
+  course: Course;
+  onEnroll?: (courseId: number) =&gt; void;   <span class="tok-comment">// 선택적 콜백</span>
+  children?: React.ReactNode;
+}
+
+<span class="tok-keyword">function</span> CourseCard({ course, onEnroll, children }: CourseCardProps) {
+  <span class="tok-comment">// ...</span>
+}</code></pre></div>
+<h3 class="section-h2" id="이벤트-핸들러-타입">이벤트 핸들러 타입<a class="heading-anchor" href="#이벤트-핸들러-타입" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> handleChange(e: React.ChangeEvent&lt;HTMLInputElement&gt;) {
+  console.log(e.target.value);
+}
+
+<span class="tok-keyword">function</span> handleSubmit(e: React.FormEvent&lt;HTMLFormElement&gt;) {
+  e.preventDefault();
+}</code></pre></div>
+<h3 class="section-h2" id="API-훅의-반환-타입을-제네릭으로">API 훅의 반환 타입을 제네릭으로<a class="heading-anchor" href="#API-훅의-반환-타입을-제네릭으로" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">ts</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> useFetch&lt;T&gt;(url: string) {
+  <span class="tok-keyword">const</span> [data, setData] = useState&lt;T | <span class="tok-keyword">null</span>&gt;(<span class="tok-keyword">null</span>);
+  <span class="tok-keyword">const</span> [loading, setLoading] = useState(<span class="tok-keyword">true</span>);
+
+  useEffect(() =&gt; {
+    fetch(url)
+      .then((res) =&gt; res.json())
+      .then((json: T) =&gt; setData(json))
+      .finally(() =&gt; setLoading(<span class="tok-keyword">false</span>));
+  }, [url]);
+
+  <span class="tok-keyword">return</span> { data, loading };
+}
+
+<span class="tok-keyword">const</span> { data } = useFetch&lt;Course[]&gt;(&quot;/api/courses&quot;);</code></pre></div>
+<hr>
+<h2 class="section-h1" id="13-tsconfig-json-핵심-옵션">13. tsconfig.json 핵심 옵션<a class="heading-anchor" href="#13-tsconfig-json-핵심-옵션" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">json</span><button class="copy-btn" type="button">복사</button></div><pre><code>{
+  &quot;compilerOptions&quot;: {
+    &quot;strict&quot;: true,
+    &quot;noUnusedLocals&quot;: true,
+    &quot;noUnusedParameters&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;esModuleInterop&quot;: true,
+    &quot;skipLibCheck&quot;: true,
+    &quot;target&quot;: &quot;ES2020&quot;,
+    &quot;module&quot;: &quot;ESNext&quot;,
+    &quot;moduleResolution&quot;: &quot;bundler&quot;
+  }
+}</code></pre></div>
+<div class="table-scroll"><table><thead><tr><th>옵션</th><th>의미</th></tr></thead><tbody><tr><td><code class="inline-code">strict</code></td><td><code class="inline-code">strictNullChecks</code>, <code class="inline-code">noImplicitAny</code> 등 엄격 검사 전체를 켬. 신규 프로젝트는 처음부터 켜두는 것이 좋음</td></tr><tr><td><code class="inline-code">noUnusedLocals</code>/<code class="inline-code">noUnusedParameters</code></td><td>안 쓰는 변수·매개변수를 에러로 표시</td></tr><tr><td><code class="inline-code">noImplicitReturns</code></td><td>함수의 일부 경로에서만 값을 반환하면 에러</td></tr><tr><td><code class="inline-code">skipLibCheck</code></td><td><code class="inline-code">node_modules</code> 내부 타입 정의 파일 검사를 건너뛰어 빌드 속도 향상</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: <code class="inline-code">strict: false</code>인 프로젝트에 나중에 <code class="inline-code">strict: true</code>를 켜면 에러가 한 번에 쏟아집니다. 신규 프로젝트는 처음부터 켜두고, 기존 프로젝트는 <code class="inline-code">strict</code> 하위 옵션(<code class="inline-code">strictNullChecks</code>부터)을 하나씩 켜며 점진적으로 마이그레이션하는 편이 안전합니다.</p>
+<hr>
+<h2 class="section-h1" id="14-자주-만나는-컴파일-에러-읽는-법">14. 자주 만나는 컴파일 에러 읽는 법<a class="heading-anchor" href="#14-자주-만나는-컴파일-에러-읽는-법" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>에러 메시지(요약)</th><th>원인</th><th>해결 방향</th></tr></thead><tbody><tr><td><code class="inline-code">Object is possibly 'null'</code></td><td><code class="inline-code">strictNullChecks</code>에서 null 가능성을 처리하지 않음</td><td><code class="inline-code">if (x !== null)</code> 체크 또는 <code class="inline-code">?.</code> 옵셔널 체이닝</td></tr><tr><td><code class="inline-code">Type 'X' is not assignable to type 'Y'</code></td><td>타입이 서로 호환되지 않음</td><td>실제로 어떤 타입이어야 하는지 원본 타입 정의를 확인</td></tr><tr><td><code class="inline-code">Property 'x' does not exist on type 'Y'</code></td><td>좁혀지지 않은 Union이거나 오타</td><td>타입 가드로 좁히거나 속성명 확인</td></tr><tr><td><code class="inline-code">Argument of type 'X' is not assignable to parameter of type 'Y'</code></td><td>함수 호출 시 인자 타입 불일치</td><td>함수 시그니처와 실제 넘긴 값의 타입을 비교</td></tr><tr><td><code class="inline-code">Type instantiation is excessively deep</code></td><td>제네릭 타입이 과도하게 중첩·재귀됨</td><td>복잡한 타입을 단순화하거나 중간 타입으로 분리</td></tr></tbody></table></div>
+<p><strong>실무 팁</strong>: 에러 메시지를 끝까지 읽으면 대부분 "무엇을 기대했는데 무엇이 왔는지"가 적혀 있습니다. 메시지를 무시하고 <code class="inline-code">as any</code>로 덮어씌우면 당장은 편하지만 같은 종류의 버그가 런타임에 다시 나타납니다.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="데이터베이스 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">데이터베이스 중급 가이드</span></a><a class="doc-nav-link next" href="../개발 고급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">개발 고급 가이드</span></a></nav>
       </div>
     </main>

@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-코드-리뷰-문화">1. 코드 리뷰 문화</a><ul class="toc-h2-list"><li><a href="#좋은-리뷰-코멘트">좋은 리뷰 코멘트</a></li><li><a href="#리뷰-SLA-얼마나-빨리-봐줄-것인가">리뷰 SLA (얼마나 빨리 봐줄 것인가)</a></li><li><a href="#리뷰-크기">리뷰 크기</a></li></ul></li><li class="toc-h1"><a href="#2-ADR-설계-결정을-기록하기">2. ADR — 설계 결정을 기록하기</a></li><li class="toc-h1"><a href="#3-기술-부채-관리">3. 기술 부채 관리</a><ul class="toc-h2-list"><li><a href="#기술-부채란">기술 부채란</a></li><li><a href="#식별하고-관리하는-방법">식별하고 관리하는 방법</a></li></ul></li><li class="toc-h1"><a href="#4-온보딩-문서화">4. 온보딩 문서화</a></li><li class="toc-h1"><a href="#5-애자일-실전-스프린트-회고-잘하기">5. 애자일 실전 — 스프린트 회고 잘하기</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-코드-리뷰-문화">1. 코드 리뷰 문화</a><ul class="toc-h2-list"><li><a href="#좋은-리뷰-코멘트">좋은 리뷰 코멘트</a></li><li><a href="#리뷰-SLA-얼마나-빨리-봐줄-것인가">리뷰 SLA (얼마나 빨리 봐줄 것인가)</a></li><li><a href="#리뷰-크기">리뷰 크기</a></li></ul></li><li class="toc-h1"><a href="#2-ADR-설계-결정을-기록하기">2. ADR — 설계 결정을 기록하기</a></li><li class="toc-h1"><a href="#3-기술-부채-관리">3. 기술 부채 관리</a><ul class="toc-h2-list"><li><a href="#기술-부채란">기술 부채란</a></li><li><a href="#식별하고-관리하는-방법">식별하고 관리하는 방법</a></li></ul></li><li class="toc-h1"><a href="#4-온보딩-문서화">4. 온보딩 문서화</a></li><li class="toc-h1"><a href="#5-애자일-실전-스프린트-회고-잘하기">5. 애자일 실전 — 스프린트 회고 잘하기</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-브랜치-전략-심화">8. 브랜치 전략 심화</a><ul class="toc-h2-list"><li><a href="#Git-Flow-vs-GitHub-Flow-vs-Trunk-Based">Git Flow vs GitHub Flow vs Trunk-Based</a></li><li><a href="#기능-플래그-Feature-Flag">기능 플래그(Feature Flag)</a></li></ul></li><li class="toc-h1"><a href="#9-이슈-트래킹과-우선순위">9. 이슈 트래킹과 우선순위</a><ul class="toc-h2-list"><li><a href="#우선순위-심각도-라벨링">우선순위·심각도 라벨링</a></li><li><a href="#이슈와-PR-연결">이슈와 PR 연결</a></li></ul></li><li class="toc-h1"><a href="#10-원격-비동기-협업">10. 원격/비동기 협업</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">팀 협업 중급 가이드</h1>
         <p class="page-tagline">팀이 커졌다? 코드가 아니라 &#x27;함께 오래 일하는 방식&#x27;이 문제가 되는 순간입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 이슈 기반으로 브랜치·PR을 주고받는 흐름에는 익숙하고, 팀이 몇 명 이상으로 늘어난 사람</div><div class="intro-row"><strong>목적:</strong> 코드 자체가 아니라 "여러 명이 함께 오래 일하는 방식"에서 부딪히는 문제를 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 코드 리뷰 문화</li><li>2. ADR — 설계 결정을 기록하기</li><li>3. 기술 부채 관리</li><li>4. 온보딩 문서화</li><li>5. 애자일 실전 — 스프린트 회고 잘하기</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 코드 리뷰 문화</li><li>2. ADR — 설계 결정을 기록하기</li><li>3. 기술 부채 관리</li><li>4. 온보딩 문서화</li><li>5. 애자일 실전 — 스프린트 회고 잘하기</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li><li>8. 브랜치 전략 심화</li><li>9. 이슈 트래킹과 우선순위</li><li>10. 원격/비동기 협업</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
@@ -135,6 +135,35 @@ Try (다음에 시도할 것)</code></pre></div>
 <hr>
 <h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>리뷰 코멘트에 이유와 대안을 함께 쓰는가</span></li><li><input type="checkbox" disabled><span>되돌리기 어려운 설계 결정을 ADR로 남기고 있는가</span></li><li><input type="checkbox" disabled><span>발견한 기술 부채를 이슈로 등록하고 일정에 일부 반영하는가</span></li><li><input type="checkbox" disabled><span>새 팀원이 참고할 온보딩 문서(README, 아키텍처, troubleshooting)가 있는가</span></li><li><input type="checkbox" disabled><span>회고의 Try 항목을 다음 스프린트 시작 시 확인하는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="8-브랜치-전략-심화">8. 브랜치 전략 심화<a class="heading-anchor" href="#8-브랜치-전략-심화" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="Git-Flow-vs-GitHub-Flow-vs-Trunk-Based">Git Flow vs GitHub Flow vs Trunk-Based<a class="heading-anchor" href="#Git-Flow-vs-GitHub-Flow-vs-Trunk-Based" aria-label="이 섹션 링크">#</a></h3>
+<div class="table-scroll"><table><thead><tr><th>전략</th><th>구조</th><th>적합한 상황</th></tr></thead><tbody><tr><td>Git Flow</td><td><code class="inline-code">main</code>/<code class="inline-code">develop</code>/<code class="inline-code">feature</code>/<code class="inline-code">release</code>/<code class="inline-code">hotfix</code> 등 브랜치가 많고 역할이 세분화됨</td><td>배포 주기가 길고, 여러 버전을 동시에 유지해야 하는 프로젝트</td></tr><tr><td>GitHub Flow</td><td><code class="inline-code">main</code> + <code class="inline-code">feature</code> 브랜치만 사용, 머지되면 바로 배포</td><td>배포를 자주 하는 웹 서비스(이 저장소도 이 방식에 가까움)</td></tr><tr><td>Trunk-Based Development</td><td>브랜치 수명을 아주 짧게(하루 이내) 유지하고 자주 <code class="inline-code">main</code>에 합침</td><td>강력한 CI/CD와 기능 플래그를 갖춘 성숙한 팀</td></tr></tbody></table></div>
+<p><strong>실무 팁</strong>: 브랜치 전략에 정답은 없습니다. 배포 빈도, 팀 규모, CI/CD 성숙도에 맞춰 고릅니다. 초급 팀은 GitHub Flow처럼 단순한 구조로 시작하고, 필요(여러 버전 동시 유지 등)가 생기면 Git Flow 요소를 추가하는 편이 안전합니다.</p>
+<h3 class="section-h2" id="기능-플래그-Feature-Flag">기능 플래그(Feature Flag)<a class="heading-anchor" href="#기능-플래그-Feature-Flag" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">if</span> feature_flags.is_enabled(&quot;new_recommendation_engine&quot;, user):
+    <span class="tok-keyword">return</span> new_recommend(user)
+<span class="tok-keyword">return</span> legacy_recommend(user)</code></pre></div>
+<p>완성되지 않은 기능도 <code class="inline-code">main</code>에 미리 합치되, 플래그로 꺼둔 채로 배포합니다. 브랜치 수명을 짧게 유지하면서도 언제든 기능을 켜고 끌 수 있어, Trunk-Based Development의 핵심 도구로 쓰입니다.</p>
+<hr>
+<h2 class="section-h1" id="9-이슈-트래킹과-우선순위">9. 이슈 트래킹과 우선순위<a class="heading-anchor" href="#9-이슈-트래킹과-우선순위" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="우선순위-심각도-라벨링">우선순위·심각도 라벨링<a class="heading-anchor" href="#우선순위-심각도-라벨링" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Priority: P0(즉시) / P1(이번 스프린트) / P2(다음 스프린트) / P3(백로그)
+Severity: Critical(서비스 중단) / Major(주요 기능 장애) / Minor(불편함) / Trivial(사소함)</code></pre></div>
+<p>우선순위(언제 할지)와 심각도(얼마나 심각한지)는 다른 축입니다. "심각하지만 드물게 발생하는 버그"와 "사소하지만 모든 사용자가 겪는 버그"의 우선순위는 다르게 매길 수 있습니다.</p>
+<h3 class="section-h2" id="이슈와-PR-연결">이슈와 PR 연결<a class="heading-anchor" href="#이슈와-PR-연결" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>이슈: &quot;수강 신청 시 중복 결제 가능 (#42)&quot;
+PR 본문: &quot;Closes #42&quot;
+→ PR이 머지되면 이슈가 자동으로 닫힘, 이력 추적이 쉬워짐</code></pre></div>
+<hr>
+<h2 class="section-h1" id="10-원격-비동기-협업">10. 원격/비동기 협업<a class="heading-anchor" href="#10-원격-비동기-협업" aria-label="이 섹션 링크">#</a></h2>
+<p>시간대가 다르거나 재택 위주인 팀에서는 실시간 회의보다 비동기 커뮤니케이션이 중심이 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>비동기 협업이 잘 되는 팀의 특징
+- 결정 사항을 채팅 대화가 아니라 문서(ADR, 이슈)에 남김
+- &quot;지금 답을 안 주면 회의에서 결정된 대로 진행합니다&quot;처럼 기본값을 명시
+- 회의는 &quot;정보 전달&quot;이 아니라 &quot;합의가 필요한 논의&quot;에만 사용하고,
+  정보 전달은 문서나 녹화로 대체</code></pre></div>
+<p><strong>기본 상식</strong>: 비동기 협업은 회의를 줄이는 것이 목적이 아니라, "누군가 자리에 없어도 일이 멈추지 않는 것"이 목적입니다. 이를 위해서는 결정 과정과 결과가 항상 텍스트로 남아 있어야 합니다.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="../개발 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">개발 중급 가이드</span></a><a class="doc-nav-link next" href="Git·GitHub 중급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">Git·GitHub 중급 가이드</span></a></nav>
       </div>
     </main>

@@ -195,3 +195,245 @@ function process(data: unknown) {
 - [ ] 반복되는 타입을 유틸리티 타입(`Pick`/`Omit`/`Partial`)으로 재사용하는가
 - [ ] `interface`/`type` 사용 기준이 팀 안에서 통일되어 있는가
 - [ ] 타입 에러 메시지를 실제로 읽고 원인을 이해한 뒤 수정하는가
+
+---
+
+# 8. 더 많은 유틸리티 타입
+
+`Pick`/`Omit`/`Partial` 외에도 실무에서 자주 쓰는 유틸리티 타입들이 있습니다.
+
+```ts
+interface Course {
+  id: number;
+  title: string;
+  price: number;
+  tags: string[];
+}
+
+type RequiredCourse = Required<Course>;
+// 모든 속성을 필수로(반대로 옵셔널을 강제로 채워야 하는 상황에 사용)
+
+type CourseRecord = Record<string, Course>;
+// { [key: string]: Course } — id를 키로 하는 강의 맵을 표현할 때 유용
+
+type CourseKeys = keyof Course;
+// "id" | "title" | "price" | "tags" — 속성 이름들의 Union
+
+type PriceType = Course["price"];
+// number — 특정 속성의 타입만 뽑아옴(Indexed Access Type)
+
+type Extracted = Extract<"a" | "b" | "c", "a" | "c">;   // "a" | "c"
+type Excluded = Exclude<"a" | "b" | "c", "a">;           // "b" | "c"
+
+type NonNullableTitle = NonNullable<string | null | undefined>;  // string
+```
+
+**실무 팁**: `Record<string, Course>`처럼 "id를 키로 하는 맵"을 다룰 때는, 검색 속도(배열의 `find`보다 객체 조회가 빠름)를 챙기면서도 `keyof`/`Record`로 타입 안전성을 유지할 수 있습니다.
+
+---
+
+# 9. 함수 타입과 오버로드
+
+## 함수 타입 표현
+
+```ts
+type Fetcher = (url: string) => Promise<Response>;
+
+const fetchCourse: Fetcher = async (url) => {
+  return fetch(url);
+};
+
+// 콜백 함수의 타입도 명시적으로
+function onSuccess(callback: (data: Course) => void) {
+  // ...
+}
+```
+
+## 함수 오버로드 — 입력에 따라 반환 타입이 달라질 때
+
+```ts
+function getCourse(id: number): Course;
+function getCourse(ids: number[]): Course[];
+function getCourse(idOrIds: number | number[]): Course | Course[] {
+  if (Array.isArray(idOrIds)) {
+    return idOrIds.map((id) => findCourse(id));
+  }
+  return findCourse(idOrIds);
+}
+
+const one = getCourse(1);       // Course
+const many = getCourse([1, 2]); // Course[]
+```
+
+호출하는 쪽에서 넘긴 인자 형태에 따라 TypeScript가 정확한 반환 타입을 추론해 줍니다. Union으로만 처리하면 호출부에서 매번 타입을 좁혀야 하는 번거로움을 줄일 수 있습니다.
+
+---
+
+# 10. 타입 좁히기(Narrowing) 심화
+
+## 판별 유니온(Discriminated Union)
+
+여러 타입이 섞인 Union을 다룰 때, 공통 필드(태그)로 분기하면 각 분기 안에서 타입이 정확히 좁혀집니다.
+
+```ts
+type LoadingState = { status: "loading" };
+type SuccessState = { status: "success"; data: Course[] };
+type ErrorState = { status: "error"; message: string };
+
+type FetchState = LoadingState | SuccessState | ErrorState;
+
+function render(state: FetchState) {
+  switch (state.status) {
+    case "loading":
+      return "불러오는 중...";
+    case "success":
+      return state.data.map((c) => c.title).join(", ");   // data 접근 가능
+    case "error":
+      return state.message;                                 // message 접근 가능
+  }
+}
+```
+
+각 `case` 블록 안에서는 TypeScript가 `state`를 해당 타입으로 정확히 좁혀주므로, `success`가 아닌데 `data`에 접근하는 실수를 컴파일 시점에 막아줍니다. `switch`에 없는 케이스가 생기면(새 상태 추가) 아래처럼 컴파일 에러로 알아챌 수 있습니다.
+
+```ts
+function assertNever(x: never): never {
+  throw new Error("처리하지 않은 케이스: " + x);
+}
+// switch의 default에서 assertNever(state)를 호출하면,
+// 새 상태를 추가했는데 분기 처리를 빠뜨렸을 때 컴파일 에러가 발생합니다.
+```
+
+## `is` 타입 가드 함수
+
+```ts
+function isCourse(value: unknown): value is Course {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    "id" in value &&
+    "title" in value
+  );
+}
+
+function handle(data: unknown) {
+  if (isCourse(data)) {
+    console.log(data.title);  // 이 블록 안에서는 Course로 좁혀짐
+  }
+}
+```
+
+---
+
+# 11. 제네릭 제약(Generic Constraints)
+
+제네릭이 아무 타입이나 받으면 그 안에서 쓸 수 있는 기능이 제한됩니다. `extends`로 "최소한 이런 속성은 있어야 한다"는 제약을 걸 수 있습니다.
+
+```ts
+interface HasId {
+  id: number;
+}
+
+function findById<T extends HasId>(list: T[], id: number): T | undefined {
+  return list.find((item) => item.id === id);
+  // T가 HasId를 확장하므로 item.id 접근이 안전함이 보장됨
+}
+
+findById<Course>(courses, 1);
+```
+
+제약이 없으면(`function findById<T>(...)`) `item.id`에 접근하는 순간 컴파일 에러가 납니다. TypeScript는 "T가 무엇이든 id라는 속성을 가진다"는 보장이 없다고 보기 때문입니다.
+
+---
+
+# 12. 프론트엔드에서 자주 쓰는 타입 패턴
+
+## React 컴포넌트 Props 타입
+
+```ts
+interface CourseCardProps {
+  course: Course;
+  onEnroll?: (courseId: number) => void;   // 선택적 콜백
+  children?: React.ReactNode;
+}
+
+function CourseCard({ course, onEnroll, children }: CourseCardProps) {
+  // ...
+}
+```
+
+## 이벤트 핸들러 타입
+
+```ts
+function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  console.log(e.target.value);
+}
+
+function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+}
+```
+
+## API 훅의 반환 타입을 제네릭으로
+
+```ts
+function useFetch<T>(url: string) {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((json: T) => setData(json))
+      .finally(() => setLoading(false));
+  }, [url]);
+
+  return { data, loading };
+}
+
+const { data } = useFetch<Course[]>("/api/courses");
+```
+
+---
+
+# 13. tsconfig.json 핵심 옵션
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  }
+}
+```
+
+| 옵션 | 의미 |
+| --- | --- |
+| `strict` | `strictNullChecks`, `noImplicitAny` 등 엄격 검사 전체를 켬. 신규 프로젝트는 처음부터 켜두는 것이 좋음 |
+| `noUnusedLocals`/`noUnusedParameters` | 안 쓰는 변수·매개변수를 에러로 표시 |
+| `noImplicitReturns` | 함수의 일부 경로에서만 값을 반환하면 에러 |
+| `skipLibCheck` | `node_modules` 내부 타입 정의 파일 검사를 건너뛰어 빌드 속도 향상 |
+
+**기본 상식**: `strict: false`인 프로젝트에 나중에 `strict: true`를 켜면 에러가 한 번에 쏟아집니다. 신규 프로젝트는 처음부터 켜두고, 기존 프로젝트는 `strict` 하위 옵션(`strictNullChecks`부터)을 하나씩 켜며 점진적으로 마이그레이션하는 편이 안전합니다.
+
+---
+
+# 14. 자주 만나는 컴파일 에러 읽는 법
+
+| 에러 메시지(요약) | 원인 | 해결 방향 |
+| --- | --- | --- |
+| `Object is possibly 'null'` | `strictNullChecks`에서 null 가능성을 처리하지 않음 | `if (x !== null)` 체크 또는 `?.` 옵셔널 체이닝 |
+| `Type 'X' is not assignable to type 'Y'` | 타입이 서로 호환되지 않음 | 실제로 어떤 타입이어야 하는지 원본 타입 정의를 확인 |
+| `Property 'x' does not exist on type 'Y'` | 좁혀지지 않은 Union이거나 오타 | 타입 가드로 좁히거나 속성명 확인 |
+| `Argument of type 'X' is not assignable to parameter of type 'Y'` | 함수 호출 시 인자 타입 불일치 | 함수 시그니처와 실제 넘긴 값의 타입을 비교 |
+| `Type instantiation is excessively deep` | 제네릭 타입이 과도하게 중첩·재귀됨 | 복잡한 타입을 단순화하거나 중간 타입으로 분리 |
+
+**실무 팁**: 에러 메시지를 끝까지 읽으면 대부분 "무엇을 기대했는데 무엇이 왔는지"가 적혀 있습니다. 메시지를 무시하고 `as any`로 덮어씌우면 당장은 편하지만 같은 종류의 버그가 런타임에 다시 나타납니다.

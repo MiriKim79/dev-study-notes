@@ -224,3 +224,50 @@ git config --global user.signingkey <키ID>
 - [ ] 강제 push가 필요하다면 `--force-with-lease`를 썼는가
 - [ ] CI(GitHub Actions)가 통과한 뒤에만 머지했는가
 - [ ] 저장소에 대용량 바이너리가 있다면 LFS 적용을 검토했는가
+
+---
+
+# 12. Git Hooks로 실수 예방하기
+
+커밋·푸시 시점에 자동으로 검사를 실행해, 사람이 매번 기억하지 않아도 규칙을 지키게 합니다.
+
+```bash
+# .husky/pre-commit
+npm run lint-staged   # 스테이징된 파일만 린트·포맷 검사
+
+# .husky/commit-msg
+npx commitlint --edit "$1"   # 커밋 메시지 형식(Feat:, Fix: 등) 검사
+```
+
+```json
+// package.json
+{
+  "lint-staged": {
+    "*.{js,jsx}": ["eslint --fix", "prettier --write"]
+  }
+}
+```
+
+**기본 상식**: Hook은 로컬 저장소마다 별도로 설정해야 하는데, husky 같은 도구를 쓰면 `npm install` 시 자동으로 훅이 설치되어 팀원 전체에게 규칙을 강제할 수 있습니다. 다만 훅이 너무 느리면(전체 파일 린트 등) 커밋마다 답답해져 다들 `--no-verify`로 건너뛰게 되므로, 변경된 파일만 빠르게 검사하도록 범위를 좁힙니다.
+
+---
+
+# 13. 모노레포에서의 Git 전략
+
+이 저장소처럼 `/frontend`, `/backend`가 한 저장소에 있는 구조(모노레포)에서 자주 쓰는 기법입니다.
+
+```yaml
+# GitHub Actions에서 변경된 디렉터리에 따라 다른 워크플로우만 실행
+on:
+  push:
+    paths:
+      - 'frontend/**'
+```
+
+```text
+CODEOWNERS 파일로 디렉터리별 리뷰어 자동 지정
+/frontend/  @frontend-team
+/backend/   @backend-team
+```
+
+**실무 팁**: 모노레포는 프론트·백엔드 변경을 한 PR에서 함께 볼 수 있어 API 계약 변경 같은 작업에 유리하지만, 무관한 디렉터리 변경까지 같은 CI가 전부 돌면 느려집니다. `paths` 필터로 변경된 디렉터리에 해당하는 CI만 실행하도록 좁히는 것이 일반적입니다.

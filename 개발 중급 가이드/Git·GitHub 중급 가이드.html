@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-Interactive-Rebase-커밋-이력-정리하기">1. Interactive Rebase — 커밋 이력 정리하기</a></li><li class="toc-h1"><a href="#2-Cherry-pick-특정-커밋만-가져오기">2. Cherry-pick — 특정 커밋만 가져오기</a></li><li class="toc-h1"><a href="#3-Bisect-버그가-생긴-커밋-찾기">3. Bisect — 버그가 생긴 커밋 찾기</a></li><li class="toc-h1"><a href="#4-Reflog-잃어버린-커밋-복구">4. Reflog — 잃어버린 커밋 복구</a></li><li class="toc-h1"><a href="#5-Worktree-브랜치-여러-개-동시에-작업">5. Worktree — 브랜치 여러 개 동시에 작업</a></li><li class="toc-h1"><a href="#6-대용량-파일-관리-Git-LFS">6. 대용량 파일 관리 — Git LFS</a></li><li class="toc-h1"><a href="#7-GitHub-Actions-기초-첫-자동화-워크플로우">7. GitHub Actions 기초 — 첫 자동화 워크플로우</a></li><li class="toc-h1"><a href="#8-브랜치-보호-규칙-심화">8. 브랜치 보호 규칙 심화</a></li><li class="toc-h1"><a href="#9-커밋-서명-GPG-SSH-Signing">9. 커밋 서명 (GPG/SSH Signing)</a></li><li class="toc-h1"><a href="#10-자주-하는-실수">10. 자주 하는 실수</a></li><li class="toc-h1"><a href="#11-실전-체크리스트">11. 실전 체크리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-Interactive-Rebase-커밋-이력-정리하기">1. Interactive Rebase — 커밋 이력 정리하기</a></li><li class="toc-h1"><a href="#2-Cherry-pick-특정-커밋만-가져오기">2. Cherry-pick — 특정 커밋만 가져오기</a></li><li class="toc-h1"><a href="#3-Bisect-버그가-생긴-커밋-찾기">3. Bisect — 버그가 생긴 커밋 찾기</a></li><li class="toc-h1"><a href="#4-Reflog-잃어버린-커밋-복구">4. Reflog — 잃어버린 커밋 복구</a></li><li class="toc-h1"><a href="#5-Worktree-브랜치-여러-개-동시에-작업">5. Worktree — 브랜치 여러 개 동시에 작업</a></li><li class="toc-h1"><a href="#6-대용량-파일-관리-Git-LFS">6. 대용량 파일 관리 — Git LFS</a></li><li class="toc-h1"><a href="#7-GitHub-Actions-기초-첫-자동화-워크플로우">7. GitHub Actions 기초 — 첫 자동화 워크플로우</a></li><li class="toc-h1"><a href="#8-브랜치-보호-규칙-심화">8. 브랜치 보호 규칙 심화</a></li><li class="toc-h1"><a href="#9-커밋-서명-GPG-SSH-Signing">9. 커밋 서명 (GPG/SSH Signing)</a></li><li class="toc-h1"><a href="#10-자주-하는-실수">10. 자주 하는 실수</a></li><li class="toc-h1"><a href="#11-실전-체크리스트">11. 실전 체크리스트</a></li><li class="toc-h1"><a href="#12-Git-Hooks로-실수-예방하기">12. Git Hooks로 실수 예방하기</a></li><li class="toc-h1"><a href="#13-모노레포에서의-Git-전략">13. 모노레포에서의 Git 전략</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">Git·GitHub 중급 가이드</h1>
         <p class="page-tagline">add·commit·push는 손에 익었다? 이제 이력을 다듬고 자동화를 붙일 차례입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <code class="inline-code">add</code>/<code class="inline-code">commit</code>/<code class="inline-code">push</code>/<code class="inline-code">pull</code>/<code class="inline-code">branch</code>/<code class="inline-code">merge</code>는 손에 익었고, 이제 커밋 이력을 다듬거나 자동화를 붙이고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 기초 가이드에서 다루지 않은 이력 정리, 문제 추적, 자동화 도구를 실무 상황과 함께 정리합니다</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. Interactive Rebase — 커밋 이력 정리하기</li><li>2. Cherry-pick — 특정 커밋만 가져오기</li><li>3. Bisect — 버그가 생긴 커밋 찾기</li><li>4. Reflog — 잃어버린 커밋 복구</li><li>5. Worktree — 브랜치 여러 개 동시에 작업</li><li>6. 대용량 파일 관리 — Git LFS</li><li>7. GitHub Actions 기초 — 첫 자동화 워크플로우</li><li>8. 브랜치 보호 규칙 심화</li><li>9. 커밋 서명 (GPG/SSH Signing)</li><li>10. 자주 하는 실수</li><li>11. 실전 체크리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. Interactive Rebase — 커밋 이력 정리하기</li><li>2. Cherry-pick — 특정 커밋만 가져오기</li><li>3. Bisect — 버그가 생긴 커밋 찾기</li><li>4. Reflog — 잃어버린 커밋 복구</li><li>5. Worktree — 브랜치 여러 개 동시에 작업</li><li>6. 대용량 파일 관리 — Git LFS</li><li>7. GitHub Actions 기초 — 첫 자동화 워크플로우</li><li>8. 브랜치 보호 규칙 심화</li><li>9. 커밋 서명 (GPG/SSH Signing)</li><li>10. 자주 하는 실수</li><li>11. 실전 체크리스트</li><li>12. Git Hooks로 실수 예방하기</li><li>13. 모노레포에서의 Git 전략</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
@@ -165,6 +165,33 @@ jobs:
 <hr>
 <h2 class="section-h1" id="11-실전-체크리스트">11. 실전 체크리스트<a class="heading-anchor" href="#11-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>PR 올리기 전 지저분한 커밋을 rebase -i로 정리했는가</span></li><li><input type="checkbox" disabled><span>공유 브랜치를 rebase하지 않았는가</span></li><li><input type="checkbox" disabled><span>강제 push가 필요하다면 <code class="inline-code">--force-with-lease</code>를 썼는가</span></li><li><input type="checkbox" disabled><span>CI(GitHub Actions)가 통과한 뒤에만 머지했는가</span></li><li><input type="checkbox" disabled><span>저장소에 대용량 바이너리가 있다면 LFS 적용을 검토했는가</span></li></ul>
+<hr>
+<h2 class="section-h1" id="12-Git-Hooks로-실수-예방하기">12. Git Hooks로 실수 예방하기<a class="heading-anchor" href="#12-Git-Hooks로-실수-예방하기" aria-label="이 섹션 링크">#</a></h2>
+<p>커밋·푸시 시점에 자동으로 검사를 실행해, 사람이 매번 기억하지 않아도 규칙을 지키게 합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># .husky/pre-commit</span>
+<span class="tok-keyword">npm</span> run lint-staged   <span class="tok-comment"># 스테이징된 파일만 린트·포맷 검사</span>
+
+<span class="tok-comment"># .husky/commit-msg</span>
+npx commitlint --edit &quot;$1&quot;   <span class="tok-comment"># 커밋 메시지 형식(Feat:, Fix: 등) 검사</span></code></pre></div>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">json</span><button class="copy-btn" type="button">복사</button></div><pre><code>// package.json
+{
+  &quot;lint-staged&quot;: {
+    &quot;*.{js,jsx}&quot;: [&quot;eslint --fix&quot;, &quot;prettier --write&quot;]
+  }
+}</code></pre></div>
+<p><strong>기본 상식</strong>: Hook은 로컬 저장소마다 별도로 설정해야 하는데, husky 같은 도구를 쓰면 <code class="inline-code">npm install</code> 시 자동으로 훅이 설치되어 팀원 전체에게 규칙을 강제할 수 있습니다. 다만 훅이 너무 느리면(전체 파일 린트 등) 커밋마다 답답해져 다들 <code class="inline-code">--no-verify</code>로 건너뛰게 되므로, 변경된 파일만 빠르게 검사하도록 범위를 좁힙니다.</p>
+<hr>
+<h2 class="section-h1" id="13-모노레포에서의-Git-전략">13. 모노레포에서의 Git 전략<a class="heading-anchor" href="#13-모노레포에서의-Git-전략" aria-label="이 섹션 링크">#</a></h2>
+<p>이 저장소처럼 <code class="inline-code">/frontend</code>, <code class="inline-code">/backend</code>가 한 저장소에 있는 구조(모노레포)에서 자주 쓰는 기법입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">yaml</span><button class="copy-btn" type="button">복사</button></div><pre><code># GitHub Actions에서 변경된 디렉터리에 따라 다른 워크플로우만 실행
+on:
+  push:
+    paths:
+      - &#x27;frontend/**&#x27;</code></pre></div>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>CODEOWNERS 파일로 디렉터리별 리뷰어 자동 지정
+/frontend/  @frontend-team
+/backend/   @backend-team</code></pre></div>
+<p><strong>실무 팁</strong>: 모노레포는 프론트·백엔드 변경을 한 PR에서 함께 볼 수 있어 API 계약 변경 같은 작업에 유리하지만, 무관한 디렉터리 변경까지 같은 CI가 전부 돌면 느려집니다. <code class="inline-code">paths</code> 필터로 변경된 디렉터리에 해당하는 CI만 실행하도록 좁히는 것이 일반적입니다.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="팀 협업 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">팀 협업 중급 가이드</span></a><a class="doc-nav-link next" href="프론트엔드 중급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">프론트엔드 중급 가이드</span></a></nav>
       </div>
     </main>

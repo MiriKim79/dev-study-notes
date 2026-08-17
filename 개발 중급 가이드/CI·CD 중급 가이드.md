@@ -166,3 +166,58 @@ GitHub 저장소의 `Settings → Secrets and variables → Actions`에 값을 �
 - [ ] 시크릿을 GitHub Secrets로 관리하고 코드에 노출하지 않는가
 - [ ] 배포가 실패했을 때 되돌리는(롤백) 방법이 정해져 있는가
 - [ ] dev/staging/production 환경변수가 분리되어 있는가
+
+---
+
+# 9. 캐싱으로 파이프라인 속도 높이기
+
+```yaml
+- uses: actions/setup-node@v4
+  with:
+    node-version: 20
+    cache: 'npm'          # package-lock.json 기준으로 node_modules 캐시
+
+- uses: actions/cache@v4
+  with:
+    path: ~/.cache/pip
+    key: pip-${{ hashFiles('requirements.txt') }}
+```
+
+매번 처음부터 의존성을 설치하면 파이프라인이 느려집니다. 의존성 파일(lock 파일)의 해시를 캐시 키로 써서, 의존성이 바뀌지 않았다면 이전에 설치한 결과를 재사용합니다.
+
+**실무 팁**: Job을 병렬로 나눌 수도 있습니다(`lint`, `test`, `build`를 각각 별도 job으로 동시에 실행). 순서대로 실행할 필요가 없는 검사들을 병렬화하면 전체 파이프라인 시간이 줄어듭니다.
+
+---
+
+# 10. 배포 후 검증(Smoke Test)과 자동 롤백
+
+```yaml
+deploy:
+  needs: [test]
+  steps:
+    - run: ./deploy.sh
+    - name: 헬스체크로 배포 검증
+      run: |
+        for i in {1..5}; do
+          curl -f https://api.example.com/health && exit 0
+          sleep 10
+        done
+        exit 1   # 5번 시도해도 실패하면 파이프라인 실패 처리
+  # 이 job이 실패하면 이전 버전으로 자동 롤백하는 후속 job 연결 가능
+```
+
+배포가 "실행됐다"와 "정상 동작한다"는 다릅니다. 배포 직후 헬스체크 엔드포인트를 호출해 실제로 응답하는지 확인하는 스모크 테스트를 파이프라인에 포함시키면, 문제가 있는 배포를 사람이 알아채기 전에 자동으로 감지할 수 있습니다.
+
+---
+
+# 11. 인프라 배포 파이프라인 기초
+
+애플리케이션 코드뿐 아니라 인프라 변경(서버 설정, DB 스키마)도 파이프라인으로 관리할 수 있습니다.
+
+```yaml
+- name: DB 마이그레이션 적용
+  run: flask db upgrade
+  # 애플리케이션 배포보다 먼저 실행되어야, 새 코드가 기대하는 스키마가 준비됨
+```
+
+**기본 상식**: 마이그레이션 순서는 신중해야 합니다. 컬럼을 삭제하는 마이그레이션을 애플리케이션 코드 배포보다 먼저 실행하면, 아직 그 컬럼을 쓰는 이전 버전 코드가 오류를 낼 수 있습니다. "하위 호환되는 순서"(컬럼 추가 → 코드 배포 → 이후 스프린트에 옛 컬럼 제거)로 나누는 것이 안전합니다.
