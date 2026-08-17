@@ -102,6 +102,55 @@
 <hr>
 <h2 class="section-h1" id="3-렌더링-전략-심화-CSR-SSR-SSG-ISR">3. 렌더링 전략 심화 — CSR / SSR / SSG / ISR<a class="heading-anchor" href="#3-렌더링-전략-심화-CSR-SSR-SSG-ISR" aria-label="이 섹션 링크">#</a></h2>
 <div class="table-scroll"><table><thead><tr><th>전략</th><th>언제 HTML을 만드는가</th><th>적합한 경우</th></tr></thead><tbody><tr><td>CSR</td><td>브라우저에서 매번</td><td>로그인 후에만 보이는 대시보드 등 SEO가 중요하지 않은 화면</td></tr><tr><td>SSR</td><td>요청이 올 때마다 서버에서</td><td>검색 결과처럼 자주 바뀌고 SEO가 중요한 페이지</td></tr><tr><td>SSG</td><td>빌드 시 미리</td><td>소개 페이지, 블로그 글처럼 거의 안 바뀌는 페이지</td></tr><tr><td>ISR</td><td>빌드 시 미리 만들고, 일정 시간마다 백그라운드에서 재생성</td><td>상품 목록처럼 자주는 아니어도 주기적으로 바뀌는 페이지</td></tr></tbody></table></div>
+<svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CSR SSR SSG ISR 렌더링 전략 시간축 비교" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .rt-axis{stroke:var(--text-faint);stroke-width:1.5;marker-end:url(#rtArrow)}
+    .rt-box{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .rt-box-req{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.5}
+    .rt-title{fill:var(--text-strong);font-size:13px;font-weight:700}
+    .rt-text{fill:var(--text);font-size:11px;text-anchor:middle}
+    .rt-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+  <defs>
+    <marker id="rtArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+  </defs>
+
+  <text x="10" y="18" class="rt-title">시간축 →</text>
+
+  <!-- CSR row -->
+  <text x="16" y="45" class="rt-title" style="font-size:12px">CSR</text>
+  <line x1="70" y1="50" x2="760" y2="50" class="rt-axis"/>
+  <rect x="120" y="35" width="70" height="28" rx="5" class="rt-box-req"/><text x="155" y="53" class="rt-text">요청</text>
+  <rect x="260" y="35" width="110" height="28" rx="5" class="rt-box"/><text x="315" y="53" class="rt-text">빈 HTML+JS 응답</text>
+  <rect x="440" y="35" width="130" height="28" rx="5" class="rt-box"/><text x="505" y="53" class="rt-text">브라우저가 렌더링</text>
+
+  <!-- SSR row -->
+  <text x="16" y="95" class="rt-title" style="font-size:12px">SSR</text>
+  <line x1="70" y1="100" x2="760" y2="100" class="rt-axis"/>
+  <rect x="120" y="85" width="70" height="28" rx="5" class="rt-box-req"/><text x="155" y="103" class="rt-text">요청</text>
+  <rect x="260" y="85" width="130" height="28" rx="5" class="rt-box"/><text x="325" y="103" class="rt-text">서버가 즉시 HTML 생성</text>
+  <rect x="460" y="85" width="110" height="28" rx="5" class="rt-box"/><text x="515" y="103" class="rt-text">완성된 화면 응답</text>
+
+  <!-- SSG row -->
+  <text x="16" y="145" class="rt-title" style="font-size:12px">SSG</text>
+  <line x1="70" y1="150" x2="760" y2="150" class="rt-axis"/>
+  <rect x="90" y="135" width="120" height="28" rx="5" class="rt-box"/><text x="150" y="153" class="rt-text">빌드 시 HTML 생성</text>
+  <rect x="500" y="135" width="70" height="28" rx="5" class="rt-box-req"/><text x="535" y="153" class="rt-text">요청</text>
+  <rect x="600" y="135" width="120" height="28" rx="5" class="rt-box"/><text x="660" y="153" class="rt-text">캐시된 HTML 즉시 응답</text>
+
+  <!-- ISR row -->
+  <text x="16" y="195" class="rt-title" style="font-size:12px">ISR</text>
+  <line x1="70" y1="200" x2="760" y2="200" class="rt-axis"/>
+  <rect x="90" y="185" width="120" height="28" rx="5" class="rt-box"/><text x="150" y="203" class="rt-text">빌드 시 HTML 생성</text>
+  <rect x="300" y="185" width="70" height="28" rx="5" class="rt-box-req"/><text x="335" y="203" class="rt-text">요청</text>
+  <rect x="400" y="185" width="110" height="28" rx="5" class="rt-box"/><text x="455" y="203" class="rt-text">캐시 응답(기존)</text>
+  <rect x="540" y="185" width="150" height="28" rx="5" class="rt-box"/><text x="615" y="203" class="rt-text">백그라운드 재생성 후 교체</text>
+
+  <text x="390" y="240" class="rt-sub" style="font-size:11px">■ 연한 파랑 = 요청 시점 &nbsp;&nbsp;&nbsp; □ 회색 = HTML 생성·응답 단계</text>
+  <text x="390" y="260" class="rt-sub" style="font-size:11px">SSG·ISR은 요청 이전에 미리 만들어두는 반면, CSR·SSR은 요청이 와야 화면이 만들어집니다.</text>
+</svg>
 <p>Next.js(App Router) 기준 최소 예시입니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">jsx</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment">// app/courses/page.jsx — 기본은 서버에서 렌더링(SSR에 가까움)</span>
 <span class="tok-keyword">export</span> <span class="tok-keyword">default</span> <span class="tok-keyword">async</span> <span class="tok-keyword">function</span> CoursesPage() {

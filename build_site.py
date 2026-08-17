@@ -596,18 +596,22 @@ DETAILS_OPEN_RE = re.compile(r"^<details[ >]", re.IGNORECASE)
 DETAILS_OPEN_EXACT_RE = re.compile(r"^<details\b", re.IGNORECASE)
 DETAILS_CLOSE_RE = re.compile(r"^</details\s*>$", re.IGNORECASE)
 
+SVG_OPEN_RE = re.compile(r"^<svg[ >]", re.IGNORECASE)
+SVG_OPEN_EXACT_RE = re.compile(r"^<svg\b", re.IGNORECASE)
+SVG_CLOSE_RE = re.compile(r"^</svg\s*>$", re.IGNORECASE)
 
-def parse_raw_html_block(lines, i, end):
-    """<details>...</details> 원문 HTML을 그대로 통과시킨다(중첩 <details> 지원).
+
+def parse_raw_html_block(lines, i, end, open_exact_re=DETAILS_OPEN_EXACT_RE, close_re=DETAILS_CLOSE_RE):
+    """<details>...</details> 또는 <svg>...</svg> 원문 HTML을 그대로 통과시킨다(중첩 지원).
     안쪽 내용은 마크다운으로 해석하지 않고 작성자가 직접 HTML로 쓴다."""
     depth = 0
     content = []
     while i < end:
         line = lines[i]
         s = line.strip()
-        if DETAILS_OPEN_EXACT_RE.match(s):
+        if open_exact_re.match(s):
             depth += 1
-        if DETAILS_CLOSE_RE.match(s):
+        if close_re.match(s):
             depth -= 1
             content.append(line)
             i += 1
@@ -656,6 +660,8 @@ def parse_paragraph(lines, i, end):
         if line.lstrip().startswith(">"):
             break
         if DETAILS_OPEN_RE.match(line.strip()) or DETAILS_OPEN_EXACT_RE.match(line.strip()):
+            break
+        if SVG_OPEN_RE.match(line.strip()) or SVG_OPEN_EXACT_RE.match(line.strip()):
             break
         if is_table_start(lines, i, end):
             break
@@ -755,6 +761,10 @@ def parse_blocks(lines, i, end):
             continue
         if DETAILS_OPEN_EXACT_RE.match(line.strip()):
             b, i = parse_raw_html_block(lines, i, end)
+            blocks.append(b)
+            continue
+        if SVG_OPEN_EXACT_RE.match(line.strip()):
+            b, i = parse_raw_html_block(lines, i, end, open_exact_re=SVG_OPEN_EXACT_RE, close_re=SVG_CLOSE_RE)
             blocks.append(b)
             continue
         if is_table_start(lines, i, end):

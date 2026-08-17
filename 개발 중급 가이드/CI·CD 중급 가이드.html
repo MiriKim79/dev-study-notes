@@ -114,6 +114,42 @@ main 브랜치 push     → 수동 승인 후 staging 배포 → 확인 후 prod
 <h2 class="section-h1" id="4-배포-전략-Blue-Green-Rolling-Canary">4. 배포 전략 — Blue-Green, Rolling, Canary<a class="heading-anchor" href="#4-배포-전략-Blue-Green-Rolling-Canary" aria-label="이 섹션 링크">#</a></h2>
 <p>서버를 새 버전으로 바꿀 때 서비스 중단을 최소화하는 방법들입니다.</p>
 <div class="table-scroll"><table><thead><tr><th>전략</th><th>방식</th><th>특징</th></tr></thead><tbody><tr><td>Rolling</td><td>서버를 한 대씩 순차적으로 새 버전으로 교체</td><td>구현이 간단하지만 잠시 신/구 버전이 섞여 동작함</td></tr><tr><td>Blue-Green</td><td>새 버전(Green)을 완전히 별도로 띄운 뒤, 트래픽을 한 번에 전환</td><td>문제 생기면 즉시 이전 버전(Blue)으로 되돌리기 쉬움. 서버가 2배 필요</td></tr><tr><td>Canary</td><td>새 버전에 트래픽의 일부(예: 5%)만 먼저 보내보고 점진적으로 확대</td><td>문제를 소수 사용자에게만 노출한 채 발견 가능. 구성이 복잡함</td></tr></tbody></table></div>
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rolling Blue-Green Canary 배포 전략 3종 비교" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .dp-old{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .dp-new{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.5}
+    .dp-lb{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .dp-title{fill:var(--text-strong);font-size:13px;font-weight:700}
+    .dp-text{fill:var(--text);font-size:11px;text-anchor:middle}
+    .dp-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <text x="16" y="20" class="dp-title">Rolling</text>
+  <rect x="140" y="6" width="70" height="28" rx="5" class="dp-old"/><text x="175" y="24" class="dp-text">구버전</text>
+  <rect x="220" y="6" width="70" height="28" rx="5" class="dp-new"/><text x="255" y="24" class="dp-text">신버전</text>
+  <rect x="300" y="6" width="70" height="28" rx="5" class="dp-old"/><text x="335" y="24" class="dp-text">구버전</text>
+  <rect x="380" y="6" width="70" height="28" rx="5" class="dp-new"/><text x="415" y="24" class="dp-text">신버전</text>
+  <text x="580" y="24" class="dp-sub">한 대씩 순차 교체 — 신/구 혼재 구간 있음</text>
+
+  <line x1="0" y1="50" x2="760" y2="50" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="80" class="dp-title">Blue-Green</text>
+  <rect x="140" y="60" width="90" height="40" rx="6" class="dp-lb"/><text x="185" y="84" class="dp-text">로드밸런서</text>
+  <rect x="260" y="60" width="90" height="18" rx="4" class="dp-old"/><text x="305" y="73" class="dp-text" style="font-size:10px">Blue(구)</text>
+  <rect x="260" y="82" width="90" height="18" rx="4" class="dp-new"/><text x="305" y="95" class="dp-text" style="font-size:10px">Green(신)</text>
+  <text x="450" y="70" class="dp-sub">트래픽을 한 번에 전환</text>
+  <text x="450" y="90" class="dp-sub">문제 시 즉시 Blue로 롤백</text>
+
+  <line x1="0" y1="120" x2="760" y2="120" stroke="var(--border)" stroke-width="1"/>
+
+  <text x="16" y="150" class="dp-title">Canary</text>
+  <rect x="140" y="130" width="90" height="40" rx="6" class="dp-lb"/><text x="185" y="154" class="dp-text">로드밸런서</text>
+  <rect x="260" y="130" width="200" height="16" rx="4" class="dp-old"/><text x="360" y="142" class="dp-text" style="font-size:10px">구버전 95%</text>
+  <rect x="260" y="152" width="30" height="16" rx="4" class="dp-new"/><text x="275" y="164" class="dp-text" style="font-size:9px" fill="var(--text)"></text>
+  <text x="330" y="164" class="dp-sub" style="font-size:10px">↑ 신버전 5%부터 점진 확대</text>
+
+  <text x="380" y="200" class="dp-sub" style="font-size:11px">공통: 세 전략 모두 "한 번에 전체 전환"의 위험을 줄이는 것이 목적</text>
+</svg>
 <p><strong>기본 상식</strong>: 소규모 프로젝트에서는 단순 배포(서버 재시작)로 시작해도 충분합니다. 사용자 수가 늘고 "배포 중 잠깐의 오류도 허용 안 됨" 수준이 되면 위 전략들을 검토합니다.</p>
 <hr>
 <h2 class="section-h1" id="5-시크릿-관리">5. 시크릿 관리<a class="heading-anchor" href="#5-시크릿-관리" aria-label="이 섹션 링크">#</a></h2>

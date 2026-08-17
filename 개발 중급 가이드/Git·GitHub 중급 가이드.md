@@ -53,6 +53,50 @@ fixup j1k2l3 다시 시도
 reword m4n5o6 Feat: 에러 메시지 추가
 ```
 
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive Rebase 전후 비교 다이어그램" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .rb-node{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .rb-node-drop{fill:var(--callout-warn-bg);stroke:var(--callout-warn-border);stroke-width:1.5;stroke-dasharray:4 3}
+    .rb-node-merge{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.5}
+    .rb-text{fill:var(--text);font-size:12px;text-anchor:middle;dominant-baseline:middle}
+    .rb-label{fill:var(--text-secondary);font-size:12px;font-weight:600}
+    .rb-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#rbArrow)}
+  </style>
+  <defs>
+    <marker id="rbArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="24" class="rb-label">Before (rebase -i 전)</text>
+  <line x1="60" y1="55" x2="140" y2="55" class="rb-arrow"/>
+  <line x1="140" y1="55" x2="220" y2="55" class="rb-arrow"/>
+  <line x1="220" y1="55" x2="300" y2="55" class="rb-arrow"/>
+  <line x1="300" y1="55" x2="380" y2="55" class="rb-arrow"/>
+  <circle cx="60" cy="55" r="20" class="rb-node"/><text x="60" y="55" class="rb-text">A</text>
+  <circle cx="140" cy="55" r="20" class="rb-node"/><text x="140" y="55" class="rb-text">B</text>
+  <circle cx="220" cy="55" r="20" class="rb-node-drop"/><text x="220" y="55" class="rb-text">typo</text>
+  <circle cx="300" cy="55" r="20" class="rb-node-drop"/><text x="300" y="55" class="rb-text">wip</text>
+  <circle cx="380" cy="55" r="20" class="rb-node"/><text x="380" y="55" class="rb-text">C</text>
+  <text x="60" y="90" class="rb-text" style="fill:var(--text-secondary);font-size:11px">pick</text>
+  <text x="140" y="90" class="rb-text" style="fill:var(--text-secondary);font-size:11px">pick</text>
+  <text x="220" y="90" class="rb-text" style="fill:var(--text-secondary);font-size:11px">fixup</text>
+  <text x="300" y="90" class="rb-text" style="fill:var(--text-secondary);font-size:11px">fixup</text>
+  <text x="380" y="90" class="rb-text" style="fill:var(--text-secondary);font-size:11px">reword</text>
+
+  <line x1="380" y1="130" x2="380" y2="155" class="rb-arrow"/>
+  <text x="480" y="145" class="rb-label" text-anchor="middle">git rebase -i</text>
+
+  <text x="20" y="190" class="rb-label">After (정리 후)</text>
+  <line x1="60" y1="220" x2="140" y2="220" class="rb-arrow"/>
+  <line x1="140" y1="220" x2="220" y2="220" class="rb-arrow"/>
+  <circle cx="60" cy="220" r="20" class="rb-node"/><text x="60" y="220" class="rb-text">A</text>
+  <circle cx="140" cy="220" r="20" class="rb-node-merge"/><text x="140" y="220" class="rb-text">B'</text>
+  <circle cx="220" cy="220" r="20" class="rb-node-merge"/><text x="220" y="220" class="rb-text">C'</text>
+  <text x="140" y="250" class="rb-text" style="fill:var(--text-secondary);font-size:11px">typo·wip 합쳐짐</text>
+  <text x="220" y="250" class="rb-text" style="fill:var(--text-secondary);font-size:11px">메시지 재작성</text>
+</svg>
+
 **실무 팁**
 
 - 이미 `push`해서 다른 사람이 받아간 브랜치는 rebase하지 않습니다. 커밋ID가 전부 바뀌어서 팀원과 이력이 어긋납니다. **내 로컬에만 있는 브랜치**에서만 씁니다.
@@ -122,6 +166,45 @@ git worktree add ../my-app-hotfix hotfix/urgent-bug
 git worktree list             # 현재 연결된 worktree 목록
 git worktree remove ../my-app-hotfix   # 다 쓰면 정리
 ```
+
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Git Worktree 구조 다이어그램" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .wt-repo{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .wt-folder{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5;rx:8}
+    .wt-title{fill:var(--text-strong);font-size:13px;font-weight:700;text-anchor:middle}
+    .wt-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .wt-sub{fill:var(--text-secondary);font-size:11px;text-anchor:middle}
+    .wt-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#wtArrow)}
+  </style>
+  <defs>
+    <marker id="wtArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+  </defs>
+
+  <rect x="270" y="20" width="180" height="60" rx="10" class="wt-repo"/>
+  <text x="360" y="45" class="wt-title">.git (공용 저장소)</text>
+  <text x="360" y="65" class="wt-sub">커밋·오브젝트·브랜치 정보 공유</text>
+
+  <line x1="330" y1="80" x2="150" y2="140" class="wt-arrow"/>
+  <line x1="360" y1="80" x2="360" y2="140" class="wt-arrow"/>
+  <line x1="390" y1="80" x2="590" y2="140" class="wt-arrow"/>
+
+  <rect x="40" y="140" width="220" height="90" rx="8" class="wt-folder"/>
+  <text x="150" y="165" class="wt-title">/inflearn-clone (원본 폴더)</text>
+  <text x="150" y="188" class="wt-text">branch: develop</text>
+  <text x="150" y="208" class="wt-sub">기존 작업 그대로 유지</text>
+
+  <rect x="250" y="140" width="220" height="90" rx="8" class="wt-folder"/>
+  <text x="360" y="165" class="wt-title">../my-app-hotfix</text>
+  <text x="360" y="188" class="wt-text">branch: hotfix/urgent-bug</text>
+  <text x="360" y="208" class="wt-sub">git worktree add로 생성</text>
+
+  <rect x="480" y="140" width="220" height="90" rx="8" class="wt-folder"/>
+  <text x="590" y="165" class="wt-title">../feature-x</text>
+  <text x="590" y="188" class="wt-text">branch: feat/x</text>
+  <text x="590" y="208" class="wt-sub">동시에 여러 브랜치 작업 가능</text>
+</svg>
 
 급한 hotfix가 생겼는데 지금 작업 중인 내용을 커밋하기도 stash하기도 애매할 때 유용합니다.
 

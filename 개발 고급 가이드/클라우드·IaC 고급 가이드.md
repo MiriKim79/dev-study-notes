@@ -96,6 +96,42 @@ spec:
           image: my-registry/api:1.4.0
 ```
 
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="쿠버네티스 Pod Deployment Service Ingress 관계도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .k8-user{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .k8-ing{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.8}
+    .k8-svc{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .k8-dep{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5;stroke-dasharray:5 3}
+    .k8-pod{fill:var(--card-bg);stroke:var(--border-strong);stroke-width:1.5}
+    .k8-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .k8-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+    .k8-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#k8Arrow)}
+  </style>
+  <defs>
+    <marker id="k8Arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/></marker>
+  </defs>
+
+  <rect x="290" y="6" width="120" height="36" rx="8" class="k8-user"/><text x="350" y="29" class="k8-text">외부 트래픽</text>
+  <line x1="350" y1="42" x2="350" y2="65" class="k8-arrow"/>
+
+  <rect x="250" y="65" width="200" height="40" rx="8" class="k8-ing"/><text x="350" y="90" class="k8-text" style="font-weight:700">Ingress</text>
+  <text x="350" y="118" class="k8-sub">도메인·경로 기준 라우팅 규칙</text>
+  <line x1="350" y1="105" x2="350" y2="135" class="k8-arrow"/>
+
+  <rect x="250" y="135" width="200" height="40" rx="8" class="k8-svc"/><text x="350" y="160" class="k8-text" style="font-weight:700">Service</text>
+  <text x="350" y="188" class="k8-sub">고정 접속 주소 + 로드밸런싱</text>
+
+  <line x1="300" y1="175" x2="180" y2="215" class="k8-arrow"/>
+  <line x1="350" y1="175" x2="350" y2="215" class="k8-arrow"/>
+  <line x1="400" y1="175" x2="520" y2="215" class="k8-arrow"/>
+
+  <rect x="90" y="215" width="440" height="75" rx="10" class="k8-dep"/>
+  <text x="110" y="232" class="k8-sub" style="text-anchor:start;font-weight:600">Deployment (replicas: 3 — 항상 3개 유지)</text>
+  <rect x="115" y="240" width="110" height="40" rx="6" class="k8-pod"/><text x="170" y="264" class="k8-text">Pod</text>
+  <rect x="295" y="240" width="110" height="40" rx="6" class="k8-pod"/><text x="350" y="264" class="k8-text">Pod</text>
+  <rect x="475" y="240" width="110" height="40" rx="6" class="k8-pod"/><text x="530" y="264" class="k8-text">Pod</text>
+</svg>
+
 `replicas: 3`으로 선언해두면, Pod 하나가 죽어도 쿠버네티스가 자동으로 새 Pod를 띄워 3개를 유지합니다. 사람이 "서버 다시 켜야 하나?" 고민할 필요가 없어집니다.
 
 **기본 상식**: 쿠버네티스는 강력하지만 배우고 운영하는 비용 자체가 만만치 않습니다. 서비스가 하나둘일 때는 관리형 배포 서비스(예: AWS ECS, App Runner)로도 충분하고, 여러 서비스를 표준화된 방식으로 굴려야 할 규모가 됐을 때 검토합니다.

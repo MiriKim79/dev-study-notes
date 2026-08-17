@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-왜-이-문서부터-봐야-하나">0. 왜 이 문서부터 봐야 하나</a></li><li class="toc-h1"><a href="#1-branch-세-줄-정리">1. branch 세 줄 정리</a></li><li class="toc-h1"><a href="#2-전체-흐름-한-장으로-보기">2. 전체 흐름 한 장으로 보기</a></li><li class="toc-h1"><a href="#3-내-컴퓨터-코드를-GitHub에-올리기">3. 내 컴퓨터 코드를 GitHub에 올리기</a></li><li class="toc-h1"><a href="#4-내-코드-팀-코드가-합쳐지는-과정">4. 내 코드 + 팀 코드가 합쳐지는 과정</a></li><li class="toc-h1"><a href="#5-용어-한-줄-정리">5. 용어 한 줄 정리</a></li><li class="toc-h1"><a href="#6-여기까지-왔다면">6. 여기까지 왔다면</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-왜-이-문서부터-봐야-하나">0. 왜 이 문서부터 봐야 하나</a></li><li class="toc-h1"><a href="#1-branch-세-줄-정리">1. branch 세 줄 정리</a></li><li class="toc-h1"><a href="#2-전체-흐름-한-장으로-보기">2. 전체 흐름 한 장으로 보기</a></li><li class="toc-h1"><a href="#3-내-컴퓨터-코드를-GitHub에-올리기">3. 내 컴퓨터 코드를 GitHub에 올리기</a></li><li class="toc-h1"><a href="#4-내-코드-팀-코드가-합쳐지는-과정">4. 내 코드 + 팀 코드가 합쳐지는 과정</a></li><li class="toc-h1"><a href="#5-용어-한-줄-정리">5. 용어 한 줄 정리</a></li><li class="toc-h1"><a href="#6-직접-실습해보기-5분-미니-실습">6. 직접 실습해보기 — 5분 미니 실습</a><ul class="toc-h2-list"><li><a href="#실습-1-로컬-저장소-만들고-첫-커밋-해보기">실습 1. 로컬 저장소 만들고 첫 커밋 해보기</a></li><li><a href="#실습-2-branch를-나눠서-작업해보기">실습 2. branch를 나눠서 작업해보기</a></li><li><a href="#실습-3-다시-main으로-돌아와-merge-해보기">실습 3. 다시 main으로 돌아와 merge 해보기</a></li></ul></li><li class="toc-h1"><a href="#7-여기까지-왔다면">7. 여기까지 왔다면</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">Git·GitHub 진짜 최소 기초</h1>
         <p class="page-tagline">Git이 뭔지도 모른다? branch도 처음 들어봤다? 여기부터 시작하세요 — 5분이면 끝나요.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <code class="inline-code">git</code>이라는 단어를 오늘 처음 들어본 사람</div><div class="intro-row"><strong>목적:</strong> 팀 프로젝트에 바로 투입돼도 되는 딱 그만큼만 — branch, commit, push, PR, merge, pull이 각각 뭘 하는 건지 5분 안에 감 잡기</div><div class="intro-row"><strong>사용법:</strong> 이 문서는 끝까지 읽는 데 5분이면 충분합니다. 다 읽고 나서 "더 알고 싶다" 싶으면 아래 <a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a>로 넘어가세요. 지금은 용어와 명령어를 몰라도 됩니다 — 이 순서만 알면 됩니다.</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 왜 이 문서부터 봐야 하나</li><li>1. branch 세 줄 정리</li><li>2. 전체 흐름 한 장으로 보기</li><li>3. 내 컴퓨터 코드를 GitHub에 올리기</li><li>4. 내 코드 + 팀 코드가 합쳐지는 과정</li><li>5. 용어 한 줄 정리</li><li>6. 여기까지 왔다면</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 왜 이 문서부터 봐야 하나</li><li>1. branch 세 줄 정리</li><li>2. 전체 흐름 한 장으로 보기</li><li>3. 내 컴퓨터 코드를 GitHub에 올리기</li><li>4. 내 코드 + 팀 코드가 합쳐지는 과정</li><li>5. 용어 한 줄 정리</li><li>6. 직접 실습해보기 — 5분 미니 실습</li><li>7. 여기까지 왔다면</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-왜-이-문서부터-봐야-하나">0. 왜 이 문서부터 봐야 하나<a class="heading-anchor" href="#0-왜-이-문서부터-봐야-하나" aria-label="이 섹션 링크">#</a></h2>
@@ -72,7 +72,43 @@
 <ol><li>코드를 올릴 때 보통 새 branch가 생긴다 (위 3번의 <code class="inline-code">feature/chatbot</code>처럼)</li><li>GitHub에서 <strong>PR(Pull Request)</strong>을 연다 — "제 코드를 공동 작업본에 합쳐주세요" 요청</li><li>팀원이 오류 없는지 확인하고 <strong>merge</strong>한다 — 실제로 두 branch가 합쳐지는 순간</li><li>다 합쳐진 branch는 삭제한다 (branch를 깔끔하게 유지하기 위해)</li><li>이 코드와 관련 있는 팀원들은 GitHub에서 <strong>pull</strong>을 받는다 — 그래야 항상 최신 버전으로 작업할 수 있고 충돌도 줄어든다</li></ol>
 <h2 class="section-h1" id="5-용어-한-줄-정리">5. 용어 한 줄 정리<a class="heading-anchor" href="#5-용어-한-줄-정리" aria-label="이 섹션 링크">#</a></h2>
 <div class="table-scroll"><table><thead><tr><th>용어</th><th>한 줄 정리</th></tr></thead><tbody><tr><td>main</td><td>제출본</td></tr><tr><td>develop</td><td>팀 공동 작업본</td></tr><tr><td>feature branch</td><td>내 개인 작업본</td></tr><tr><td>commit</td><td>중간 저장</td></tr><tr><td>push</td><td>GitHub에 업로드</td></tr><tr><td>PR (Pull Request)</td><td>"제 코드 공동 작업본에 합쳐주세요" 요청</td></tr><tr><td>merge</td><td>실제로 합치기</td></tr><tr><td>pull</td><td>다른 사람이 합친 최신 코드 받아오기</td></tr></tbody></table></div>
-<h2 class="section-h1" id="6-여기까지-왔다면">6. 여기까지 왔다면<a class="heading-anchor" href="#6-여기까지-왔다면" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="6-직접-실습해보기-5분-미니-실습">6. 직접 실습해보기 — 5분 미니 실습<a class="heading-anchor" href="#6-직접-실습해보기-5분-미니-실습" aria-label="이 섹션 링크">#</a></h2>
+<p>읽기만 하고 넘어가면 다음에 또 헷갈립니다. 아무 폴더에서나 아래를 그대로 따라 쳐보세요. 딱 5분이면 됩니다.</p>
+<h3 class="section-h2" id="실습-1-로컬-저장소-만들고-첫-커밋-해보기">실습 1. 로컬 저장소 만들고 첫 커밋 해보기<a class="heading-anchor" href="#실습-1-로컬-저장소-만들고-첫-커밋-해보기" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code>mkdir <span class="tok-keyword">git</span>-practice
+<span class="tok-keyword">cd</span> <span class="tok-keyword">git</span>-practice
+<span class="tok-keyword">git</span> init
+echo &quot;hello <span class="tok-keyword">git</span>&quot; &gt; memo.txt
+<span class="tok-keyword">git</span> add .
+<span class="tok-keyword">git</span> commit -m &quot;첫 커밋&quot;</code></pre></div>
+<p>왜 이걸 하는지: <code class="inline-code">git init</code>은 이 폴더를 Git이 추적하는 저장소로 바꾸는 명령입니다. <code class="inline-code">add</code>와 <code class="inline-code">commit</code>을 직접 손으로 쳐봐야 "저장 = commit"이라는 감각이 생깁니다.</p>
+<p>확인할 것: <code class="inline-code">git log --oneline</code>을 쳤을 때 방금 만든 "첫 커밋"이 보이는가?</p>
+<h3 class="section-h2" id="실습-2-branch를-나눠서-작업해보기">실습 2. branch를 나눠서 작업해보기<a class="heading-anchor" href="#실습-2-branch를-나눠서-작업해보기" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> branch feature/practice
+<span class="tok-keyword">git</span> switch feature/practice
+echo &quot;새 기능&quot; &gt;&gt; memo.txt
+<span class="tok-keyword">git</span> add .
+<span class="tok-keyword">git</span> commit -m &quot;기능 추가&quot;</code></pre></div>
+<p>왜 이걸 하는지: <code class="inline-code">main</code>을 건드리지 않고 <code class="inline-code">feature/practice</code>라는 "내 개인 작업본"에서만 작업했다는 걸 눈으로 확인하기 위해서입니다.</p>
+<h3 class="section-h2" id="실습-3-다시-main으로-돌아와-merge-해보기">실습 3. 다시 main으로 돌아와 merge 해보기<a class="heading-anchor" href="#실습-3-다시-main으로-돌아와-merge-해보기" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> switch main
+<span class="tok-keyword">git</span> merge feature/practice
+cat memo.txt</code></pre></div>
+<p>왜 이걸 하는지: PR에서 "merge" 버튼을 누르면 실제로는 이 명령이 실행되는 것과 같은 일이 일어납니다. 버튼 뒤에서 무슨 일이 벌어지는지 알면 팀 프로젝트에서 훨씬 덜 헷갈립니다.</p>
+<details class="quiz-answer">
+<summary>정답 확인</summary>
+<div class="quiz-answer-body">
+<p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
+<ul>
+<li>&#9744; <code>git log --oneline</code>에서 "첫 커밋" 메시지가 보인다</li>
+<li>&#9744; <code>git switch feature/practice</code> 이후 만든 커밋은 <code>main</code>이 아니라 <code>feature/practice</code> branch에만 있다는 것을 <code>git log --oneline --all --graph</code>로 확인했다</li>
+<li>&#9744; <code>git switch main</code> 후 <code>cat memo.txt</code>를 쳤을 때는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>
+<li>&#9744; <code>git merge feature/practice</code> 이후 <code>cat memo.txt</code>에 "새 기능" 줄이 추가된 것을 확인했다</li>
+<li>&#9744; branch, commit, merge가 각각 무엇을 하는 명령인지 다른 사람에게 한 문장씩 설명할 수 있다</li>
+</ul>
+</div>
+</details>
+<h2 class="section-h1" id="7-여기까지-왔다면">7. 여기까지 왔다면<a class="heading-anchor" href="#7-여기까지-왔다면" aria-label="이 섹션 링크">#</a></h2>
 <p>branch 명령어를 외우거나, 충돌(conflict)을 손으로 푸는 방법은 아직 몰라도 됩니다. 실제로 팀에서 막힐 때는 대부분 AI 코딩 도구에게 "branch 만들어서 커밋하고 push하고 PR까지 올려줘"라고 시키면 처리해 줍니다 — 사람은 PR을 읽고 오류가 없으면 merge 버튼만 누르면 됩니다.</p>
 <p>지금 딱 이 정도만 알아도 팀 프로젝트에 투입될 수 있습니다. 실제 명령어를 손으로 치는 연습, 충돌 해결, 인증 설정까지 제대로 익히고 싶다면 → <strong><a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a></strong>로 이어서 보세요.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="../개발 기초·실전 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">개발 기초·실전 가이드</span></a><a class="doc-nav-link next" href="팀 개발 시작 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">팀 개발 시작 가이드</span></a></nav>

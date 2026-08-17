@@ -65,7 +65,62 @@ git push origin feature/chatbot
 | merge | 실제로 합치기 |
 | pull | 다른 사람이 합친 최신 코드 받아오기 |
 
-# 6. 여기까지 왔다면
+# 6. 직접 실습해보기 — 5분 미니 실습
+
+읽기만 하고 넘어가면 다음에 또 헷갈립니다. 아무 폴더에서나 아래를 그대로 따라 쳐보세요. 딱 5분이면 됩니다.
+
+## 실습 1. 로컬 저장소 만들고 첫 커밋 해보기
+
+```bash
+mkdir git-practice
+cd git-practice
+git init
+echo "hello git" > memo.txt
+git add .
+git commit -m "첫 커밋"
+```
+
+왜 이걸 하는지: `git init`은 이 폴더를 Git이 추적하는 저장소로 바꾸는 명령입니다. `add`와 `commit`을 직접 손으로 쳐봐야 "저장 = commit"이라는 감각이 생깁니다.
+
+확인할 것: `git log --oneline`을 쳤을 때 방금 만든 "첫 커밋"이 보이는가?
+
+## 실습 2. branch를 나눠서 작업해보기
+
+```bash
+git branch feature/practice
+git switch feature/practice
+echo "새 기능" >> memo.txt
+git add .
+git commit -m "기능 추가"
+```
+
+왜 이걸 하는지: `main`을 건드리지 않고 `feature/practice`라는 "내 개인 작업본"에서만 작업했다는 걸 눈으로 확인하기 위해서입니다.
+
+## 실습 3. 다시 main으로 돌아와 merge 해보기
+
+```bash
+git switch main
+git merge feature/practice
+cat memo.txt
+```
+
+왜 이걸 하는지: PR에서 "merge" 버튼을 누르면 실제로는 이 명령이 실행되는 것과 같은 일이 일어납니다. 버튼 뒤에서 무슨 일이 벌어지는지 알면 팀 프로젝트에서 훨씬 덜 헷갈립니다.
+
+<details class="quiz-answer">
+<summary>정답 확인</summary>
+<div class="quiz-answer-body">
+<p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
+<ul>
+<li>&#9744; <code>git log --oneline</code>에서 "첫 커밋" 메시지가 보인다</li>
+<li>&#9744; <code>git switch feature/practice</code> 이후 만든 커밋은 <code>main</code>이 아니라 <code>feature/practice</code> branch에만 있다는 것을 <code>git log --oneline --all --graph</code>로 확인했다</li>
+<li>&#9744; <code>git switch main</code> 후 <code>cat memo.txt</code>를 쳤을 때는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>
+<li>&#9744; <code>git merge feature/practice</code> 이후 <code>cat memo.txt</code>에 "새 기능" 줄이 추가된 것을 확인했다</li>
+<li>&#9744; branch, commit, merge가 각각 무엇을 하는 명령인지 다른 사람에게 한 문장씩 설명할 수 있다</li>
+</ul>
+</div>
+</details>
+
+# 7. 여기까지 왔다면
 
 branch 명령어를 외우거나, 충돌(conflict)을 손으로 푸는 방법은 아직 몰라도 됩니다. 실제로 팀에서 막힐 때는 대부분 AI 코딩 도구에게 "branch 만들어서 커밋하고 push하고 PR까지 올려줘"라고 시키면 처리해 줍니다 — 사람은 PR을 읽고 오류가 없으면 merge 버튼만 누르면 됩니다.
 

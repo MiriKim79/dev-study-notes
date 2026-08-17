@@ -587,7 +587,7 @@ Git·GitHub 기초 가이드 (이 문서)
 
 ---
 
-# 17. 처음부터 한 번 해보기 — Git 최소 실습
+# 17. 직접 실습해보기 — Git 최소 실습
 
 연습용 저장소에서 다음 흐름을 직접 한 번 해봅니다.
 
@@ -664,3 +664,20 @@ reset과 revert는 언제 다르게 쓰는가?
 -d와 -D는 무엇이 다른가?
 force push가 왜 위험한가?
 ```
+
+<details class="quiz-answer">
+<summary>정답 확인</summary>
+<div class="quiz-answer-body">
+<p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
+<ul>
+<li>&#9744; <code>git clone</code> 후 <code>git status</code>로 브랜치 상태를, <code>git remote -v</code>로 원격 주소를 확인했다</li>
+<li>&#9744; <code>feat/practice</code> 브랜치를 만들고 그 위에서만 작업했다 (main에서 직접 커밋하지 않았다)</li>
+<li>&#9744; <code>git add</code>는 로컬 staging 영역에만 올리는 명령이고, GitHub에 올라가는 건 <code>git push</code>뿐이라고 설명할 수 있다</li>
+<li>&#9744; <code>git restore --staged</code> 실행 후 파일 내용은 그대로 남고 staging만 풀리는 것을 확인했다</li>
+<li>&#9744; <code>git stash</code>로 작업을 잠시 치운 뒤 <code>git stash pop</code>으로 다시 꺼냈다</li>
+<li>&#9744; 일부러 충돌을 낸 뒤 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> / <code>=======</code> / <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 표시를 직접 지우고 원하는 내용으로 정리했다</li>
+<li>&#9744; 충돌 해결 후 <code>git add</code> → <code>git commit</code>까지 마쳤다</li>
+<li>&#9744; fetch(원격 정보만 받아옴)와 pull(받아온 뒤 merge까지)의 차이를 한 문장으로 설명할 수 있다</li>
+</ul>
+</div>
+</details>
