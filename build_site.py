@@ -592,6 +592,33 @@ def parse_fence(lines, i, end):
     return {"type": "code", "lang": lang, "code": "\n".join(content)}, i
 
 
+DETAILS_OPEN_RE = re.compile(r"^<details[ >]", re.IGNORECASE)
+DETAILS_OPEN_EXACT_RE = re.compile(r"^<details\b", re.IGNORECASE)
+DETAILS_CLOSE_RE = re.compile(r"^</details\s*>$", re.IGNORECASE)
+
+
+def parse_raw_html_block(lines, i, end):
+    """<details>...</details> 원문 HTML을 그대로 통과시킨다(중첩 <details> 지원).
+    안쪽 내용은 마크다운으로 해석하지 않고 작성자가 직접 HTML로 쓴다."""
+    depth = 0
+    content = []
+    while i < end:
+        line = lines[i]
+        s = line.strip()
+        if DETAILS_OPEN_EXACT_RE.match(s):
+            depth += 1
+        if DETAILS_CLOSE_RE.match(s):
+            depth -= 1
+            content.append(line)
+            i += 1
+            if depth <= 0:
+                break
+            continue
+        content.append(line)
+        i += 1
+    return {"type": "raw_html", "html": "\n".join(content)}, i
+
+
 def parse_blockquote(lines, i, end):
     content = []
     while i < end and lines[i].lstrip().startswith(">"):
@@ -627,6 +654,8 @@ def parse_paragraph(lines, i, end):
         if HR_RE.match(line):
             break
         if line.lstrip().startswith(">"):
+            break
+        if DETAILS_OPEN_RE.match(line.strip()) or DETAILS_OPEN_EXACT_RE.match(line.strip()):
             break
         if is_table_start(lines, i, end):
             break
@@ -722,6 +751,10 @@ def parse_blocks(lines, i, end):
             continue
         if line.lstrip().startswith(">"):
             b, i = parse_blockquote(lines, i, end)
+            blocks.append(b)
+            continue
+        if DETAILS_OPEN_EXACT_RE.match(line.strip()):
+            b, i = parse_raw_html_block(lines, i, end)
             blocks.append(b)
             continue
         if is_table_start(lines, i, end):
@@ -1033,6 +1066,8 @@ def render_blocks(blocks):
             out.append("<blockquote>" + render_blocks(b["blocks"]) + "</blockquote>")
         elif t == "hr":
             out.append("<hr>")
+        elif t == "raw_html":
+            out.append(b["html"])
         elif t == "para":
             if b["lines"]:
                 out.append("<p>" + join_para_lines(b["lines"]) + "</p>")
@@ -1319,6 +1354,8 @@ def block_text(b):
         return " ".join(" ".join(r) for r in b["rows"])
     if t == "concept_box":
         return " ".join(block_text(sb) for sb in b["inner"])
+    if t == "raw_html":
+        return re.sub(r"<[^>]+>", " ", b["html"])
     return ""
 
 

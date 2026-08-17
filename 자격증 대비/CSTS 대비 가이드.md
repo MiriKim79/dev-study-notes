@@ -216,7 +216,137 @@ D) 구문 커버리지
 
 ---
 
-# 6. 합격 꿀팁
+# 6. 실전 연습문제 (정답 클릭 확인)
+
+> ⚠️ 이 섹션의 문제는 실제 기출 유형·난이도를 참고해 새로 만든 오리지널 연습문제이며, 실제 기출문제 원문이 아닙니다. 정답을 클릭하면 해설이 펼쳐집니다.
+
+**Q1.** 동일한 테스트를 반복하면 더 이상 새로운 결함을 찾지 못하게 되는 현상을 가리키는 테스트 7원칙은?
+A) 결함 집중(Defect Clustering)
+B) 살충제 패러독스(Pesticide Paradox)
+C) 오류-부재의 궤변(Absence-of-errors Fallacy)
+D) 테스팅은 정황 의존적(Testing is Context Dependent)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>같은 테스트 케이스를 반복하면 새로운 결함을 찾는 효과가 줄어드는 현상을 살충제 패러독스라 하며, 테스트 케이스를 주기적으로 수정·추가해야 합니다.</p>
+</div>
+</details>
+
+**Q2.** V-모델에서 '요구사항 분석' 단계와 대응되는 테스트 레벨은?
+A) 단위 테스트
+B) 통합 테스트
+C) 시스템 테스트
+D) 인수 테스트
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: D</span></p>
+<p>V-모델은 왼쪽 개발 단계와 오른쪽 테스트 레벨이 대응됩니다. 요구사항 분석은 인수 테스트, 아키텍처 설계는 시스템 테스트, 상세 설계는 통합 테스트, 코딩은 단위 테스트와 짝을 이룹니다.</p>
+</div>
+</details>
+
+**Q3.** 프로그램의 내부 구조(코드)를 보지 않고 입력과 출력만으로 테스트 케이스를 설계하는 기법 범주는?
+A) 화이트박스 테스트
+B) 블랙박스 테스트
+C) 회색박스 테스트
+D) 구조 기반 테스트
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>블랙박스 테스트는 내부 구현을 몰라도 명세(요구사항)를 기준으로 입력·출력을 검증하는 기법으로, 동등 분할·경계값 분석 등이 대표적입니다.</p>
+</div>
+</details>
+
+**Q4.** '20세 미만은 청소년 요금, 20세 이상은 성인 요금'이라는 조건에서 19세, 20세를 집중적으로 테스트하는 기법은?
+A) 동등 분할(Equivalence Partitioning)
+B) 결정 테이블(Decision Table)
+C) 경계값 분석(Boundary Value Analysis)
+D) 상태 전이 테스트(State Transition Testing)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>경계값 분석은 조건이 갈리는 경계 지점(19세/20세) 근처 값을 집중적으로 테스트해 경계에서 발생하는 결함을 찾는 기법입니다.</p>
+</div>
+</details>
+
+**Q5.** (OX) 검증(Verification)은 '제품을 올바르게 만들었는가'를, 확인(Validation)은 '올바른 제품을 만들었는가'를 다룬다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>검증은 명세·설계 문서대로 제대로 구현했는지를 보는 것이고, 확인은 실제 사용자 요구를 충족하는지를 보는 것입니다.</p>
+</div>
+</details>
+
+**Q6.** (OX) 테스트를 아무리 철저히 해도 소프트웨어에 결함이 없다는 것을 증명할 수는 없다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>'오류-부재의 궤변' 원칙에 따르면, 결함을 찾지 못했다고 해서 소프트웨어에 결함이 없다는 뜻은 아니며, 사용자 요구를 만족하지 못하면 여전히 실패입니다.</p>
+</div>
+</details>
+
+**Q7.** 결함(Defect) 생명주기에서 개발자가 수정 완료 후 테스터가 재검증하기 전 단계로 가장 알맞은 상태는?
+A) New(신규)
+B) Fixed(수정 완료, 검증 대기)
+C) Closed(종료)
+D) Rejected(반려)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>일반적인 결함 생명주기는 New → Assigned → Fixed → Retest → Closed(또는 Reopened) 흐름을 따르며, Fixed는 수정은 됐지만 아직 재검증되지 않은 상태입니다.</p>
+</div>
+</details>
+
+**Q8.** 테스트 케이스를 사전에 문서로 다 정하지 않고, 탐색하며 학습한 내용을 바탕으로 즉석에서 다음 테스트를 설계하는 기법은?
+A) 결정 테이블 테스트
+B) 경계값 분석
+C) 탐색적 테스트(Exploratory Testing)
+D) 페어와이즈 테스트
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>탐색적 테스트는 사전 스크립트 없이 테스터의 학습과 판단을 바탕으로 테스트 설계·실행을 동시에 진행하는 접근법입니다.</p>
+</div>
+</details>
+
+**Q9.** (단답형) 여러 조건의 조합과 그에 따른 결과를 표 형태로 정리해 테스트 케이스를 도출하는 블랙박스 기법의 이름은?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 결정 테이블 테스트(Decision Table Testing)</span></p>
+<p>결정 테이블은 여러 조건의 참/거짓 조합과 그에 따른 동작(결과)을 표로 정리해 조합 누락 없이 테스트 케이스를 도출하는 기법입니다.</p>
+</div>
+</details>
+
+**Q10.** (단답형) 코드의 모든 실행 가능한 문장을 최소 한 번씩 실행하도록 테스트 케이스를 설계하는 화이트박스 커버리지 기준은?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 구문 커버리지(Statement Coverage)</span></p>
+<p>구문 커버리지는 화이트박스 테스트의 가장 기본적인 커버리지 기준으로, 모든 코드 라인이 최소 한 번은 실행되는지를 측정합니다.</p>
+</div>
+</details>
+
+---
+
+# 7. 합격 꿀팁
 
 - 오류·결함·실패, 검증(Verification)·확인(Validation)처럼 비슷해 보이는 용어의 **정의 차이를 정확히 구분**하는 것이 이 시험의 핵심입니다. 실무 감각만으로는 헷갈리기 쉬운 부분이라 별도로 정리해두세요.
 - 이론만 외우지 말고, 직접 짜본 테스트 코드에 각 기법(동등 분할, 경계값 분석)을 매칭해보세요. "내가 이미 이렇게 하고 있었구나"를 확인하면 암기가 훨씬 쉬워집니다.
@@ -224,7 +354,7 @@ D) 구문 커버리지
 
 ---
 
-# 7. 자주 하는 실수
+# 8. 자주 하는 실수
 
 - 테스트 통과를 "버그가 없다"는 증명으로 착각
 - 동등 분할만 하고 경계값을 따로 챙기지 않아 경계 오류를 놓침
@@ -234,7 +364,7 @@ D) 구문 커버리지
 
 ---
 
-# 8. 실전 체크리스트
+# 9. 실전 체크리스트
 
 - [ ] 오류·결함·실패 세 단어의 차이를 설명할 수 있는가
 - [ ] 검증(Verification)과 확인(Validation)의 차이를 설명할 수 있는가
@@ -248,13 +378,13 @@ D) 구문 커버리지
 
 ---
 
-# 9. 진짜 기출문제·정확한 시험 정보는 여기서
+# 10. 진짜 기출문제·정확한 시험 정보는 여기서
 
-이 문서는 소프트웨어 테스트 분야의 표준 이론을 정리한 것으로, 특정 회차의 공식 시험 공고를 대체하지 않습니다. "CSTS 소프트웨어 테스트 전문가"로 검색해 시행 기관의 공식 사이트에서 최신 시험 범위·일정·기출 자료를 반드시 확인하세요.
+이 문서는 소프트웨어 테스트 분야의 표준 이론을 정리한 것으로, 특정 회차의 공식 시험 공고를 대체하지 않습니다. 정확한 시행 기관을 이 문서에서 단정하지 않으니, **검색 키워드: "CSTS 소프트웨어 테스트 전문가 자격증 시행기관"** 으로 검색해 시행 기관의 공식 사이트에서 최신 시험 범위·일정·기출 자료를 반드시 확인하세요.
 
 ---
 
-# 10. 자주 헷갈리는 개념 정리
+# 11. 자주 헷갈리는 개념 정리
 
 | 헷갈리는 짝 | 구분 |
 | --- | --- |
@@ -267,7 +397,7 @@ D) 구문 커버리지
 
 ---
 
-# 11. 시험 직전 최종 점검 리스트
+# 12. 시험 직전 최종 점검 리스트
 
 - [ ] 테스트의 7가지 기본 원칙을 순서 없이도 모두 나열할 수 있는가
 - [ ] 동등분할·경계값분석의 차이와 실제 테스트 케이스 도출 예시를 만들 수 있는가

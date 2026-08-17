@@ -227,7 +227,141 @@ D) 표본 수가 부족하다는 뜻이다
 
 ---
 
-# 6. 합격 꿀팁
+# 6. 실전 연습문제 (정답 클릭 확인)
+
+> ⚠️ 이 섹션의 문제는 실제 기출 유형·난이도를 참고해 새로 만든 오리지널 연습문제이며, 실제 기출문제 원문이 아닙니다. 정답을 클릭하면 해설이 펼쳐집니다.
+
+**Q1.** 명목척도와 순서척도의 차이를 가장 잘 설명한 것은?
+A) 명목척도는 순서 비교가 가능하고 순서척도는 불가능하다
+B) 순서척도는 크기 비교(순서)가 가능하지만 명목척도는 분류만 가능하다
+C) 둘 다 사칙연산이 자유롭다
+D) 둘 다 순서 비교가 불가능하다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>명목척도는 단순 분류(성별, 혈액형)만 가능하고, 순서척도는 분류에 더해 순서 비교(학점, 만족도)까지 가능합니다.</p>
+</div>
+</details>
+
+**Q2.** CRISP-DM의 6단계 중, 분석 목표와 현재 상황·자원을 파악하는 가장 첫 단계는?
+A) 데이터 이해
+B) 데이터 준비
+C) 업무 이해
+D) 평가
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>CRISP-DM은 업무 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 전개 순으로 진행되며, 언제든 이전 단계로 되돌아갈 수 있습니다.</p>
+</div>
+</details>
+
+**Q3.** 분류 모델 평가지표 중 '실제 양성 중 모델이 양성으로 맞춘 비율'을 가리키는 지표는?
+A) 정밀도(Precision)
+B) 재현율(Recall)
+C) 특이도(Specificity)
+D) F1-Score
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>재현율(민감도)은 실제 양성 중 모델이 양성으로 맞춘 비율이고, 정밀도는 양성으로 예측한 것 중 실제 양성인 비율입니다.</p>
+</div>
+</details>
+
+**Q4.** 다중공선성(Multicollinearity)이 발생했을 때 나타나는 문제로 가장 적절한 것은?
+A) 종속변수의 분산이 줄어든다
+B) 독립변수 간 상관관계가 높아 회귀계수 추정이 불안정해진다
+C) 표본 수가 자동으로 늘어난다
+D) 정규성 가정이 항상 깨진다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>다중공선성은 독립변수끼리 강한 상관관계를 가질 때 발생하며, 회귀계수의 표준오차가 커지고 추정이 불안정해집니다.</p>
+</div>
+</details>
+
+**Q5.** 군집분석(Clustering)과 분류(Classification)의 근본적인 차이는?
+A) 군집분석은 지도학습, 분류는 비지도학습이다
+B) 군집분석은 정답(레이블)이 없는 비지도학습이고, 분류는 정답이 있는 지도학습이다
+C) 둘 다 정답 레이블이 필요하다
+D) 둘 다 회귀분석의 일종이다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>군집분석은 레이블 없이 유사한 데이터를 그룹으로 묶는 비지도학습이고, 분류는 미리 정해진 레이블을 예측하는 지도학습입니다.</p>
+</div>
+</details>
+
+**Q6.** 연관규칙분석에서 '두 상품이 함께 팔릴 확률'을 의미하는 지표는?
+A) 지지도(Support)
+B) 신뢰도(Confidence)
+C) 향상도(Lift)
+D) 결정계수(R²)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: A</span></p>
+<p>지지도는 전체 거래 중 두 품목이 동시에 등장하는 비율입니다. 신뢰도는 조건부 확률, 향상도는 두 지표를 비교한 값입니다.</p>
+</div>
+</details>
+
+**Q7.** 시계열 데이터에서 시간이 지나도 평균과 분산이 일정하게 유지되는 성질을 무엇이라 하는가?
+A) 계절성(Seasonality)
+B) 정상성(Stationarity)
+C) 자기상관(Autocorrelation)
+D) 추세(Trend)
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>정상성은 시계열의 통계적 성질(평균, 분산)이 시간에 따라 변하지 않는 성질이며, ARIMA 등 많은 시계열 모델의 전제 조건입니다.</p>
+</div>
+</details>
+
+**Q8.** (OX) 과적합(Overfitting)은 모델이 학습 데이터에만 지나치게 맞춰져 새로운 데이터에 대한 일반화 성능이 떨어지는 현상이다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>과적합은 학습 데이터의 잡음까지 학습해 훈련 성능은 높지만 실제(테스트) 데이터 예측 성능이 떨어지는 현상입니다.</p>
+</div>
+</details>
+
+**Q9.** (OX) 표준편차가 클수록 데이터가 평균 주위에 좁게 몰려있다는 뜻이다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: X</span></p>
+<p>표준편차가 클수록 데이터가 평균에서 넓게 퍼져 있다는 뜻이고, 작을수록 평균 주위에 좁게 몰려 있습니다.</p>
+</div>
+</details>
+
+**Q10.** (단답형) 실제로는 참인 귀무가설을 잘못 기각하는 오류를 통계학에서 무엇이라 부르는가?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 제1종 오류(Type I Error)</span></p>
+<p>귀무가설이 참인데도 기각하면 제1종 오류(α), 귀무가설이 거짓인데도 채택하면 제2종 오류(β)입니다.</p>
+</div>
+</details>
+
+---
+
+# 7. 합격 꿀팁
 
 - **3과목(데이터 분석)에 시간을 가장 많이 투자하세요.** 배점이 가장 큽니다.
 - 공식을 외우기보다 "왜 이 지표를 쓰는지" 이해에 집중하세요. ADSP는 계산 문제보다 개념을 묻는 문제 비중이 높습니다.
@@ -236,7 +370,7 @@ D) 표본 수가 부족하다는 뜻이다
 
 ---
 
-# 7. 자주 하는 실수
+# 8. 자주 하는 실수
 
 - 평균과 중앙값의 차이를 상황 없이 공식만 외움
 - CRISP-DM을 "한 번에 끝나는 순서"로 착각하고 반복 가능성을 놓침
@@ -245,7 +379,7 @@ D) 표본 수가 부족하다는 뜻이다
 
 ---
 
-# 8. 실전 체크리스트
+# 9. 실전 체크리스트
 
 - [ ] 정형/반정형/비정형 데이터를 예시와 함께 구분할 수 있는가
 - [ ] 빅데이터의 3V(+2V)를 예시와 함께 설명할 수 있는가
@@ -259,13 +393,13 @@ D) 표본 수가 부족하다는 뜻이다
 
 ---
 
-# 9. 진짜 기출문제는 여기서
+# 10. 진짜 기출문제는 여기서
 
-공식 기출문제·자료는 **한국데이터산업진흥원 데이터자격검정(dataq.or.kr)**에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.
+공식 기출문제·자료는 [한국데이터산업진흥원 데이터자격검정(dataq.or.kr)](https://www.dataq.or.kr)에서 확인하세요. 사이트 접속 후 자료실 메뉴에서 ADSP 기출문제를 내려받을 수 있습니다(정확한 하위 경로는 사이트 개편에 따라 바뀔 수 있어 직접 메뉴를 찾아 들어가는 것을 권장합니다). 이 문서는 시험 범위와 개념 정리만 제공합니다.
 
 ---
 
-# 10. 자주 헷갈리는 개념 정리
+# 11. 자주 헷갈리는 개념 정리
 
 | 헷갈리는 짝 | 구분 |
 | --- | --- |
@@ -278,7 +412,7 @@ D) 표본 수가 부족하다는 뜻이다
 
 ---
 
-# 11. 시험 직전 최종 점검 리스트
+# 12. 시험 직전 최종 점검 리스트
 
 - [ ] DIKW 피라미드 순서와 각 단계 정의를 헷갈리지 않는가
 - [ ] 지도/비지도/강화학습의 대표 알고리즘을 각각 2개 이상 말할 수 있는가

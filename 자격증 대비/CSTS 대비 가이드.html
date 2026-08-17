@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSTS 대비 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=a5c55fd563">
+<link rel="stylesheet" href="../assets/style.css?v=09ce40cd66">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="CSTS 대비 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSTS 대비 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="소프트웨어 테스트의 표준 이론(테스트 레벨, 설계 기법, 결함 관리)을 정리합니다">
-<script src="../assets/search-index.js?v=a5c55fd563" defer></script>
+<script src="../assets/search-index.js?v=09ce40cd66" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-소프트웨어-테스트의-기본-원칙">1. 소프트웨어 테스트의 기본 원칙</a><ul class="toc-h2-list"><li><a href="#검증-Verification-과-확인-Validation">검증(Verification)과 확인(Validation)</a></li><li><a href="#테스트의-7가지-기본-원칙">테스트의 7가지 기본 원칙</a></li></ul></li><li class="toc-h1"><a href="#2-테스트-레벨-V-모델">2. 테스트 레벨 — V-모델</a></li><li class="toc-h1"><a href="#3-테스트-설계-기법">3. 테스트 설계 기법</a><ul class="toc-h2-list"><li><a href="#블랙박스-기법-명세-입출력-기준">블랙박스 기법 — 명세(입출력) 기준</a></li><li><a href="#결정-테이블-조건-조합이-많을-때">결정 테이블 — 조건 조합이 많을 때</a></li><li><a href="#상태-전이-테스트-상태에-따라-동작이-달라질-때">상태 전이 테스트 — 상태에 따라 동작이 달라질 때</a></li><li><a href="#경험-기반-테스트">경험 기반 테스트</a></li><li><a href="#화이트박스-기법-코드-구조-기준">화이트박스 기법 — 코드 구조 기준</a></li></ul></li><li class="toc-h1"><a href="#4-테스트-프로세스">4. 테스트 프로세스</a><ul class="toc-h2-list"><li><a href="#결함-관리-Defect-Management">결함 관리(Defect Management)</a></li><li><a href="#테스트-독립성">테스트 독립성</a></li><li><a href="#주요-테스트-문서">주요 테스트 문서</a></li></ul></li><li class="toc-h1"><a href="#5-연습문제">5. 연습문제</a></li><li class="toc-h1"><a href="#6-합격-꿀팁">6. 합격 꿀팁</a></li><li class="toc-h1"><a href="#7-자주-하는-실수">7. 자주 하는 실수</a></li><li class="toc-h1"><a href="#8-실전-체크리스트">8. 실전 체크리스트</a></li><li class="toc-h1"><a href="#9-진짜-기출문제-정확한-시험-정보는-여기서">9. 진짜 기출문제·정확한 시험 정보는 여기서</a></li><li class="toc-h1"><a href="#10-자주-헷갈리는-개념-정리">10. 자주 헷갈리는 개념 정리</a></li><li class="toc-h1"><a href="#11-시험-직전-최종-점검-리스트">11. 시험 직전 최종 점검 리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-소프트웨어-테스트의-기본-원칙">1. 소프트웨어 테스트의 기본 원칙</a><ul class="toc-h2-list"><li><a href="#검증-Verification-과-확인-Validation">검증(Verification)과 확인(Validation)</a></li><li><a href="#테스트의-7가지-기본-원칙">테스트의 7가지 기본 원칙</a></li></ul></li><li class="toc-h1"><a href="#2-테스트-레벨-V-모델">2. 테스트 레벨 — V-모델</a></li><li class="toc-h1"><a href="#3-테스트-설계-기법">3. 테스트 설계 기법</a><ul class="toc-h2-list"><li><a href="#블랙박스-기법-명세-입출력-기준">블랙박스 기법 — 명세(입출력) 기준</a></li><li><a href="#결정-테이블-조건-조합이-많을-때">결정 테이블 — 조건 조합이 많을 때</a></li><li><a href="#상태-전이-테스트-상태에-따라-동작이-달라질-때">상태 전이 테스트 — 상태에 따라 동작이 달라질 때</a></li><li><a href="#경험-기반-테스트">경험 기반 테스트</a></li><li><a href="#화이트박스-기법-코드-구조-기준">화이트박스 기법 — 코드 구조 기준</a></li></ul></li><li class="toc-h1"><a href="#4-테스트-프로세스">4. 테스트 프로세스</a><ul class="toc-h2-list"><li><a href="#결함-관리-Defect-Management">결함 관리(Defect Management)</a></li><li><a href="#테스트-독립성">테스트 독립성</a></li><li><a href="#주요-테스트-문서">주요 테스트 문서</a></li></ul></li><li class="toc-h1"><a href="#5-연습문제">5. 연습문제</a></li><li class="toc-h1"><a href="#6-실전-연습문제-정답-클릭-확인">6. 실전 연습문제 (정답 클릭 확인)</a></li><li class="toc-h1"><a href="#7-합격-꿀팁">7. 합격 꿀팁</a></li><li class="toc-h1"><a href="#8-자주-하는-실수">8. 자주 하는 실수</a></li><li class="toc-h1"><a href="#9-실전-체크리스트">9. 실전 체크리스트</a></li><li class="toc-h1"><a href="#10-진짜-기출문제-정확한-시험-정보는-여기서">10. 진짜 기출문제·정확한 시험 정보는 여기서</a></li><li class="toc-h1"><a href="#11-자주-헷갈리는-개념-정리">11. 자주 헷갈리는 개념 정리</a></li><li class="toc-h1"><a href="#12-시험-직전-최종-점검-리스트">12. 시험 직전 최종 점검 리스트</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">CSTS 대비 가이드</h1>
         <p class="page-tagline">테스트 코드는 짜봤다? 이제 테스트 설계 기법과 결함 관리 이론으로 검증해볼 차례입니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 테스트 자동화 중급 가이드로 실무 테스트 코드는 짜봤고, 소프트웨어 테스트 전문가(CSTS) 자격증으로 이론까지 검증받고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 소프트웨어 테스트의 표준 이론(테스트 레벨, 설계 기법, 결함 관리)을 정리합니다</div><div class="intro-row"><strong>사용법:</strong> 이 문서는 공식 교재 『소프트웨어 테스트 전문가(CSTS) 가이드』의 4개 구성(테스트 개요·테스트 설계기법·테스트 프로세스·자격시험 예제)에 맞춰 내용을 정리했습니다. 다만 정확한 시행 기관·문항 수·접수 일정은 이 문서가 다루지 않으니, 응시 전에는 반드시 "CSTS 소프트웨어 테스트 전문가"로 검색해 최신 공식 공고를 직접 확인하세요.</div><div class="intro-row"><strong>📝 이 문서는 핵심 요약노트입니다.</strong> 정식 교재를 대체하지 않습니다 — 감을 잡고 복습하는 용도로 쓰고, 실전 대비는 공식 교재와 기출문제로 함께 준비하세요.</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 소프트웨어 테스트의 기본 원칙</li><li>2. 테스트 레벨 — V-모델</li><li>3. 테스트 설계 기법</li><li>4. 테스트 프로세스</li><li>5. 연습문제</li><li>6. 합격 꿀팁</li><li>7. 자주 하는 실수</li><li>8. 실전 체크리스트</li><li>9. 진짜 기출문제·정확한 시험 정보는 여기서</li><li>10. 자주 헷갈리는 개념 정리</li><li>11. 시험 직전 최종 점검 리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 소프트웨어 테스트의 기본 원칙</li><li>2. 테스트 레벨 — V-모델</li><li>3. 테스트 설계 기법</li><li>4. 테스트 프로세스</li><li>5. 연습문제</li><li>6. 실전 연습문제 (정답 클릭 확인)</li><li>7. 합격 꿀팁</li><li>8. 자주 하는 실수</li><li>9. 실전 체크리스트</li><li>10. 진짜 기출문제·정확한 시험 정보는 여기서</li><li>11. 자주 헷갈리는 개념 정리</li><li>12. 시험 직전 최종 점검 리스트</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
@@ -138,22 +138,105 @@
 <p><strong>문제 4.</strong> 미리 테스트 케이스를 다 정해두지 않고, 테스트하며 학습한 내용으로 다음 테스트를 즉석에서 설계하는 기법은? A) 경계값 분석 B) 결정 테이블 C) 탐색적 테스트 D) 구문 커버리지</p>
 <p><strong>정답</strong>: 1번 B / 2번 C / 3번 A / 4번 C</p>
 <hr>
-<h2 class="section-h1" id="6-합격-꿀팁">6. 합격 꿀팁<a class="heading-anchor" href="#6-합격-꿀팁" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="6-실전-연습문제-정답-클릭-확인">6. 실전 연습문제 (정답 클릭 확인)<a class="heading-anchor" href="#6-실전-연습문제-정답-클릭-확인" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p>⚠️ 이 섹션의 문제는 실제 기출 유형·난이도를 참고해 새로 만든 오리지널 연습문제이며, 실제 기출문제 원문이 아닙니다. 정답을 클릭하면 해설이 펼쳐집니다.</p></blockquote>
+<p><strong>Q1.</strong> 동일한 테스트를 반복하면 더 이상 새로운 결함을 찾지 못하게 되는 현상을 가리키는 테스트 7원칙은? A) 결함 집중(Defect Clustering) B) 살충제 패러독스(Pesticide Paradox) C) 오류-부재의 궤변(Absence-of-errors Fallacy) D) 테스팅은 정황 의존적(Testing is Context Dependent)</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>같은 테스트 케이스를 반복하면 새로운 결함을 찾는 효과가 줄어드는 현상을 살충제 패러독스라 하며, 테스트 케이스를 주기적으로 수정·추가해야 합니다.</p>
+</div>
+</details>
+<p><strong>Q2.</strong> V-모델에서 '요구사항 분석' 단계와 대응되는 테스트 레벨은? A) 단위 테스트 B) 통합 테스트 C) 시스템 테스트 D) 인수 테스트</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: D</span></p>
+<p>V-모델은 왼쪽 개발 단계와 오른쪽 테스트 레벨이 대응됩니다. 요구사항 분석은 인수 테스트, 아키텍처 설계는 시스템 테스트, 상세 설계는 통합 테스트, 코딩은 단위 테스트와 짝을 이룹니다.</p>
+</div>
+</details>
+<p><strong>Q3.</strong> 프로그램의 내부 구조(코드)를 보지 않고 입력과 출력만으로 테스트 케이스를 설계하는 기법 범주는? A) 화이트박스 테스트 B) 블랙박스 테스트 C) 회색박스 테스트 D) 구조 기반 테스트</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>블랙박스 테스트는 내부 구현을 몰라도 명세(요구사항)를 기준으로 입력·출력을 검증하는 기법으로, 동등 분할·경계값 분석 등이 대표적입니다.</p>
+</div>
+</details>
+<p><strong>Q4.</strong> '20세 미만은 청소년 요금, 20세 이상은 성인 요금'이라는 조건에서 19세, 20세를 집중적으로 테스트하는 기법은? A) 동등 분할(Equivalence Partitioning) B) 결정 테이블(Decision Table) C) 경계값 분석(Boundary Value Analysis) D) 상태 전이 테스트(State Transition Testing)</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>경계값 분석은 조건이 갈리는 경계 지점(19세/20세) 근처 값을 집중적으로 테스트해 경계에서 발생하는 결함을 찾는 기법입니다.</p>
+</div>
+</details>
+<p><strong>Q5.</strong> (OX) 검증(Verification)은 '제품을 올바르게 만들었는가'를, 확인(Validation)은 '올바른 제품을 만들었는가'를 다룬다.</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>검증은 명세·설계 문서대로 제대로 구현했는지를 보는 것이고, 확인은 실제 사용자 요구를 충족하는지를 보는 것입니다.</p>
+</div>
+</details>
+<p><strong>Q6.</strong> (OX) 테스트를 아무리 철저히 해도 소프트웨어에 결함이 없다는 것을 증명할 수는 없다.</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>'오류-부재의 궤변' 원칙에 따르면, 결함을 찾지 못했다고 해서 소프트웨어에 결함이 없다는 뜻은 아니며, 사용자 요구를 만족하지 못하면 여전히 실패입니다.</p>
+</div>
+</details>
+<p><strong>Q7.</strong> 결함(Defect) 생명주기에서 개발자가 수정 완료 후 테스터가 재검증하기 전 단계로 가장 알맞은 상태는? A) New(신규) B) Fixed(수정 완료, 검증 대기) C) Closed(종료) D) Rejected(반려)</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>일반적인 결함 생명주기는 New → Assigned → Fixed → Retest → Closed(또는 Reopened) 흐름을 따르며, Fixed는 수정은 됐지만 아직 재검증되지 않은 상태입니다.</p>
+</div>
+</details>
+<p><strong>Q8.</strong> 테스트 케이스를 사전에 문서로 다 정하지 않고, 탐색하며 학습한 내용을 바탕으로 즉석에서 다음 테스트를 설계하는 기법은? A) 결정 테이블 테스트 B) 경계값 분석 C) 탐색적 테스트(Exploratory Testing) D) 페어와이즈 테스트</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>탐색적 테스트는 사전 스크립트 없이 테스터의 학습과 판단을 바탕으로 테스트 설계·실행을 동시에 진행하는 접근법입니다.</p>
+</div>
+</details>
+<p><strong>Q9.</strong> (단답형) 여러 조건의 조합과 그에 따른 결과를 표 형태로 정리해 테스트 케이스를 도출하는 블랙박스 기법의 이름은?</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 결정 테이블 테스트(Decision Table Testing)</span></p>
+<p>결정 테이블은 여러 조건의 참/거짓 조합과 그에 따른 동작(결과)을 표로 정리해 조합 누락 없이 테스트 케이스를 도출하는 기법입니다.</p>
+</div>
+</details>
+<p><strong>Q10.</strong> (단답형) 코드의 모든 실행 가능한 문장을 최소 한 번씩 실행하도록 테스트 케이스를 설계하는 화이트박스 커버리지 기준은?</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 구문 커버리지(Statement Coverage)</span></p>
+<p>구문 커버리지는 화이트박스 테스트의 가장 기본적인 커버리지 기준으로, 모든 코드 라인이 최소 한 번은 실행되는지를 측정합니다.</p>
+</div>
+</details>
+<hr>
+<h2 class="section-h1" id="7-합격-꿀팁">7. 합격 꿀팁<a class="heading-anchor" href="#7-합격-꿀팁" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>오류·결함·실패, 검증(Verification)·확인(Validation)처럼 비슷해 보이는 용어의 <strong>정의 차이를 정확히 구분</strong>하는 것이 이 시험의 핵심입니다. 실무 감각만으로는 헷갈리기 쉬운 부분이라 별도로 정리해두세요.</li><li>이론만 외우지 말고, 직접 짜본 테스트 코드에 각 기법(동등 분할, 경계값 분석)을 매칭해보세요. "내가 이미 이렇게 하고 있었구나"를 확인하면 암기가 훨씬 쉬워집니다.</li><li>결함 생명주기는 GitHub Issues 같은 실제 이슈 트래커의 상태 흐름(열림→진행중→해결→종료)과 연결지어 외우면 오래 남습니다.</li></ul>
 <hr>
-<h2 class="section-h1" id="7-자주-하는-실수">7. 자주 하는 실수<a class="heading-anchor" href="#7-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="8-자주-하는-실수">8. 자주 하는 실수<a class="heading-anchor" href="#8-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>테스트 통과를 "버그가 없다"는 증명으로 착각</li><li>동등 분할만 하고 경계값을 따로 챙기지 않아 경계 오류를 놓침</li><li>결함 보고서에 재현 절차 없이 "안 됨"만 적어 담당자가 재현을 못함</li><li>구문 커버리지만 보고 분기 커버리지를 확인하지 않음</li><li>조건 조합이 여러 개인데 결정 테이블 없이 감으로 케이스를 뽑아 조합을 빠뜨림</li></ul>
 <hr>
-<h2 class="section-h1" id="8-실전-체크리스트">8. 실전 체크리스트<a class="heading-anchor" href="#8-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="9-실전-체크리스트">9. 실전 체크리스트<a class="heading-anchor" href="#9-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>오류·결함·실패 세 단어의 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>검증(Verification)과 확인(Validation)의 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>V-모델에서 각 개발 단계와 짝지어지는 테스트 레벨을 아는가</span></li><li><input type="checkbox" disabled><span>동등 분할과 경계값 분석을 함께 적용해본 적이 있는가</span></li><li><input type="checkbox" disabled><span>조건 조합이 복잡한 기능에 결정 테이블을 그려본 적이 있는가</span></li><li><input type="checkbox" disabled><span>상태가 바뀌는 기능에서 허용되지 않는 전환까지 테스트하는가</span></li><li><input type="checkbox" disabled><span>명세 기반 기법과 경험 기반 기법(탐색적 테스트)의 차이를 아는가</span></li><li><input type="checkbox" disabled><span>결함 생명주기(발견→보고→확인→수정→재테스트→종료)를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>정확한 시행 기관과 최신 시험 범위를 공식 공고에서 확인했는가</span></li></ul>
 <hr>
-<h2 class="section-h1" id="9-진짜-기출문제-정확한-시험-정보는-여기서">9. 진짜 기출문제·정확한 시험 정보는 여기서<a class="heading-anchor" href="#9-진짜-기출문제-정확한-시험-정보는-여기서" aria-label="이 섹션 링크">#</a></h2>
-<p>이 문서는 소프트웨어 테스트 분야의 표준 이론을 정리한 것으로, 특정 회차의 공식 시험 공고를 대체하지 않습니다. "CSTS 소프트웨어 테스트 전문가"로 검색해 시행 기관의 공식 사이트에서 최신 시험 범위·일정·기출 자료를 반드시 확인하세요.</p>
+<h2 class="section-h1" id="10-진짜-기출문제-정확한-시험-정보는-여기서">10. 진짜 기출문제·정확한 시험 정보는 여기서<a class="heading-anchor" href="#10-진짜-기출문제-정확한-시험-정보는-여기서" aria-label="이 섹션 링크">#</a></h2>
+<p>이 문서는 소프트웨어 테스트 분야의 표준 이론을 정리한 것으로, 특정 회차의 공식 시험 공고를 대체하지 않습니다. 정확한 시행 기관을 이 문서에서 단정하지 않으니, <strong>검색 키워드: "CSTS 소프트웨어 테스트 전문가 자격증 시행기관"</strong> 으로 검색해 시행 기관의 공식 사이트에서 최신 시험 범위·일정·기출 자료를 반드시 확인하세요.</p>
 <hr>
-<h2 class="section-h1" id="10-자주-헷갈리는-개념-정리">10. 자주 헷갈리는 개념 정리<a class="heading-anchor" href="#10-자주-헷갈리는-개념-정리" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="11-자주-헷갈리는-개념-정리">11. 자주 헷갈리는 개념 정리<a class="heading-anchor" href="#11-자주-헷갈리는-개념-정리" aria-label="이 섹션 링크">#</a></h2>
 <div class="table-scroll"><table><thead><tr><th>헷갈리는 짝</th><th>구분</th></tr></thead><tbody><tr><td>검증(Verification) vs 확인(Validation)</td><td>검증은 "명세대로 만들었는가"(Are we building the product right?), 확인은 "필요한 것을 만들었는가"(Are we building the right product?)</td></tr><tr><td>결함(Defect) vs 오류(Error) vs 실패(Failure)</td><td>오류는 사람의 실수, 결함은 코드에 남은 잘못(버그), 실패는 결함이 실행되어 실제로 드러난 증상</td></tr><tr><td>블랙박스 vs 화이트박스 테스트</td><td>블랙박스는 내부 구조를 모르고 입출력만으로 테스트(동등분할 등), 화이트박스는 내부 코드 구조를 보고 테스트(구문/분기 커버리지)</td></tr><tr><td>단위 vs 통합 vs 시스템 vs 인수 테스트</td><td>V-모델의 4단계 순서 — 단위(모듈 하나) → 통합(모듈 간 연동) → 시스템(전체 요구사항) → 인수(실사용자 관점 최종 확인)</td></tr><tr><td>회귀 테스트 vs 재테스트(Confirmation Test)</td><td>재테스트는 수정한 결함이 실제로 고쳐졌는지 확인, 회귀 테스트는 그 수정이 다른 기능을 망가뜨리지 않았는지 확인</td></tr><tr><td>정적 테스트 vs 동적 테스트</td><td>정적 테스트는 코드를 실행하지 않고 검토(리뷰, 정적 분석), 동적 테스트는 실제로 실행해서 확인</td></tr></tbody></table></div>
 <hr>
-<h2 class="section-h1" id="11-시험-직전-최종-점검-리스트">11. 시험 직전 최종 점검 리스트<a class="heading-anchor" href="#11-시험-직전-최종-점검-리스트" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="12-시험-직전-최종-점검-리스트">12. 시험 직전 최종 점검 리스트<a class="heading-anchor" href="#12-시험-직전-최종-점검-리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>테스트의 7가지 기본 원칙을 순서 없이도 모두 나열할 수 있는가</span></li><li><input type="checkbox" disabled><span>동등분할·경계값분석의 차이와 실제 테스트 케이스 도출 예시를 만들 수 있는가</span></li><li><input type="checkbox" disabled><span>구문 커버리지와 분기(결정) 커버리지의 차이와 각각의 한계를 아는가</span></li><li><input type="checkbox" disabled><span>테스트 프로세스(계획→분석/설계→구현→실행→종료) 각 단계의 산출물을 아는가</span></li><li><input type="checkbox" disabled><span>결함 리포트에 반드시 포함되어야 할 항목(재현 절차, 기대/실제 결과, 심각도)을 아는가</span></li><li><input type="checkbox" disabled><span>탐색적 테스트가 명세 기반 기법을 보완하는 이유를 설명할 수 있는가</span></li></ul>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="../자격증 대비.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">자격증 대비</span></a><a class="doc-nav-link next" href="SQLD 대비 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">SQLD 대비 가이드</span></a></nav>
       </div>
@@ -166,6 +249,6 @@
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=a5c55fd563" defer></script>
+<script src="../assets/main.js?v=09ce40cd66" defer></script>
 </body>
 </html>

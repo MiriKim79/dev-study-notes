@@ -290,7 +290,141 @@ D) 스칼라 서브쿼리
 
 ---
 
-# 5. 합격 꿀팁
+# 5. 실전 연습문제 (정답 클릭 확인)
+
+> ⚠️ 이 섹션의 문제는 실제 기출 유형·난이도를 참고해 새로 만든 오리지널 연습문제이며, 실제 기출문제 원문이 아닙니다. 정답을 클릭하면 해설이 펼쳐집니다.
+
+**Q1.** 다음 중 이행적 함수 종속을 제거해 제3정규형(3NF)을 만족시키는 과정에서 하는 일로 가장 알맞은 것은?
+A) 반복되는 그룹을 별도 테이블로 분리한다
+B) 기본키 일부에만 종속된 속성을 분리한다
+C) 기본키가 아닌 속성이 다른 비키 속성에 종속된 관계를 분리한다
+D) 후보키를 기본키로 지정한다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>1NF는 반복 그룹 제거, 2NF는 부분 함수 종속 제거, 3NF는 비키 속성 간 종속(이행적 종속)을 제거하는 단계입니다.</p>
+</div>
+</details>
+
+**Q2.** `SELECT dept, AVG(salary) FROM emp GROUP BY dept HAVING AVG(salary) > 3000;` 실행 순서로 옳은 것은?
+A) SELECT → FROM → GROUP BY → HAVING
+B) FROM → GROUP BY → HAVING → SELECT
+C) FROM → HAVING → GROUP BY → SELECT
+D) GROUP BY → FROM → SELECT → HAVING
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>SQL은 FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY 순으로 처리됩니다.</p>
+</div>
+</details>
+
+**Q3.** 두 테이블을 조인할 때 왼쪽 테이블의 모든 행을 반환하고, 오른쪽에 매칭되는 값이 없으면 NULL로 채우는 조인은?
+A) INNER JOIN
+B) RIGHT OUTER JOIN
+C) LEFT OUTER JOIN
+D) CROSS JOIN
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>LEFT OUTER JOIN은 왼쪽 테이블 기준으로 전부 반환하고, 매칭이 없으면 오른쪽 컬럼을 NULL로 채웁니다.</p>
+</div>
+</details>
+
+**Q4.** `WHERE dept_id IN (SELECT dept_id FROM dept WHERE region = 'SEOUL')`에서 서브쿼리의 종류는?
+A) 단일 행 서브쿼리
+B) 다중 행 서브쿼리
+C) 상관 서브쿼리
+D) 스칼라 서브쿼리
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>IN 연산자와 함께 여러 값을 반환할 수 있는 서브쿼리이므로 다중 행 서브쿼리입니다.</p>
+</div>
+</details>
+
+**Q5.** 다음 중 슈퍼타입/서브타입 모델링에서 '서브타입 통합(개별 테이블)' 방식의 특징으로 옳은 것은?
+A) 하나의 테이블에 모든 속성을 몰아넣는다
+B) 서브타입마다 별도 테이블을 만들고 PK를 FK로도 사용한다
+C) 슈퍼타입 자체를 아예 없애고 각 서브타입에 공통 속성을 중복 저장한다
+D) 관계형 모델에서는 사용할 수 없다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>개별 테이블(1:1) 방식은 슈퍼타입·서브타입을 각각 테이블로 만들고, 서브타입 테이블의 PK가 곧 슈퍼타입을 참조하는 FK가 됩니다.</p>
+</div>
+</details>
+
+**Q6.** `UNION`과 `UNION ALL`의 차이로 옳은 것은?
+A) UNION ALL이 중복을 제거하고 UNION은 유지한다
+B) UNION이 중복을 제거하고 UNION ALL은 유지한다
+C) 둘 다 중복을 제거한다
+D) 둘 다 중복을 유지한다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>UNION은 결과를 합친 뒤 중복 제거 연산까지 수행하고, UNION ALL은 중복 제거 없이 그대로 합쳐 더 빠릅니다.</p>
+</div>
+</details>
+
+**Q7.** 윈도우 함수에서 같은 그룹 내 순위를 매기되, 동점자에게 같은 순위를 주고 다음 순위를 건너뛰는 함수는?
+A) ROW_NUMBER()
+B) RANK()
+C) DENSE_RANK()
+D) NTILE()
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>RANK()는 동점에 같은 순위를 부여하고 다음 순위를 건너뜁니다(1,2,2,4). 건너뛰지 않는 것은 DENSE_RANK(), 동점 없이 순번만 매기는 것은 ROW_NUMBER()입니다.</p>
+</div>
+</details>
+
+**Q8.** (OX) `DELETE FROM table;`은 테이블 구조를 삭제하지 않지만, `DROP TABLE table;`은 테이블 구조 자체를 삭제한다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>DELETE는 데이터(행)만 지우고 구조는 남기며, DROP은 테이블 정의 자체를 제거합니다.</p>
+</div>
+</details>
+
+**Q9.** (OX) 상관 서브쿼리(Correlated Subquery)는 바깥 쿼리와 무관하게 한 번만 실행된다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: X</span></p>
+<p>상관 서브쿼리는 바깥 쿼리의 각 행마다 그 행의 값을 참조해 반복 실행됩니다. 한 번만 실행되는 것은 비상관 서브쿼리입니다.</p>
+</div>
+</details>
+
+**Q10.** (단답형) 부모 엔터티의 기본키가 자식 엔터티의 기본키 일부로 상속되어, 부모 없이는 자식이 존재할 수 없는 강한 종속 관계를 무엇이라 하는가?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 식별자 관계(Identifying Relationship)</span></p>
+<p>식별자 관계는 부모의 PK가 자식의 PK 구성요소로 포함되는 강한 종속 관계이며, 반대로 부모 PK가 자식의 일반 컬럼(FK)으로만 쓰이면 비식별자 관계입니다.</p>
+</div>
+</details>
+
+---
+
+# 6. 합격 꿀팁
 
 - **2과목(SQL)에 시간을 더 배분하세요.** 1과목(모델링)보다 문항 수·배점이 훨씬 큽니다.
 - SQL 문제를 풀 때 눈으로만 읽지 말고, 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)대로 손으로 직접 중간 결과를 적어보며 채점하세요. 몇 번만 해보면 몸에 붙습니다.
@@ -299,7 +433,7 @@ D) 스칼라 서브쿼리
 
 ---
 
-# 6. 자주 하는 실수
+# 7. 자주 하는 실수
 
 - 정규화 단계별 정의를 실무 감각으로만 어림짐작해서 헷갈림
 - SQL 실행 순서를 모르고 작성 순서(SELECT부터)로 착각
@@ -310,7 +444,7 @@ D) 스칼라 서브쿼리
 
 ---
 
-# 7. 실전 체크리스트
+# 8. 실전 체크리스트
 
 - [ ] 정규화 1~3단계 조건을 예시와 함께 설명할 수 있는가
 - [ ] 식별자 관계와 비식별자 관계를 구분할 수 있는가
@@ -324,13 +458,13 @@ D) 스칼라 서브쿼리
 
 ---
 
-# 8. 진짜 기출문제는 여기서
+# 9. 진짜 기출문제는 여기서
 
-공식 기출문제·자료는 **한국데이터산업진흥원 데이터자격검정(dataq.or.kr)**에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.
+공식 기출문제·자료는 [한국데이터산업진흥원 데이터자격검정(dataq.or.kr)](https://www.dataq.or.kr)에서 확인하세요. 사이트 접속 후 자료실 메뉴에서 SQLD 기출문제를 내려받을 수 있습니다(정확한 하위 경로는 사이트 개편에 따라 바뀔 수 있어 직접 메뉴를 찾아 들어가는 것을 권장합니다). 이 문서는 시험 범위와 개념 정리만 제공합니다.
 
 ---
 
-# 9. 자주 헷갈리는 개념 정리
+# 10. 자주 헷갈리는 개념 정리
 
 | 헷갈리는 짝 | 구분 |
 | --- | --- |
@@ -343,7 +477,7 @@ D) 스칼라 서브쿼리
 
 ---
 
-# 10. 시험 직전 최종 점검 리스트
+# 11. 시험 직전 최종 점검 리스트
 
 - [ ] 정규화 1~3정규형을 예시 테이블로 직접 분해할 수 있는가
 - [ ] ERD에서 관계의 카디널리티(1:1, 1:N, N:M)를 구분할 수 있는가

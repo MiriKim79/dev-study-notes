@@ -173,7 +173,141 @@ D) 지원 플랜은 모두 동일하다
 
 ---
 
-# 5. 합격 꿀팁
+# 5. 실전 연습문제 (정답 클릭 확인)
+
+> ⚠️ 이 섹션의 문제는 실제 기출 유형·난이도를 참고해 새로 만든 오리지널 연습문제이며, 실제 기출문제 원문이 아닙니다. 정답을 클릭하면 해설이 펼쳐집니다.
+
+**Q1.** AWS 책임 공유 모델(Shared Responsibility Model)에서 AWS의 책임 영역에 해당하는 것은?
+A) 고객 데이터 암호화 설정
+B) IAM 사용자 권한 관리
+C) 글로벌 인프라(데이터센터, 하드웨어)의 물리적 보안
+D) 애플리케이션 코드의 취약점 관리
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>AWS는 '클라우드 자체의 보안'(하드웨어, 데이터센터, 네트워크 인프라)을 책임지고, 고객은 '클라우드 내부의 보안'(데이터, 접근 권한, 애플리케이션)을 책임집니다.</p>
+</div>
+</details>
+
+**Q2.** 정적 웹사이트 파일이나 백업 데이터를 저장하기에 가장 적합한 AWS 서비스는?
+A) EC2
+B) S3
+C) VPC
+D) IAM
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>S3(Simple Storage Service)는 객체 스토리지 서비스로 정적 파일·백업·로그 저장에 적합합니다. EC2는 컴퓨팅, VPC는 네트워크, IAM은 권한 관리 서비스입니다.</p>
+</div>
+</details>
+
+**Q3.** 사용량 변화에 따라 EC2 인스턴스 수를 자동으로 늘리거나 줄여주는 서비스는?
+A) Amazon RDS
+B) Auto Scaling
+C) AWS Lambda
+D) Amazon CloudFront
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>Auto Scaling은 지표(CPU 사용률 등)에 따라 EC2 인스턴스 수를 자동으로 조정해 비용과 가용성을 함께 관리합니다.</p>
+</div>
+</details>
+
+**Q4.** AWS의 요금 체계 중, 특정 기간을 약정하는 대신 필요한 만큼만 쓰고 그만큼만 지불하는 기본 원칙은?
+A) Reserved Pricing
+B) Pay-as-you-go
+C) Fixed Pricing
+D) Spot Pricing
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>Pay-as-you-go(종량제)는 AWS의 기본 요금 원칙으로 약정 없이 사용한 만큼만 비용을 지불합니다.</p>
+</div>
+</details>
+
+**Q5.** 리전(Region)과 가용 영역(Availability Zone)의 관계를 가장 올바르게 설명한 것은?
+A) 하나의 가용 영역 안에 여러 리전이 있다
+B) 하나의 리전 안에 물리적으로 분리된 여러 가용 영역이 있다
+C) 리전과 가용 영역은 동일한 개념이다
+D) 가용 영역은 전 세계에 하나만 존재한다
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>리전은 지리적으로 분리된 지역(예: 서울)이며, 하나의 리전 안에는 서로 독립된 여러 개의 가용 영역(데이터센터 그룹)이 존재합니다.</p>
+</div>
+</details>
+
+**Q6.** 실제 사람이 아니라 'EC2 인스턴스가 S3에 접근'하는 것처럼, 임시로 권한을 위임할 때 사용하는 IAM 요소는?
+A) IAM 사용자(User)
+B) IAM 그룹(Group)
+C) IAM 역할(Role)
+D) 루트 계정
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>IAM 역할은 사람이 아닌 AWS 리소스나 임시 접근이 필요한 주체에게 권한을 위임할 때 사용합니다.</p>
+</div>
+</details>
+
+**Q7.** 여러 AWS 계정의 비용을 하나로 통합 관리하고 볼륨 할인 혜택을 받을 수 있게 해주는 서비스는?
+A) AWS Budgets
+B) AWS Organizations
+C) Cost Explorer
+D) Trusted Advisor
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>AWS Organizations는 여러 계정을 하나의 조직으로 묶어 통합 결제, 볼륨 할인, 정책 관리를 지원합니다.</p>
+</div>
+</details>
+
+**Q8.** (OX) Amazon VPC는 AWS 클라우드 내에 논리적으로 격리된 자신만의 가상 네트워크를 구성할 수 있게 해준다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>VPC(Virtual Private Cloud)는 사용자가 IP 대역, 서브넷, 라우팅 등을 직접 설정할 수 있는 논리적으로 격리된 네트워크 공간입니다.</p>
+</div>
+</details>
+
+**Q9.** (OX) 온디맨드(On-Demand) 인스턴스는 예약 인스턴스(Reserved Instance)보다 항상 저렴하다.
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: X</span></p>
+<p>일반적으로 예약 인스턴스가 장기 약정을 조건으로 온디맨드보다 저렴합니다. 온디맨드는 약정이 없는 대신 단가가 더 높습니다.</p>
+</div>
+</details>
+
+**Q10.** (단답형) AWS의 기술 지원과 모범 사례를 제공하며, 24시간 전화 상담이 필요한 프로덕션 서비스에는 최소 Business 이상이 권장되는 것은?
+
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: AWS Support Plan(지원 플랜)</span></p>
+<p>AWS 지원 플랜은 Basic·Developer·Business·Enterprise로 나뉘며, 등급이 높을수록 응답 시간과 지원 범위가 넓어집니다.</p>
+</div>
+</details>
+
+---
+
+# 6. 합격 꿀팁
 
 - **AWS 공식 무료 학습 자료(AWS Skill Builder)를 가장 먼저 활용하세요.** Cloud Practitioner를 겨냥한 무료 강의·연습 문제가 공식으로 제공됩니다.
 - 서비스 이름을 암기만 하지 말고, **무료 티어로 직접 콘솔에서 EC2 인스턴스 하나, S3 버킷 하나를 만들어보세요.** 눈으로 한 번 본 개념은 암기 카드보다 오래 남습니다.
@@ -182,7 +316,7 @@ D) 지원 플랜은 모두 동일하다
 
 ---
 
-# 6. 자주 하는 실수
+# 7. 자주 하는 실수
 
 - "클라우드에 올리면 보안은 AWS가 다 책임진다"고 오해
 - EC2와 Lambda(서버리스)의 차이를 모르고 아무 문제에나 EC2를 답으로 고름
@@ -191,7 +325,7 @@ D) 지원 플랜은 모두 동일하다
 
 ---
 
-# 7. 실전 체크리스트
+# 8. 실전 체크리스트
 
 - [ ] 책임 공유 모델에서 AWS 책임과 사용자 책임을 구분할 수 있는가
 - [ ] EC2·S3·RDS·VPC가 각각 뭘 하는 서비스인지 한 줄로 설명할 수 있는가
@@ -204,13 +338,13 @@ D) 지원 플랜은 모두 동일하다
 
 ---
 
-# 8. 진짜 기출문제는 여기서
+# 9. 진짜 기출문제는 여기서
 
-공식 학습 자료와 연습 문제는 **AWS Skill Builder(skillbuilder.aws)**, 자격증 안내는 **AWS Certification(aws.amazon.com/certification)**에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.
+AWS 공인 자격증은 실제 기출문제 원문을 공개하지 않습니다. 대신 [AWS Skill Builder 공식 무료 연습문제](https://skillbuilder.aws)에서 Cloud Practitioner 대비 공식 연습 문제를 풀어볼 수 있고, 자격증 시험 안내는 [AWS Certification 공식 사이트](https://aws.amazon.com/certification/)에서 확인하세요. 이 문서는 시험 범위와 개념 정리만 제공합니다.
 
 ---
 
-# 9. 자주 헷갈리는 서비스 비교
+# 10. 자주 헷갈리는 서비스 비교
 
 | 헷갈리는 짝 | 구분 |
 | --- | --- |
@@ -223,7 +357,7 @@ D) 지원 플랜은 모두 동일하다
 
 ---
 
-# 10. 시험 직전 최종 점검 리스트
+# 11. 시험 직전 최종 점검 리스트
 
 - [ ] Region(지역)과 Availability Zone(가용 영역)의 관계를 그림으로 설명할 수 있는가
 - [ ] 온디맨드/예약/스팟 인스턴스의 가격·중단 특성 차이를 아는가

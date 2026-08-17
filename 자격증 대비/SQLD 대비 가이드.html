@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SQLD 대비 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=a5c55fd563">
+<link rel="stylesheet" href="../assets/style.css?v=09ce40cd66">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="SQLD 대비 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLD 대비 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="한국데이터산업진흥원이 주관하는 SQLD(SQL 개발자) 시험 범위를 정리하고, 실무 SQL 지식을 시험에 나오는 형태로 다시 정리합니다">
-<script src="../assets/search-index.js?v=a5c55fd563" defer></script>
+<script src="../assets/search-index.js?v=09ce40cd66" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-1과목-핵심-데이터-모델링">2. 1과목 핵심 — 데이터 모델링</a><ul class="toc-h2-list"><li><a href="#ERD-읽는-법">ERD 읽는 법</a></li><li><a href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄</a></li><li><a href="#데이터-모델과-SQL-ERD를-실제-테이블로-옮기기">데이터 모델과 SQL — ERD를 실제 테이블로 옮기기</a></li><li><a href="#식별자-관계-vs-비식별자-관계">식별자 관계 vs 비식별자 관계</a></li><li><a href="#슈퍼타입-서브타입">슈퍼타입/서브타입</a></li></ul></li><li class="toc-h1"><a href="#3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용</a><ul class="toc-h2-list"><li><a href="#실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다</a></li><li><a href="#조인-JOIN-종류">조인(JOIN) 종류</a></li><li><a href="#서브쿼리-쿼리-안의-쿼리">서브쿼리 — 쿼리 안의 쿼리</a></li><li><a href="#집합-연산자-여러-SELECT-결과를-합치기">집합 연산자 — 여러 SELECT 결과를 합치기</a></li><li><a href="#GROUP-BY-확장-ROLLUP">GROUP BY 확장 — ROLLUP</a></li><li><a href="#계층형-질의-조직도-같은-상하-구조-조회">계층형 질의 — 조직도 같은 상하 구조 조회</a></li><li><a href="#윈도우-함수">윈도우 함수</a></li><li><a href="#NULL-처리-주의">NULL 처리 주의</a></li><li><a href="#관리-구문-SELECT-말고도-SQL이-하는-일">관리 구문 — SELECT 말고도 SQL이 하는 일</a></li></ul></li><li class="toc-h1"><a href="#4-연습문제">4. 연습문제</a></li><li class="toc-h1"><a href="#5-합격-꿀팁">5. 합격 꿀팁</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-진짜-기출문제는-여기서">8. 진짜 기출문제는 여기서</a></li><li class="toc-h1"><a href="#9-자주-헷갈리는-개념-정리">9. 자주 헷갈리는 개념 정리</a></li><li class="toc-h1"><a href="#10-시험-직전-최종-점검-리스트">10. 시험 직전 최종 점검 리스트</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-시험-구성">1. 시험 구성</a></li><li class="toc-h1"><a href="#2-1과목-핵심-데이터-모델링">2. 1과목 핵심 — 데이터 모델링</a><ul class="toc-h2-list"><li><a href="#ERD-읽는-법">ERD 읽는 법</a></li><li><a href="#정규화-단계-시험에서-정확한-정의로-자주-물어봄">정규화 단계 — 시험에서 정확한 정의로 자주 물어봄</a></li><li><a href="#데이터-모델과-SQL-ERD를-실제-테이블로-옮기기">데이터 모델과 SQL — ERD를 실제 테이블로 옮기기</a></li><li><a href="#식별자-관계-vs-비식별자-관계">식별자 관계 vs 비식별자 관계</a></li><li><a href="#슈퍼타입-서브타입">슈퍼타입/서브타입</a></li></ul></li><li class="toc-h1"><a href="#3-2과목-핵심-SQL-기본-및-활용">3. 2과목 핵심 — SQL 기본 및 활용</a><ul class="toc-h2-list"><li><a href="#실행-순서-작성-순서와-다릅니다">실행 순서 — 작성 순서와 다릅니다</a></li><li><a href="#조인-JOIN-종류">조인(JOIN) 종류</a></li><li><a href="#서브쿼리-쿼리-안의-쿼리">서브쿼리 — 쿼리 안의 쿼리</a></li><li><a href="#집합-연산자-여러-SELECT-결과를-합치기">집합 연산자 — 여러 SELECT 결과를 합치기</a></li><li><a href="#GROUP-BY-확장-ROLLUP">GROUP BY 확장 — ROLLUP</a></li><li><a href="#계층형-질의-조직도-같은-상하-구조-조회">계층형 질의 — 조직도 같은 상하 구조 조회</a></li><li><a href="#윈도우-함수">윈도우 함수</a></li><li><a href="#NULL-처리-주의">NULL 처리 주의</a></li><li><a href="#관리-구문-SELECT-말고도-SQL이-하는-일">관리 구문 — SELECT 말고도 SQL이 하는 일</a></li></ul></li><li class="toc-h1"><a href="#4-연습문제">4. 연습문제</a></li><li class="toc-h1"><a href="#5-실전-연습문제-정답-클릭-확인">5. 실전 연습문제 (정답 클릭 확인)</a></li><li class="toc-h1"><a href="#6-합격-꿀팁">6. 합격 꿀팁</a></li><li class="toc-h1"><a href="#7-자주-하는-실수">7. 자주 하는 실수</a></li><li class="toc-h1"><a href="#8-실전-체크리스트">8. 실전 체크리스트</a></li><li class="toc-h1"><a href="#9-진짜-기출문제는-여기서">9. 진짜 기출문제는 여기서</a></li><li class="toc-h1"><a href="#10-자주-헷갈리는-개념-정리">10. 자주 헷갈리는 개념 정리</a></li><li class="toc-h1"><a href="#11-시험-직전-최종-점검-리스트">11. 시험 직전 최종 점검 리스트</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -50,7 +50,7 @@
         <h1 class="page-title">SQLD 대비 가이드</h1>
         <p class="page-tagline">SQL은 좀 짜는데 자격증은 처음? 시험에 나오는 딱 그 범위만 정리했습니다.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> SELECT/JOIN 정도는 짤 줄 알고, SQLD 자격증을 처음 준비하는 사람</div><div class="intro-row"><strong>목적:</strong> 한국데이터산업진흥원이 주관하는 SQLD(SQL 개발자) 시험 범위를 정리하고, 실무 SQL 지식을 시험에 나오는 형태로 다시 정리합니다</div><div class="intro-row"><strong>사용법:</strong> 시험 정보(문항 수, 합격 기준, 접수 일정)는 회차마다 바뀔 수 있으니 이 문서로 개념을 잡은 뒤 반드시 공식 사이트(데이터자격검정 dataq.or.kr)에서 최신 공고를 확인하세요.</div><div class="intro-row"><strong>📝 이 문서는 핵심 요약노트입니다.</strong> 정식 교재를 대체하지 않습니다 — 감을 잡고 복습하는 용도로 쓰고, 실전 대비는 공식 교재와 기출문제로 함께 준비하세요.</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 시험 구성</li><li>2. 1과목 핵심 — 데이터 모델링</li><li>3. 2과목 핵심 — SQL 기본 및 활용</li><li>4. 연습문제</li><li>5. 합격 꿀팁</li><li>6. 자주 하는 실수</li><li>7. 실전 체크리스트</li><li>8. 진짜 기출문제는 여기서</li><li>9. 자주 헷갈리는 개념 정리</li><li>10. 시험 직전 최종 점검 리스트</li></ol></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 시험 구성</li><li>2. 1과목 핵심 — 데이터 모델링</li><li>3. 2과목 핵심 — SQL 기본 및 활용</li><li>4. 연습문제</li><li>5. 실전 연습문제 (정답 클릭 확인)</li><li>6. 합격 꿀팁</li><li>7. 자주 하는 실수</li><li>8. 실전 체크리스트</li><li>9. 진짜 기출문제는 여기서</li><li>10. 자주 헷갈리는 개념 정리</li><li>11. 시험 직전 최종 점검 리스트</li></ol></div>
         
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
@@ -176,22 +176,105 @@ COMMIT;                                  -- 첫 번째 UPDATE만 최종 반영</
 <p><strong>문제 5.</strong> 바깥 쿼리의 각 행마다 그 값을 참조해서 다시 실행되는 서브쿼리를 가리키는 말은? A) 단일 행 서브쿼리 B) 다중 행 서브쿼리 C) 상관 서브쿼리 D) 스칼라 서브쿼리</p>
 <p><strong>정답</strong>: 1번 A / 2번 B / 3번 B / 4번 B / 5번 C</p>
 <hr>
-<h2 class="section-h1" id="5-합격-꿀팁">5. 합격 꿀팁<a class="heading-anchor" href="#5-합격-꿀팁" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="5-실전-연습문제-정답-클릭-확인">5. 실전 연습문제 (정답 클릭 확인)<a class="heading-anchor" href="#5-실전-연습문제-정답-클릭-확인" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p>⚠️ 이 섹션의 문제는 실제 기출 유형·난이도를 참고해 새로 만든 오리지널 연습문제이며, 실제 기출문제 원문이 아닙니다. 정답을 클릭하면 해설이 펼쳐집니다.</p></blockquote>
+<p><strong>Q1.</strong> 다음 중 이행적 함수 종속을 제거해 제3정규형(3NF)을 만족시키는 과정에서 하는 일로 가장 알맞은 것은? A) 반복되는 그룹을 별도 테이블로 분리한다 B) 기본키 일부에만 종속된 속성을 분리한다 C) 기본키가 아닌 속성이 다른 비키 속성에 종속된 관계를 분리한다 D) 후보키를 기본키로 지정한다</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>1NF는 반복 그룹 제거, 2NF는 부분 함수 종속 제거, 3NF는 비키 속성 간 종속(이행적 종속)을 제거하는 단계입니다.</p>
+</div>
+</details>
+<p><strong>Q2.</strong> <code class="inline-code">SELECT dept, AVG(salary) FROM emp GROUP BY dept HAVING AVG(salary) &gt; 3000;</code> 실행 순서로 옳은 것은? A) SELECT → FROM → GROUP BY → HAVING B) FROM → GROUP BY → HAVING → SELECT C) FROM → HAVING → GROUP BY → SELECT D) GROUP BY → FROM → SELECT → HAVING</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>SQL은 FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY 순으로 처리됩니다.</p>
+</div>
+</details>
+<p><strong>Q3.</strong> 두 테이블을 조인할 때 왼쪽 테이블의 모든 행을 반환하고, 오른쪽에 매칭되는 값이 없으면 NULL로 채우는 조인은? A) INNER JOIN B) RIGHT OUTER JOIN C) LEFT OUTER JOIN D) CROSS JOIN</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: C</span></p>
+<p>LEFT OUTER JOIN은 왼쪽 테이블 기준으로 전부 반환하고, 매칭이 없으면 오른쪽 컬럼을 NULL로 채웁니다.</p>
+</div>
+</details>
+<p><strong>Q4.</strong> <code class="inline-code">WHERE dept_id IN (SELECT dept_id FROM dept WHERE region = 'SEOUL')</code>에서 서브쿼리의 종류는? A) 단일 행 서브쿼리 B) 다중 행 서브쿼리 C) 상관 서브쿼리 D) 스칼라 서브쿼리</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>IN 연산자와 함께 여러 값을 반환할 수 있는 서브쿼리이므로 다중 행 서브쿼리입니다.</p>
+</div>
+</details>
+<p><strong>Q5.</strong> 다음 중 슈퍼타입/서브타입 모델링에서 '서브타입 통합(개별 테이블)' 방식의 특징으로 옳은 것은? A) 하나의 테이블에 모든 속성을 몰아넣는다 B) 서브타입마다 별도 테이블을 만들고 PK를 FK로도 사용한다 C) 슈퍼타입 자체를 아예 없애고 각 서브타입에 공통 속성을 중복 저장한다 D) 관계형 모델에서는 사용할 수 없다</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>개별 테이블(1:1) 방식은 슈퍼타입·서브타입을 각각 테이블로 만들고, 서브타입 테이블의 PK가 곧 슈퍼타입을 참조하는 FK가 됩니다.</p>
+</div>
+</details>
+<p><strong>Q6.</strong> <code class="inline-code">UNION</code>과 <code class="inline-code">UNION ALL</code>의 차이로 옳은 것은? A) UNION ALL이 중복을 제거하고 UNION은 유지한다 B) UNION이 중복을 제거하고 UNION ALL은 유지한다 C) 둘 다 중복을 제거한다 D) 둘 다 중복을 유지한다</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>UNION은 결과를 합친 뒤 중복 제거 연산까지 수행하고, UNION ALL은 중복 제거 없이 그대로 합쳐 더 빠릅니다.</p>
+</div>
+</details>
+<p><strong>Q7.</strong> 윈도우 함수에서 같은 그룹 내 순위를 매기되, 동점자에게 같은 순위를 주고 다음 순위를 건너뛰는 함수는? A) ROW_NUMBER() B) RANK() C) DENSE_RANK() D) NTILE()</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: B</span></p>
+<p>RANK()는 동점에 같은 순위를 부여하고 다음 순위를 건너뜁니다(1,2,2,4). 건너뛰지 않는 것은 DENSE_RANK(), 동점 없이 순번만 매기는 것은 ROW_NUMBER()입니다.</p>
+</div>
+</details>
+<p><strong>Q8.</strong> (OX) <code class="inline-code">DELETE FROM table;</code>은 테이블 구조를 삭제하지 않지만, <code class="inline-code">DROP TABLE table;</code>은 테이블 구조 자체를 삭제한다.</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: O</span></p>
+<p>DELETE는 데이터(행)만 지우고 구조는 남기며, DROP은 테이블 정의 자체를 제거합니다.</p>
+</div>
+</details>
+<p><strong>Q9.</strong> (OX) 상관 서브쿼리(Correlated Subquery)는 바깥 쿼리와 무관하게 한 번만 실행된다.</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: X</span></p>
+<p>상관 서브쿼리는 바깥 쿼리의 각 행마다 그 행의 값을 참조해 반복 실행됩니다. 한 번만 실행되는 것은 비상관 서브쿼리입니다.</p>
+</div>
+</details>
+<p><strong>Q10.</strong> (단답형) 부모 엔터티의 기본키가 자식 엔터티의 기본키 일부로 상속되어, 부모 없이는 자식이 존재할 수 없는 강한 종속 관계를 무엇이라 하는가?</p>
+<details class="quiz-answer">
+<summary>정답 보기</summary>
+<div class="quiz-answer-body">
+<p><span class="quiz-correct">정답: 식별자 관계(Identifying Relationship)</span></p>
+<p>식별자 관계는 부모의 PK가 자식의 PK 구성요소로 포함되는 강한 종속 관계이며, 반대로 부모 PK가 자식의 일반 컬럼(FK)으로만 쓰이면 비식별자 관계입니다.</p>
+</div>
+</details>
+<hr>
+<h2 class="section-h1" id="6-합격-꿀팁">6. 합격 꿀팁<a class="heading-anchor" href="#6-합격-꿀팁" aria-label="이 섹션 링크">#</a></h2>
 <ul><li><strong>2과목(SQL)에 시간을 더 배분하세요.</strong> 1과목(모델링)보다 문항 수·배점이 훨씬 큽니다.</li><li>SQL 문제를 풀 때 눈으로만 읽지 말고, 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)대로 손으로 직접 중간 결과를 적어보며 채점하세요. 몇 번만 해보면 몸에 붙습니다.</li><li>정규화 단계·조인 종류처럼 헷갈리는 개념은 나만의 비교표를 직접 만들어두면, 시험장에서 "이게 뭐였더라" 하는 시간을 줄여줍니다.</li><li>가능하면 무료로 설치할 수 있는 DB(MySQL 등)에 연습문제의 쿼리를 직접 돌려보세요. 이론으로만 외운 것과 실제로 결과를 눈으로 본 것은 오래 남는 정도가 다릅니다.</li></ul>
 <hr>
-<h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="7-자주-하는-실수">7. 자주 하는 실수<a class="heading-anchor" href="#7-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>정규화 단계별 정의를 실무 감각으로만 어림짐작해서 헷갈림</li><li>SQL 실행 순서를 모르고 작성 순서(SELECT부터)로 착각</li><li>NULL을 <code class="inline-code">=</code>로 비교하려다 오답</li><li>조인 종류별 결과 차이를 직접 손으로 안 그려보고 암기만 함</li><li>단일 행 서브쿼리 자리에 여러 값을 반환하는 서브쿼리를 넣어 오류</li><li><code class="inline-code">UNION</code>과 <code class="inline-code">UNION ALL</code>을 성능 차이 없이 아무거나 사용</li></ul>
 <hr>
-<h2 class="section-h1" id="7-실전-체크리스트">7. 실전 체크리스트<a class="heading-anchor" href="#7-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="8-실전-체크리스트">8. 실전 체크리스트<a class="heading-anchor" href="#8-실전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>정규화 1~3단계 조건을 예시와 함께 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>식별자 관계와 비식별자 관계를 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>SQL의 실제 실행 순서(FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY)를 아는가</span></li><li><input type="checkbox" disabled><span>조인 4종류의 결과 차이를 직접 그려서 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>서브쿼리 종류(단일행/다중행/상관)별로 어떤 연산자와 함께 쓰는지 아는가</span></li><li><input type="checkbox" disabled><span><code class="inline-code">UNION</code>과 <code class="inline-code">UNION ALL</code>의 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>윈도우 함수와 GROUP BY의 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>DDL/DML/DCL/TCL 네 가지 분류와 대표 구문을 아는가</span></li><li><input type="checkbox" disabled><span>최신 시험 공고(문항 수, 합격 기준, 접수 일정)를 공식 사이트에서 확인했는가</span></li></ul>
 <hr>
-<h2 class="section-h1" id="8-진짜-기출문제는-여기서">8. 진짜 기출문제는 여기서<a class="heading-anchor" href="#8-진짜-기출문제는-여기서" aria-label="이 섹션 링크">#</a></h2>
-<p>공식 기출문제·자료는 <strong>한국데이터산업진흥원 데이터자격검정(dataq.or.kr)</strong>에서 확인하세요. 이 사이트는 시험 범위와 개념 정리만 제공합니다.</p>
+<h2 class="section-h1" id="9-진짜-기출문제는-여기서">9. 진짜 기출문제는 여기서<a class="heading-anchor" href="#9-진짜-기출문제는-여기서" aria-label="이 섹션 링크">#</a></h2>
+<p>공식 기출문제·자료는 <a href="https://www.dataq.or.kr" target="_blank" rel="noopener">한국데이터산업진흥원 데이터자격검정(dataq.or.kr)</a>에서 확인하세요. 사이트 접속 후 자료실 메뉴에서 SQLD 기출문제를 내려받을 수 있습니다(정확한 하위 경로는 사이트 개편에 따라 바뀔 수 있어 직접 메뉴를 찾아 들어가는 것을 권장합니다). 이 문서는 시험 범위와 개념 정리만 제공합니다.</p>
 <hr>
-<h2 class="section-h1" id="9-자주-헷갈리는-개념-정리">9. 자주 헷갈리는 개념 정리<a class="heading-anchor" href="#9-자주-헷갈리는-개념-정리" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="10-자주-헷갈리는-개념-정리">10. 자주 헷갈리는 개념 정리<a class="heading-anchor" href="#10-자주-헷갈리는-개념-정리" aria-label="이 섹션 링크">#</a></h2>
 <div class="table-scroll"><table><thead><tr><th>헷갈리는 짝</th><th>구분</th></tr></thead><tbody><tr><td>WHERE vs HAVING</td><td>WHERE는 그룹화 전 개별 행을 필터링, HAVING은 GROUP BY로 묶인 후 집계 결과를 필터링</td></tr><tr><td>INNER JOIN vs OUTER JOIN</td><td>INNER는 양쪽 다 일치하는 행만, OUTER(LEFT/RIGHT/FULL)는 일치하지 않아도 한쪽(또는 양쪽) 행을 NULL로 채워 포함</td></tr><tr><td>DELETE vs TRUNCATE vs DROP</td><td>DELETE는 조건별 행 삭제(롤백 가능, WHERE 사용 가능), TRUNCATE는 테이블 전체 행 삭제(구조는 유지, 롤백 대체로 불가), DROP은 테이블 자체를 삭제</td></tr><tr><td>제1정규형 vs 제2정규형 vs 제3정규형</td><td>1NF는 원자값만 허용(반복 그룹 제거), 2NF는 부분 함수 종속 제거(복합키의 일부에만 종속된 속성 분리), 3NF는 이행 함수 종속 제거(비키 속성이 다른 비키 속성에 종속되는 것 제거)</td></tr><tr><td>서브쿼리 vs 뷰(VIEW)</td><td>서브쿼리는 쿼리 안에 일회성으로 포함된 쿼리, 뷰는 쿼리 자체를 저장해두고 테이블처럼 재사용하는 가상 테이블</td></tr><tr><td>집계함수 vs 윈도우 함수</td><td>집계함수(SUM, COUNT 등)는 GROUP BY로 여러 행을 한 행으로 요약, 윈도우 함수는 행을 그대로 유지하면서 그룹별 계산값을 각 행에 함께 표시(<code class="inline-code">OVER(PARTITION BY ...)</code>)</td></tr></tbody></table></div>
 <hr>
-<h2 class="section-h1" id="10-시험-직전-최종-점검-리스트">10. 시험 직전 최종 점검 리스트<a class="heading-anchor" href="#10-시험-직전-최종-점검-리스트" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="11-시험-직전-최종-점검-리스트">11. 시험 직전 최종 점검 리스트<a class="heading-anchor" href="#11-시험-직전-최종-점검-리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>정규화 1~3정규형을 예시 테이블로 직접 분해할 수 있는가</span></li><li><input type="checkbox" disabled><span>ERD에서 관계의 카디널리티(1:1, 1:N, N:M)를 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>JOIN 종류별로 결과 행이 어떻게 달라지는지 표로 그려볼 수 있는가</span></li><li><input type="checkbox" disabled><span>서브쿼리(스칼라, 상관 서브쿼리)와 조인의 차이·성능 차이를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>윈도우 함수(<code class="inline-code">ROW_NUMBER</code>, <code class="inline-code">RANK</code>, <code class="inline-code">DENSE_RANK</code>)의 결과 차이를 예시로 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>트랜잭션의 4가지 속성(ACID)을 각각 한 문장으로 설명할 수 있는가</span></li></ul>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="CSTS 대비 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">CSTS 대비 가이드</span></a><a class="doc-nav-link next" href="ADSP 대비 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">ADSP 대비 가이드</span></a></nav>
       </div>
@@ -204,6 +287,6 @@ COMMIT;                                  -- 첫 번째 UPDATE만 최종 반영</
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=a5c55fd563" defer></script>
+<script src="../assets/main.js?v=09ce40cd66" defer></script>
 </body>
 </html>
