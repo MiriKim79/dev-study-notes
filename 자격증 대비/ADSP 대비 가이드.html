@@ -334,12 +334,13 @@ p-value: 귀무가설이 맞다고 가정했을 때, 지금 관측된 결과(또
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>재현율 = TP / (TP+FN) = 40 / (40+20) = 40/60 ≈ 0.667 → 약 66.7%</code></pre></div>
 <p>4단계 — F1-Score (정밀도와 재현율의 조화평균)</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>F1 = 2 × (정밀도 × 재현율) / (정밀도 + 재현율)
-   = 2 × (0.80 × 0.667) / (0.80 + 0.667)
-   = 2 × 0.5336 / 1.467
-   ≈ 1.0672 / 1.467
-   ≈ 0.7276 → 약 72.8%</code></pre></div>
-<p><strong>정답</strong>: 정확도 85%, 정밀도 80%, 재현율 약 66.7%, F1-Score 약 72.8%</p>
-<p><strong>해석</strong>: 재현율(66.7%)이 정밀도(80%)보다 낮다는 것은, 이 필터가 "정상 메일을 스팸으로 잘못 거르는 것"보다 "진짜 스팸을 놓치는 것(FN=20)"이 상대적으로 더 많다는 뜻입니다. 스팸 필터의 목적에 따라 어느 지표를 우선할지 판단이 달라집니다.</p>
+   = 2 × (0.80 × 0.6667) / (0.80 + 0.6667)
+   = 2 × 0.5333 / 1.4667
+   ≈ 1.0667 / 1.4667
+   ≈ 0.7273 → 약 72.7%</code></pre></div>
+<p><strong>참고</strong>: F1-Score는 조화평균 공식 대신 <code class="inline-code">F1 = 2×TP / (2×TP+FP+FN)</code>로 한 번에 계산할 수도 있습니다. 이 예제는 <code class="inline-code">80 / (80+10+20) = 80/110 ≈ 0.7273</code>으로 동일한 결과가 나옵니다.</p>
+<p><strong>정답</strong>: 정확도 85%, 정밀도 80%, 재현율 약 66.7%, F1-Score 약 72.7%</p>
+<p><strong>해석</strong>: 재현율(약 66.7%)이 정밀도(80%)보다 낮다는 것은, 이 필터가 "정상 메일을 스팸으로 잘못 거르는 것"보다 "진짜 스팸을 놓치는 것(FN=20)"이 상대적으로 더 많다는 뜻입니다. 스팸 필터의 목적에 따라 어느 지표를 우선할지 판단이 달라집니다.</p>
 <h3 class="section-h2" id="13-4-가설검정-유의수준-판단-문제">13.4 가설검정 유의수준 판단 문제<a class="heading-anchor" href="#13-4-가설검정-유의수준-판단-문제" aria-label="이 섹션 링크">#</a></h3>
 <p><strong>예제 문제</strong>: 새 랜딩페이지 디자인이 기존보다 클릭률이 높은지 검정했더니 p-value = 0.03이 나왔다. 유의수준(α) 0.05를 기준으로 할 때 결론은?</p>
 <p><strong>풀이 과정</strong></p>

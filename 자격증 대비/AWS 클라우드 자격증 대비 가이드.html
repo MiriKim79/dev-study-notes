@@ -265,7 +265,7 @@ Savings Plans: 사용량 약정으로 유연하게 할인</code></pre></div>
 <div class="table-scroll"><table><thead><tr><th>헷갈리는 짝</th><th>구분</th></tr></thead><tbody><tr><td>S3 vs EBS vs EFS</td><td>S3(객체 스토리지, 인터넷으로 접근), EBS(EC2 전용 블록 스토리지, 한 인스턴스에 연결), EFS(여러 EC2가 동시에 공유하는 파일 스토리지)</td></tr><tr><td>Security Group vs NACL</td><td>Security Group은 인스턴스 단위 방화벽(허용 규칙만, Stateful), NACL은 서브넷 단위 방화벽(허용+거부 규칙, Stateless)</td></tr><tr><td>RDS vs DynamoDB</td><td>RDS는 관계형(스키마 고정, JOIN 가능), DynamoDB는 NoSQL(스키마 유연, 대규모 트래픽에 수평 확장 유리)</td></tr><tr><td>IAM 사용자 vs 역할(Role)</td><td>사용자는 특정 사람/애플리케이션에 고정된 자격 증명, 역할은 필요할 때 임시로 위임받아 쓰는 권한(자격 증명 없이 위임)</td></tr><tr><td>CloudFront vs Route 53</td><td>CloudFront는 콘텐츠를 엣지에 캐싱하는 CDN, Route 53은 DNS(도메인 이름을 IP로 변환) 서비스</td></tr><tr><td>Auto Scaling vs ELB</td><td>Auto Scaling은 트래픽에 따라 서버 대수를 조절, ELB는 여러 서버로 트래픽을 분산 — 둘은 함께 쓰이는 짝</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="11-시험-직전-최종-점검-리스트">11. 시험 직전 최종 점검 리스트<a class="heading-anchor" href="#11-시험-직전-최종-점검-리스트" aria-label="이 섹션 링크">#</a></h2>
-<ul class="checklist"><li><input type="checkbox" disabled><span>Region(지역)과 Availability Zone(가용 영역)의 관계를 그림으로 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>온디맨드/예약/스팟 인스턴스의 가격·중단 특성 차이를 아는가</span></li><li><input type="checkbox" disabled><span>S3의 스토리지 클래스(Standard, IA, Glacier 등)를 비용·접근 빈도 기준으로 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>VPC의 퍼블릭/프라이빗 서브넷 개념과 인터넷 게이트웨이 역할을 아는가</span></li><li><input type="checkbox" disabled><span>책임 공유 모델(Shared Responsibility Model)에서 AWS와 고객의 책임 경계를 설명할 수 있는가</span></li></ul>
+<ul class="checklist"><li><input type="checkbox" disabled><span>Region(지역)과 Availability Zone(가용 영역)의 관계를 그림으로 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>온디맨드/예약/스팟 인스턴스의 가격·중단 특성 차이를 아는가</span></li><li><input type="checkbox" disabled><span>S3의 스토리지 클래스(Standard, IA, Glacier 등)를 비용·접근 빈도 기준으로 구분할 수 있는가</span></li><li><input type="checkbox" disabled><span>VPC의 퍼블릭/프라이빗 서브넷 개념과 인터넷 게이트웨이 역할을 아는가</span></li><li><input type="checkbox" disabled><span>책임 공유 모델(Shared Responsibility Model)에서 AWS와 고객의 책임 경계를 설명할 수 있는가</span></li><li><input type="checkbox" disabled><span>프리 티어(Free Tier)의 기본 개념과 청구 알림(Billing Alarm) 설정 목적을 아는가</span></li></ul>
 <hr>
 <h2 class="section-h1" id="12-요금-계산-IAM-정책-아키텍처-시나리오-심화">12. 요금 계산·IAM 정책·아키텍처 시나리오 심화<a class="heading-anchor" href="#12-요금-계산-IAM-정책-아키텍처-시나리오-심화" aria-label="이 섹션 링크">#</a></h2>
 <blockquote><p>Cloud Practitioner 시험은 실제 계산기를 쓰진 않지만, "이 상황에서 어느 쪽이 더 저렴한가/적합한가"를 단계별로 추론하는 시나리오 문제가 자주 나옵니다. 아래는 개념 이해를 위한 오리지널 창작 예제입니다.</p></blockquote>
@@ -354,7 +354,6 @@ Savings Plans: 사용량 약정으로 유연하게 할인</code></pre></div>
 <p>CloudFront는 전 세계 엣지 로케이션에 콘텐츠를 캐싱해 사용자와 가까운 위치에서 빠르게 응답하고, S3에 대한 반복 요청을 줄여 비용도 절감합니다.</p>
 </div>
 </details>
-<ul class="checklist"><li><input type="checkbox" disabled><span>프리 티어(Free Tier)의 기본 개념과 청구 알림(Billing Alarm) 설정 목적을 아는가</span></li></ul>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="정보보안기사·산업기사 대비 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">정보보안기사·산업기사 대비 가이드</span></a></nav>
       </div>
     </main>
