@@ -422,10 +422,11 @@ body::before {
 :root[data-theme="dark"] .tok-func { color: #A5B4F0; }
 
 /* ---- 표 --------------------------------------------------------------------- */
-.table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: var(--radius-md); }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0; border: 1px solid var(--border); border-radius: var(--radius-md); }
 .doc-inner table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 480px; }
-.doc-inner th, .doc-inner td { border-bottom: 1px solid var(--border); padding: 11px 16px; text-align: left; vertical-align: top; }
+.doc-inner th, .doc-inner td { border-bottom: 1px solid var(--border); padding: 11px 16px; text-align: left; vertical-align: top; word-break: keep-all; overflow-wrap: break-word; }
 .doc-inner th { background: var(--surface-soft-2); font-weight: 700; color: var(--text-heading); white-space: nowrap; }
+.doc-inner td:first-child, .doc-inner th:first-child { min-width: 76px; }
 .doc-inner tbody tr { background: var(--card-bg); }
 .doc-inner tbody tr:hover { background: var(--surface-soft); }
 .doc-inner tr:last-child td { border-bottom: none; }
@@ -484,7 +485,7 @@ body::before {
 
 .overview-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
 table.overview-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
-table.overview-table th, table.overview-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+table.overview-table th, table.overview-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; word-break: keep-all; overflow-wrap: break-word; }
 table.overview-table th { background: var(--surface-soft-2); font-weight: 700; color: var(--text-heading); }
 table.overview-table tbody tr { background: var(--card-bg); }
 table.overview-table tbody tr:hover { background: var(--surface-soft); }
