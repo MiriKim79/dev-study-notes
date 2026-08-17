@@ -3,6 +3,19 @@
 > **사용법:** 시험 세부 정보(문항 수, 응시료, 합격 점수)는 자주 바뀌니 이 문서로 범위를 잡은 뒤 반드시 공식 사이트(AWS Certification, AWS Skill Builder)에서 최신 정보를 확인하세요.
 > **📝 이 문서는 핵심 요약노트입니다.** 정식 교재를 대체하지 않습니다 — 감을 잡고 복습하는 용도로 쓰고, 실전 대비는 AWS 공식 학습 자료(Skill Builder)와 기출 유형 문제로 함께 준비하세요.
 
+## 🎯 이 문서로 얼마나 커버되나
+
+이 문서 내용을 완전히 이해하면 Cloud Practitioner 시험의 4개 도메인(Cloud Concepts / Security and Compliance / Cloud Technology and Services / Billing, Pricing, and Support) 핵심 개념은 대부분 다루게 됩니다. 다만 실제 시험은 서비스별 세부 기능·최신 업데이트된 서비스명·시나리오형 문제가 나올 수 있어 [AWS Skill Builder](https://skillbuilder.aws) 공식 연습 문제를 함께 풀어보길 권장합니다. 정확한 합격 기준(스케일드 스코어 커트라인)은 [AWS Certification 공식 사이트](https://aws.amazon.com/certification/)를 확인하세요.
+
+**영역별 커버리지** (● = 이 문서가 다루는 상대적 비중, 절대 점수가 아닙니다)
+
+| 영역 | 커버리지 |
+| --- | --- |
+| Cloud Concepts | ●●●○○ |
+| Security and Compliance | ●●●●○ |
+| Cloud Technology and Services | ●●●●● |
+| Billing, Pricing, and Support | ●●●○○ |
+
 ---
 
 # 0. 시작 전에 — 자주 나오는 용어
@@ -434,7 +447,24 @@ AWS 공인 자격증은 실제 기출문제 원문을 공개하지 않습니다.
 
 ---
 
-# 10. 자주 헷갈리는 서비스 비교
+# 10. AI로 나만의 모의고사 만들기
+
+아래 프롬프트를 ChatGPT, Claude 등 AI 챗봇에 그대로 복사해서 붙여넣으면 이 문서 범위에 맞는 추가 연습문제를 새로 만들어줍니다. 실제 기출문제가 아닌 창작 문제이므로, 감 잡기·복습용으로 활용하고 공식 연습 문제는 9번 섹션의 AWS Skill Builder 링크를 이용하세요. 실제 AWS 자격증 시험은 영어로도 응시할 수 있으므로, 영어 버전도 함께 요청하는 프롬프트를 넣어뒀습니다.
+
+```text
+You are an AWS Certified Cloud Practitioner (CLF-C02) exam question writer.
+Create a practice exam with the following conditions:
+- Domains: Cloud Concepts, Security and Compliance, Cloud Technology and Services, Billing/Pricing/Support
+- Question type: 10 multiple-choice questions (4 options each), matching the real exam style
+- Difficulty: similar to the real AWS Cloud Practitioner exam
+- Provide the correct answer and a short explanation right after each question
+- Clearly state at the end that these are newly created original questions, not real exam questions
+- Distribute questions evenly, but put extra weight on "Cloud Technology and Services"
+```
+
+---
+
+# 11. 자주 헷갈리는 서비스 비교
 
 | 헷갈리는 짝 | 구분 |
 | --- | --- |
@@ -447,7 +477,7 @@ AWS 공인 자격증은 실제 기출문제 원문을 공개하지 않습니다.
 
 ---
 
-# 11. 시험 직전 최종 점검 리스트
+# 12. 시험 직전 최종 점검 리스트
 
 - [ ] Region(지역)과 Availability Zone(가용 영역)의 관계를 그림으로 설명할 수 있는가
 - [ ] 온디맨드/예약/스팟 인스턴스의 가격·중단 특성 차이를 아는가
@@ -458,7 +488,7 @@ AWS 공인 자격증은 실제 기출문제 원문을 공개하지 않습니다.
 
 ---
 
-# 12. 요금 계산·IAM 정책·아키텍처 시나리오 심화
+# 13. 요금 계산·IAM 정책·아키텍처 시나리오 심화
 
 > Cloud Practitioner 시험은 실제 계산기를 쓰진 않지만, "이 상황에서 어느 쪽이 더 저렴한가/적합한가"를 단계별로 추론하는 시나리오 문제가 자주 나옵니다. 아래는 개념 이해를 위한 오리지널 창작 예제입니다.
 

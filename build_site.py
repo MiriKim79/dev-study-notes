@@ -1580,6 +1580,11 @@ DASHBOARD_TMPL = """<!doctype html>
       <span class="hero-cta-btn">🔰 최소 기초부터 시작하기 →</span>
     </a>
 
+    <a class="hero-cta" href="{level_guide_url}">
+      <span class="hero-cta-text">나는 초급·중급·고급 중 <strong>어디부터 봐야 할지</strong> 잘 모르겠다면?</span>
+      <span class="hero-cta-btn">🧭 등급별 시작 기준 확인하기 →</span>
+    </a>
+
     <div class="section-heading">학습 자료 한눈에 보기</div>
     {overview_table}
 
@@ -1625,6 +1630,7 @@ def build_dashboard():
         asset_v=ASSET_VERSION,
         tier_nav=render_tier_nav("index"),
         git_min_url=url_of("git-min"),
+        level_guide_url=url_of("playbook-hub") + "#나는-어디부터-봐야-하나-등급별-시작-기준",
         overview_table=render_overview_table(),
         step_flow=render_step_flow(),
         card_grid=render_card_grid(),
