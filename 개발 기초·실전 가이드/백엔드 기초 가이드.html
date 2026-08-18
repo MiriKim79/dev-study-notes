@@ -9,11 +9,11 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="백엔드 기초 가이드 · 개발 학습·실전 노트">
-<meta property="og:description" content="Flask·Express·Spring·Django 등 프레임워크가 달라도 공통으로 필요한 서버, API, DB, 인증·인가, 보안, 테스트, 배포의 기본 원리를 이해하는 가이드">
+<meta property="og:description" content="프레임워크(Flask·Express·Spring·Django 등)가 달라도 공통으로 필요한 서버·API·DB·인증·에러 처리·배포의 핵심 흐름을 위에서 아래로 한 번에 이해하기">
 <meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B8%B0%EC%B4%88%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="백엔드 기초 가이드 · 개발 학습·실전 노트">
-<meta name="twitter:description" content="Flask·Express·Spring·Django 등 프레임워크가 달라도 공통으로 필요한 서버, API, DB, 인증·인가, 보안, 테스트, 배포의 기본 원리를 이해하는 가이드">
+<meta name="twitter:description" content="프레임워크(Flask·Express·Spring·Django 등)가 달라도 공통으로 필요한 서버·API·DB·인증·에러 처리·배포의 핵심 흐름을 위에서 아래로 한 번에 이해하기">
 <script src="../assets/search-index.js?v=0d124f9ca9" defer></script>
 </head>
 <body data-root-prefix="../">
@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a><ul class="toc-h2-list"><li><a href="#0-1-컴퓨터-개발-환경">0.1 컴퓨터·개발 환경</a></li><li><a href="#0-2-서버-통신">0.2 서버·통신</a></li><li><a href="#0-3-코드-구조">0.3 코드 구조</a></li><li><a href="#0-4-데이터베이스">0.4 데이터베이스</a></li><li><a href="#0-5-인증-보안">0.5 인증·보안</a></li><li><a href="#0-6-개발-배포">0.6 개발·배포</a></li><li><a href="#0-7-개발-환경-의존성-관리">0.7 개발 환경·의존성 관리</a></li></ul></li><li class="toc-h1"><a href="#1-백엔드란">1. 백엔드란?</a></li><li class="toc-h1"><a href="#2-요청-응답이-처리되는-기본-흐름">2. 요청-응답이 처리되는 기본 흐름</a></li><li class="toc-h1"><a href="#3-백엔드의-핵심-구성-요소">3. 백엔드의 핵심 구성 요소</a></li><li class="toc-h1"><a href="#4-HTTP와-REST-API-설계">4. HTTP와 REST API 설계</a><ul class="toc-h2-list"><li><a href="#4-1-HTTP-메서드">4.1 HTTP 메서드</a></li><li><a href="#4-2-REST-URL-설계-기본">4.2 REST URL 설계 기본</a></li><li><a href="#4-3-CORS와-API-문서화">4.3 CORS와 API 문서화</a></li></ul></li><li class="toc-h1"><a href="#5-요청과-응답">5. 요청과 응답</a><ul class="toc-h2-list"><li><a href="#5-1-요청-구성">5.1 요청 구성</a></li><li><a href="#5-2-응답-설계">5.2 응답 설계</a></li></ul></li><li class="toc-h1"><a href="#6-HTTP-상태-코드">6. HTTP 상태 코드</a></li><li class="toc-h1"><a href="#7-데이터베이스-기초">7. 데이터베이스 기초</a><ul class="toc-h2-list"><li><a href="#7-1-관계형-데이터베이스">7.1 관계형 데이터베이스</a></li><li><a href="#7-2-기본키와-외래키">7.2 기본키와 외래키</a></li><li><a href="#7-3-ERD를-먼저-그리는-이유">7.3 ERD를 먼저 그리는 이유</a></li><li><a href="#7-4-관계와-제약-조건">7.4 관계와 제약 조건</a></li></ul></li><li class="toc-h1"><a href="#8-SQL-기본">8. SQL 기본</a></li><li class="toc-h1"><a href="#9-ORM">9. ORM</a><ul class="toc-h2-list"><li><a href="#9-1-마이그레이션-모델을-바꾸는-것과-DB를-바꾸는-것은-다르다">9.1 마이그레이션 — 모델을 바꾸는 것과 DB를 바꾸는 것은 다르다</a></li></ul></li><li class="toc-h1"><a href="#10-트랜잭션">10. 트랜잭션</a></li><li class="toc-h1"><a href="#11-요청값-검증">11. 요청값 검증</a></li><li class="toc-h1"><a href="#12-인증과-인가">12. 인증과 인가</a><ul class="toc-h2-list"><li><a href="#12-1-인증-방식">12.1 인증 방식</a></li><li><a href="#12-2-인가-예시">12.2 인가 예시</a></li><li><a href="#12-3-Access-Token-Refresh-Token-Cookie">12.3 Access Token, Refresh Token, Cookie</a></li></ul></li><li class="toc-h1"><a href="#13-비밀번호와-보안-기본">13. 비밀번호와 보안 기본</a></li><li class="toc-h1"><a href="#14-환경변수와-설정-관리">14. 환경변수와 설정 관리</a></li><li class="toc-h1"><a href="#15-오류-처리">15. 오류 처리</a><ul class="toc-h2-list"><li><a href="#오류-처리-원칙">오류 처리 원칙</a></li></ul></li><li class="toc-h1"><a href="#16-로그">16. 로그</a></li><li class="toc-h1"><a href="#17-미들웨어">17. 미들웨어</a></li><li class="toc-h1"><a href="#18-캐싱과-성능-기본">18. 캐싱과 성능 기본</a></li><li class="toc-h1"><a href="#19-외부-연동-파일-업로드-외부-API-AI-API-등">19. 외부 연동 (파일 업로드, 외부 API, AI API 등)</a><ul class="toc-h2-list"><li><a href="#오래-걸리는-작업과-Background-Job">오래 걸리는 작업과 Background Job</a></li></ul></li><li class="toc-h1"><a href="#20-테스트">20. 테스트</a><ul class="toc-h2-list"><li><a href="#종류">종류</a></li><li><a href="#기본-상식-13">기본 상식</a></li></ul></li><li class="toc-h1"><a href="#21-배포-기초">21. 배포 기초</a><ul class="toc-h2-list"><li><a href="#실행과-배포의-차이">실행과 배포의 차이</a></li><li><a href="#배포-체크리스트">배포 체크리스트</a></li><li><a href="#운영-서버의-기본-구조">운영 서버의 기본 구조</a></li></ul></li><li class="toc-h1"><a href="#22-Git-협업-기본-백엔드-관점">22. Git 협업 기본 (백엔드 관점)</a><ul class="toc-h2-list"><li><a href="#공유가-필요한-변경">공유가 필요한 변경</a></li><li><a href="#충돌-가능성이-높은-공통-파일">충돌 가능성이 높은 공통 파일</a></li></ul></li><li class="toc-h1"><a href="#23-백엔드-개발-순서">23. 백엔드 개발 순서</a></li><li class="toc-h1"><a href="#24-프로젝트-시작-전-체크리스트">24. 프로젝트 시작 전 체크리스트</a></li><li class="toc-h1"><a href="#25-기능-구현-체크리스트">25. 기능 구현 체크리스트</a><ul class="toc-h2-list"><li><a href="#시작-전">시작 전</a></li><li><a href="#구현-중">구현 중</a></li><li><a href="#완료-전">완료 전</a></li></ul></li><li class="toc-h1"><a href="#26-초보자가-공부할-권장-순서">26. 초보자가 공부할 권장 순서</a><ul class="toc-h2-list"><li><a href="#1단계-공통-기초">1단계: 공통 기초</a></li><li><a href="#2단계-서버-기초">2단계: 서버 기초</a></li><li><a href="#3단계-데이터베이스">3단계: 데이터베이스</a></li><li><a href="#4단계-인증과-보안">4단계: 인증과 보안</a></li><li><a href="#5단계-실무-기초">5단계: 실무 기초</a></li></ul></li><li class="toc-h1"><a href="#27-프레임워크를-배운-뒤에도-설명할-수-있어야-하는-것">27. 프레임워크를 배운 뒤에도 설명할 수 있어야 하는 것</a></li><li class="toc-h1"><a href="#28-자주-하는-실수">28. 자주 하는 실수</a></li><li class="toc-h1"><a href="#29-AI를-이용한-백엔드-학습-방법">29. AI를 이용한 백엔드 학습 방법</a></li><li class="toc-h1"><a href="#30-문서-관리-권장-구조">30. 문서 관리 권장 구조</a></li><li class="toc-h1"><a href="#31-최종-핵심-원칙">31. 최종 핵심 원칙</a></li><li class="toc-h1"><a href="#32-직접-실습해보기-백엔드-최소-실습">32. 직접 실습해보기 — 백엔드 최소 실습</a><ul class="toc-h2-list"><li><a href="#1단계-프로젝트와-가상환경">1단계. 프로젝트와 가상환경</a></li><li><a href="#2단계-app-py">2단계. `app.py`</a></li><li><a href="#3단계-실행">3단계. 실행</a></li><li><a href="#4단계-POST-요청">4단계. POST 요청</a></li><li><a href="#5단계-다음-단계">5단계. 다음 단계</a></li></ul></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#1-백엔드란">1. 백엔드란?</a></li><li class="toc-h1"><a href="#2-요청-응답-흐름">2. 요청-응답 흐름</a></li><li class="toc-h1"><a href="#3-라우팅과-백엔드의-기본-구성-요소">3. 라우팅과 백엔드의 기본 구성 요소</a><ul class="toc-h2-list"><li><a href="#실제-코드로-보면-이렇게-생겼습니다-Flask-예시">실제 코드로 보면 이렇게 생겼습니다 (Flask 예시)</a></li></ul></li><li class="toc-h1"><a href="#4-HTTP-메서드와-REST-API-설계">4. HTTP 메서드와 REST API 설계</a></li><li class="toc-h1"><a href="#5-요청과-응답-설계">5. 요청과 응답 설계</a><ul class="toc-h2-list"><li><a href="#상태-코드">상태 코드</a></li></ul></li><li class="toc-h1"><a href="#6-데이터베이스-기초">6. 데이터베이스 기초</a><ul class="toc-h2-list"><li><a href="#SQL-기본">SQL 기본</a></li><li><a href="#ORM">ORM</a></li><li><a href="#트랜잭션">트랜잭션</a></li></ul></li><li class="toc-h1"><a href="#7-요청값-검증">7. 요청값 검증</a></li><li class="toc-h1"><a href="#8-인증과-인가">8. 인증과 인가</a></li><li class="toc-h1"><a href="#9-비밀번호-보안-환경변수">9. 비밀번호·보안·환경변수</a></li><li class="toc-h1"><a href="#10-오류-처리와-로그">10. 오류 처리와 로그</a></li><li class="toc-h1"><a href="#11-테스트">11. 테스트</a></li><li class="toc-h1"><a href="#12-배포-기초">12. 배포 기초</a></li><li class="toc-h1"><a href="#13-그-외-알아두면-좋은-것-나중에-배우기">13. 그 외 알아두면 좋은 것 (나중에 배우기)</a></li><li class="toc-h1"><a href="#14-최종-핵심-원칙">14. 최종 핵심 원칙</a></li><li class="toc-h1"><a href="#15-직접-실습해보기-백엔드-최소-실습">15. 직접 실습해보기 — 백엔드 최소 실습</a><ul class="toc-h2-list"><li><a href="#1단계-프로젝트와-가상환경">1단계. 프로젝트와 가상환경</a></li><li><a href="#2단계-app-py">2단계. `app.py`</a></li><li><a href="#3단계-실행하고-확인">3단계. 실행하고 확인</a></li><li><a href="#4단계-다음-단계">4단계. 다음 단계</a></li></ul></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -49,648 +49,162 @@
         <span class="page-kicker">🛠️ 개발 기초·실전 가이드</span>
         <h1 class="page-title">백엔드 기초 가이드</h1>
         <p class="page-tagline">서버가 대체 뭘 하는 건지 감이 안 온다? 여기서부터 차근차근 풀립니다.</p>
-        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 웹 백엔드 개발을 처음 시작하는 사람</div><div class="intro-row"><strong>목적:</strong> Flask·Express·Spring·Django 등 프레임워크가 달라도 공통으로 필요한 서버, API, DB, 인증·인가, 보안, 테스트, 배포의 기본 원리를 이해하는 가이드</div><div class="intro-row"><strong>사용법:</strong> 용어와 요청 흐름을 먼저 이해한 뒤, 마지막 작은 API 실습으로 서버→DB→응답 흐름을 직접 확인합니다.</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. 백엔드란?</li><li>2. 요청-응답이 처리되는 기본 흐름</li><li>3. 백엔드의 핵심 구성 요소</li><li>4. HTTP와 REST API 설계</li><li>5. 요청과 응답</li><li>6. HTTP 상태 코드</li><li>7. 데이터베이스 기초</li><li>8. SQL 기본</li><li>9. ORM</li><li>10. 트랜잭션</li><li>11. 요청값 검증</li><li>12. 인증과 인가</li><li>13. 비밀번호와 보안 기본</li><li>14. 환경변수와 설정 관리</li><li>15. 오류 처리</li><li>16. 로그</li><li>17. 미들웨어</li><li>18. 캐싱과 성능 기본</li><li>19. 외부 연동 (파일 업로드, 외부 API, AI API 등)</li><li>20. 테스트</li><li>21. 배포 기초</li><li>22. Git 협업 기본 (백엔드 관점)</li><li>23. 백엔드 개발 순서</li><li>24. 프로젝트 시작 전 체크리스트</li><li>25. 기능 구현 체크리스트</li><li>26. 초보자가 공부할 권장 순서</li><li>27. 프레임워크를 배운 뒤에도 설명할 수 있어야 하는 것</li><li>28. 자주 하는 실수</li><li>29. AI를 이용한 백엔드 학습 방법</li><li>30. 문서 관리 권장 구조</li><li>31. 최종 핵심 원칙</li><li>32. 직접 실습해보기 — 백엔드 최소 실습</li></ol></div>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 백엔드를 처음 보는 사람</div><div class="intro-row"><strong>목적:</strong> 프레임워크(Flask·Express·Spring·Django 등)가 달라도 공통으로 필요한 서버·API·DB·인증·에러 처리·배포의 핵심 흐름을 위에서 아래로 한 번에 이해하기</div><div class="intro-row"><strong>사용법:</strong> 처음부터 끝까지 순서대로 읽고, 맨 뒤의 최소 실습으로 서버→DB→응답 흐름을 직접 손으로 확인합니다. 낯선 용어는 처음 등장하는 자리에서 괄호로 바로 설명합니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 백엔드란?</li><li>2. 요청-응답 흐름</li><li>3. 라우팅과 백엔드의 기본 구성 요소</li><li>4. HTTP 메서드와 REST API 설계</li><li>5. 요청과 응답 설계</li><li>6. 데이터베이스 기초</li><li>7. 요청값 검증</li><li>8. 인증과 인가</li><li>9. 비밀번호·보안·환경변수</li><li>10. 오류 처리와 로그</li><li>11. 테스트</li><li>12. 배포 기초</li><li>13. 그 외 알아두면 좋은 것 (나중에 배우기)</li><li>14. 최종 핵심 원칙</li><li>15. 직접 실습해보기 — 백엔드 최소 실습</li></ol></div>
         
         <hr>
-<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
-<p>개발이 처음이라면 본문을 읽기 전에 아래 표부터 훑어보세요. 본문 중간에 낯선 단어가 나오면 다시 여기로 돌아와 찾아봐도 됩니다.</p>
-<h3 class="section-h2" id="0-1-컴퓨터-개발-환경">0.1 컴퓨터·개발 환경<a class="heading-anchor" href="#0-1-컴퓨터-개발-환경" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>터미널(Terminal) / 커맨드라인(CLI)</td><td>마우스 클릭 대신 글자로 명령을 입력해 컴퓨터를 조작하는 화면. VS Code에서는 상단 메뉴 <code class="inline-code">Terminal → New Terminal</code>로 엽니다.</td></tr><tr><td>프로세스(Process)</td><td>실행 중인 프로그램 하나. 서버를 켜면 “서버 프로세스가 떠 있다”고 표현합니다.</td></tr><tr><td>포트(Port)</td><td>한 컴퓨터 안에서 여러 프로그램이 동시에 통신할 수 있도록 구분하는 번호(0~65535). 예: <code class="inline-code">http://localhost:5000</code>에서 <code class="inline-code">5000</code>이 포트 번호입니다.</td></tr><tr><td>로컬(local) / localhost</td><td>지금 쓰고 있는 이 컴퓨터 자신을 가리키는 주소(<code class="inline-code">127.0.0.1</code>). “로컬에서 돌린다” = 내 컴퓨터에서만 실행한다는 뜻.</td></tr><tr><td>패키지 매니저</td><td>다른 사람이 만든 코드(라이브러리)를 설치·관리해주는 도구. Python은 <code class="inline-code">pip</code>, Node.js는 <code class="inline-code">npm</code>.</td></tr><tr><td>프레임워크</td><td>특정 종류의 프로그램(웹 서버 등)을 쉽게 만들도록 미리 짜여진 뼈대. 예: Flask, Express, Spring, Django.</td></tr></tbody></table></div>
-<h3 class="section-h2" id="0-2-서버-통신">0.2 서버·통신<a class="heading-anchor" href="#0-2-서버-통신" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>서버(Server)</td><td>요청을 받아서 응답을 돌려주는 프로그램. 백엔드 코드를 짠다 = 서버 프로그램을 만든다는 뜻.</td></tr><tr><td>클라이언트(Client)</td><td>서버에 요청을 보내는 쪽. 보통 브라우저(프론트엔드)나 모바일 앱.</td></tr><tr><td>HTTP</td><td>클라이언트와 서버가 데이터를 주고받을 때 쓰는 공통 약속(규격).</td></tr><tr><td>요청(Request) / 응답(Response)</td><td>클라이언트가 서버에 보내는 것 = 요청, 서버가 돌려주는 것 = 응답.</td></tr><tr><td>엔드포인트(Endpoint)</td><td>요청을 받는 구체적인 주소 하나. 예: <code class="inline-code">GET /courses</code>.</td></tr><tr><td>라우팅(Routing) / 라우트(Route)</td><td>“이 URL + 이 메서드로 요청이 오면 이 코드를 실행해라”라고 연결해두는 것.</td></tr><tr><td>API</td><td>프로그램끼리 데이터를 주고받기 위해 미리 정해둔 규칙(창구). “강의 목록 API” = 강의 목록을 요청/응답하는 약속.</td></tr><tr><td>REST / REST API</td><td>URL과 HTTP 메서드로 자원을 표현하는 API 설계 방식(4장에서 자세히 다룸).</td></tr><tr><td>JSON</td><td><code class="inline-code">{ "key": "value" }</code> 형태로 데이터를 표현하는 형식. 요청·응답 바디에 가장 흔히 씀.</td></tr><tr><td>Query Parameter</td><td>URL 뒤에 <code class="inline-code">?key=value</code> 형태로 붙는 값. 예: <code class="inline-code">/courses?category=web</code>.</td></tr><tr><td>CORS</td><td>브라우저는 기본적으로 "다른 출처(origin)의 응답은 프론트가 읽지 못하게" 막습니다(Same-Origin Policy, 동일 출처 정책). CORS는 서버가 "이 출처·메서드·헤더는 허용한다"고 응답 헤더로 알려줘서 이 제한을 예외적으로 풀어주는 방식입니다. 개발 환경에서 프론트와 백엔드의 포트가 다르면 서로 다른 origin이 될 수 있습니다.</td></tr></tbody></table></div>
-<h3 class="section-h2" id="0-3-코드-구조">0.3 코드 구조<a class="heading-anchor" href="#0-3-코드-구조" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>컨트롤러(Controller) / 핸들러(Handler)</td><td>요청이 들어왔을 때 가장 먼저 받는 코드. “이 요청 값이 올바른지 확인하고 서비스를 불러라” 역할.</td></tr><tr><td>서비스(Service)</td><td>실제 비즈니스 규칙(수강 가능 여부 판단 등)을 처리하는 코드.</td></tr><tr><td>모델(Model) / 엔티티(Entity)</td><td>데이터베이스 테이블 하나를 코드로 표현한 것.</td></tr><tr><td>미들웨어(Middleware)</td><td>모든 요청 앞뒤에 공통으로 끼어들어 실행되는 코드(인증 확인, 로깅 등).</td></tr></tbody></table></div>
-<h3 class="section-h2" id="0-4-데이터베이스">0.4 데이터베이스<a class="heading-anchor" href="#0-4-데이터베이스" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>데이터베이스(DB)</td><td>데이터를 저장해두는 프로그램/공간.</td></tr><tr><td>테이블(Table)</td><td>엑셀 시트 하나와 비슷. 행(row)과 열(column)로 데이터를 저장.</td></tr><tr><td>기본키(Primary Key, PK)</td><td>한 행을 유일하게 구분하는 값(보통 <code class="inline-code">id</code>).</td></tr><tr><td>외래키(Foreign Key, FK)</td><td>다른 테이블의 기본키를 가리켜서 두 테이블을 연결하는 값.</td></tr><tr><td>SQL</td><td>데이터베이스에 데이터를 넣고·읽고·바꾸고·지울 때 쓰는 언어.</td></tr><tr><td>ORM</td><td>SQL을 직접 안 쓰고 코드(객체)로 데이터베이스를 다루게 해주는 도구.</td></tr><tr><td>트랜잭션(Transaction)</td><td>여러 작업을 하나로 묶어서 전부 성공 또는 전부 취소되게 하는 것.</td></tr><tr><td>롤백(Rollback)</td><td>트랜잭션 중 하나라도 실패하면 지금까지 한 작업을 없던 일로 되돌리는 것.</td></tr><tr><td>마이그레이션(Migration)</td><td>데이터베이스 테이블 구조 변경 내역을 파일로 기록해서 팀과 공유하는 방법.</td></tr><tr><td>인덱스(Index)</td><td>책의 “찾아보기”처럼 특정 컬럼 검색을 빠르게 해주는 장치.</td></tr></tbody></table></div>
-<h3 class="section-h2" id="0-5-인증-보안">0.5 인증·보안<a class="heading-anchor" href="#0-5-인증-보안" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>인증(Authentication)</td><td>“너 누구야?”를 확인하는 것(로그인).</td></tr><tr><td>인가(Authorization)</td><td>“너 이거 해도 돼?”를 확인하는 것(권한).</td></tr><tr><td>세션(Session)</td><td>로그인 상태를 서버가 기억해두는 방식.</td></tr><tr><td>토큰(Token) / JWT</td><td>로그인 상태를 문자열 하나로 표현해서 클라이언트가 들고 다니는 방식. JWT는 보통 서버가 <strong>서명(signature)</strong>해서 위조를 막지만, 내용 자체가 암호화되는 것은 아니라서 누구나 디코딩해서 읽을 수 있습니다(12.3절 참고).</td></tr><tr><td>해싱(Hashing)</td><td>비밀번호 원문을 복원 불가능한 다른 문자열로 바꿔 저장하는 방법.</td></tr><tr><td>SQL Injection</td><td>사용자 입력을 SQL 문에 그대로 이어붙여서 공격자가 DB를 조작하게 되는 취약점.</td></tr><tr><td>환경변수(Environment Variable)</td><td>비밀번호·API 키처럼 코드에 직접 쓰면 안 되는 값을, 코드 밖 별도 파일(<code class="inline-code">.env</code>)에 두고 실행할 때 불러오는 방법.</td></tr></tbody></table></div>
-<h3 class="section-h2" id="0-6-개발-배포">0.6 개발·배포<a class="heading-anchor" href="#0-6-개발-배포" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>로그(Log)</td><td>서버가 무슨 일을 했는지 남기는 기록. 문제가 생겼을 때 원인을 찾는 단서.</td></tr><tr><td>캐싱(Caching)</td><td>자주 쓰는 결과를 미리 저장해뒀다가 재사용해서 속도를 높이는 것.</td></tr><tr><td>페이지네이션(Pagination)</td><td>데이터를 한 번에 다 주지 않고 “1페이지, 2페이지”로 나눠서 주는 것.</td></tr><tr><td>빌드(Build)</td><td>소스 코드를 실제 서버에서 실행 가능한 형태로 준비하는 과정.</td></tr><tr><td>배포(Deploy)</td><td>빌드 결과를 다른 사람이 접속할 수 있는 서버에 올리는 것.</td></tr></tbody></table></div>
-<hr>
-<h3 class="section-h2" id="0-7-개발-환경-의존성-관리">0.7 개발 환경·의존성 관리<a class="heading-anchor" href="#0-7-개발-환경-의존성-관리" aria-label="이 섹션 링크">#</a></h3>
-<p>백엔드는 “코드만 받으면 바로 실행되는 것”이 아닙니다. <strong>언어 버전 + 의존성 + 환경변수 + DB</strong>가 맞아야 실행됩니다.</p>
-<h4 class="section-h3" id="Python-프로젝트-예시">Python 프로젝트 예시<a class="heading-anchor" href="#Python-프로젝트-예시" aria-label="이 섹션 링크">#</a></h4>
-<div class="table-scroll"><table><thead><tr><th>항목</th><th>역할</th></tr></thead><tbody><tr><td><code class="inline-code">.venv/</code></td><td>프로젝트별 Python 패키지를 격리하는 가상환경</td></tr><tr><td><code class="inline-code">requirements.txt</code></td><td>설치할 Python 패키지 목록을 기록하는 전통적인 방식</td></tr><tr><td><code class="inline-code">pyproject.toml</code></td><td>최근 Python 도구에서 프로젝트·의존성 설정에 많이 사용하는 표준 파일</td></tr><tr><td><code class="inline-code">pip</code></td><td>Python 패키지 설치 도구</td></tr></tbody></table></div>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">python</span> --version
-<span class="tok-keyword">python</span> -m venv .venv
-
-<span class="tok-comment"># Windows PowerShell</span>
-.\.venv\Scripts\Activate.ps1
-
-<span class="tok-comment"># macOS/Linux</span>
-<span class="tok-keyword">source</span> .venv/bin/activate
-
-<span class="tok-keyword">pip</span> install -r requirements.txt</code></pre></div>
-<p>가상환경을 켜지 않으면 “설치했는데 Flask가 없다고 나오는” 상황이 생길 수 있습니다. 터미널 앞에 <code class="inline-code">(.venv)</code> 같은 표시가 있는지, <code class="inline-code">python</code>과 <code class="inline-code">pip</code>가 같은 환경을 가리키는지 확인합니다.</p>
-<h4 class="section-h3" id="Node-js-백엔드-예시">Node.js 백엔드 예시<a class="heading-anchor" href="#Node-js-백엔드-예시" aria-label="이 섹션 링크">#</a></h4>
-<ul><li><code class="inline-code">package.json</code>: 의존성·실행 스크립트</li><li><code class="inline-code">node_modules/</code>: 설치된 패키지</li><li><code class="inline-code">npm install</code>: 의존성 설치</li><li><code class="inline-code">npm run dev</code> / <code class="inline-code">npm start</code>: 프로젝트가 정한 실행 스크립트</li></ul>
-<h4 class="section-h3" id="Java-Spring-예시">Java/Spring 예시<a class="heading-anchor" href="#Java-Spring-예시" aria-label="이 섹션 링크">#</a></h4>
-<ul><li><code class="inline-code">build.gradle</code> / <code class="inline-code">build.gradle.kts</code>: Gradle 설정</li><li><code class="inline-code">pom.xml</code>: Maven 설정</li><li><code class="inline-code">gradlew</code> / <code class="inline-code">gradlew.bat</code>: 팀 전체가 같은 Gradle 버전을 쓰게 해주는 Wrapper</li></ul>
-<p><strong>새 프로젝트를 받으면 README와 의존성 파일을 먼저 읽고, 임의로 전역 설치부터 하지 않습니다.</strong></p>
-<hr>
 <h2 class="section-h1" id="1-백엔드란">1. 백엔드란?<a class="heading-anchor" href="#1-백엔드란" aria-label="이 섹션 링크">#</a></h2>
-<p>백엔드는 사용자에게 보이지 않는 곳에서 데이터를 검증·저장·가공하고, 프론트엔드가 요청한 결과를 응답으로 돌려주는 영역입니다.</p>
-<ul><li>요청을 받고 검증하기</li><li>인증과 권한을 확인하기</li><li>데이터베이스에 접근하기</li><li>비즈니스 로직을 처리하기</li><li>외부 서비스(AI API, 결제, 이메일 등)와 연동하기</li><li>일관된 형식으로 응답하기</li><li>오류를 안전하게 처리하기</li><li>여러 사용자의 동시 요청을 안정적으로 처리하기</li></ul>
-<p>일반적인 구조:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>프론트엔드
-↓ HTTP 요청
-백엔드 (라우팅 → 검증 → 인증 → 로직 → DB)
-↓
-데이터베이스 / 외부 서비스
-↓
-백엔드가 결과를 가공
-↓
-프론트엔드에 JSON 응답</code></pre></div>
-<p>백엔드는 클라이언트가 보낸 값을 그대로 믿지 않습니다. 화면에서 막았어도 서버에서 다시 검증합니다.</p>
-<h4 class="section-h3" id="비유로-이해하기">비유로 이해하기<a class="heading-anchor" href="#비유로-이해하기" aria-label="이 섹션 링크">#</a></h4>
-<p>식당에 비유하면 이해가 빠릅니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>프론트엔드 = 홀(손님이 보는 메뉴판, 테이블)
-백엔드     = 주방(주문을 받아 실제로 요리해서 내보내는 곳)
-데이터베이스 = 냉장고·재고 창고(주방이 재료를 꺼내 쓰는 곳)</code></pre></div>
-<p>손님(사용자)은 홀(프론트엔드)에서 메뉴를 보고 주문하지만, 실제로 재료를 확인하고 요리하는 일은 주방(백엔드)에서 일어납니다. 손님이 “이 메뉴 재료 다 있어요”라고 말해도 주방은 냉장고를 직접 확인하고 요리합니다 — 이것이 “클라이언트가 보낸 값을 그대로 믿지 않는다”는 원칙과 같은 이야기입니다.</p>
+<p><strong>서버(Server)</strong>는 요청을 받아서 응답을 돌려주는 프로그램입니다. 백엔드 코드를 짠다는 것은 이 서버 프로그램을 만든다는 뜻입니다. 반대로 요청을 보내는 쪽(보통 브라우저나 앱)을 <strong>클라이언트(Client)</strong>라고 합니다. 식당에 비유하면 프론트엔드는 손님이 보는 홀, 백엔드는 주문을 받아 요리하는 주방, 데이터베이스는 주방이 재료를 꺼내 쓰는 냉장고입니다.</p>
+<p>손님이 "재료 다 있다"고 말해도 주방은 냉장고를 직접 확인합니다. 마찬가지로 백엔드는 <strong>클라이언트가 보낸 값을 그대로 믿지 않고 서버에서 다시 확인</strong>합니다. 화면에서 입력을 막아뒀어도 요청 자체는 누구나 조작해서 보낼 수 있기 때문입니다.</p>
+<p>백엔드가 하는 일: 요청을 받고 검증하기, 인증·권한 확인하기, 데이터베이스 접근하기, 처리 규칙(비즈니스 로직) 수행하기, 일관된 형식으로 응답하고 오류를 안전하게 처리하기.</p>
 <hr>
-<h2 class="section-h1" id="2-요청-응답이-처리되는-기본-흐름">2. 요청-응답이 처리되는 기본 흐름<a class="heading-anchor" href="#2-요청-응답이-처리되는-기본-흐름" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="2-요청-응답-흐름">2. 요청-응답 흐름<a class="heading-anchor" href="#2-요청-응답-흐름" aria-label="이 섹션 링크">#</a></h2>
+<p>클라이언트와 서버는 <strong>HTTP</strong>(둘이 데이터를 주고받을 때 쓰는 공통 규격)로 대화합니다. 기본 흐름은 다음과 같습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 클라이언트가 HTTP 요청을 보냄 (메서드 + URL + 헤더 + 바디)
 2. 서버가 요청을 받아 해당 라우트를 찾음
-3. 미들웨어(인증, 로깅, CORS 등)를 거침
-4. 컨트롤러/핸들러가 요청값을 검증함
-5. 서비스 로직이 실행됨
+3. 미들웨어(인증 확인, 로깅 등 공통 처리)를 거침
+4. 요청값을 검증함
+5. 실제 처리 로직이 실행됨
 6. 필요하면 데이터베이스에 접근함
-7. 결과를 응답 형식(JSON 등)으로 가공함
+7. 결과를 JSON 등 응답 형식으로 가공함
 8. 상태 코드와 함께 응답을 반환함</code></pre></div>
-<p>이 흐름을 한 번이라도 손으로 그려보면, 어떤 프레임워크를 쓰든 디버깅할 때 “지금 어느 단계에서 문제가 생겼는지”를 빠르게 짚을 수 있습니다.</p>
+<p>이 8단계를 한 번이라도 손으로 그려보면, 어떤 프레임워크를 쓰든 디버깅할 때 "지금 어느 단계에서 문제가 생겼는지"를 빠르게 짚을 수 있습니다.</p>
 <hr>
-<h2 class="section-h1" id="3-백엔드의-핵심-구성-요소">3. 백엔드의 핵심 구성 요소<a class="heading-anchor" href="#3-백엔드의-핵심-구성-요소" aria-label="이 섹션 링크">#</a></h2>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Route (라우팅)
-→ 어떤 URL·메서드가 어떤 처리로 연결되는지 정의
+<h2 class="section-h1" id="3-라우팅과-백엔드의-기본-구성-요소">3. 라우팅과 백엔드의 기본 구성 요소<a class="heading-anchor" href="#3-라우팅과-백엔드의-기본-구성-요소" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>라우팅(Routing)</strong>은 "이 URL + 이 메서드로 요청이 오면 이 코드를 실행해라"라고 미리 연결해두는 것입니다. 요청을 받는 구체적인 주소 하나하나를 <strong>엔드포인트(Endpoint)</strong>라고 부릅니다. 예: <code class="inline-code">GET /courses</code>.</p>
+<p>작은 프로젝트라도 보통 아래 네 가지 역할로 코드를 나눕니다: <strong>Route</strong>(어떤 URL·메서드가 어떤 처리로 연결되는지 정의) → <strong>Controller/Handler</strong>(요청을 받아 검증하고 아래 로직 호출) → <strong>Service</strong>(실제 처리 규칙) → <strong>Model/Entity</strong>(DB 테이블 하나를 코드로 표현한 것).</p>
+<h3 class="section-h2" id="실제-코드로-보면-이렇게-생겼습니다-Flask-예시">실제 코드로 보면 이렇게 생겼습니다 (Flask 예시)<a class="heading-anchor" href="#실제-코드로-보면-이렇게-생겼습니다-Flask-예시" aria-label="이 섹션 링크">#</a></h3>
+<p>강의 하나를 조회하는 예시입니다. Route → Controller → Service → Model이 각각 어디에 해당하는지만 확인하면 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># models.py — Model: courses 테이블과 매핑되는 구조</span>
+<span class="tok-keyword">class</span> Course(db.Model):
+    id = db.Column(db.Integer, primary_key=<span class="tok-keyword">True</span>)
+    title = db.Column(db.String(<span class="tok-number">200</span>))
 
-Controller / Handler
-→ 요청을 받아 검증하고 서비스를 호출
-
-Service / Business Logic
-→ 실제 처리 규칙 (예: 수강 신청 가능 여부 판단)
-
-Model / Entity
-→ 데이터베이스 테이블과 매핑되는 구조
-
-Repository / DAO (선택)
-→ 데이터베이스 접근 코드를 분리
-
-Middleware
-→ 인증, 로깅, 오류 처리 등 요청 전후 공통 처리</code></pre></div>
-<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Route, Controller, Service, Model, Repository로 이어지는 백엔드 레이어드 아키텍처 구조도" style="max-width:100%;height:auto;font-family:inherit">
-  <style>
-    .la-layer{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
-    .la-db{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
-    .la-text{fill:var(--text);font-size:13px;text-anchor:middle;font-weight:700}
-    .la-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
-    .la-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#laArrow)}
-  </style>
-  <defs>
-    <marker id="laArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
-    </marker>
-  </defs>
-
-  <rect x="240" y="10" width="220" height="36" rx="8" class="la-layer"/>
-  <text x="350" y="33" class="la-text">Route</text>
-
-  <line x1="350" y1="46" x2="350" y2="66" class="la-arrow"/>
-  <rect x="240" y="66" width="220" height="36" rx="8" class="la-layer"/>
-  <text x="350" y="89" class="la-text">Controller</text>
-  <text x="350" y="115" class="la-sub">요청 검증·응답 조립</text>
-
-  <line x1="350" y1="102" x2="350" y2="132" class="la-arrow"/>
-  <rect x="240" y="132" width="220" height="36" rx="8" class="la-layer"/>
-  <text x="350" y="155" class="la-text">Service</text>
-  <text x="350" y="181" class="la-sub">비즈니스 로직</text>
-
-  <line x1="350" y1="168" x2="350" y2="198" class="la-arrow"/>
-  <rect x="240" y="198" width="220" height="36" rx="8" class="la-layer"/>
-  <text x="350" y="221" class="la-text">Repository</text>
-
-  <text x="350" y="247" class="la-sub">Model 정의 사용</text>
-
-  <line x1="350" y1="234" x2="350" y2="264" class="la-arrow"/>
-  <rect x="240" y="264" width="220" height="40" rx="8" class="la-db"/>
-  <text x="350" y="289" class="la-text">DB</text>
-</svg>
-<p>작은 프로젝트는 Controller와 Service를 합쳐도 괜찮지만, 역할이 무엇인지는 항상 구분해서 생각합니다.</p>
-<h4 class="section-h3" id="실제-코드로-보면-이렇게-생겼습니다-Flask-예시">실제 코드로 보면 이렇게 생겼습니다 (Flask 예시)<a class="heading-anchor" href="#실제-코드로-보면-이렇게-생겼습니다-Flask-예시" aria-label="이 섹션 링크">#</a></h4>
-<p>위 개념들이 실제 프레임워크에서는 어떤 모습인지, Flask로 강의 하나를 조회하는 예시를 통째로 보여드립니다. 처음 보면 낯설어도 괜찮습니다 — 지금은 “Route → Controller → Service → Model이 각각 어디에 해당하는지”만 눈으로 확인하면 됩니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code># models.py — Model: courses 테이블과 매핑되는 구조
-class Course(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(200))
-    price = db.Column(db.Integer)
-
-# services/course_service.py — Service: 실제 처리 규칙
-def get_course_or_raise(course_id):
+<span class="tok-comment"># services/course_service.py — Service: 실제 처리 규칙</span>
+<span class="tok-keyword">def</span> get_course_or_raise(course_id):
     course = Course.query.get(course_id)
-    if course is None:
+    <span class="tok-keyword">if</span> course <span class="tok-keyword">is</span> <span class="tok-keyword">None</span>:
         raise CourseNotFound()
-    return course
+    <span class="tok-keyword">return</span> course
 
-# routes/course_routes.py — Route + Controller가 한 데코레이터 안에 있음
-@app.route(&quot;/courses/&lt;int:course_id&gt;&quot;, methods=[&quot;GET&quot;])  # ← 라우팅: 이 URL·메서드로 오면 아래 함수 실행
-def get_course(course_id):                                # ← 컨트롤러: 요청을 받아 서비스를 호출
-    try:
-        course = get_course_or_raise(course_id)            # ← 서비스 호출
-        return jsonify({&quot;data&quot;: {&quot;id&quot;: course.id, &quot;title&quot;: course.title}}), 200
-    except CourseNotFound:
-        return jsonify({&quot;error&quot;: {&quot;code&quot;: &quot;COURSE_NOT_FOUND&quot;, &quot;message&quot;: &quot;강의를 찾을 수 없습니다.&quot;}}), 404</code></pre></div>
-<ul><li><code class="inline-code">@app.route(...)</code> 한 줄이 <strong>라우팅</strong>입니다: <code class="inline-code">GET /courses/10</code> 요청이 오면 <code class="inline-code">get_course</code> 함수를 실행하라는 뜻.</li><li><code class="inline-code">get_course</code> 함수 자체가 <strong>컨트롤러</strong>입니다: 요청을 받아 서비스를 부르고, 결과를 HTTP 응답(JSON + 상태 코드)으로 바꿔서 돌려줍니다.</li><li><code class="inline-code">get_course_or_raise</code>가 <strong>서비스</strong>입니다: “존재하지 않으면 오류를 던진다”는 실제 규칙이 여기 있습니다.</li><li><code class="inline-code">Course</code> 클래스가 <strong>모델</strong>입니다: <code class="inline-code">courses</code> 테이블의 각 컬럼(<code class="inline-code">id</code>, <code class="inline-code">title</code>, <code class="inline-code">price</code>)을 파이썬 속성으로 표현합니다.</li></ul>
-<p>Express(Node.js)나 Spring(Java)도 이름과 문법만 다를 뿐 이 네 가지 역할 구분은 동일합니다.</p>
-<h4 class="section-h3" id="실제-폴더-구조-예시-Flask">실제 폴더 구조 예시 (Flask)<a class="heading-anchor" href="#실제-폴더-구조-예시-Flask" aria-label="이 섹션 링크">#</a></h4>
-<p>위 예시의 <code class="inline-code">models.py</code>, <code class="inline-code">services/course_service.py</code>, <code class="inline-code">routes/course_routes.py</code>가 실제 프로젝트에서는 아래처럼 한 폴더 안에 자리잡습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>backend/
-├── app/
-│   ├── __init__.py         # Flask 앱 생성, DB·확장 초기화, 블루프린트 등록
-│   ├── models.py            # Model — 테이블과 매핑되는 클래스 모음
-│   ├── routes/               # Route + Controller — URL별로 파일을 나눔
-│   │   ├── course_routes.py
-│   │   └── auth_routes.py
-│   ├── services/              # Service — 실제 처리 규칙
-│   │   └── course_service.py
-│   └── middleware/             # 인증 확인, 로깅 등 공통 처리
-├── migrations/                  # DB 테이블 구조 변경 이력 (마이그레이션 도구가 자동 생성)
-├── tests/                        # 단위·통합 테스트
-├── config.py                     # 환경별 설정값을 모아두는 곳
-├── requirements.txt               # 설치된 패키지 목록
-├── .env                            # 실제 비밀값 (Git에 올리지 않음)
-├── .env.example                    # 필요한 환경변수 &quot;이름&quot;만 공유
-└── run.py                           # 서버 실행 시작점</code></pre></div>
-<p>Express(Node.js) 프로젝트도 이름만 다를 뿐 같은 역할로 나뉩니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>backend/
-├── src/
-│   ├── models/            # Model
-│   ├── routes/             # Route
-│   ├── controllers/         # Controller
-│   ├── services/             # Service
-│   └── middleware/            # 공통 처리
-├── package.json
-└── .env</code></pre></div>
-<ul><li>파일이 몇 개 안 되는 초기 단계에는 <code class="inline-code">routes</code>와 <code class="inline-code">controllers</code>를 합쳐도 괜찮습니다. 다만 나중에 나누기 쉽도록 함수 단위는 "요청을 검증하고 서비스를 부르는 부분"과 "실제 처리 규칙"을 섞어 쓰지 않는 습관을 들입니다.</li><li><code class="inline-code">migrations/</code>는 손으로 만드는 폴더가 아니라 Flask-Migrate, Sequelize 같은 도구가 <code class="inline-code">모델을 바꾸고 명령을 실행하면</code> 자동으로 만들어주는 폴더입니다. 직접 파일을 수정하지 않습니다.</li><li><code class="inline-code">.env</code>와 <code class="inline-code">.env.example</code>을 같이 두는 이유는 14장(환경변수)에서 다룹니다 — 실제 비밀값은 커밋하지 않고, 어떤 값이 필요한지 이름만 공유합니다.</li></ul>
+<span class="tok-comment"># routes/course_routes.py — Route + Controller</span>
+@app.route(&quot;/courses/&lt;int:course_id&gt;&quot;, methods=[&quot;GET&quot;])  <span class="tok-comment"># ← 라우팅</span>
+<span class="tok-keyword">def</span> get_course(course_id):                                <span class="tok-comment"># ← 컨트롤러</span>
+    <span class="tok-keyword">try</span>:
+        course = get_course_or_raise(course_id)            <span class="tok-comment"># ← 서비스 호출</span>
+        <span class="tok-keyword">return</span> jsonify({&quot;data&quot;: {&quot;id&quot;: course.id, &quot;title&quot;: course.title}}), <span class="tok-number">200</span>
+    <span class="tok-keyword">except</span> CourseNotFound:
+        <span class="tok-keyword">return</span> jsonify({&quot;error&quot;: {&quot;code&quot;: &quot;COURSE_NOT_FOUND&quot;, &quot;message&quot;: &quot;강의를 찾을 수 없습니다.&quot;}}), <span class="tok-number">404</span></code></pre></div>
+<p>Express(Node.js)나 Spring(Java)도 이름과 문법만 다를 뿐 이 네 가지 역할 구분은 동일합니다. 파일이 몇 개 안 되는 초기 단계에는 route와 controller를 합쳐도 괜찮지만, "검증+호출 부분"과 "실제 처리 규칙"은 섞지 않는 습관을 들이면 나중에 나누기 쉽습니다.</p>
 <hr>
-<h2 class="section-h1" id="4-HTTP와-REST-API-설계">4. HTTP와 REST API 설계<a class="heading-anchor" href="#4-HTTP와-REST-API-설계" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="4-1-HTTP-메서드">4.1 HTTP 메서드<a class="heading-anchor" href="#4-1-HTTP-메서드" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>메서드</th><th>일반적인 의미</th></tr></thead><tbody><tr><td><code class="inline-code">GET</code></td><td>데이터 조회 (부작용 없음)</td></tr><tr><td><code class="inline-code">POST</code></td><td>데이터 생성 또는 작업 요청</td></tr><tr><td><code class="inline-code">PUT</code></td><td>리소스 전체 수정</td></tr><tr><td><code class="inline-code">PATCH</code></td><td>리소스 일부 수정</td></tr><tr><td><code class="inline-code">DELETE</code></td><td>삭제</td></tr></tbody></table></div>
-<h3 class="section-h2" id="4-2-REST-URL-설계-기본">4.2 REST URL 설계 기본<a class="heading-anchor" href="#4-2-REST-URL-설계-기본" aria-label="이 섹션 링크">#</a></h3>
+<h2 class="section-h1" id="4-HTTP-메서드와-REST-API-설계">4. HTTP 메서드와 REST API 설계<a class="heading-anchor" href="#4-HTTP-메서드와-REST-API-설계" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>메서드</th><th>의미</th></tr></thead><tbody><tr><td><code class="inline-code">GET</code></td><td>데이터 조회 (부작용 없음)</td></tr><tr><td><code class="inline-code">POST</code></td><td>데이터 생성 또는 작업 요청</td></tr><tr><td><code class="inline-code">PUT</code></td><td>리소스 전체 수정</td></tr><tr><td><code class="inline-code">PATCH</code></td><td>리소스 일부 수정</td></tr><tr><td><code class="inline-code">DELETE</code></td><td>삭제</td></tr></tbody></table></div>
+<p><strong>REST API</strong>는 URL과 HTTP 메서드로 자원을 표현하는 설계 방식입니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>GET    /courses          강의 목록 조회
 GET    /courses/10       특정 강의 조회
 POST   /courses          강의 생성
 PATCH  /courses/10       강의 일부 수정
 DELETE /courses/10       강의 삭제</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식">기본 상식<a class="heading-anchor" href="#기본-상식" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>URL은 명사로 표현 (<code class="inline-code">/courses</code>), 동작은 HTTP 메서드로 표현</li><li>동사를 URL에 넣지 않기 (<code class="inline-code">/getCourses</code> ❌ → <code class="inline-code">GET /courses</code> ⭕)</li><li>복수형 명사를 일관되게 사용</li><li>계층 관계는 경로로 표현 (<code class="inline-code">/courses/10/reviews</code>)</li><li>검색·필터·정렬은 Query Parameter로 (<code class="inline-code">/courses?category=web&amp;sort=price</code>)</li></ul>
-<hr></div>
-<h3 class="section-h2" id="4-3-CORS와-API-문서화">4.3 CORS와 API 문서화<a class="heading-anchor" href="#4-3-CORS와-API-문서화" aria-label="이 섹션 링크">#</a></h3>
-<h4 class="section-h3" id="CORS를-정확히-이해하기">CORS를 정확히 이해하기<a class="heading-anchor" href="#CORS를-정확히-이해하기" aria-label="이 섹션 링크">#</a></h4>
-<p>CORS는 “서버끼리 통신을 막는 기능”이 아니라 주로 <strong>브라우저가 다른 origin의 응답을 읽는 것을 제어하는 정책과 연결</strong>됩니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>http://localhost:5173
-http://localhost:5000</code></pre></div>
-<p>프로토콜·호스트·포트 중 하나라도 다르면 다른 origin입니다.</p>
-<p>서버에서 점검할 것:</p>
-<ul><li>허용할 프론트엔드 origin</li><li>허용 HTTP 메서드</li><li>허용 요청 헤더</li><li>쿠키/자격 증명을 허용할지</li><li>운영 환경에서 <code class="inline-code">*</code>로 과도하게 열지 않았는지</li></ul>
-<h4 class="section-h3" id="OpenAPI-Swagger">OpenAPI / Swagger<a class="heading-anchor" href="#OpenAPI-Swagger" aria-label="이 섹션 링크">#</a></h4>
-<p>API가 많아질수록 문서와 실제 코드가 어긋나기 쉽습니다. OpenAPI는 API의 주소·메서드·요청·응답 스키마를 기계가 읽을 수 있게 정의하는 규격이고, Swagger UI 같은 도구로 사람이 테스트 가능한 문서를 만들 수 있습니다.</p>
-<p>최소한 다음 정보는 API 문서에 있어야 합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>메서드 + URL
-인증 필요 여부
-Path/Query Parameter
-Request Body
-성공 Response
-오류 Response
-상태 코드</code></pre></div>
-<p>프론트와 백엔드가 협업할 때는 <strong>“코드가 아니라 API 명세가 계약”</strong>이라는 원칙을 유지합니다.</p>
+<p>기본 상식: URL은 명사로, 동작은 메서드로 표현하고(<code class="inline-code">/getCourses</code> ❌ → <code class="inline-code">GET /courses</code> ⭕), 복수형 명사를 일관되게 사용합니다. 계층 관계는 경로로(<code class="inline-code">/courses/10/reviews</code>), 검색·필터·정렬은 <code class="inline-code">?key=value</code> 형태의 <strong>쿼리 파라미터</strong>로 표현합니다(예: <code class="inline-code">/courses?category=web&amp;sort=price</code>).</p>
+<p>프론트엔드와 백엔드가 서로 다른 포트에서 개발 중이면 브라우저가 서로 다른 출처(origin)로 취급해 응답을 못 읽는 문제가 생길 수 있습니다. 서버가 "이 출처는 허용한다"고 알려주는 설정을 <strong>CORS</strong>라고 합니다. 개발 중 API 호출이 막히면 CORS 설정부터 의심해봅니다.</p>
 <hr>
-<h2 class="section-h1" id="5-요청과-응답">5. 요청과 응답<a class="heading-anchor" href="#5-요청과-응답" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="5-1-요청-구성">5.1 요청 구성<a class="heading-anchor" href="#5-1-요청-구성" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>메서드 + URL
-헤더 (Content-Type, Authorization 등)
-바디 (JSON 등)</code></pre></div>
-<h3 class="section-h2" id="5-2-응답-설계">5.2 응답 설계<a class="heading-anchor" href="#5-2-응답-설계" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>{
-  &quot;data&quot;: {
-    &quot;id&quot;: 1,
-    &quot;title&quot;: &quot;React 입문&quot;
-  }
-}</code></pre></div>
-<p>오류 응답도 일관된 형식을 유지합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>{
-  &quot;error&quot;: {
-    &quot;code&quot;: &quot;COURSE_NOT_FOUND&quot;,
-    &quot;message&quot;: &quot;해당 강의를 찾을 수 없습니다.&quot;
-  }
-}</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-2">기본 상식<a class="heading-anchor" href="#기본-상식-2" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>성공/실패 응답 형식을 프로젝트 전체에서 통일</li><li>프론트엔드가 필요로 하지 않는 내부 정보(스택 트레이스, 쿼리문 등)를 응답에 노출하지 않기</li><li>응답 필드명은 프론트엔드와 사전에 확정한 명세를 따름 (임의 변경 금지)</li></ul>
-<hr></div>
-<h2 class="section-h1" id="6-HTTP-상태-코드">6. HTTP 상태 코드<a class="heading-anchor" href="#6-HTTP-상태-코드" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="5-요청과-응답-설계">5. 요청과 응답 설계<a class="heading-anchor" href="#5-요청과-응답-설계" aria-label="이 섹션 링크">#</a></h2>
+<p>요청은 크게 메서드+URL, 헤더(Content-Type, Authorization 등), 바디(보통 <strong>JSON</strong> — <code class="inline-code">{ "key": "value" }</code> 형태로 데이터를 표현하는 형식)로 구성됩니다.</p>
+<p>응답 형식은 프로젝트 전체에서 통일합니다. 정상 응답은 <code class="inline-code">{ "data": { ... } }</code>, 오류 응답은 <code class="inline-code">{ "error": { "code": "COURSE_NOT_FOUND", "message": "..." } }</code> 형태입니다. 응답에는 스택 트레이스나 내부 쿼리문처럼 프론트가 필요로 하지 않는 정보를 담지 않습니다.</p>
+<h3 class="section-h2" id="상태-코드">상태 코드<a class="heading-anchor" href="#상태-코드" aria-label="이 섹션 링크">#</a></h3>
 <div class="table-scroll"><table><thead><tr><th>코드</th><th>의미</th></tr></thead><tbody><tr><td><code class="inline-code">200</code></td><td>요청 성공</td></tr><tr><td><code class="inline-code">201</code></td><td>데이터 생성 성공</td></tr><tr><td><code class="inline-code">204</code></td><td>성공했지만 응답 본문 없음</td></tr><tr><td><code class="inline-code">400</code></td><td>요청값이 잘못됨</td></tr><tr><td><code class="inline-code">401</code></td><td>인증되지 않음</td></tr><tr><td><code class="inline-code">403</code></td><td>인증은 되었지만 권한 없음</td></tr><tr><td><code class="inline-code">404</code></td><td>주소 또는 데이터 없음</td></tr><tr><td><code class="inline-code">409</code></td><td>중복 또는 충돌</td></tr><tr><td><code class="inline-code">422</code></td><td>요청 형식은 맞지만 값 검증 실패</td></tr><tr><td><code class="inline-code">500</code></td><td>서버 내부 오류</td></tr></tbody></table></div>
-<p>상태 코드만 정확히 반환하고 끝내지 않습니다. 응답 본문에 원인을 알 수 있는 최소한의 정보를 함께 담습니다.</p>
+<p>상태 코드만 정확히 반환하고 끝내지 않고, 응답 본문에 원인을 알 수 있는 최소한의 정보를 함께 담습니다.</p>
 <hr>
-<h2 class="section-h1" id="7-데이터베이스-기초">7. 데이터베이스 기초<a class="heading-anchor" href="#7-데이터베이스-기초" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="7-1-관계형-데이터베이스">7.1 관계형 데이터베이스<a class="heading-anchor" href="#7-1-관계형-데이터베이스" aria-label="이 섹션 링크">#</a></h3>
-<p>테이블(행·열)로 데이터를 저장하고, 관계(외래키)로 테이블끼리 연결합니다.</p>
-<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="users, courses, enrollments 테이블이 기본키·외래키로 연결되는 관계형 데이터베이스 ERD 예시" style="max-width:100%;height:auto;font-family:inherit">
-  <style>
-    .erd-table{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
-    .erd-mid{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
-    .erd-title{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
-    .erd-field{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
-    .erd-line{stroke:var(--text-faint);stroke-width:1.5;fill:none}
-  </style>
-
-  <rect x="30" y="60" width="170" height="110" rx="8" class="erd-table"/>
-  <text x="115" y="82" class="erd-title">users</text>
-  <line x1="30" y1="92" x2="200" y2="92" class="erd-line"/>
-  <text x="115" y="110" class="erd-field">id (PK)</text>
-  <text x="115" y="128" class="erd-field">email</text>
-  <text x="115" y="146" class="erd-field">name</text>
-
-  <rect x="265" y="20" width="170" height="110" rx="8" class="erd-table"/>
-  <text x="350" y="42" class="erd-title">courses</text>
-  <line x1="265" y1="52" x2="435" y2="52" class="erd-line"/>
-  <text x="350" y="70" class="erd-field">id (PK)</text>
-  <text x="350" y="88" class="erd-field">title</text>
-  <text x="350" y="106" class="erd-field">instructor_id</text>
-
-  <rect x="500" y="60" width="170" height="110" rx="8" class="erd-mid"/>
-  <text x="585" y="82" class="erd-title">enrollments</text>
-  <line x1="500" y1="92" x2="670" y2="92" class="erd-line"/>
-  <text x="585" y="110" class="erd-field">id (PK)</text>
-  <text x="585" y="128" class="erd-field">user_id (FK)</text>
-  <text x="585" y="146" class="erd-field">course_id (FK)</text>
-
-  <line x1="200" y1="115" x2="500" y2="115" class="erd-line"/>
-  <text x="350" y="200" class="erd-field">enrollments는 users, courses 각각의 기본키를 외래키로 참조해 다대다 관계를 표현</text>
-  <line x1="435" y1="90" x2="585" y2="60" class="erd-line"/>
-</svg>
+<h2 class="section-h1" id="6-데이터베이스-기초">6. 데이터베이스 기초<a class="heading-anchor" href="#6-데이터베이스-기초" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>데이터베이스(DB)</strong>는 데이터를 저장해두는 프로그램입니다. 관계형 데이터베이스는 데이터를 <strong>테이블</strong>(엑셀 시트처럼 행·열로 이루어진 저장 단위)에 저장하고, 테이블끼리 <strong>관계</strong>로 연결합니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>users            courses           enrollments
 ──────           ───────           ───────────
 id (PK)          id (PK)           id (PK)
 email            title             user_id (FK)
 password_hash    price             course_id (FK)
                                     enrolled_at</code></pre></div>
-<h3 class="section-h2" id="7-2-기본키와-외래키">7.2 기본키와 외래키<a class="heading-anchor" href="#7-2-기본키와-외래키" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>기본키(Primary Key)
-= 한 행을 유일하게 식별하는 값
-
-외래키(Foreign Key)
-= 다른 테이블의 기본키를 참조하는 값</code></pre></div>
-<h3 class="section-h2" id="7-3-ERD를-먼저-그리는-이유">7.3 ERD를 먼저 그리는 이유<a class="heading-anchor" href="#7-3-ERD를-먼저-그리는-이유" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>테이블 간 관계를 미리 파악해 나중에 구조를 뒤엎는 일을 줄임</li><li>프론트엔드와 데이터 구조를 논의할 때 공통 언어가 됨</li><li>어떤 데이터가 어디서 필요한지 명확해짐</li></ul>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-3">기본 상식<a class="heading-anchor" href="#기본-상식-3" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>하나의 값은 한 곳에만 저장 (중복 저장은 나중에 불일치를 만듦)</li><li>삭제된 데이터가 필요한 경우 소프트 삭제(상태 컬럼)를 고려</li><li>컬럼명은 팀 전체가 합의한 규칙(snake\_case/camelCase 등)을 통일해서 사용</li></ul>
-<hr></div>
-<h3 class="section-h2" id="7-4-관계와-제약-조건">7.4 관계와 제약 조건<a class="heading-anchor" href="#7-4-관계와-제약-조건" aria-label="이 섹션 링크">#</a></h3>
-<p>관계형 DB에서는 “컬럼이 존재한다”보다 <strong>어떤 값이 허용되는지</strong>까지 설계해야 합니다.</p>
-<h4 class="section-h3" id="기본-제약-조건">기본 제약 조건<a class="heading-anchor" href="#기본-제약-조건" aria-label="이 섹션 링크">#</a></h4>
-<div class="table-scroll"><table><thead><tr><th>제약</th><th>의미</th><th>예</th></tr></thead><tbody><tr><td><code class="inline-code">PRIMARY KEY</code></td><td>행을 유일하게 식별</td><td><code class="inline-code">users.id</code></td></tr><tr><td><code class="inline-code">FOREIGN KEY</code></td><td>다른 테이블의 행을 참조</td><td><code class="inline-code">enrollments.user_id</code></td></tr><tr><td><code class="inline-code">NOT NULL</code></td><td>값이 반드시 있어야 함</td><td><code class="inline-code">users.email</code></td></tr><tr><td><code class="inline-code">UNIQUE</code></td><td>중복 금지</td><td>이메일</td></tr><tr><td><code class="inline-code">DEFAULT</code></td><td>값을 안 넣었을 때 기본값</td><td><code class="inline-code">status='ACTIVE'</code></td></tr><tr><td><code class="inline-code">CHECK</code></td><td>허용 범위 검증</td><td><code class="inline-code">price &gt;= 0</code></td></tr></tbody></table></div>
-<h4 class="section-h3" id="관계-종류">관계 종류<a class="heading-anchor" href="#관계-종류" aria-label="이 섹션 링크">#</a></h4>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1:1
-사용자 1명 ↔ 프로필 1개
-
-1:N
-강사 1명 → 강의 여러 개
-
-N:M
-사용자 여러 명 ↔ 강의 여러 개
-→ 중간 테이블(enrollments)로 표현</code></pre></div>
-<p>DB 제약 조건은 서버 검증을 대신하는 것이 아니라 <strong>마지막 안전장치</strong>입니다. 예를 들어 이메일 중복을 서비스 코드에서도 검사하더라도 DB의 <code class="inline-code">UNIQUE</code> 제약을 함께 두는 것이 안전합니다.</p>
-<hr>
-<h2 class="section-h1" id="8-SQL-기본">8. SQL 기본<a class="heading-anchor" href="#8-SQL-기본" aria-label="이 섹션 링크">#</a></h2>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>SELECT id, title FROM courses WHERE price = 0;
-
+<ul><li><strong>기본키(Primary Key, PK)</strong>: 한 행을 유일하게 구분하는 값 (보통 <code class="inline-code">id</code>)</li><li><strong>외래키(Foreign Key, FK)</strong>: 다른 테이블의 기본키를 가리켜 두 테이블을 연결하는 값</li></ul>
+<p>위 예시에서 <code class="inline-code">enrollments</code>(수강 신청)는 <code class="inline-code">users</code>와 <code class="inline-code">courses</code> 각각의 PK를 FK로 참조해서, 사용자 여러 명과 강의 여러 개가 서로 연결되는 N:M(다대다) 관계를 표현합니다.</p>
+<p>테이블을 만들 때는 컬럼뿐 아니라 어떤 값이 허용되는지도 정합니다(<code class="inline-code">NOT NULL</code>=값 필수, <code class="inline-code">UNIQUE</code>=중복 금지, <code class="inline-code">DEFAULT</code>=기본값). 이런 DB 제약은 서버 검증을 대신하는 게 아니라 <strong>마지막 안전장치</strong>입니다. 이메일 중복을 서비스 코드에서 검사하더라도 DB의 <code class="inline-code">UNIQUE</code> 제약을 함께 두는 것이 안전합니다.</p>
+<h3 class="section-h2" id="SQL-기본">SQL 기본<a class="heading-anchor" href="#SQL-기본" aria-label="이 섹션 링크">#</a></h3>
+<p><strong>SQL</strong>은 데이터베이스에 데이터를 넣고·읽고·바꾸고·지울 때 쓰는 언어입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>SELECT id, title FROM courses WHERE price = 0;
 INSERT INTO courses (title, price) VALUES (&#x27;React 입문&#x27;, 0);
-
 UPDATE courses SET price = 10000 WHERE id = 1;
-
-DELETE FROM courses WHERE id = 1;
-
-SELECT c.title, u.email
-FROM enrollments e
-JOIN courses c ON e.course_id = c.id
-JOIN users u ON e.user_id = u.id
-WHERE u.id = 3;</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-4">기본 상식<a class="heading-anchor" href="#기본-상식-4" aria-label="이 섹션 링크">#</a></h4>
-<ul><li><code class="inline-code">WHERE</code> 없는 <code class="inline-code">UPDATE</code>/<code class="inline-code">DELETE</code>는 전체 테이블에 적용되므로 실행 전 반드시 확인</li><li>사용자 입력을 SQL 문자열에 직접 이어붙이지 않기 (SQL Injection 위험 → 파라미터 바인딩 사용)</li><li>자주 조회하는 컬럼에는 인덱스를 고려</li><li>실행 전 개발 DB에서 먼저 확인</li></ul>
-<hr></div>
-<h2 class="section-h1" id="9-ORM">9. ORM<a class="heading-anchor" href="#9-ORM" aria-label="이 섹션 링크">#</a></h2>
-<p>ORM(Object-Relational Mapping)은 SQL을 직접 쓰지 않고 객체·함수로 데이터베이스를 다루게 해주는 도구입니다. (예: SQLAlchemy, Sequelize, Prisma, JPA/Hibernate)</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code># 예시 (Python, 개념 설명용 의사코드)
-course = Course.query.filter_by(id=1).first()
-course.price = 10000
+DELETE FROM courses WHERE id = 1;</code></pre></div>
+<p>기본 상식: <code class="inline-code">WHERE</code> 없는 <code class="inline-code">UPDATE</code>/<code class="inline-code">DELETE</code>는 테이블 전체에 적용되므로 실행 전 반드시 확인하고, 사용자 입력을 SQL 문자열에 직접 이어붙이지 않습니다(뒤에 나올 SQL Injection 위험).</p>
+<h3 class="section-h2" id="ORM">ORM<a class="heading-anchor" href="#ORM" aria-label="이 섹션 링크">#</a></h3>
+<p>매번 SQL 문자열을 직접 쓰는 대신, 객체·함수로 데이터베이스를 다루게 해주는 도구를 <strong>ORM</strong>(Object-Relational Mapping, 예: SQLAlchemy·Sequelize·Prisma·JPA)이라고 합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code>course = Course.query.filter_by(id=<span class="tok-number">1</span>).first()
+course.price = <span class="tok-number">10000</span>
 db.session.commit()</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-5">기본 상식<a class="heading-anchor" href="#기본-상식-5" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>ORM도 결국 SQL로 변환되므로, 어떤 쿼리가 만들어지는지 가끔 확인하는 습관이 필요</li><li>관계(1:N, N:M)를 모델에 정확히 정의해야 조회가 예상대로 동작함</li><li>성능 문제(N+1 쿼리 등)는 ORM을 쓰더라도 발생할 수 있음</li></ul>
-<hr></div>
-<h3 class="section-h2" id="9-1-마이그레이션-모델을-바꾸는-것과-DB를-바꾸는-것은-다르다">9.1 마이그레이션 — 모델을 바꾸는 것과 DB를 바꾸는 것은 다르다<a class="heading-anchor" href="#9-1-마이그레이션-모델을-바꾸는-것과-DB를-바꾸는-것은-다르다" aria-label="이 섹션 링크">#</a></h3>
-<p>ORM 모델에 컬럼을 추가했다고 실제 운영 DB의 테이블이 자동으로 안전하게 바뀌는 것은 아닙니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>코드 모델 변경
-→ 마이그레이션 파일 생성
-→ 변경 SQL 확인
-→ 개발/테스트 DB에 적용
-→ 운영 배포 시 같은 마이그레이션 적용</code></pre></div>
-<p>마이그레이션 도구 예:</p>
-<ul><li>Flask/SQLAlchemy: Alembic, Flask-Migrate</li><li>Django: Django migrations</li><li>Prisma: Prisma Migrate</li><li>Spring/JPA 프로젝트: Flyway, Liquibase 등을 함께 사용 가능</li></ul>
-<p>팀 프로젝트에서는 <strong>DB 스키마를 수동으로만 바꾸지 말고 마이그레이션 파일을 Git으로 공유</strong>합니다.</p>
-<p>주의:</p>
-<ul><li>데이터가 이미 있는 컬럼에 <code class="inline-code">NOT NULL</code>을 추가할 때 기본값·데이터 이행 필요</li><li>컬럼 삭제·타입 변경은 데이터 손실 가능</li><li>운영 적용 전 백업·롤백 계획 확인</li></ul>
+<p>ORM도 결국 내부적으로는 SQL로 변환됩니다. 성능 튜닝(N+1 문제 등)은 <strong>중급 가이드에서 다룹니다.</strong></p>
+<p>ORM 모델에 컬럼을 추가한다고 실제 운영 DB가 자동으로 바뀌지는 않습니다. 이 변경 내역을 파일로 기록해 팀과 공유하는 방법을 <strong>마이그레이션</strong>이라고 합니다(도구 예: Alembic/Flask-Migrate, Django migrations). 팀 프로젝트에서는 DB 구조를 수동으로만 바꾸지 말고 마이그레이션 파일을 Git으로 공유합니다.</p>
+<h3 class="section-h2" id="트랜잭션">트랜잭션<a class="heading-anchor" href="#트랜잭션" aria-label="이 섹션 링크">#</a></h3>
+<p>여러 DB 작업을 하나의 단위로 묶어, 전부 성공하거나 전부 취소되게(롤백) 만드는 것을 <strong>트랜잭션</strong>이라고 합니다. 예를 들어 "결제 저장 → 수강 목록 추가 → 인원수 갱신" 중 하나라도 실패하면 전부 되돌립니다. 서로 연결된 여러 DB 작업은 트랜잭션으로 묶고, 실패 시 반드시 롤백되는지 테스트로 확인합니다.</p>
 <hr>
-<h2 class="section-h1" id="10-트랜잭션">10. 트랜잭션<a class="heading-anchor" href="#10-트랜잭션" aria-label="이 섹션 링크">#</a></h2>
-<p>여러 작업을 하나의 단위로 묶어, 전부 성공하거나 전부 취소되게 만드는 것입니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>예: 수강 신청
-1. 결제 정보 저장
-2. 수강 목록에 추가
-3. 강의 인원수 갱신
-
-셋 중 하나라도 실패하면 전부 되돌립니다.</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-6">기본 상식<a class="heading-anchor" href="#기본-상식-6" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>서로 연결된 여러 DB 작업은 트랜잭션으로 묶는다</li><li>트랜잭션 범위를 너무 넓게 잡으면 성능이 떨어질 수 있다</li><li>실패 시 반드시 롤백되는지 테스트로 확인한다</li></ul>
-<hr></div>
-<h2 class="section-h1" id="11-요청값-검증">11. 요청값 검증<a class="heading-anchor" href="#11-요청값-검증" aria-label="이 섹션 링크">#</a></h2>
-<p>클라이언트가 보낸 값은 항상 다시 검증합니다.</p>
-<p>검증 예시:</p>
-<ul><li>필수값 존재 여부</li><li>자료형 (문자열/숫자/불리언)</li><li>이메일·전화번호 형식</li><li>문자열 길이·숫자 범위</li><li>허용된 값 목록(enum)인지</li><li>중복 여부 (이메일 중복 가입 등)</li></ul>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-7">기본 상식<a class="heading-anchor" href="#기본-상식-7" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>프론트엔드 검증을 믿지 않고 서버에서 다시 확인</li><li>검증 실패 시 어떤 필드가 왜 잘못됐는지 명확히 응답</li><li>검증 로직은 여러 라우트에서 재사용할 수 있게 분리</li></ul>
-<hr></div>
-<h2 class="section-h1" id="12-인증과-인가">12. 인증과 인가<a class="heading-anchor" href="#12-인증과-인가" aria-label="이 섹션 링크">#</a></h2>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>인증(Authentication)
-= 누구인지 확인 (로그인)
-
-인가(Authorization)
-= 무엇을 할 수 있는지 확인 (권한)</code></pre></div>
-<h3 class="section-h2" id="12-1-인증-방식">12.1 인증 방식<a class="heading-anchor" href="#12-1-인증-방식" aria-label="이 섹션 링크">#</a></h3>
-<ul><li><strong>세션 기반</strong>: 서버가 로그인 상태를 세션 저장소에 보관, 클라이언트는 세션 ID(쿠키)만 가짐</li><li><strong>토큰 기반(JWT 등)</strong>: 로그인 시 토큰을 발급, 이후 요청마다 토큰을 헤더에 담아 검증</li></ul>
+<h2 class="section-h1" id="7-요청값-검증">7. 요청값 검증<a class="heading-anchor" href="#7-요청값-검증" aria-label="이 섹션 링크">#</a></h2>
+<p>클라이언트가 보낸 값은 항상 서버에서 다시 검증합니다. 확인할 것: 필수값 존재 여부, 자료형(문자열/숫자/불리언), 이메일·전화번호 형식, 길이·범위, 허용된 값 목록인지, 중복 여부(이메일 중복 가입 등).</p>
+<p>검증 실패 시 어떤 필드가 왜 잘못됐는지 명확히 응답하고, 검증 로직은 여러 라우트에서 재사용할 수 있게 분리합니다.</p>
+<hr>
+<h2 class="section-h1" id="8-인증과-인가">8. 인증과 인가<a class="heading-anchor" href="#8-인증과-인가" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>인증(Authentication) = 누구인지 확인 (로그인)
+인가(Authorization)  = 무엇을 할 수 있는지 확인 (권한)</code></pre></div>
+<p>인증 방식은 크게 두 가지입니다.</p>
+<ul><li><strong>세션(Session) 기반</strong>: 서버가 로그인 상태를 세션 저장소에 보관하고, 클라이언트는 세션 ID(쿠키)만 가집니다.</li><li><strong>토큰 기반(JWT 등)</strong>: 로그인 시 서버가 <strong>토큰</strong>(로그인 상태를 문자열 하나로 표현한 것)을 발급하고, 이후 요청마다 헤더에 담아 보냅니다.</li></ul>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Authorization: Bearer &lt;token&gt;</code></pre></div>
-<h3 class="section-h2" id="12-2-인가-예시">12.2 인가 예시<a class="heading-anchor" href="#12-2-인가-예시" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>일반 사용자
-→ 자신의 정보만 조회·수정 가능
-
-강사
-→ 자신이 등록한 강의만 수정·삭제 가능
-
-관리자
-→ 전체 강의·사용자 관리 가능</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-8">기본 상식<a class="heading-anchor" href="#기본-상식-8" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>인증과 인가는 항상 서버에서 최종 확인 (프론트 화면 숨김만으로 보안 불가)</li><li>토큰 만료·재발급 정책을 정해둔다</li><li>다른 사용자의 데이터에 접근하는 요청인지 소유자 확인 로직을 반드시 둔다 (예: 남의 수강 정보 조회 방지)</li></ul>
-<hr></div>
-<h3 class="section-h2" id="12-3-Access-Token-Refresh-Token-Cookie">12.3 Access Token, Refresh Token, Cookie<a class="heading-anchor" href="#12-3-Access-Token-Refresh-Token-Cookie" aria-label="이 섹션 링크">#</a></h3>
-<p>토큰 기반 인증에서도 모든 토큰의 역할이 같은 것은 아닙니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Access Token
-→ API 요청에 사용
-→ 비교적 짧은 만료시간
-
-Refresh Token
-→ 새 Access Token을 발급받는 데 사용
-→ 더 오래 유지되므로 더 조심해서 보관</code></pre></div>
-<p>프로젝트에 따라 한 종류의 토큰만 쓸 수도 있고, 세션 기반 인증을 쓸 수도 있습니다. <strong>무조건 JWT 두 개를 써야 하는 것은 아니고, JWT가 세션보다 항상 더 안전하거나 더 나은 방식인 것도 아닙니다.</strong> 각각 장단점이 다른 도구일 뿐입니다.</p>
-<h4 class="section-h3" id="JWT를-쓸-때-반드시-알아야-할-것-payload는-암호화가-아니다">JWT를 쓸 때 반드시 알아야 할 것 — payload는 암호화가 아니다<a class="heading-anchor" href="#JWT를-쓸-때-반드시-알아야-할-것-payload는-암호화가-아니다" aria-label="이 섹션 링크">#</a></h4>
-<p>JWT는 <code class="inline-code">헤더.페이로드.서명</code> 세 부분을 점(<code class="inline-code">.</code>)으로 이어붙인 문자열입니다. 이때 페이로드는 <strong>base64url로 인코딩만 되어 있을 뿐 암호화되어 있지 않습니다.</strong> 즉 토큰을 가로챈 사람은 물론, 로그인한 사용자 본인도 개발자 도구나 <a href="https://jwt.io" target="_blank" rel="noopener">jwt.io</a> 같은 사이트에 붙여넣기만 하면 페이로드 내용을 그대로 읽을 수 있습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>JWT = base64url(헤더) + &quot;.&quot; + base64url(페이로드) + &quot;.&quot; + 서명
-                                     ↑
-                              누구나 디코딩해서 읽을 수 있음 (암호화 아님)</code></pre></div>
-<p>서명은 "이 토큰이 서버가 발급한 것이 맞고 중간에 값이 바뀌지 않았다"는 것을 보장할 뿐, 내용을 숨겨주지 않습니다. 그래서:</p>
-<ul><li>비밀번호, 주민등록번호, 카드번호 같은 민감정보는 JWT payload에 넣지 않습니다.</li><li>payload에는 보통 사용자 ID, 권한(role), 만료시간처럼 "노출되어도 큰 문제가 없는" 값만 담습니다.</li></ul>
-<p>쿠키로 인증 정보를 전달한다면 다음 옵션을 이해합니다.</p>
-<div class="table-scroll"><table><thead><tr><th>옵션</th><th>의미</th></tr></thead><tbody><tr><td><code class="inline-code">HttpOnly</code></td><td>브라우저 JavaScript에서 쿠키를 읽지 못하게 함</td></tr><tr><td><code class="inline-code">Secure</code></td><td>HTTPS 연결에서만 전송</td></tr><tr><td><code class="inline-code">SameSite</code></td><td>다른 사이트에서 시작된 요청에 쿠키를 어느 범위까지 보낼지 제한</td></tr></tbody></table></div>
-<h4 class="section-h3" id="CSRF">CSRF<a class="heading-anchor" href="#CSRF" aria-label="이 섹션 링크">#</a></h4>
-<p>브라우저가 인증 쿠키를 자동으로 전송하는 구조에서는 공격 사이트가 사용자를 대신해 요청을 보내는 <strong>CSRF(Cross-Site Request Forgery)</strong>를 고려해야 합니다.</p>
-<p>대응은 구조에 따라 다음을 조합합니다.</p>
-<ul><li>적절한 <code class="inline-code">SameSite</code> 설정</li><li>CSRF Token</li><li>Origin/Referer 검증</li><li>중요한 요청의 재인증·사용자 확인</li></ul>
-<p>인증 설계는 “토큰을 발급했다”에서 끝나지 않고 <strong>저장 위치·만료·재발급·로그아웃·탈취 시 대응</strong>까지 포함합니다.</p>
+<p>JWT는 <code class="inline-code">헤더.페이로드.서명</code> 문자열인데, 페이로드는 <strong>암호화가 아니라 인코딩만 되어 있어 누구나 디코딩해 읽을 수 있습니다.</strong> 그래서 비밀번호 같은 민감정보는 절대 넣지 않습니다. JWT가 세션보다 무조건 우월한 것은 아니며 각각 장단점이 다른 도구입니다. Refresh Token, CSRF 같은 심화 주제는 <strong>중급 가이드에서 다룹니다.</strong></p>
+<p>인가는 "일반 사용자는 자신의 정보만 조회 가능"처럼 역할별로 다르게 적용합니다. 인증과 인가는 항상 서버에서 최종 확인하며(프론트 화면 숨김만으로는 보안이 되지 않습니다), 다른 사용자의 데이터에 접근하는 요청인지 소유자 확인 로직을 반드시 둡니다(예: 남의 수강 정보 조회 방지).</p>
 <hr>
-<h2 class="section-h1" id="13-비밀번호와-보안-기본">13. 비밀번호와 보안 기본<a class="heading-anchor" href="#13-비밀번호와-보안-기본" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>비밀번호는 평문으로 저장하지 않고, <strong>비밀번호 저장 전용 해싱 알고리즘</strong>(Argon2id, bcrypt 등)으로 해싱해서 저장. MD5·SHA-256 같은 일반 해시 함수는 계산이 너무 빨라, 공격자가 가능한 비밀번호를 하나씩 다 대입해보는 브루트포스 공격(Brute-force, 무차별 대입 공격)에 취약하므로 비밀번호 저장에는 쓰지 않습니다. OWASP는 Argon2id를 1순위로 권장하고, bcrypt는 레거시 시스템에서 널리 쓰입니다.</li><li>같은 비밀번호라도 매번 다른 해시값이 나오도록 salt 적용 (대부분의 해싱 라이브러리가 자동 처리)</li><li>클라이언트가 보낸 값을 그대로 SQL·명령어에 사용하지 않기 (SQL Injection, Command Injection 방지)</li><li>사용자 입력을 화면에 그대로 렌더링하는 경우 XSS 위험 고려 (주로 프론트 책임이지만 API 응답 값도 이스케이프 정책 확인)</li><li>민감한 값(비밀번호 해시, 내부 토큰 등)은 응답 JSON에 포함하지 않기</li><li>요청 빈도가 비정상적으로 많은 IP·계정에 대한 제한(rate limiting) 고려</li></ul>
-<hr>
-<h2 class="section-h1" id="14-환경변수와-설정-관리">14. 환경변수와 설정 관리<a class="heading-anchor" href="#14-환경변수와-설정-관리" aria-label="이 섹션 링크">#</a></h2>
-<p>환경에 따라 달라지는 값을 코드와 분리합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>DATABASE_URL=mysql://user:pass@localhost:3306/db
-SECRET_KEY=...
-AI_API_KEY=...
-PORT=5000</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-9">기본 상식<a class="heading-anchor" href="#기본-상식-9" aria-label="이 섹션 링크">#</a></h4>
-<ul><li><code class="inline-code">.env</code>는 GitHub에 올리지 않고 <code class="inline-code">.gitignore</code>에 포함</li><li><code class="inline-code">.env.example</code>에는 변수 이름만 공유 (실제 값 제외)</li><li>개발/테스트/운영 환경변수를 분리해서 관리</li><li>코드에 비밀값을 직접 작성하지 않기</li></ul></div>
-<h4 class="section-h3" id="실제로-해보기">실제로 해보기<a class="heading-anchor" href="#실제로-해보기" aria-label="이 섹션 링크">#</a></h4>
-<ol><li>프로젝트 루트에 <code class="inline-code">.env</code> 파일을 만들고 위 예시처럼 <code class="inline-code">키=값</code>을 한 줄씩 적습니다. (따옴표 없이, <code class="inline-code">=</code> 앞뒤에 공백 없이)</li><li><p>Python(Flask)이라면 <code class="inline-code">python-dotenv</code> 같은 라이브러리로 파일을 읽어옵니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>from dotenv import load_dotenv
-import os
+<h2 class="section-h1" id="9-비밀번호-보안-환경변수">9. 비밀번호·보안·환경변수<a class="heading-anchor" href="#9-비밀번호-보안-환경변수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>비밀번호는 평문으로 저장하지 않고 <strong>해싱</strong>(원문을 복원 불가능한 문자열로 바꾸는 것)해서 저장합니다. 반드시 비밀번호 저장 전용 알고리즘(Argon2id, bcrypt 등)을 씁니다 — MD5·SHA-256은 계산이 빨라 브루트포스 공격에 취약해 쓰지 않습니다.</li><li>사용자 입력을 SQL 문에 그대로 이어붙이면 공격자가 SQL을 조작하는 <strong>SQL Injection</strong>이 가능해집니다 — 파라미터 바인딩(예: <code class="inline-code">?</code>)을 사용합니다.</li><li>민감한 값(비밀번호 해시, 내부 토큰 등)은 응답 JSON에 절대 포함하지 않습니다.</li><li>비밀번호·API 키처럼 코드에 직접 쓰면 안 되는 값은 <code class="inline-code">.env</code> 같은 파일로 분리해 코드에서 불러옵니다.</li></ul>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">from</span> dotenv <span class="tok-keyword">import</span> load_dotenv
+<span class="tok-keyword">import</span> os
 
-load_dotenv()                       # .env 파일을 읽어서 환경변수로 등록
-db_url = os.environ[&quot;DATABASE_URL&quot;] # 코드에서는 이렇게 값을 꺼내 씀</code></pre></div></li><li>코드 어디에도 실제 비밀번호나 키 문자열이 그대로 적혀 있지 않은지 확인합니다. <code class="inline-code">os.environ[...]</code>으로 “꺼내 쓰는” 코드만 있어야 정상입니다.</li><li><code class="inline-code">.gitignore</code>에 <code class="inline-code">.env</code>가 포함되어 있는지 확인합니다. <strong>이미 Git이 추적 중인 <code class="inline-code">.env</code>는 <code class="inline-code">.gitignore</code>에 추가해도 계속 추적</strong>될 수 있으므로 <code class="inline-code">git ls-files .env</code>로 확인하고, 추적 중이면 <code class="inline-code">git rm --cached .env</code>로 Git 추적만 해제합니다.</li><li>비밀키를 실수로 GitHub에 push했다면 파일만 지우고 끝내지 않습니다. <strong>해당 키·토큰을 즉시 폐기(revoke)하고 새 값으로 교체</strong>합니다. Git 이력에 값이 남았을 가능성도 별도로 처리해야 합니다.</li></ol>
+load_dotenv()                       <span class="tok-comment"># .env 파일을 읽어서 환경변수로 등록</span>
+db_url = os.environ[&quot;DATABASE_URL&quot;] <span class="tok-comment"># 코드에서는 이렇게 꺼내 씀</span></code></pre></div>
+<p><code class="inline-code">.env</code>는 <code class="inline-code">.gitignore</code>에 포함해 GitHub에 올리지 않고, <code class="inline-code">.env.example</code>에는 값 없이 변수 이름만 공유합니다. 비밀키를 실수로 push했다면 파일만 지우지 말고 <strong>해당 키를 즉시 폐기(revoke)하고 새 값으로 교체</strong>합니다.</p>
 <hr>
-<h2 class="section-h1" id="15-오류-처리">15. 오류 처리<a class="heading-anchor" href="#15-오류-처리" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="오류-처리-원칙">오류 처리 원칙<a class="heading-anchor" href="#오류-처리-원칙" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>예상 가능한 오류(검증 실패, 인증 실패 등)는 명확한 상태 코드 + 메시지로 응답</li><li>예상하지 못한 오류(500)는 사용자에게 상세 내용을 노출하지 않고, 서버 로그에는 상세히 기록</li><li>오류를 무조건 무시(빈 <code class="inline-code">except</code>)하지 않기</li><li>오류 응답 형식을 프로젝트 전체에서 통일</li></ul>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code># 개념 예시
-try:
+<h2 class="section-h1" id="10-오류-처리와-로그">10. 오류 처리와 로그<a class="heading-anchor" href="#10-오류-처리와-로그" aria-label="이 섹션 링크">#</a></h2>
+<p>예상 가능한 오류(검증 실패, 인증 실패 등)는 명확한 상태 코드+메시지로 응답합니다. 예상치 못한 오류(500)는 사용자에게 상세 내용을 노출하지 않되, 서버 로그에는 상세히 기록합니다. 오류를 빈 <code class="inline-code">except</code>로 무시하지 않습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">try</span>:
     course = get_course(course_id)
-except CourseNotFound:
-    return error_response(404, &quot;COURSE_NOT_FOUND&quot;, &quot;강의를 찾을 수 없습니다.&quot;)
-except Exception:
+<span class="tok-keyword">except</span> CourseNotFound:
+    <span class="tok-keyword">return</span> error_response(<span class="tok-number">404</span>, &quot;COURSE_NOT_FOUND&quot;, &quot;강의를 찾을 수 없습니다.&quot;)
+<span class="tok-keyword">except</span> Exception:
     log.exception(&quot;unexpected error&quot;)
-    return error_response(500, &quot;INTERNAL_ERROR&quot;, &quot;서버 오류가 발생했습니다.&quot;)</code></pre></div>
+    <span class="tok-keyword">return</span> error_response(<span class="tok-number">500</span>, &quot;INTERNAL_ERROR&quot;, &quot;서버 오류가 발생했습니다.&quot;)</code></pre></div>
+<p><strong>로그</strong>는 문제 원인을 되짚기 위한 기록입니다. 요청 URL·오류 스택 트레이스는 남기고, 비밀번호·토큰 원문 같은 민감정보는 절대 남기지 않습니다.</p>
+<p>요청 전후에 인증 확인·로깅처럼 공통으로 실행되는 코드를 <strong>미들웨어</strong>라고 합니다(<code class="inline-code">요청 → [로깅] → [CORS] → [인증 확인] → 라우트 처리 → 응답</code>). 반복되는 로직은 매 라우트마다 넣지 않고 미들웨어로 분리합니다.</p>
 <hr>
-<h2 class="section-h1" id="16-로그">16. 로그<a class="heading-anchor" href="#16-로그" aria-label="이 섹션 링크">#</a></h2>
-<p>로그는 문제가 생겼을 때 원인을 되짚어보기 위한 기록입니다.</p>
-<p>기록하면 좋은 것:</p>
-<ul><li>요청 URL·메서드·처리 시간</li><li>오류 발생 시 스택 트레이스</li><li>인증 실패, 권한 거부 이벤트</li><li>외부 API 호출 실패</li></ul>
-<p>기록하면 안 되는 것:</p>
-<ul><li>비밀번호, 토큰 원문</li><li>카드번호 등 민감한 개인정보</li></ul>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-10">기본 상식<a class="heading-anchor" href="#기본-상식-10" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>로그 레벨(info/warning/error)을 구분해서 사용</li><li>운영 환경에서는 너무 상세한 디버그 로그를 남기지 않기 (성능·용량 문제)</li></ul>
-<hr></div>
-<h2 class="section-h1" id="17-미들웨어">17. 미들웨어<a class="heading-anchor" href="#17-미들웨어" aria-label="이 섹션 링크">#</a></h2>
-<p>요청 전후에 공통으로 실행되는 처리입니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>요청 → [로깅] → [CORS] → [인증 확인] → 실제 라우트 처리 → [오류 처리] → 응답</code></pre></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-11">기본 상식<a class="heading-anchor" href="#기본-상식-11" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>반복되는 로직(인증 확인, 로깅 등)은 미들웨어로 분리</li><li>미들웨어 순서에 따라 동작이 달라질 수 있음을 이해</li></ul>
-<hr></div>
-<h2 class="section-h1" id="18-캐싱과-성능-기본">18. 캐싱과 성능 기본<a class="heading-anchor" href="#18-캐싱과-성능-기본" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>자주 조회되지만 자주 바뀌지 않는 데이터는 캐싱 고려 (예: 인기 강의 목록)</li><li>반복되는 무거운 쿼리는 인덱스·쿼리 구조 개선을 먼저 검토</li><li>N+1 쿼리 문제(목록 하나마다 개별 쿼리를 추가로 날리는 문제)를 확인</li><li>페이지네이션 없이 전체 데이터를 한 번에 응답하지 않기</li></ul>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-12">기본 상식<a class="heading-anchor" href="#기본-상식-12" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>최적화 전에 실제 병목을 측정 (느낌으로 최적화하지 않기)</li><li>캐시는 최신 데이터와 다를 수 있다는 점을 감안해 무효화 전략을 함께 설계</li></ul>
-<hr></div>
-<h2 class="section-h1" id="19-외부-연동-파일-업로드-외부-API-AI-API-등">19. 외부 연동 (파일 업로드, 외부 API, AI API 등)<a class="heading-anchor" href="#19-외부-연동-파일-업로드-외부-API-AI-API-등" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>파일 업로드는 크기·확장자·용량 제한을 서버에서 검증</li><li>외부 API 호출은 실패·지연을 가정하고 타임아웃·재시도 정책을 둠</li><li>외부 API 키는 백엔드 환경변수로만 관리 (프론트엔드에 노출 금지)</li><li>AI API 등 응답 시간이 긴 요청은 사용자에게 로딩 상태를 전달할 방법을 함께 설계</li></ul>
+<h2 class="section-h1" id="11-테스트">11. 테스트<a class="heading-anchor" href="#11-테스트" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>단위 테스트</strong>: 함수·서비스 로직 하나를 독립적으로 검증</li><li><strong>통합 테스트</strong>: 라우트+DB처럼 여러 요소를 함께 검증</li><li><strong>API 테스트</strong>: 실제 요청/응답을 Postman, pytest 등으로 확인</li></ul>
+<p>정상 케이스뿐 아니라 잘못된 입력, 권한 없는 요청, 존재하지 않는 데이터도 테스트하고, 테스트 DB는 운영 DB와 분리합니다.</p>
 <hr>
-<h3 class="section-h2" id="오래-걸리는-작업과-Background-Job">오래 걸리는 작업과 Background Job<a class="heading-anchor" href="#오래-걸리는-작업과-Background-Job" aria-label="이 섹션 링크">#</a></h3>
-<p>이메일 발송, 대용량 파일 처리, 긴 AI 작업처럼 요청 하나에서 오래 걸리는 처리는 별도 작업 큐로 분리할 수 있습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>사용자 요청
-→ 서버가 작업 등록
-→ 즉시 &quot;접수됨&quot; 응답
-→ Worker가 백그라운드에서 처리
-→ 상태 저장
-→ 프론트가 상태 조회 또는 실시간 알림 수신</code></pre></div>
-<p>대표적인 개념:</p>
-<ul><li>Queue: 기다리는 작업 목록</li><li>Worker: 큐의 작업을 실제로 처리하는 프로세스</li><li>Job ID: 사용자가 처리 상태를 조회할 수 있는 식별자</li></ul>
-<p>모든 프로젝트에 필요하지는 않습니다. 하지만 “API 하나가 30초 이상 붙잡혀 있다”면 비동기 작업 구조를 검토할 신호입니다.</p>
-<hr>
-<h2 class="section-h1" id="20-테스트">20. 테스트<a class="heading-anchor" href="#20-테스트" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="종류">종류<a class="heading-anchor" href="#종류" aria-label="이 섹션 링크">#</a></h3>
-<ul><li><strong>단위 테스트</strong>: 함수·서비스 로직 하나를 독립적으로 검증</li><li><strong>통합 테스트</strong>: 여러 컴포넌트(라우트 + DB 등)를 함께 검증</li><li><strong>API 테스트</strong>: 실제 요청/응답을 도구(Postman, pytest 등)로 확인</li></ul>
-<h3 class="section-h2" id="기본-상식-13">기본 상식<a class="heading-anchor" href="#기본-상식-13" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>정상 케이스뿐 아니라 잘못된 입력, 권한 없는 요청, 존재하지 않는 데이터도 테스트</li><li>테스트 DB는 운영 DB와 분리</li><li>버그가 발생했던 부분은 회귀 테스트를 남기는 것이 좋음</li></ul>
-<hr>
-<h2 class="section-h1" id="21-배포-기초">21. 배포 기초<a class="heading-anchor" href="#21-배포-기초" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="실행과-배포의-차이">실행과 배포의 차이<a class="heading-anchor" href="#실행과-배포의-차이" aria-label="이 섹션 링크">#</a></h3>
+<h2 class="section-h1" id="12-배포-기초">12. 배포 기초<a class="heading-anchor" href="#12-배포-기초" aria-label="이 섹션 링크">#</a></h2>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>개발 실행 = 내 컴퓨터에서 확인
 빌드      = 배포 가능한 형태로 준비
 배포      = 다른 사용자가 접속 가능한 서버에 올림</code></pre></div>
-<h3 class="section-h2" id="배포-체크리스트">배포 체크리스트<a class="heading-anchor" href="#배포-체크리스트" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>운영용 환경변수</li><li>운영 데이터베이스 연결 확인</li><li>CORS 허용 도메인 설정</li><li>포트·방화벽·보안그룹</li><li>프로세스 상시 실행 (재시작 정책)</li><li>마이그레이션 적용 여부</li><li>로그 확인 방법</li><li>실제 사용자 흐름 테스트</li><li>비밀값 노출 여부</li></ul>
+<p>운영 서버는 개발 중 <code class="inline-code">python app.py</code>로 실행하는 것과 구조가 다를 수 있습니다. 서버가 정상 동작 중인지 확인하는 전용 엔드포인트를 <strong>Health Check</strong>라고 부릅니다(예: <code class="inline-code">GET /health</code> → <code class="inline-code">200 OK</code>).</p>
+<p>배포 전 확인할 것: 운영용 환경변수, 운영 DB 연결, CORS 허용 도메인, 마이그레이션 적용 여부, 비밀값 노출 여부. Reverse Proxy, Process Manager, 컨테이너(Docker) 같은 배포 인프라 구조와 배포 전략은 <strong>중급 가이드에서 다룹니다.</strong></p>
 <hr>
-<h3 class="section-h2" id="운영-서버의-기본-구조">운영 서버의 기본 구조<a class="heading-anchor" href="#운영-서버의-기본-구조" aria-label="이 섹션 링크">#</a></h3>
-<p>개발할 때 <code class="inline-code">python app.py</code>로 실행되는 것과 운영 서비스 구조는 다를 수 있습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>사용자
-↓ HTTPS
-도메인 / DNS
-↓
-Reverse Proxy (예: Nginx, 클라우드 Load Balancer)
-↓
-애플리케이션 서버
-↓
-DB / Cache / 외부 API</code></pre></div>
-<h4 class="section-h3" id="알아둘-용어">알아둘 용어<a class="heading-anchor" href="#알아둘-용어" aria-label="이 섹션 링크">#</a></h4>
-<ul><li><strong>Reverse Proxy</strong>: 외부 요청을 받아 실제 앱 서버로 전달. HTTPS 종료, 라우팅, 정적 파일 처리 등에 사용</li><li><strong>TLS/HTTPS</strong>: 통신 내용을 암호화</li><li><strong>Process Manager</strong>: 서버 프로세스가 죽었을 때 재시작하거나 여러 프로세스를 관리</li><li><strong>Health Check</strong>: 서버가 살아 있고 요청을 처리할 수 있는지 확인하는 엔드포인트</li></ul>
-<p>예:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">http</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">GET</span> /health
-200 OK
-
-{
-  &quot;status&quot;: &quot;ok&quot;
-}</code></pre></div>
-<p>헬스체크에서 무거운 작업을 수행하지 않고, 필요에 따라 앱 자체 상태와 DB 같은 핵심 의존성 상태를 구분해 확인합니다.</p>
-<h4 class="section-h3" id="배포-시-DB-마이그레이션">배포 시 DB 마이그레이션<a class="heading-anchor" href="#배포-시-DB-마이그레이션" aria-label="이 섹션 링크">#</a></h4>
-<p>코드 배포와 DB 마이그레이션 순서가 맞지 않으면 새 코드가 없는 컬럼을 조회하거나, 구 코드가 삭제된 컬럼을 참조할 수 있습니다. 운영에서는 <strong>하위 호환 가능한 변경 → 코드 배포 → 정리</strong>처럼 순서를 설계해야 할 때도 있습니다.</p>
+<h2 class="section-h1" id="13-그-외-알아두면-좋은-것-나중에-배우기">13. 그 외 알아두면 좋은 것 (나중에 배우기)<a class="heading-anchor" href="#13-그-외-알아두면-좋은-것-나중에-배우기" aria-label="이 섹션 링크">#</a></h2>
+<p>캐싱, 페이지네이션(데이터를 나눠서 주는 것 — 첫 프로젝트에서도 최소한은 적용 권장), Background Job(오래 걸리는 처리를 분리하는 작업 큐), 외부 API 연동(타임아웃·재시도, API 키는 백엔드 환경변수로만 관리)은 이름과 개념만 기억해두고 필요할 때 찾아봅니다. <strong>중급 가이드에서 다룹니다.</strong></p>
 <hr>
-<h2 class="section-h1" id="22-Git-협업-기본-백엔드-관점">22. Git 협업 기본 (백엔드 관점)<a class="heading-anchor" href="#22-Git-협업-기본-백엔드-관점" aria-label="이 섹션 링크">#</a></h2>
-<p>일반적인 흐름은 프론트엔드와 동일합니다: 기준 브랜치 최신화 → 기능 브랜치 → 구현 → 테스트 → 커밋 → PR → 리뷰 → 머지. 백엔드에서 특히 주의할 부분:</p>
-<h3 class="section-h2" id="공유가-필요한-변경">공유가 필요한 변경<a class="heading-anchor" href="#공유가-필요한-변경" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>API URL, 요청/응답 필드 변경</li><li>DB 스키마(컬럼, 테이블) 변경 — 마이그레이션 파일로 관리</li><li>인증 방식 변경</li><li>환경변수 추가</li><li>외부 패키지 추가</li></ul>
-<h3 class="section-h2" id="충돌-가능성이-높은-공통-파일">충돌 가능성이 높은 공통 파일<a class="heading-anchor" href="#충돌-가능성이-높은-공통-파일" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>라우터 등록 파일</li><li>모델 정의 파일</li><li>설정 파일 (DB 연결, 미들웨어 등록)</li><li>마이그레이션 파일</li></ul>
-<p>이런 파일을 수정할 때는 팀에 미리 알립니다.</p>
-<hr>
-<h2 class="section-h1" id="23-백엔드-개발-순서">23. 백엔드 개발 순서<a class="heading-anchor" href="#23-백엔드-개발-순서" aria-label="이 섹션 링크">#</a></h2>
-<p>특정 프레임워크와 관계없이 아래 순서를 참고할 수 있습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 요구사항과 데이터 확인
-2. ERD와 테이블 관계 설계
-3. API 목록 작성
-4. 요청·응답 형식(계약) 확정
-5. 프로젝트와 DB 연결
-6. 모델 작성
-7. 서비스(비즈니스 로직) 작성
-8. 라우트/컨트롤러 작성
-9. 인증·권한 적용
-10. 정상·오류 응답 구현
-11. API 직접 테스트 (Postman 등)
-12. 프론트엔드와 연동
-13. 로그·보안·배포 설정
-14. 문서화</code></pre></div>
-<hr>
-<h2 class="section-h1" id="24-프로젝트-시작-전-체크리스트">24. 프로젝트 시작 전 체크리스트<a class="heading-anchor" href="#24-프로젝트-시작-전-체크리스트" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>처리할 데이터와 관계(ERD)가 정리됨</li><li>API 목록과 요청/응답 형식이 있음</li><li>인증 방식이 정해짐</li><li>사용할 기술(프레임워크, DB, ORM)의 이유가 있음</li><li>폴더 구조가 지나치게 복잡하지 않음</li><li>Git 작업 방식이 정해짐</li><li>환경변수 관리 방식이 정해짐</li><li>담당자와 공통 파일이 정해짐</li><li>완료 조건과 테스트 방법이 정해짐</li></ul>
-<hr>
-<h2 class="section-h1" id="25-기능-구현-체크리스트">25. 기능 구현 체크리스트<a class="heading-anchor" href="#25-기능-구현-체크리스트" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="시작-전">시작 전<a class="heading-anchor" href="#시작-전" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>기능 목적·완료 조건 확인</li><li>관련 API 명세 확인</li><li>현재 브랜치 확인</li><li>수정할 모델·파일 확인</li></ul>
-<h3 class="section-h2" id="구현-중">구현 중<a class="heading-anchor" href="#구현-중" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>작은 단위로 구현</li><li>요청값 검증 추가</li><li>인증·권한 확인 추가</li><li>정상·오류 응답 모두 구현</li><li>실행하면서 직접 요청 테스트</li></ul>
-<h3 class="section-h2" id="완료-전">완료 전<a class="heading-anchor" href="#완료-전" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>정상 상황 테스트</li><li>잘못된 입력·권한 없는 요청 테스트</li><li>서버 로그 확인</li><li>다른 API가 깨지지 않았는지 확인</li><li>커밋과 문서(API 명세) 업데이트</li></ul>
-<hr>
-<h2 class="section-h1" id="26-초보자가-공부할-권장-순서">26. 초보자가 공부할 권장 순서<a class="heading-anchor" href="#26-초보자가-공부할-권장-순서" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="1단계-공통-기초">1단계: 공통 기초<a class="heading-anchor" href="#1단계-공통-기초" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>터미널
-→ Git과 GitHub
-→ HTTP와 JSON
-→ 사용할 언어 기초 (Python/JS/Java 등)</code></pre></div>
-<h3 class="section-h2" id="2단계-서버-기초">2단계: 서버 기초<a class="heading-anchor" href="#2단계-서버-기초" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>프레임워크 하나 선택 (Flask/Express/Spring 등)
-→ 라우팅
-→ 요청/응답 처리
-→ 미들웨어</code></pre></div>
-<h3 class="section-h2" id="3단계-데이터베이스">3단계: 데이터베이스<a class="heading-anchor" href="#3단계-데이터베이스" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>SQL 기본 문법
-→ 관계형 데이터베이스 설계
-→ ORM
-→ 트랜잭션</code></pre></div>
-<h3 class="section-h2" id="4단계-인증과-보안">4단계: 인증과 보안<a class="heading-anchor" href="#4단계-인증과-보안" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>인증과 인가
-→ 비밀번호 해싱
-→ JWT/세션
-→ 입력 검증</code></pre></div>
-<h3 class="section-h2" id="5단계-실무-기초">5단계: 실무 기초<a class="heading-anchor" href="#5단계-실무-기초" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>테스트
-→ 로그
-→ 환경변수
-→ 배포
-→ 성능·캐싱</code></pre></div>
-<hr>
-<h2 class="section-h1" id="27-프레임워크를-배운-뒤에도-설명할-수-있어야-하는-것">27. 프레임워크를 배운 뒤에도 설명할 수 있어야 하는 것<a class="heading-anchor" href="#27-프레임워크를-배운-뒤에도-설명할-수-있어야-하는-것" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>요청이 들어와서 응답이 나가기까지의 전체 흐름</li><li>라우팅, 컨트롤러, 서비스, 모델의 역할 차이</li><li>REST API를 설계하는 기본 규칙</li><li>관계형 데이터베이스의 기본키·외래키 개념</li><li>ORM이 내부적으로 SQL로 변환된다는 사실</li><li>인증과 인가의 차이</li><li>비밀번호를 해싱해서 저장하는 이유</li><li>트랜잭션이 필요한 상황</li><li>상태 코드별 의미</li><li>환경변수를 쓰는 이유</li><li>배포와 빌드의 차이</li><li>Git 브랜치를 사용하는 이유</li></ul>
-<hr>
-<h2 class="section-h1" id="28-자주-하는-실수">28. 자주 하는 실수<a class="heading-anchor" href="#28-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>요청값 검증 없이 바로 DB에 저장</li><li>클라이언트가 보낸 사용자 ID·권한 값을 그대로 신뢰</li><li>비밀번호를 평문으로 저장</li><li>비밀값(API Key, DB 비밀번호)을 코드에 직접 작성</li><li>오류를 그대로 삼켜서 원인을 알 수 없게 만듦</li><li><code class="inline-code">WHERE</code> 없는 <code class="inline-code">UPDATE</code>/<code class="inline-code">DELETE</code> 실행</li><li>API 필드명을 프론트엔드와 상의 없이 임의로 변경</li><li>트랜잭션 없이 여러 DB 작업을 나눠서 실행</li><li>테스트 없이 공용 브랜치에 Merge</li><li>응답에 불필요한 내부 정보(스택 트레이스 등) 노출</li><li>모든 로직을 컨트롤러 하나에 몰아서 작성</li></ul>
-<hr>
-<h2 class="section-h1" id="29-AI를-이용한-백엔드-학습-방법">29. AI를 이용한 백엔드 학습 방법<a class="heading-anchor" href="#29-AI를-이용한-백엔드-학습-방법" aria-label="이 섹션 링크">#</a></h2>
-<p>좋은 요청 예시:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Flask 기반 REST API입니다.
-강의 목록을 조회하는 GET /courses API를 만들려고 합니다.
-현재 Course 모델 코드는 아래와 같습니다.
-페이지네이션과 카테고리 필터를 지원하되,
-프론트엔드와 합의된 응답 형식(JSON 구조)은 아래와 같이 맞춰주세요.
-각 부분이 왜 필요한지도 설명해주세요.</code></pre></div>
-<p>코드를 받을 때 확인할 내용:</p>
-<ol><li>어떤 파일을 수정하는가?</li><li>어떤 요청값을 받고 어떻게 검증하는가?</li><li>DB에 어떤 쿼리가 실행되는가?</li><li>인증·권한 확인이 포함되어 있는가?</li><li>오류 상황은 어떻게 처리되는가?</li><li>프로젝트 기존 구조·명명 규칙과 맞는가?</li><li>실제로 실행하고 요청을 보내봤는가?</li><li>내가 이 코드를 설명할 수 있는가?</li></ol>
-<p>AI 사용 시 금지: 비밀번호·API Key를 프롬프트에 입력하지 않기, 존재하지 않는 API를 사실처럼 사용하지 않기, 테스트 없이 바로 <code class="inline-code">develop</code>/<code class="inline-code">main</code>에 머지하지 않기.</p>
-<hr>
-<h2 class="section-h1" id="30-문서-관리-권장-구조">30. 문서 관리 권장 구조<a class="heading-anchor" href="#30-문서-관리-권장-구조" aria-label="이 섹션 링크">#</a></h2>
-<p>개인 학습 저장소:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>backend-learning/
-├── README.md
-├── notes/
-│   ├── http-and-rest.md
-│   ├── database.md
-│   ├── auth.md
-│   ├── error-handling.md
-│   └── deployment.md
-├── examples/
-│   ├── crud-api/
-│   ├── jwt-auth/
-│   └── file-upload/
-└── projects/</code></pre></div>
-<p>프로젝트 저장소:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>project/
-├── README.md
-├── docs/
-│   ├── requirements.md
-│   ├── api-spec.md
-│   ├── erd.md
-│   └── troubleshooting.md
-└── backend/</code></pre></div>
-<p>공통 공부 문서는 개인 학습 저장소에서 관리하고, 프로젝트 저장소에는 해당 프로젝트에 필요한 내용만 넣습니다.</p>
-<hr>
-<h2 class="section-h1" id="31-최종-핵심-원칙">31. 최종 핵심 원칙<a class="heading-anchor" href="#31-최종-핵심-원칙" aria-label="이 섹션 링크">#</a></h2>
+<h2 class="section-h1" id="14-최종-핵심-원칙">14. 최종 핵심 원칙<a class="heading-anchor" href="#14-최종-핵심-원칙" aria-label="이 섹션 링크">#</a></h2>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>클라이언트가 보낸 값은 항상 다시 검증한다.
 인증과 인가는 서버에서 최종 확인한다.
 비밀번호와 비밀값은 절대 평문으로 다루지 않는다.
 연결된 여러 DB 작업은 트랜잭션으로 묶는다.
 오류를 무시하지 않고 일관된 형식으로 응답한다.
 API 계약은 임의로 바꾸지 않고 프론트엔드와 합의한다.
-최적화 전에 실제 병목을 측정한다.
 로그로 나중에 원인을 되짚을 수 있게 남긴다.
-프레임워크보다 HTTP·데이터베이스·보안 원리가 우선이다.
-AI 코드는 이해하고 테스트한 뒤 사용한다.</code></pre></div>
+프레임워크보다 HTTP·데이터베이스·보안 원리가 우선이다.</code></pre></div>
 <hr>
-<h2 class="section-h1" id="32-직접-실습해보기-백엔드-최소-실습">32. 직접 실습해보기 — 백엔드 최소 실습<a class="heading-anchor" href="#32-직접-실습해보기-백엔드-최소-실습" aria-label="이 섹션 링크">#</a></h2>
-<p>목표는 <strong>서버 실행 → GET → POST → DB 저장 → 오류 응답</strong>을 한 번 연결해보는 것입니다. 아래는 Python + Flask + SQLite 예시입니다.</p>
+<h2 class="section-h1" id="15-직접-실습해보기-백엔드-최소-실습">15. 직접 실습해보기 — 백엔드 최소 실습<a class="heading-anchor" href="#15-직접-실습해보기-백엔드-최소-실습" aria-label="이 섹션 링크">#</a></h2>
+<p>목표는 <strong>서버 실행 → GET → POST → DB 저장 → 오류 응답</strong>을 한 번 연결해보는 것입니다. Python + Flask + SQLite 예시입니다.</p>
 <h3 class="section-h2" id="1단계-프로젝트와-가상환경">1단계. 프로젝트와 가상환경<a class="heading-anchor" href="#1단계-프로젝트와-가상환경" aria-label="이 섹션 링크">#</a></h3>
+<p>가상환경(<code class="inline-code">.venv</code>)은 이 프로젝트만을 위한 Python 패키지 설치 공간입니다. 켜지 않으면 "설치했는데 Flask가 없다"는 상황이 생길 수 있습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code>mkdir backend-practice
 <span class="tok-keyword">cd</span> backend-practice
 
@@ -750,49 +264,26 @@ app = Flask(__name__)
     conn.close()
 
     app.run(debug=<span class="tok-keyword">True</span>)</code></pre></div>
-<h3 class="section-h2" id="3단계-실행">3단계. 실행<a class="heading-anchor" href="#3단계-실행" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">python</span> app.py</code></pre></div>
-<p>브라우저 또는 API 도구에서 <code class="inline-code">GET http://127.0.0.1:5000/courses</code>를 호출합니다.</p>
-<h3 class="section-h2" id="4단계-POST-요청">4단계. POST 요청<a class="heading-anchor" href="#4단계-POST-요청" aria-label="이 섹션 링크">#</a></h3>
+<h3 class="section-h2" id="3단계-실행하고-확인">3단계. 실행하고 확인<a class="heading-anchor" href="#3단계-실행하고-확인" aria-label="이 섹션 링크">#</a></h3>
+<p><code class="inline-code">python app.py</code>로 실행한 뒤 브라우저 또는 API 도구에서 <code class="inline-code">GET http://127.0.0.1:5000/courses</code>를 호출합니다. 이어서 아래처럼 <code class="inline-code">POST /courses</code>를 보내봅니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">http</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">POST</span> /courses
 Content-Type: application/json
 
 {
   &quot;title&quot;: &quot;백엔드 입문&quot;
 }</code></pre></div>
-<p>확인할 것:</p>
-<ul><li>요청 JSON을 어디서 읽는가?</li><li>서버 검증은 어디서 하는가?</li><li>SQL의 <code class="inline-code">?</code> 파라미터 바인딩을 왜 쓰는가?</li><li><code class="inline-code">201</code>과 <code class="inline-code">400</code>은 언제 반환되는가?</li><li>DB 파일에 데이터가 실제로 저장되는가?</li></ul>
-<h3 class="section-h2" id="5단계-다음-단계">5단계. 다음 단계<a class="heading-anchor" href="#5단계-다음-단계" aria-label="이 섹션 링크">#</a></h3>
-<p>이 최소 코드를 이해한 뒤 다음 순서로 확장합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>한 파일
-→ Route / Service 분리
-→ ORM 도입
-→ 마이그레이션
-→ 인증/인가
-→ 테스트
-→ 환경변수
-→ 운영 배포</code></pre></div>
-<p>처음부터 모든 구조를 넣기보다 <strong>동작하는 작은 서버를 먼저 만든 뒤 왜 분리가 필요한지 경험하는 것</strong>이 좋습니다.</p>
-<h4 class="section-h3" id="이-실습-후-설명할-수-있어야-하는-것">이 실습 후 설명할 수 있어야 하는 것<a class="heading-anchor" href="#이-실습-후-설명할-수-있어야-하는-것" aria-label="이 섹션 링크">#</a></h4>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>서버와 클라이언트의 차이는?
-GET과 POST의 차이는?
-요청 검증은 왜 서버에서도 하는가?
-DB의 PK/FK는 무엇인가?
-ORM과 SQL은 어떤 관계인가?
-환경변수는 왜 필요한가?
-401과 403의 차이는?
-개발 서버와 운영 서버는 무엇이 다른가?</code></pre></div>
+<p>확인할 것: 요청 JSON을 어디서 읽는지, 서버 검증은 어디서 하는지, <code class="inline-code">?</code> 파라미터 바인딩을 왜 쓰는지, <code class="inline-code">201</code>과 <code class="inline-code">400</code>은 언제 반환되는지, DB 파일에 데이터가 실제로 저장되는지.</p>
+<h3 class="section-h2" id="4단계-다음-단계">4단계. 다음 단계<a class="heading-anchor" href="#4단계-다음-단계" aria-label="이 섹션 링크">#</a></h3>
+<p>이 최소 코드를 이해한 뒤 <code class="inline-code">한 파일 → Route/Service 분리 → ORM → 마이그레이션 → 인증/인가 → 테스트 → 운영 배포</code> 순서로 확장합니다. 처음부터 모든 구조를 넣기보다 <strong>동작하는 작은 서버를 먼저 만든 뒤 왜 분리가 필요한지 경험하는 것</strong>이 좋습니다.</p>
 <details class="quiz-answer">
 <summary>정답 확인</summary>
 <div class="quiz-answer-body">
 <p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
 <ul>
-<li>&#9744; 가상환경을 만들고 활성화한 뒤 <code>pip install flask</code>를 그 가상환경 안에 설치했다</li>
-<li>&#9744; <code>python app.py</code>로 서버를 켜고 터미널에 <code>Running on http://127.0.0.1:5000</code> 같은 메시지가 뜨는 것을 확인했다</li>
-<li>&#9744; 브라우저 또는 API 도구로 <code>GET /courses</code>를 호출해 빈 배열 <code>[]</code>이 오는 것을 확인했다</li>
-<li>&#9744; <code>title</code>을 채워서 <code>POST /courses</code>를 보내고 <code>201</code> 응답과 함께 새 <code>id</code>가 오는 것을 확인했다</li>
-<li>&#9744; <code>title</code>을 비운 채로 <code>POST /courses</code>를 보내 <code>400</code>과 에러 메시지가 오는 것을 확인했다 (서버가 왜 다시 검증하는지 설명할 수 있다)</li>
-<li>&#9744; 서버를 껐다 켜도 방금 만든 데이터가 <code>app.db</code>에 남아있어 <code>GET /courses</code>에 다시 나타나는 것을 확인했다</li>
+<li>&#9744; 서버를 켜고 <code>GET /courses</code>로 빈 배열 <code>[]</code>을 확인했다</li>
+<li>&#9744; <code>title</code>을 채워 <code>POST /courses</code>를 보내 <code>201</code>과 새 <code>id</code>를 확인했다</li>
+<li>&#9744; <code>title</code>을 비운 채 <code>POST /courses</code>를 보내 <code>400</code>과 에러 메시지를 확인했다</li>
+<li>&#9744; 서버를 껐다 켜도 데이터가 <code>app.db</code>에 남아있는 것을 확인했다</li>
 <li>&#9744; <code>?</code> 파라미터 바인딩을 왜 쓰는지(SQL 인젝션 방지) 한 문장으로 설명할 수 있다</li>
 </ul>
 </div>
