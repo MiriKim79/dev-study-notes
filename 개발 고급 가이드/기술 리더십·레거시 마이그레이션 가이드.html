@@ -61,7 +61,7 @@
 <p>주니어일 때 좋은 개발자의 기준은 "내가 얼마나 잘 짜는가"입니다. 기술적 결정을 내리는 위치가 되면 기준이 바뀝니다 — <strong>"내가 없어도 팀이 같은 기준으로 판단할 수 있는가"</strong>가 됩니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>주니어 관점: 이 코드를 어떻게 짤까
 리드 관점: 이 결정을 왜 이렇게 내렸는지 다른 사람이 6개월 뒤에도 이해할 수 있을까</code></pre></div>
-<p><strong>기본 상식</strong>: 좋은 기술 결정은 "정답을 아는 것"이 아니라 "트레이드오프를 명확히 하고, 그 근거를 남기는 것"입니다. 완벽한 결정은 없고, 대신 나중에 왜 그렇게 결정했는지 추적 가능해야 합니다.</p>
+<p><strong>기본 상식</strong>: 좋은 기술 결정은 "정답을 아는 것"이 아니라 "트레이드오프(Trade-off, 하나를 얻으면 다른 하나를 포기해야 하는 관계 — 예: 속도를 얻으면 비용이 늘고, 안정성을 얻으면 개발 속도가 느려짐)를 명확히 하고, 그 근거를 남기는 것"입니다. 완벽한 결정은 없고, 대신 나중에 왜 그렇게 결정했는지 추적 가능해야 합니다.</p>
 <hr>
 <h2 class="section-h1" id="2-ADR-Architecture-Decision-Record-로-결정-기록하기">2. ADR(Architecture Decision Record)로 결정 기록하기<a class="heading-anchor" href="#2-ADR-Architecture-Decision-Record-로-결정-기록하기" aria-label="이 섹션 링크">#</a></h2>
 <p>중요한 기술 결정을 할 때마다 짧은 문서로 남깁니다.</p>
@@ -86,7 +86,7 @@
 - Redis는 도입 비용이 적고 세션 무효화도 그대로 유지 가능
 
 ## 결과로 감수하는 것
-Redis 장애 시 전체 로그인이 영향받음 → Redis를 이중화(replica)로 운영하기로 결정</code></pre></div>
+Redis 장애 시 전체 로그인이 영향받음 → Redis를 이중화(replica, 같은 데이터를 가진 복제본을 추가로 두어 하나가 죽어도 다른 하나가 대신하게 함)로 운영하기로 결정</code></pre></div>
 <p><strong>기본 상식</strong>: ADR의 핵심은 "결정"이 아니라 <strong>"검토했지만 선택하지 않은 대안과 그 이유"</strong>입니다. 나중에 "왜 Redis를 안 쓰고 다른 걸 썼냐"는 질문에 새로 오는 팀원도 이 문서 하나로 답을 찾을 수 있어야 합니다.</p>
 <h3 class="section-h2" id="ADR-상태-Status-를-관리하기">ADR 상태(Status)를 관리하기<a class="heading-anchor" href="#ADR-상태-Status-를-관리하기" aria-label="이 섹션 링크">#</a></h3>
 <p>ADR은 한 번 쓰고 끝이 아니라 상태가 바뀝니다.</p>
@@ -203,7 +203,7 @@ Redis 장애 시 전체 로그인이 영향받음 → Redis를 이중화(replica
 14:51 정상화 확인
 
 ## 근본 원인
-새로 추가한 로그 기록 코드가 매 요청마다 동기적으로 외부 로그 서버를 호출 → 로그 서버 지연이 결제 API 지연으로 전파
+새로 추가한 로그 기록 코드가 매 요청마다 동기적으로(결제 응답을 보내기 전에, 로그 서버가 응답할 때까지 기다리는 방식으로) 외부 로그 서버를 호출 → 로그 서버 지연이 결제 API 지연으로 전파
 
 ## 재발 방지 액션
 1. 로그 전송을 비동기 큐로 변경 (담당: 홍길동, 기한: 8/25)

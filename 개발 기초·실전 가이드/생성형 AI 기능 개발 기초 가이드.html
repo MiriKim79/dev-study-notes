@@ -129,6 +129,7 @@ AI가 유용한 경우
 → 모델이 사용자에게 설명</code></pre></div>
 <p>모델이 실제 DB나 결제 시스템을 직접 만지는 것이 아니라, <strong>백엔드가 허용한 도구만 검증 후 실행</strong>해야 합니다.</p>
 <h4 class="section-h3" id="4-Agent">4) Agent<a class="heading-anchor" href="#4-Agent" aria-label="이 섹션 링크">#</a></h4>
+<p>Tool Calling은 도구를 한 번 호출하고 끝나지만, 실제로는 "항공권을 검색하고 → 가격을 비교하고 → 그중 하나를 예약"처럼 여러 단계를 거쳐야 하는 작업도 있습니다. 이럴 때 모델이 스스로 다음 행동을 판단하고, 도구를 호출하고, 그 결과를 보고 또 다음 행동을 정하는 과정을 반복하는 구조를 <strong>Agent</strong>라고 부릅니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>목표 이해
 → 필요한 다음 행동 판단
 → 도구 호출
@@ -192,7 +193,7 @@ AI가 유용한 경우
     &quot;summary&quot;: &quot;이 강의는 ...&quot;
   }
 }</code></pre></div>
-<ul><li>프론트엔드가 파싱하기 쉽도록 구조화된 출력을 사용합니다.</li><li>단순히 프롬프트에 “JSON으로 답해”라고 적는 것보다, 사용하는 AI 제공업체가 <strong>JSON Schema 기반 Structured Output/Function Schema</strong>를 지원한다면 그 기능을 우선 검토합니다. 스키마를 강제하면 필드명·자료형을 코드와 맞추기 쉽습니다.</li><li>스키마 기능을 쓰더라도 값의 의미까지 자동으로 보장되는 것은 아닙니다. <code class="inline-code">price &gt;= 0</code>, 존재하는 ID인지, 허용 enum인지 같은 <strong>업무 규칙은 백엔드에서 다시 검증</strong>합니다.</li><li>구조화 출력 기능을 지원하지 않는 모델이라면 파싱 실패 시 재요청·폴백·명확한 오류 처리를 설계합니다.</li><li>오류 응답 형식은 프로젝트의 다른 API와 통일합니다 (백엔드 가이드 5장 참고).</li></ul>
+<ul><li>프론트엔드가 파싱하기 쉽도록 구조화된 출력을 사용합니다.</li><li>단순히 프롬프트에 “JSON으로 답해”라고 적는 것보다, 사용하는 AI 제공업체가 <strong>JSON Schema(응답에 어떤 필드가 어떤 자료형으로 있어야 하는지 미리 정의한 규격) 기반 Structured Output/Function Schema</strong> 기능을 지원한다면 그 기능을 우선 검토합니다. 스키마를 강제하면 필드명·자료형을 코드와 맞추기 쉽습니다.</li><li>스키마 기능을 쓰더라도 값의 의미까지 자동으로 보장되는 것은 아닙니다. <code class="inline-code">price &gt;= 0</code>, 존재하는 ID인지, 허용 enum인지 같은 <strong>업무 규칙은 백엔드에서 다시 검증</strong>합니다.</li><li>구조화 출력 기능을 지원하지 않는 모델이라면 파싱 실패 시 재요청·폴백·명확한 오류 처리를 설계합니다.</li><li>오류 응답 형식은 프로젝트의 다른 API와 통일합니다 (백엔드 가이드 5장 참고).</li></ul>
 <div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-4">기본 상식<a class="heading-anchor" href="#기본-상식-4" aria-label="이 섹션 링크">#</a></h4>
 <ul><li>AI 응답을 검증 없이 바로 DB에 저장하지 않습니다.</li><li>출력 길이도 제한을 둡니다 (너무 긴 응답은 비용·지연 시간 증가로 이어짐).</li></ul>
 <hr></div>

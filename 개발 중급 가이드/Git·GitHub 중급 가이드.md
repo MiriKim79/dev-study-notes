@@ -283,11 +283,11 @@ CODEOWNERS 파일 자체가 하는 일은 딱 하나입니다 — **해당 경�
 
 # 9. 커밋 서명 (GPG/SSH Signing)
 
-GitHub에서 "Verified" 배지가 붙은 커밋을 본 적이 있을 겁니다. 커밋 작성자를 암호학적으로 증명하는 기능으로, 오픈소스나 보안이 중요한 조직에서 요구합니다.
+GitHub에서 "Verified" 배지가 붙은 커밋을 본 적이 있을 겁니다. 커밋 작성자를 암호학적으로 증명하는 기능으로, 오픈소스나 보안이 중요한 조직에서 요구합니다. GPG(암호화·서명에 쓰는 무료 표준 도구)나 이미 쓰고 있는 SSH 키로 서명할 수 있습니다.
 
 ```bash
 git config --global commit.gpgsign true
-git config --global user.signingkey <키ID>
+git config --global user.signingkey <키ID>   # 미리 만들어둔 GPG/SSH 키의 식별자
 ```
 
 개인·소규모 팀 프로젝트에서는 필수는 아니지만, "이 커밋이 정말 그 사람이 작성한 게 맞는지"가 중요한 프로젝트에서는 표준 관행입니다.

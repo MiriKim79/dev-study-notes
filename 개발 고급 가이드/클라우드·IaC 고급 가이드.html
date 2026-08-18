@@ -84,7 +84,7 @@ terraform apply    <span class="tok-comment"># plan에서 확인한 변경을 �
 <p><strong>기본 상식</strong>: 여러 명이 함께 쓴다면 State 파일을 로컬이 아니라 S3 같은 원격 저장소에 두고(Remote State), 동시에 두 명이 apply하지 못하도록 잠금(Lock)까지 설정합니다.</p>
 <hr>
 <h2 class="section-h1" id="3-쿠버네티스-Kubernetes-기본-개념">3. 쿠버네티스(Kubernetes) 기본 개념<a class="heading-anchor" href="#3-쿠버네티스-Kubernetes-기본-개념" aria-label="이 섹션 링크">#</a></h2>
-<p>컨테이너(Docker)로 만든 애플리케이션을 여러 서버에 걸쳐 자동으로 배포·복구·확장해주는 오케스트레이션 도구입니다.</p>
+<p>컨테이너(Docker)로 만든 애플리케이션이 늘어나면 "어떤 서버에 몇 개를 띄울지, 죽은 건 어떻게 되살릴지"를 사람이 일일이 관리하기 어려워집니다. 이런 배치·복구·확장을 자동으로 대신해주는 도구를 오케스트레이션(Orchestration, 여러 컨테이너의 배치와 운영을 자동으로 조율하는 것) 도구라 하고, 쿠버네티스가 대표적입니다.</p>
 <div class="table-scroll"><table><thead><tr><th>개념</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>Pod</td><td>컨테이너를 담는 가장 작은 배포 단위</td></tr><tr><td>Deployment</td><td>"이 Pod를 몇 개 유지해라"를 선언 — Pod가 죽으면 자동으로 다시 띄움</td></tr><tr><td>Service</td><td>여러 Pod 앞에 붙는 고정된 접속 주소(로드밸런싱 포함)</td></tr><tr><td>Ingress</td><td>외부 트래픽을 어떤 Service로 보낼지 정하는 규칙(도메인·경로 기준)</td></tr><tr><td>Namespace</td><td>같은 클러스터 안에서 리소스를 논리적으로 구분하는 공간</td></tr></tbody></table></div>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">yaml</span><button class="copy-btn" type="button">복사</button></div><pre><code># deployment.yaml (일부)
 apiVersion: apps/v1
@@ -197,7 +197,7 @@ spec:
 
   <text x="350" y="150" class="dr-sub">오른쪽으로 갈수록 복구 속도(RTO)는 빨라지지만 운영 비용도 함께 커짐</text>
 </svg>
-<p><strong>기본 상식</strong>: 모든 서비스가 Active-Active 수준의 재해 복구를 갖출 필요는 없습니다. 서비스 중단이 실제로 얼마나 큰 손해로 이어지는지(RTO/RPO 요구사항)를 먼저 정하고, 그에 맞는 비용 수준의 전략을 선택합니다. 스타트업 초기 단계에서는 정기 백업만으로 충분한 경우가 많습니다.</p>
+<p><strong>기본 상식</strong>: 모든 서비스가 Active-Active 수준의 재해 복구를 갖출 필요는 없습니다. "장애가 나도 얼마 동안은 버틸 수 있는지(RTO, 복구까지 걸리는 시간)"와 "데이터가 최대 얼마나 유실돼도 괜찮은지(RPO, 마지막 백업 시점부터 허용 가능한 데이터 손실 범위)"를 먼저 정하고, 그에 맞는 비용 수준의 전략을 선택합니다. 스타트업 초기 단계에서는 정기 백업만으로 충분한 경우가 많습니다.</p>
 <hr>
 <h2 class="section-h1" id="10-Terraform-모듈로-재사용성-높이기">10. Terraform 모듈로 재사용성 높이기<a class="heading-anchor" href="#10-Terraform-모듈로-재사용성-높이기" aria-label="이 섹션 링크">#</a></h2>
 <p>같은 코드를 환경마다(개발/스테이징/운영) 복사-붙여넣기 하면 한쪽만 고치고 다른 쪽을 놓치는 실수가 반복됩니다. <strong>모듈(Module)</strong>로 공통 구조를 묶어 재사용합니다.</p>
@@ -270,7 +270,7 @@ spec:
         target:
           type: Utilization
           averageUtilization: 70</code></pre></div>
-<p><strong>실무 팁</strong>: 오토스케일링을 도입하면 "트래픽이 늘면 알아서 늘어난다"고 안심하기 쉽지만, 새 Pod가 뜨는 데도 시간이 걸립니다(콜드 스타트). 급격한 트래픽 스파이크(이벤트 오픈 등)가 예상된다면 오토스케일링만 믿지 말고 미리 최소 Pod 수를 늘려두는 예방적 스케일링을 함께 씁니다.</p>
+<p><strong>실무 팁</strong>: 오토스케일링을 도입하면 "트래픽이 늘면 알아서 늘어난다"고 안심하기 쉽지만, 새 Pod가 뜨는 데도 시간이 걸립니다. 이 뜸을 들이는 시간을 콜드 스타트(Cold Start, 새 Pod가 이미지를 내려받고 애플리케이션을 초기화해 트래픽을 받을 준비가 될 때까지의 지연)라고 합니다. 급격한 트래픽 스파이크(이벤트 오픈 등)가 예상된다면 오토스케일링만 믿지 말고 미리 최소 Pod 수를 늘려두는 예방적 스케일링을 함께 씁니다.</p>
 <hr>
 <h2 class="section-h1" id="13-컨테이너-이미지-보안">13. 컨테이너 이미지 보안<a class="heading-anchor" href="#13-컨테이너-이미지-보안" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>베이스 이미지는 <code class="inline-code">latest</code> 태그 대신 <strong>버전을 고정</strong>해서 사용 — 예기치 않은 변경 방지</li><li>이미지 빌드 후 취약점 스캐너(Trivy 등)로 알려진 CVE(취약점) 점검을 CI에 포함</li><li>컨테이너를 root 권한이 아닌 일반 사용자로 실행하도록 Dockerfile에 명시</li><li>불필요한 패키지·빌드 도구는 최종 이미지에서 제거(멀티스테이지 빌드 활용)</li></ul>

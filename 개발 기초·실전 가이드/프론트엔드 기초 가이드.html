@@ -466,7 +466,7 @@ useEffect(() =&gt; { ... })           // 매번 렌더링될 때마다 실행 (�
 <p>대표 선택지:</p>
 <ul><li>React</li><li>Vue</li><li>Angular</li><li>Svelte</li><li>Next.js</li><li>Nuxt</li></ul>
 <h3 class="section-h2" id="선택-기준">선택 기준<a class="heading-anchor" href="#선택-기준" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>프로젝트 요구사항</li><li>팀의 경험</li><li>생태계</li><li>배포 환경</li><li>SEO 필요 여부</li><li>규모</li><li>유지보수 기간</li></ul>
+<ul><li>프로젝트 요구사항</li><li>팀의 경험</li><li>생태계</li><li>배포 환경</li><li>SEO(Search Engine Optimization, 검색엔진 최적화 — 구글 등 검색 결과에 잘 노출되게 만드는 것) 필요 여부</li><li>규모</li><li>유지보수 기간</li></ul>
 <div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-2">기본 상식<a class="heading-anchor" href="#기본-상식-2" aria-label="이 섹션 링크">#</a></h4>
 <ul><li>모든 프로젝트에 프레임워크가 필요한 것은 아님</li><li>React는 웹 그 자체가 아니라 UI 라이브러리</li><li>프레임워크를 배워도 HTML, CSS, JavaScript 기초가 필요</li><li>도구 이름보다 웹의 원리를 이해하는 것이 중요</li></ul>
 <hr></div>
@@ -844,7 +844,7 @@ AI 코드는 이해하고 테스트한 뒤 사용한다.</code></pre></div>
 
 <span class="tok-keyword">export</span> <span class="tok-keyword">default</span> App;</code></pre></div>
 <p>확인할 것:</p>
-<ul><li>저장하자마자 브라우저가 자동으로 새로고침되는지(HMR)</li><li>버튼을 누를 때마다 화면 숫자가 바뀌는지</li><li><code class="inline-code">count</code>를 <code class="inline-code">let count = 0</code>처럼 일반 변수로 바꾸고 값을 바꿔도 화면이 그대로인 이유(리렌더링을 트리거하지 못하기 때문)</li></ul>
+<ul><li>저장하자마자 브라우저가 자동으로 새로고침되는지(HMR, Hot Module Replacement — 페이지 전체를 다시 불러오지 않고 바뀐 코드만 즉시 반영하는 개발 서버 기능)</li><li>버튼을 누를 때마다 화면 숫자가 바뀌는지</li><li><code class="inline-code">count</code>를 <code class="inline-code">let count = 0</code>처럼 일반 변수로 바꾸고 값을 바꿔도 화면이 그대로인 이유(리렌더링을 트리거하지 못하기 때문)</li></ul>
 <p>왜 이걸 하는지: React에서 화면이 바뀌는 원리는 결국 "상태가 바뀌면 다시 그린다"는 한 가지 규칙입니다. 이걸 가장 작은 예제로 직접 겪어보면 이후 복잡한 컴포넌트를 봐도 같은 원리로 읽을 수 있습니다.</p>
 <h3 class="section-h2" id="3단계-더미-데이터-목록-만들기">3단계. 더미 데이터 목록 만들기<a class="heading-anchor" href="#3단계-더미-데이터-목록-만들기" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">js</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">const</span> courses = [

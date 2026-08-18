@@ -251,7 +251,7 @@ engine = create_engine(
 <h2 class="section-h1" id="15-멀티-테넌시-데이터-설계">15. 멀티 테넌시 데이터 설계<a class="heading-anchor" href="#15-멀티-테넌시-데이터-설계" aria-label="이 섹션 링크">#</a></h2>
 <p>하나의 서비스를 여러 고객(테넌트)이 함께 쓰는 구조에서 데이터를 어떻게 분리할지 결정해야 합니다.</p>
 <div class="table-scroll"><table><thead><tr><th>방식</th><th>구조</th><th>특징</th></tr></thead><tbody><tr><td>공유 DB, 공유 테이블</td><td>모든 테넌트가 같은 테이블을 쓰고 <code class="inline-code">tenant_id</code> 컬럼으로 구분</td><td>관리가 간단하지만, 쿼리마다 <code class="inline-code">tenant_id</code> 필터를 빠뜨리면 다른 테넌트 데이터가 노출되는 심각한 사고로 이어짐</td></tr><tr><td>공유 DB, 스키마 분리</td><td>테넌트마다 별도 스키마 사용</td><td>데이터 격리가 조금 더 명확하지만 스키마 수가 늘면 마이그레이션 관리가 복잡해짐</td></tr><tr><td>테넌트별 DB 분리</td><td>테넌트마다 완전히 다른 DB 인스턴스</td><td>격리·독립적 스케일링이 가장 강력하지만 운영 비용이 큼</td></tr></tbody></table></div>
-<p><strong>기본 상식</strong>: 가장 흔한 구현인 "공유 테이블 + <code class="inline-code">tenant_id</code>" 방식에서는 애플리케이션 코드가 아니라 DB 자체에서 강제하는 것이 안전합니다(Row-Level Security 등). 애플리케이션 로직에만 의존하면 개발자가 실수로 필터를 빠뜨리는 순간 심각한 정보 유출 사고가 됩니다.</p>
+<p><strong>기본 상식</strong>: 가장 흔한 구현인 "공유 테이블 + <code class="inline-code">tenant_id</code>" 방식에서는 애플리케이션 코드가 아니라 DB 자체에서 강제하는 것이 안전합니다. 예를 들어 PostgreSQL의 Row-Level Security(행 단위 보안)는 개발자가 쿼리에 <code class="inline-code">tenant_id</code> 필터를 깜빡 빠뜨려도 DB가 자동으로 다른 테넌트의 행을 걸러줍니다. 애플리케이션 로직에만 의존하면 개발자가 실수로 필터를 빠뜨리는 순간 심각한 정보 유출 사고가 됩니다.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="클라우드·IaC 고급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">클라우드·IaC 고급 가이드</span></a><a class="doc-nav-link next" href="보안 심화 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">보안 심화 가이드</span></a></nav>
       </div>
     </main>

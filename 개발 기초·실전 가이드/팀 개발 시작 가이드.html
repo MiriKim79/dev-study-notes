@@ -197,7 +197,7 @@ src/
 │   └── courses.js        ← 강의 관련 요청만
 └── utils/</code></pre></div>
 <p>파일이 5~6개뿐인 초기 단계라면 나쁜 예처럼 시작해도 괜찮습니다. 문제는 그 상태로 계속 파일이 늘어나는 것입니다 — <strong>"이 파일에 뭐가 더 들어있는지 스크롤해봐야 안다"는 느낌이 들기 시작하면 그때 폴더를 나눕니다.</strong></p>
-<p>프로젝트 전체(프론트엔드+백엔드)를 한 저장소에 담는 모노레포 구조는 보통 이렇게 최상위를 나눕니다.</p>
+<p>프로젝트 전체(프론트엔드+백엔드)를 별도 저장소로 쪼개지 않고 한 저장소에 담는 방식을 모노레포(Monorepo)라고 부릅니다. 모노레포 구조는 보통 이렇게 최상위를 나눕니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>project/
 ├── frontend/       # 프론트엔드 프로젝트 전체 (프론트 담당자 폴더)
 ├── backend/         # 백엔드 프로젝트 전체 (백엔드 담당자 폴더)

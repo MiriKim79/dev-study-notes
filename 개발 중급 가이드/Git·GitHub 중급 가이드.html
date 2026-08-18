@@ -238,9 +238,9 @@ jobs:
 <ul><li><strong>Require branches to be up to date</strong>: 머지 전에 기준 브랜치의 최신 커밋을 반영하도록 강제 — 오래된 브랜치가 몰래 머지되는 것을 막습니다.</li></ul>
 <hr>
 <h2 class="section-h1" id="9-커밋-서명-GPG-SSH-Signing">9. 커밋 서명 (GPG/SSH Signing)<a class="heading-anchor" href="#9-커밋-서명-GPG-SSH-Signing" aria-label="이 섹션 링크">#</a></h2>
-<p>GitHub에서 "Verified" 배지가 붙은 커밋을 본 적이 있을 겁니다. 커밋 작성자를 암호학적으로 증명하는 기능으로, 오픈소스나 보안이 중요한 조직에서 요구합니다.</p>
+<p>GitHub에서 "Verified" 배지가 붙은 커밋을 본 적이 있을 겁니다. 커밋 작성자를 암호학적으로 증명하는 기능으로, 오픈소스나 보안이 중요한 조직에서 요구합니다. GPG(암호화·서명에 쓰는 무료 표준 도구)나 이미 쓰고 있는 SSH 키로 서명할 수 있습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> config --global commit.gpgsign true
-<span class="tok-keyword">git</span> config --global user.signingkey &lt;키ID&gt;</code></pre></div>
+<span class="tok-keyword">git</span> config --global user.signingkey &lt;키ID&gt;   <span class="tok-comment"># 미리 만들어둔 GPG/SSH 키의 식별자</span></code></pre></div>
 <p>개인·소규모 팀 프로젝트에서는 필수는 아니지만, "이 커밋이 정말 그 사람이 작성한 게 맞는지"가 중요한 프로젝트에서는 표준 관행입니다.</p>
 <hr>
 <h2 class="section-h1" id="10-자주-하는-실수">10. 자주 하는 실수<a class="heading-anchor" href="#10-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>

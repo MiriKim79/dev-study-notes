@@ -251,7 +251,9 @@ function onSuccess(callback: (data: Course) => void) {
 }
 ```
 
-## 함수 오버로드 — 입력에 따라 반환 타입이 달라질 때
+## 함수 오버로드(Overload) — 입력에 따라 반환 타입이 달라질 때
+
+함수 오버로드란, 같은 함수라도 "숫자 하나를 넣으면 결과 하나, 배열을 넣으면 결과 배열"처럼 인자 형태에 따라 반환 타입이 달라짐을 TypeScript에게 미리 알려주는 방법입니다. 아래처럼 실제 구현부 위에 가능한 호출 형태를 나열해 둡니다.
 
 ```ts
 function getCourse(id: number): Course;
@@ -275,7 +277,7 @@ const many = getCourse([1, 2]); // Course[]
 
 ## 판별 유니온(Discriminated Union)
 
-여러 타입이 섞인 Union을 다룰 때, 공통 필드(태그)로 분기하면 각 분기 안에서 타입이 정확히 좁혀집니다.
+"로딩 중 / 성공 / 실패"처럼 상태가 여러 개고 상태마다 가진 필드가 다를 때, 모든 상태에 공통으로 들어있는 필드(아래 예의 `status`)를 기준으로 분기하면 TypeScript가 각 분기 안에서 나머지 필드까지 정확한 타입으로 좁혀줍니다. 이런 공통 필드를 "판별자(discriminant)"라고 부릅니다.
 
 ```ts
 type LoadingState = { status: "loading" };
@@ -423,7 +425,7 @@ const { data } = useFetch<Course[]>("/api/courses");
 | `noUnusedLocals`/`noUnusedParameters` | 안 쓰는 변수·매개변수를 에러로 표시 |
 | `noImplicitReturns` | 함수의 일부 경로에서만 값을 반환하면 에러 |
 | `skipLibCheck` | `node_modules` 내부 타입 정의 파일 검사를 건너뛰어 빌드 속도 향상 |
-| `moduleResolution: "bundler"` | Vite·esbuild 등 번들러 환경에 맞춘 모듈 해석 방식. **TypeScript 5.0 이상**에서만 지원되며, `module` 옵션을 `"esnext"`(또는 5.4+의 `"preserve"`)로 설정해야 함. 5.0 미만이거나 Node.js로 직접 실행하는 프로젝트라면 `"node10"`(구 `"node"`) 또는 `"node16"`/`"nodenext"`를 사용 |
+| `moduleResolution` | `import` 문을 실제 파일로 찾아가는 방식 설정. `"bundler"`는 Vite·esbuild 같은 번들러 환경에 맞춘 값(TypeScript 5.0 이상 필요). Node.js로 직접 실행하는 프로젝트라면 `"node16"`/`"nodenext"` 등 다른 값을 쓰는데, 정확한 조합은 사용 중인 TypeScript·번들러 버전 문서에서 확인 |
 
 **기본 상식**: `strict: false`인 프로젝트에 나중에 `strict: true`를 켜면 에러가 한 번에 쏟아집니다. 신규 프로젝트는 처음부터 켜두고, 기존 프로젝트는 `strict` 하위 옵션(`strictNullChecks`부터)을 하나씩 켜며 점진적으로 마이그레이션하는 편이 안전합니다.
 

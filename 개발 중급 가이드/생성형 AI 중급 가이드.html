@@ -125,7 +125,8 @@ LoRA: 모델은 고정하고, 작은 추가 행렬만 학습 → 훨씬 적은 �
 요약: {요약}
 평가 기준: 정확성, 간결성, 원문에 없는 내용을 지어내지 않았는지
 점수와 이유를 JSON으로 답하세요.</code></pre></div>
-<p><strong>기본 상식</strong>: LLM-as-judge는 완벽한 평가자가 아닙니다. 특정 표현·형식을 선호하는 편향(bias), 같은 응답도 다시 채점하면 점수가 흔들리는 변동성(variance), 여러 답을 나란히 비교시킬 때 먼저 제시된 답을 더 좋게 평가하는 경향(position bias) 같은 한계가 알려져 있습니다. 사람이 채점한 소수 샘플과 LLM 채점 결과를 주기적으로 비교해서 채점 기준 자체가 신뢰할 만한지 검증하고, 비교 순서를 무작위로 섞는 등으로 position bias를 완화합니다. 결제·의료처럼 중요한 판단에는 사람 검수나 객관적 지표(정확도 등)와 함께 쓰고, LLM-as-judge 단독으로 대체하지 않습니다.</p>
+<p><strong>기본 상식</strong>: LLM-as-judge는 완벽한 평가자가 아닙니다. 알려진 한계가 세 가지 있습니다. - 편향(bias): 특정 표현·형식을 더 좋게 평가하는 경향 - 변동성(variance): 같은 응답도 다시 채점하면 점수가 흔들림 - 위치 편향(position bias): 여러 답을 나란히 비교시킬 때 먼저 제시된 답을 더 좋게 평가하는 경향</p>
+<p>그래서 사람이 채점한 소수 샘플과 LLM 채점 결과를 주기적으로 비교해 채점 기준이 신뢰할 만한지 검증하고, 비교 순서를 무작위로 섞어 위치 편향을 완화합니다. 결제·의료처럼 중요한 판단에는 사람 검수나 객관적 지표(정확도 등)를 함께 쓰고, LLM-as-judge 단독으로 대체하지 않습니다.</p>
 <hr>
 <h2 class="section-h1" id="7-자주-하는-실수">7. 자주 하는 실수<a class="heading-anchor" href="#7-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>RAG로 해결 가능한 문제를 파인튜닝부터 시도해 비용과 시간을 낭비</li><li>프롬프트 체이닝 단계를 지나치게 잘게 나눠 지연 시간이 크게 늘어남</li><li>모든 요청에 가장 비싼 모델을 사용해 비용이 예상보다 커짐</li><li>실제 프롬프트·응답을 기록하지 않아 문제가 생겨도 원인을 재현할 수 없음</li><li>LLM-as-judge 결과를 검증 없이 그대로 신뢰</li></ul>
@@ -135,7 +136,8 @@ LoRA: 모델은 고정하고, 작은 추가 행렬만 학습 → 훨씬 적은 �
 <hr>
 <h2 class="section-h1" id="9-구조화-출력-Structured-Output-강제하기">9. 구조화 출력(Structured Output) 강제하기<a class="heading-anchor" href="#9-구조화-출력-Structured-Output-강제하기" aria-label="이 섹션 링크">#</a></h2>
 <p>응답을 파싱해서 프로그램에 넘겨야 한다면, 자유 텍스트보다 정해진 스키마로 응답받는 편이 안전합니다.</p>
-<p>아래는 <strong>Anthropic API의 예시</strong>입니다. Tool(Function) 정의에 스키마를 실어 보내고, <code class="inline-code">tool_choice</code>로 그 도구를 강제 호출시켜 사실상 JSON 스키마를 강제하는 방식입니다. 참고로 Anthropic은 이 방식 외에 스키마를 직접 지정해 출력 형식 자체를 제약하는 별도의 Structured Output 기능도 제공하며, OpenAI 등 다른 제공업체도 각자의 방식(예: OpenAI의 <code class="inline-code">response_format</code>/Structured Outputs)으로 유사한 기능을 지원합니다. 정확한 파라미터명은 사용하는 제공업체의 최신 공식 문서를 기준으로 확인하세요.</p>
+<p>아래는 <strong>Anthropic API의 예시</strong>입니다. Tool(Function) 정의에 스키마를 실어 보내고, <code class="inline-code">tool_choice</code>로 그 도구를 강제 호출시켜 사실상 JSON 스키마를 강제하는 방식입니다.</p>
+<p>참고로 Anthropic은 이 방식 외에 출력 형식 자체를 스키마로 직접 제약하는 별도의 Structured Output 기능도 제공합니다. OpenAI 등 다른 제공업체도 각자의 방식(예: OpenAI의 <code class="inline-code">response_format</code>/Structured Outputs)으로 비슷한 기능을 지원하므로, 정확한 파라미터명은 사용하는 제공업체의 최신 공식 문서에서 확인하세요.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># JSON 스키마를 함께 전달해 형식을 강제 (Anthropic API 예시 — Tool 강제 호출 방식)</span>
 response = client.messages.create(
     model=&quot;...&quot;,
@@ -271,7 +273,7 @@ response = client.messages.create(
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1단계: 임베딩 검색으로 빠르게 후보 50개 추출 (정확도는 다소 떨어져도 됨)
 2단계: 재순위화 모델이 질문-문서 쌍을 하나씩 더 정밀하게 채점
 3단계: 상위 5개만 최종 프롬프트에 포함</code></pre></div>
-<p><strong>기본 상식</strong>: 벡터 검색만으로 상위 5개를 바로 뽑으면 놓치는 관련 문서가 생길 수 있습니다. 넉넉하게 후보를 가져온 뒤 재순위화로 걸러내면 검색 정확도가 눈에 띄게 좋아지는 경우가 많지만, 그만큼 지연 시간이 늘어나므로 응답 속도가 중요한 기능에서는 트레이드오프를 따져봅니다.</p>
+<p><strong>기본 상식</strong>: 벡터 검색만으로 상위 5개를 바로 뽑으면 놓치는 관련 문서가 생길 수 있습니다. 넉넉하게 후보를 가져온 뒤 재순위화로 걸러내면 검색 정확도가 눈에 띄게 좋아지는 경우가 많습니다. 다만 그만큼 지연 시간이 늘어나므로, 응답 속도가 중요한 기능이라면 트레이드오프를 따져봅니다.</p>
 <hr>
 <h2 class="section-h1" id="19-캐싱으로-응답-속도-비용-줄이기">19. 캐싱으로 응답 속도·비용 줄이기<a class="heading-anchor" href="#19-캐싱으로-응답-속도-비용-줄이기" aria-label="이 섹션 링크">#</a></h2>
 <p>같은 질문(또는 비슷한 질문)에 매번 모델을 새로 호출하면 비용과 지연시간이 낭비됩니다.</p>
@@ -283,7 +285,7 @@ response = client.messages.create(
 <p><strong>실무 팁</strong>: 자주 반복되는 시스템 프롬프트나 few-shot 예시는 프롬프트의 앞부분에 고정해서 배치하면, 프롬프트 캐싱 기능을 지원하는 모델에서 비용 절감 효과를 볼 수 있습니다.</p>
 <hr>
 <h2 class="section-h1" id="20-캐싱-비용-관리에서-자주-하는-실수">20. 캐싱·비용 관리에서 자주 하는 실수<a class="heading-anchor" href="#20-캐싱-비용-관리에서-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>캐싱을 적용하면서 캐시 무효화(원본 데이터가 바뀌었을 때 캐시를 갱신하는 것) 전략을 빠뜨림</li><li>프롬프트 캐싱 대상(자주 안 바뀌는 부분)과 자주 바뀌는 부분을 구분하지 않고 매번 프롬프트 전체를 새로 구성</li><li>의미 기반 캐싱을 도입하면서 "질문이 비슷해 보여도 답이 달라야 하는 경우"(가격, 재고처럼 시점에 따라 값이 바뀌는 정보)까지 캐시를 재사용해 오답을 냄</li></ul>
+<ul><li>캐시 무효화(원본 데이터가 바뀌었을 때 캐시를 갱신하는 것) 전략 없이 캐싱부터 적용함</li><li>프롬프트 캐싱 대상(자주 안 바뀌는 부분)과 자주 바뀌는 부분을 구분하지 않고 매번 프롬프트 전체를 새로 구성</li><li>의미 기반 캐싱을 도입하면서 "질문이 비슷해 보여도 답이 달라야 하는 경우"(가격, 재고처럼 시점에 따라 값이 바뀌는 정보)까지 캐시를 재사용해 오답을 냄</li></ul>
 <hr>
 <h2 class="section-h1" id="21-확장-체크리스트">21. 확장 체크리스트<a class="heading-anchor" href="#21-확장-체크리스트" aria-label="이 섹션 링크">#</a></h2>
 <ul class="checklist"><li><input type="checkbox" disabled><span>반복되는 요청에 대한 캐싱 전략(완전 일치·프롬프트 캐싱)이 있는가</span></li><li><input type="checkbox" disabled><span>캐시된 값이 오래된 정보를 계속 보여주지 않도록 무효화 시점을 정했는가</span></li><li><input type="checkbox" disabled><span>시점에 따라 값이 바뀌는 데이터에는 의미 기반 캐싱을 적용하지 않았는가</span></li></ul>
