@@ -32,18 +32,22 @@ Git은 인터넷이 없어도 내 컴퓨터 안에서만 혼자 쓸 수 있습�
 
 이 문서에서는 이해를 돕기 위해 `main`(배포 기준) → `develop`(공동 작업본) → `feature`(개인 작업본)라는 **흔한 예시 하나**를 기준으로 설명합니다. 실제로 참여하는 팀·프로젝트는 branch를 다르게 쓸 수 있으니, 새 프로젝트에 들어가면 "이 팀은 branch를 어떻게 쓰나요?"부터 확인하는 습관을 들이는 게 Git 규칙을 외우는 것보다 훨씬 중요합니다.
 
-공통적으로 거의 항상 지켜지는 습관은 하나입니다 — **배포 기준이 되는 branch(대개 `main`)에 검증 없이 바로 코드를 올리지 않는다.** 항상 별도 branch에서 작업하고, 팀이 정한 검토 과정(리뷰, PR 등)을 거친 코드만 합칩니다.
+팀 프로젝트에서는 보통 보호된 기본 branch(대개 `main`)에 직접 작업하기보다, 별도 작업 branch를 만들고 PR을 통해 합치는 방식을 많이 사용합니다. **정확한 방식은 팀 규칙에 따릅니다** — 새 프로젝트에 들어가면 CONTRIBUTING.md나 README, 또는 팀 규칙을 먼저 확인하세요.
 
-# 2. 전체 흐름 한 장으로 보기 (흔한 예시 기준)
+# 2. 전체 흐름 한 장으로 보기
 
-1. README와 issue(내가 만들어야 할 기능)를 확인한다
-2. 내 `feature` branch를 만들어서 기능을 만든다 (코드 작성)
-3. 다 됐으면 `develop`에 올린다 — `add` → `commit` → `push`
-4. GitHub에 "이 코드 좀 봐주세요"라는 설명서를 올린다 — **PR(Pull Request)**
-5. 팀원이 오류 없는지 확인하면 `main`(또는 `develop`) 코드와 합쳐진다 — **merge**
-6. 팀원들도 지금까지 쌓인 최신 코드를 자기 컴퓨터로 받아온다 — **pull**
+가장 기본적인 흐름은 다음 정도면 충분합니다.
 
-이 여섯 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.
+1. Issue(내가 만들어야 할 기능)를 확인한다
+2. 작업 branch를 만든다 (코드 작성 준비)
+3. 코드를 수정한다
+4. `add` → `commit` → `push`로 GitHub에 올린다
+5. GitHub에 "이 코드 좀 봐주세요"라는 설명서를 올린다 — **PR(Pull Request)**
+6. 팀원이 리뷰·검증한다
+7. 팀이 정한 대상 branch에 **merge**된다
+8. 팀원들도 최신 변경사항을 자기 컴퓨터로 동기화한다 — **pull**
+
+이 여덟 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다. **어떤 branch에 PR을 보내는지는 팀의 협업 전략에 따라 달라집니다** — 예를 들어 어떤 팀은 작업 branch를 `main`에 바로 합치고, 어떤 팀은 `develop`이라는 중간 branch를 먼저 거칩니다. 아래 다이어그램은 `develop`을 쓰는 팀의 예시입니다.
 
 <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도" style="max-width:100%;height:auto;font-family:inherit">
   <style>
@@ -94,6 +98,7 @@ Git은 인터넷이 없어도 내 컴퓨터 안에서만 혼자 쓸 수 있습�
   <line x1="615" y1="100" x2="355" y2="130" class="gb-arrow"/>
 </svg>
 
+`develop` 없이 작업 branch를 바로 `main`(또는 팀이 정한 기본 branch)에 합치는 팀도 많습니다. 팀에 들어가면 어떤 흐름을 쓰는지부터 확인하세요.
 
 # 3. 내 컴퓨터 코드를 GitHub에 올리기
 
@@ -112,7 +117,7 @@ git push origin feature/chatbot
 # 4. 내 코드 + 팀 코드가 합쳐지는 과정
 
 1. 코드를 올릴 때 보통 새 branch가 생긴다 (위 3번의 `feature/chatbot`처럼)
-2. GitHub에서 **PR(Pull Request)**을 연다 — "제 코드를 공동 작업본에 합쳐주세요" 요청
+2. GitHub에서 **PR(Pull Request)**을 연다 — "제 코드를 팀이 정한 대상 branch에 합쳐주세요" 요청
 3. 팀원이 오류 없는지 확인하고 **merge**한다 — 실제로 두 branch가 합쳐지는 순간
 4. 다 합쳐진 branch는 삭제한다 (branch를 깔끔하게 유지하기 위해)
 5. 이 코드와 관련 있는 팀원들은 GitHub에서 **pull**을 받는다 — 그래야 항상 최신 버전으로 작업할 수 있고 충돌도 줄어든다
@@ -121,12 +126,12 @@ git push origin feature/chatbot
 
 | 용어 | 한 줄 정리 |
 | --- | --- |
-| main (이 문서의 예시 기준) | 배포 기준이 되는 branch — 팀에 따라 이름·역할이 다를 수 있음 |
-| develop (이 문서의 예시 기준) | 팀 공동 작업본 — 안 쓰는 팀도 많음 |
-| feature branch | 내 개인 작업본 |
+| `main` | 보통 프로젝트의 기본/주요 branch (배포와 항상 연결되는 것은 아님) |
+| `develop` | 일부 팀에서 개발 내용을 모으기 위해 사용하는 branch (안 쓰는 팀도 많음) |
+| 작업 branch (`feature/*` 등) | 특정 기능·수정을 다른 작업과 분리해서 진행하는 branch |
 | commit | 중간 저장 |
 | push | GitHub에 업로드 |
-| PR (Pull Request) | "제 코드 공동 작업본에 합쳐주세요" 요청 |
+| PR (Pull Request) | "제 코드를 대상 branch에 합쳐주세요" 요청 |
 | merge | 실제로 합치기 |
 | pull | 다른 사람이 합친 최신 코드 받아오기 |
 
@@ -139,15 +144,15 @@ git push origin feature/chatbot
 ```bash
 mkdir git-practice
 cd git-practice
-git init
+git init -b main
 echo "hello git" > memo.txt
 git add .
 git commit -m "첫 커밋"
 ```
 
-왜 이걸 하는지: `git init`은 이 폴더를 Git이 추적하는 저장소로 바꾸는 명령입니다. `add`와 `commit`을 직접 손으로 쳐봐야 "저장 = commit"이라는 감각이 생깁니다.
+왜 이걸 하는지: `git init`은 이 폴더를 Git이 추적하는 저장소로 바꾸는 명령입니다. `-b main`은 시작 branch 이름을 `main`으로 명시적으로 지정하는 옵션입니다 — Git 버전이나 설정에 따라 초기 branch 이름이 `main`이 아니라 `master`로 만들어지는 경우가 있어서, 이 실습이 어떤 환경에서도 똑같이 동작하도록 명시했습니다. `add`와 `commit`을 직접 손으로 쳐봐야 "저장 = commit"이라는 감각이 생깁니다.
 
-확인할 것: `git log --oneline`을 쳤을 때 방금 만든 "첫 커밋"이 보이는가?
+확인할 것: `git branch`를 쳤을 때 현재 branch 이름이 `main`인가? `git log --oneline`을 쳤을 때 방금 만든 "첫 커밋"이 보이는가?
 
 ## 실습 2. branch를 나눠서 작업해보기
 
@@ -176,6 +181,7 @@ cat memo.txt
 <div class="quiz-answer-body">
 <p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
 <ul>
+<li>&#9744; <code>git branch</code>로 현재 branch 이름이 <code>main</code>인 것을 확인했다</li>
 <li>&#9744; <code>git log --oneline</code>에서 "첫 커밋" 메시지가 보인다</li>
 <li>&#9744; <code>git switch feature/practice</code> 이후 만든 커밋은 <code>main</code>이 아니라 <code>feature/practice</code> branch에만 있다는 것을 <code>git log --oneline --all --graph</code>로 확인했다</li>
 <li>&#9744; <code>git switch main</code> 후 <code>cat memo.txt</code>를 쳤을 때는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>

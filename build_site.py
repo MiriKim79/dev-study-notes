@@ -63,7 +63,7 @@ PAGES = [
         "src": f"{PLAYBOOK_DIR}/개발 처음 시작하기.md",
         "title": "개발 처음 시작하기",
         "kicker": "개발 기초·실전 가이드",
-        "cat": "start",
+        "cat": "onboarding",
         "icon": "🗺️",
         "hub": "playbook-hub",
         "tagline": "프로그램이 뭔지도 감이 안 잡힌다? 5~10분이면 전체 지도가 보입니다.",
@@ -541,6 +541,7 @@ STUDY_ORDER = [
 ]
 
 CAT_LABEL = {
+    "onboarding": "개발 입문",
     "start": "팀 개발 시작",
     "frontend": "프론트엔드",
     "backend": "백엔드",
