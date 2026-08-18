@@ -102,7 +102,7 @@ Git은 인터넷이 없어도 내 컴퓨터 안에서만 혼자 쓸 수 있습�
 
 # 3. 내 컴퓨터 코드를 GitHub에 올리기
 
-`add` → `commit` → `push`, 이 세 단계가 "내 컴퓨터에 있는 코드를 GitHub로 옮기는 것"입니다. 이 과정에서 보통 새 branch도 함께 만들어집니다.
+`add` → `commit` → `push`, 이 세 단계가 "내 컴퓨터에 있는 코드를 GitHub로 옮기는 것"입니다. **작업 branch는 보통 이 세 단계보다 먼저 만듭니다** (아래 실습의 `git branch`·`git switch`처럼). `add`/`commit`/`push`가 branch를 자동으로 만들어주는 게 아니라, 내 컴퓨터에 이미 있는 작업 branch를 처음 `push`할 때 GitHub 쪽에도 그와 짝을 이루는 원격 branch가 새로 생기는 것입니다.
 
 ```bash
 git add .
@@ -116,7 +116,7 @@ git push origin feature/chatbot
 
 # 4. 내 코드 + 팀 코드가 합쳐지는 과정
 
-1. 코드를 올릴 때 보통 새 branch가 생긴다 (위 3번의 `feature/chatbot`처럼)
+1. 미리 만들어둔 작업 branch를 push하면, GitHub에도 그 이름의 원격 branch가 생긴다 (위 3번의 `feature/chatbot`처럼)
 2. GitHub에서 **PR(Pull Request)**을 연다 — "제 코드를 팀이 정한 대상 branch에 합쳐주세요" 요청
 3. 팀원이 오류 없는지 확인하고 **merge**한다 — 실제로 두 branch가 합쳐지는 순간
 4. 다 합쳐진 branch는 삭제한다 (branch를 깔끔하게 유지하기 위해)
@@ -174,7 +174,7 @@ git merge feature/practice
 cat memo.txt
 ```
 
-왜 이걸 하는지: PR에서 "merge" 버튼을 누르면 실제로는 이 명령이 실행되는 것과 같은 일이 일어납니다. 버튼 뒤에서 무슨 일이 벌어지는지 알면 팀 프로젝트에서 훨씬 덜 헷갈립니다.
+왜 이걸 하는지: 이 실습은 "merge의 기본 개념"(두 branch의 변경 내용을 하나로 합치는 것) 체험용입니다. GitHub의 PR 화면에는 실제로 **Merge commit / Squash and merge / Rebase and merge**처럼 여러 병합 방식이 있고, 팀·프로젝트마다 어떤 방식을 쓰는지가 다릅니다. 방식은 달라도 "두 branch의 변경 내용을 하나로 합친다"는 핵심 개념은 이 실습에서 체험한 것과 같습니다.
 
 <details class="quiz-answer">
 <summary>정답 확인</summary>
