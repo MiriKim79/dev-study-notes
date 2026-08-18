@@ -1169,7 +1169,7 @@ def render_tier_nav(current_key):
         cls = "tier-nav-link active" if hub_key == active_hub else "tier-nav-link"
         href = rel_link(current_key, hub_key)
         items.append('<a class="%s" href="%s">%s %s</a>' % (cls, href, icon, html.escape(label)))
-    return '<nav class="tier-nav">%s</nav>' % "".join(items)
+    return '<nav class="tier-nav"><div class="tier-nav-inner">%s</div></nav>' % "".join(items)
 
 
 def render_breadcrumb(page):

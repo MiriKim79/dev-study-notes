@@ -206,18 +206,23 @@ body::before {
 }
 
 .breadcrumb {
-  flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px;
+  flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 6px;
   font-size: 13px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.breadcrumb::before {
+  content: "·"; color: var(--text-faint); font-weight: 700;
 }
 .breadcrumb a { color: var(--text-secondary); }
 .breadcrumb a:hover { color: var(--accent); }
-.breadcrumb .current { color: var(--text-heading); font-weight: 600; }
+.breadcrumb .current { color: var(--text-secondary); font-weight: 500; }
+
 .brand {
   font-weight: 800; font-size: 15px; color: var(--text-strong); white-space: nowrap; flex: none;
+  display: inline-flex; align-items: baseline;
 }
 .brand .dot { color: var(--accent); }
 
-.header-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+.header-actions { display: flex; align-items: center; gap: 8px; flex: none; margin-left: auto; }
 .search-box-desktop {
   display: none; align-items: center; gap: 6px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
   padding: 6px 10px; background: var(--bg); min-width: 220px;
@@ -233,8 +238,15 @@ body::before {
 /* ---- 단계 이동 바 (초급/중급/고급/자격증) ---------------------------------- */
 .tier-nav {
   position: fixed; top: calc(var(--header-h) + var(--progress-h)); left: 0; right: 0; z-index: 890;
-  height: var(--tier-nav-h); display: flex; align-items: center; gap: 8px; padding: 0 16px;
+  height: var(--tier-nav-h); display: flex; align-items: center; padding: 0 16px;
   background: var(--bg); border-bottom: 1px solid var(--border-soft); overflow-x: auto;
+}
+.tier-nav-inner {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; max-width: 1400px; margin: 0 auto;
+}
+@media (max-width: 480px) {
+  .tier-nav-inner { justify-content: flex-start; }
 }
 .tier-nav-link {
   flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px;
