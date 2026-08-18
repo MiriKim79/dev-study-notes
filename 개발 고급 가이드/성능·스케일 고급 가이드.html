@@ -76,7 +76,38 @@
 → CDN 캐시 (이미지, JS/CSS, 자주 안 바뀌는 API 응답)
 → 애플리케이션 캐시 (Redis 등 — 자주 조회되는 DB 결과)
 → DB 자체 캐시</code></pre></div>
-<div class="doc-img-wrap"><img src="../assets/images/cache-layers.png" alt="브라우저 캐시부터 CDN, 애플리케이션 캐시, DB 캐시까지 이어지는 캐시 계층 구조도"></div>
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="브라우저 캐시부터 CDN, 애플리케이션 캐시, DB 캐시까지 이어지는 캐시 계층 구조도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .cl-layer{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .cl-fast{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .cl-db{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .cl-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .cl-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+    .cl-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#clArrow)}
+  </style>
+  <defs>
+    <marker id="clArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+  </defs>
+
+  <rect x="240" y="10" width="220" height="40" rx="8" class="cl-fast"/>
+  <text x="350" y="35" class="cl-text">브라우저 캐시</text>
+
+  <line x1="350" y1="50" x2="350" y2="70" class="cl-arrow"/>
+  <rect x="240" y="70" width="220" height="40" rx="8" class="cl-layer"/>
+  <text x="350" y="95" class="cl-text">CDN</text>
+
+  <line x1="350" y1="110" x2="350" y2="130" class="cl-arrow"/>
+  <rect x="240" y="130" width="220" height="40" rx="8" class="cl-layer"/>
+  <text x="350" y="155" class="cl-text">애플리케이션 캐시 (Redis)</text>
+
+  <line x1="350" y1="170" x2="350" y2="190" class="cl-arrow"/>
+  <rect x="240" y="190" width="220" height="40" rx="8" class="cl-db"/>
+  <text x="350" y="215" class="cl-text">DB 캐시 / 원본 DB</text>
+
+  <text x="350" y="255" class="cl-sub">위 단계에서 처리될수록 응답이 빠르고, 아래로 갈수록 서버·DB 부하가 커짐</text>
+</svg>
 <p>요청이 앞 단계에서 처리될수록 서버·DB 부하가 줄어듭니다.</p>
 <h3 class="section-h2" id="캐시-무효화-캐싱에서-가장-어려운-부분">캐시 무효화 — 캐싱에서 가장 어려운 부분<a class="heading-anchor" href="#캐시-무효화-캐싱에서-가장-어려운-부분" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>문제: 강의 가격을 수정했는데 캐시된 예전 가격이 계속 보임</code></pre></div>

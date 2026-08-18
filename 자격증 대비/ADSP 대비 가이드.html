@@ -72,7 +72,25 @@
 비정형: 사진, 동영상, 자유 서술형 리뷰 텍스트</code></pre></div>
 <h3 class="section-h2" id="데이터-사이언스의-요구-역량">데이터 사이언스의 요구 역량<a class="heading-anchor" href="#데이터-사이언스의-요구-역량" aria-label="이 섹션 링크">#</a></h3>
 <p>시험에서 자주 나오는 3요소: <strong>분석적 사고(통계·수학)</strong>, <strong>IT 기술(프로그래밍·엔지니어링)</strong>, <strong>비즈니스 이해(도메인 지식)</strong>. 이 세 가지가 겹치는 영역이 데이터 사이언스의 핵심 역량이라는 개념(다이어그램 형태)이 잘 나옵니다.</p>
-<div class="doc-img-wrap"><img src="../assets/images/adsp-venn-3circle.png" alt="분석적 사고, IT 기술, 비즈니스 이해 세 원이 겹치는 영역이 데이터 사이언스 핵심 역량임을 보여주는 벤 다이어그램"></div>
+<svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="분석적 사고, IT 기술, 비즈니스 이해 세 원이 겹치는 영역이 데이터 사이언스 핵심 역량임을 보여주는 벤 다이어그램" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .v3-a{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5;fill-opacity:0.55}
+    .v3-b{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5;fill-opacity:0.55}
+    .v3-c{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5;fill-opacity:0.7}
+    .v3-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .v3-center{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+  </style>
+
+  <circle cx="200" cy="130" r="100" class="v3-a"/>
+  <circle cx="300" cy="130" r="100" class="v3-b"/>
+  <circle cx="250" cy="220" r="100" class="v3-c"/>
+
+  <text x="140" y="90" class="v3-text">분석적 사고</text>
+  <text x="360" y="90" class="v3-text">IT 기술</text>
+  <text x="250" y="290" class="v3-text">비즈니스 이해</text>
+  <text x="250" y="180" class="v3-center">데이터</text>
+  <text x="250" y="196" class="v3-center">사이언스</text>
+</svg>
 <h3 class="section-h2" id="빅데이터의-특징-3V-2V">빅데이터의 특징 — 3V(+2V)<a class="heading-anchor" href="#빅데이터의-특징-3V-2V" aria-label="이 섹션 링크">#</a></h3>
 <div class="table-scroll"><table><thead><tr><th>특징</th><th>의미</th></tr></thead><tbody><tr><td>Volume(양)</td><td>데이터의 크기 자체가 방대함</td></tr><tr><td>Velocity(속도)</td><td>데이터가 생성·처리되는 속도가 빠름(실시간 스트리밍 등)</td></tr><tr><td>Variety(다양성)</td><td>정형·반정형·비정형 등 형태가 다양함</td></tr><tr><td>Veracity(정확성)</td><td>데이터의 신뢰성·품질 (추가된 V)</td></tr><tr><td>Value(가치)</td><td>데이터에서 실제로 가치를 뽑아낼 수 있는가 (추가된 V)</td></tr></tbody></table></div>
 <p><strong>기본 상식</strong>: 초기에는 3V(Volume/Velocity/Variety)로 정의됐고, 이후 데이터 품질과 활용 가치가 중요해지며 Veracity·Value가 추가됐습니다. 시험에서는 "이 특징은 3V 중 무엇에 해당하는가"를 상황 예시로 묻습니다.</p>
@@ -84,7 +102,30 @@
 지식(Knowledge) — 정보를 분석해 얻은 패턴·규칙 (예: &quot;이 시기엔 매년 기온이 오른다&quot;)
     ↓
 지혜(Wisdom) — 지식을 바탕으로 한 통찰·판단 (예: &quot;그러니 에어컨을 미리 점검하자&quot;)</code></pre></div>
-<div class="doc-img-wrap"><img src="../assets/images/adsp-dikw-pyramid.png" alt="데이터에서 정보, 지식, 지혜 순으로 쌓여 올라가는 DIKW 피라미드"></div>
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="데이터에서 정보, 지식, 지혜 순으로 쌓여 올라가는 DIKW 피라미드" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .dk-d{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .dk-i{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .dk-k{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .dk-w{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.5}
+    .dk-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .dk-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <polygon points="250,20 300,80 200,80" class="dk-w"/>
+  <text x="250" y="60" class="dk-text">Wisdom</text>
+
+  <polygon points="200,80 300,80 340,140 160,140" class="dk-k"/>
+  <text x="250" y="115" class="dk-text">Knowledge</text>
+
+  <polygon points="160,140 340,140 380,200 120,200" class="dk-i"/>
+  <text x="250" y="175" class="dk-text">Information</text>
+
+  <polygon points="120,200 380,200 420,260 80,260" class="dk-d"/>
+  <text x="250" y="235" class="dk-text">Data</text>
+
+  <text x="250" y="285" class="dk-sub">가공되지 않은 데이터가 의미를 갖는 정보, 패턴이 되는 지식, 통찰인 지혜로 이어짐</text>
+</svg>
 <hr>
 <h2 class="section-h1" id="3-2과목-핵심-분석-기획과-방법론">3. 2과목 핵심 — 분석 기획과 방법론<a class="heading-anchor" href="#3-2과목-핵심-분석-기획과-방법론" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="CRISP-DM-데이터-분석-표준-절차">CRISP-DM — 데이터 분석 표준 절차<a class="heading-anchor" href="#CRISP-DM-데이터-분석-표준-절차" aria-label="이 섹션 링크">#</a></h3>

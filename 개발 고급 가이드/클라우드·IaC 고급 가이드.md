@@ -213,7 +213,42 @@ Primary Region(서울) 장애 시
 | Warm Standby(축소된 형태로 상시 운영) | 짧다 | 높음 |
 | Active-Active(두 리전 모두 상시 운영) | 거의 없음 | 가장 비쌈 |
 
-<img src="../assets/images/disaster-recovery-spectrum.png" alt="Backup & Restore부터 Active-Active까지 RTO와 비용이 함께 늘어나는 재해 복구 전략 스펙트럼">
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Backup & Restore부터 Active-Active까지 RTO와 비용이 함께 늘어나는 재해 복구 전략 스펙트럼" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .dr-bar{fill:url(#drGrad)}
+    .dr-point{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .dr-text{fill:var(--text);font-size:11px;text-anchor:middle}
+    .dr-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+    .dr-axis{fill:var(--text-secondary);font-size:10px}
+  </style>
+  <defs>
+    <linearGradient id="drGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="var(--callout-tip-bg)"/>
+      <stop offset="100%" stop-color="var(--callout-concept-bg)"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="30" y="60" width="640" height="16" rx="8" class="dr-bar" stroke="var(--border-strong)" stroke-width="1"/>
+  <text x="30" y="50" class="dr-axis">RTO 김·저비용</text>
+  <text x="670" y="50" class="dr-axis" text-anchor="end">RTO 짧음·고비용</text>
+
+  <circle cx="70" cy="68" r="7" class="dr-point"/>
+  <text x="70" y="100" class="dr-text">Backup &amp;</text>
+  <text x="70" y="113" class="dr-text">Restore</text>
+
+  <circle cx="270" cy="68" r="7" class="dr-point"/>
+  <text x="270" y="100" class="dr-text">Pilot Light</text>
+
+  <circle cx="450" cy="68" r="7" class="dr-point"/>
+  <text x="450" y="100" class="dr-text">Warm</text>
+  <text x="450" y="113" class="dr-text">Standby</text>
+
+  <circle cx="630" cy="68" r="7" class="dr-point"/>
+  <text x="630" y="100" class="dr-text">Multi-Site</text>
+  <text x="630" y="113" class="dr-text">Active-Active</text>
+
+  <text x="350" y="150" class="dr-sub">오른쪽으로 갈수록 복구 속도(RTO)는 빨라지지만 운영 비용도 함께 커짐</text>
+</svg>
 
 **기본 상식**: 모든 서비스가 Active-Active 수준의 재해 복구를 갖출 필요는 없습니다. 서비스 중단이 실제로 얼마나 큰 손해로 이어지는지(RTO/RPO 요구사항)를 먼저 정하고, 그에 맞는 비용 수준의 전략을 선택합니다. 스타트업 초기 단계에서는 정기 백업만으로 충분한 경우가 많습니다.
 

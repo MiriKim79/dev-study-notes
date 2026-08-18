@@ -337,7 +337,37 @@ UML 다이어그램 → 클래스 다이어그램(구조), 시퀀스 다이어�
       B   C
      / \
     D   E</code></pre></div>
-<div class="doc-img-wrap"><img src="../assets/images/infoproc-binary-tree.png" alt="루트 A, 자식 B·C, B의 자식 D·E로 구성된 이진 트리 예시"></div>
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="루트 A, 자식 B·C, B의 자식 D·E로 구성된 이진 트리 예시" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .bt-node{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .bt-leaf{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .bt-text{fill:var(--text);font-size:14px;text-anchor:middle;font-weight:700}
+    .bt-edge{stroke:var(--text-faint);stroke-width:1.5}
+    .bt-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <line x1="200" y1="35" x2="120" y2="105" class="bt-edge"/>
+  <line x1="200" y1="35" x2="280" y2="105" class="bt-edge"/>
+  <line x1="120" y1="130" x2="70" y2="185" class="bt-edge"/>
+  <line x1="120" y1="130" x2="170" y2="185" class="bt-edge"/>
+
+  <circle cx="200" cy="35" r="25" class="bt-node"/>
+  <text x="200" y="41" class="bt-text">A</text>
+
+  <circle cx="120" cy="130" r="25" class="bt-node"/>
+  <text x="120" y="136" class="bt-text">B</text>
+
+  <circle cx="280" cy="130" r="25" class="bt-leaf"/>
+  <text x="280" y="136" class="bt-text">C</text>
+
+  <circle cx="70" cy="200" r="22" class="bt-leaf"/>
+  <text x="70" y="206" class="bt-text">D</text>
+
+  <circle cx="170" cy="200" r="22" class="bt-leaf"/>
+  <text x="170" y="206" class="bt-text">E</text>
+
+  <text x="200" y="20" class="bt-sub">전위: A-B-D-E-C  중위: D-B-E-A-C  후위: D-E-B-C-A</text>
+</svg>
 <div class="table-scroll"><table><thead><tr><th>순회 방식</th><th>순서 규칙</th><th>결과</th></tr></thead><tbody><tr><td>전위(Preorder)</td><td>루트 → 왼쪽 → 오른쪽</td><td>A, B, D, E, C</td></tr><tr><td>중위(Inorder)</td><td>왼쪽 → 루트 → 오른쪽</td><td>D, B, E, A, C</td></tr><tr><td>후위(Postorder)</td><td>왼쪽 → 오른쪽 → 루트</td><td>D, E, B, C, A</td></tr></tbody></table></div>
 <p><strong>풀이 팁</strong>: 전위는 항상 루트가 맨 앞, 후위는 항상 루트가 맨 뒤, 중위는 루트가 왼쪽 서브트리와 오른쪽 서브트리 "사이"에 옵니다.</p>
 <h3 class="section-h2" id="12-5-SQL-실행-결과-예측">12.5 SQL 실행 결과 예측<a class="heading-anchor" href="#12-5-SQL-실행-결과-예측" aria-label="이 섹션 링크">#</a></h3>

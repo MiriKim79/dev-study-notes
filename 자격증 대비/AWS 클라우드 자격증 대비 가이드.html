@@ -60,7 +60,32 @@
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
 <p>클라우드·IaC 고급 가이드에서 다룬 IaC·컨테이너·쿠버네티스 개념은 이미 안다고 가정합니다. 여기서는 AWS 자격증 범위에서 새로 나오는 용어만 정리합니다.</p>
 <div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>EC2 (Elastic Compute Cloud)</td><td>AWS에서 가상 서버를 빌려 쓰는 서비스</td></tr><tr><td>S3 (Simple Storage Service)</td><td>파일(이미지, 백업 등)을 저장해두는 AWS의 객체 스토리지 서비스</td></tr><tr><td>IAM (Identity and Access Management)</td><td>AWS 리소스에 "누가 무엇을 할 수 있는지" 관리하는 서비스</td></tr><tr><td>VPC (Virtual Private Cloud)</td><td>AWS 안에 격리된 나만의 가상 네트워크 공간을 만드는 서비스</td></tr><tr><td>리전(Region) / 가용 영역(AZ)</td><td>리전은 AWS 데이터센터가 있는 지역(예: 서울), 가용 영역은 그 리전 안의 물리적으로 분리된 데이터센터 단위</td></tr></tbody></table></div>
-<div class="doc-img-wrap"><img src="../assets/images/aws-region-az.png" alt="하나의 리전 안에 물리적으로 분리된 여러 가용 영역(AZ)이 속해 있는 구조도"></div>
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="하나의 리전 안에 물리적으로 분리된 여러 가용 영역(AZ)이 속해 있는 구조도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .ra-region{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5;stroke-dasharray:6 4}
+    .ra-az{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .ra-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .ra-label{fill:var(--text);font-size:13px;font-weight:700}
+    .ra-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <rect x="30" y="30" width="440" height="180" rx="12" class="ra-region"/>
+  <text x="50" y="55" class="ra-label">Region (예: ap-northeast-2)</text>
+
+  <rect x="60" y="90" width="110" height="90" rx="8" class="ra-az"/>
+  <text x="115" y="130" class="ra-text" style="font-weight:700">AZ-a</text>
+  <text x="115" y="150" class="ra-sub">독립된 데이터센터</text>
+
+  <rect x="195" y="90" width="110" height="90" rx="8" class="ra-az"/>
+  <text x="250" y="130" class="ra-text" style="font-weight:700">AZ-b</text>
+  <text x="250" y="150" class="ra-sub">독립된 데이터센터</text>
+
+  <rect x="330" y="90" width="110" height="90" rx="8" class="ra-az"/>
+  <text x="385" y="130" class="ra-text" style="font-weight:700">AZ-c</text>
+  <text x="385" y="150" class="ra-sub">독립된 데이터센터</text>
+
+  <text x="250" y="235" class="ra-sub">AZ끼리는 물리적으로 분리돼 있어 하나에 장애가 나도 다른 AZ는 영향받지 않음</text>
+</svg>
 <p>| RDS (Relational Database Service) | AWS가 대신 운영·관리해주는 관계형 데이터베이스 서비스 | | 종량제(Pay-as-you-go) | 사용한 만큼만 요금을 내는 클라우드의 기본 과금 방식 | | Well-Architected Framework | AWS가 제시하는 "잘 설계된 클라우드 시스템"의 기준 프레임워크 | | IAM 역할(Role) | 특정 상황에서 임시로 부여하는 권한 세트. 고정된 사용자가 아니라 누구든 그 역할을 맡으면 권한을 가짐 | | CloudTrail | AWS 계정에서 누가 언제 무엇을 했는지 API 호출 이력을 기록하는 서비스 | | CloudWatch | AWS 리소스의 성능 지표를 모니터링하고 이상 상황을 알리는 서비스 | | ELB (로드밸런서) | 여러 서버에 트래픽을 나눠주는 AWS 서비스 | | CloudFront (CDN) | 전 세계 엣지 로케이션에 콘텐츠를 캐싱해 빠르게 전달하는 서비스 |</p>
 <hr>
 <h2 class="section-h1" id="1-자격증-체계">1. 자격증 체계<a class="heading-anchor" href="#1-자격증-체계" aria-label="이 섹션 링크">#</a></h2>
@@ -77,7 +102,26 @@
 <h3 class="section-h2" id="책임-공유-모델-Shared-Responsibility-Model">책임 공유 모델 (Shared Responsibility Model)<a class="heading-anchor" href="#책임-공유-모델-Shared-Responsibility-Model" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>AWS의 책임: 클라우드 자체의 보안 (데이터센터, 하드웨어, 네트워크 인프라)
 사용자의 책임: 클라우드 안에서의 보안 (데이터 암호화, IAM 설정, OS 패치 등)</code></pre></div>
-<div class="doc-img-wrap"><img src="../assets/images/aws-shared-responsibility.png" alt="AWS는 클라우드 자체 인프라 보안을, 사용자는 클라우드 안 데이터·설정 보안을 책임지는 책임 공유 모델 구조도"></div>
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AWS는 클라우드 자체 인프라 보안을, 사용자는 클라우드 안 데이터·설정 보안을 책임지는 책임 공유 모델 구조도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .sr-customer{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .sr-aws{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .sr-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .sr-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <rect x="60" y="20" width="380" height="90" rx="8" class="sr-customer"/>
+  <text x="250" y="42" class="sr-text">고객 책임: Security IN the Cloud</text>
+  <text x="250" y="62" class="sr-sub">데이터 암호화, IAM 권한 설정, OS·앱 패치, 네트워크 방화벽 설정</text>
+  <text x="250" y="80" class="sr-sub">애플리케이션 코드, 계정 관리</text>
+
+  <rect x="60" y="130" width="380" height="90" rx="8" class="sr-aws"/>
+  <text x="250" y="152" class="sr-text">AWS 책임: Security OF the Cloud</text>
+  <text x="250" y="172" class="sr-sub">데이터센터 물리 보안, 하드웨어, 네트워크 인프라</text>
+  <text x="250" y="190" class="sr-sub">가상화 계층, 글로벌 인프라 가용성</text>
+
+  <text x="250" y="245" class="sr-sub">클라우드 자체의 보안은 AWS가, 그 위에 올린 것의 보안은 고객이 책임</text>
+</svg>
 <p><strong>기본 상식</strong>: "클라우드에 올렸으니 AWS가 알아서 보안을 다 챙겨준다"는 흔한 오해입니다. 인프라 자체는 AWS 책임이지만, 그 위에서 무엇을 어떻게 설정하느냐(예: S3 버킷을 실수로 전체 공개로 설정)는 사용자 책임입니다. 시험에서 "이 상황은 누구 책임인가"를 자주 묻습니다.</p>
 <h3 class="section-h2" id="IAM-자세히-누가-무엇을-할-수-있는가">IAM 자세히 — 누가 무엇을 할 수 있는가<a class="heading-anchor" href="#IAM-자세히-누가-무엇을-할-수-있는가" aria-label="이 섹션 링크">#</a></h3>
 <div class="table-scroll"><table><thead><tr><th>개념</th><th>의미</th></tr></thead><tbody><tr><td>사용자(User)</td><td>실제 사람 또는 애플리케이션 하나에 대응하는 개별 계정</td></tr><tr><td>그룹(Group)</td><td>여러 사용자를 묶어 같은 권한을 한 번에 부여하는 단위</td></tr><tr><td>역할(Role)</td><td>특정 상황(예: EC2가 S3에 접근)에 임시로 부여하는 권한 세트. 고정된 사용자가 아니라 "누구든 그 역할을 맡으면" 권한을 가짐</td></tr><tr><td>정책(Policy)</td><td>"이 사람/역할이 이 리소스에 이 행동을 할 수 있다"를 JSON으로 정의한 규칙</td></tr></tbody></table></div>

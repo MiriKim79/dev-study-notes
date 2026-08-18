@@ -30,7 +30,54 @@ Git을 처음 배울 때 가장 흔한 실수는 명령어부터 외우려고 �
 
 이 여섯 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.
 
-<img src="../assets/images/git-branch-basics.png" alt="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .gb-branch{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .gb-main{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .gb-step{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .gb-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .gb-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+    .gb-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#gbArrow)}
+  </style>
+  <defs>
+    <marker id="gbArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="20" width="140" height="40" rx="8" class="gb-step"/>
+  <text x="100" y="45" class="gb-text">작업 브랜치 생성</text>
+
+  <line x1="170" y1="40" x2="220" y2="40" class="gb-arrow"/>
+  <rect x="220" y="20" width="120" height="40" rx="8" class="gb-step"/>
+  <text x="280" y="45" class="gb-text">커밋</text>
+
+  <line x1="340" y1="40" x2="390" y2="40" class="gb-arrow"/>
+  <rect x="390" y="20" width="120" height="40" rx="8" class="gb-step"/>
+  <text x="450" y="45" class="gb-text">푸시</text>
+
+  <line x1="510" y1="40" x2="560" y2="40" class="gb-arrow"/>
+  <rect x="560" y="20" width="110" height="40" rx="8" class="gb-step"/>
+  <text x="615" y="45" class="gb-text">PR 생성</text>
+
+  <line x1="615" y1="60" x2="615" y2="100" class="gb-arrow"/>
+
+  <rect x="60" y="150" width="150" height="44" rx="8" class="gb-branch"/>
+  <text x="135" y="172" class="gb-text" style="font-weight:700">feature 브랜치</text>
+  <text x="135" y="187" class="gb-sub">작업 내용</text>
+
+  <line x1="210" y1="172" x2="280" y2="150" class="gb-arrow"/>
+  <rect x="280" y="130" width="150" height="44" rx="8" class="gb-branch"/>
+  <text x="355" y="152" class="gb-text" style="font-weight:700">develop 브랜치</text>
+  <text x="355" y="167" class="gb-sub">리뷰 후 머지</text>
+
+  <line x1="430" y1="152" x2="500" y2="220" class="gb-arrow"/>
+  <rect x="500" y="200" width="150" height="44" rx="8" class="gb-main"/>
+  <text x="575" y="222" class="gb-text" style="font-weight:700">main 브랜치</text>
+  <text x="575" y="237" class="gb-sub">배포 기준</text>
+
+  <line x1="615" y1="100" x2="355" y2="130" class="gb-arrow"/>
+</svg>
 
 
 # 3. 내 컴퓨터 코드를 GitHub에 올리기

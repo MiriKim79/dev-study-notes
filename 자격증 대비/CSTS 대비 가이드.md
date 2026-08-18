@@ -86,7 +86,39 @@
             구현(코딩) ─────── 단위 테스트(Unit Test)
 ```
 
-<img src="../assets/images/csts-v-model.png" alt="요구사항 분석부터 구현까지의 각 개발 단계가 인수·시스템·통합·단위 테스트와 대응되는 V-모델 구조도">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="요구사항 분석부터 구현까지의 각 개발 단계가 인수·시스템·통합·단위 테스트와 대응되는 V-모델 구조도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .vm-dev{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .vm-test{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .vm-text{fill:var(--text);font-size:11px;text-anchor:middle}
+    .vm-dash{stroke:var(--text-faint);stroke-width:1;fill:none;stroke-dasharray:3 3}
+  </style>
+
+  <rect x="20" y="20" width="140" height="36" rx="8" class="vm-dev"/>
+  <text x="90" y="43" class="vm-text">요구사항 분석</text>
+  <rect x="540" y="20" width="140" height="36" rx="8" class="vm-test"/>
+  <text x="610" y="43" class="vm-text">인수 테스트</text>
+  <line x1="160" y1="38" x2="540" y2="38" class="vm-dash"/>
+
+  <rect x="90" y="76" width="140" height="36" rx="8" class="vm-dev"/>
+  <text x="160" y="99" class="vm-text">시스템 설계</text>
+  <rect x="470" y="76" width="140" height="36" rx="8" class="vm-test"/>
+  <text x="540" y="99" class="vm-text">시스템 테스트</text>
+  <line x1="230" y1="94" x2="470" y2="94" class="vm-dash"/>
+
+  <rect x="160" y="132" width="140" height="36" rx="8" class="vm-dev"/>
+  <text x="230" y="155" class="vm-text">상세 설계</text>
+  <rect x="400" y="132" width="140" height="36" rx="8" class="vm-test"/>
+  <text x="470" y="155" class="vm-text">통합 테스트</text>
+  <line x1="300" y1="150" x2="400" y2="150" class="vm-dash"/>
+
+  <rect x="230" y="188" width="140" height="36" rx="8" class="vm-dev"/>
+  <text x="300" y="211" class="vm-text">구현(코딩)</text>
+  <rect x="330" y="188" width="140" height="36" rx="8" class="vm-test"/>
+  <text x="400" y="211" class="vm-text">단위 테스트</text>
+
+  <text x="350" y="260" class="vm-text" style="fill:var(--text-secondary);font-size:10px">왼쪽 설계 단계마다 오른쪽에 대응하는 테스트 단계가 정해져 있음</text>
+</svg>
 
 각 개발 단계에서 나온 산출물(요구사항 문서, 설계 문서)이 바로 그 레벨의 테스트 기준이 됩니다. 예를 들어 인수 테스트는 요구사항 문서를 기준으로, 단위 테스트는 코드 자체를 기준으로 통과 여부를 판단합니다.
 
@@ -137,7 +169,41 @@
 - 비정상: 배송완료 → 결제대기로 되돌리기 시도 (허용되면 안 됨 — 이걸 확인하는 게 핵심)
 ```
 
-<img src="../assets/images/csts-state-transition.png" alt="결제대기에서 결제완료, 배송중, 배송완료로 이어지는 정상 전이와 허용되지 않는 역방향 전이를 보여주는 상태 전이도">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="결제대기에서 결제완료, 배송중, 배송완료로 이어지는 정상 전이와 허용되지 않는 역방향 전이를 보여주는 상태 전이도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .st-state{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .st-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .st-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+    .st-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#stArrow)}
+    .st-bad{stroke:#c0392b;stroke-width:1.5;fill:none;stroke-dasharray:4 3;marker-end:url(#stArrowBad)}
+  </style>
+  <defs>
+    <marker id="stArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+    <marker id="stArrowBad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="70" width="130" height="46" rx="8" class="st-state"/>
+  <text x="85" y="98" class="st-text">결제대기</text>
+
+  <line x1="150" y1="93" x2="200" y2="93" class="st-arrow"/>
+  <rect x="200" y="70" width="130" height="46" rx="8" class="st-state"/>
+  <text x="265" y="98" class="st-text">결제완료</text>
+
+  <line x1="330" y1="93" x2="380" y2="93" class="st-arrow"/>
+  <rect x="380" y="70" width="130" height="46" rx="8" class="st-state"/>
+  <text x="445" y="98" class="st-text">배송중</text>
+
+  <line x1="510" y1="93" x2="560" y2="93" class="st-arrow"/>
+  <rect x="560" y="70" width="120" height="46" rx="8" class="st-state"/>
+  <text x="620" y="98" class="st-text">배송완료</text>
+
+  <path d="M620,116 C480,170 220,170 85,116" class="st-bad"/>
+  <text x="350" y="185" class="st-sub">점선(빨강)은 허용되지 않는 역방향 전이 — 테스트에서 반드시 차단되는지 확인</text>
+</svg>
 
 로그인 상태, 주문 상태, 신호등처럼 "지금 상태에 따라 다음에 할 수 있는 행동이 달라지는" 기능에 씁니다. 정상적인 상태 전환뿐 아니라, **일어나면 안 되는 전환을 시도했을 때 실제로 막히는지**까지 확인하는 것이 핵심입니다.
 

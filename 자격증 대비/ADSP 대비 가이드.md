@@ -69,7 +69,25 @@ ADSP는 3과목으로 나뉩니다.
 
 시험에서 자주 나오는 3요소: **분석적 사고(통계·수학)**, **IT 기술(프로그래밍·엔지니어링)**, **비즈니스 이해(도메인 지식)**. 이 세 가지가 겹치는 영역이 데이터 사이언스의 핵심 역량이라는 개념(다이어그램 형태)이 잘 나옵니다.
 
-<img src="../assets/images/adsp-venn-3circle.png" alt="분석적 사고, IT 기술, 비즈니스 이해 세 원이 겹치는 영역이 데이터 사이언스 핵심 역량임을 보여주는 벤 다이어그램">
+<svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="분석적 사고, IT 기술, 비즈니스 이해 세 원이 겹치는 영역이 데이터 사이언스 핵심 역량임을 보여주는 벤 다이어그램" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .v3-a{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5;fill-opacity:0.55}
+    .v3-b{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5;fill-opacity:0.55}
+    .v3-c{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5;fill-opacity:0.7}
+    .v3-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .v3-center{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+  </style>
+
+  <circle cx="200" cy="130" r="100" class="v3-a"/>
+  <circle cx="300" cy="130" r="100" class="v3-b"/>
+  <circle cx="250" cy="220" r="100" class="v3-c"/>
+
+  <text x="140" y="90" class="v3-text">분석적 사고</text>
+  <text x="360" y="90" class="v3-text">IT 기술</text>
+  <text x="250" y="290" class="v3-text">비즈니스 이해</text>
+  <text x="250" y="180" class="v3-center">데이터</text>
+  <text x="250" y="196" class="v3-center">사이언스</text>
+</svg>
 
 ## 빅데이터의 특징 — 3V(+2V)
 
@@ -95,7 +113,30 @@ ADSP는 3과목으로 나뉩니다.
 지혜(Wisdom) — 지식을 바탕으로 한 통찰·판단 (예: "그러니 에어컨을 미리 점검하자")
 ```
 
-<img src="../assets/images/adsp-dikw-pyramid.png" alt="데이터에서 정보, 지식, 지혜 순으로 쌓여 올라가는 DIKW 피라미드">
+<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="데이터에서 정보, 지식, 지혜 순으로 쌓여 올라가는 DIKW 피라미드" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .dk-d{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .dk-i{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .dk-k{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .dk-w{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.5}
+    .dk-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .dk-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <polygon points="250,20 300,80 200,80" class="dk-w"/>
+  <text x="250" y="60" class="dk-text">Wisdom</text>
+
+  <polygon points="200,80 300,80 340,140 160,140" class="dk-k"/>
+  <text x="250" y="115" class="dk-text">Knowledge</text>
+
+  <polygon points="160,140 340,140 380,200 120,200" class="dk-i"/>
+  <text x="250" y="175" class="dk-text">Information</text>
+
+  <polygon points="120,200 380,200 420,260 80,260" class="dk-d"/>
+  <text x="250" y="235" class="dk-text">Data</text>
+
+  <text x="250" y="285" class="dk-sub">가공되지 않은 데이터가 의미를 갖는 정보, 패턴이 되는 지식, 통찰인 지혜로 이어짐</text>
+</svg>
 
 ---
 

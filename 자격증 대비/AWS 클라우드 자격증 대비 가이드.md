@@ -30,7 +30,32 @@
 | VPC (Virtual Private Cloud) | AWS 안에 격리된 나만의 가상 네트워크 공간을 만드는 서비스 |
 | 리전(Region) / 가용 영역(AZ) | 리전은 AWS 데이터센터가 있는 지역(예: 서울), 가용 영역은 그 리전 안의 물리적으로 분리된 데이터센터 단위 |
 
-<img src="../assets/images/aws-region-az.png" alt="하나의 리전 안에 물리적으로 분리된 여러 가용 영역(AZ)이 속해 있는 구조도">
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="하나의 리전 안에 물리적으로 분리된 여러 가용 영역(AZ)이 속해 있는 구조도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .ra-region{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5;stroke-dasharray:6 4}
+    .ra-az{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .ra-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .ra-label{fill:var(--text);font-size:13px;font-weight:700}
+    .ra-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <rect x="30" y="30" width="440" height="180" rx="12" class="ra-region"/>
+  <text x="50" y="55" class="ra-label">Region (예: ap-northeast-2)</text>
+
+  <rect x="60" y="90" width="110" height="90" rx="8" class="ra-az"/>
+  <text x="115" y="130" class="ra-text" style="font-weight:700">AZ-a</text>
+  <text x="115" y="150" class="ra-sub">독립된 데이터센터</text>
+
+  <rect x="195" y="90" width="110" height="90" rx="8" class="ra-az"/>
+  <text x="250" y="130" class="ra-text" style="font-weight:700">AZ-b</text>
+  <text x="250" y="150" class="ra-sub">독립된 데이터센터</text>
+
+  <rect x="330" y="90" width="110" height="90" rx="8" class="ra-az"/>
+  <text x="385" y="130" class="ra-text" style="font-weight:700">AZ-c</text>
+  <text x="385" y="150" class="ra-sub">독립된 데이터센터</text>
+
+  <text x="250" y="235" class="ra-sub">AZ끼리는 물리적으로 분리돼 있어 하나에 장애가 나도 다른 AZ는 영향받지 않음</text>
+</svg>
 | RDS (Relational Database Service) | AWS가 대신 운영·관리해주는 관계형 데이터베이스 서비스 |
 | 종량제(Pay-as-you-go) | 사용한 만큼만 요금을 내는 클라우드의 기본 과금 방식 |
 | Well-Architected Framework | AWS가 제시하는 "잘 설계된 클라우드 시스템"의 기준 프레임워크 |
@@ -80,7 +105,26 @@ AWS의 책임: 클라우드 자체의 보안 (데이터센터, 하드웨어, 네
 사용자의 책임: 클라우드 안에서의 보안 (데이터 암호화, IAM 설정, OS 패치 등)
 ```
 
-<img src="../assets/images/aws-shared-responsibility.png" alt="AWS는 클라우드 자체 인프라 보안을, 사용자는 클라우드 안 데이터·설정 보안을 책임지는 책임 공유 모델 구조도">
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AWS는 클라우드 자체 인프라 보안을, 사용자는 클라우드 안 데이터·설정 보안을 책임지는 책임 공유 모델 구조도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .sr-customer{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .sr-aws{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .sr-text{fill:var(--text);font-size:12px;text-anchor:middle;font-weight:700}
+    .sr-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+  </style>
+
+  <rect x="60" y="20" width="380" height="90" rx="8" class="sr-customer"/>
+  <text x="250" y="42" class="sr-text">고객 책임: Security IN the Cloud</text>
+  <text x="250" y="62" class="sr-sub">데이터 암호화, IAM 권한 설정, OS·앱 패치, 네트워크 방화벽 설정</text>
+  <text x="250" y="80" class="sr-sub">애플리케이션 코드, 계정 관리</text>
+
+  <rect x="60" y="130" width="380" height="90" rx="8" class="sr-aws"/>
+  <text x="250" y="152" class="sr-text">AWS 책임: Security OF the Cloud</text>
+  <text x="250" y="172" class="sr-sub">데이터센터 물리 보안, 하드웨어, 네트워크 인프라</text>
+  <text x="250" y="190" class="sr-sub">가상화 계층, 글로벌 인프라 가용성</text>
+
+  <text x="250" y="245" class="sr-sub">클라우드 자체의 보안은 AWS가, 그 위에 올린 것의 보안은 고객이 책임</text>
+</svg>
 
 **기본 상식**: "클라우드에 올렸으니 AWS가 알아서 보안을 다 챙겨준다"는 흔한 오해입니다. 인프라 자체는 AWS 책임이지만, 그 위에서 무엇을 어떻게 설정하느냐(예: S3 버킷을 실수로 전체 공개로 설정)는 사용자 책임입니다. 시험에서 "이 상황은 누구 책임인가"를 자주 묻습니다.
 

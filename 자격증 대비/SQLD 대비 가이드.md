@@ -374,7 +374,39 @@ emp_id | name  | dept_id      dept_id | dept_name
 | `FULL OUTER JOIN` | 4행 | 양쪽에서 매칭 안 된 행(민수, 인사팀)까지 모두 NULL로 채워 포함 |
 | `CROSS JOIN` | 3×3 = 9행 | 조건 없이 모든 조합(카티션 곱) |
 
-<img src="../assets/images/sqld-join-venn.png" alt="INNER, LEFT, RIGHT, FULL OUTER JOIN이 두 테이블에서 각각 어떤 영역을 결과로 포함하는지 보여주는 벤 다이어그램">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="INNER, LEFT, RIGHT, FULL OUTER, CROSS JOIN이 두 테이블에서 각각 어떤 영역을 결과로 포함하는지 보여주는 벤 다이어그램" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .jv-a{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5;fill-opacity:0.7}
+    .jv-b{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5;fill-opacity:0.7}
+    .jv-full{fill:var(--accent-weak);stroke:var(--accent);stroke-width:1.5}
+    .jv-text{fill:var(--text);font-size:10px;text-anchor:middle;font-weight:700}
+  </style>
+
+  <g>
+    <circle cx="52" cy="90" r="34" class="jv-a"/>
+    <circle cx="80" cy="90" r="34" class="jv-b"/>
+    <text x="66" y="145" class="jv-text">INNER</text>
+  </g>
+  <g>
+    <circle cx="192" cy="90" r="34" class="jv-full"/>
+    <circle cx="220" cy="90" r="34" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+    <text x="206" y="145" class="jv-text">LEFT</text>
+  </g>
+  <g>
+    <circle cx="332" cy="90" r="34" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+    <circle cx="360" cy="90" r="34" class="jv-full"/>
+    <text x="346" y="145" class="jv-text">RIGHT</text>
+  </g>
+  <g>
+    <circle cx="472" cy="90" r="34" class="jv-full"/>
+    <circle cx="500" cy="90" r="34" class="jv-full"/>
+    <text x="486" y="145" class="jv-text">FULL OUTER</text>
+  </g>
+  <g>
+    <rect x="590" y="56" width="90" height="68" rx="6" class="jv-full"/>
+    <text x="635" y="145" class="jv-text">CROSS</text>
+  </g>
+</svg>
 
 **기본 상식**: 조인 결과 행 수를 예측하는 문제는 "조인 조건에 안 걸리는 행이 어느 쪽에 있는지", "그 행을 살릴지 버릴지"를 표로 직접 그려보면 실수가 줄어듭니다. 특히 `NULL`은 어떤 값과도 `=` 비교가 되지 않으므로(민수의 dept_id가 NULL이면 어떤 dept_id와도 매칭되지 않음) INNER JOIN에서 자동으로 빠진다는 점이 자주 출제됩니다.
 
