@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-추측하지-말고-먼저-측정하기">1. 추측하지 말고 먼저 측정하기</a></li><li class="toc-h1"><a href="#2-병목을-찾는-순서">2. 병목을 찾는 순서</a></li><li class="toc-h1"><a href="#3-캐싱-전략">3. 캐싱 전략</a><ul class="toc-h2-list"><li><a href="#캐시-계층">캐시 계층</a></li><li><a href="#캐시-무효화-캐싱에서-가장-어려운-부분">캐시 무효화 — 캐싱에서 가장 어려운 부분</a></li></ul></li><li class="toc-h1"><a href="#4-부하-테스트">4. 부하 테스트</a></li><li class="toc-h1"><a href="#5-수평-확장-vs-수직-확장">5. 수평 확장 vs 수직 확장</a></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-CDN과-엣지-캐싱">8. CDN과 엣지 캐싱</a></li><li class="toc-h1"><a href="#9-대규모-트래픽-급증-대응-Spike-대응">9. 대규모 트래픽 급증 대응(Spike 대응)</a></li><li class="toc-h1"><a href="#10-데이터베이스-커넥션-풀링-심화">10. 데이터베이스 커넥션 풀링 심화</a><ul class="toc-h2-list"><li><a href="#풀-크기를-잘못-잡으면-생기는-문제">풀 크기를 잘못 잡으면 생기는 문제</a></li></ul></li><li class="toc-h1"><a href="#11-비동기-처리와-메시지-큐로-부하-분산">11. 비동기 처리와 메시지 큐로 부하 분산</a></li><li class="toc-h1"><a href="#12-프로파일링-도구-활용">12. 프로파일링 도구 활용</a></li><li class="toc-h1"><a href="#13-용량-계획-Capacity-Planning">13. 용량 계획 (Capacity Planning)</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-추측하지-말고-먼저-측정하기">1. 추측하지 말고 먼저 측정하기</a></li><li class="toc-h1"><a href="#2-병목을-찾는-순서">2. 병목을 찾는 순서</a><ul class="toc-h2-list"><li><a href="#지연시간-Latency-과-처리량-Throughput-은-함께-움직이지-않는다">지연시간(Latency)과 처리량(Throughput)은 함께 움직이지 않는다</a></li></ul></li><li class="toc-h1"><a href="#3-캐싱-전략">3. 캐싱 전략</a><ul class="toc-h2-list"><li><a href="#캐시-계층">캐시 계층</a></li><li><a href="#캐시-무효화-캐싱에서-가장-어려운-부분">캐시 무효화 — 캐싱에서 가장 어려운 부분</a></li></ul></li><li class="toc-h1"><a href="#4-부하-테스트">4. 부하 테스트</a></li><li class="toc-h1"><a href="#5-수평-확장-vs-수직-확장">5. 수평 확장 vs 수직 확장</a><ul class="toc-h2-list"><li><a href="#로드-밸런싱-여러-대로-늘린-요청을-어떻게-나눌-것인가">로드 밸런싱 — 여러 대로 늘린 요청을 어떻게 나눌 것인가</a></li></ul></li><li class="toc-h1"><a href="#6-자주-하는-실수">6. 자주 하는 실수</a></li><li class="toc-h1"><a href="#7-실전-체크리스트">7. 실전 체크리스트</a></li><li class="toc-h1"><a href="#8-CDN과-엣지-캐싱">8. CDN과 엣지 캐싱</a></li><li class="toc-h1"><a href="#9-대규모-트래픽-급증-대응-Spike-대응">9. 대규모 트래픽 급증 대응(Spike 대응)</a></li><li class="toc-h1"><a href="#10-데이터베이스-커넥션-풀링-심화">10. 데이터베이스 커넥션 풀링 심화</a><ul class="toc-h2-list"><li><a href="#풀-크기를-잘못-잡으면-생기는-문제">풀 크기를 잘못 잡으면 생기는 문제</a></li></ul></li><li class="toc-h1"><a href="#11-비동기-처리와-메시지-큐로-부하-분산">11. 비동기 처리와 메시지 큐로 부하 분산</a></li><li class="toc-h1"><a href="#12-프로파일링-도구-활용">12. 프로파일링 도구 활용</a></li><li class="toc-h1"><a href="#13-용량-계획-Capacity-Planning">13. 용량 계획 (Capacity Planning)</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -55,7 +55,7 @@
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
 <p>중급 가이드에서 다룬 캐싱·수평 확장 기초 개념은 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>APM (Application Performance Monitoring)</td><td>요청마다 걸린 시간과 느린 지점을 자동으로 추적해주는 모니터링 도구</td></tr><tr><td>분산 트레이싱(Distributed Tracing)</td><td>요청 하나가 여러 서비스를 거칠 때, 각 구간에서 얼마나 시간이 걸렸는지 추적하는 것</td></tr><tr><td>p95 / p99</td><td>전체 요청 중 가장 느린 5%(p95), 1%(p99)가 얼마나 걸렸는지 나타내는 지표. 평균보다 실제 체감에 가까움</td></tr><tr><td>CDN (Content Delivery Network)</td><td>이미지·JS/CSS 같은 정적 파일을 사용자와 가까운 서버에 미리 복사해뒀다 빠르게 전달하는 서비스</td></tr><tr><td>TTL (Time To Live)</td><td>캐시가 자동으로 사라지기까지의 유효 시간</td></tr><tr><td>부하 테스트(Load Test)</td><td>실제 트래픽이 오기 전에, 얼마나 많은 요청까지 버틸 수 있는지 미리 확인하는 테스트</td></tr><tr><td>수직 확장(Scale Up)</td><td>서버 한 대의 사양(CPU·메모리)을 늘리는 방식</td></tr><tr><td>수평 확장(Scale Out)</td><td>서버 사양은 그대로 두고 대수를 늘리는 방식</td></tr><tr><td>무상태(Stateless)</td><td>서버가 사용자 상태를 자기 메모리에 담아두지 않는 설계. 여러 서버로 나눠도 문제없이 동작함</td></tr><tr><td>오토스케일링(Autoscaling)</td><td>트래픽에 따라 서버 대수를 자동으로 늘리고 줄이는 기능</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>APM (Application Performance Monitoring)</td><td>요청마다 걸린 시간과 느린 지점을 자동으로 추적해주는 모니터링 도구</td></tr><tr><td>분산 트레이싱(Distributed Tracing)</td><td>요청 하나가 여러 서비스를 거칠 때, 각 구간에서 얼마나 시간이 걸렸는지 추적하는 것</td></tr><tr><td>지연시간(Latency)</td><td>요청 하나를 보내고 응답을 받기까지 걸리는 시간</td></tr><tr><td>처리량(Throughput)</td><td>서버가 단위 시간당 처리할 수 있는 요청 수(예: 초당 요청 수, RPS)</td></tr><tr><td>p95 / p99</td><td>전체 요청 중 가장 느린 5%(p95), 1%(p99)가 얼마나 걸렸는지 나타내는 지표. 평균보다 실제 체감에 가까움</td></tr><tr><td>CDN (Content Delivery Network)</td><td>이미지·JS/CSS 같은 정적 파일을 사용자와 가까운 서버에 미리 복사해뒀다 빠르게 전달하는 서비스</td></tr><tr><td>TTL (Time To Live)</td><td>캐시가 자동으로 사라지기까지의 유효 시간</td></tr><tr><td>부하 테스트(Load Test)</td><td>실제 트래픽이 오기 전에, 얼마나 많은 요청까지 버틸 수 있는지 미리 확인하는 테스트</td></tr><tr><td>수직 확장(Scale Up)</td><td>서버 한 대의 사양(CPU·메모리)을 늘리는 방식</td></tr><tr><td>수평 확장(Scale Out)</td><td>서버 사양은 그대로 두고 대수를 늘리는 방식</td></tr><tr><td>무상태(Stateless)</td><td>서버가 사용자 상태를 자기 메모리에 담아두지 않는 설계. 여러 서버로 나눠도 문제없이 동작함</td></tr><tr><td>오토스케일링(Autoscaling)</td><td>트래픽에 따라 서버 대수를 자동으로 늘리고 줄이는 기능</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="1-추측하지-말고-먼저-측정하기">1. 추측하지 말고 먼저 측정하기<a class="heading-anchor" href="#1-추측하지-말고-먼저-측정하기" aria-label="이 섹션 링크">#</a></h2>
 <p>"느린 것 같다"는 느낌으로 아무 데나 최적화하면 시간만 쓰고 정작 진짜 병목은 그대로 남습니다.</p>
@@ -69,6 +69,16 @@
 3. 그 구간을 개선
 4. 다시 측정해서 실제로 나아졌는지 확인</code></pre></div>
 <p><strong>기본 상식</strong>: 평균 응답 시간만 보면 소수의 매우 느린 요청이 가려집니다. 사용자가 실제로 "느리다"고 느끼는 건 평균이 아니라 느린 쪽 꼬리(p95, p99)입니다. 평균이 200ms여도 p99가 5초면 100명 중 1명은 5초를 기다리고 있다는 뜻입니다.</p>
+<h3 class="section-h2" id="지연시간-Latency-과-처리량-Throughput-은-함께-움직이지-않는다">지연시간(Latency)과 처리량(Throughput)은 함께 움직이지 않는다<a class="heading-anchor" href="#지연시간-Latency-과-처리량-Throughput-은-함께-움직이지-않는다" aria-label="이 섹션 링크">#</a></h3>
+<p>지연시간은 "요청 하나가 얼마나 빨리 끝나는가", 처리량은 "단위 시간당 얼마나 많은 요청을 처리하는가"입니다. 둘은 관련은 있지만 같은 방향으로만 움직이지 않습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>예: 여러 건의 쓰기를 모았다가 한 번에 처리하는 배치(batching)
+→ 처리량은 올라감(서버 전체가 처리하는 총 요청 수 증가)
+→ 하지만 개별 요청은 배치가 찰 때까지 기다려야 하므로 지연시간은 늘어남
+
+예: 서버 대수를 늘려 병렬로 처리(수평 확장)
+→ 처리량은 올라감
+→ 개별 요청의 지연시간 자체는 크게 안 줄어들 수 있음(각 요청은 여전히 같은 시간이 걸림)</code></pre></div>
+<p><strong>기본 상식</strong>: "처리량이 늘었으니 성능이 좋아졌다"고 바로 결론 내리면 안 됩니다. 어떤 지표를 개선하려는 것인지(사용자가 느끼는 응답 속도 vs 서버가 감당하는 총 트래픽)를 먼저 정하고, 그에 맞는 지표(지연시간의 p95/p99 vs 초당 처리 요청 수)로 측정해야 합니다.</p>
 <hr>
 <h2 class="section-h1" id="3-캐싱-전략">3. 캐싱 전략<a class="heading-anchor" href="#3-캐싱-전략" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="캐시-계층">캐시 계층<a class="heading-anchor" href="#캐시-계층" aria-label="이 섹션 링크">#</a></h3>
@@ -130,6 +140,10 @@ k6 run --vus 100 --duration 5m load-test.js</code></pre></div>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>안 되는 예: 서버 A에 로그인한 세션이 서버 A 메모리에만 있음 → 다음 요청이 서버 B로 가면 로그인 풀림
 되는 예: 세션을 Redis에 저장 → 어느 서버로 요청이 가도 같은 세션을 조회 가능</code></pre></div>
 <p><strong>기본 상식</strong>: 서버를 무상태로 만들어두면, 트래픽이 늘 때 서버 대수만 늘리면 되고(오토스케일링과도 궁합이 좋음) 서버 하나가 죽어도 서비스가 끊기지 않습니다.</p>
+<h3 class="section-h2" id="로드-밸런싱-여러-대로-늘린-요청을-어떻게-나눌-것인가">로드 밸런싱 — 여러 대로 늘린 요청을 어떻게 나눌 것인가<a class="heading-anchor" href="#로드-밸런싱-여러-대로-늘린-요청을-어떻게-나눌-것인가" aria-label="이 섹션 링크">#</a></h3>
+<p>수평 확장으로 서버를 여러 대 두면, 사용자 요청을 어느 서버로 보낼지 정해주는 로드 밸런서가 반드시 필요합니다. 서버만 늘리고 앞단 분배가 없으면 특정 서버에 요청이 몰리는 문제가 그대로 남습니다.</p>
+<div class="table-scroll"><table><thead><tr><th>알고리즘</th><th>방식</th><th>특징</th></tr></thead><tbody><tr><td>라운드 로빈(Round Robin)</td><td>요청을 순서대로 돌아가며 배분</td><td>구현이 간단하지만 서버별 부하 차이(느린 요청을 맡은 서버)는 반영 못 함</td></tr><tr><td>최소 연결(Least Connections)</td><td>현재 처리 중인 연결이 가장 적은 서버로 보냄</td><td>서버별 부하 차이를 반영해 더 균등하지만, 연결 수 집계 비용이 붙음</td></tr><tr><td>IP 해시(IP Hash)</td><td>사용자 IP를 해싱해 항상 같은 서버로 보냄</td><td>세션 고정(sticky session)이 필요할 때 유용하지만, 특정 IP 대역이 몰리면 균등하게 안 나뉠 수 있음</td></tr></tbody></table></div>
+<p><strong>기본 상식</strong>: 서버를 무상태로 설계했다면 굳이 IP 해시 같은 세션 고정 방식을 쓸 필요가 없습니다(어느 서버로 가도 동일하게 동작하므로 라운드 로빈이나 최소 연결로 충분). 세션 고정이 필요하다는 것 자체가 "아직 완전한 무상태가 아니다"라는 신호일 수 있습니다.</p>
 <hr>
 <h2 class="section-h1" id="6-자주-하는-실수">6. 자주 하는 실수<a class="heading-anchor" href="#6-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>측정 없이 "느낌"으로 최적화 대상을 정함</li><li>평균 응답 시간만 보고 p95/p99의 심각한 지연을 놓침</li><li>절대 틀리면 안 되는 데이터(가격, 재고)까지 긴 TTL로 캐싱해서 정합성 문제 발생</li><li>부하 테스트를 실제 사용 패턴과 다른 단순 반복 요청으로만 진행</li><li>세션·업로드 파일 등을 서버 로컬에 저장해서 수평 확장이 막힘</li></ul>

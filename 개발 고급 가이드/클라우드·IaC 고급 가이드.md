@@ -350,7 +350,9 @@ resource "aws_db_instance" "main" {
 | --- | --- | --- |
 | 수평적 확장(HPA) | CPU/메모리 사용률, 커스텀 지표 | 사용률 70% 초과 시 Pod 2개 → 5개 |
 | 수직적 확장(VPA) | 컨테이너 하나의 리소스 할당량 자체를 조정 | 메모리 부족이 반복되면 할당량 자동 증가 |
-| 클러스터 오토스케일러 | Pod를 못 띄울 만큼 노드가 부족하면 노드 자체를 추가 | 트래픽 급증 시 서버 대수 자동 증설 |
+| 클러스터 오토스케일러(Cluster Autoscaler) | Pod를 못 띄울 만큼 노드가 부족하면 노드 자체를 추가 | 트래픽 급증 시 서버 대수 자동 증설 |
+
+**주의**: HPA는 쿠버네티스 코어에 내장돼 있지만, VPA와 클러스터 오토스케일러는 [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler) 프로젝트가 제공하는 별도 애드온으로, 클러스터에 직접 설치해야 사용할 수 있습니다.
 
 ```yaml
 apiVersion: autoscaling/v2

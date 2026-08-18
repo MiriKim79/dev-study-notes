@@ -256,7 +256,8 @@ resource &quot;aws_db_instance&quot; &quot;main&quot; {
 }</code></pre></div>
 <p><strong>기본 상식</strong>: 시크릿 값 자체는 코드 저장소가 아니라 AWS Secrets Manager, HashiCorp Vault 같은 전용 서비스에 두고, 코드에는 "어디서 가져올지"만 선언합니다. <code class="inline-code">.tfstate</code> 파일에도 값이 평문으로 남을 수 있으므로 State 파일 접근 권한도 함께 관리합니다.</p>
 <h3 class="section-h2" id="오토스케일링-Autoscaling">오토스케일링(Autoscaling)<a class="heading-anchor" href="#오토스케일링-Autoscaling" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>방식</th><th>기준</th><th>예시</th></tr></thead><tbody><tr><td>수평적 확장(HPA)</td><td>CPU/메모리 사용률, 커스텀 지표</td><td>사용률 70% 초과 시 Pod 2개 → 5개</td></tr><tr><td>수직적 확장(VPA)</td><td>컨테이너 하나의 리소스 할당량 자체를 조정</td><td>메모리 부족이 반복되면 할당량 자동 증가</td></tr><tr><td>클러스터 오토스케일러</td><td>Pod를 못 띄울 만큼 노드가 부족하면 노드 자체를 추가</td><td>트래픽 급증 시 서버 대수 자동 증설</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>방식</th><th>기준</th><th>예시</th></tr></thead><tbody><tr><td>수평적 확장(HPA)</td><td>CPU/메모리 사용률, 커스텀 지표</td><td>사용률 70% 초과 시 Pod 2개 → 5개</td></tr><tr><td>수직적 확장(VPA)</td><td>컨테이너 하나의 리소스 할당량 자체를 조정</td><td>메모리 부족이 반복되면 할당량 자동 증가</td></tr><tr><td>클러스터 오토스케일러(Cluster Autoscaler)</td><td>Pod를 못 띄울 만큼 노드가 부족하면 노드 자체를 추가</td><td>트래픽 급증 시 서버 대수 자동 증설</td></tr></tbody></table></div>
+<p><strong>주의</strong>: HPA는 쿠버네티스 코어에 내장돼 있지만, VPA와 클러스터 오토스케일러는 <a href="https://github.com/kubernetes/autoscaler" target="_blank" rel="noopener">kubernetes/autoscaler</a> 프로젝트가 제공하는 별도 애드온으로, 클러스터에 직접 설치해야 사용할 수 있습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">yaml</span><button class="copy-btn" type="button">복사</button></div><pre><code>apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 spec:
