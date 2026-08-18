@@ -77,6 +77,7 @@
     "타입스크립트": ["typescript", "ts"],
     "자바스크립트": ["javascript", "js"],
     "리액트": ["react"],
+    "깃": ["git"],
     "깃허브": ["github"],
     "cicd": ["ci/cd", "ci-cd", "ci·cd", "continuous integration", "continuous deployment", "자동배포", "자동 배포"]
   };
