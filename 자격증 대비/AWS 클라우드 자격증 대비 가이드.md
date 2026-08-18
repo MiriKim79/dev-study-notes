@@ -29,6 +29,8 @@
 | IAM (Identity and Access Management) | AWS 리소스에 "누가 무엇을 할 수 있는지" 관리하는 서비스 |
 | VPC (Virtual Private Cloud) | AWS 안에 격리된 나만의 가상 네트워크 공간을 만드는 서비스 |
 | 리전(Region) / 가용 영역(AZ) | 리전은 AWS 데이터센터가 있는 지역(예: 서울), 가용 영역은 그 리전 안의 물리적으로 분리된 데이터센터 단위 |
+
+<img src="../assets/images/aws-region-az.png" alt="하나의 리전 안에 물리적으로 분리된 여러 가용 영역(AZ)이 속해 있는 구조도">
 | RDS (Relational Database Service) | AWS가 대신 운영·관리해주는 관계형 데이터베이스 서비스 |
 | 종량제(Pay-as-you-go) | 사용한 만큼만 요금을 내는 클라우드의 기본 과금 방식 |
 | Well-Architected Framework | AWS가 제시하는 "잘 설계된 클라우드 시스템"의 기준 프레임워크 |
@@ -77,6 +79,8 @@ AWS 자격증은 단계별로 나뉩니다. 처음이라면 Cloud Practitioner�
 AWS의 책임: 클라우드 자체의 보안 (데이터센터, 하드웨어, 네트워크 인프라)
 사용자의 책임: 클라우드 안에서의 보안 (데이터 암호화, IAM 설정, OS 패치 등)
 ```
+
+<img src="../assets/images/aws-shared-responsibility.png" alt="AWS는 클라우드 자체 인프라 보안을, 사용자는 클라우드 안 데이터·설정 보안을 책임지는 책임 공유 모델 구조도">
 
 **기본 상식**: "클라우드에 올렸으니 AWS가 알아서 보안을 다 챙겨준다"는 흔한 오해입니다. 인프라 자체는 AWS 책임이지만, 그 위에서 무엇을 어떻게 설정하느냐(예: S3 버킷을 실수로 전체 공개로 설정)는 사용자 책임입니다. 시험에서 "이 상황은 누구 책임인가"를 자주 묻습니다.
 

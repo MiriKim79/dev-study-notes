@@ -374,6 +374,8 @@ emp_id | name  | dept_id      dept_id | dept_name
 | `FULL OUTER JOIN` | 4행 | 양쪽에서 매칭 안 된 행(민수, 인사팀)까지 모두 NULL로 채워 포함 |
 | `CROSS JOIN` | 3×3 = 9행 | 조건 없이 모든 조합(카티션 곱) |
 
+<img src="../assets/images/sqld-join-venn.png" alt="INNER, LEFT, RIGHT, FULL OUTER JOIN이 두 테이블에서 각각 어떤 영역을 결과로 포함하는지 보여주는 벤 다이어그램">
+
 **기본 상식**: 조인 결과 행 수를 예측하는 문제는 "조인 조건에 안 걸리는 행이 어느 쪽에 있는지", "그 행을 살릴지 버릴지"를 표로 직접 그려보면 실수가 줄어듭니다. 특히 `NULL`은 어떤 값과도 `=` 비교가 되지 않으므로(민수의 dept_id가 NULL이면 어떤 dept_id와도 매칭되지 않음) INNER JOIN에서 자동으로 빠진다는 점이 자주 출제됩니다.
 
 ## 트랜잭션 격리수준(Isolation Level)

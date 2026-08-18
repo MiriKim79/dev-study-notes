@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>프론트엔드 기초 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=52125a0278">
+<link rel="stylesheet" href="../assets/style.css?v=a01ca606d2">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="프론트엔드 기초 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="프론트엔드 기초 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="HTML·CSS·JavaScript부터 React 같은 프레임워크, API 통신, 상태 관리, 인증, 배포까지 기술이 바뀌어도 공통으로 적용되는 기초를 이해하는 가이드">
-<script src="../assets/search-index.js?v=52125a0278" defer></script>
+<script src="../assets/search-index.js?v=a01ca606d2" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -280,6 +280,7 @@ button.addEventListener(&quot;click&quot;, () =&gt; {
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>http://localhost:5173   ← 프론트
 http://localhost:5000   ← 백엔드</code></pre></div>
 <p>포트가 다르므로 서로 다른 origin입니다. 이때 백엔드가 허용 응답 헤더를 보내지 않으면 브라우저에서 CORS 오류가 날 수 있습니다.</p>
+<div class="doc-img-wrap"><img src="../assets/images/cors-diagram.png" alt="서로 다른 origin 간 요청을 브라우저가 차단하고, 서버가 CORS 허용 헤더를 보내야 통과되는 구조도"></div>
 <p>중요한 점:</p>
 <ul><li>CORS는 “프론트 코드가 틀렸다”는 뜻이 아닐 수 있습니다.</li><li>브라우저가 적용하는 보안 정책이므로 Postman에서는 되고 브라우저에서는 막힐 수도 있습니다.</li><li>허용 origin은 가능하면 필요한 주소만 지정합니다.</li><li>쿠키 기반 인증을 쓸 때는 프론트의 <code class="inline-code">credentials</code> 설정과 서버의 자격 증명 허용 설정을 함께 맞춰야 합니다.</li></ul>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">js</span><button class="copy-btn" type="button">복사</button></div><pre><code>fetch(&quot;https:<span class="tok-comment">//api.example.com/me&quot;, {</span>
@@ -320,6 +321,7 @@ http://localhost:5000   ← 백엔드</code></pre></div>
 화면이 &quot;AB&quot; 결과를 보여줌
 → 뒤늦게 &quot;A&quot; 응답이 도착
 → 오래된 결과로 화면이 되돌아갈 수 있음</code></pre></div>
+<div class="doc-img-wrap"><img src="../assets/images/race-condition-timeline.png" alt="A 검색 요청보다 늦게 보낸 AB 검색 요청이 먼저 도착해 화면이 오래된 결과로 되돌아가는 요청 경합 타임라인"></div>
 <p>해결 방법:</p>
 <ul><li>요청마다 최신 요청 ID를 비교</li><li>이전 요청을 <code class="inline-code">AbortController</code>로 취소</li><li>React Query/TanStack Query 같은 서버 상태 도구의 기능 활용</li></ul>
 <p>모든 화면에 필요한 개념은 아니지만, <strong>검색·자동완성·빠른 페이지 이동</strong>에서 문제가 생기면 이 상황을 의심합니다.</p>
@@ -823,6 +825,6 @@ CORS 오류는 왜 생길 수 있는가?
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=52125a0278" defer></script>
+<script src="../assets/main.js?v=a01ca606d2" defer></script>
 </body>
 </html>

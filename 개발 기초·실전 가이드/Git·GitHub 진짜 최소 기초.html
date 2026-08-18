@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git·GitHub 진짜 최소 기초 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=52125a0278">
+<link rel="stylesheet" href="../assets/style.css?v=a01ca606d2">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="Git·GitHub 진짜 최소 기초 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git·GitHub 진짜 최소 기초 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="팀 프로젝트에 바로 투입돼도 되는 딱 그만큼만 — branch, commit, push, PR, merge, pull이 각각 뭘 하는 건지 5분 안에 감 잡기">
-<script src="../assets/search-index.js?v=52125a0278" defer></script>
+<script src="../assets/search-index.js?v=a01ca606d2" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -62,6 +62,7 @@
 <h2 class="section-h1" id="2-전체-흐름-한-장으로-보기">2. 전체 흐름 한 장으로 보기<a class="heading-anchor" href="#2-전체-흐름-한-장으로-보기" aria-label="이 섹션 링크">#</a></h2>
 <ol><li>README와 issue(내가 만들어야 할 기능)를 확인한다</li><li>내 <code class="inline-code">feature</code> branch를 만들어서 기능을 만든다 (코드 작성)</li><li>다 됐으면 <code class="inline-code">develop</code>에 올린다 — <code class="inline-code">add</code> → <code class="inline-code">commit</code> → <code class="inline-code">push</code></li><li>GitHub에 "이 코드 좀 봐주세요"라는 설명서를 올린다 — <strong>PR(Pull Request)</strong></li><li>팀원이 오류 없는지 확인하면 <code class="inline-code">main</code>(또는 <code class="inline-code">develop</code>) 코드와 합쳐진다 — <strong>merge</strong></li><li>팀원들도 지금까지 쌓인 최신 코드를 자기 컴퓨터로 받아온다 — <strong>pull</strong></li></ol>
 <p>이 여섯 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.</p>
+<div class="doc-img-wrap"><img src="../assets/images/git-branch-basics.png" alt="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도"></div>
 <h2 class="section-h1" id="3-내-컴퓨터-코드를-GitHub에-올리기">3. 내 컴퓨터 코드를 GitHub에 올리기<a class="heading-anchor" href="#3-내-컴퓨터-코드를-GitHub에-올리기" aria-label="이 섹션 링크">#</a></h2>
 <p><code class="inline-code">add</code> → <code class="inline-code">commit</code> → <code class="inline-code">push</code>, 이 세 단계가 "내 컴퓨터에 있는 코드를 GitHub로 옮기는 것"입니다. 이 과정에서 보통 새 branch도 함께 만들어집니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> add .
@@ -122,6 +123,6 @@ cat memo.txt</code></pre></div>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=52125a0278" defer></script>
+<script src="../assets/main.js?v=a01ca606d2" defer></script>
 </body>
 </html>

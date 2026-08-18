@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SQLD 대비 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=52125a0278">
+<link rel="stylesheet" href="../assets/style.css?v=a01ca606d2">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="SQLD 대비 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLD 대비 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="한국데이터산업진흥원이 주관하는 SQLD(SQL 개발자) 시험 범위를 정리하고, 실무 SQL 지식을 시험에 나오는 형태로 다시 정리합니다">
-<script src="../assets/search-index.js?v=52125a0278" defer></script>
+<script src="../assets/search-index.js?v=a01ca606d2" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -231,6 +231,7 @@ emp_id | name  | dept_id      dept_id | dept_name
 2      | 영희  | 20           20      | 영업팀
 3      | 민수  | NULL         30      | 인사팀</code></pre></div>
 <div class="table-scroll"><table><thead><tr><th>조인</th><th>결과 행 수</th><th>이유</th></tr></thead><tbody><tr><td><code class="inline-code">INNER JOIN</code> (emp.dept_id = dept.dept_id)</td><td>2행</td><td>민수(dept_id=NULL)는 매칭 안 됨, 인사팀(30)은 emp에 없어서 제외</td></tr><tr><td><code class="inline-code">LEFT OUTER JOIN</code> (emp 기준)</td><td>3행</td><td>emp 전부 유지, 민수는 dept 쪽이 NULL로 채워짐</td></tr><tr><td><code class="inline-code">RIGHT OUTER JOIN</code> (dept 기준)</td><td>3행</td><td>dept 전부 유지, 인사팀(30)은 emp 쪽이 NULL로 채워짐</td></tr><tr><td><code class="inline-code">FULL OUTER JOIN</code></td><td>4행</td><td>양쪽에서 매칭 안 된 행(민수, 인사팀)까지 모두 NULL로 채워 포함</td></tr><tr><td><code class="inline-code">CROSS JOIN</code></td><td>3×3 = 9행</td><td>조건 없이 모든 조합(카티션 곱)</td></tr></tbody></table></div>
+<div class="doc-img-wrap"><img src="../assets/images/sqld-join-venn.png" alt="INNER, LEFT, RIGHT, FULL OUTER JOIN이 두 테이블에서 각각 어떤 영역을 결과로 포함하는지 보여주는 벤 다이어그램"></div>
 <p><strong>기본 상식</strong>: 조인 결과 행 수를 예측하는 문제는 "조인 조건에 안 걸리는 행이 어느 쪽에 있는지", "그 행을 살릴지 버릴지"를 표로 직접 그려보면 실수가 줄어듭니다. 특히 <code class="inline-code">NULL</code>은 어떤 값과도 <code class="inline-code">=</code> 비교가 되지 않으므로(민수의 dept_id가 NULL이면 어떤 dept_id와도 매칭되지 않음) INNER JOIN에서 자동으로 빠진다는 점이 자주 출제됩니다.</p>
 <h3 class="section-h2" id="트랜잭션-격리수준-Isolation-Level">트랜잭션 격리수준(Isolation Level)<a class="heading-anchor" href="#트랜잭션-격리수준-Isolation-Level" aria-label="이 섹션 링크">#</a></h3>
 <p>여러 트랜잭션이 동시에 실행될 때 서로 얼마나 영향을 주고받을지 정하는 수준입니다. ACID의 I(Isolation, 고립성)와 직결됩니다.</p>
@@ -443,6 +444,6 @@ COMMIT;                                  -- 첫 번째 UPDATE만 최종 반영</
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=52125a0278" defer></script>
+<script src="../assets/main.js?v=a01ca606d2" defer></script>
 </body>
 </html>

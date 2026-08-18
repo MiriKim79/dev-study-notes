@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>성능·스케일 고급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=52125a0278">
+<link rel="stylesheet" href="../assets/style.css?v=a01ca606d2">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="성능·스케일 고급 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="성능·스케일 고급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="병목을 찾는 방법, 캐싱 전략, 부하 테스트, 수평·수직 확장의 판단 기준을 정리합니다">
-<script src="../assets/search-index.js?v=52125a0278" defer></script>
+<script src="../assets/search-index.js?v=a01ca606d2" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -76,6 +76,7 @@
 → CDN 캐시 (이미지, JS/CSS, 자주 안 바뀌는 API 응답)
 → 애플리케이션 캐시 (Redis 등 — 자주 조회되는 DB 결과)
 → DB 자체 캐시</code></pre></div>
+<div class="doc-img-wrap"><img src="../assets/images/cache-layers.png" alt="브라우저 캐시부터 CDN, 애플리케이션 캐시, DB 캐시까지 이어지는 캐시 계층 구조도"></div>
 <p>요청이 앞 단계에서 처리될수록 서버·DB 부하가 줄어듭니다.</p>
 <h3 class="section-h2" id="캐시-무효화-캐싱에서-가장-어려운-부분">캐시 무효화 — 캐싱에서 가장 어려운 부분<a class="heading-anchor" href="#캐시-무효화-캐싱에서-가장-어려운-부분" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>문제: 강의 가격을 수정했는데 캐시된 예전 가격이 계속 보임</code></pre></div>
@@ -198,6 +199,6 @@ cProfile.run(&quot;process_large_report()&quot;)
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=52125a0278" defer></script>
+<script src="../assets/main.js?v=a01ca606d2" defer></script>
 </body>
 </html>

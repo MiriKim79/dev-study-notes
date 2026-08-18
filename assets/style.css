@@ -140,6 +140,21 @@ body {
   transition: background-color .15s ease, color .15s ease;
 }
 img { max-width: 100%; }
+.doc-img-wrap {
+  margin: 20px 0;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 14px);
+  text-align: center;
+}
+.doc-img-wrap img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+}
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 ::selection { background: var(--accent-weak); }

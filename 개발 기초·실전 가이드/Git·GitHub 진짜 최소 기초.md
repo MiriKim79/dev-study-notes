@@ -30,6 +30,9 @@ Git을 처음 배울 때 가장 흔한 실수는 명령어부터 외우려고 �
 
 이 여섯 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.
 
+<img src="../assets/images/git-branch-basics.png" alt="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도">
+
+
 # 3. 내 컴퓨터 코드를 GitHub에 올리기
 
 `add` → `commit` → `push`, 이 세 단계가 "내 컴퓨터에 있는 코드를 GitHub로 옮기는 것"입니다. 이 과정에서 보통 새 branch도 함께 만들어집니다.

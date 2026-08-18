@@ -600,6 +600,9 @@ SVG_OPEN_RE = re.compile(r"^<svg[ >]", re.IGNORECASE)
 SVG_OPEN_EXACT_RE = re.compile(r"^<svg\b", re.IGNORECASE)
 SVG_CLOSE_RE = re.compile(r"^</svg\s*>$", re.IGNORECASE)
 
+# 단일 라인 <img ...> 원문 HTML 패스스루(자체 닫힘 태그이므로 open/close 쌍이 아니라 한 줄 자체로 완결)
+IMG_LINE_RE = re.compile(r"^<img[ >].*>$", re.IGNORECASE)
+
 
 def parse_raw_html_block(lines, i, end, open_exact_re=DETAILS_OPEN_EXACT_RE, close_re=DETAILS_CLOSE_RE):
     """<details>...</details> 또는 <svg>...</svg> 원문 HTML을 그대로 통과시킨다(중첩 지원).
@@ -662,6 +665,8 @@ def parse_paragraph(lines, i, end):
         if DETAILS_OPEN_RE.match(line.strip()) or DETAILS_OPEN_EXACT_RE.match(line.strip()):
             break
         if SVG_OPEN_RE.match(line.strip()) or SVG_OPEN_EXACT_RE.match(line.strip()):
+            break
+        if IMG_LINE_RE.match(line.strip()):
             break
         if is_table_start(lines, i, end):
             break
@@ -766,6 +771,10 @@ def parse_blocks(lines, i, end):
         if SVG_OPEN_EXACT_RE.match(line.strip()):
             b, i = parse_raw_html_block(lines, i, end, open_exact_re=SVG_OPEN_EXACT_RE, close_re=SVG_CLOSE_RE)
             blocks.append(b)
+            continue
+        if IMG_LINE_RE.match(line.strip()):
+            blocks.append({"type": "raw_html", "html": '<div class="doc-img-wrap">%s</div>' % line.strip()})
+            i += 1
             continue
         if is_table_start(lines, i, end):
             b, i = parse_table(lines, i, end)

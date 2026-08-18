@@ -213,6 +213,8 @@ Primary Region(서울) 장애 시
 | Warm Standby(축소된 형태로 상시 운영) | 짧다 | 높음 |
 | Active-Active(두 리전 모두 상시 운영) | 거의 없음 | 가장 비쌈 |
 
+<img src="../assets/images/disaster-recovery-spectrum.png" alt="Backup & Restore부터 Active-Active까지 RTO와 비용이 함께 늘어나는 재해 복구 전략 스펙트럼">
+
 **기본 상식**: 모든 서비스가 Active-Active 수준의 재해 복구를 갖출 필요는 없습니다. 서비스 중단이 실제로 얼마나 큰 손해로 이어지는지(RTO/RPO 요구사항)를 먼저 정하고, 그에 맞는 비용 수준의 전략을 선택합니다. 스타트업 초기 단계에서는 정기 백업만으로 충분한 경우가 많습니다.
 
 ---
