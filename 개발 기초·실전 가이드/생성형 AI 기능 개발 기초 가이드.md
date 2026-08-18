@@ -900,7 +900,7 @@ AI 챗봇 만들기
 
 백엔드 코드를 짜기 전에, 먼저 터미널에서 API 자체를 호출해봅니다. 요청/응답 형태를 눈으로 직접 봐야 다음 단계(백엔드 연결)에서 무엇을 검증해야 하는지 감이 잡히기 때문입니다.
 
-Anthropic API 키가 있다면:
+Anthropic API 키가 있다면 (아래는 **Anthropic API의 예시**이며, `model` 값은 시점마다 바뀌므로 실행 전 [공식 모델 목록](https://platform.claude.com/docs/en/about-claude/models/overview)에서 현재 지원되는 모델 이름을 확인하세요. 모델은 출시 후 일정 기간이 지나면 지원 종료(deprecated)되며, 구버전 모델 이름을 그대로 코드에 박아두면 어느 날 갑자기 호출이 실패할 수 있습니다):
 
 ```bash
 curl https://api.anthropic.com/v1/messages \
@@ -908,7 +908,7 @@ curl https://api.anthropic.com/v1/messages \
   -H "anthropic-version: 2023-06-01" \
   -H "content-type: application/json" \
   -d '{
-    "model": "claude-3-5-haiku-20241022",
+    "model": "claude-haiku-4-5",
     "max_tokens": 200,
     "messages": [
       {"role": "user", "content": "다음 강의 설명을 한국어 2문장으로 요약하고 난이도를 beginner/intermediate/advanced 중 하나로 알려줘: React 입문 강의, 컴포넌트와 상태 기초를 다룹니다."}

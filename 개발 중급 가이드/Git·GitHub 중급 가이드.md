@@ -15,11 +15,11 @@
 | Bisect | "언제부터 버그가 생겼는지"를 이진 탐색으로 찾는 Git 기능 |
 | Reflog | 로컬 저장소에만 남는 모든 이동 기록. 실수로 커밋을 잃어버렸을 때 복구용 안전망 |
 | Worktree | 같은 저장소를 여러 폴더에 동시에 펼쳐서, 브랜치를 전환하지 않고도 여러 작업을 동시에 하는 기능 |
-| Git LFS (Large File Storage) | 이미지·영상 같은 큰 파일을 Git 저장소 용량을 늘리지 않고 관리하는 확장 기능 |
+| Git LFS (Large File Storage) | 이미지·영상 같은 큰 파일의 실제 내용은 별도 저장소에 두고, Git 저장소에는 작은 포인터 파일만 남기는 확장 기능. Git 저장소 자체의 커밋 이력 용량이 커지는 것을 막아주지만, 대용량 파일 자체가 사라지는 것은 아니다 |
 | CI (Continuous Integration) | 코드를 올릴 때마다 테스트를 자동으로 돌려서 문제를 빨리 발견하는 방식 |
 | GitHub Actions | GitHub에서 제공하는 자동화 도구. push·PR 같은 이벤트가 생기면 정해둔 작업(테스트, 빌드 등)을 자동 실행 |
 | 워크플로우(Workflow) | GitHub Actions에서 "언제, 무엇을 실행할지"를 정의한 설정 파일 전체 |
-| CODEOWNERS | 저장소의 특정 폴더·파일은 특정 사람의 승인이 항상 필요하도록 지정하는 GitHub 설정 파일 |
+| CODEOWNERS | 저장소의 특정 폴더·파일에 "소유자(owner)"를 지정해, 해당 경로가 바뀐 PR이 열리면 소유자를 리뷰어로 자동 요청해주는 GitHub 설정 파일. 이것만으로는 승인을 강제하지 않는다 (8장 참고) |
 | 커밋 서명(Commit Signing) | 이 커밋을 정말 그 사람이 작성했는지 암호학적으로 증명하는 기능. GitHub에서 "Verified" 배지로 표시됨 |
 
 ---
@@ -139,7 +139,7 @@ git bisect reset  # 탐색 종료, 원래 브랜치로 복귀
 
 # 4. Reflog — 잃어버린 커밋 복구
 
-`reset --hard`를 잘못 쓰거나 브랜치를 실수로 삭제해도, Git은 한동안(기본 90일) 이력을 `reflog`에 남겨둡니다.
+`reset --hard`를 잘못 쓰거나 브랜치를 실수로 삭제해도, Git은 한동안 이력을 `reflog`에 남겨둡니다.
 
 ```bash
 git reflog
@@ -150,7 +150,7 @@ git checkout d4e5f6g          # 확인
 git branch recovered d4e5f6g  # 이 지점에서 새 브랜치 생성
 ```
 
-**기본 상식**: `reflog`는 로컬 저장소에만 있는 안전망입니다. 원격(GitHub)에는 없으므로, 심각한 실수를 했을 때는 먼저 `git reflog`부터 확인하는 습관을 들입니다.
+**기본 상식**: `reflog`는 로컬 저장소에만 있는 안전망이지, 영구 백업이 아닙니다. Git은 기본적으로 더 이상 어떤 브랜치에서도 도달할 수 없게 된 커밋(예: `reset --hard`로 떨어져 나간 커밋)은 약 30일, 브랜치에서 여전히 도달 가능한 일반 이력은 약 90일이 지나면 정리 대상이 될 수 있습니다(`gc.reflogExpireUnreachable`, `gc.reflogExpire` 설정값 기준이며, 저장소마다 다르게 설정될 수 있습니다). 정확한 기간을 외울 필요는 없고, "reflog는 시간이 지나면 사라질 수 있는 임시 안전망이니 심각한 실수를 했다면 최대한 빨리 `git reflog`부터 확인한다"는 감각만 있으면 충분합니다.
 
 ---
 
@@ -264,7 +264,7 @@ PR을 만들면 GitHub이 이 워크플로우를 자동 실행하고, 성공/실
 기초 가이드에서 다룬 "리뷰 승인 필수" 규칙에 실무에서는 보통 이런 조건을 더합니다.
 
 - **Require status checks to pass**: 위 GitHub Actions 같은 자동 테스트가 통과해야만 머지 버튼이 활성화됨
-- **CODEOWNERS 연동**: `.github/CODEOWNERS` 파일로 특정 폴더는 특정 팀원의 승인이 항상 필요하도록 지정
+- **CODEOWNERS 연동**: `.github/CODEOWNERS` 파일로 특정 폴더의 소유자를 지정
 
 ```text
 # .github/CODEOWNERS
@@ -272,6 +272,10 @@ PR을 만들면 GitHub이 이 워크플로우를 자동 실행하고, 성공/실
 /frontend/          @frontend-team-lead
 *.md                 @docs-owner
 ```
+
+CODEOWNERS 파일 자체가 하는 일은 딱 하나입니다 — **해당 경로를 건드리는 PR이 열리면 지정된 소유자를 리뷰어로 자동 요청**합니다. 여기까지는 승인을 강제하지 않습니다 (owner가 리뷰를 안 해도 다른 사람 승인만으로 머지될 수 있음).
+
+"owner 승인 없이는 머지 자체가 안 되게" 만들고 싶다면, 브랜치 보호 규칙(또는 Ruleset)에서 **"Require review from Code Owners"** 옵션을 별도로 켜야 합니다. 즉 "소유자 지정"과 "소유자 승인 강제"는 서로 다른 두 기능이고, 강제하려면 항상 이 옵션을 함께 켜야 합니다.
 
 - **Require branches to be up to date**: 머지 전에 기준 브랜치의 최신 커밋을 반영하도록 강제 — 오래된 브랜치가 몰래 머지되는 것을 막습니다.
 
@@ -312,12 +316,23 @@ git config --global user.signingkey <키ID>
 
 # 12. Git Hooks로 실수 예방하기
 
-커밋·푸시 시점에 자동으로 검사를 실행해, 사람이 매번 기억하지 않아도 규칙을 지키게 합니다.
+커밋·푸시 시점에 자동으로 검사를 실행해, 사람이 매번 기억하지 않아도 규칙을 지키게 합니다. 대표적인 도구가 [Husky](https://typicode.github.io/husky/)입니다.
+
+```bash
+npm install --save-dev husky
+npx husky init
+```
+
+`husky init`을 한 번 실행하면 `.husky/pre-commit` 파일이 생기고, `package.json`에 `"prepare": "husky"` 스크립트가 자동으로 추가됩니다. 이 `prepare` 스크립트 덕분에 팀원이 저장소를 클론한 뒤 `npm install`을 실행할 때마다 Git hook이 함께 설치됩니다 — 즉 `npm install`만으로 hook이 저절로 생기는 것이 아니라, `husky init`으로 한 번 설정해 둔 `prepare` 스크립트가 매 설치 때 hook을 다시 걸어주는 구조입니다.
+
+생성된 `.husky/pre-commit`에 실행할 검사를 적습니다.
 
 ```bash
 # .husky/pre-commit
 npm run lint-staged   # 스테이징된 파일만 린트·포맷 검사
+```
 
+```bash
 # .husky/commit-msg
 npx commitlint --edit "$1"   # 커밋 메시지 형식(Feat:, Fix: 등) 검사
 ```
@@ -331,7 +346,7 @@ npx commitlint --edit "$1"   # 커밋 메시지 형식(Feat:, Fix: 등) 검사
 }
 ```
 
-**기본 상식**: Hook은 로컬 저장소마다 별도로 설정해야 하는데, husky 같은 도구를 쓰면 `npm install` 시 자동으로 훅이 설치되어 팀원 전체에게 규칙을 강제할 수 있습니다. 다만 훅이 너무 느리면(전체 파일 린트 등) 커밋마다 답답해져 다들 `--no-verify`로 건너뛰게 되므로, 변경된 파일만 빠르게 검사하도록 범위를 좁힙니다.
+**기본 상식**: 훅이 너무 느리면(전체 파일 린트 등) 커밋마다 답답해져 다들 `--no-verify`로 건너뛰게 되므로, 변경된 파일만 빠르게 검사하도록 범위를 좁힙니다.
 
 ---
 

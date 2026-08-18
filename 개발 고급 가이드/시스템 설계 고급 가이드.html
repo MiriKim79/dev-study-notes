@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>시스템 설계 고급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="시스템 설계 고급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="시스템 설계 고급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="MSA로 나눌지 말지 판단하는 기준, 나눴을 때 생기는 통신·장애·데이터 문제와 대응 방법을 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="system-design-adv">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -55,7 +55,7 @@
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
 <p>중급 가이드까지 다룬 API 서버·캐싱·N+1 등의 개념은 이미 안다고 가정합니다. 고급 가이드는 처음 보는 용어가 특히 많이 나오므로, 각 문서 맨 앞에 그 문서에서 쓰는 용어를 정리해둡니다.</p>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>모놀리식(Monolithic)</td><td>하나의 코드베이스·하나의 서버로 모든 기능을 처리하는 구조</td></tr><tr><td>MSA (Microservice Architecture)</td><td>기능을 여러 개의 독립된 작은 서비스로 나눠서 운영하는 구조</td></tr><tr><td>도메인(Domain)</td><td>"결제", "수강 신청"처럼 실제 업무 단위를 기준으로 나눈 영역. 기술 계층이 아니라 업무 기준으로 나누는 것을 의미</td></tr><tr><td>동기 통신(Synchronous)</td><td>요청을 보낸 쪽이 응답이 올 때까지 기다리는 통신 방식</td></tr><tr><td>비동기 통신(Asynchronous)</td><td>요청만 보내고 결과를 기다리지 않는 통신 방식. 나중에 별도로 처리됨</td></tr><tr><td>메시지 브로커(Message Broker)</td><td>여러 서비스 사이에서 이벤트·메시지를 전달해주는 중간 시스템(Kafka, RabbitMQ 등)</td></tr><tr><td>장애 전파(Cascading Failure)</td><td>한 서비스의 장애가 그 서비스를 호출하는 다른 서비스까지 연쇄적으로 무너뜨리는 현상</td></tr><tr><td>서킷 브레이커(Circuit Breaker)</td><td>실패가 잦은 서비스에는 잠시 요청을 보내지 않고 회복할 시간을 주는 장치</td></tr><tr><td>재시도 폭풍(Retry Storm)</td><td>느려진 서비스에 여러 클라이언트가 동시에 재시도를 몰아넣어 부하가 오히려 더 커지는 현상</td></tr><tr><td>분산 트랜잭션</td><td>여러 서비스(여러 데이터베이스)에 걸친 작업을 하나의 트랜잭션처럼 안전하게 처리하는 것</td></tr><tr><td>Saga 패턴</td><td>분산 트랜잭션을 여러 단계로 나눠 실행하고, 실패하면 이전 단계를 거꾸로 취소(보상)하는 방식</td></tr><tr><td>보상 트랜잭션(Compensating Transaction)</td><td>이미 실행된 작업을 되돌리기 위해 실행하는 "취소" 작업</td></tr><tr><td>최종 일관성(Eventual Consistency)</td><td>지금 당장은 데이터가 서로 다를 수 있지만, 시간이 지나면 결국 같은 값으로 맞춰진다는 개념</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>모놀리식(Monolithic)</td><td>하나의 배포 단위 안에 여러 기능이 함께 구성되는 구조. 서버(인스턴스)를 여러 대로 늘려 수평 확장하는 것은 가능하지만, 배포·릴리스 단위는 하나로 묶여 있음</td></tr><tr><td>MSA (Microservice Architecture)</td><td>기능을 여러 개의 독립된 작은 서비스로 나눠서 운영하는 구조</td></tr><tr><td>도메인(Domain)</td><td>"결제", "수강 신청"처럼 실제 업무 단위를 기준으로 나눈 영역. 기술 계층이 아니라 업무 기준으로 나누는 것을 의미</td></tr><tr><td>동기 통신(Synchronous)</td><td>요청을 보낸 쪽이 응답이 올 때까지 기다리는 통신 방식</td></tr><tr><td>비동기 통신(Asynchronous)</td><td>호출한 쪽이 결과를 받을 때까지 그 자리에서 block하며 기다리지 않는 통신 방식. 결과는 나중에 callback·이벤트·polling·future 등의 형태로 전달됨</td></tr><tr><td>메시지 브로커(Message Broker)</td><td>여러 서비스 사이에서 이벤트·메시지를 전달해주는 중간 시스템(Kafka, RabbitMQ 등)</td></tr><tr><td>장애 전파(Cascading Failure)</td><td>한 서비스의 장애가 그 서비스를 호출하는 다른 서비스까지 연쇄적으로 무너뜨리는 현상</td></tr><tr><td>서킷 브레이커(Circuit Breaker)</td><td>실패가 잦은 서비스에는 잠시 요청을 보내지 않고 회복할 시간을 주는 장치</td></tr><tr><td>재시도 폭풍(Retry Storm)</td><td>느려진 서비스에 여러 클라이언트가 동시에 재시도를 몰아넣어 부하가 오히려 더 커지는 현상</td></tr><tr><td>분산 트랜잭션</td><td>여러 서비스(여러 데이터베이스)에 걸친 작업을 하나의 트랜잭션처럼 안전하게 처리하는 것</td></tr><tr><td>Saga 패턴</td><td>분산 트랜잭션을 여러 단계로 나눠 실행하고, 실패하면 이전 단계를 거꾸로 취소(보상)하는 방식</td></tr><tr><td>보상 트랜잭션(Compensating Transaction)</td><td>이미 실행된 작업을 되돌리기 위해 실행하는 "취소" 작업</td></tr><tr><td>최종 일관성(Eventual Consistency)</td><td>지금 당장은 데이터가 서로 다를 수 있지만, 시간이 지나면 결국 같은 값으로 맞춰진다는 개념</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="1-모놀리식을-먼저-의심하지-않기">1. 모놀리식을 먼저 의심하지 않기<a class="heading-anchor" href="#1-모놀리식을-먼저-의심하지-않기" aria-label="이 섹션 링크">#</a></h2>
 <p>MSA(Microservice Architecture)는 "요즘 트렌드"가 아니라 <strong>모놀리식으로 감당이 안 될 때 쓰는 해결책</strong>입니다. 순서가 반대로 되면 안 됩니다.</p>
@@ -72,7 +72,7 @@
 
 좋은 예: user-service, course-service, payment-service, notification-service
 → &quot;수강 신청&quot;이라는 하나의 기능 변경이 대부분 course-service 안에서 끝남</code></pre></div>
-<p>각 서비스는 <strong>자기 데이터베이스를 따로 가집니다.</strong> 다른 서비스의 테이블에 직접 SQL을 날리지 않고, 반드시 API(또는 이벤트)를 통해서만 접근합니다. 이게 지켜지지 않으면 서비스는 나눴는데 실제로는 여전히 하나의 거대한 시스템(분산 모놀리식)이 됩니다.</p>
+<p>핵심은 <strong>각 서비스가 자신의 데이터를 소유하고, 다른 서비스가 그 내부 데이터에 직접 의존하지 않는 것</strong>입니다. 다른 서비스의 테이블에 직접 SQL을 날리지 않고, 반드시 API(또는 이벤트)를 통해서만 접근합니다. 이를 물리적으로 강제하는 가장 확실한 방법은 서비스마다 별도의 DB 인스턴스를 두는 것이지만, 반드시 인스턴스 자체를 분리해야만 하는 것은 아닙니다 — 같은 DB 서버 안에서 스키마·테이블 접근 권한을 분리해 "이 테이블 그룹은 이 서비스만 쓴다"는 경계를 지키는 것도 실무에서 흔한 절충안입니다. 어떤 방식이든 이 소유권 경계가 지켜지지 않으면 서비스는 나눴는데 실제로는 여전히 하나의 거대한 시스템(분산 모놀리식)이 됩니다.</p>
 <hr>
 <h2 class="section-h1" id="3-서비스-간-통신-동기-vs-비동기">3. 서비스 간 통신 — 동기 vs 비동기<a class="heading-anchor" href="#3-서비스-간-통신-동기-vs-비동기" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="동기-통신-REST-gRPC">동기 통신 (REST, gRPC)<a class="heading-anchor" href="#동기-통신-REST-gRPC" aria-label="이 섹션 링크">#</a></h3>
@@ -83,6 +83,11 @@
                                           ├→ 알림 서비스가 구독해서 이메일 발송
                                           └→ 정산 서비스가 구독해서 매출 집계</code></pre></div>
 <p>주문 서비스는 이벤트만 발행하고 끝입니다. 알림 서비스가 지금 죽어있어도 주문은 성공하고, 알림 서비스가 살아나면 밀린 이벤트를 처리합니다. <strong>응답이 즉시 필요 없는 후속 작업</strong>에 적합합니다.</p>
+<p>비동기 처리의 핵심은 "호출한 쪽이 결과가 나올 때까지 그 자리에서 멈춰 기다리지(block) 않는다"는 것입니다. 결과 자체가 사라지는 게 아니라, 나중에 다른 방식으로 전달됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>callback: 작업이 끝나면 미리 등록해둔 함수를 실행해줌
+event/pub-sub: 작업이 끝났다는 사실을 이벤트로 발행하고, 관심 있는 쪽이 구독해서 받음
+polling: 호출한 쪽이 주기적으로 &quot;다 됐어?&quot;라고 다시 물어봄
+future/promise: 즉시 &quot;결과를 나중에 채워줄 상자&quot;를 받고, 필요할 때 그 상자를 열어봄</code></pre></div>
 <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="동기 통신과 비동기 통신 아키텍처 비교" style="max-width:100%;height:auto;font-family:inherit">
   <style>
     .sa-svc{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
@@ -206,14 +211,16 @@
 <hr>
 <h2 class="section-h1" id="11-CAP-정리와-트레이드오프">11. CAP 정리와 트레이드오프<a class="heading-anchor" href="#11-CAP-정리와-트레이드오프" aria-label="이 섹션 링크">#</a></h2>
 <p>분산 시스템은 <strong>일관성(Consistency)·가용성(Availability)·네트워크 분단 허용(Partition Tolerance)</strong> 세 가지를 동시에 완벽히 만족할 수 없습니다. 네트워크 분단은 현실에서 언제든 발생할 수 있으므로, 실질적으로는 <strong>분단 상황에서 일관성과 가용성 중 무엇을 우선할지</strong>를 고르는 문제입니다.</p>
-<div class="table-scroll"><table><thead><tr><th>선택</th><th>의미</th><th>예시</th></tr></thead><tbody><tr><td>CP (일관성 우선)</td><td>분단 시 응답을 거부하더라도 데이터는 항상 최신값만 보여줌</td><td>은행 잔액, 재고 차감</td></tr><tr><td>AP (가용성 우선)</td><td>분단 시에도 응답은 하되, 오래된 값을 보여줄 수 있음</td><td>SNS 좋아요 수, 조회수</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>선택</th><th>의미</th><th>이런 데이터에 적합할 수 있음</th></tr></thead><tbody><tr><td>CP (일관성 우선)</td><td>네트워크 분단이 발생하면 응답을 거부하거나 지연시키더라도 데이터는 항상 최신값만 보여줌</td><td>결제 잔액, 재고 차감처럼 틀린 값을 보여주는 게 더 위험한 데이터</td></tr><tr><td>AP (가용성 우선)</td><td>네트워크 분단 중에도 응답은 계속하되, 오래된 값을 보여줄 수 있음</td><td>좋아요 수, 조회수처럼 잠깐 옛날 값이어도 서비스 지속이 더 중요한 데이터</td></tr></tbody></table></div>
+<p>주의할 점은, "이 서비스는 CP다/AP다"처럼 서비스 전체를 하나로 단정할 수 없다는 것입니다. 같은 서비스 안에서도 어떤 데이터는 CP 전략, 다른 데이터는 AP 전략을 쓸 수 있습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>질문: 이 데이터가 잠깐 옛날 값을 보여줘도 되는가?
 - &quot;안 된다&quot;(결제 잔액) → CP 성향 시스템/전략 선택
 - &quot;된다&quot;(추천 목록, 인기순 정렬) → AP 성향으로 가용성·성능을 우선</code></pre></div>
 <p><strong>기본 상식</strong>: CAP는 "어떤 DB가 더 좋은가"의 문제가 아니라 "우리 서비스의 이 데이터는 어느 쪽을 희생해도 되는가"를 도메인별로 나눠서 판단하는 도구입니다. 하나의 서비스 안에서도 잔액은 CP, 추천 피드는 AP처럼 데이터별로 다른 선택을 할 수 있습니다.</p>
 <hr>
 <h2 class="section-h1" id="12-멱등성-Idempotency-으로-재시도를-안전하게">12. 멱등성(Idempotency)으로 재시도를 안전하게<a class="heading-anchor" href="#12-멱등성-Idempotency-으로-재시도를-안전하게" aria-label="이 섹션 링크">#</a></h2>
-<p>같은 요청이 네트워크 문제로 중복 전달돼도 결과가 한 번만 반영되게 만드는 성질입니다. 분산 시스템은 "정확히 한 번(Exactly-once)" 전달을 보장하기 매우 어렵기 때문에, 대신 "여러 번 와도 결과는 한 번"을 클라이언트가 만들어줍니다.</p>
+<p>같은 요청이 네트워크 문제로 중복 전달돼도 결과가 한 번만 반영되게 만드는 성질입니다. 분산 시스템은 "정확히 한 번(Exactly-once)" 전달을 보장하기 매우 어렵기 때문에, 대신 "여러 번 와도 결과는 한 번"이 되도록 만듭니다.</p>
+<p>여기서 착각하기 쉬운 부분은, <strong>클라이언트가 idempotency key를 보낸다고 해서 그 자체로 멱등성이 보장되는 게 아니라는 점</strong>입니다. 클라이언트는 어디까지나 "이 요청들은 같은 작업이다"라는 표시(키)를 제공할 뿐이고, 실제로 중복 요청을 식별해서 같은 작업이 두 번 반영되지 않도록 처리하는 책임은 서버에 있습니다. 서버가 이 키를 저장·검사하는 로직을 구현하지 않으면, 클라이언트가 아무리 키를 보내도 이중 결제를 막을 수 없습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>문제 상황: 결제 요청 → 응답이 타임아웃으로 유실 → 클라이언트가 재시도
          → 서버는 이미 첫 요청을 처리했는데 두 번째 요청도 처리하면 이중 결제</code></pre></div>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">http</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">POST</span> /payments
@@ -273,6 +280,7 @@ CQRS: 쓰기용 모델(정규화된 테이블) + 읽기용 모델(조회에 최�
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

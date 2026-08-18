@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>데이터베이스 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="데이터베이스 중급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="데이터베이스 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="데이터가 많아졌을 때 실제로 부딪히는 성능·구조 문제와 대응 방법을 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="db-mid">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -68,7 +68,7 @@ CREATE INDEX idx_courses_instructor_created ON courses (instructor_id, created_a
 <p>여러 컬럼을 함께 검색·정렬한다면, 인덱스도 그 순서를 그대로 반영한 복합 인덱스로 만드는 것이 효과적입니다.</p>
 <h3 class="section-h2" id="EXPLAIN으로-실제-확인하기">EXPLAIN으로 실제 확인하기<a class="heading-anchor" href="#EXPLAIN으로-실제-확인하기" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>EXPLAIN SELECT * FROM courses WHERE instructor_id = 42;</code></pre></div>
-<p><code class="inline-code">type</code> 값이 <code class="inline-code">ALL</code>이면 테이블 전체를 훑는 것(Full Scan)이고, <code class="inline-code">ref</code>나 <code class="inline-code">range</code>면 인덱스를 타고 있다는 뜻입니다. "인덱스를 만들었으니 빨라졌겠지"라고 짐작하지 않고, <code class="inline-code">EXPLAIN</code>으로 실제 실행 계획을 확인합니다.</p>
+<p>(MySQL 기준) <code class="inline-code">type</code> 값이 <code class="inline-code">ALL</code>이면 테이블 전체를 훑는 것(Full Scan)이고, <code class="inline-code">ref</code>나 <code class="inline-code">range</code>면 인덱스를 타고 있다는 뜻입니다. PostgreSQL은 출력 형식이 달라 <code class="inline-code">Seq Scan</code>이면 전체 스캔, <code class="inline-code">Index Scan</code>/<code class="inline-code">Index Only Scan</code>이면 인덱스를 타고 있다는 뜻입니다. DB마다 <code class="inline-code">EXPLAIN</code> 출력 형식이 다르므로 사용 중인 DB 문서를 함께 확인합니다. "인덱스를 만들었으니 빨라졌겠지"라고 짐작하지 않고, <code class="inline-code">EXPLAIN</code>으로 실제 실행 계획을 확인합니다.</p>
 <p><strong>기본 상식</strong>: 인덱스는 조회를 빠르게 해주지만 <code class="inline-code">INSERT</code>/<code class="inline-code">UPDATE</code>/<code class="inline-code">DELETE</code>는 느려지게 만듭니다(인덱스도 함께 갱신해야 하므로). 모든 컬럼에 인덱스를 걸지 않고, 실제로 자주 조회되는 컬럼에만 선택적으로 적용합니다.</p>
 <hr>
 <h2 class="section-h1" id="2-정규화와-역정규화">2. 정규화와 역정규화<a class="heading-anchor" href="#2-정규화와-역정규화" aria-label="이 섹션 링크">#</a></h2>
@@ -191,14 +191,18 @@ CREATE INDEX idx_courses_instructor_created ON courses (instructor_id, created_a
 <hr>
 <h2 class="section-h1" id="8-트랜잭션-격리-수준">8. 트랜잭션 격리 수준<a class="heading-anchor" href="#8-트랜잭션-격리-수준" aria-label="이 섹션 링크">#</a></h2>
 <p>여러 요청이 동시에 같은 데이터를 읽고 쓸 때, 서로 어디까지 영향을 줄지 정하는 것이 격리 수준(Isolation Level)입니다.</p>
-<div class="table-scroll"><table><thead><tr><th>격리 수준</th><th>허용되는 현상</th><th>설명</th></tr></thead><tbody><tr><td>READ UNCOMMITTED</td><td>Dirty Read</td><td>다른 트랜잭션이 아직 커밋하지 않은 값까지 읽음(거의 사용 안 함)</td></tr><tr><td>READ COMMITTED</td><td>Non-Repeatable Read</td><td>커밋된 값만 읽지만, 같은 트랜잭션 안에서 두 번 읽으면 값이 달라질 수 있음</td></tr><tr><td>REPEATABLE READ</td><td>Phantom Read</td><td>같은 트랜잭션 안에서는 항상 같은 값을 읽음(MySQL InnoDB 기본값)</td></tr><tr><td>SERIALIZABLE</td><td>없음</td><td>가장 엄격. 사실상 순차 실행처럼 동작해 안전하지만 동시성이 크게 떨어짐</td></tr></tbody></table></div>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+<div class="table-scroll"><table><thead><tr><th>격리 수준</th><th>새로 추가로 허용되는 현상(SQL 표준 기준)</th><th>설명</th></tr></thead><tbody><tr><td>READ UNCOMMITTED</td><td>Dirty Read</td><td>다른 트랜잭션이 아직 커밋하지 않은 값까지 읽음(거의 사용 안 함)</td></tr><tr><td>READ COMMITTED</td><td>+ Non-Repeatable Read</td><td>커밋된 값만 읽지만, 같은 트랜잭션 안에서 두 번 읽으면 값이 달라질 수 있음</td></tr><tr><td>REPEATABLE READ</td><td>+ Phantom Read</td><td>이미 읽은 행은 같은 트랜잭션 안에서 항상 같은 값을 읽지만, SQL 표준상으로는 범위 조회 시 새로 추가된 행(Phantom)이 보일 수 있음</td></tr><tr><td>SERIALIZABLE</td><td>없음</td><td>가장 엄격. 사실상 순차 실행처럼 동작해 안전하지만 동시성이 크게 떨어짐</td></tr></tbody></table></div>
+<p>각 단계는 윗줄의 현상을 포함해 누적됩니다. 예를 들어 READ COMMITTED는 Dirty Read는 막지만 Non-Repeatable Read와 Phantom Read는 여전히 허용합니다.</p>
+<p><strong>DB마다 실제 동작은 다릅니다</strong>: 위 표는 SQL 표준의 정의이고, 실제 구현은 DB/엔진마다 차이가 있습니다. - MySQL InnoDB는 REPEATABLE READ가 기본값이지만, MVCC와 갭 락(gap lock) 덕분에 일반적인 조회(consistent read)에서는 SQL 표준과 달리 Phantom Read가 거의 발생하지 않습니다. 다만 <code class="inline-code">SELECT ... FOR UPDATE</code> 같은 락 조회나 특정 상황에서는 여전히 phantom이 나타날 수 있어, "MySQL의 REPEATABLE READ는 SERIALIZABLE급으로 완전히 안전하다"고 단정하면 안 됩니다. - PostgreSQL은 REPEATABLE READ가 기본값이 아니라 READ COMMITTED가 기본값이며, PostgreSQL의 REPEATABLE READ는 스냅샷 격리(Snapshot Isolation) 기반이라 Phantom Read는 막지만 write skew 같은 다른 이상 현상은 여전히 가능합니다. - 즉 같은 이름의 격리 수준이라도 DB마다 실제로 막아주는 범위가 다르므로, 사용 중인 DB의 문서로 반드시 재확인해야 합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">sql</span><button class="copy-btn" type="button">복사</button></div><pre><code>-- 아래는 MySQL 문법 예시입니다. PostgreSQL 등에서는 트랜잭션 시작(BEGIN) 이후에
+-- SET TRANSACTION ISOLATION LEVEL을 실행하는 등 문법과 적용 시점이 다를 수 있습니다.
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 START TRANSACTION;
 SELECT stock FROM products WHERE id = 1;
 -- 이 트랜잭션이 끝날 때까지 같은 조회는 같은 값을 반환
 UPDATE products SET stock = stock - 1 WHERE id = 1;
 COMMIT;</code></pre></div>
-<p><strong>실무 팁</strong>: 격리 수준을 높일수록 데이터는 안전해지지만 동시 처리량이 떨어집니다. 재고 차감처럼 동시성 충돌이 치명적인 경우에만 엄격한 수준이나 명시적 락을 쓰고, 대부분의 조회는 기본 격리 수준으로 충분합니다.</p>
+<p><strong>실무 팁</strong>: 격리 수준을 높일수록 데이터는 안전해지지만 동시 처리량이 떨어집니다. 재고 차감처럼 동시성 충돌이 치명적인 경우에만 엄격한 수준이나 명시적 락을 쓰고, 대부분의 조회는 기본 격리 수준으로 충분합니다. 다만 "기본값이면 안전하다"고 넘겨짚지 말고, 실제로 동시 접근이 몰리는 로직(재고 차감, 잔액 이체 등)은 격리 수준만 믿기보다 명시적 락이나 재시도 로직을 함께 검토합니다.</p>
 <hr>
 <h2 class="section-h1" id="9-락-Lock-과-데드락">9. 락(Lock)과 데드락<a class="heading-anchor" href="#9-락-Lock-과-데드락" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="비관적-락-vs-낙관적-락">비관적 락 vs 낙관적 락<a class="heading-anchor" href="#비관적-락-vs-낙관적-락" aria-label="이 섹션 링크">#</a></h3>
@@ -257,7 +261,8 @@ courses = Course.query.options(joinedload(Course.instructor)).all()
 SELECT courses.*, instructors.name
 FROM courses
 JOIN instructors ON courses.instructor_id = instructors.id;</code></pre></div>
-<p><strong>기본 상식</strong>: ORM은 편하지만 관계된 데이터에 접근할 때 자동으로 추가 쿼리를 날리는 지연 로딩(Lazy Loading)이 기본값인 경우가 많습니다. 목록 화면처럼 반복문 안에서 연관 데이터를 쓰는 코드는 반드시 Eager Loading으로 바꿨는지 확인합니다. 실제 쿼리 로그를 켜서 쿼리 수를 세어보는 습관이 유용합니다.</p>
+<p><strong>기본 상식</strong>: ORM은 편하지만 관계된 데이터에 접근할 때 자동으로 추가 쿼리를 날리는 지연 로딩(Lazy Loading)이 기본값인 경우가 많습니다. 목록 화면처럼 반복문 안에서 연관 데이터를 쓰는 코드는 Eager Loading이 필요한지 확인합니다. 실제 쿼리 로그를 켜서 쿼리 수를 세어보는 습관이 유용합니다.</p>
+<p>다만 Eager Loading이 항상 정답은 아닙니다. 목록 크기가 작거나 연관 데이터를 쓰지 않는 경로까지 무조건 JOIN으로 미리 가져오면, 불필요한 데이터까지 매번 읽어 오히려 느려질 수 있습니다. 특히 1:N 관계를 <code class="inline-code">JOIN</code>으로 즉시 로딩하면 상위 행이 연관 개수만큼 중복되어 반환되는 "카티션 곱" 문제가 생길 수 있어, 이런 경우는 배치로 나눠 조회(batch loading)하는 방식이 더 나을 수 있습니다. N+1이 실제로 쿼리 수·응답 시간에 영향을 주는지 확인한 뒤 적용하는 것이 안전합니다.</p>
 <hr>
 <h2 class="section-h1" id="11-커넥션-풀">11. 커넥션 풀<a class="heading-anchor" href="#11-커넥션-풀" aria-label="이 섹션 링크">#</a></h2>
 <p>매 요청마다 DB 연결을 새로 맺으면 연결 자체에 시간이 걸립니다. 미리 여러 개의 연결을 만들어두고 재사용하는 것이 커넥션 풀입니다.</p>
@@ -308,6 +313,7 @@ r = redis.Redis()
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

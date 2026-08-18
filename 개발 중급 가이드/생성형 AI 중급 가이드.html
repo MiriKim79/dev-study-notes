@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>생성형 AI 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="생성형 AI 중급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="생성형 AI 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="프롬프트만으로 부족할 때의 다음 단계와, 비용·품질을 실무 수준으로 관리하는 방법을 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="ai-mid">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -125,7 +125,7 @@ LoRA: 모델은 고정하고, 작은 추가 행렬만 학습 → 훨씬 적은 �
 요약: {요약}
 평가 기준: 정확성, 간결성, 원문에 없는 내용을 지어내지 않았는지
 점수와 이유를 JSON으로 답하세요.</code></pre></div>
-<p><strong>기본 상식</strong>: LLM-as-judge는 완벽하지 않습니다. 사람이 채점한 소수 샘플과 LLM 채점 결과를 주기적으로 비교해서, 채점 기준 자체가 신뢰할 만한지 검증합니다. 결제·의료처럼 중요한 판단에는 사람 검수를 대체하지 않습니다.</p>
+<p><strong>기본 상식</strong>: LLM-as-judge는 완벽한 평가자가 아닙니다. 특정 표현·형식을 선호하는 편향(bias), 같은 응답도 다시 채점하면 점수가 흔들리는 변동성(variance), 여러 답을 나란히 비교시킬 때 먼저 제시된 답을 더 좋게 평가하는 경향(position bias) 같은 한계가 알려져 있습니다. 사람이 채점한 소수 샘플과 LLM 채점 결과를 주기적으로 비교해서 채점 기준 자체가 신뢰할 만한지 검증하고, 비교 순서를 무작위로 섞는 등으로 position bias를 완화합니다. 결제·의료처럼 중요한 판단에는 사람 검수나 객관적 지표(정확도 등)와 함께 쓰고, LLM-as-judge 단독으로 대체하지 않습니다.</p>
 <hr>
 <h2 class="section-h1" id="7-자주-하는-실수">7. 자주 하는 실수<a class="heading-anchor" href="#7-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
 <ul><li>RAG로 해결 가능한 문제를 파인튜닝부터 시도해 비용과 시간을 낭비</li><li>프롬프트 체이닝 단계를 지나치게 잘게 나눠 지연 시간이 크게 늘어남</li><li>모든 요청에 가장 비싼 모델을 사용해 비용이 예상보다 커짐</li><li>실제 프롬프트·응답을 기록하지 않아 문제가 생겨도 원인을 재현할 수 없음</li><li>LLM-as-judge 결과를 검증 없이 그대로 신뢰</li></ul>
@@ -135,7 +135,8 @@ LoRA: 모델은 고정하고, 작은 추가 행렬만 학습 → 훨씬 적은 �
 <hr>
 <h2 class="section-h1" id="9-구조화-출력-Structured-Output-강제하기">9. 구조화 출력(Structured Output) 강제하기<a class="heading-anchor" href="#9-구조화-출력-Structured-Output-강제하기" aria-label="이 섹션 링크">#</a></h2>
 <p>응답을 파싱해서 프로그램에 넘겨야 한다면, 자유 텍스트보다 정해진 스키마로 응답받는 편이 안전합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># JSON 스키마를 함께 전달해 형식을 강제</span>
+<p>아래는 <strong>Anthropic API의 예시</strong>입니다. Tool(Function) 정의에 스키마를 실어 보내고, <code class="inline-code">tool_choice</code>로 그 도구를 강제 호출시켜 사실상 JSON 스키마를 강제하는 방식입니다. 참고로 Anthropic은 이 방식 외에 스키마를 직접 지정해 출력 형식 자체를 제약하는 별도의 Structured Output 기능도 제공하며, OpenAI 등 다른 제공업체도 각자의 방식(예: OpenAI의 <code class="inline-code">response_format</code>/Structured Outputs)으로 유사한 기능을 지원합니다. 정확한 파라미터명은 사용하는 제공업체의 최신 공식 문서를 기준으로 확인하세요.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># JSON 스키마를 함께 전달해 형식을 강제 (Anthropic API 예시 — Tool 강제 호출 방식)</span>
 response = client.messages.create(
     model=&quot;...&quot;,
     tools=[{
@@ -198,6 +199,7 @@ response = client.messages.create(
 <hr>
 <h2 class="section-h1" id="13-스트리밍-응답-처리">13. 스트리밍 응답 처리<a class="heading-anchor" href="#13-스트리밍-응답-처리" aria-label="이 섹션 링크">#</a></h2>
 <p>긴 응답을 한 번에 다 받은 뒤 보여주면 사용자가 오래 기다린다고 느낍니다. 토큰이 생성되는 대로 화면에 바로바로 흘려보내는 방식입니다.</p>
+<p>아래는 <strong>Anthropic API의 예시</strong>입니다. 다른 제공업체도 각자의 SDK로 스트리밍을 지원하니, 실제 사용하는 제공업체의 문서를 참고하세요.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">with</span> client.messages.stream(
     model=&quot;...&quot;,
     messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;긴 글을 써줘&quot;}],
@@ -241,7 +243,7 @@ response = client.messages.create(
 <p><strong>기본 상식</strong>: 대부분의 팀은 API 사용으로 시작합니다. 자체 호스팅은 "민감 데이터를 외부로 절대 보낼 수 없다"는 규제·보안 요구가 명확하거나, 요청량이 매우 많아 API 비용이 자체 인프라 비용을 크게 웃돌 때 검토합니다.</p>
 <hr>
 <h2 class="section-h1" id="17-멀티모달-입력-다루기">17. 멀티모달 입력 다루기<a class="heading-anchor" href="#17-멀티모달-입력-다루기" aria-label="이 섹션 링크">#</a></h2>
-<p>텍스트뿐 아니라 이미지를 함께 입력으로 받는 경우입니다.</p>
+<p>텍스트뿐 아니라 이미지를 함께 입력으로 받는 경우입니다. 아래는 <strong>Anthropic API의 예시</strong>이며, 다른 제공업체는 이미지 전달 형식(필드명 등)이 다를 수 있습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code>response = client.messages.create(
     model=&quot;...&quot;,
     messages=[{
@@ -296,6 +298,7 @@ response = client.messages.create(
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링 · 개발 학습·실전 노트">
+<meta property="og:description" content="2026년 들어 자주 쓰이는 &quot;하네스 엔지니어링&quot;, &quot;루프 엔지니어링&quot;, &quot;그래프(멀티 에이전트) 엔지니어링&quot; 세 용어를 정확하게 이해하기">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/AI%20%EC%BD%94%EB%94%A9%20%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%20%EC%B5%9C%EC%8B%A0%20%ED%8A%B8%EB%A0%8C%EB%93%9C%20%E2%80%94%20%ED%95%98%EB%84%A4%EC%8A%A4%C2%B7%EB%A3%A8%ED%94%84%C2%B7%EA%B7%B8%EB%9E%98%ED%94%84%20%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="2026년 들어 자주 쓰이는 &quot;하네스 엔지니어링&quot;, &quot;루프 엔지니어링&quot;, &quot;그래프(멀티 에이전트) 엔지니어링&quot; 세 용어를 정확하게 이해하기">
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
+</head>
+<body data-root-prefix="../" data-page-key="agent-trends">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 기초·실전 가이드.html">개발 기초·실전 가이드</a> <span>›</span><span class="current">AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<nav class="tier-nav"><div class="tier-nav-inner"><a class="tier-nav-link active" href="../개발 기초·실전 가이드.html">🔰 초급</a><a class="tier-nav-link" href="../개발 중급 가이드.html">📈 중급</a><a class="tier-nav-link" href="../개발 고급 가이드.html">🏔️ 고급</a><a class="tier-nav-link" href="../자격증 대비.html">🏅 자격증</a></div></nav>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-왜-이-용어들이-갑자기-늘었는가">1. 왜 이 용어들이 갑자기 늘었는가</a></li><li class="toc-h1"><a href="#2-하네스-엔지니어링-Harness-Engineering">2. 하네스 엔지니어링(Harness Engineering)</a></li><li class="toc-h1"><a href="#3-루프-엔지니어링-Loop-Engineering">3. 루프 엔지니어링(Loop Engineering)</a></li><li class="toc-h1"><a href="#4-그래프-엔지니어링-멀티-에이전트-오케스트레이션">4. 그래프 엔지니어링 / 멀티 에이전트 오케스트레이션</a></li><li class="toc-h1"><a href="#5-세-개념을-함께-정리하면">5. 세 개념을 함께 정리하면</a></li><li class="toc-h1"><a href="#6-여기까지-이해했다면">6. 여기까지 이해했다면</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-misc);">
+        <span class="page-kicker">🧩 개발 기초·실전 가이드</span>
+        <h1 class="page-title">AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링</h1>
+        <p class="page-tagline">요즘 자주 들리는 그 용어들, 정확히 뭘 가리키는지 정리했습니다.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> Claude Code, Cursor, GitHub Copilot Agent 같은 AI 코딩 에이전트를 실제로 써봤고, 최근 자주 들리는 새 용어들이 뭔지 궁금한 사람</div><div class="intro-row"><strong>목적:</strong> 2026년 들어 자주 쓰이는 "하네스 엔지니어링", "루프 엔지니어링", "그래프(멀티 에이전트) 엔지니어링" 세 용어를 정확하게 이해하기</div><div class="intro-row"><strong>주의:</strong> 전부 2025~2026년 사이에 막 자리 잡기 시작한 용어라 회사·저자마다 정의가 조금씩 다를 수 있습니다. "정답 용어집"이 아니라 "지금 이 시점의 업계 컨센서스"로 읽어주세요.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 왜 이 용어들이 갑자기 늘었는가</li><li>2. 하네스 엔지니어링(Harness Engineering)</li><li>3. 루프 엔지니어링(Loop Engineering)</li><li>4. 그래프 엔지니어링 / 멀티 에이전트 오케스트레이션</li><li>5. 세 개념을 함께 정리하면</li><li>6. 여기까지 이해했다면</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-왜-이-용어들이-갑자기-늘었는가">1. 왜 이 용어들이 갑자기 늘었는가<a class="heading-anchor" href="#1-왜-이-용어들이-갑자기-늘었는가" aria-label="이 섹션 링크">#</a></h2>
+<p>2023~2024년의 화두가 "프롬프트를 어떻게 잘 쓰는가(프롬프트 엔지니어링)"였다면, AI 코딩 에이전트가 실제로 코드베이스를 여러 턴에 걸쳐 스스로 탐색·수정·실행하게 되면서 관심사가 "그 에이전트를 실제로 신뢰할 수 있게 어떻게 감싸고 운영하는가"로 옮겨갔습니다. 그 결과로 등장한 세 용어가 하네스 엔지니어링·루프 엔지니어링·그래프 엔지니어링입니다. 셋은 서로 배타적인 개념이 아니라 <strong>에이전트를 감싸는 시스템을 어느 층위에서 바라보는가</strong>의 차이에 가깝습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>그래프 엔지니어링   — 여러 에이전트/단계를 어떤 구조(그래프)로 연결할 것인가
+루프 엔지니어링     — 에이전트 하나가 반복하는 한 턴(관찰→판단→행동)을 어떻게 설계할 것인가
+하네스 엔지니어링   — 그 전체를 실제로 안전하게 운영하기 위한 제약·피드백·도구 환경</code></pre></div>
+<hr>
+<h2 class="section-h1" id="2-하네스-엔지니어링-Harness-Engineering">2. 하네스 엔지니어링(Harness Engineering)<a class="heading-anchor" href="#2-하네스-엔지니어링-Harness-Engineering" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>정의</strong>: AI 코딩 에이전트를 감싸는 제약, 피드백 루프, 문서, 린터, 상태 관리 등 "에이전트가 실수해도 시스템 차원에서 걸러지게 만드는 환경 전체"를 설계하는 일. "하네스(harness)"는 원래 동물·장비를 안전하게 붙들어 매는 멜빵·안전벨트를 뜻하는 단어로, 여기서는 에이전트의 실행 환경을 통제하는 틀을 비유합니다.</p>
+<p><strong>핵심 발상</strong>: "에이전트가 실수를 하면, 그 실수 자체를 고치는 게 아니라 다시는 그런 실수를 할 수 없도록 환경을 고친다." 예를 들어 에이전트가 테스트 없이 배포하는 실수를 반복한다면, 프롬프트로 "테스트를 꼭 돌려라"라고 반복해서 알려주는 대신, <strong>배포 파이프라인 자체에 테스트 통과를 강제하는 장치</strong>를 넣는 식입니다.</p>
+<p><strong>왜 필요해졌는가</strong>: 에이전트 하나의 코드 생성 능력 자체는 이미 상당히 좋아졌지만, 실제 운영에서 문제가 되는 건 "가끔 예측 불가능하게 실수한다"는 점이었습니다. 그 실수를 사람이 매번 프롬프트로 막는 대신, 시스템(테스트, 린터, 권한 제한, 체크포인트 저장 등)으로 막자는 방향 전환이 2026년 "하네스 엔지니어링"이라는 이름을 얻었습니다.</p>
+<p><strong>이 사이트와의 연결</strong>: 이 발상은 사실 새로운 게 아니라, 이 사이트의 <strong>CI·CD 중급 가이드</strong>(자동화된 테스트·배포 파이프라인), <strong>팀 협업 중급 가이드</strong>(코드 리뷰 문화)에서 이미 다루는 "사람이 매번 확인하지 않아도 시스템이 걸러주게 만든다"는 원칙을 AI 에이전트에도 그대로 적용한 것입니다.</p>
+<hr>
+<h2 class="section-h1" id="3-루프-엔지니어링-Loop-Engineering">3. 루프 엔지니어링(Loop Engineering)<a class="heading-anchor" href="#3-루프-엔지니어링-Loop-Engineering" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>정의</strong>: 코딩 에이전트가 한 턴마다 반복하는 내부 동작 — 상태를 관찰하고(observe), 무엇을 할지 판단하고(reason), 도구를 실행하고(act), 결과를 확인하고(observe) 다시 판단하는 이 순환 구조 — 를 설계하는 일. 2026년 6월 Addy Osmani가 이 흐름에 "루프 엔지니어링"이라는 이름을 붙이면서 널리 쓰이기 시작했고, "프롬프트 엔지니어링의 2026년 버전 계승자"로 불립니다.</p>
+<p><strong>핵심 발상</strong>: 프롬프트 하나를 잘 쓰는 것보다, <strong>에이전트가 스스로를 몇 번 반복시킬지, 언제 스스로 결과를 검증할지, 언제 멈출지</strong>를 설계하는 쪽이 실제 결과물의 품질에 더 큰 영향을 미친다는 것입니다. 예를 들어 "코드를 작성한 뒤 반드시 테스트를 돌려보고, 실패하면 스스로 원인을 분석해 다시 고친 뒤에만 다음 단계로 넘어간다"는 규칙을 에이전트의 루프 안에 넣는 것이 루프 엔지니어링의 예시입니다.</p>
+<p><strong>주의할 점</strong>: 루프를 무한정 반복시키면 비용과 시간이 끝없이 늘어날 수 있어, "몇 번까지 재시도할지", "언제 사람에게 넘길지"를 명확히 정해두는 것이 실무에서 중요하게 다뤄집니다.</p>
+<hr>
+<h2 class="section-h1" id="4-그래프-엔지니어링-멀티-에이전트-오케스트레이션">4. 그래프 엔지니어링 / 멀티 에이전트 오케스트레이션<a class="heading-anchor" href="#4-그래프-엔지니어링-멀티-에이전트-오케스트레이션" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>정의</strong>: 에이전트 하나가 아니라 <strong>여러 에이전트(또는 단계)를 노드로, 그 사이의 흐름을 엣지로 하는 방향 그래프</strong>로 작업을 설계하는 방식. LangGraph 같은 프레임워크가 대표적으로 이 방식을 지원하며, "그래프 엔지니어링"이라는 이름보다는 업계에서는 주로 "멀티 에이전트 오케스트레이션(orchestration)"이라는 표현이 더 자주 쓰입니다.</p>
+<p><strong>핵심 발상</strong>: 하나의 에이전트에게 모든 일을 맡기는 대신, 역할을 나눕니다. 예를 들어 "계획을 세우는 에이전트 → 코드를 작성하는 에이전트 → 결과를 검증하는 에이전트"처럼 나누고, 그 사이의 상태(state)가 그래프를 따라 흐르며, 조건에 따라 다른 경로로 분기하거나 이전 단계로 되돌아갈 수 있게 만듭니다.</p>
+<p><strong>언제 필요한가 (그리고 언제 필요 없는가)</strong>: 이 사이트의 <strong>생성형 AI 고급 가이드</strong>에서 이미 강조하듯, 멀티 에이전트는 "고급이니까 당연히 써야 하는 기술"이 아닙니다. 작업이 한 역할·한 컨텍스트 안에서 충분히 처리될 수 있다면 에이전트 하나로 충분하고, 오히려 여러 에이전트 사이의 조율 비용(누가 무엇을 언제 넘기는가)이 이점보다 커질 수 있습니다. 실제 작업이 서로 다른 전문성이나 서비스 경계를 넘나들 때만 그래프/멀티 에이전트 구조를 검토하는 것이 안전합니다.</p>
+<hr>
+<h2 class="section-h1" id="5-세-개념을-함께-정리하면">5. 세 개념을 함께 정리하면<a class="heading-anchor" href="#5-세-개념을-함께-정리하면" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>다루는 층위</th><th>한 줄 요약</th></tr></thead><tbody><tr><td>하네스 엔지니어링</td><td>전체 운영 환경</td><td>에이전트가 실수해도 시스템이 걸러주게 만드는 제약·피드백 설계</td></tr><tr><td>루프 엔지니어링</td><td>에이전트 하나의 내부 반복</td><td>관찰→판단→행동→검증을 몇 번, 어떻게 반복시킬지 설계</td></tr><tr><td>그래프/멀티 에이전트 오케스트레이션</td><td>여러 에이전트 사이의 구조</td><td>역할을 나눈 에이전트들을 어떤 흐름으로 연결할지 설계</td></tr></tbody></table></div>
+<p>세 용어 모두 공통적으로 강조하는 것은 하나입니다 — <strong>"에이전트 자체를 더 똑똑하게 만드는 것"보다 "에이전트를 둘러싼 시스템을 얼마나 잘 설계했는가"가 실제 결과물의 신뢰도를 좌우한다</strong>는 것. 이건 이 사이트가 생성형 AI 문서 전반에서 유지해온 원칙(문제 정의 → 최소 API 호출 → 출력 구조 정의 → 평가 → 오류 확인 → 보안 → 비용/모니터링)과도 방향이 같습니다.</p>
+<hr>
+<h2 class="section-h1" id="6-여기까지-이해했다면">6. 여기까지 이해했다면<a class="heading-anchor" href="#6-여기까지-이해했다면" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>하네스·루프·그래프 엔지니어링이 각각 어떤 층위(운영 환경 / 개별 에이전트 내부 반복 / 여러 에이전트 사이 구조)를 다루는지 구분해 설명할 수 있다.</li><li>이 셋이 서로 경쟁 개념이 아니라 함께 쓰일 수 있는 개념이라는 걸 안다.</li><li>멀티 에이전트(그래프) 구조가 "고급이니까 무조건 써야 하는 것"이 아니라는 걸 안다.</li></ul>
+<p>다음 단계: AI 기능을 서비스에 실제로 통합하는 기초는 <strong>생성형 AI 기능 개발 기초 가이드</strong>, 멀티 에이전트·평가·모니터링 같은 심화 주제는 <strong>생성형 AI 고급 가이드</strong>를 참고하세요.</p>
+<hr>
+<p>Sources: <a href="https://github.com/ai-boost/awesome-harness-engineering" target="_blank" rel="noopener">awesome-harness-engineering</a> · <a href="https://www.faros.ai/blog/harness-engineering" target="_blank" rel="noopener">Faros AI — Harness Engineering</a> · <a href="https://martinfowler.com/articles/harness-engineering.html" target="_blank" rel="noopener">Martin Fowler — Harness engineering for coding agent users</a> · <a href="https://dev.to/truongpx396/the-agentic-loop-a-practical-field-guide-mnc" target="_blank" rel="noopener">DEV Community — The Agentic Loop, Loop Engineering</a> · <a href="https://www.langchain.com/blog/langgraph-multi-agent-workflows" target="_blank" rel="noopener">LangChain — LangGraph Multi-Agent Workflows</a></p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="바이브 코딩으로 개발하기.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">바이브 코딩으로 개발하기</span></a><a class="doc-nav-link next" href="../개발 협업 방식 선택 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">개발 협업 방식 선택 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
+</body>
+</html>

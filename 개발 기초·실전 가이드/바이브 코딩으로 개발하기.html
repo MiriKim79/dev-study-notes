@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>바이브 코딩으로 개발하기 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="바이브 코딩으로 개발하기 · 개발 학습·실전 노트">
+<meta property="og:description" content="&quot;바이브 코딩&quot;이 정확히 뭔지, 언제 써도 되고 언제 위험한지 감 잡기">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EB%B0%94%EC%9D%B4%EB%B8%8C%20%EC%BD%94%EB%94%A9%EC%9C%BC%EB%A1%9C%20%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="바이브 코딩으로 개발하기 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="&quot;바이브 코딩&quot;이 정확히 뭔지, 언제 써도 되고 언제 위험한지 감 잡기">
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
+</head>
+<body data-root-prefix="../" data-page-key="vibe-coding">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 기초·실전 가이드.html">개발 기초·실전 가이드</a> <span>›</span><span class="current">바이브 코딩으로 개발하기</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<nav class="tier-nav"><div class="tier-nav-inner"><a class="tier-nav-link active" href="../개발 기초·실전 가이드.html">🔰 초급</a><a class="tier-nav-link" href="../개발 중급 가이드.html">📈 중급</a><a class="tier-nav-link" href="../개발 고급 가이드.html">🏔️ 고급</a><a class="tier-nav-link" href="../자격증 대비.html">🏅 자격증</a></div></nav>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-바이브-코딩이란">1. 바이브 코딩이란?</a></li><li class="toc-h1"><a href="#2-언제-적합한가">2. 언제 적합한가</a></li><li class="toc-h1"><a href="#3-언제-위험한가">3. 언제 위험한가</a></li><li class="toc-h1"><a href="#4-실전에서-안전하게-쓰는-법">4. 실전에서 안전하게 쓰는 법</a></li><li class="toc-h1"><a href="#5-자주-하는-실수">5. 자주 하는 실수</a></li><li class="toc-h1"><a href="#6-여기까지-이해했다면">6. 여기까지 이해했다면</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-misc);">
+        <span class="page-kicker">🌀 개발 기초·실전 가이드</span>
+        <h1 class="page-title">바이브 코딩으로 개발하기</h1>
+        <p class="page-tagline">AI에게 코드를 맡길 때, 언제는 괜찮고 언제는 위험한지 감 잡기.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> ChatGPT·Claude·Cursor 같은 AI에게 코드를 맡겨서 빠르게 뭔가 만들어보고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> "바이브 코딩"이 정확히 뭔지, 언제 써도 되고 언제 위험한지 감 잡기</div><div class="intro-row"><strong>주의:</strong> 이 문서는 특정 도구 사용법이 아니라 "AI에게 코드를 맡길 때의 태도와 안전장치"를 다룹니다. 유행어라 정의가 아직 유동적이라는 점을 감안하고 읽어주세요.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 바이브 코딩이란?</li><li>2. 언제 적합한가</li><li>3. 언제 위험한가</li><li>4. 실전에서 안전하게 쓰는 법</li><li>5. 자주 하는 실수</li><li>6. 여기까지 이해했다면</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-바이브-코딩이란">1. 바이브 코딩이란?<a class="heading-anchor" href="#1-바이브-코딩이란" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>바이브 코딩(Vibe Coding)</strong>은 개발자가 자연어로 "이런 걸 만들어줘"라고 지시하면 AI가 코드를 작성하고, 그 결과를 코드 한 줄 한 줄 다 이해하지 않은 채로 받아들이면서 진행하는 개발 방식을 가리키는 말입니다. 2025년 2월 AI 연구자 안드레 카파시(Andrej Karpathy)가 SNS에 쓴 표현에서 시작해 널리 퍼졌습니다.</p>
+<p>기존에도 AI 코드 어시스턴트(자동완성, 코드 생성 제안)는 있었지만, 바이브 코딩의 핵심은 <strong>"작동 원리를 완전히 이해하지 않고도 코드를 계속 진행한다"</strong>는 태도 자체에 있습니다. "느낌(vibe)대로 큰 그림만 던지고, 세부 로직은 AI에게 맡긴다"는 뜻에서 이름이 붙었습니다.</p>
+<p>이 문서를 읽기 전에 알아두면 좋은 것: 이 사이트의 <strong>생성형 AI 기능 개발 기초 가이드</strong>는 "AI 기능을 서비스에 정확하게 통합하는 법"을 다루고, 이 문서는 그것과는 결이 다른 "AI에게 코드 작성 자체를 맡기고 작업하는 워크플로우"를 다룹니다. 서로 대체 관계가 아니라 보완 관계입니다.</p>
+<hr>
+<h2 class="section-h1" id="2-언제-적합한가">2. 언제 적합한가<a class="heading-anchor" href="#2-언제-적합한가" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>빠른 프로토타입</strong>: 아이디어가 실제로 동작하는지 며칠 안에 확인하고 싶을 때</li><li><strong>개인 사이드 프로젝트, 장난감 프로젝트</strong>: 실패해도 손해가 크지 않은 학습·실험용 코드</li><li><strong>이미 익숙한 영역의 반복 작업</strong>: 내가 결과 코드를 보면 옳고 그름을 바로 판단할 수 있는 영역(예: CRUD API 뼈대, 간단한 UI 컴포넌트)</li></ul>
+<h2 class="section-h1" id="3-언제-위험한가">3. 언제 위험한가<a class="heading-anchor" href="#3-언제-위험한가" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>프로덕션 서비스, 특히 결제·인증·개인정보를 다루는 코드</strong>: 이해하지 못한 채 배포하면 보안 취약점을 그대로 서비스에 실어 보내는 것과 같습니다.</li><li><strong>팀 프로젝트에서 리뷰 없이 그대로 머지</strong>: 코드 작성자 본인도 설명하지 못하는 코드는 리뷰어도, 미래의 나도 유지보수할 수 없습니다.</li><li><strong>내가 전혀 모르는 영역</strong>: 결과 코드가 그럴듯해 보여도 틀렸을 때 그걸 알아챌 방법이 없습니다. (생성형 AI 결과물은 비결정적이고 틀릴 수 있다는 원칙은 <strong>생성형 AI 기능 개발 기초 가이드</strong> 1장에서도 강조합니다.)</li></ul>
+<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식">기본 상식<a class="heading-anchor" href="#기본-상식" aria-label="이 섹션 링크">#</a></h4>
+<p>바이브 코딩은 "AI가 다 알아서 하니 개발자는 몰라도 된다"는 뜻이 아닙니다. 오히려 <strong>AI가 낸 결과를 빠르게 검증할 수 있는 능력</strong>이 있어야 안전하게 쓸 수 있는 방식입니다. 이 사이트의 <strong>Git·GitHub 기초 가이드</strong>, <strong>백엔드 기초 가이드</strong> 같은 기본기가 없는 상태로 바이브 코딩만 하면, 문제가 생겼을 때 원인을 찾을 방법이 없습니다.</p>
+<hr></div>
+<h2 class="section-h1" id="4-실전에서-안전하게-쓰는-법">4. 실전에서 안전하게 쓰는 법<a class="heading-anchor" href="#4-실전에서-안전하게-쓰는-법" aria-label="이 섹션 링크">#</a></h2>
+<ol><li><strong>작은 단위로 지시하고, 작은 단위로 커밋한다.</strong> 한 번에 "로그인부터 결제까지 다 만들어줘"가 아니라, 기능 하나씩 요청하고 그때그때 결과를 확인합니다.</li><li><strong>결과 코드를 최소한 한 번은 읽는다.</strong> 완벽히 이해하지 못해도, "이 함수가 뭘 하려는 건지" 정도는 스스로 설명할 수 있어야 합니다.</li><li><strong>테스트로 검증한다.</strong> 코드를 다 이해하지 못하더라도, 테스트가 통과하는지는 확인할 수 있습니다. <strong>테스트 자동화 중급 가이드</strong>의 최소한만이라도 적용하는 걸 권장합니다.</li><li><strong>민감한 부분(인증, 결제, 개인정보 처리)은 직접 검토하거나 아예 AI에게 맡기지 않는다.</strong></li><li><strong>버전 관리를 철저히 한다.</strong> AI가 만든 결과가 이상하면 언제든 이전 커밋으로 되돌릴 수 있어야 합니다. <strong>Git·GitHub 진짜 최소 기초</strong>의 커밋·되돌리기만 알아도 훨씬 안전해집니다.</li></ol>
+<hr>
+<h2 class="section-h1" id="5-자주-하는-실수">5. 자주 하는 실수<a class="heading-anchor" href="#5-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>AI가 만든 코드를 그대로 복붙해서 어디서 에러가 나는지도 모른 채 다시 AI에게 "고쳐줘"만 반복하는 것 — 원인을 스스로 좁혀보는 습관이 없으면 문제가 점점 커집니다.</li><li>프로젝트 초반부터 전체 아키텍처를 AI에게 통째로 맡기는 것 — 구조적인 결정(폴더 구조, 데이터 모델)은 사람이 먼저 큰 방향을 잡고, AI에게는 그 안에서의 구현을 맡기는 편이 안전합니다.</li><li>"AI가 짰으니까 맞겠지"라고 생각하고 보안·성능 검토를 생략하는 것.</li></ul>
+<hr>
+<h2 class="section-h1" id="6-여기까지-이해했다면">6. 여기까지 이해했다면<a class="heading-anchor" href="#6-여기까지-이해했다면" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>바이브 코딩이 기존 AI 코드 자동완성과 뭐가 다른지 설명할 수 있다.</li><li>바이브 코딩을 써도 되는 상황과 피해야 하는 상황을 구분할 수 있다.</li><li>AI가 만든 코드를 안전하게 다루는 최소한의 습관(작은 단위 커밋, 테스트, 리뷰) 한 가지 이상을 말할 수 있다.</li></ul>
+<p>다음 단계: 아직 Git 되돌리기·커밋 단위가 익숙하지 않다면 <strong>Git·GitHub 진짜 최소 기초</strong>부터, AI 기능을 서비스에 정식으로 통합하고 싶다면 <strong>생성형 AI 기능 개발 기초 가이드</strong>로 이동하세요.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="개발자 발표·데모 잘하는 법.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">개발자 발표·데모 잘하는 법</span></a><a class="doc-nav-link next" href="AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
+</body>
+</html>

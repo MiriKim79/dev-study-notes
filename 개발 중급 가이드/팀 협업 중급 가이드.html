@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>팀 협업 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="팀 협업 중급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="팀 협업 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="코드 자체가 아니라 &quot;여러 명이 함께 오래 일하는 방식&quot;에서 부딪히는 문제를 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="team-mid">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -66,7 +66,7 @@
 <h3 class="section-h2" id="리뷰-SLA-얼마나-빨리-봐줄-것인가">리뷰 SLA (얼마나 빨리 봐줄 것인가)<a class="heading-anchor" href="#리뷰-SLA-얼마나-빨리-봐줄-것인가" aria-label="이 섹션 링크">#</a></h3>
 <p>리뷰가 늦어지면 PR이 쌓이고 브랜치가 오래되어 충돌이 커집니다. 팀 규칙으로 "PR 올라오면 하루 안에 최소 1차 코멘트"처럼 기준을 정해두면 병목을 줄일 수 있습니다.</p>
 <h3 class="section-h2" id="리뷰-크기">리뷰 크기<a class="heading-anchor" href="#리뷰-크기" aria-label="이 섹션 링크">#</a></h3>
-<p>리뷰는 변경 줄 수가 커질수록 꼼꼼히 보기 어려워집니다. 큰 기능은 작은 PR 여러 개로 쪼개는 것이 리뷰 품질과 속도 모두에 유리합니다 (기초 문서의 "작업을 작은 단위로 나눈다" 원칙과 같은 맥락입니다).</p>
+<p>리뷰는 변경 줄 수가 커질수록 꼼꼼히 보기 어려워집니다. 큰 기능은 작은 PR 여러 개로 쪼개는 것이 대체로 리뷰 품질과 속도에 유리합니다 (기초 문서의 "작업을 작은 단위로 나눈다" 원칙과 같은 맥락입니다). 다만 무작정 잘게 쪼개면 PR 하나만 봐서는 맥락을 이해하기 어려워지거나, 중간 단계가 그 자체로는 동작하지 않는 상태가 되기도 합니다. "리뷰어가 이 PR 하나만 보고도 변경 이유를 이해할 수 있는가"를 기준으로 쪼개는 크기를 정합니다.</p>
 <hr>
 <h2 class="section-h1" id="2-ADR-설계-결정을-기록하기">2. ADR — 설계 결정을 기록하기<a class="heading-anchor" href="#2-ADR-설계-결정을-기록하기" aria-label="이 섹션 링크">#</a></h2>
 <p>Architecture Decision Record. "왜 이렇게 결정했는지"를 나중에 참고할 수 있게 짧은 문서로 남기는 방법입니다.</p>
@@ -248,7 +248,7 @@ PR 본문: &quot;Closes #42&quot;
 1. 어제 한 일
 2. 오늘 할 일
 3. 막힌 것(blocker)이 있는지</code></pre></div>
-<ul><li><strong>시간 제한을 지킵니다.</strong> 팀 규모에 상관없이 10~15분을 넘기지 않습니다. 길어지면 "스탠드업 중 논의"가 아니라 "스탠드업 후 관련자만 남아서 논의"로 분리합니다.</li><li><strong>어제/오늘 나열이 목적이 아니라 blocker 발견이 목적</strong>입니다. 모두가 순서대로 보고만 하고 끝나면, blocker가 있어도 묻히기 쉽습니다.</li><li>원격/비동기 팀이라면 매일 같은 시간에 채팅 채널에 3줄로 남기는 것으로 대체할 수 있습니다 (10장 비동기 협업 참고).</li></ul>
+<ul><li><strong>시간 제한을 지킵니다.</strong> 보통 10~15분을 넘기지 않습니다. 길어지면 "스탠드업 중 논의"가 아니라 "스탠드업 후 관련자만 남아서 논의"로 분리합니다. 인원이 많아 10~15분으로는 부족하다면, 시간을 늘리기보다 팀을 하위 그룹으로 나눠 각각 스탠드업을 진행하는 편이 낫습니다.</li><li><strong>어제/오늘 나열이 목적이 아니라 blocker 발견이 목적</strong>입니다. 모두가 순서대로 보고만 하고 끝나면, blocker가 있어도 묻히기 쉽습니다.</li><li>원격/비동기 팀이라면 매일 같은 시간에 채팅 채널에 3줄로 남기는 것으로 대체할 수 있습니다 (10장 비동기 협업 참고).</li></ul>
 <p><strong>실무 팁</strong>: "어제 한 일"이 매번 "계속 그거 하고 있어요"로 반복된다면, 작업 단위가 너무 크다는 신호입니다. 하루~이틀 안에 끝낼 수 있는 크기로 이슈를 쪼갭니다.</p>
 <hr>
 <h2 class="section-h1" id="16-스프린트-플래닝-심화">16. 스프린트 플래닝 심화<a class="heading-anchor" href="#16-스프린트-플래닝-심화" aria-label="이 섹션 링크">#</a></h2>
@@ -272,7 +272,7 @@ PR 본문: &quot;Closes #42&quot;
 2. 공통의 기준을 먼저 합의 (성능? 유지보수성? 일정?)
    → 기준이 다르면 같은 근거를 봐도 결론이 갈림
 3. 기준에 따라 판단하고, 결정은 ADR로 남김
-4. 정해진 뒤에는 반대했던 사람도 팀 결정으로 따름 (disagree and commit)</code></pre></div>
+4. 정해진 뒤에는 반대했던 사람도 팀 결정으로 따름 (disagree and commit). 단, 이는 &quot;취향 차이&quot; 수준의 결정에 적용하는 원칙입니다. 이후 결정이 명백히 잘못됐다는 새로운 근거(장애, 데이터 등)가 나오면 그때는 다시 논의합니다 — 한번 정해졌다고 끝까지 밀어붙이자는 뜻은 아닙니다.</code></pre></div>
 <h3 class="section-h2" id="사람-사이의-갈등">사람 사이의 갈등<a class="heading-anchor" href="#사람-사이의-갈등" aria-label="이 섹션 링크">#</a></h3>
 <ul><li>문제가 되는 <strong>행동</strong>과 그로 인한 <strong>영향</strong>을 구체적으로 말합니다. ("항상 그런 식이다" ❌ → "지난주 PR 3개가 마감일을 넘겨서 제 작업이 막혔다" ⭕)</li><li>공개 채널에서 지적하기보다, 먼저 1:1로 대화합니다. 공개적으로 해결이 필요한 경우가 아니면 감정이 상하기 쉽습니다.</li><li>둘이서 해결되지 않으면 팀 리드나 스크럼 마스터 같은 중재자를 개입시킵니다. 방치하는 것이 가장 나쁜 선택입니다.</li></ul>
 <p><strong>기본 상식</strong>: 갈등을 "누가 옳은가"로 끝내면 진 쪽이 팀에 대한 신뢰를 잃기 쉽습니다. "우리 팀에 가장 나은 결정이 무엇인가"로 프레임을 옮기면 감정 소모가 줄어듭니다.</p>
@@ -382,6 +382,7 @@ BE: 명세대로 실제 엔드포인트 개발
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

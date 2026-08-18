@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>생성형 AI 고급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="생성형 AI 고급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="생성형 AI 고급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="여러 에이전트를 조율하는 방법, 직접 모델을 서빙하는 선택지, 대규모로 품질을 관리하는 방법을 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="ai-adv">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -94,7 +94,7 @@ GPU 메모리: 모델 크기 + 동시 요청 수만큼의 KV 캐시가 메모리
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>방법 1: 정답이 명확한 작업 — 정답과 직접 비교(정확도 계산)
 방법 2: 정답이 여러 개일 수 있는 작업 — 다른 LLM에게 &quot;이 응답이 기준을 만족하는지&quot; 채점시킴(LLM-as-judge)
 방법 3: 실제 사용자 반응 — 사용자가 응답을 재생성 요청하는 비율, 만족도 클릭 등 간접 지표</code></pre></div>
-<p><strong>기본 상식</strong>: LLM-as-judge는 사람이 일일이 확인하기 어려운 규모에서 유용하지만, 채점 기준(rubric)을 명확히 주지 않으면 채점 결과 자체가 불안정합니다. 채점 기준을 구체적인 항목(예: "요청한 형식을 지켰는가", "사실과 다른 내용이 있는가")으로 쪼개서 평가하면 신뢰도가 올라갑니다.</p>
+<p><strong>기본 상식</strong>: LLM-as-judge는 사람이 일일이 확인하기 어려운 규모에서 유용하지만, 완벽한 평가자는 아닙니다. 채점 기준(rubric)을 명확히 주지 않으면 채점 결과 자체가 불안정(variance)하고, 특정 답변 형식·길이를 선호하는 편향(bias), 여러 응답을 비교시킬 때 제시 순서에 따라 평가가 달라지는 position bias 같은 한계가 보고되어 있습니다. 채점 기준을 구체적인 항목(예: "요청한 형식을 지켰는가", "사실과 다른 내용이 있는가")으로 쪼개고, 비교 순서를 무작위화하며, 사람 평가·객관적 지표와 주기적으로 대조해 신뢰도를 검증하면 안정성이 올라갑니다.</p>
 <h3 class="section-h2" id="운영-중-모니터링">운영 중 모니터링<a class="heading-anchor" href="#운영-중-모니터링" aria-label="이 섹션 링크">#</a></h3>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>지켜봐야 할 지표: 응답 지연시간, 토큰 사용량(비용), 실패율(타임아웃·형식 오류), 사용자 재시도율
 회귀 감지: 프롬프트나 모델을 바꿨을 때 기존 평가셋에서 품질이 떨어지지 않았는지 자동 확인</code></pre></div>
@@ -203,6 +203,7 @@ GPU 메모리: 모델 크기 + 동시 요청 수만큼의 KV 캐시가 메모리
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

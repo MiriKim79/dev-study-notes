@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>백엔드 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="백엔드 중급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="백엔드 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="요청이 몰리거나 데이터가 커졌을 때 실제로 부딪히는 문제와 대응 방법을 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="backend-mid">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -145,6 +145,7 @@ courses = Course.query.all()
 <span class="tok-keyword">from</span> sqlalchemy.orm <span class="tok-keyword">import</span> joinedload
 courses = Course.query.options(joinedload(Course.instructor)).all()</code></pre></div>
 <p><strong>확인 방법</strong>: ORM이 실제로 어떤 SQL을 만드는지 로그로 켜두고, 목록 화면에서 쿼리 수가 데이터 개수에 비례해 늘어나는지 확인합니다. (Flask-SQLAlchemy는 <code class="inline-code">SQLALCHEMY_ECHO=True</code>로 쿼리 로그를 볼 수 있습니다.)</p>
+<p><strong>주의</strong>: eager loading을 아무 데나 무조건 쓰는 것도 정답은 아닙니다. 매번 필요하지 않은 연관 데이터까지 항상 함께 불러오면 불필요한 조인·데이터 전송이 늘어날 수 있습니다. 실제로 N+1이 발생하고 있는 화면(연관 데이터를 항상 함께 보여주는 목록)에 한해 적용하는 것이 기본 원칙입니다.</p>
 <hr>
 <h2 class="section-h1" id="4-API-버저닝">4. API 버저닝<a class="heading-anchor" href="#4-API-버저닝" aria-label="이 섹션 링크">#</a></h2>
 <p>이미 배포된 API의 응답 형식을 바꿔야 할 때, 기존 클라이언트(오래된 앱 버전 등)를 깨뜨리지 않는 방법입니다.</p>
@@ -244,13 +245,16 @@ log_event(&quot;course_enrolled&quot;, user_id=user.id, course_id=course.id)
 <hr>
 <h2 class="section-h1" id="11-멱등성-Idempotency">11. 멱등성(Idempotency)<a class="heading-anchor" href="#11-멱등성-Idempotency" aria-label="이 섹션 링크">#</a></h2>
 <p>같은 요청을 여러 번 보내도 결과가 한 번 보낸 것과 같아야 하는 성질입니다. 네트워크 오류로 클라이언트가 같은 요청을 재시도할 수 있기 때문에 중요합니다.</p>
+<p><strong>주의</strong>: 클라이언트가 요청에 idempotency key를 실어 보내는 것 자체는 멱등성을 만들어주지 않습니다. 그 키를 서버가 저장해두고, 같은 키로 다시 요청이 오면 실제로 식별해서 "이미 처리된 요청이면 저장된 결과를 그대로 돌려주고 작업을 다시 실행하지 않는" 처리를 해야 안전성이 생깁니다. 즉 멱등성을 보장하는 주체는 클라이언트가 아니라 서버입니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># 나쁜 예 — 재시도하면 결제가 두 번 될 수 있음</span>
 @app.route(&quot;/api/payments&quot;, methods=[&quot;POST&quot;])
 <span class="tok-keyword">def</span> create_payment():
     charge_card(amount)
     <span class="tok-keyword">return</span> jsonify({&quot;data&quot;: {&quot;status&quot;: &quot;ok&quot;}}), <span class="tok-number">201</span>
 
-<span class="tok-comment"># 좋은 예 — 클라이언트가 보낸 idempotency key로 중복 요청을 식별</span>
+<span class="tok-comment"># 좋은 예 — 서버가 idempotency key를 저장해두고 중복 요청을 직접 식별해서 처리</span>
+<span class="tok-keyword">from</span> sqlalchemy.exc <span class="tok-keyword">import</span> IntegrityError
+
 @app.route(&quot;/api/payments&quot;, methods=[&quot;POST&quot;])
 <span class="tok-keyword">def</span> create_payment():
     key = request.headers.get(&quot;Idempotency-Key&quot;)
@@ -258,11 +262,25 @@ log_event(&quot;course_enrolled&quot;, user_id=user.id, course_id=course.id)
     <span class="tok-keyword">if</span> existing:
         <span class="tok-keyword">return</span> jsonify({&quot;data&quot;: existing.to_dict()}), <span class="tok-number">200</span>
 
-    payment = charge_card(amount)
-    payment.idempotency_key = key
+    <span class="tok-comment"># idempotency_key 컬럼에 UNIQUE 제약을 걸어둔다.</span>
+    <span class="tok-comment"># 위의 조회와 아래의 insert 사이에는 시간차가 있어서, 같은 키로 거의 동시에</span>
+    <span class="tok-comment"># 들어온 두 요청이 둘 다 existing=None을 볼 수 있다. UNIQUE 제약이 없으면</span>
+    <span class="tok-comment"># 둘 다 결제를 실행해버리는 경쟁 조건(race condition)이 생긴다.</span>
+    payment = Payment(idempotency_key=key, status=&quot;pending&quot;)
+    db.session.add(payment)
+    <span class="tok-keyword">try</span>:
+        db.session.commit()
+    <span class="tok-keyword">except</span> IntegrityError:
+        <span class="tok-comment"># 다른 요청이 먼저 같은 키로 커밋한 경우 — 그 결과를 그대로 반환</span>
+        db.session.rollback()
+        existing = Payment.query.filter_by(idempotency_key=key).first()
+        <span class="tok-keyword">return</span> jsonify({&quot;data&quot;: existing.to_dict()}), <span class="tok-number">200</span>
+
+    charge_card(amount)
+    payment.status = &quot;completed&quot;
     db.session.commit()
     <span class="tok-keyword">return</span> jsonify({&quot;data&quot;: payment.to_dict()}), <span class="tok-number">201</span></code></pre></div>
-<p><strong>기본 상식</strong>: HTTP 스펙상 <code class="inline-code">GET</code>/<code class="inline-code">PUT</code>/<code class="inline-code">DELETE</code>는 원래 멱등해야 하지만, <code class="inline-code">POST</code>는 멱등이 보장되지 않습니다. 결제·주문처럼 중복 실행이 치명적인 <code class="inline-code">POST</code> API는 별도로 멱등성을 구현해야 합니다.</p>
+<p><strong>기본 상식</strong>: HTTP 스펙상 <code class="inline-code">GET</code>/<code class="inline-code">PUT</code>/<code class="inline-code">DELETE</code>는 원래 멱등해야 하지만, <code class="inline-code">POST</code>는 멱등이 보장되지 않습니다. 결제·주문처럼 중복 실행이 치명적인 <code class="inline-code">POST</code> API는 서버가 idempotency key를 저장·조회하는 로직과, 동시 요청에도 중복 저장을 막는 DB 제약(UNIQUE 등)을 함께 구현해야 합니다. 키를 헤더로 받기만 하고 서버가 아무것도 하지 않으면 멱등성은 생기지 않습니다.</p>
 <hr>
 <h2 class="section-h1" id="12-헬스체크와-우아한-종료-Graceful-Shutdown">12. 헬스체크와 우아한 종료(Graceful Shutdown)<a class="heading-anchor" href="#12-헬스체크와-우아한-종료-Graceful-Shutdown" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="헬스체크">헬스체크<a class="heading-anchor" href="#헬스체크" aria-label="이 섹션 링크">#</a></h3>
@@ -309,6 +327,7 @@ async <span class="tok-keyword">def</span> get_summary(id: int):
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

@@ -79,6 +79,8 @@ jobs:
 - `needs: build-and-test`: 테스트가 실패하면 배포 job 자체가 실행되지 않습니다 — 이것이 파이프라인의 핵심입니다.
 - 두 job은 각각 독립된 가상 환경(runner)에서 실행되므로, 배포 job에서 다시 코드를 체크아웃해야 합니다.
 
+**기본 상식**: "테스트를 통과해야만 배포한다"는 원칙은 예외 없이 지켜야 하는 규칙이 아니라 기본값입니다. 운영 장애를 급히 막아야 하는 hotfix 상황처럼 정말 예외가 필요할 때는, 파이프라인을 몰래 우회하는 대신 "누가 승인했는지, 왜 건너뛰었는지"가 남는 명시적인 절차(예: 승인자가 있는 별도 hotfix 워크플로, 배포 후 반드시 테스트를 재실행하는 후속 조치)를 미리 정해두는 것이 안전합니다.
+
 ---
 
 # 3. 환경별 배포 전략
@@ -343,6 +345,9 @@ jobs:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write   # GITHUB_TOKEN의 packages 기본 권한은 read이므로, ghcr.io에 push하려면 write를 명시해야 함
     steps:
       - uses: actions/checkout@v4
 
@@ -363,8 +368,9 @@ jobs:
           cache-to: type=gha,mode=max
 ```
 
-- 태그를 `latest`가 아니라 커밋 SHA(`github.sha`)로 붙이면, 배포된 이미지가 정확히 어느 커밋에서 만들어졌는지 항상 추적할 수 있고 문제 발생 시 이전 SHA로 즉시 롤백할 수 있습니다.
+- 태그를 `latest`가 아니라 커밋 SHA(`github.sha`)로 붙이면, 배포된 이미지가 어느 커밋에서 만들어졌는지 추적할 수 있고 문제 발생 시 이전 SHA로 즉시 롤백할 수 있습니다.
 - `cache-from`/`cache-to`로 Docker 레이어 캐시를 GitHub Actions 캐시에 저장해두면, 변경 없는 레이어(예: 의존성 설치 단계)는 다시 빌드하지 않아 속도가 크게 빨라집니다.
+- `GITHUB_TOKEN`으로 ghcr.io에 push하려면 `packages: write` 권한이 필요합니다. 기본적으로 `GITHUB_TOKEN`은 packages에 read 권한만 가지므로, 명시하지 않으면 push 단계에서 403 오류가 납니다.
 
 **기본 상식**: 이미지에 소스코드의 `.env` 파일이나 시크릿을 그대로 복사해 넣지 않습니다. `.dockerignore`에 `.env`, `node_modules`, `.git` 등을 반드시 등록해 이미지 크기와 노출 위험을 함께 줄입니다.
 
@@ -376,11 +382,13 @@ jobs:
 
 ```yaml
 permissions:
-  contents: read      # 기본값은 더 넓은 권한 — 필요한 만큼만 명시적으로 좁힘
+  contents: read
   deployments: write
 ```
 
 워크플로우가 실제로 필요로 하는 권한만 명시하면, 워크플로우 코드에 취약점이 있더라도 피해 범위가 제한됩니다.
+
+**기본 상식**: `GITHUB_TOKEN`의 기본 권한은 항상 넓은 것이 아니라 저장소·조직 설정에 따라 다릅니다. 2023년 2월 이후 만들어진 저장소는 기본적으로 read 전용으로 시작하는 경우가 많지만, 조직 설정이나 저장소 생성 시점에 따라 더 넓은 권한(write 포함)이 기본값일 수도 있습니다. `permissions`를 워크플로우 파일에 명시하면 이 기본값이 무엇이든 상관없이 의도한 권한만 갖도록 고정할 수 있으므로, 기본값을 추측하기보다 항상 명시하는 습관을 들이는 것이 안전합니다.
 
 ## 장기 자격 증명 대신 OIDC
 

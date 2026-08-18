@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>프론트엔드 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=0f71412d47">
+<link rel="stylesheet" href="../assets/style.css?v=c9f970b477">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="프론트엔드 중급 가이드 · 개발 학습·실전 노트">
@@ -14,9 +14,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="프론트엔드 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="&quot;일단 동작하는&quot; 수준을 넘어 성능·테스트·렌더링 전략까지 고려하는 방법을 정리합니다">
-<script src="../assets/search-index.js?v=0f71412d47" defer></script>
+<script src="../assets/search-index.js?v=c9f970b477" defer></script>
 </head>
-<body data-root-prefix="../">
+<body data-root-prefix="../" data-page-key="frontend-mid">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -55,7 +55,7 @@
         <hr>
 <h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
 <p>기초 가이드에서 다룬 컴포넌트·상태·API 통신 용어는 이미 안다고 가정합니다. 여기서는 이 문서에서 새로 나오는 용어만 정리합니다.</p>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>코드 스플리팅(Code Splitting)</td><td>전체 코드를 한 번에 내려받지 않고, 필요한 화면에 진입할 때만 나눠서 불러오는 기법</td></tr><tr><td>메모이제이션(Memoization)</td><td>같은 계산·렌더링을 반복하지 않도록 이전 결과를 기억해뒀다 재사용하는 것. React의 <code class="inline-code">memo</code>/<code class="inline-code">useMemo</code>/<code class="inline-code">useCallback</code>이 이 방식을 씀</td></tr><tr><td>서버 상태 / 클라이언트 상태</td><td>서버 상태는 API로 받아온 데이터(캐싱·재요청 필요), 클라이언트 상태는 모달 열림 여부처럼 화면 안에서만 쓰는 값</td></tr><tr><td>보일러플레이트(Boilerplate)</td><td>기능마다 반복해서 작성해야 하는 정형화된 코드. 많을수록 손이 많이 감</td></tr><tr><td>CSR (Client-Side Rendering)</td><td>브라우저가 화면을 매번 직접 그리는 방식. 기초 가이드에서 다룬 React의 기본 동작</td></tr><tr><td>SSR (Server-Side Rendering)</td><td>요청이 올 때마다 서버가 미리 HTML을 만들어 보내는 방식</td></tr><tr><td>SSG (Static Site Generation)</td><td>빌드할 때 미리 HTML을 만들어두는 방식. 거의 안 바뀌는 페이지에 적합</td></tr><tr><td>ISR (Incremental Static Regeneration)</td><td>SSG처럼 미리 만들어두되, 일정 시간마다 백그라운드에서 다시 생성하는 방식</td></tr><tr><td>컴포넌트 테스트</td><td>컴포넌트 하나를 화면에 렌더링해서 "사용자가 보는 결과"가 맞는지 확인하는 테스트</td></tr><tr><td>E2E 테스트(End-to-End)</td><td>실제 브라우저를 띄워 로그인 → 결제처럼 여러 화면에 걸친 흐름 전체를 확인하는 테스트</td></tr><tr><td>Core Web Vitals</td><td>구글이 정한 "사용자가 체감하는 성능"을 재는 3가지 지표(LCP·INP·CLS)</td></tr><tr><td>Lighthouse</td><td>브라우저 개발자 도구에 내장된 성능·접근성 자동 측정 도구</td></tr><tr><td>포커스 트랩(Focus Trap)</td><td>모달이 열려 있는 동안 키보드 Tab 이동이 모달 바깥으로 나가지 않게 가두는 것</td></tr><tr><td>ARIA 속성</td><td>스크린 리더 같은 보조 기술에 "지금 이 요소가 열려 있다/닫혀 있다" 같은 상태를 알려주는 HTML 속성</td></tr><tr><td>번들(Bundle)</td><td>여러 코드 파일을 빌드 도구가 하나(또는 몇 개)로 묶어낸 최종 결과물</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>코드 스플리팅(Code Splitting)</td><td>전체 코드를 한 번에 내려받지 않고, 필요한 화면에 진입할 때만 나눠서 불러오는 기법</td></tr><tr><td>메모이제이션(Memoization)</td><td>같은 계산·렌더링을 반복하지 않도록 이전 결과를 기억해뒀다 재사용하는 것. React의 <code class="inline-code">memo</code>/<code class="inline-code">useMemo</code>/<code class="inline-code">useCallback</code>이 이 방식을 씀</td></tr><tr><td>서버 상태 / 클라이언트 상태</td><td>서버 상태는 API로 받아온 데이터(캐싱·재요청 필요), 클라이언트 상태는 모달 열림 여부처럼 화면 안에서만 쓰는 값</td></tr><tr><td>보일러플레이트(Boilerplate)</td><td>기능마다 반복해서 작성해야 하는 정형화된 코드. 많을수록 손이 많이 감</td></tr><tr><td>CSR (Client-Side Rendering)</td><td>브라우저가 화면을 매번 직접 그리는 방식. 기초 가이드에서 다룬 React의 기본 동작(순수 React/Vite 프로젝트의 기본값)</td></tr><tr><td>SSR (Server-Side Rendering)</td><td>요청이 올 때마다 서버가 HTML을 만들어 보내는 방식. Next.js·Remix 등 프레임워크가 이 방식을 지원하며, 순수 React만으로는 직접 서버 렌더링 코드를 짜야 함</td></tr><tr><td>SSG (Static Site Generation)</td><td>빌드할 때 미리 HTML을 만들어두는 방식. 거의 안 바뀌는 페이지에 적합. Next.js, Gatsby, Astro 등 특정 프레임워크가 제공하는 빌드 기능이며 React 자체 표준은 아님</td></tr><tr><td>ISR (Incremental Static Regeneration)</td><td>SSG처럼 미리 만들어두되, 일정 시간마다 백그라운드에서 다시 생성하는 방식. <strong>Next.js 고유 용어/기능</strong>이며 다른 프레임워크에는 이 이름 그대로 존재하지 않음(유사 기능은 프레임워크마다 다르게 구현됨)</td></tr><tr><td>컴포넌트 테스트</td><td>컴포넌트 하나를 화면에 렌더링해서 "사용자가 보는 결과"가 맞는지 확인하는 테스트</td></tr><tr><td>E2E 테스트(End-to-End)</td><td>실제 브라우저를 띄워 로그인 → 결제처럼 여러 화면에 걸친 흐름 전체를 확인하는 테스트</td></tr><tr><td>Core Web Vitals</td><td>구글이 정한 "사용자가 체감하는 성능"을 재는 3가지 지표(LCP·INP·CLS)</td></tr><tr><td>Lighthouse</td><td>브라우저 개발자 도구에 내장된 성능·접근성 자동 측정 도구</td></tr><tr><td>포커스 트랩(Focus Trap)</td><td>모달이 열려 있는 동안 키보드 Tab 이동이 모달 바깥으로 나가지 않게 가두는 것</td></tr><tr><td>ARIA 속성</td><td>스크린 리더 같은 보조 기술에 "지금 이 요소가 열려 있다/닫혀 있다" 같은 상태를 알려주는 HTML 속성</td></tr><tr><td>번들(Bundle)</td><td>여러 코드 파일을 빌드 도구가 하나(또는 몇 개)로 묶어낸 최종 결과물</td></tr></tbody></table></div>
 <hr>
 <h2 class="section-h1" id="1-성능-최적화">1. 성능 최적화<a class="heading-anchor" href="#1-성능-최적화" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="언제-최적화해야-하는가">언제 최적화해야 하는가<a class="heading-anchor" href="#언제-최적화해야-하는가" aria-label="이 섹션 링크">#</a></h3>
@@ -78,7 +78,7 @@
 <div class="code-block"><div class="code-block-header"><span class="code-lang">jsx</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">const</span> CourseCard = React.memo(<span class="tok-keyword">function</span> CourseCard({ course }) {
   <span class="tok-keyword">return</span> &lt;div&gt;{course.title}&lt;/div&gt;;
 });</code></pre></div>
-<ul><li><code class="inline-code">React.memo</code>: props가 바뀌지 않으면 컴포넌트를 다시 렌더링하지 않음</li><li><code class="inline-code">useMemo</code>: 계산 비용이 큰 값을 props/state가 바뀔 때만 다시 계산</li><li><code class="inline-code">useCallback</code>: 함수를 매 렌더링마다 새로 만들지 않고 재사용 (자식이 <code class="inline-code">memo</code>로 감싸져 있을 때 효과가 있음)</li></ul>
+<ul><li><code class="inline-code">React.memo</code>: props가 바뀌지 않으면 컴포넌트를 다시 렌더링하지 않음(단, React 공식 문서 기준으로도 이는 "성능 최적화"일 뿐 "리렌더링 안 됨"을 보장하는 계약은 아닙니다)</li><li><code class="inline-code">useMemo</code>: 계산 비용이 큰 값을 props/state가 바뀔 때만 다시 계산</li><li><code class="inline-code">useCallback</code>: 함수를 매 렌더링마다 새로 만들지 않고 재사용 (자식이 <code class="inline-code">memo</code>로 감싸져 있을 때 효과가 있음)</li></ul>
 <p><strong>기본 상식</strong>: 이 세 가지는 "무조건 붙이면 빨라지는" 도구가 아닙니다. 메모이제이션 자체에도 비용이 있어서, 리스트가 몇 개뿐이거나 계산이 가벼우면 오히려 코드만 복잡해집니다. Profiler로 실제 병목을 확인한 부분에만 적용합니다.</p>
 <hr>
 <h2 class="section-h1" id="2-상태관리-라이브러리-비교">2. 상태관리 라이브러리 비교<a class="heading-anchor" href="#2-상태관리-라이브러리-비교" aria-label="이 섹션 링크">#</a></h2>
@@ -101,6 +101,7 @@
 }</code></pre></div>
 <hr>
 <h2 class="section-h1" id="3-렌더링-전략-심화-CSR-SSR-SSG-ISR">3. 렌더링 전략 심화 — CSR / SSR / SSG / ISR<a class="heading-anchor" href="#3-렌더링-전략-심화-CSR-SSR-SSG-ISR" aria-label="이 섹션 링크">#</a></h2>
+<blockquote><p><strong>주의</strong>: 아래 네 가지는 웹 표준이 아니라 렌더링 시점을 구분하는 개념적 분류입니다. CSR은 React 자체(순수 Vite/CRA 프로젝트)에서도 기본으로 동작하지만, SSR/SSG는 Next.js·Remix·Gatsby·Astro 같은 프레임워크가 있어야 실제로 구현할 수 있고, <strong>ISR은 그중에서도 Next.js가 만든 고유 용어/기능</strong>입니다. "React = CSR/SSR/SSG/ISR을 자유롭게 고를 수 있다"가 아니라, "어떤 프레임워크를 쓰느냐에 따라 선택지가 달라진다"가 정확한 설명입니다.</p></blockquote>
 <div class="table-scroll"><table><thead><tr><th>전략</th><th>언제 HTML을 만드는가</th><th>적합한 경우</th></tr></thead><tbody><tr><td>CSR</td><td>브라우저에서 매번</td><td>로그인 후에만 보이는 대시보드 등 SEO가 중요하지 않은 화면</td></tr><tr><td>SSR</td><td>요청이 올 때마다 서버에서</td><td>검색 결과처럼 자주 바뀌고 SEO가 중요한 페이지</td></tr><tr><td>SSG</td><td>빌드 시 미리</td><td>소개 페이지, 블로그 글처럼 거의 안 바뀌는 페이지</td></tr><tr><td>ISR</td><td>빌드 시 미리 만들고, 일정 시간마다 백그라운드에서 재생성</td><td>상품 목록처럼 자주는 아니어도 주기적으로 바뀌는 페이지</td></tr></tbody></table></div>
 <svg viewBox="0 0 780 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CSR SSR SSG ISR 렌더링 전략 시간축 비교" style="max-width:100%;height:auto;font-family:inherit">
   <style>
@@ -162,6 +163,7 @@
 <span class="tok-comment">// 정적으로 미리 만들고 싶다면</span>
 <span class="tok-keyword">export</span> <span class="tok-keyword">const</span> revalidate = <span class="tok-number">3600</span>; <span class="tok-comment">// 1시간마다 재생성 (ISR)</span></code></pre></div>
 <p><strong>기본 상식</strong>: "React를 쓰면 무조건 CSR"이 아닙니다. 페이지 성격(자주 바뀌는가, SEO가 필요한가, 로그인 전용인가)에 따라 같은 프로젝트 안에서도 페이지마다 다른 전략을 씁니다.</p>
+<p><strong>참고 — Server Components와의 차이</strong>: React 19부터 정식 지원되는 서버 컴포넌트(Server Components, RSC)는 위의 SSR과 다른 개념입니다. SSR은 "HTML을 언제 만드는가"의 문제이고, 서버 컴포넌트는 "어떤 컴포넌트를 애초에 서버에서만 실행하고 클라이언트 번들에는 포함시키지 않을 것인가"의 문제입니다. 서버 컴포넌트도 React 단독으로는 쓸 수 없고 Next.js(App Router) 같은 프레임워크의 번들러 통합이 필요합니다.</p>
 <hr>
 <h2 class="section-h1" id="4-테스트">4. 테스트<a class="heading-anchor" href="#4-테스트" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="컴포넌트-테스트-Jest-React-Testing-Library">컴포넌트 테스트 (Jest + React Testing Library)<a class="heading-anchor" href="#컴포넌트-테스트-Jest-React-Testing-Library" aria-label="이 섹션 링크">#</a></h3>
@@ -359,6 +361,7 @@ test(&quot;버튼을 누르면 onEnroll이 호출된다&quot;, () =&gt; {
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/main.js?v=0f71412d47" defer></script>
+<script src="../assets/search-core.js?v=c9f970b477" defer></script>
+<script src="../assets/main.js?v=c9f970b477" defer></script>
 </body>
 </html>

@@ -11,8 +11,15 @@ import hashlib
 import html
 import json
 import re
+import sys
 from pathlib import Path
 from urllib.parse import quote
+
+# Windows 콘솔은 기본 인코딩이 cp949라, 제목에 em dash(—) 같은 문자가 있으면
+# print()가 그대로 죽는다. 콘솔 출력을 UTF-8로 강제해 빌드가 중간에 멈추지 않게 한다.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent
 SITE_BASE_URL = "https://mirikim79.github.io/dev-study-notes/"
@@ -22,7 +29,7 @@ def _compute_asset_version():
     """assets/style.css·main.js 내용이 바뀔 때만 값이 바뀌는 캐시 무효화용 버전 문자열.
     내용이 그대로면 값도 그대로라 불필요한 캐시 무효화가 없다."""
     h = hashlib.sha256()
-    for name in ("assets/style.css", "assets/main.js"):
+    for name in ("assets/style.css", "assets/main.js", "assets/search-core.js"):
         p = ROOT / name
         if p.exists():
             h.update(p.read_bytes())
@@ -49,7 +56,17 @@ PAGES = [
         "cat": "start",
         "icon": "📚",
         "hub": None,
-        "hub_children": ["git-min", "team-start", "frontend", "backend", "ai", "git"],
+        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends"],
+    },
+    {
+        "key": "first-steps",
+        "src": f"{PLAYBOOK_DIR}/개발 처음 시작하기.md",
+        "title": "개발 처음 시작하기",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "start",
+        "icon": "🗺️",
+        "hub": "playbook-hub",
+        "tagline": "프로그램이 뭔지도 감이 안 잡힌다? 5~10분이면 전체 지도가 보입니다.",
     },
     {
         "key": "git-min",
@@ -110,6 +127,46 @@ PAGES = [
         "icon": "🌿",
         "hub": "playbook-hub",
         "tagline": "add, commit, push를 외우기 전에 원리부터 — 충돌 해결까지 제대로 다룹니다.",
+    },
+    {
+        "key": "profile-readme",
+        "src": f"{PLAYBOOK_DIR}/GitHub 프로필 꾸미기 가이드.md",
+        "title": "GitHub 프로필 꾸미기 가이드",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "icon": "✨",
+        "hub": "playbook-hub",
+        "tagline": "학습 필수는 아니지만 재미로 — shields.io 배지, 통계 카드로 프로필 꾸며보기.",
+    },
+    {
+        "key": "presentation",
+        "src": f"{PLAYBOOK_DIR}/개발자 발표·데모 잘하는 법.md",
+        "title": "개발자 발표·데모 잘하는 법",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "icon": "🎤",
+        "hub": "playbook-hub",
+        "tagline": "데모데이 발표 앞두고 있다면 — 스톱워치로 리허설하는 법부터.",
+    },
+    {
+        "key": "vibe-coding",
+        "src": f"{PLAYBOOK_DIR}/바이브 코딩으로 개발하기.md",
+        "title": "바이브 코딩으로 개발하기",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "icon": "🌀",
+        "hub": "playbook-hub",
+        "tagline": "AI에게 코드를 맡길 때, 언제는 괜찮고 언제는 위험한지 감 잡기.",
+    },
+    {
+        "key": "agent-trends",
+        "src": f"{PLAYBOOK_DIR}/AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링.md",
+        "title": "AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "icon": "🧩",
+        "hub": "playbook-hub",
+        "tagline": "요즘 자주 들리는 그 용어들, 정확히 뭘 가리키는지 정리했습니다.",
     },
     {
         "key": "collab-method",
@@ -438,12 +495,17 @@ PAGES_BY_KEY = {p["key"]: p for p in PAGES}
 STUDY_ORDER = [
     "index",
     "playbook-hub",
+    "first-steps",
     "git-min",
     "team-start",
     "git",
     "frontend",
     "backend",
     "ai",
+    "profile-readme",
+    "presentation",
+    "vibe-coding",
+    "agent-trends",
     "collab-method",
     "github-hub",
     "contributing",
@@ -493,6 +555,7 @@ CAT_LABEL = {
     "perf": "성능·스케일",
     "leadership": "기술 리더십",
     "cert": "자격증 대비",
+    "misc": "기타",
 }
 
 
@@ -1242,7 +1305,7 @@ PAGE_HTML_TMPL = """<!doctype html>
 <meta name="twitter:description" content="{og_description}">
 <script src="{prefix}assets/search-index.js?v={asset_v}" defer></script>
 </head>
-<body data-root-prefix="{prefix}">
+<body data-root-prefix="{prefix}" data-page-key="{page_key}">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -1290,6 +1353,7 @@ PAGE_HTML_TMPL = """<!doctype html>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
+<script src="{prefix}assets/search-core.js?v={asset_v}" defer></script>
 <script src="{prefix}assets/main.js?v={asset_v}" defer></script>
 </body>
 </html>
@@ -1323,6 +1387,7 @@ def build_content_page(page):
 
     html_out = PAGE_HTML_TMPL.format(
         title=html.escape(page["title"]),
+        page_key=page["key"],
         prefix=prefix,
         asset_v=ASSET_VERSION,
         breadcrumb=breadcrumb_html,
@@ -1378,6 +1443,12 @@ def block_text(b):
     return ""
 
 
+# 검색 대상 텍스트(t)의 최대 길이. 화면에 보여줄 snippet과는 별개로, 검색 매칭에만
+# 쓰이는 필드라서 heading 하나의 본문 전체(중앙값 약 150자, p90 약 530자)를 충분히
+# 담으면서도 인덱스 파일이 지나치게 커지지 않도록 상한을 둔다.
+SEARCH_TEXT_MAX_LEN = 1000
+
+
 def collect_search_entries(page, blocks):
     entries = []
     url = page["src"][:-3] + ".html"
@@ -1386,13 +1457,13 @@ def collect_search_entries(page, blocks):
 
     def flush():
         if current_heading is not None:
-            snippet = " ".join(buffer_text).strip()
-            snippet = re.sub(r"\s+", " ", snippet)[:140]
+            full_text = " ".join(buffer_text).strip()
+            full_text = re.sub(r"\s+", " ", full_text)[:SEARCH_TEXT_MAX_LEN]
             entries.append({
                 "p": page["title"],
                 "h": current_heading["text"],
                 "u": url + "#" + current_heading["id"],
-                "s": snippet,
+                "t": full_text,
             })
 
     def walk(blist):
@@ -1412,7 +1483,7 @@ def collect_search_entries(page, blocks):
     walk(blocks)
     flush()
     if not entries:
-        entries.append({"p": page["title"], "h": page["title"], "u": url, "s": page["kicker"]})
+        entries.append({"p": page["title"], "h": page["title"], "u": url, "t": page["kicker"]})
     return entries
 
 
@@ -1425,6 +1496,7 @@ DASHBOARD_INTRO = (
 )
 
 OVERVIEW_ROWS = [
+    ("first-steps", "개발 처음 시작하기", "프로그램·에디터·터미널·프론트/백엔드·서버·DB가 뭔지 5~10분 만에 전체 지도 잡기", "프로그래밍이라는 단어를 오늘 처음 들어봤을 때"),
     ("git-min", "Git·GitHub 진짜 최소 기초", "branch·commit·push·PR·merge·pull이 뭔지 5분 만에 감 잡기", "Git이라는 단어를 오늘 처음 들어봤을 때"),
     ("team-start", "팀 개발 시작 가이드", "요구사항 확인, MVP 범위, 사용자 흐름, 기술·구조 결정, 구현, 테스트, 배포, 회고까지 전체 순서", "처음 팀 프로젝트를 시작할 때"),
     ("frontend", "프론트엔드 기초 가이드", "HTML·CSS·JavaScript부터 React, API 통신, 상태 관리, 인증, 배포까지 공통 기초", "프론트엔드를 처음 공부할 때"),
@@ -1436,8 +1508,20 @@ OVERVIEW_ROWS = [
 ]
 
 DASHBOARD_CARDS = [
-    "git-min", "team-start", "frontend", "backend", "ai", "git", "collab-method", "github-hub",
+    "first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git",
+    "collab-method", "github-hub",
 ]
+
+# "기타" — 학습 필수는 아니지만 재미·최신 트렌드로 가볍게 보는 문서들.
+# 핵심 학습 흐름(초급~자격증)과는 구분해서 대시보드에 별도 섹션으로 보여준다.
+OVERVIEW_ROWS_MISC = [
+    ("profile-readme", "GitHub 프로필 꾸미기 가이드", "프로필 README 저장소, shields.io 배지, 통계 카드, 주의점", "학습은 다 했고 재미로 프로필을 꾸며보고 싶을 때"),
+    ("presentation", "개발자 발표·데모 잘하는 법", "시간 배분, 스톱워치 리허설, 데모데이 구조, 라이브 데모 리스크 관리", "팀 프로젝트 데모데이나 발표를 앞두고 있을 때"),
+    ("vibe-coding", "바이브 코딩으로 개발하기", "바이브 코딩의 정의, 언제 적합한지, 안전하게 쓰는 법", "AI에게 코드를 맡겨 빠르게 뭔가 만들어보고 싶을 때"),
+    ("agent-trends", "AI 코딩 에이전트 최신 트렌드", "하네스 엔지니어링, 루프 엔지니어링, 그래프/멀티 에이전트 오케스트레이션", "요즘 자주 들리는 AI 에이전트 용어가 궁금할 때"),
+]
+
+DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends"]
 
 OVERVIEW_ROWS_MID = [
     ("git-mid", "Git·GitHub 중급 가이드", "interactive rebase, cherry-pick, bisect, worktree, GitHub Actions, 브랜치 보호 심화", "Git 기본 명령이 손에 익은 뒤"),
@@ -1475,7 +1559,7 @@ OVERVIEW_ROWS_CERT = [
     ("csts", "CSTS 대비 가이드", "테스트 원칙, V-모델, 테스트 설계 기법, 결함 관리 프로세스", "테스트 코드는 짜봤지만 이론으로도 검증받고 싶을 때"),
     ("sqld", "SQLD 대비 가이드", "데이터 모델링, SQL 기본·활용, 자주 나오는 함정 포인트", "SQL은 짤 줄 아는데 SQLD를 준비할 때"),
     ("adsp", "ADSP 대비 가이드", "데이터 이해, 분석 기획, 통계·분석 기법 개요", "데이터 분석 기초를 자격증으로 검증하고 싶을 때"),
-    ("infoproc", "정보처리기사 대비 가이드", "소프트웨어 설계·개발, DB 구축, 프로그래밍 언어 활용, 정보시스템 구축관리", "국내 개발자 필수 국가자격증을 준비할 때"),
+    ("infoproc", "정보처리기사 대비 가이드", "소프트웨어 설계·개발, DB 구축, 프로그래밍 언어 활용, 정보시스템 구축관리", "국내에서 널리 알려진 국가기술자격을 준비할 때"),
     ("infosec", "정보보안기사·산업기사 대비 가이드", "시스템·네트워크·애플리케이션 보안, 정보보안 관리", "보안 심화 가이드로 개념을 잡은 뒤 자격증까지 노릴 때"),
     ("aws-cert", "AWS 클라우드 자격증 대비 가이드", "EC2·S3·IAM·VPC 핵심 개념, Well-Architected Framework 개요", "클라우드·IaC 가이드를 실제 자격증으로 검증하고 싶을 때"),
 ]
@@ -1484,57 +1568,6 @@ DASHBOARD_CARDS_CERT = [
     "csts", "sqld", "adsp", "infoproc", "infosec", "aws-cert",
 ]
 
-STEP_FLOW = [
-    {"title": "Git·GitHub 진짜 최소 기초", "sub": "Git이 처음이라면 여기서 5분만 — branch·commit·PR 감 잡기", "key": "git-min"},
-    {"title": "팀 개발 시작 가이드", "sub": "무엇을 확인하고 어떤 순서로 개발할지 먼저 파악", "key": "team-start"},
-    {"title": "Git · GitHub 기초 가이드", "sub": "버전 관리와 협업의 공통 기초 익히기", "key": "git"},
-    {"title": "원하는 개발 분야 선택", "sub": None, "branches": ["frontend", "backend", "ai"]},
-    {"title": "개발 협업 방식 선택 가이드", "sub": "팀에 맞는 브랜치·리뷰 방식 정하기", "key": "collab-method"},
-    {"title": "GitHub 팀 협업 가이드", "sub": "CONTRIBUTING·AGENTS 등 실전 협업 규칙 적용", "key": "github-hub"},
-]
-
-
-def render_overview_table(data=None):
-    data = OVERVIEW_ROWS if data is None else data
-    rows = []
-    for key, name, learn, who in data:
-        url = url_of(key)
-        rows.append(
-            '<tr><td class="name-cell"><a href="%s">%s</a></td><td>%s</td><td>%s</td></tr>'
-            % (url, html.escape(name), html.escape(learn), html.escape(who))
-        )
-    return (
-        '<div class="overview-table-wrap"><table class="overview-table">'
-        "<thead><tr><th>학습 자료</th><th>배우는 내용</th><th>추천 대상</th></tr></thead>"
-        "<tbody>%s</tbody></table></div>" % "".join(rows)
-    )
-
-
-def render_step_flow():
-    parts = ['<div class="step-flow">']
-    for i, step in enumerate(STEP_FLOW, start=1):
-        if step.get("key"):
-            title_html = '<a href="%s">%s</a>' % (url_of(step["key"]), html.escape(step["title"]))
-        else:
-            title_html = html.escape(step["title"])
-        sub_html = '<div class="step-sub">%s</div>' % html.escape(step["sub"]) if step.get("sub") else ""
-        parts.append(
-            '<div class="step-item"><div class="step-num">%d</div>'
-            '<div class="step-body"><div class="step-title">%s</div>%s</div></div>' % (i, title_html, sub_html)
-        )
-        if step.get("branches"):
-            branch_html = "".join(
-                '<a class="step-branch" href="%s">%s %s</a>'
-                % (url_of(bk), PAGES_BY_KEY[bk]["icon"], html.escape(PAGES_BY_KEY[bk]["title"]))
-                for bk in step["branches"]
-            )
-            parts.append('<div class="step-branches">%s</div>' % branch_html)
-        if i < len(STEP_FLOW):
-            parts.append('<div class="step-arrow">↓</div>')
-    parts.append("</div>")
-    return "".join(parts)
-
-
 def render_card_grid(keys=None, data=None):
     keys = DASHBOARD_CARDS if keys is None else keys
     data = OVERVIEW_ROWS if data is None else data
@@ -1542,13 +1575,16 @@ def render_card_grid(keys=None, data=None):
     for key in keys:
         p = PAGES_BY_KEY[key]
         desc = next((learn for k, _, learn, _ in data if k == key), "")
+        who = next((who for k, _, _, who in data if k == key), "")
+        who_html = '<div class="study-card-who">💡 %s</div>' % html.escape(who) if who else ""
         cards.append(
             '<a class="study-card" href="%s" style="--card-accent: var(--cat-%s);">'
             '<span class="study-card-icon">%s</span>'
             '<div class="study-card-title">%s</div>'
             '<div class="study-card-desc">%s</div>'
+            "%s"
             '<span class="study-card-tag">%s →</span></a>'
-            % (url_of(key), p["cat"], p["icon"], html.escape(p["title"]), html.escape(desc), html.escape(CAT_LABEL.get(p["cat"], "")))
+            % (url_of(key), p["cat"], p["icon"], html.escape(p["title"]), html.escape(desc), who_html, html.escape(CAT_LABEL.get(p["cat"], "")))
         )
     return '<div class="card-grid">%s</div>' % "".join(cards)
 
@@ -1592,7 +1628,27 @@ DASHBOARD_TMPL = """<!doctype html>
     <div class="dashboard-intro">
       <h1 class="dashboard-title">개발 공부 가이드</h1>
       <p class="dashboard-desc">{intro}</p>
+      <div id="progress-badge" class="progress-badge" data-leaf-keys="{leaf_keys}" data-total="{leaf_total}" hidden>
+        <span class="progress-badge-icon">📈</span>
+        <span class="progress-badge-text"></span>
+      </div>
     </div>
+
+    <div class="stat-strip">
+      <a class="stat-item" href="#tier-beginner"><div class="stat-num">{n_beginner}</div><div class="stat-label">🔰 초급</div></a>
+      <a class="stat-item" href="#tier-mid"><div class="stat-num">{n_mid}</div><div class="stat-label">📈 중급</div></a>
+      <a class="stat-item" href="#tier-adv"><div class="stat-num">{n_adv}</div><div class="stat-label">🏔️ 고급</div></a>
+      <a class="stat-item" href="#tier-cert"><div class="stat-num">{n_cert}</div><div class="stat-label">🏅 자격증</div></a>
+      <a class="stat-item" href="#tier-misc"><div class="stat-num">{n_misc}</div><div class="stat-label">🎈 기타</div></a>
+      <div class="stat-item stat-item-total"><div class="stat-num">{n_total}</div><div class="stat-label">전체 학습 자료</div></div>
+    </div>
+
+    <div class="section-heading" style="margin-top:28px;">📰 오늘의 개발 소식</div>
+    <p class="dashboard-desc" style="margin-bottom:12px;">GeekNews 최신 글을 매일 자동으로 가져옵니다(자소설닷컴은 공식 피드가 없어 자동 갱신 대신 바로가기만 제공합니다).</p>
+    <div id="news-feed" class="news-feed" data-src="assets/news-feed.json">
+      <div class="news-feed-loading">불러오는 중…</div>
+    </div>
+    <a class="news-static-link" href="https://www.jasoseol.com" target="_blank" rel="noopener">🔗 자소설닷컴 바로가기 — 채용공고·자소서·면접 후기 커뮤니티</a>
 
     <a class="hero-cta" href="{git_min_url}">
       <span class="hero-cta-text">Git 진짜 하나도 몰라요 😭 — <strong>branch가 뭔지, commit이 뭔지</strong>부터 5분 만에 정리하고 싶다면?</span>
@@ -1604,29 +1660,24 @@ DASHBOARD_TMPL = """<!doctype html>
       <span class="hero-cta-btn">🧭 등급별 시작 기준 확인하기 →</span>
     </a>
 
-    <div class="section-heading">학습 자료 한눈에 보기</div>
-    {overview_table}
-
-    <div class="section-heading">처음 개발을 시작한다면 — 추천 학습 순서</div>
-    {step_flow}
-
-    <div class="section-heading">학습 자료</div>
+    <div class="section-heading" id="tier-beginner">🔰 초급 학습 자료</div>
     {card_grid}
 
-    <div class="section-heading" style="margin-top:40px;">📈 중급 학습 자료</div>
+    <div class="section-heading" id="tier-mid" style="margin-top:40px;">📈 중급 학습 자료</div>
     <p class="dashboard-desc" style="margin-bottom:20px;">기초 가이드로 혼자 힘으로 동작하는 앱을 만들 수 있게 됐다면, 다음은 실무에서 부딪히는 문제를 다루는 <a href="{mid_hub_url}">중급 가이드</a>로 이어집니다.</p>
-    {mid_overview_table}
     {mid_card_grid}
 
-    <div class="section-heading" style="margin-top:40px;">🏔️ 고급 학습 자료</div>
+    <div class="section-heading" id="tier-adv" style="margin-top:40px;">🏔️ 고급 학습 자료</div>
     <p class="dashboard-desc" style="margin-bottom:20px;">중급 가이드로 실무 문제를 다룰 수 있게 됐다면, 다음은 설계 판단과 팀 전체 관점을 다루는 <a href="{adv_hub_url}">고급 가이드</a>로 이어집니다.</p>
-    {adv_overview_table}
     {adv_card_grid}
 
-    <div class="section-heading" style="margin-top:40px;">🏅 자격증 대비</div>
+    <div class="section-heading" id="tier-cert" style="margin-top:40px;">🏅 자격증 대비</div>
     <p class="dashboard-desc" style="margin-bottom:20px;">개발 실력과는 별개로, 공식적으로 검증받고 싶을 때 참고하는 <a href="{cert_hub_url}">자격증 대비 가이드</a>입니다. 연습문제는 직접 만든 것으로 실제 기출문제가 아니며, 진짜 기출은 각 문서 끝의 공식 링크를 이용하세요.</p>
-    {cert_overview_table}
     {cert_card_grid}
+
+    <div class="section-heading" id="tier-misc" style="margin-top:40px;">🎈 기타 — 가볍게 보기</div>
+    <p class="dashboard-desc" style="margin-bottom:20px;">학습 필수는 아니지만 재미로, 또는 요즘 트렌드가 궁금해서 보면 좋은 문서들입니다.</p>
+    {misc_card_grid}
 
     <div class="dashboard-footer">🐣 미리가 미리미리 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
   </div>
@@ -1637,6 +1688,7 @@ DASHBOARD_TMPL = """<!doctype html>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
+<script src="assets/search-core.js?v={asset_v}" defer></script>
 <script src="assets/main.js?v={asset_v}" defer></script>
 </body>
 </html>
@@ -1644,24 +1696,34 @@ DASHBOARD_TMPL = """<!doctype html>
 
 
 def build_dashboard():
+    leaf_keys = [p["key"] for p in PAGES if p.get("hub")]
+    n_beginner = len(DASHBOARD_CARDS)
+    n_mid = len(DASHBOARD_CARDS_MID)
+    n_adv = len(DASHBOARD_CARDS_ADV)
+    n_cert = len(DASHBOARD_CARDS_CERT)
+    n_misc = len(DASHBOARD_CARDS_MISC)
     html_out = DASHBOARD_TMPL.format(
         intro=html.escape(DASHBOARD_INTRO),
+        leaf_keys=",".join(leaf_keys),
+        leaf_total=len(leaf_keys),
+        n_beginner=n_beginner,
+        n_mid=n_mid,
+        n_adv=n_adv,
+        n_cert=n_cert,
+        n_misc=n_misc,
+        n_total=n_beginner + n_mid + n_adv + n_cert + n_misc,
         asset_v=ASSET_VERSION,
         tier_nav=render_tier_nav("index"),
         git_min_url=url_of("git-min"),
         level_guide_url=url_of("playbook-hub") + "#나는-어디부터-봐야-하나-등급별-시작-기준",
-        overview_table=render_overview_table(),
-        step_flow=render_step_flow(),
         card_grid=render_card_grid(),
-        mid_overview_table=render_overview_table(OVERVIEW_ROWS_MID),
         mid_card_grid=render_card_grid(DASHBOARD_CARDS_MID, OVERVIEW_ROWS_MID),
         mid_hub_url=url_of("mid-hub"),
-        adv_overview_table=render_overview_table(OVERVIEW_ROWS_ADV),
         adv_card_grid=render_card_grid(DASHBOARD_CARDS_ADV, OVERVIEW_ROWS_ADV),
         adv_hub_url=url_of("adv-hub"),
-        cert_overview_table=render_overview_table(OVERVIEW_ROWS_CERT),
         cert_card_grid=render_card_grid(DASHBOARD_CARDS_CERT, OVERVIEW_ROWS_CERT),
         cert_hub_url=url_of("cert-hub"),
+        misc_card_grid=render_card_grid(DASHBOARD_CARDS_MISC, OVERVIEW_ROWS_MISC),
         og_url=SITE_BASE_URL,
     )
     (ROOT / "index.html").write_text(html_out, encoding="utf-8")
@@ -1725,6 +1787,7 @@ GUESTBOOK_TMPL = """<!doctype html>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
+<script src="assets/search-core.js?v={asset_v}" defer></script>
 <script src="assets/main.js?v={asset_v}" defer></script>
 <script>
   (function () {{
@@ -1786,6 +1849,49 @@ def build_guestbook():
     (ROOT / "방명록.html").write_text(html_out, encoding="utf-8")
 
 
+NOT_FOUND_TMPL = """<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · 이 문서는 아직 안 배웠습니다 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css?v={asset_v}">
+</head>
+<body data-root-prefix="">
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="메뉴" style="visibility:hidden;">☰</button>
+    <a class="brand" href="index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><span class="current">404</span></nav>
+  </div>
+</header>
+<div class="page-shell">
+  <div class="layout no-sidebar">
+    <main class="main-content">
+      <div class="doc-inner" style="text-align:center; padding-top:60px; padding-bottom:60px;">
+        <div style="font-size:52px; margin-bottom:8px;">🤔</div>
+        <h1 class="page-title">404 — 이 문서는 아직 안 배웠습니다</h1>
+        <p class="page-tagline" style="max-width:520px; margin:12px auto 28px;">
+          찾으시는 페이지가 없거나 주소가 바뀌었어요. 링크가 오래됐을 수도 있고, 아니면 그냥 존재하지 않는 URL일 수도 있습니다 — 404도 결국 서버가 "그런 리소스 없음"이라고 정확하게 응답한 것뿐이에요.
+        </p>
+        <a class="hero-cta-btn" href="index.html" style="display:inline-block; text-decoration:none;">🏠 학습 대시보드로 돌아가기</a>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="assets/search-core.js?v={asset_v}" defer></script>
+<script src="assets/main.js?v={asset_v}" defer></script>
+</body>
+</html>
+"""
+
+
+def build_404():
+    html_out = NOT_FOUND_TMPL.format(asset_v=ASSET_VERSION)
+    (ROOT / "404.html").write_text(html_out, encoding="utf-8")
+
+
 # ==========================================================================
 # 9. 실행 진입점
 # ==========================================================================
@@ -1802,13 +1908,16 @@ def main():
     build_guestbook()
     print("생성: 방명록.html")
 
+    build_404()
+    print("생성: 404.html")
+
     assets_dir = ROOT / "assets"
     assets_dir.mkdir(exist_ok=True)
     search_js = "window.SEARCH_INDEX = " + json.dumps(all_search_entries, ensure_ascii=False) + ";\n"
     (assets_dir / "search-index.js").write_text(search_js, encoding="utf-8")
     print("생성: assets/search-index.js (%d개 항목)" % len(all_search_entries))
 
-    print("\n총 %d개 HTML 생성 완료." % (len(PAGES) + 1))
+    print("\n총 %d개 HTML 생성 완료." % (len(PAGES) + 3))
 
 
 if __name__ == "__main__":

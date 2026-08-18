@@ -165,66 +165,23 @@
 
     /* ---------- 검색 ---------- */
     initSearch();
+
+    /* ---------- 학습 진행률(방문한 문서 기록) ---------- */
+    initReadingProgressTracker();
+
+    /* ---------- 이스터에그 ---------- */
+    initConsoleEasterEgg();
+    initLogoClickEasterEgg();
+
+    /* ---------- 오늘의 개발 소식(GeekNews) ---------- */
+    initNewsFeed();
   });
 
-  /* ---------- 검색 동의어 사전 ----------
-     키(대표어)와 자주 쓰는 다른 표현을 함께 등록해두면, 어느 쪽으로 검색해도
-     같은 결과를 찾을 수 있습니다. 필요한 용어가 더 있으면 이 목록에 추가하세요. */
-  var SYNONYMS = {
-    "저장소": ["repo", "repository", "레포"],
-    "브랜치": ["branch"],
-    "커밋": ["commit"],
-    "병합": ["merge", "머지"],
-    "리베이스": ["rebase"],
-    "스쿼시": ["squash"],
-    "풀리퀘스트": ["pr", "pull request", "풀 리퀘스트"],
-    "충돌": ["conflict", "컨플릭트"],
-    "되돌리기": ["revert", "reset", "리버트", "리셋"],
-    "스태시": ["stash"],
-    "태그": ["tag"],
-    "원격저장소": ["origin", "remote", "원격"],
-    "클론": ["clone"],
-    "포크": ["fork"],
-    "인증": ["로그인", "login", "authentication", "auth"],
-    "토큰": ["jwt", "access token", "액세스 토큰", "리프레시 토큰"],
-    "인가": ["authorization", "권한"],
-    "해싱": ["bcrypt", "hash", "암호화"],
-    "환경변수": ["env", "dotenv", ".env"],
-    "컴포넌트": ["component"],
-    "상태": ["state"],
-    "속성": ["props", "prop"],
-    "라우팅": ["routing", "router"],
-    "렌더링": ["render", "rendering"],
-    "훅": ["hook", "hooks"],
-    "데이터베이스": ["db", "database"],
-    "마이그레이션": ["migration"],
-    "트랜잭션": ["transaction"],
-    "엔드포인트": ["endpoint"],
-    "미들웨어": ["middleware"],
-    "프롬프트": ["prompt"],
-    "임베딩": ["embedding"],
-    "검색증강생성": ["rag"],
-    "환각": ["hallucination"],
-    "파인튜닝": ["fine-tuning", "finetuning"],
-    "배포": ["deploy", "deployment", "릴리즈", "release"],
-    "요청": ["request"],
-    "응답": ["response"],
-    "검증": ["validation", "유효성"],
-    "폴더구조": ["folder structure", "디렉토리 구조", "디렉터리 구조"]
-  };
-  var SYNONYM_LOOKUP = null;
-  function buildSynonymLookup() {
-    var map = {};
-    Object.keys(SYNONYMS).forEach(function (key) {
-      var group = [key].concat(SYNONYMS[key]).map(function (s) { return s.toLowerCase(); });
-      group.forEach(function (term) { map[term] = group; });
-    });
-    return map;
-  }
-  function expandTerm(term) {
-    if (!SYNONYM_LOOKUP) SYNONYM_LOOKUP = buildSynonymLookup();
-    return SYNONYM_LOOKUP[term] || [term];
-  }
+  /* ---------- 검색 핵심 로직 ----------
+     동의어 사전·오타 보정·ranking·snippet 생성 로직은 assets/search-core.js에
+     따로 두고 여기서는 그 모듈을 가져다 쓴다. 브라우저와 Node 테스트(scripts/test-search.js)가
+     같은 로직을 공유하기 위한 구조로, 이 파일에는 로직을 중복 작성하지 않는다. */
+  var SC = window.DevNotesSearchCore;
 
   function initSearch() {
     var overlay = document.getElementById("search-overlay");
@@ -268,46 +225,28 @@
       return escaped.replace(//g, "<mark>").replace(//g, "</mark>");
     }
 
-    /* 토큰마다 AND, 동의어끼리는 OR. 제목 매치가 가장 높은 점수. */
-    function scoreEntry(it, tokenGroups) {
-      var hayH = it.h.toLowerCase();
-      var hayS = it.s.toLowerCase();
-      var hayP = it.p.toLowerCase();
-      var score = 0;
-      var matchedTerms = [];
-      for (var i = 0; i < tokenGroups.length; i++) {
-        var terms = tokenGroups[i];
-        var inH = terms.filter(function (t) { return hayH.indexOf(t) !== -1; });
-        var inS = terms.filter(function (t) { return hayS.indexOf(t) !== -1; });
-        var inP = terms.filter(function (t) { return hayP.indexOf(t) !== -1; });
-        if (!inH.length && !inS.length && !inP.length) return null;
-        if (inH.length) { score += 5; matchedTerms = matchedTerms.concat(inH); }
-        if (inP.length) { score += 2; matchedTerms = matchedTerms.concat(inP); }
-        if (inS.length) { score += 1; matchedTerms = matchedTerms.concat(inS); }
-        if (hayH.indexOf(terms[0]) === 0) score += 2;
-      }
-      var uniqueTerms = matchedTerms.filter(function (t, i) { return matchedTerms.indexOf(t) === i; });
-      return { score: score, terms: uniqueTerms };
-    }
-
     function renderResults(query) {
       results.innerHTML = "";
       var idx = window.SEARCH_INDEX || [];
-      var q = query.trim().toLowerCase();
+      var q = query.trim();
       if (!q) {
         results.innerHTML = '<div class="search-empty">검색어를 입력하세요. 예: 로그인, State, git commit</div>';
         return;
       }
-      var tokenGroups = q.split(/\s+/).filter(Boolean).map(expandTerm);
+      var tokenGroups = SC.tokenize(q);
       var scored = [];
       idx.forEach(function (it) {
-        var r = scoreEntry(it, tokenGroups);
+        var r = SC.scoreEntry(it, tokenGroups);
         if (r) scored.push({ it: it, score: r.score, terms: r.terms });
       });
       scored.sort(function (a, b) { return b.score - a.score; });
       var matched = scored.slice(0, 30);
       if (!matched.length) {
-        results.innerHTML = '<div class="search-empty">"' + escapeHtml(query) + '"에 대한 결과가 없습니다. 다른 표현으로도 시도해보세요.</div>';
+        results.innerHTML =
+          '<div class="search-empty">' +
+          '<div>"' + escapeHtml(query) + '"에 대한 결과가 없습니다.</div>' +
+          '<div class="search-empty-hint">다른 표현이나 더 짧은 검색어로 다시 검색해보세요. (예: 정확한 이름 대신 "로그인", "배포"처럼 키워드만)</div>' +
+          '</div>';
         return;
       }
       var byPage = {};
@@ -323,10 +262,11 @@
         group.textContent = page;
         results.appendChild(group);
         byPage[page].forEach(function (m) {
+          var snippet = SC.buildSnippet(m.it.t || "", m.terms, 140);
           var a = document.createElement("a");
           a.className = "search-result-item";
           a.href = basePrefix + m.it.u;
-          a.innerHTML = '<div class="r-title">' + highlight(m.it.h, m.terms) + '</div><div class="r-snippet">' + highlight(m.it.s, m.terms) + '</div>';
+          a.innerHTML = '<div class="r-title">' + highlight(m.it.h, m.terms) + '</div><div class="r-snippet">' + highlight(snippet, m.terms) + '</div>';
           results.appendChild(a);
         });
       });
@@ -356,5 +296,128 @@
     return String(s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
+  }
+
+  /* ---------- 학습 진행률: 방문한 문서를 localStorage에 기록하고, 대시보드에서 배지로 보여줌 ---------- */
+  var VISITED_KEY = "dev-notes-visited-docs";
+  function readVisitedSet() {
+    try {
+      var raw = localStorage.getItem(VISITED_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function initReadingProgressTracker() {
+    var pageKey = document.body.getAttribute("data-page-key");
+    if (pageKey) {
+      var visited = readVisitedSet();
+      if (visited.indexOf(pageKey) === -1) {
+        visited.push(pageKey);
+        localStorage.setItem(VISITED_KEY, JSON.stringify(visited));
+      }
+    }
+
+    var badge = document.getElementById("progress-badge");
+    if (!badge) return;
+    var leafKeys = (badge.getAttribute("data-leaf-keys") || "").split(",").filter(Boolean);
+    var total = parseInt(badge.getAttribute("data-total"), 10) || leafKeys.length;
+    var visitedNow = readVisitedSet();
+    var count = leafKeys.filter(function (k) { return visitedNow.indexOf(k) !== -1; }).length;
+    if (count <= 0) return; // 아직 아무 문서도 안 읽었으면 굳이 "0개 완료"를 보여주지 않음
+    var textEl = badge.querySelector(".progress-badge-text");
+    var pct = Math.round((count / total) * 100);
+    var msg = count >= total
+      ? "모든 문서를 다 둘러보셨네요! 🎉"
+      : "지금까지 " + count + " / " + total + "개 문서 확인 (" + pct + "%)";
+    if (textEl) textEl.textContent = msg;
+    badge.hidden = false;
+  }
+
+  /* ---------- 이스터에그 1: 콘솔 메시지 ---------- */
+  function initConsoleEasterEgg() {
+    if (window.__devNotesConsoleEggShown) return;
+    window.__devNotesConsoleEggShown = true;
+    var art = [
+      "  _____             _   _       _            ",
+      " |  __ \\           | | | |     | |           ",
+      " | |  | | _____   _| |_| |_ __ | | ___ _   _ ",
+      " | |  | |/ _ \\ \\ / / __| __/ _ \\| |/ _ \\ | | |",
+      " | |__| |  __/\\ V /| |_| || (_) | |  __/ |_| |",
+      " |_____/ \\___| \\_/  \\__|\\__\\___/|_|\\___|\\__, |",
+      "                                          __/ |",
+      "                                         |___/ "
+    ].join("\n");
+    try {
+      console.log("%c" + art, "color:#4F7DF3;font-family:monospace;font-size:11px;");
+      console.log("%c개발자 도구까지 열어보시다니, 진짜 개발자시네요 🕵️", "color:#4F7DF3;font-weight:bold;font-size:13px;");
+      console.log("이 사이트도 결국 Git·HTML·CSS·JS로 만들어졌습니다. 궁금하면 저장소도 구경해보세요: https://github.com/mirikim79/dev-study-notes");
+    } catch (e) { /* 콘솔이 없는 환경이면 조용히 무시 */ }
+  }
+
+  /* ---------- 이스터에그 2: 홈에서 로고 연타하면 토스트 ---------- */
+  function initLogoClickEasterEgg() {
+    var brand = document.querySelector(".brand");
+    if (!brand) return;
+    var onIndex = /(^|\/)index\.html$/.test(location.pathname) || location.pathname === "/" || location.pathname.endsWith("/dev-study-notes/");
+    if (!onIndex) return; // 다른 페이지에서는 로고 클릭이 정상적으로 홈으로 이동해야 하므로 건드리지 않음
+
+    var clickTimes = [];
+    var THRESHOLD = 5;
+    var WINDOW_MS = 2500;
+    brand.addEventListener("click", function (e) {
+      e.preventDefault();
+      var now = Date.now();
+      clickTimes.push(now);
+      clickTimes = clickTimes.filter(function (t) { return now - t <= WINDOW_MS; });
+      if (clickTimes.length >= THRESHOLD) {
+        showToast("🎉 오늘의 이스터에그를 찾으셨습니다! 계속 화이팅하세요.");
+        clickTimes = [];
+      }
+    });
+  }
+
+  var toastTimer = null;
+  function showToast(message) {
+    var el = document.getElementById("dev-notes-toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "dev-notes-toast";
+      el.className = "dev-notes-toast";
+      document.body.appendChild(el);
+    }
+    el.textContent = message;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove("show"); }, 2600);
+  }
+
+  /* ---------- 오늘의 개발 소식: GeekNews 피드(assets/news-feed.json)를 client-side에서 fetch ----------
+     news-feed.json은 GitHub Actions가 매일 GeekNews RSS를 읽어 새로 커밋하는 정적 파일이다.
+     사이트 자체는 여전히 정적이고, 브라우저가 그 JSON을 그때그때 가져와 그리는 방식이라
+     별도 서버나 빌드 재실행 없이도 "매일 갱신"되는 효과를 낸다. */
+  function initNewsFeed() {
+    var el = document.getElementById("news-feed");
+    if (!el) return;
+    var src = el.getAttribute("data-src");
+    fetch(src, { cache: "no-cache" })
+      .then(function (res) { if (!res.ok) throw new Error("news-feed fetch failed"); return res.json(); })
+      .then(function (data) {
+        var items = (data && data.items) || [];
+        if (!items.length) { el.innerHTML = '<div class="news-feed-empty">오늘은 불러올 소식이 없습니다.</div>'; return; }
+        el.innerHTML = items.map(function (it) {
+          return (
+            '<a class="news-item" href="' + encodeURI(it.url) + '" target="_blank" rel="noopener">' +
+            '<div class="news-item-top"><span class="news-item-source">' + escapeHtml(it.source || "") + '</span>' +
+            '<span class="news-item-date">' + escapeHtml(it.date || "") + '</span></div>' +
+            '<div class="news-item-title">' + escapeHtml(it.title || "") + '</div>' +
+            (it.summary ? '<div class="news-item-summary">' + escapeHtml(it.summary) + '</div>' : "") +
+            '</a>'
+          );
+        }).join("");
+      })
+      .catch(function () {
+        el.innerHTML = '<div class="news-feed-empty">지금은 소식을 불러올 수 없습니다. 나중에 다시 확인해주세요.</div>';
+      });
   }
 })();

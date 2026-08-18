@@ -1,0 +1,61 @@
+{
+  "updated_at": "2026-08-18",
+  "items": [
+    {
+      "source": "GeekNews",
+      "title": "Show GN: 하루에 몇 번이나 웃고 계세요?",
+      "url": "https://news.hada.io/topic?id=32612",
+      "date": "2026-08-18",
+      "summary": "\"난 하루에 몇 번이나 웃고 있지?\" 그 질문에 작은 힌트를 건네는 웹 서비스입니다. 카메라로 표정과 움직임을 살펴 활력, 집중, 피로 같은 현재의 상태를 보여주고, 하루 동안 어떻게 달라졌는지도 …"
+    },
+    {
+      "source": "GeekNews",
+      "title": "이스라엘, AI 챗봇을 속이려는 가짜 싱크탱크 설립 정황",
+      "url": "https://news.hada.io/topic?id=32609",
+      "date": "2026-08-18",
+      "summary": "이스라엘 정부 광고기관을 대신해 Piro, Inc가 만든 Hanover Institute for Public Policy 는 실제 싱크탱크처럼 보이는 이스라엘·팔레스타인 보고서를 대량 게시해 AI …"
+    },
+    {
+      "source": "GeekNews",
+      "title": "GPT-5.6 Sol 가격 50% 인하",
+      "url": "https://news.hada.io/topic?id=32608",
+      "date": "2026-08-18",
+      "summary": "OpenRouter에서 GPT-5.6 Sol 요금이 50% 할인 돼 100만 토큰당 입력 $2.50, 출력 $15로 낮아짐 복잡한 추론·코딩·에이전트 워크플로에 맞춘 모델로, 명령줄 작업과 다단계 …"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Show GN: 행사하고 사진 5184장 나눠주다가 만들었습니다.",
+      "url": "https://news.hada.io/topic?id=32607",
+      "date": "2026-08-18",
+      "summary": "안녕하세요. 행사를 하고 사진이 오천장 넘게 나왔습니다. 사람들은 자기 사진만 보내달라고했구요. 그래서 자기얼굴로 자기 사진 검색하는걸 만들었습니다. 현재는 관련 댄스행사위주로 있는데 마라톤이나 게…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Show GN: Codex 한도 차감 없이 ChatGPT 웹 채팅으로 코딩해보기",
+      "url": "https://news.hada.io/topic?id=32606",
+      "date": "2026-08-18",
+      "summary": "ChatGPT 웹 채팅은 Codex 한도와 별도로 사용할 수 있습니다. 최근 변경 이후 ChatGPT는 무료 사용자에게도 관대한 (Luna 모델) 채팅 사용량을 제공하고 있습니다. 웹 채팅에는 간단…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Bluesky가 스크린샷에 로고를 표시하는 방법",
+      "url": "https://news.hada.io/topic?id=32604",
+      "date": "2026-08-18",
+      "summary": "Bluesky는 평소 Follow 버튼 을 보여주지만, iOS에서 스크린샷을 찍으면 같은 자리에 로고가 나타나도록 구현함 2026년 1월 추가된 GrowthHack.tsx 는 expo-privacy…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Show GN: 버그 재현을 위해 프로덕션 DB에 직접 연결한 경험 있으신가요? 그러지 않기 위해 만들었습니다.",
+      "url": "https://news.hada.io/topic?id=32602",
+      "date": "2026-08-18",
+      "summary": "프로덕션에서 버그가 발생했는데 로컬에서는 재현이 안되어서 어쩔수없이 프로덕션에 연결해본 경험 있으신가요? 위험한거 알지만 소규모 팀에서는 빠르게 해결하기 위해 이런 문제 흐린눈하고 넘어가는 경우가 …"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Codex에서 GPT-5.6 Sol의 1M 토큰 컨텍스트 윈도우 활성화하기",
+      "url": "https://news.hada.io/topic?id=32600",
+      "date": "2026-08-18",
+      "summary": "코덱스는 성능과 비용을 고려해 기본 컨텍스트 크기를 조정해두지만, GPT-5.6 Sol의 최대 1,050,000 토큰 컨텍스트 를 직접 활성화할 수 있음 컨텍스트를 늘리면 Codex가 이전 내용을 …"
+    }
+  ]
+}

@@ -421,6 +421,7 @@ const { data } = useFetch<Course[]>("/api/courses");
 | `noUnusedLocals`/`noUnusedParameters` | 안 쓰는 변수·매개변수를 에러로 표시 |
 | `noImplicitReturns` | 함수의 일부 경로에서만 값을 반환하면 에러 |
 | `skipLibCheck` | `node_modules` 내부 타입 정의 파일 검사를 건너뛰어 빌드 속도 향상 |
+| `moduleResolution: "bundler"` | Vite·esbuild 등 번들러 환경에 맞춘 모듈 해석 방식. **TypeScript 5.0 이상**에서만 지원되며, `module` 옵션을 `"esnext"`(또는 5.4+의 `"preserve"`)로 설정해야 함. 5.0 미만이거나 Node.js로 직접 실행하는 프로젝트라면 `"node10"`(구 `"node"`) 또는 `"node16"`/`"nodenext"`를 사용 |
 
 **기본 상식**: `strict: false`인 프로젝트에 나중에 `strict: true`를 켜면 에러가 한 번에 쏟아집니다. 신규 프로젝트는 처음부터 켜두고, 기존 프로젝트는 `strict` 하위 옵션(`strictNullChecks`부터)을 하나씩 켜며 점진적으로 마이그레이션하는 편이 안전합니다.
 
