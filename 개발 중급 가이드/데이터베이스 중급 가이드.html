@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>데이터베이스 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=1cb3984b39">
+<link rel="stylesheet" href="../assets/style.css?v=f8b0a02eb4">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="데이터베이스 중급 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="데이터베이스 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="데이터가 많아졌을 때 실제로 부딪히는 성능·구조 문제와 대응 방법을 정리합니다">
-<script src="../assets/search-index.js?v=1cb3984b39" defer></script>
+<script src="../assets/search-index.js?v=f8b0a02eb4" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -302,7 +302,7 @@ r = redis.Redis()
     <span class="tok-keyword">return</span> courses</code></pre></div>
 <div class="table-scroll"><table><thead><tr><th>캐시 무효화 전략</th><th>설명</th></tr></thead><tbody><tr><td>TTL(만료 시간) 기반</td><td>일정 시간이 지나면 자동 삭제. 구현이 단순하지만 그 시간 동안은 오래된 데이터가 보일 수 있음</td></tr><tr><td>쓰기 시점 무효화</td><td>데이터가 바뀌는 순간 관련 캐시를 직접 삭제. 정확하지만 무효화 대상을 빠뜨리기 쉬움</td></tr></tbody></table></div>
 <p><strong>기본 상식</strong>: "캐시 무효화"는 컴퓨터 과학에서 어려운 문제로 꼽힙니다. 처음에는 TTL 기반으로 단순하게 시작하고, 실시간성이 중요한 데이터에만 점진적으로 쓰기 시점 무효화를 추가하는 편이 안전합니다.</p>
-        <nav class="doc-nav"><a class="doc-nav-link prev" href="CI·CD 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">CI·CD 중급 가이드</span></a><a class="doc-nav-link next" href="TypeScript 중급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">TypeScript 중급 가이드</span></a></nav>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="CI·CD 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">CI·CD 중급 가이드</span></a><a class="doc-nav-link next" href="TypeScript 중급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">TypeScript 중급 가이드</span></a></nav>
       </div>
     </main>
   </div>
@@ -313,7 +313,7 @@ r = redis.Redis()
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/search-core.js?v=1cb3984b39" defer></script>
-<script src="../assets/main.js?v=1cb3984b39" defer></script>
+<script src="../assets/search-core.js?v=f8b0a02eb4" defer></script>
+<script src="../assets/main.js?v=f8b0a02eb4" defer></script>
 </body>
 </html>

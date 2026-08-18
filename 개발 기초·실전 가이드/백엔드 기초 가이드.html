@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>백엔드 기초 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=1cb3984b39">
+<link rel="stylesheet" href="../assets/style.css?v=f8b0a02eb4">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="백엔드 기초 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="백엔드 기초 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="Flask·Express·Spring·Django 등 프레임워크가 달라도 공통으로 필요한 서버, API, DB, 인증·인가, 보안, 테스트, 배포의 기본 원리를 이해하는 가이드">
-<script src="../assets/search-index.js?v=1cb3984b39" defer></script>
+<script src="../assets/search-index.js?v=f8b0a02eb4" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -64,7 +64,7 @@
 <h3 class="section-h2" id="0-4-데이터베이스">0.4 데이터베이스<a class="heading-anchor" href="#0-4-데이터베이스" aria-label="이 섹션 링크">#</a></h3>
 <div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>데이터베이스(DB)</td><td>데이터를 저장해두는 프로그램/공간.</td></tr><tr><td>테이블(Table)</td><td>엑셀 시트 하나와 비슷. 행(row)과 열(column)로 데이터를 저장.</td></tr><tr><td>기본키(Primary Key, PK)</td><td>한 행을 유일하게 구분하는 값(보통 <code class="inline-code">id</code>).</td></tr><tr><td>외래키(Foreign Key, FK)</td><td>다른 테이블의 기본키를 가리켜서 두 테이블을 연결하는 값.</td></tr><tr><td>SQL</td><td>데이터베이스에 데이터를 넣고·읽고·바꾸고·지울 때 쓰는 언어.</td></tr><tr><td>ORM</td><td>SQL을 직접 안 쓰고 코드(객체)로 데이터베이스를 다루게 해주는 도구.</td></tr><tr><td>트랜잭션(Transaction)</td><td>여러 작업을 하나로 묶어서 전부 성공 또는 전부 취소되게 하는 것.</td></tr><tr><td>롤백(Rollback)</td><td>트랜잭션 중 하나라도 실패하면 지금까지 한 작업을 없던 일로 되돌리는 것.</td></tr><tr><td>마이그레이션(Migration)</td><td>데이터베이스 테이블 구조 변경 내역을 파일로 기록해서 팀과 공유하는 방법.</td></tr><tr><td>인덱스(Index)</td><td>책의 “찾아보기”처럼 특정 컬럼 검색을 빠르게 해주는 장치.</td></tr></tbody></table></div>
 <h3 class="section-h2" id="0-5-인증-보안">0.5 인증·보안<a class="heading-anchor" href="#0-5-인증-보안" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>인증(Authentication)</td><td>“너 누구야?”를 확인하는 것(로그인).</td></tr><tr><td>인가(Authorization)</td><td>“너 이거 해도 돼?”를 확인하는 것(권한).</td></tr><tr><td>세션(Session)</td><td>로그인 상태를 서버가 기억해두는 방식.</td></tr><tr><td>토큰(Token) / JWT</td><td>로그인 상태를 문자열 하나로 표현해서 클라이언트가 들고 다니는 방식.</td></tr><tr><td>해싱(Hashing)</td><td>비밀번호 원문을 복원 불가능한 다른 문자열로 바꿔 저장하는 방법.</td></tr><tr><td>SQL Injection</td><td>사용자 입력을 SQL 문에 그대로 이어붙여서 공격자가 DB를 조작하게 되는 취약점.</td></tr><tr><td>환경변수(Environment Variable)</td><td>비밀번호·API 키처럼 코드에 직접 쓰면 안 되는 값을, 코드 밖 별도 파일(<code class="inline-code">.env</code>)에 두고 실행할 때 불러오는 방법.</td></tr></tbody></table></div>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>인증(Authentication)</td><td>“너 누구야?”를 확인하는 것(로그인).</td></tr><tr><td>인가(Authorization)</td><td>“너 이거 해도 돼?”를 확인하는 것(권한).</td></tr><tr><td>세션(Session)</td><td>로그인 상태를 서버가 기억해두는 방식.</td></tr><tr><td>토큰(Token) / JWT</td><td>로그인 상태를 문자열 하나로 표현해서 클라이언트가 들고 다니는 방식. JWT는 보통 서버가 <strong>서명(signature)</strong>해서 위조를 막지만, 내용 자체가 암호화되는 것은 아니라서 누구나 디코딩해서 읽을 수 있습니다(12.3절 참고).</td></tr><tr><td>해싱(Hashing)</td><td>비밀번호 원문을 복원 불가능한 다른 문자열로 바꿔 저장하는 방법.</td></tr><tr><td>SQL Injection</td><td>사용자 입력을 SQL 문에 그대로 이어붙여서 공격자가 DB를 조작하게 되는 취약점.</td></tr><tr><td>환경변수(Environment Variable)</td><td>비밀번호·API 키처럼 코드에 직접 쓰면 안 되는 값을, 코드 밖 별도 파일(<code class="inline-code">.env</code>)에 두고 실행할 때 불러오는 방법.</td></tr></tbody></table></div>
 <h3 class="section-h2" id="0-6-개발-배포">0.6 개발·배포<a class="heading-anchor" href="#0-6-개발-배포" aria-label="이 섹션 링크">#</a></h3>
 <div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>로그(Log)</td><td>서버가 무슨 일을 했는지 남기는 기록. 문제가 생겼을 때 원인을 찾는 단서.</td></tr><tr><td>캐싱(Caching)</td><td>자주 쓰는 결과를 미리 저장해뒀다가 재사용해서 속도를 높이는 것.</td></tr><tr><td>페이지네이션(Pagination)</td><td>데이터를 한 번에 다 주지 않고 “1페이지, 2페이지”로 나눠서 주는 것.</td></tr><tr><td>빌드(Build)</td><td>소스 코드를 실제 서버에서 실행 가능한 형태로 준비하는 과정.</td></tr><tr><td>배포(Deploy)</td><td>빌드 결과를 다른 사람이 접속할 수 있는 서버에 올리는 것.</td></tr></tbody></table></div>
 <hr>
@@ -448,7 +448,14 @@ db.session.commit()</code></pre></div>
 Refresh Token
 → 새 Access Token을 발급받는 데 사용
 → 더 오래 유지되므로 더 조심해서 보관</code></pre></div>
-<p>프로젝트에 따라 한 종류의 토큰만 쓸 수도 있고, 세션 기반 인증을 쓸 수도 있습니다. <strong>무조건 JWT 두 개를 써야 하는 것은 아닙니다.</strong></p>
+<p>프로젝트에 따라 한 종류의 토큰만 쓸 수도 있고, 세션 기반 인증을 쓸 수도 있습니다. <strong>무조건 JWT 두 개를 써야 하는 것은 아니고, JWT가 세션보다 항상 더 안전하거나 더 나은 방식인 것도 아닙니다.</strong> 각각 장단점이 다른 도구일 뿐입니다.</p>
+<h4 class="section-h3" id="JWT를-쓸-때-반드시-알아야-할-것-payload는-암호화가-아니다">JWT를 쓸 때 반드시 알아야 할 것 — payload는 암호화가 아니다<a class="heading-anchor" href="#JWT를-쓸-때-반드시-알아야-할-것-payload는-암호화가-아니다" aria-label="이 섹션 링크">#</a></h4>
+<p>JWT는 <code class="inline-code">헤더.페이로드.서명</code> 세 부분을 점(<code class="inline-code">.</code>)으로 이어붙인 문자열입니다. 이때 페이로드는 <strong>base64url로 인코딩만 되어 있을 뿐 암호화되어 있지 않습니다.</strong> 즉 토큰을 가로챈 사람은 물론, 로그인한 사용자 본인도 개발자 도구나 <a href="https://jwt.io" target="_blank" rel="noopener">jwt.io</a> 같은 사이트에 붙여넣기만 하면 페이로드 내용을 그대로 읽을 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>JWT = base64url(헤더) + &quot;.&quot; + base64url(페이로드) + &quot;.&quot; + 서명
+                                     ↑
+                              누구나 디코딩해서 읽을 수 있음 (암호화 아님)</code></pre></div>
+<p>서명은 "이 토큰이 서버가 발급한 것이 맞고 중간에 값이 바뀌지 않았다"는 것을 보장할 뿐, 내용을 숨겨주지 않습니다. 그래서:</p>
+<ul><li>비밀번호, 주민등록번호, 카드번호 같은 민감정보는 JWT payload에 넣지 않습니다.</li><li>payload에는 보통 사용자 ID, 권한(role), 만료시간처럼 "노출되어도 큰 문제가 없는" 값만 담습니다.</li></ul>
 <p>쿠키로 인증 정보를 전달한다면 다음 옵션을 이해합니다.</p>
 <div class="table-scroll"><table><thead><tr><th>옵션</th><th>의미</th></tr></thead><tbody><tr><td><code class="inline-code">HttpOnly</code></td><td>브라우저 JavaScript에서 쿠키를 읽지 못하게 함</td></tr><tr><td><code class="inline-code">Secure</code></td><td>HTTPS 연결에서만 전송</td></tr><tr><td><code class="inline-code">SameSite</code></td><td>다른 사이트에서 시작된 요청에 쿠키를 어느 범위까지 보낼지 제한</td></tr></tbody></table></div>
 <h4 class="section-h3" id="CSRF">CSRF<a class="heading-anchor" href="#CSRF" aria-label="이 섹션 링크">#</a></h4>
@@ -458,7 +465,7 @@ Refresh Token
 <p>인증 설계는 “토큰을 발급했다”에서 끝나지 않고 <strong>저장 위치·만료·재발급·로그아웃·탈취 시 대응</strong>까지 포함합니다.</p>
 <hr>
 <h2 class="section-h1" id="13-비밀번호와-보안-기본">13. 비밀번호와 보안 기본<a class="heading-anchor" href="#13-비밀번호와-보안-기본" aria-label="이 섹션 링크">#</a></h2>
-<ul><li>비밀번호는 평문으로 저장하지 않고 해싱(bcrypt, argon2 등)해서 저장</li><li>같은 비밀번호라도 매번 다른 해시값이 나오도록 salt 적용 (대부분의 해싱 라이브러리가 자동 처리)</li><li>클라이언트가 보낸 값을 그대로 SQL·명령어에 사용하지 않기 (SQL Injection, Command Injection 방지)</li><li>사용자 입력을 화면에 그대로 렌더링하는 경우 XSS 위험 고려 (주로 프론트 책임이지만 API 응답 값도 이스케이프 정책 확인)</li><li>민감한 값(비밀번호 해시, 내부 토큰 등)은 응답 JSON에 포함하지 않기</li><li>요청 빈도가 비정상적으로 많은 IP·계정에 대한 제한(rate limiting) 고려</li></ul>
+<ul><li>비밀번호는 평문으로 저장하지 않고, <strong>비밀번호 저장 전용 해싱 알고리즘</strong>(Argon2id, bcrypt 등)으로 해싱해서 저장. MD5·SHA-256 같은 일반 해시 함수는 계산이 너무 빨라 브루트포스 공격에 취약하므로 비밀번호 저장에는 쓰지 않습니다. OWASP는 Argon2id를 1순위로 권장하고, bcrypt는 레거시 시스템에서 널리 쓰입니다.</li><li>같은 비밀번호라도 매번 다른 해시값이 나오도록 salt 적용 (대부분의 해싱 라이브러리가 자동 처리)</li><li>클라이언트가 보낸 값을 그대로 SQL·명령어에 사용하지 않기 (SQL Injection, Command Injection 방지)</li><li>사용자 입력을 화면에 그대로 렌더링하는 경우 XSS 위험 고려 (주로 프론트 책임이지만 API 응답 값도 이스케이프 정책 확인)</li><li>민감한 값(비밀번호 해시, 내부 토큰 등)은 응답 JSON에 포함하지 않기</li><li>요청 빈도가 비정상적으로 많은 IP·계정에 대한 제한(rate limiting) 고려</li></ul>
 <hr>
 <h2 class="section-h1" id="14-환경변수와-설정-관리">14. 환경변수와 설정 관리<a class="heading-anchor" href="#14-환경변수와-설정-관리" aria-label="이 섹션 링크">#</a></h2>
 <p>환경에 따라 달라지는 값을 코드와 분리합니다.</p>
@@ -790,7 +797,7 @@ ORM과 SQL은 어떤 관계인가?
 </ul>
 </div>
 </details>
-        <nav class="doc-nav"><a class="doc-nav-link prev" href="프론트엔드 기초 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">프론트엔드 기초 가이드</span></a><a class="doc-nav-link next" href="생성형 AI 기능 개발 기초 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">생성형 AI 기능 개발 기초 가이드</span></a></nav>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="프론트엔드 기초 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">프론트엔드 기초 가이드</span></a><a class="doc-nav-link next" href="생성형 AI 기능 개발 기초 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">생성형 AI 기능 개발 기초 가이드</span></a></nav>
       </div>
     </main>
   </div>
@@ -801,7 +808,7 @@ ORM과 SQL은 어떤 관계인가?
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/search-core.js?v=1cb3984b39" defer></script>
-<script src="../assets/main.js?v=1cb3984b39" defer></script>
+<script src="../assets/search-core.js?v=f8b0a02eb4" defer></script>
+<script src="../assets/main.js?v=f8b0a02eb4" defer></script>
 </body>
 </html>

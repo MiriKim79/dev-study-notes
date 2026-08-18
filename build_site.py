@@ -1254,16 +1254,17 @@ def render_prev_next(page_key):
         # "이전 학습학습 대시보드"처럼 "학습"이 겹쳐 보여서, 대시보드로 갈 때만 짧게 표기한다.
         return "대시보드" if k == "index" else PAGES_BY_KEY[k]["title"]
 
+    # 방향 라벨과 문서 제목이 한 줄에 붙어 보이지 않도록, 둘 사이에 항상 구분자를 명시적으로 넣는다.
     left = ""
     right = ""
     if prev_key:
-        left = '<a class="doc-nav-link prev" href="%s"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">%s</span></a>' % (
+        left = '<a class="doc-nav-link prev" href="%s"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">%s</span></a>' % (
             rel_link(page_key, prev_key), html.escape(label(prev_key))
         )
     else:
         left = '<span class="doc-nav-spacer"></span>'
     if next_key:
-        right = '<a class="doc-nav-link next" href="%s"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">%s</span></a>' % (
+        right = '<a class="doc-nav-link next" href="%s"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">%s</span></a>' % (
             rel_link(page_key, next_key), html.escape(label(next_key))
         )
     if not (prev_key or next_key):

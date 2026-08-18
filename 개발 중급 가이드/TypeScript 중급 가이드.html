@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TypeScript 중급 가이드 · 개발 학습·실전 노트</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="../assets/style.css?v=1cb3984b39">
+<link rel="stylesheet" href="../assets/style.css?v=f8b0a02eb4">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="TypeScript 중급 가이드 · 개발 학습·실전 노트">
@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript 중급 가이드 · 개발 학습·실전 노트">
 <meta name="twitter:description" content="타입을 &quot;귀찮은 표기&quot;가 아니라 &quot;버그를 미리 잡아주는 도구&quot;로 쓰는 방법을 정리합니다">
-<script src="../assets/search-index.js?v=1cb3984b39" defer></script>
+<script src="../assets/search-index.js?v=f8b0a02eb4" defer></script>
 </head>
 <body data-root-prefix="../">
 <div id="reading-progress"></div>
@@ -323,7 +323,7 @@ findById&lt;Course&gt;(courses, <span class="tok-number">1</span>);</code></pre>
 <h2 class="section-h1" id="14-자주-만나는-컴파일-에러-읽는-법">14. 자주 만나는 컴파일 에러 읽는 법<a class="heading-anchor" href="#14-자주-만나는-컴파일-에러-읽는-법" aria-label="이 섹션 링크">#</a></h2>
 <div class="table-scroll"><table><thead><tr><th>에러 메시지(요약)</th><th>원인</th><th>해결 방향</th></tr></thead><tbody><tr><td><code class="inline-code">Object is possibly 'null'</code></td><td><code class="inline-code">strictNullChecks</code>에서 null 가능성을 처리하지 않음</td><td><code class="inline-code">if (x !== null)</code> 체크 또는 <code class="inline-code">?.</code> 옵셔널 체이닝</td></tr><tr><td><code class="inline-code">Type 'X' is not assignable to type 'Y'</code></td><td>타입이 서로 호환되지 않음</td><td>실제로 어떤 타입이어야 하는지 원본 타입 정의를 확인</td></tr><tr><td><code class="inline-code">Property 'x' does not exist on type 'Y'</code></td><td>좁혀지지 않은 Union이거나 오타</td><td>타입 가드로 좁히거나 속성명 확인</td></tr><tr><td><code class="inline-code">Argument of type 'X' is not assignable to parameter of type 'Y'</code></td><td>함수 호출 시 인자 타입 불일치</td><td>함수 시그니처와 실제 넘긴 값의 타입을 비교</td></tr><tr><td><code class="inline-code">Type instantiation is excessively deep</code></td><td>제네릭 타입이 과도하게 중첩·재귀됨</td><td>복잡한 타입을 단순화하거나 중간 타입으로 분리</td></tr></tbody></table></div>
 <p><strong>실무 팁</strong>: 에러 메시지를 끝까지 읽으면 대부분 "무엇을 기대했는데 무엇이 왔는지"가 적혀 있습니다. 메시지를 무시하고 <code class="inline-code">as any</code>로 덮어씌우면 당장은 편하지만 같은 종류의 버그가 런타임에 다시 나타납니다.</p>
-        <nav class="doc-nav"><a class="doc-nav-link prev" href="데이터베이스 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-title">데이터베이스 중급 가이드</span></a><a class="doc-nav-link next" href="../개발 고급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-title">개발 고급 가이드</span></a></nav>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="데이터베이스 중급 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">데이터베이스 중급 가이드</span></a><a class="doc-nav-link next" href="../개발 고급 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">개발 고급 가이드</span></a></nav>
       </div>
     </main>
   </div>
@@ -334,7 +334,7 @@ findById&lt;Course&gt;(courses, <span class="tok-number">1</span>);</code></pre>
     <div class="search-results" id="search-results"></div>
   </div>
 </div>
-<script src="../assets/search-core.js?v=1cb3984b39" defer></script>
-<script src="../assets/main.js?v=1cb3984b39" defer></script>
+<script src="../assets/search-core.js?v=f8b0a02eb4" defer></script>
+<script src="../assets/main.js?v=f8b0a02eb4" defer></script>
 </body>
 </html>
