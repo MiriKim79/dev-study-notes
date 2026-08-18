@@ -166,9 +166,6 @@
     /* ---------- 검색 ---------- */
     initSearch();
 
-    /* ---------- 학습 진행률(방문한 문서 기록) ---------- */
-    initReadingProgressTracker();
-
     /* ---------- 이스터에그 ---------- */
     initConsoleEasterEgg();
     initLogoClickEasterEgg();
@@ -296,42 +293,6 @@
     return String(s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
-  }
-
-  /* ---------- 학습 진행률: 방문한 문서를 localStorage에 기록하고, 대시보드에서 배지로 보여줌 ---------- */
-  var VISITED_KEY = "dev-notes-visited-docs";
-  function readVisitedSet() {
-    try {
-      var raw = localStorage.getItem(VISITED_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch (e) {
-      return [];
-    }
-  }
-  function initReadingProgressTracker() {
-    var pageKey = document.body.getAttribute("data-page-key");
-    if (pageKey) {
-      var visited = readVisitedSet();
-      if (visited.indexOf(pageKey) === -1) {
-        visited.push(pageKey);
-        localStorage.setItem(VISITED_KEY, JSON.stringify(visited));
-      }
-    }
-
-    var badge = document.getElementById("progress-badge");
-    if (!badge) return;
-    var leafKeys = (badge.getAttribute("data-leaf-keys") || "").split(",").filter(Boolean);
-    var total = parseInt(badge.getAttribute("data-total"), 10) || leafKeys.length;
-    var visitedNow = readVisitedSet();
-    var count = leafKeys.filter(function (k) { return visitedNow.indexOf(k) !== -1; }).length;
-    if (count <= 0) return; // 아직 아무 문서도 안 읽었으면 굳이 "0개 완료"를 보여주지 않음
-    var textEl = badge.querySelector(".progress-badge-text");
-    var pct = Math.round((count / total) * 100);
-    var msg = count >= total
-      ? "모든 문서를 다 둘러보셨네요! 🎉"
-      : "지금까지 " + count + " / " + total + "개 문서 확인 (" + pct + "%)";
-    if (textEl) textEl.textContent = msg;
-    badge.hidden = false;
   }
 
   /* ---------- 이스터에그 1: 콘솔 메시지 ---------- */

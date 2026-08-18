@@ -492,14 +492,6 @@ body::before {
   font-size: 12.5px; color: var(--text-faint); text-align: center;
 }
 
-.progress-badge {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 7px 14px;
-  border-radius: 999px; background: var(--accent-weak); border: 1px solid var(--accent-border);
-  font-size: 12.5px; font-weight: 600; color: var(--text-heading);
-}
-.progress-badge[hidden] { display: none; }
-.progress-badge-icon { font-size: 14px; }
-
 .dev-notes-toast {
   position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 12px);
   background: var(--text-strong); color: #fff; padding: 11px 18px; border-radius: var(--radius-lg);

@@ -1307,7 +1307,7 @@ PAGE_HTML_TMPL = """<!doctype html>
 <meta name="twitter:description" content="{og_description}">
 <script src="{prefix}assets/search-index.js?v={asset_v}" defer></script>
 </head>
-<body data-root-prefix="{prefix}" data-page-key="{page_key}">
+<body data-root-prefix="{prefix}">
 <div id="reading-progress"></div>
 <header class="site-header">
   <div class="header-inner">
@@ -1389,7 +1389,6 @@ def build_content_page(page):
 
     html_out = PAGE_HTML_TMPL.format(
         title=html.escape(page["title"]),
-        page_key=page["key"],
         prefix=prefix,
         asset_v=ASSET_VERSION,
         breadcrumb=breadcrumb_html,
@@ -1630,10 +1629,6 @@ DASHBOARD_TMPL = """<!doctype html>
     <div class="dashboard-intro">
       <h1 class="dashboard-title">개발 공부 가이드</h1>
       <p class="dashboard-desc">{intro}</p>
-      <div id="progress-badge" class="progress-badge" data-leaf-keys="{leaf_keys}" data-total="{leaf_total}" hidden>
-        <span class="progress-badge-icon">📈</span>
-        <span class="progress-badge-text"></span>
-      </div>
     </div>
 
     <div class="stat-strip">
@@ -1703,7 +1698,6 @@ DASHBOARD_TMPL = """<!doctype html>
 
 
 def build_dashboard():
-    leaf_keys = [p["key"] for p in PAGES if p.get("hub")]
     n_beginner = len(DASHBOARD_CARDS)
     n_mid = len(DASHBOARD_CARDS_MID)
     n_adv = len(DASHBOARD_CARDS_ADV)
@@ -1711,8 +1705,6 @@ def build_dashboard():
     n_misc = len(DASHBOARD_CARDS_MISC)
     html_out = DASHBOARD_TMPL.format(
         intro=html.escape(DASHBOARD_INTRO),
-        leaf_keys=",".join(leaf_keys),
-        leaf_total=len(leaf_keys),
         n_beginner=n_beginner,
         n_mid=n_mid,
         n_adv=n_adv,
