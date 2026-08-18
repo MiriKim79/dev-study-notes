@@ -9,11 +9,11 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="Git·GitHub 진짜 최소 기초 · 개발 학습·실전 노트">
-<meta property="og:description" content="팀 프로젝트에 바로 투입돼도 되는 딱 그만큼만 — branch, commit, push, PR, merge, pull이 각각 뭘 하는 건지 5분 안에 감 잡기">
+<meta property="og:description" content="GitHub 팀 프로젝트를 오늘 바로 시작할 수 있는 최소한의 흐름 — clone부터 pull까지 8단계">
 <meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/Git%C2%B7GitHub%20%EC%A7%84%EC%A7%9C%20%EC%B5%9C%EC%86%8C%20%EA%B8%B0%EC%B4%88.html">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git·GitHub 진짜 최소 기초 · 개발 학습·실전 노트">
-<meta name="twitter:description" content="팀 프로젝트에 바로 투입돼도 되는 딱 그만큼만 — branch, commit, push, PR, merge, pull이 각각 뭘 하는 건지 5분 안에 감 잡기">
+<meta name="twitter:description" content="GitHub 팀 프로젝트를 오늘 바로 시작할 수 있는 최소한의 흐름 — clone부터 pull까지 8단계">
 <script src="../assets/search-index.js?v=0d124f9ca9" defer></script>
 </head>
 <body data-root-prefix="../">
@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-왜-이-문서부터-봐야-하나">0. 왜 이 문서부터 봐야 하나</a><ul class="toc-h2-list"><li><a href="#Git과-GitHub는-다릅니다">Git과 GitHub는 다릅니다</a></li></ul></li><li class="toc-h1"><a href="#1-branch란-무엇인가">1. branch란 무엇인가</a></li><li class="toc-h1"><a href="#2-전체-흐름-한-장으로-보기">2. 전체 흐름 한 장으로 보기</a></li><li class="toc-h1"><a href="#3-내-컴퓨터-코드를-GitHub에-올리기">3. 내 컴퓨터 코드를 GitHub에 올리기</a></li><li class="toc-h1"><a href="#4-내-코드-팀-코드가-합쳐지는-과정">4. 내 코드 + 팀 코드가 합쳐지는 과정</a></li><li class="toc-h1"><a href="#5-용어-한-줄-정리">5. 용어 한 줄 정리</a></li><li class="toc-h1"><a href="#6-직접-실습해보기-5분-미니-실습">6. 직접 실습해보기 — 5분 미니 실습</a><ul class="toc-h2-list"><li><a href="#실습-1-로컬-저장소-만들고-첫-커밋-해보기">실습 1. 로컬 저장소 만들고 첫 커밋 해보기</a></li><li><a href="#실습-2-branch를-나눠서-작업해보기">실습 2. branch를 나눠서 작업해보기</a></li><li><a href="#실습-3-다시-main으로-돌아와-merge-해보기">실습 3. 다시 main으로 돌아와 merge 해보기</a></li></ul></li><li class="toc-h1"><a href="#7-여기까지-왔다면">7. 여기까지 왔다면</a></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-Git과-GitHub는-다릅니다">0. Git과 GitHub는 다릅니다</a></li><li class="toc-h1"><a href="#1-clone-팀-저장소를-내-컴퓨터로-가져오기">1. clone — 팀 저장소를 내 컴퓨터로 가져오기</a></li><li class="toc-h1"><a href="#2-branch-내-작업-공간-만들기">2. branch — 내 작업 공간 만들기</a></li><li class="toc-h1"><a href="#3-코드-수정-add-commit-변경사항-저장하기">3. 코드 수정 → add → commit — 변경사항 저장하기</a></li><li class="toc-h1"><a href="#4-push-GitHub에-올리기">4. push — GitHub에 올리기</a></li><li class="toc-h1"><a href="#5-PR-이-코드-봐주세요-요청하기">5. PR — &quot;이 코드 봐주세요&quot; 요청하기</a></li><li class="toc-h1"><a href="#6-merge-실제로-합쳐지기">6. merge — 실제로 합쳐지기</a></li><li class="toc-h1"><a href="#7-pull-팀원의-변경사항-받아오기">7. pull — 팀원의 변경사항 받아오기</a></li><li class="toc-h1"><a href="#8-conflict-충돌이-나면-당황하지-않기">8. conflict — 충돌이 나면 당황하지 않기</a></li><li class="toc-h1"><a href="#9-용어-한-줄-정리">9. 용어 한 줄 정리</a></li><li class="toc-h1"><a href="#10-직접-실습해보기-5분-미니-실습">10. 직접 실습해보기 — 5분 미니 실습</a></li><li class="toc-h1"><a href="#11-여기까지-왔다면">11. 여기까지 왔다면</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -49,127 +49,81 @@
         <span class="page-kicker">🔰 개발 기초·실전 가이드</span>
         <h1 class="page-title">Git·GitHub 진짜 최소 기초</h1>
         <p class="page-tagline">Git이 뭔지도 모른다? branch도 처음 들어봤다? 여기부터 시작하세요 — 5분이면 끝나요.</p>
-        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <code class="inline-code">git</code>이라는 단어를 오늘 처음 들어본 사람</div><div class="intro-row"><strong>목적:</strong> 팀 프로젝트에 바로 투입돼도 되는 딱 그만큼만 — branch, commit, push, PR, merge, pull이 각각 뭘 하는 건지 5분 안에 감 잡기</div><div class="intro-row"><strong>사용법:</strong> 이 문서는 끝까지 읽는 데 5분이면 충분합니다. 다 읽고 나서 "더 알고 싶다" 싶으면 아래 <a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a>로 넘어가세요. 지금은 용어와 명령어를 몰라도 됩니다 — 이 순서만 알면 됩니다.</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 왜 이 문서부터 봐야 하나</li><li>1. branch란 무엇인가</li><li>2. 전체 흐름 한 장으로 보기</li><li>3. 내 컴퓨터 코드를 GitHub에 올리기</li><li>4. 내 코드 + 팀 코드가 합쳐지는 과정</li><li>5. 용어 한 줄 정리</li><li>6. 직접 실습해보기 — 5분 미니 실습</li><li>7. 여기까지 왔다면</li></ol></div>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <code class="inline-code">git</code>이라는 단어를 오늘 처음 들어본 사람</div><div class="intro-row"><strong>목적:</strong> GitHub 팀 프로젝트를 오늘 바로 시작할 수 있는 최소한의 흐름 — clone부터 pull까지 8단계</div><div class="intro-row"><strong>사용법:</strong> 위에서 아래로 한 번 쭉 읽으면 끝입니다. 용어는 처음 나오는 곳에서 그 자리에서 설명합니다. 다시 위로 올라갈 필요 없습니다. 명령어와 옵션을 더 깊이 알고 싶으면 다 읽은 뒤 <a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a>로 넘어가세요.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. Git과 GitHub는 다릅니다</li><li>1. clone — 팀 저장소를 내 컴퓨터로 가져오기</li><li>2. branch — 내 작업 공간 만들기</li><li>3. 코드 수정 → add → commit — 변경사항 저장하기</li><li>4. push — GitHub에 올리기</li><li>5. PR — &quot;이 코드 봐주세요&quot; 요청하기</li><li>6. merge — 실제로 합쳐지기</li><li>7. pull — 팀원의 변경사항 받아오기</li><li>8. conflict — 충돌이 나면 당황하지 않기</li><li>9. 용어 한 줄 정리</li><li>10. 직접 실습해보기 — 5분 미니 실습</li><li>11. 여기까지 왔다면</li></ol></div>
         
         <hr>
-<h2 class="section-h1" id="0-왜-이-문서부터-봐야-하나">0. 왜 이 문서부터 봐야 하나<a class="heading-anchor" href="#0-왜-이-문서부터-봐야-하나" aria-label="이 섹션 링크">#</a></h2>
-<p>Git을 처음 배울 때 가장 흔한 실수는 명령어부터 외우려고 하는 것입니다. 처음 보는 용어와 명령어가 한꺼번에 쏟아지면 머리만 아프고, 정작 알아야 할 큰 그림은 하나도 안 남습니다.</p>
-<p>먼저 알아야 할 건 딱 하나, <strong>"내 코드가 어떤 경로를 거쳐서 팀 코드가 되는가"</strong> 뿐입니다. 이 경로 하나만 머릿속에 그려지면 충분합니다. 세세한 명령어와 옵션은 필요할 때 찾아보거나, AI 코딩 도구에게 시켜도 됩니다 — 이 문서는 그 경로 하나만 알려줍니다.</p>
-<h3 class="section-h2" id="Git과-GitHub는-다릅니다">Git과 GitHub는 다릅니다<a class="heading-anchor" href="#Git과-GitHub는-다릅니다" aria-label="이 섹션 링크">#</a></h3>
-<p>이름이 비슷해서 헷갈리기 쉬운데, 완전히 다른 것입니다.</p>
-<ul><li><strong>Git</strong> = 내 컴퓨터에서 코드가 바뀐 기록을 관리해주는 도구(프로그램)</li><li><strong>GitHub</strong> = 그 Git 기록을 인터넷에 올려서 다른 사람과 공유·협업할 수 있게 해주는 서비스</li></ul>
-<p>Git은 인터넷이 없어도 내 컴퓨터 안에서만 혼자 쓸 수 있습니다. GitHub는 그 기록을 팀원들과 나눠 보기 위한 곳입니다. (GitLab, Bitbucket 같은 GitHub의 경쟁 서비스도 있는데, 전부 "Git 기록을 온라인에서 공유하는 서비스"라는 역할은 같습니다.)</p>
-<h2 class="section-h1" id="1-branch란-무엇인가">1. branch란 무엇인가<a class="heading-anchor" href="#1-branch란-무엇인가" aria-label="이 섹션 링크">#</a></h2>
-<p><strong>branch(브랜치)</strong>는 같은 프로젝트 안에서, 기존 작업에 영향을 주지 않으면서 별도의 작업 흐름을 이어갈 수 있게 해주는 Git의 "분기"입니다. 코드를 통째로 복사하는 게 아니라, "지금 이 시점부터 나는 다른 갈래로 작업을 이어간다"는 표시에 가깝습니다.</p>
-<p>아래 이름들은 실무에서 정말 자주 보이지만, <strong>Git이라는 도구 자체가 강제하는 이름은 아닙니다.</strong> 팀이나 프로젝트가 정한 관례(convention)일 뿐이라, 프로젝트마다 다를 수 있습니다.</p>
-<div class="table-scroll"><table><thead><tr><th>이름</th><th>실무에서 흔히 쓰이는 뜻</th><th>주의할 점</th></tr></thead><tbody><tr><td><code class="inline-code">main</code></td><td>저장소의 기본/주요 branch로 쓰이는 경우가 많음</td><td>보통 배포와 연결되지만, 반드시 그런 것은 아닙니다 — 배포 branch는 팀 설정에 따라 다릅니다</td></tr><tr><td><code class="inline-code">develop</code></td><td>Git Flow 같은 일부 협업 전략에서 쓰는 "팀 공동 작업용" 장기 branch</td><td>Git의 필수 요소가 아닙니다 — <code class="inline-code">main</code> + 짧은 <code class="inline-code">feature</code> branch만 쓰는 팀(GitHub Flow 방식)도 많습니다</td></tr><tr><td><code class="inline-code">feature/*</code></td><td>기능 하나를 작업할 때 쓰는 개인 작업 branch</td><td><code class="inline-code">feature/</code>라는 접두사도 관례일 뿐, Git이 요구하는 문법이 아닙니다</td></tr></tbody></table></div>
-<p>이 문서에서는 이해를 돕기 위해 <code class="inline-code">main</code>(배포 기준) → <code class="inline-code">develop</code>(공동 작업본) → <code class="inline-code">feature</code>(개인 작업본)라는 <strong>흔한 예시 하나</strong>를 기준으로 설명합니다. 실제로 참여하는 팀·프로젝트는 branch를 다르게 쓸 수 있으니, 새 프로젝트에 들어가면 "이 팀은 branch를 어떻게 쓰나요?"부터 확인하는 습관을 들이는 게 Git 규칙을 외우는 것보다 훨씬 중요합니다.</p>
-<p>팀 프로젝트에서는 보통 보호된 기본 branch(대개 <code class="inline-code">main</code>)에 직접 작업하기보다, 별도 작업 branch를 만들고 PR을 통해 합치는 방식을 많이 사용합니다. <strong>정확한 방식은 팀 규칙에 따릅니다</strong> — 새 프로젝트에 들어가면 CONTRIBUTING.md나 README, 또는 팀 규칙을 먼저 확인하세요.</p>
-<h2 class="section-h1" id="2-전체-흐름-한-장으로-보기">2. 전체 흐름 한 장으로 보기<a class="heading-anchor" href="#2-전체-흐름-한-장으로-보기" aria-label="이 섹션 링크">#</a></h2>
-<p>가장 기본적인 흐름은 다음 정도면 충분합니다.</p>
-<ol><li>Issue(내가 만들어야 할 기능)를 확인한다</li><li>작업 branch를 만든다 (코드 작성 준비)</li><li>코드를 수정한다</li><li><code class="inline-code">add</code> → <code class="inline-code">commit</code> → <code class="inline-code">push</code>로 GitHub에 올린다</li><li>GitHub에 "이 코드 좀 봐주세요"라는 설명서를 올린다 — <strong>PR(Pull Request)</strong></li><li>팀원이 리뷰·검증한다</li><li>팀이 정한 대상 branch에 <strong>merge</strong>된다</li><li>팀원들도 최신 변경사항을 자기 컴퓨터로 동기화한다 — <strong>pull</strong></li></ol>
-<p>이 여덟 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다. <strong>어떤 branch에 PR을 보내는지는 팀의 협업 전략에 따라 달라집니다</strong> — 예를 들어 어떤 팀은 작업 branch를 <code class="inline-code">main</code>에 바로 합치고, 어떤 팀은 <code class="inline-code">develop</code>이라는 중간 branch를 먼저 거칩니다. 아래 다이어그램은 <code class="inline-code">develop</code>을 쓰는 팀의 예시입니다.</p>
-<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도" style="max-width:100%;height:auto;font-family:inherit">
-  <style>
-    .gb-branch{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
-    .gb-main{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
-    .gb-step{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
-    .gb-text{fill:var(--text);font-size:12px;text-anchor:middle}
-    .gb-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
-    .gb-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#gbArrow)}
-  </style>
-  <defs>
-    <marker id="gbArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
-    </marker>
-  </defs>
-
-  <rect x="30" y="20" width="140" height="40" rx="8" class="gb-step"/>
-  <text x="100" y="45" class="gb-text">작업 브랜치 생성</text>
-
-  <line x1="170" y1="40" x2="220" y2="40" class="gb-arrow"/>
-  <rect x="220" y="20" width="120" height="40" rx="8" class="gb-step"/>
-  <text x="280" y="45" class="gb-text">커밋</text>
-
-  <line x1="340" y1="40" x2="390" y2="40" class="gb-arrow"/>
-  <rect x="390" y="20" width="120" height="40" rx="8" class="gb-step"/>
-  <text x="450" y="45" class="gb-text">푸시</text>
-
-  <line x1="510" y1="40" x2="560" y2="40" class="gb-arrow"/>
-  <rect x="560" y="20" width="110" height="40" rx="8" class="gb-step"/>
-  <text x="615" y="45" class="gb-text">PR 생성</text>
-
-  <line x1="615" y1="60" x2="615" y2="100" class="gb-arrow"/>
-
-  <rect x="60" y="150" width="150" height="44" rx="8" class="gb-branch"/>
-  <text x="135" y="172" class="gb-text" style="font-weight:700">feature 브랜치</text>
-  <text x="135" y="187" class="gb-sub">작업 내용</text>
-
-  <line x1="210" y1="172" x2="280" y2="150" class="gb-arrow"/>
-  <rect x="280" y="130" width="150" height="44" rx="8" class="gb-branch"/>
-  <text x="355" y="152" class="gb-text" style="font-weight:700">develop 브랜치</text>
-  <text x="355" y="167" class="gb-sub">리뷰 후 머지</text>
-
-  <line x1="430" y1="152" x2="500" y2="220" class="gb-arrow"/>
-  <rect x="500" y="200" width="150" height="44" rx="8" class="gb-main"/>
-  <text x="575" y="222" class="gb-text" style="font-weight:700">main 브랜치</text>
-  <text x="575" y="237" class="gb-sub">배포 기준</text>
-
-  <line x1="615" y1="100" x2="355" y2="130" class="gb-arrow"/>
-</svg>
-<p><code class="inline-code">develop</code> 없이 작업 branch를 바로 <code class="inline-code">main</code>(또는 팀이 정한 기본 branch)에 합치는 팀도 많습니다. 팀에 들어가면 어떤 흐름을 쓰는지부터 확인하세요.</p>
-<h2 class="section-h1" id="3-내-컴퓨터-코드를-GitHub에-올리기">3. 내 컴퓨터 코드를 GitHub에 올리기<a class="heading-anchor" href="#3-내-컴퓨터-코드를-GitHub에-올리기" aria-label="이 섹션 링크">#</a></h2>
-<p><code class="inline-code">add</code> → <code class="inline-code">commit</code> → <code class="inline-code">push</code>, 이 세 단계가 "내 컴퓨터에 있는 코드를 GitHub로 옮기는 것"입니다. <strong>작업 branch는 보통 이 세 단계보다 먼저 만듭니다</strong> (아래 실습의 <code class="inline-code">git branch</code>·<code class="inline-code">git switch</code>처럼). <code class="inline-code">add</code>/<code class="inline-code">commit</code>/<code class="inline-code">push</code>가 branch를 자동으로 만들어주는 게 아니라, 내 컴퓨터에 이미 있는 작업 branch를 처음 <code class="inline-code">push</code>할 때 GitHub 쪽에도 그와 짝을 이루는 원격 branch가 새로 생기는 것입니다.</p>
+<h2 class="section-h1" id="0-Git과-GitHub는-다릅니다">0. Git과 GitHub는 다릅니다<a class="heading-anchor" href="#0-Git과-GitHub는-다릅니다" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>Git</strong> = 내 컴퓨터에서 코드가 바뀐 기록을 관리해주는 도구</li><li><strong>GitHub</strong> = 그 Git 기록을 인터넷에 올려서 다른 사람과 공유·협업할 수 있게 해주는 서비스</li></ul>
+<p>Git은 인터넷 없이 내 컴퓨터 안에서만 써도 됩니다. GitHub는 그 기록을 팀원과 나눠 보기 위한 곳입니다.</p>
+<h2 class="section-h1" id="1-clone-팀-저장소를-내-컴퓨터로-가져오기">1. clone — 팀 저장소를 내 컴퓨터로 가져오기<a class="heading-anchor" href="#1-clone-팀-저장소를-내-컴퓨터로-가져오기" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>저장소(repository, repo)</strong>는 프로젝트 파일과 그 변경 기록이 저장되는 공간입니다. 팀 프로젝트에서 가장 먼저 할 일은, GitHub에 이미 있는 팀 저장소를 내 컴퓨터로 통째로 복사해오는 것입니다. 이걸 <strong>clone</strong>이라고 합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> clone https://github.com/팀이름/프로젝트이름.<span class="tok-keyword">git</span></code></pre></div>
+<p>이 한 줄이면 그 프로젝트의 모든 코드와 지금까지의 변경 기록이 내 컴퓨터에 그대로 생깁니다. 이제 이 폴더 안에서 작업합니다.</p>
+<h2 class="section-h1" id="2-branch-내-작업-공간-만들기">2. branch — 내 작업 공간 만들기<a class="heading-anchor" href="#2-branch-내-작업-공간-만들기" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>branch(브랜치)</strong>는 팀의 기준 코드에 영향을 주지 않으면서, 나만 따로 작업할 수 있게 갈라져 나온 작업 공간입니다. 팀 프로젝트에서는 보통 팀의 기준 branch(대개 <code class="inline-code">main</code>)에 바로 코드를 올리지 않고, 새 branch를 만들어 그 안에서 작업한 뒤 나중에 합칩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> switch -c my-feature</code></pre></div>
+<p><code class="inline-code">my-feature</code>는 지금 만드는 작업 branch 이름입니다. 팀마다 이름 짓는 방식(<code class="inline-code">feature/로그인</code>처럼)이 다를 수 있으니, 새 팀에 들어가면 어떤 이름 규칙을 쓰는지 먼저 확인하세요.</p>
+<h2 class="section-h1" id="3-코드-수정-add-commit-변경사항-저장하기">3. 코드 수정 → add → commit — 변경사항 저장하기<a class="heading-anchor" href="#3-코드-수정-add-commit-변경사항-저장하기" aria-label="이 섹션 링크">#</a></h2>
+<p>이제 에디터로 코드를 자유롭게 수정합니다. 수정이 끝나면 그 변경 내용을 Git에게 "저장해줘"라고 알려줘야 하는데, 이 과정이 두 단계로 나뉩니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> add .
-<span class="tok-keyword">git</span> commit -m &quot;챗봇 UI 구현&quot;
-<span class="tok-keyword">git</span> push origin feature/chatbot</code></pre></div>
-<ul><li><code class="inline-code">add .</code> — 지금까지 수정한 내용을 전부 담는다</li><li><code class="inline-code">commit -m "..."</code> — 무엇을 고쳤는지 한 줄로 남기고 저장한다 (중간 저장 포인트)</li><li><code class="inline-code">push origin feature/chatbot</code> — 그 저장 내용을 GitHub의 <code class="inline-code">feature/chatbot</code> branch로 올린다</li></ul>
-<h2 class="section-h1" id="4-내-코드-팀-코드가-합쳐지는-과정">4. 내 코드 + 팀 코드가 합쳐지는 과정<a class="heading-anchor" href="#4-내-코드-팀-코드가-합쳐지는-과정" aria-label="이 섹션 링크">#</a></h2>
-<ol><li>미리 만들어둔 작업 branch를 push하면, GitHub에도 그 이름의 원격 branch가 생긴다 (위 3번의 <code class="inline-code">feature/chatbot</code>처럼)</li><li>GitHub에서 <strong>PR(Pull Request)</strong>을 연다 — "제 코드를 팀이 정한 대상 branch에 합쳐주세요" 요청</li><li>팀원이 오류 없는지 확인하고 <strong>merge</strong>한다 — 실제로 두 branch가 합쳐지는 순간</li><li>다 합쳐진 branch는 삭제한다 (branch를 깔끔하게 유지하기 위해)</li><li>이 코드와 관련 있는 팀원들은 GitHub에서 <strong>pull</strong>을 받는다 — 그래야 항상 최신 버전으로 작업할 수 있고 충돌도 줄어든다</li></ol>
-<h2 class="section-h1" id="5-용어-한-줄-정리">5. 용어 한 줄 정리<a class="heading-anchor" href="#5-용어-한-줄-정리" aria-label="이 섹션 링크">#</a></h2>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>한 줄 정리</th></tr></thead><tbody><tr><td><code class="inline-code">main</code></td><td>보통 프로젝트의 기본/주요 branch (배포와 항상 연결되는 것은 아님)</td></tr><tr><td><code class="inline-code">develop</code></td><td>일부 팀에서 개발 내용을 모으기 위해 사용하는 branch (안 쓰는 팀도 많음)</td></tr><tr><td>작업 branch (<code class="inline-code">feature/*</code> 등)</td><td>특정 기능·수정을 다른 작업과 분리해서 진행하는 branch</td></tr><tr><td>commit</td><td>중간 저장</td></tr><tr><td>push</td><td>GitHub에 업로드</td></tr><tr><td>PR (Pull Request)</td><td>"제 코드를 대상 branch에 합쳐주세요" 요청</td></tr><tr><td>merge</td><td>실제로 합치기</td></tr><tr><td>pull</td><td>다른 사람이 합친 최신 코드 받아오기</td></tr></tbody></table></div>
-<h2 class="section-h1" id="6-직접-실습해보기-5분-미니-실습">6. 직접 실습해보기 — 5분 미니 실습<a class="heading-anchor" href="#6-직접-실습해보기-5분-미니-실습" aria-label="이 섹션 링크">#</a></h2>
-<p>읽기만 하고 넘어가면 다음에 또 헷갈립니다. 아무 폴더에서나 아래를 그대로 따라 쳐보세요. 딱 5분이면 됩니다.</p>
-<h3 class="section-h2" id="실습-1-로컬-저장소-만들고-첫-커밋-해보기">실습 1. 로컬 저장소 만들고 첫 커밋 해보기<a class="heading-anchor" href="#실습-1-로컬-저장소-만들고-첫-커밋-해보기" aria-label="이 섹션 링크">#</a></h3>
+<span class="tok-keyword">git</span> commit -m &quot;로그인 버튼 추가&quot;</code></pre></div>
+<ul><li><code class="inline-code">add .</code> — 지금까지 수정한 파일을 전부 "다음 저장에 포함할 목록"에 담습니다.</li><li><code class="inline-code">commit -m "..."</code> — 담아둔 변경사항을 <strong>하나의 저장 기록(commit)</strong>으로 실제로 남깁니다. 게임의 세이브 포인트라고 생각하면 됩니다. <code class="inline-code">-m</code> 뒤에는 "무엇을 고쳤는지" 한 줄로 씁니다.</li></ul>
+<p>commit은 아직 내 컴퓨터 안에만 있습니다. 팀원은 아직 이 변경사항을 볼 수 없습니다.</p>
+<h2 class="section-h1" id="4-push-GitHub에-올리기">4. push — GitHub에 올리기<a class="heading-anchor" href="#4-push-GitHub에-올리기" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> push origin my-feature</code></pre></div>
+<p><code class="inline-code">push</code>는 내 컴퓨터에 쌓인 commit을 GitHub로 올리는 명령입니다. <code class="inline-code">origin</code>은 우리 팀 GitHub 저장소를 가리키는 이름(1장에서 clone한 그 주소)이고, <code class="inline-code">my-feature</code>는 몇 단계 전에 만든 내 작업 branch입니다. 이 명령을 처음 실행하면 GitHub에도 <code class="inline-code">my-feature</code>라는 이름의 branch가 새로 생깁니다.</p>
+<h2 class="section-h1" id="5-PR-이-코드-봐주세요-요청하기">5. PR — "이 코드 봐주세요" 요청하기<a class="heading-anchor" href="#5-PR-이-코드-봐주세요-요청하기" aria-label="이 섹션 링크">#</a></h2>
+<p>push까지 했다고 바로 팀 코드에 합쳐지는 건 아닙니다. GitHub 웹사이트에서 <strong>PR(Pull Request)</strong>을 만들어야 합니다. PR은 "제가 <code class="inline-code">my-feature</code>에서 작업한 걸 팀 기준 branch에 합쳐주세요"라는 요청서입니다. 여기서 팀원이 코드를 보고 의견을 남기거나 승인합니다.</p>
+<h2 class="section-h1" id="6-merge-실제로-합쳐지기">6. merge — 실제로 합쳐지기<a class="heading-anchor" href="#6-merge-실제로-합쳐지기" aria-label="이 섹션 링크">#</a></h2>
+<p>팀원이 PR을 확인하고 문제없으면 GitHub의 <strong>Merge</strong> 버튼을 눌러 두 branch를 합칩니다. 이 순간부터 내가 작업한 코드가 팀의 공식 코드가 됩니다.</p>
+<h2 class="section-h1" id="7-pull-팀원의-변경사항-받아오기">7. pull — 팀원의 변경사항 받아오기<a class="heading-anchor" href="#7-pull-팀원의-변경사항-받아오기" aria-label="이 섹션 링크">#</a></h2>
+<p>나만 코드를 올리는 게 아니라 팀원도 각자 작업해서 merge합니다. 그 변경사항을 내 컴퓨터로 가져오려면:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> switch main
+<span class="tok-keyword">git</span> pull</code></pre></div>
+<p><code class="inline-code">pull</code>은 GitHub에 쌓인 최신 변경사항을 내 컴퓨터로 받아오는 명령입니다. 새로 작업을 시작할 때마다 먼저 <code class="inline-code">pull</code>부터 하는 습관을 들이면, 오래된 코드 위에서 작업하다 생기는 문제를 줄일 수 있습니다.</p>
+<h2 class="section-h1" id="8-conflict-충돌이-나면-당황하지-않기">8. conflict — 충돌이 나면 당황하지 않기<a class="heading-anchor" href="#8-conflict-충돌이-나면-당황하지-않기" aria-label="이 섹션 링크">#</a></h2>
+<p>같은 파일의 같은 부분을 나와 팀원이 각자 다르게 고쳤다면, <code class="inline-code">pull</code>이나 merge 도중 Git이 "어느 쪽 코드를 남길지 모르겠다"며 멈춥니다. 이걸 <strong>conflict(충돌)</strong>이라고 합니다. 파일을 열어보면 이렇게 표시됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+내 코드
+=======
+팀원의 코드
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 팀원의 브랜치</code></pre></div>
+<p>충돌이 나면 에러가 아니라 "둘 중 뭘 남길지 네가 정해라"는 뜻입니다. 두 코드를 읽고, 최종적으로 남길 코드로 직접 고친 뒤, <code class="inline-code">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>/<code class="inline-code">=======</code>/<code class="inline-code">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 표시를 전부 지우고, 다시 <code class="inline-code">add</code>·<code class="inline-code">commit</code>하면 끝납니다. 자세한 해결 절차는 <a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a>에서 다룹니다.</p>
+<hr>
+<h2 class="section-h1" id="9-용어-한-줄-정리">9. 용어 한 줄 정리<a class="heading-anchor" href="#9-용어-한-줄-정리" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>한 줄 정리</th></tr></thead><tbody><tr><td>clone</td><td>팀 저장소를 내 컴퓨터로 복사해오기</td></tr><tr><td>branch</td><td>팀 코드에 영향 없이 따로 작업하는 공간</td></tr><tr><td>commit</td><td>변경사항을 하나의 저장 기록으로 남기기</td></tr><tr><td>push</td><td>내 저장 기록을 GitHub에 올리기</td></tr><tr><td>PR (Pull Request)</td><td>"제 코드를 합쳐주세요" 요청</td></tr><tr><td>merge</td><td>실제로 합치기</td></tr><tr><td>pull</td><td>팀원이 합친 최신 코드 받아오기</td></tr><tr><td>conflict</td><td>같은 부분을 서로 다르게 고쳐서 자동으로 못 합치는 상태</td></tr></tbody></table></div>
+<h2 class="section-h1" id="10-직접-실습해보기-5분-미니-실습">10. 직접 실습해보기 — 5분 미니 실습<a class="heading-anchor" href="#10-직접-실습해보기-5분-미니-실습" aria-label="이 섹션 링크">#</a></h2>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code>mkdir <span class="tok-keyword">git</span>-practice
 <span class="tok-keyword">cd</span> <span class="tok-keyword">git</span>-practice
 <span class="tok-keyword">git</span> init -b main
 echo &quot;hello <span class="tok-keyword">git</span>&quot; &gt; memo.txt
 <span class="tok-keyword">git</span> add .
-<span class="tok-keyword">git</span> commit -m &quot;첫 커밋&quot;</code></pre></div>
-<p>왜 이걸 하는지: <code class="inline-code">git init</code>은 이 폴더를 Git이 추적하는 저장소로 바꾸는 명령입니다. <code class="inline-code">-b main</code>은 시작 branch 이름을 <code class="inline-code">main</code>으로 명시적으로 지정하는 옵션입니다 — Git 버전이나 설정에 따라 초기 branch 이름이 <code class="inline-code">main</code>이 아니라 <code class="inline-code">master</code>로 만들어지는 경우가 있어서, 이 실습이 어떤 환경에서도 똑같이 동작하도록 명시했습니다. <code class="inline-code">add</code>와 <code class="inline-code">commit</code>을 직접 손으로 쳐봐야 "저장 = commit"이라는 감각이 생깁니다.</p>
-<p>확인할 것: <code class="inline-code">git branch</code>를 쳤을 때 현재 branch 이름이 <code class="inline-code">main</code>인가? <code class="inline-code">git log --oneline</code>을 쳤을 때 방금 만든 "첫 커밋"이 보이는가?</p>
-<h3 class="section-h2" id="실습-2-branch를-나눠서-작업해보기">실습 2. branch를 나눠서 작업해보기<a class="heading-anchor" href="#실습-2-branch를-나눠서-작업해보기" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> branch feature/practice
-<span class="tok-keyword">git</span> switch feature/practice
+<span class="tok-keyword">git</span> commit -m &quot;첫 커밋&quot;
+
+<span class="tok-keyword">git</span> switch -c my-feature
 echo &quot;새 기능&quot; &gt;&gt; memo.txt
 <span class="tok-keyword">git</span> add .
-<span class="tok-keyword">git</span> commit -m &quot;기능 추가&quot;</code></pre></div>
-<p>왜 이걸 하는지: <code class="inline-code">main</code>을 건드리지 않고 <code class="inline-code">feature/practice</code>라는 "내 개인 작업본"에서만 작업했다는 걸 눈으로 확인하기 위해서입니다.</p>
-<h3 class="section-h2" id="실습-3-다시-main으로-돌아와-merge-해보기">실습 3. 다시 main으로 돌아와 merge 해보기<a class="heading-anchor" href="#실습-3-다시-main으로-돌아와-merge-해보기" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> switch main
-<span class="tok-keyword">git</span> merge feature/practice
+<span class="tok-keyword">git</span> commit -m &quot;기능 추가&quot;
+
+<span class="tok-keyword">git</span> switch main
+<span class="tok-keyword">git</span> merge my-feature
 cat memo.txt</code></pre></div>
-<p>왜 이걸 하는지: 이 실습은 "merge의 기본 개념"(두 branch의 변경 내용을 하나로 합치는 것) 체험용입니다. GitHub의 PR 화면에는 실제로 <strong>Merge commit / Squash and merge / Rebase and merge</strong>처럼 여러 병합 방식이 있고, 팀·프로젝트마다 어떤 방식을 쓰는지가 다릅니다. 방식은 달라도 "두 branch의 변경 내용을 하나로 합친다"는 핵심 개념은 이 실습에서 체험한 것과 같습니다.</p>
+<p><code class="inline-code">git init -b main</code>은 지금 폴더를 Git 저장소로 만들면서 시작 branch 이름을 <code class="inline-code">main</code>으로 지정합니다(환경에 따라 <code class="inline-code">main</code>이 아닌 이름으로 만들어지는 걸 막기 위한 옵션입니다). 나머지는 위에서 배운 순서 그대로입니다 — 실제로는 <code class="inline-code">push</code>·<code class="inline-code">PR</code>·<code class="inline-code">merge</code> 버튼 클릭이 GitHub 웹사이트에서 일어나지만, 여기서는 <code class="inline-code">git merge</code>로 그 마지막 단계만 내 컴퓨터에서 흉내 냅니다.</p>
 <details class="quiz-answer">
 <summary>정답 확인</summary>
 <div class="quiz-answer-body">
 <p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
 <ul>
-<li>&#9744; <code>git branch</code>로 현재 branch 이름이 <code>main</code>인 것을 확인했다</li>
-<li>&#9744; <code>git log --oneline</code>에서 "첫 커밋" 메시지가 보인다</li>
-<li>&#9744; <code>git switch feature/practice</code> 이후 만든 커밋은 <code>main</code>이 아니라 <code>feature/practice</code> branch에만 있다는 것을 <code>git log --oneline --all --graph</code>로 확인했다</li>
-<li>&#9744; <code>git switch main</code> 후 <code>cat memo.txt</code>를 쳤을 때는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>
-<li>&#9744; <code>git merge feature/practice</code> 이후 <code>cat memo.txt</code>에 "새 기능" 줄이 추가된 것을 확인했다</li>
-<li>&#9744; branch, commit, merge가 각각 무엇을 하는 명령인지 다른 사람에게 한 문장씩 설명할 수 있다</li>
+<li>&#9744; <code>git log --oneline</code>에서 "첫 커밋"과 "기능 추가" 두 커밋이 보인다</li>
+<li>&#9744; <code>git switch main</code> 직후 <code>cat memo.txt</code>에는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>
+<li>&#9744; <code>git merge my-feature</code> 이후 <code>cat memo.txt</code>에 "새 기능" 줄이 추가됐다</li>
+<li>&#9744; clone·branch·commit·push·PR·merge·pull·conflict를 각각 한 문장씩 설명할 수 있다</li>
 </ul>
 </div>
 </details>
-<h2 class="section-h1" id="7-여기까지-왔다면">7. 여기까지 왔다면<a class="heading-anchor" href="#7-여기까지-왔다면" aria-label="이 섹션 링크">#</a></h2>
-<p>branch 명령어를 외우거나, 충돌(conflict)을 손으로 푸는 방법은 아직 몰라도 됩니다. 실제로 팀에서 막힐 때는 대부분 AI 코딩 도구에게 "branch 만들어서 커밋하고 push하고 PR까지 올려줘"라고 시키면 처리해 줍니다 — 사람은 PR을 읽고 오류가 없으면 merge 버튼만 누르면 됩니다.</p>
-<p>한 가지만 기억하세요 — <strong>branch 이름과 협업 전략(main/develop을 쓰는지, feature를 어떻게 부르는지)은 팀마다 다를 수 있습니다.</strong> 이 문서에서 본 <code class="inline-code">main</code>·<code class="inline-code">develop</code>·<code class="inline-code">feature</code>는 이해를 돕기 위한 흔한 예시일 뿐, Git 자체의 규칙이 아닙니다. 새 팀에 들어가면 branch 규칙부터 물어보는 습관을 들이세요.</p>
-<p>지금 딱 이 정도만 알아도 팀 프로젝트에 투입될 수 있습니다. 실제 명령어를 손으로 치는 연습, 충돌 해결, 인증 설정까지 제대로 익히고 싶다면 → <strong><a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a></strong>로 이어서 보세요.</p>
+<h2 class="section-h1" id="11-여기까지-왔다면">11. 여기까지 왔다면<a class="heading-anchor" href="#11-여기까지-왔다면" aria-label="이 섹션 링크">#</a></h2>
+<p>이 8단계(clone → branch → 수정 → add·commit → push → PR → merge → pull, 그리고 conflict 대처)만 알면 팀 프로젝트에 바로 투입될 수 있습니다. branch 이름 규칙, 인증 설정, <code class="inline-code">.gitignore</code>, 되돌리기처럼 팀 프로젝트를 하다 보면 곧 필요해지는 내용은 → <strong><a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a></strong>에서 이어서 보세요.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="개발 처음 시작하기.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">개발 처음 시작하기</span></a><a class="doc-nav-link next" href="팀 개발 시작 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">팀 개발 시작 가이드</span></a></nav>
       </div>
     </main>

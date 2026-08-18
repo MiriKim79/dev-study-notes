@@ -1,145 +1,106 @@
 > **대상:** `git`이라는 단어를 오늘 처음 들어본 사람  
-> **목적:** 팀 프로젝트에 바로 투입돼도 되는 딱 그만큼만 — branch, commit, push, PR, merge, pull이 각각 뭘 하는 건지 5분 안에 감 잡기  
-> **사용법:** 이 문서는 끝까지 읽는 데 5분이면 충분합니다. 다 읽고 나서 "더 알고 싶다" 싶으면 아래 [Git·GitHub 기초 가이드](Git·GitHub%20기초%20가이드.html)로 넘어가세요. 지금은 용어와 명령어를 몰라도 됩니다 — 이 순서만 알면 됩니다.
+> **목적:** GitHub 팀 프로젝트를 오늘 바로 시작할 수 있는 최소한의 흐름 — clone부터 pull까지 8단계  
+> **사용법:** 위에서 아래로 한 번 쭉 읽으면 끝입니다. 용어는 처음 나오는 곳에서 그 자리에서 설명합니다. 다시 위로 올라갈 필요 없습니다. 명령어와 옵션을 더 깊이 알고 싶으면 다 읽은 뒤 [Git·GitHub 기초 가이드](Git·GitHub%20기초%20가이드.html)로 넘어가세요.
 ---
 
-# 0. 왜 이 문서부터 봐야 하나
+# 0. Git과 GitHub는 다릅니다
 
-Git을 처음 배울 때 가장 흔한 실수는 명령어부터 외우려고 하는 것입니다. 처음 보는 용어와 명령어가 한꺼번에 쏟아지면 머리만 아프고, 정작 알아야 할 큰 그림은 하나도 안 남습니다.
-
-먼저 알아야 할 건 딱 하나, **"내 코드가 어떤 경로를 거쳐서 팀 코드가 되는가"** 뿐입니다. 이 경로 하나만 머릿속에 그려지면 충분합니다. 세세한 명령어와 옵션은 필요할 때 찾아보거나, AI 코딩 도구에게 시켜도 됩니다 — 이 문서는 그 경로 하나만 알려줍니다.
-
-## Git과 GitHub는 다릅니다
-
-이름이 비슷해서 헷갈리기 쉬운데, 완전히 다른 것입니다.
-
-* **Git** = 내 컴퓨터에서 코드가 바뀐 기록을 관리해주는 도구(프로그램)
+* **Git** = 내 컴퓨터에서 코드가 바뀐 기록을 관리해주는 도구
 * **GitHub** = 그 Git 기록을 인터넷에 올려서 다른 사람과 공유·협업할 수 있게 해주는 서비스
 
-Git은 인터넷이 없어도 내 컴퓨터 안에서만 혼자 쓸 수 있습니다. GitHub는 그 기록을 팀원들과 나눠 보기 위한 곳입니다. (GitLab, Bitbucket 같은 GitHub의 경쟁 서비스도 있는데, 전부 "Git 기록을 온라인에서 공유하는 서비스"라는 역할은 같습니다.)
+Git은 인터넷 없이 내 컴퓨터 안에서만 써도 됩니다. GitHub는 그 기록을 팀원과 나눠 보기 위한 곳입니다.
 
-# 1. branch란 무엇인가
+# 1. clone — 팀 저장소를 내 컴퓨터로 가져오기
 
-**branch(브랜치)**는 같은 프로젝트 안에서, 기존 작업에 영향을 주지 않으면서 별도의 작업 흐름을 이어갈 수 있게 해주는 Git의 "분기"입니다. 코드를 통째로 복사하는 게 아니라, "지금 이 시점부터 나는 다른 갈래로 작업을 이어간다"는 표시에 가깝습니다.
+**저장소(repository, repo)**는 프로젝트 파일과 그 변경 기록이 저장되는 공간입니다. 팀 프로젝트에서 가장 먼저 할 일은, GitHub에 이미 있는 팀 저장소를 내 컴퓨터로 통째로 복사해오는 것입니다. 이걸 **clone**이라고 합니다.
 
-아래 이름들은 실무에서 정말 자주 보이지만, **Git이라는 도구 자체가 강제하는 이름은 아닙니다.** 팀이나 프로젝트가 정한 관례(convention)일 뿐이라, 프로젝트마다 다를 수 있습니다.
+```bash
+git clone https://github.com/팀이름/프로젝트이름.git
+```
 
-| 이름 | 실무에서 흔히 쓰이는 뜻 | 주의할 점 |
-| --- | --- | --- |
-| `main` | 저장소의 기본/주요 branch로 쓰이는 경우가 많음 | 보통 배포와 연결되지만, 반드시 그런 것은 아닙니다 — 배포 branch는 팀 설정에 따라 다릅니다 |
-| `develop` | Git Flow 같은 일부 협업 전략에서 쓰는 "팀 공동 작업용" 장기 branch | Git의 필수 요소가 아닙니다 — `main` + 짧은 `feature` branch만 쓰는 팀(GitHub Flow 방식)도 많습니다 |
-| `feature/*` | 기능 하나를 작업할 때 쓰는 개인 작업 branch | `feature/`라는 접두사도 관례일 뿐, Git이 요구하는 문법이 아닙니다 |
+이 한 줄이면 그 프로젝트의 모든 코드와 지금까지의 변경 기록이 내 컴퓨터에 그대로 생깁니다. 이제 이 폴더 안에서 작업합니다.
 
-이 문서에서는 이해를 돕기 위해 `main`(배포 기준) → `develop`(공동 작업본) → `feature`(개인 작업본)라는 **흔한 예시 하나**를 기준으로 설명합니다. 실제로 참여하는 팀·프로젝트는 branch를 다르게 쓸 수 있으니, 새 프로젝트에 들어가면 "이 팀은 branch를 어떻게 쓰나요?"부터 확인하는 습관을 들이는 게 Git 규칙을 외우는 것보다 훨씬 중요합니다.
+# 2. branch — 내 작업 공간 만들기
 
-팀 프로젝트에서는 보통 보호된 기본 branch(대개 `main`)에 직접 작업하기보다, 별도 작업 branch를 만들고 PR을 통해 합치는 방식을 많이 사용합니다. **정확한 방식은 팀 규칙에 따릅니다** — 새 프로젝트에 들어가면 CONTRIBUTING.md나 README, 또는 팀 규칙을 먼저 확인하세요.
+**branch(브랜치)**는 팀의 기준 코드에 영향을 주지 않으면서, 나만 따로 작업할 수 있게 갈라져 나온 작업 공간입니다. 팀 프로젝트에서는 보통 팀의 기준 branch(대개 `main`)에 바로 코드를 올리지 않고, 새 branch를 만들어 그 안에서 작업한 뒤 나중에 합칩니다.
 
-# 2. 전체 흐름 한 장으로 보기
+```bash
+git switch -c my-feature
+```
 
-가장 기본적인 흐름은 다음 정도면 충분합니다.
+`my-feature`는 지금 만드는 작업 branch 이름입니다. 팀마다 이름 짓는 방식(`feature/로그인`처럼)이 다를 수 있으니, 새 팀에 들어가면 어떤 이름 규칙을 쓰는지 먼저 확인하세요.
 
-1. Issue(내가 만들어야 할 기능)를 확인한다
-2. 작업 branch를 만든다 (코드 작성 준비)
-3. 코드를 수정한다
-4. `add` → `commit` → `push`로 GitHub에 올린다
-5. GitHub에 "이 코드 좀 봐주세요"라는 설명서를 올린다 — **PR(Pull Request)**
-6. 팀원이 리뷰·검증한다
-7. 팀이 정한 대상 branch에 **merge**된다
-8. 팀원들도 최신 변경사항을 자기 컴퓨터로 동기화한다 — **pull**
+# 3. 코드 수정 → add → commit — 변경사항 저장하기
 
-이 여덟 줄이 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다. **어떤 branch에 PR을 보내는지는 팀의 협업 전략에 따라 달라집니다** — 예를 들어 어떤 팀은 작업 branch를 `main`에 바로 합치고, 어떤 팀은 `develop`이라는 중간 branch를 먼저 거칩니다. 아래 다이어그램은 `develop`을 쓰는 팀의 예시입니다.
-
-<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="feature branch에서 develop을 거쳐 main으로 합쳐지는 Git 전체 작업 흐름도" style="max-width:100%;height:auto;font-family:inherit">
-  <style>
-    .gb-branch{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
-    .gb-main{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
-    .gb-step{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
-    .gb-text{fill:var(--text);font-size:12px;text-anchor:middle}
-    .gb-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
-    .gb-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#gbArrow)}
-  </style>
-  <defs>
-    <marker id="gbArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
-    </marker>
-  </defs>
-
-  <rect x="30" y="20" width="140" height="40" rx="8" class="gb-step"/>
-  <text x="100" y="45" class="gb-text">작업 브랜치 생성</text>
-
-  <line x1="170" y1="40" x2="220" y2="40" class="gb-arrow"/>
-  <rect x="220" y="20" width="120" height="40" rx="8" class="gb-step"/>
-  <text x="280" y="45" class="gb-text">커밋</text>
-
-  <line x1="340" y1="40" x2="390" y2="40" class="gb-arrow"/>
-  <rect x="390" y="20" width="120" height="40" rx="8" class="gb-step"/>
-  <text x="450" y="45" class="gb-text">푸시</text>
-
-  <line x1="510" y1="40" x2="560" y2="40" class="gb-arrow"/>
-  <rect x="560" y="20" width="110" height="40" rx="8" class="gb-step"/>
-  <text x="615" y="45" class="gb-text">PR 생성</text>
-
-  <line x1="615" y1="60" x2="615" y2="100" class="gb-arrow"/>
-
-  <rect x="60" y="150" width="150" height="44" rx="8" class="gb-branch"/>
-  <text x="135" y="172" class="gb-text" style="font-weight:700">feature 브랜치</text>
-  <text x="135" y="187" class="gb-sub">작업 내용</text>
-
-  <line x1="210" y1="172" x2="280" y2="150" class="gb-arrow"/>
-  <rect x="280" y="130" width="150" height="44" rx="8" class="gb-branch"/>
-  <text x="355" y="152" class="gb-text" style="font-weight:700">develop 브랜치</text>
-  <text x="355" y="167" class="gb-sub">리뷰 후 머지</text>
-
-  <line x1="430" y1="152" x2="500" y2="220" class="gb-arrow"/>
-  <rect x="500" y="200" width="150" height="44" rx="8" class="gb-main"/>
-  <text x="575" y="222" class="gb-text" style="font-weight:700">main 브랜치</text>
-  <text x="575" y="237" class="gb-sub">배포 기준</text>
-
-  <line x1="615" y1="100" x2="355" y2="130" class="gb-arrow"/>
-</svg>
-
-`develop` 없이 작업 branch를 바로 `main`(또는 팀이 정한 기본 branch)에 합치는 팀도 많습니다. 팀에 들어가면 어떤 흐름을 쓰는지부터 확인하세요.
-
-# 3. 내 컴퓨터 코드를 GitHub에 올리기
-
-`add` → `commit` → `push`, 이 세 단계가 "내 컴퓨터에 있는 코드를 GitHub로 옮기는 것"입니다. **작업 branch는 보통 이 세 단계보다 먼저 만듭니다** (아래 실습의 `git branch`·`git switch`처럼). `add`/`commit`/`push`가 branch를 자동으로 만들어주는 게 아니라, 내 컴퓨터에 이미 있는 작업 branch를 처음 `push`할 때 GitHub 쪽에도 그와 짝을 이루는 원격 branch가 새로 생기는 것입니다.
+이제 에디터로 코드를 자유롭게 수정합니다. 수정이 끝나면 그 변경 내용을 Git에게 "저장해줘"라고 알려줘야 하는데, 이 과정이 두 단계로 나뉩니다.
 
 ```bash
 git add .
-git commit -m "챗봇 UI 구현"
-git push origin feature/chatbot
+git commit -m "로그인 버튼 추가"
 ```
 
-- `add .` — 지금까지 수정한 내용을 전부 담는다
-- `commit -m "..."` — 무엇을 고쳤는지 한 줄로 남기고 저장한다 (중간 저장 포인트)
-- `push origin feature/chatbot` — 그 저장 내용을 GitHub의 `feature/chatbot` branch로 올린다
+* `add .` — 지금까지 수정한 파일을 전부 "다음 저장에 포함할 목록"에 담습니다.
+* `commit -m "..."` — 담아둔 변경사항을 **하나의 저장 기록(commit)**으로 실제로 남깁니다. 게임의 세이브 포인트라고 생각하면 됩니다. `-m` 뒤에는 "무엇을 고쳤는지" 한 줄로 씁니다.
 
-# 4. 내 코드 + 팀 코드가 합쳐지는 과정
+commit은 아직 내 컴퓨터 안에만 있습니다. 팀원은 아직 이 변경사항을 볼 수 없습니다.
 
-1. 미리 만들어둔 작업 branch를 push하면, GitHub에도 그 이름의 원격 branch가 생긴다 (위 3번의 `feature/chatbot`처럼)
-2. GitHub에서 **PR(Pull Request)**을 연다 — "제 코드를 팀이 정한 대상 branch에 합쳐주세요" 요청
-3. 팀원이 오류 없는지 확인하고 **merge**한다 — 실제로 두 branch가 합쳐지는 순간
-4. 다 합쳐진 branch는 삭제한다 (branch를 깔끔하게 유지하기 위해)
-5. 이 코드와 관련 있는 팀원들은 GitHub에서 **pull**을 받는다 — 그래야 항상 최신 버전으로 작업할 수 있고 충돌도 줄어든다
+# 4. push — GitHub에 올리기
 
-# 5. 용어 한 줄 정리
+```bash
+git push origin my-feature
+```
+
+`push`는 내 컴퓨터에 쌓인 commit을 GitHub로 올리는 명령입니다. `origin`은 우리 팀 GitHub 저장소를 가리키는 이름(1장에서 clone한 그 주소)이고, `my-feature`는 몇 단계 전에 만든 내 작업 branch입니다. 이 명령을 처음 실행하면 GitHub에도 `my-feature`라는 이름의 branch가 새로 생깁니다.
+
+# 5. PR — "이 코드 봐주세요" 요청하기
+
+push까지 했다고 바로 팀 코드에 합쳐지는 건 아닙니다. GitHub 웹사이트에서 **PR(Pull Request)**을 만들어야 합니다. PR은 "제가 `my-feature`에서 작업한 걸 팀 기준 branch에 합쳐주세요"라는 요청서입니다. 여기서 팀원이 코드를 보고 의견을 남기거나 승인합니다.
+
+# 6. merge — 실제로 합쳐지기
+
+팀원이 PR을 확인하고 문제없으면 GitHub의 **Merge** 버튼을 눌러 두 branch를 합칩니다. 이 순간부터 내가 작업한 코드가 팀의 공식 코드가 됩니다.
+
+# 7. pull — 팀원의 변경사항 받아오기
+
+나만 코드를 올리는 게 아니라 팀원도 각자 작업해서 merge합니다. 그 변경사항을 내 컴퓨터로 가져오려면:
+
+```bash
+git switch main
+git pull
+```
+
+`pull`은 GitHub에 쌓인 최신 변경사항을 내 컴퓨터로 받아오는 명령입니다. 새로 작업을 시작할 때마다 먼저 `pull`부터 하는 습관을 들이면, 오래된 코드 위에서 작업하다 생기는 문제를 줄일 수 있습니다.
+
+# 8. conflict — 충돌이 나면 당황하지 않기
+
+같은 파일의 같은 부분을 나와 팀원이 각자 다르게 고쳤다면, `pull`이나 merge 도중 Git이 "어느 쪽 코드를 남길지 모르겠다"며 멈춥니다. 이걸 **conflict(충돌)**이라고 합니다. 파일을 열어보면 이렇게 표시됩니다.
+
+```text
+<<<<<<< HEAD
+내 코드
+=======
+팀원의 코드
+>>>>>>> 팀원의 브랜치
+```
+
+충돌이 나면 에러가 아니라 "둘 중 뭘 남길지 네가 정해라"는 뜻입니다. 두 코드를 읽고, 최종적으로 남길 코드로 직접 고친 뒤, `<<<<<<<`/`=======`/`>>>>>>>` 표시를 전부 지우고, 다시 `add`·`commit`하면 끝납니다. 자세한 해결 절차는 [Git·GitHub 기초 가이드](Git·GitHub%20기초%20가이드.html)에서 다룹니다.
+
+---
+
+# 9. 용어 한 줄 정리
 
 | 용어 | 한 줄 정리 |
 | --- | --- |
-| `main` | 보통 프로젝트의 기본/주요 branch (배포와 항상 연결되는 것은 아님) |
-| `develop` | 일부 팀에서 개발 내용을 모으기 위해 사용하는 branch (안 쓰는 팀도 많음) |
-| 작업 branch (`feature/*` 등) | 특정 기능·수정을 다른 작업과 분리해서 진행하는 branch |
-| commit | 중간 저장 |
-| push | GitHub에 업로드 |
-| PR (Pull Request) | "제 코드를 대상 branch에 합쳐주세요" 요청 |
+| clone | 팀 저장소를 내 컴퓨터로 복사해오기 |
+| branch | 팀 코드에 영향 없이 따로 작업하는 공간 |
+| commit | 변경사항을 하나의 저장 기록으로 남기기 |
+| push | 내 저장 기록을 GitHub에 올리기 |
+| PR (Pull Request) | "제 코드를 합쳐주세요" 요청 |
 | merge | 실제로 합치기 |
-| pull | 다른 사람이 합친 최신 코드 받아오기 |
+| pull | 팀원이 합친 최신 코드 받아오기 |
+| conflict | 같은 부분을 서로 다르게 고쳐서 자동으로 못 합치는 상태 |
 
-# 6. 직접 실습해보기 — 5분 미니 실습
-
-읽기만 하고 넘어가면 다음에 또 헷갈립니다. 아무 폴더에서나 아래를 그대로 따라 쳐보세요. 딱 5분이면 됩니다.
-
-## 실습 1. 로컬 저장소 만들고 첫 커밋 해보기
+# 10. 직접 실습해보기 — 5분 미니 실습
 
 ```bash
 mkdir git-practice
@@ -148,53 +109,32 @@ git init -b main
 echo "hello git" > memo.txt
 git add .
 git commit -m "첫 커밋"
-```
 
-왜 이걸 하는지: `git init`은 이 폴더를 Git이 추적하는 저장소로 바꾸는 명령입니다. `-b main`은 시작 branch 이름을 `main`으로 명시적으로 지정하는 옵션입니다 — Git 버전이나 설정에 따라 초기 branch 이름이 `main`이 아니라 `master`로 만들어지는 경우가 있어서, 이 실습이 어떤 환경에서도 똑같이 동작하도록 명시했습니다. `add`와 `commit`을 직접 손으로 쳐봐야 "저장 = commit"이라는 감각이 생깁니다.
-
-확인할 것: `git branch`를 쳤을 때 현재 branch 이름이 `main`인가? `git log --oneline`을 쳤을 때 방금 만든 "첫 커밋"이 보이는가?
-
-## 실습 2. branch를 나눠서 작업해보기
-
-```bash
-git branch feature/practice
-git switch feature/practice
+git switch -c my-feature
 echo "새 기능" >> memo.txt
 git add .
 git commit -m "기능 추가"
-```
 
-왜 이걸 하는지: `main`을 건드리지 않고 `feature/practice`라는 "내 개인 작업본"에서만 작업했다는 걸 눈으로 확인하기 위해서입니다.
-
-## 실습 3. 다시 main으로 돌아와 merge 해보기
-
-```bash
 git switch main
-git merge feature/practice
+git merge my-feature
 cat memo.txt
 ```
 
-왜 이걸 하는지: 이 실습은 "merge의 기본 개념"(두 branch의 변경 내용을 하나로 합치는 것) 체험용입니다. GitHub의 PR 화면에는 실제로 **Merge commit / Squash and merge / Rebase and merge**처럼 여러 병합 방식이 있고, 팀·프로젝트마다 어떤 방식을 쓰는지가 다릅니다. 방식은 달라도 "두 branch의 변경 내용을 하나로 합친다"는 핵심 개념은 이 실습에서 체험한 것과 같습니다.
+`git init -b main`은 지금 폴더를 Git 저장소로 만들면서 시작 branch 이름을 `main`으로 지정합니다(환경에 따라 `main`이 아닌 이름으로 만들어지는 걸 막기 위한 옵션입니다). 나머지는 위에서 배운 순서 그대로입니다 — 실제로는 `push`·`PR`·`merge` 버튼 클릭이 GitHub 웹사이트에서 일어나지만, 여기서는 `git merge`로 그 마지막 단계만 내 컴퓨터에서 흉내 냅니다.
 
 <details class="quiz-answer">
 <summary>정답 확인</summary>
 <div class="quiz-answer-body">
 <p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
 <ul>
-<li>&#9744; <code>git branch</code>로 현재 branch 이름이 <code>main</code>인 것을 확인했다</li>
-<li>&#9744; <code>git log --oneline</code>에서 "첫 커밋" 메시지가 보인다</li>
-<li>&#9744; <code>git switch feature/practice</code> 이후 만든 커밋은 <code>main</code>이 아니라 <code>feature/practice</code> branch에만 있다는 것을 <code>git log --oneline --all --graph</code>로 확인했다</li>
-<li>&#9744; <code>git switch main</code> 후 <code>cat memo.txt</code>를 쳤을 때는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>
-<li>&#9744; <code>git merge feature/practice</code> 이후 <code>cat memo.txt</code>에 "새 기능" 줄이 추가된 것을 확인했다</li>
-<li>&#9744; branch, commit, merge가 각각 무엇을 하는 명령인지 다른 사람에게 한 문장씩 설명할 수 있다</li>
+<li>&#9744; <code>git log --oneline</code>에서 "첫 커밋"과 "기능 추가" 두 커밋이 보인다</li>
+<li>&#9744; <code>git switch main</code> 직후 <code>cat memo.txt</code>에는 아직 "새 기능" 줄이 없다 (merge 전이므로)</li>
+<li>&#9744; <code>git merge my-feature</code> 이후 <code>cat memo.txt</code>에 "새 기능" 줄이 추가됐다</li>
+<li>&#9744; clone·branch·commit·push·PR·merge·pull·conflict를 각각 한 문장씩 설명할 수 있다</li>
 </ul>
 </div>
 </details>
 
-# 7. 여기까지 왔다면
+# 11. 여기까지 왔다면
 
-branch 명령어를 외우거나, 충돌(conflict)을 손으로 푸는 방법은 아직 몰라도 됩니다. 실제로 팀에서 막힐 때는 대부분 AI 코딩 도구에게 "branch 만들어서 커밋하고 push하고 PR까지 올려줘"라고 시키면 처리해 줍니다 — 사람은 PR을 읽고 오류가 없으면 merge 버튼만 누르면 됩니다.
-
-한 가지만 기억하세요 — **branch 이름과 협업 전략(main/develop을 쓰는지, feature를 어떻게 부르는지)은 팀마다 다를 수 있습니다.** 이 문서에서 본 `main`·`develop`·`feature`는 이해를 돕기 위한 흔한 예시일 뿐, Git 자체의 규칙이 아닙니다. 새 팀에 들어가면 branch 규칙부터 물어보는 습관을 들이세요.
-
-지금 딱 이 정도만 알아도 팀 프로젝트에 투입될 수 있습니다. 실제 명령어를 손으로 치는 연습, 충돌 해결, 인증 설정까지 제대로 익히고 싶다면 → **[Git·GitHub 기초 가이드](Git·GitHub%20기초%20가이드.html)**로 이어서 보세요.
+이 8단계(clone → branch → 수정 → add·commit → push → PR → merge → pull, 그리고 conflict 대처)만 알면 팀 프로젝트에 바로 투입될 수 있습니다. branch 이름 규칙, 인증 설정, `.gitignore`, 되돌리기처럼 팀 프로젝트를 하다 보면 곧 필요해지는 내용은 → **[Git·GitHub 기초 가이드](Git·GitHub%20기초%20가이드.html)**에서 이어서 보세요.

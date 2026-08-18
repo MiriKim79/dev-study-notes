@@ -9,11 +9,11 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="개발 공부 가이드">
 <meta property="og:title" content="Git·GitHub 기초 가이드 · 개발 학습·실전 노트">
-<meta property="og:description" content="저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증까지 어떤 언어·프레임워크에서도 공통으로 필요한 버전 관리와 협업 기초를 이해하는 가이드">
+<meta property="og:description" content="실제 팀 프로젝트를 하다 보면 곧 필요해지는 것 — 인증 설정, `.gitignore`, 자주 쓰는 명령어, 충돌 해결, 되돌리기">
 <meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/Git%C2%B7GitHub%20%EA%B8%B0%EC%B4%88%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git·GitHub 기초 가이드 · 개발 학습·실전 노트">
-<meta name="twitter:description" content="저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증까지 어떤 언어·프레임워크에서도 공통으로 필요한 버전 관리와 협업 기초를 이해하는 가이드">
+<meta name="twitter:description" content="실제 팀 프로젝트를 하다 보면 곧 필요해지는 것 — 인증 설정, `.gitignore`, 자주 쓰는 명령어, 충돌 해결, 되돌리기">
 <script src="../assets/search-index.js?v=0d124f9ca9" defer></script>
 </head>
 <body data-root-prefix="../">
@@ -41,7 +41,7 @@
         <div class="sidebar-title">목차</div>
         <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
       </div>
-      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어</a></li><li class="toc-h1"><a href="#1-Git과-GitHub의-차이">1. Git과 GitHub의 차이</a></li><li class="toc-h1"><a href="#2-개발-환경-준비">2. 개발 환경 준비</a></li><li class="toc-h1"><a href="#3-버전-관리-흐름">3. 버전 관리 흐름</a></li><li class="toc-h1"><a href="#4-GitHub-인증과-환경설정">4. GitHub 인증과 환경설정</a><ul class="toc-h2-list"><li><a href="#4-1-명령줄에서-가장-많이-쓰는-두-연결-방식">4.1 명령줄에서 가장 많이 쓰는 두 연결 방식</a></li><li><a href="#4-2-커밋-사용자-정보-설정">4.2 커밋 사용자 정보 설정</a></li></ul></li><li class="toc-h1"><a href="#5-프로젝트-시작하기">5. 프로젝트 시작하기</a><ul class="toc-h2-list"><li><a href="#5-1-이미-있는-저장소를-받아올-때">5.1 이미 있는 저장소를 받아올 때</a></li><li><a href="#5-2-로컬에-이미-있는-프로젝트를-저장소로-만들-때">5.2 로컬에 이미 있는 프로젝트를 저장소로 만들 때</a></li><li><a href="#5-3-원격-주소-변경-삭제">5.3 원격 주소 변경·삭제</a></li></ul></li><li class="toc-h1"><a href="#6-gitignore">6. `.gitignore`</a><ul class="toc-h2-list"><li><a href="#이미-추적-중인-파일은-별도-처리">이미 추적 중인 파일은 별도 처리</a></li></ul></li><li class="toc-h1"><a href="#7-기본-명령어">7. 기본 명령어</a><ul class="toc-h2-list"><li><a href="#git-commit-am-주의">`git commit -am` 주의</a></li><li><a href="#git-pull은-항상-merge만-하는-명령이-아니다">`git pull`은 항상 merge만 하는 명령이 아니다</a></li><li><a href="#강제-push-주의">강제 push 주의</a></li></ul></li><li class="toc-h1"><a href="#8-되돌리기-단계별-취소">8. 되돌리기 (단계별 취소)</a></li><li class="toc-h1"><a href="#9-git-pull과-충돌을-이해하기">9. `git pull`과 충돌을 이해하기</a><ul class="toc-h2-list"><li><a href="#가장-안전한-확인-흐름">가장 안전한 확인 흐름</a></li></ul></li><li class="toc-h1"><a href="#10-git-stash-작업-임시-저장">10. `git stash` — 작업 임시 저장</a></li><li class="toc-h1"><a href="#11-git-tag-버전-표시">11. `git tag` — 버전 표시</a></li><li class="toc-h1"><a href="#12-브랜치">12. 브랜치</a><ul class="toc-h2-list"><li><a href="#12-1-브랜치란">12.1 브랜치란</a></li><li><a href="#12-2-브랜치-네이밍-팀마다-다름-자주-쓰이는-예시">12.2 브랜치 네이밍 (팀마다 다름 — 자주 쓰이는 예시)</a></li><li><a href="#12-3-현업에서-흔한-브랜치-작업-순서">12.3 현업에서 흔한 브랜치 작업 순서</a></li><li><a href="#12-4-브랜치-관련-명령어">12.4 브랜치 관련 명령어</a></li></ul></li><li class="toc-h1"><a href="#13-팀-저장소-운영-방식">13. 팀 저장소 운영 방식</a><ul class="toc-h2-list"><li><a href="#13-1-브랜치-보호-규칙-권장">13.1 브랜치 보호 규칙 (권장)</a></li></ul></li><li class="toc-h1"><a href="#14-Merge-전략-merge-rebase-squash">14. Merge 전략 — merge / rebase / squash</a><ul class="toc-h2-list"><li><a href="#Rebase의-안전-기준">Rebase의 안전 기준</a></li><li><a href="#Squash-merge-후-브랜치">Squash merge 후 브랜치</a></li></ul></li><li class="toc-h1"><a href="#15-자주-하는-실수">15. 자주 하는 실수</a></li><li class="toc-h1"><a href="#16-이-문서-사용법">16. 이 문서 사용법</a></li><li class="toc-h1"><a href="#17-직접-실습해보기-Git-최소-실습">17. 직접 실습해보기 — Git 최소 실습</a><ul class="toc-h2-list"><li><a href="#1단계-저장소-받기">1단계. 저장소 받기</a></li><li><a href="#2단계-기능-브랜치">2단계. 기능 브랜치</a></li><li><a href="#3단계-파일-수정-후-커밋">3단계. 파일 수정 후 커밋</a></li><li><a href="#4단계-원격에-처음-올리기">4단계. 원격에 처음 올리기</a></li><li><a href="#5단계-add-취소도-해보기">5단계. add 취소도 해보기</a></li><li><a href="#6단계-stash-해보기">6단계. stash 해보기</a></li><li><a href="#7단계-일부러-충돌-경험하기">7단계. 일부러 충돌 경험하기</a></li></ul></li></ul>
+      <ul class="toc"><li class="toc-h1"><a href="#0-시작-전에-이-문서에서-쓰는-용어">0. 시작 전에 — 이 문서에서 쓰는 용어</a></li><li class="toc-h1"><a href="#1-개발-환경-준비">1. 개발 환경 준비</a></li><li class="toc-h1"><a href="#2-GitHub-인증-clone-push가-안-될-때">2. GitHub 인증 — clone·push가 안 될 때</a></li><li class="toc-h1"><a href="#3-gitignore-이-파일들은-Git에-올리지-않기">3. `.gitignore` — 이 파일들은 Git에 올리지 않기</a></li><li class="toc-h1"><a href="#4-자주-쓰는-명령어">4. 자주 쓰는 명령어</a></li><li class="toc-h1"><a href="#5-되돌리기">5. 되돌리기</a></li><li class="toc-h1"><a href="#6-충돌-conflict-제대로-해결하기">6. 충돌(conflict) 제대로 해결하기</a></li><li class="toc-h1"><a href="#7-branch-이름-규칙과-팀-저장소-운영">7. branch 이름 규칙과 팀 저장소 운영</a></li><li class="toc-h1"><a href="#8-자주-하는-실수">8. 자주 하는 실수</a></li><li class="toc-h1"><a href="#9-직접-실습해보기">9. 직접 실습해보기</a></li></ul>
       <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
     </aside>
     <main class="main-content">
@@ -49,311 +49,104 @@
         <span class="page-kicker">🌿 개발 기초·실전 가이드</span>
         <h1 class="page-title">Git·GitHub 기초 가이드</h1>
         <p class="page-tagline">add, commit, push를 외우기 전에 원리부터 — 충돌 해결까지 제대로 다룹니다.</p>
-        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> Git과 GitHub를 처음 사용하는 사람</div><div class="intro-row"><strong>목적:</strong> 저장소, add/commit/push/pull, 브랜치, PR, 충돌, merge/rebase, 인증까지 어떤 언어·프레임워크에서도 공통으로 필요한 버전 관리와 협업 기초를 이해하는 가이드</div><div class="intro-row"><strong>사용법:</strong> 처음에는 개념과 안전한 기본 명령을 익히고, 마지막 실습에서 branch→commit→push→PR 흐름을 직접 반복합니다.</div></div>
-        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 자주 나오는 용어</li><li>1. Git과 GitHub의 차이</li><li>2. 개발 환경 준비</li><li>3. 버전 관리 흐름</li><li>4. GitHub 인증과 환경설정</li><li>5. 프로젝트 시작하기</li><li>6. `.gitignore`</li><li>7. 기본 명령어</li><li>8. 되돌리기 (단계별 취소)</li><li>9. `git pull`과 충돌을 이해하기</li><li>10. `git stash` — 작업 임시 저장</li><li>11. `git tag` — 버전 표시</li><li>12. 브랜치</li><li>13. 팀 저장소 운영 방식</li><li>14. Merge 전략 — merge / rebase / squash</li><li>15. 자주 하는 실수</li><li>16. 이 문서 사용법</li><li>17. 직접 실습해보기 — Git 최소 실습</li></ol></div>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> <a href="Git·GitHub%20진짜%20최소%20기초.html">Git·GitHub 진짜 최소 기초</a>로 8단계 흐름을 감 잡은 사람</div><div class="intro-row"><strong>목적:</strong> 실제 팀 프로젝트를 하다 보면 곧 필요해지는 것 — 인증 설정, <code class="inline-code">.gitignore</code>, 자주 쓰는 명령어, 충돌 해결, 되돌리기</div><div class="intro-row"><strong>사용법:</strong> 위에서 아래로 한 번 읽으면 끝나게 구성했습니다. <code class="inline-code">HEAD</code>, <code class="inline-code">fetch</code>, <code class="inline-code">rebase</code>, <code class="inline-code">tag</code> 같은 더 깊은 내용은 여기서 다루지 않고 <a href="../개발%20중급%20가이드/Git·GitHub%20중급%20가이드.html">Git·GitHub 중급 가이드</a>로 미룹니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 시작 전에 — 이 문서에서 쓰는 용어</li><li>1. 개발 환경 준비</li><li>2. GitHub 인증 — clone·push가 안 될 때</li><li>3. `.gitignore` — 이 파일들은 Git에 올리지 않기</li><li>4. 자주 쓰는 명령어</li><li>5. 되돌리기</li><li>6. 충돌(conflict) 제대로 해결하기</li><li>7. branch 이름 규칙과 팀 저장소 운영</li><li>8. 자주 하는 실수</li><li>9. 직접 실습해보기</li></ol></div>
         
         <hr>
-<h2 class="section-h1" id="0-시작-전에-자주-나오는-용어">0. 시작 전에 — 자주 나오는 용어<a class="heading-anchor" href="#0-시작-전에-자주-나오는-용어" aria-label="이 섹션 링크">#</a></h2>
-<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>버전 관리(Version Control)</td><td>파일이 바뀐 이력을 시간순으로 남겨서 언제든 특정 시점으로 돌아갈 수 있게 하는 것.</td></tr><tr><td>저장소(Repository, repo)</td><td>프로젝트 파일과 변경 이력이 저장되는 공간. 로컬 저장소(내 컴퓨터)와 원격 저장소(GitHub 등)로 나뉜다.</td></tr><tr><td>워킹 디렉토리(Working Directory)</td><td>지금 눈에 보이는, 실제로 수정 중인 파일들이 있는 공간.</td></tr><tr><td>스테이징 영역(Staging Area)</td><td>다음 커밋에 포함할 변경사항을 미리 담아두는 대기 공간. <code class="inline-code">git add</code>로 여기에 올린다.</td></tr><tr><td>커밋(Commit)</td><td>스테이징 영역의 내용을 저장소 이력에 하나의 버전으로 기록하는 것. 게임의 세이브 포인트에 비유할 수 있다.</td></tr><tr><td>origin</td><td>원격 저장소를 가리키는 기본 별칭(이름). 대부분 GitHub 저장소 주소를 의미한다.</td></tr><tr><td>HEAD</td><td>지금 체크아웃되어 있는(작업 중인) 브랜치의 최신 커밋을 가리키는 포인터.</td></tr><tr><td>원격 추적 브랜치(remote-tracking branch)</td><td><code class="inline-code">origin/main</code>처럼, 로컬 저장소 안에 있지만 원격 저장소의 상태를 기억해두는 브랜치.</td></tr><tr><td>Fast-forward</td><td>브랜치를 병합할 때 별도의 병합 커밋 없이 포인터만 앞으로 이동시키는 가장 단순한 병합 방식.</td></tr><tr><td>HTTPS / SSH</td><td>GitHub 원격 저장소에 연결하는 대표 방식. HTTPS에서는 GitHub CLI·Git Credential Manager·PAT 등을 사용할 수 있고, SSH는 공개키/개인키를 사용합니다.</td></tr><tr><td>PAT (Personal Access Token)</td><td>HTTPS 인증 등에 사용할 수 있는 개인 액세스 토큰. 비밀번호처럼 비밀로 관리하고 필요한 권한만 부여합니다.</td></tr><tr><td>Fork</td><td>남의 저장소를 내 계정으로 통째로 복사하는 것. 그 저장소에 직접 쓸 권한이 없을 때 기여하는 방법.</td></tr></tbody></table></div>
+<h2 class="section-h1" id="0-시작-전에-이-문서에서-쓰는-용어">0. 시작 전에 — 이 문서에서 쓰는 용어<a class="heading-anchor" href="#0-시작-전에-이-문서에서-쓰는-용어" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>용어</th><th>쉬운 설명</th></tr></thead><tbody><tr><td>저장소(Repository)</td><td>프로젝트 파일과 변경 기록이 저장되는 공간. 로컬(내 컴퓨터)과 원격(GitHub)으로 나뉜다.</td></tr><tr><td>스테이징 영역</td><td>다음 commit에 포함할 변경사항을 미리 담아두는 대기 공간. <code class="inline-code">git add</code>로 여기에 올린다.</td></tr><tr><td>origin</td><td>원격 저장소(대부분 GitHub 주소)를 가리키는 기본 별칭.</td></tr><tr><td>PAT (Personal Access Token)</td><td>HTTPS 인증에 쓰는 개인 토큰. 비밀번호처럼 비밀로 관리한다.</td></tr></tbody></table></div>
 <hr>
-<h2 class="section-h1" id="1-Git과-GitHub의-차이">1. Git과 GitHub의 차이<a class="heading-anchor" href="#1-Git과-GitHub의-차이" aria-label="이 섹션 링크">#</a></h2>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Git    = 로컬 컴퓨터에서 동작하는 분산 버전 관리 시스템(도구)
-GitHub = Git 저장소를 온라인에서 관리·협업할 수 있게 해주는 플랫폼(웹사이트)</code></pre></div>
-<p>Git은 리누스 토르발즈가 만든 이후 오픈소스로 관리되고 있고, GitHub은 2018년 마이크로소프트가 인수했다. Git 없이 GitHub만 쓸 수 없고, 반대로 Git만 쓰고 GitHub 없이(또는 GitLab 등 다른 플랫폼으로) 협업할 수도 있다.</p>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식">기본 상식<a class="heading-anchor" href="#기본-상식" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>Git의 핵심은 로컬·원격 두 저장소를 두고, 로컬에서 자유롭게 작업한 뒤 원하는 시점에만 원격과 동기화한다는 점이다.</li><li>주요 동작은 <code class="inline-code">commit</code>, <code class="inline-code">push</code>, <code class="inline-code">pull</code>, <code class="inline-code">merge</code>, <code class="inline-code">branch</code>, <code class="inline-code">checkout</code> 몇 가지로 요약된다. 나머지는 이 동작들의 변형이다.</li></ul>
-<hr></div>
-<h2 class="section-h1" id="2-개발-환경-준비">2. 개발 환경 준비<a class="heading-anchor" href="#2-개발-환경-준비" aria-label="이 섹션 링크">#</a></h2>
-<ul><li><strong>Git 설치</strong>: 공식 사이트에서 다운로드해 기본값으로 설치하면 된다.</li><li><strong>에디터/IDE</strong>: VS Code, IntelliJ 등 무엇이든 Git과 연동해 쓸 수 있다.</li><li><strong>GitHub 계정</strong>: 회원가입 후 저장소를 만들거나 초대받아 사용한다.</li><li><strong>GUI 도구(선택)</strong>: 소스트리(Sourcetree) 같은 도구는 브랜치 현황·변경 이력을 화면으로 보여줘 편리하다. 명령어에 익숙해지기 전까지 병행하면 도움이 된다.</li></ul>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-2">기본 상식<a class="heading-anchor" href="#기본-상식-2" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>GUI 도구를 쓰더라도 명령어 기반 흐름(아래 8장)을 한 번은 손으로 익혀두는 것이 좋다. 오류가 났을 때 GUI만으로는 원인 파악이 어려운 경우가 많다.</li></ul>
-<hr></div>
-<h2 class="section-h1" id="3-버전-관리-흐름">3. 버전 관리 흐름<a class="heading-anchor" href="#3-버전-관리-흐름" aria-label="이 섹션 링크">#</a></h2>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Working Directory (파일 수정/생성)
-        ↓ git add
-Staging Area (다음 커밋 후보 목록)
-        ↓ git commit
-Local Repository (이력 생성)
-        ↓ git push
-Remote Repository (GitHub 등)</code></pre></div>
-<ul><li><code class="inline-code">git add</code>: 워킹 디렉토리의 변경사항 중 다음 커밋에 포함할 것을 스테이징 영역으로 올린다.</li><li><code class="inline-code">git commit -m "메시지"</code>: 스테이징 영역의 내용을 로컬 저장소에 하나의 버전(커밋)으로 기록한다. 커밋 후 스테이징 영역은 비워진다.</li><li><code class="inline-code">git push origin main</code>: 로컬 저장소의 커밋 이력을 원격 저장소에 반영한다.</li></ul>
-<hr>
-<h2 class="section-h1" id="4-GitHub-인증과-환경설정">4. GitHub 인증과 환경설정<a class="heading-anchor" href="#4-GitHub-인증과-환경설정" aria-label="이 섹션 링크">#</a></h2>
-<p>GitHub에서 코드를 clone/pull/push할 때는 <strong>어떤 원격 URL을 쓰는지(HTTPS 또는 SSH)</strong>에 따라 인증 방식이 달라집니다.</p>
-<h3 class="section-h2" id="4-1-명령줄에서-가장-많이-쓰는-두-연결-방식">4.1 명령줄에서 가장 많이 쓰는 두 연결 방식<a class="heading-anchor" href="#4-1-명령줄에서-가장-많이-쓰는-두-연결-방식" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>방식</th><th>예시 원격 주소</th><th>인증</th></tr></thead><tbody><tr><td>HTTPS</td><td><code class="inline-code">https://github.com/owner/repo.git</code></td><td>GitHub CLI 로그인, Git Credential Manager, 또는 PAT</td></tr><tr><td>SSH</td><td><code class="inline-code">git@github.com:owner/repo.git</code></td><td>SSH 공개키/개인키</td></tr></tbody></table></div>
-<h4 class="section-h3" id="HTTPS">HTTPS<a class="heading-anchor" href="#HTTPS" aria-label="이 섹션 링크">#</a></h4>
-<p>초보자에게는 HTTPS가 설정이 단순한 편입니다.</p>
-<p>권장 흐름 중 하나:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">gh</span> auth login</code></pre></div>
-<p>GitHub CLI를 쓰지 않는 경우 HTTPS Git 작업에서 비밀번호 대신 <strong>Personal Access Token(PAT)</strong>을 사용할 수 있습니다. 매번 토큰을 직접 입력하기보다 Git Credential Manager 같은 자격 증명 도구를 사용하는 편이 안전하고 편리합니다.</p>
-<h4 class="section-h3" id="SSH">SSH<a class="heading-anchor" href="#SSH" aria-label="이 섹션 링크">#</a></h4>
-<p>SSH는 키 쌍을 만들어 공개키를 GitHub 계정에 등록한 뒤 사용합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>내 컴퓨터: 개인키 보관
-GitHub: 공개키 등록</code></pre></div>
-<p>개인키는 절대 공유하거나 저장소에 올리지 않습니다.</p>
-<h4 class="section-h3" id="PAT-기본-상식">PAT 기본 상식<a class="heading-anchor" href="#PAT-기본-상식" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>PAT는 비밀번호처럼 취급</li><li>가능한 경우 필요한 저장소·권한만 주는 fine-grained token 우선 검토</li><li>코드·<code class="inline-code">.env</code>·커밋 메시지·스크린샷에 남기지 않기</li><li>노출되면 즉시 revoke 후 재발급</li></ul>
-<blockquote><p>“OAuth와 PAT 중 하나를 고른다”가 아니라, <strong>Git 명령줄에서는 HTTPS/SSH 연결 방식을 먼저 구분하고 그 안에서 적절한 인증 수단을 선택</strong>한다고 이해하면 됩니다.</p></blockquote>
-<h3 class="section-h2" id="4-2-커밋-사용자-정보-설정">4.2 커밋 사용자 정보 설정<a class="heading-anchor" href="#4-2-커밋-사용자-정보-설정" aria-label="이 섹션 링크">#</a></h3>
+<h2 class="section-h1" id="1-개발-환경-준비">1. 개발 환경 준비<a class="heading-anchor" href="#1-개발-환경-준비" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><strong>Git 설치</strong>: 공식 사이트에서 다운로드해 기본값으로 설치.</li><li><strong>GitHub 계정</strong>: 회원가입 후 저장소를 만들거나 초대받아 사용.</li><li><strong>에디터</strong>: VS Code 등 무엇이든 Git과 연동해 쓸 수 있습니다.</li></ul>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> config --global user.name &quot;이름&quot;
 <span class="tok-keyword">git</span> config --global user.email &quot;이메일&quot;</code></pre></div>
-<ul><li><code class="inline-code">--global</code>: 이 컴퓨터의 모든 저장소에 기본 적용</li><li><code class="inline-code">--local</code>: 특정 저장소에만 적용. 보통 옵션을 생략하고 저장소 안에서 설정하면 로컬 설정이 됨</li><li>조회: <code class="inline-code">git config user.name</code>, <code class="inline-code">git config user.email</code></li><li>전체 설정 확인: <code class="inline-code">git config --list --show-origin</code></li></ul>
-<p>회사/학교/개인 계정을 섞어 쓰면 저장소별 이메일을 다르게 설정할 수 있습니다.</p>
+<p>이 설정이 앞으로 만드는 모든 commit에 "누가 만들었는지"로 기록됩니다.</p>
 <hr>
-<h2 class="section-h1" id="5-프로젝트-시작하기">5. 프로젝트 시작하기<a class="heading-anchor" href="#5-프로젝트-시작하기" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="5-1-이미-있는-저장소를-받아올-때">5.1 이미 있는 저장소를 받아올 때<a class="heading-anchor" href="#5-1-이미-있는-저장소를-받아올-때" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git clone &lt;repository 주소&gt;</code></pre></div>
-<h3 class="section-h2" id="5-2-로컬에-이미-있는-프로젝트를-저장소로-만들-때">5.2 로컬에 이미 있는 프로젝트를 저장소로 만들 때<a class="heading-anchor" href="#5-2-로컬에-이미-있는-프로젝트를-저장소로-만들-때" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> init -b main                         <span class="tok-comment"># 새 Git 저장소 + main 브랜치 생성</span>
-<span class="tok-keyword">git</span> remote add origin &lt;repository 주소&gt;   <span class="tok-comment"># 원격 저장소 연결</span></code></pre></div>
-<p><code class="inline-code">git init</code>만 실행했을 때 만들어지는 기본 브랜치 이름은 Git 설정(<code class="inline-code">init.defaultBranch</code>)에 따라 다를 수 있습니다. 팀 문서에서 <code class="inline-code">main</code>을 쓰기로 했다면 <code class="inline-code">git init -b main</code>처럼 명시하면 헷갈림이 줄어듭니다.</p>
-<ul><li><code class="inline-code">.git</code> 폴더에는 원격 저장소 정보, 사용자 정보, 커밋 이력 등 이 저장소의 모든 Git 정보가 들어 있다. 실수로 지우면 이력이 전부 사라지므로 삭제하지 않는다.</li><li><code class="inline-code">origin</code>은 원격 저장소 주소를 가리키는 기본 별칭이다.</li></ul>
-<h3 class="section-h2" id="5-3-원격-주소-변경-삭제">5.3 원격 주소 변경·삭제<a class="heading-anchor" href="#5-3-원격-주소-변경-삭제" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git remote set-url origin &lt;새 주소&gt;   # 저장소 주소 변경 (기존 커밋 이력은 유지된 채 새 주소로 push됨)
-git remote remove origin              # 원격 연결 정보 삭제</code></pre></div>
+<h2 class="section-h1" id="2-GitHub-인증-clone-push가-안-될-때">2. GitHub 인증 — clone·push가 안 될 때<a class="heading-anchor" href="#2-GitHub-인증-clone-push가-안-될-때" aria-label="이 섹션 링크">#</a></h2>
+<p><code class="inline-code">clone</code>/<code class="inline-code">push</code>할 때 GitHub가 "너 정말 이 계정 맞아?"를 확인하는 절차입니다. 초보자에게는 <strong>HTTPS + PAT</strong> 조합이 가장 단순합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">gh</span> auth login</code></pre></div>
+<p>GitHub CLI(<code class="inline-code">gh</code>)로 로그인하면 이후 <code class="inline-code">git push</code>할 때 별도 설정 없이 인증됩니다. <code class="inline-code">gh</code>를 안 쓴다면, GitHub 설정에서 <strong>Personal Access Token(PAT)</strong>을 발급받아 비밀번호 대신 입력합니다.</p>
+<p><strong>PAT 주의점</strong>: 비밀번호처럼 취급하고, 코드나 <code class="inline-code">.env</code>, 커밋 메시지에 남기지 않습니다. 노출되면 즉시 폐기하고 재발급합니다.</p>
+<p>(SSH 키 방식도 있지만, 처음에는 HTTPS+PAT로 충분합니다. SSH는 <a href="../개발%20중급%20가이드/Git·GitHub%20중급%20가이드.html">Git·GitHub 중급 가이드</a>에서 다룹니다.)</p>
 <hr>
-<h2 class="section-h1" id="6-gitignore">6. <code class="inline-code">.gitignore</code><a class="heading-anchor" href="#6-gitignore" aria-label="이 섹션 링크">#</a></h2>
-<p>Git이 <strong>새로 추적하지 않을 파일·폴더</strong>를 지정하는 파일입니다.</p>
+<h2 class="section-h1" id="3-gitignore-이-파일들은-Git에-올리지-않기">3. <code class="inline-code">.gitignore</code> — 이 파일들은 Git에 올리지 않기<a class="heading-anchor" href="#3-gitignore-이-파일들은-Git에-올리지-않기" aria-label="이 섹션 링크">#</a></h2>
+<p><code class="inline-code">node_modules</code>, <code class="inline-code">.env</code>(비밀번호·API 키), 캐시 파일처럼 Git이 <strong>추적하지 않을 파일</strong>을 지정합니다. 프로젝트 시작할 때 바로 만드는 게 좋습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">gitignore</span><button class="copy-btn" type="button">복사</button></div><pre><code>node_modules/
 .env
-.venv/
 __pycache__/
 *.log
 dist/</code></pre></div>
-<p>프로젝트 초기에 만드는 것이 가장 좋습니다.</p>
-<h3 class="section-h2" id="이미-추적-중인-파일은-별도-처리">이미 추적 중인 파일은 별도 처리<a class="heading-anchor" href="#이미-추적-중인-파일은-별도-처리" aria-label="이 섹션 링크">#</a></h3>
-<p><code class="inline-code">.gitignore</code>는 이미 Git이 추적하고 있는 파일을 자동으로 추적 해제하지 않습니다.</p>
-<p>예를 들어 <code class="inline-code">.env</code>가 이미 추적 중인지 확인:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> <span class="tok-keyword">ls</span>-files .env</code></pre></div>
-<p>결과에 <code class="inline-code">.env</code>가 나오면 Git 추적만 해제:</p>
+<p><strong>주의</strong>: <code class="inline-code">.gitignore</code>는 *이미* Git이 추적 중인 파일을 자동으로 빼주지 않습니다. <code class="inline-code">.env</code>를 실수로 이미 commit했다면:</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> rm --cached .env</code></pre></div>
-<p>그 뒤 <code class="inline-code">.gitignore</code>에 <code class="inline-code">.env</code>가 있는지 확인하고 커밋합니다.</p>
-<h4 class="section-h3" id="git-rm-r-cached-는-언제-쓰나"><code class="inline-code">git rm -r --cached .</code>는 언제 쓰나?<a class="heading-anchor" href="#git-rm-r-cached-는-언제-쓰나" aria-label="이 섹션 링크">#</a></h4>
-<p>이 명령은 <strong>저장소의 모든 추적 파일을 인덱스에서 한 번 빼고 <code class="inline-code">.gitignore</code> 기준으로 다시 등록</strong>할 때 쓰는 큰 범위의 명령입니다.</p>
-<p>초보자가 특정 파일 하나 때문에 기본 해결책처럼 실행하지 않습니다. 대부분은 아래처럼 대상 파일만 지정하는 것이 안전합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> rm --cached .env
-<span class="tok-keyword">git</span> rm -r --cached node_modules</code></pre></div>
-<h4 class="section-h3" id="시크릿을-이미-push했다면">시크릿을 이미 push했다면<a class="heading-anchor" href="#시크릿을-이미-push했다면" aria-label="이 섹션 링크">#</a></h4>
-<p><code class="inline-code">.env</code>를 삭제하는 것만으로는 충분하지 않습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 노출된 API Key / Token / 비밀번호 폐기
-2. 새 값 발급
-3. 코드·환경변수 교체
-4. 필요하면 Git 이력의 민감정보 제거
-5. 팀원에게 영향 범위 공유</code></pre></div>
+<p>로 추적만 해제하고, 그 뒤 <code class="inline-code">.gitignore</code>에 등록합니다. 만약 API 키·비밀번호가 이미 GitHub에 push까지 됐다면, <code class="inline-code">.gitignore</code>로는 부족합니다 — <strong>그 키는 이미 노출된 것으로 보고 즉시 폐기하고 새로 발급</strong>해야 합니다.</p>
 <hr>
-<h2 class="section-h1" id="7-기본-명령어">7. 기본 명령어<a class="heading-anchor" href="#7-기본-명령어" aria-label="이 섹션 링크">#</a></h2>
-<div class="table-scroll"><table><thead><tr><th>명령어</th><th>설명</th></tr></thead><tbody><tr><td><code class="inline-code">git status</code></td><td>워킹 디렉토리·스테이징 영역 상태 확인</td></tr><tr><td><code class="inline-code">git add &lt;파일&gt;</code></td><td>특정 변경을 다음 커밋 후보로 올림</td></tr><tr><td><code class="inline-code">git add .</code></td><td>현재 경로 아래 변경을 한꺼번에 스테이징. 커밋 전에 <code class="inline-code">git status</code>로 포함 범위 확인</td></tr><tr><td><code class="inline-code">git commit -m "메시지"</code></td><td>스테이징된 변경으로 커밋 생성</td></tr><tr><td><code class="inline-code">git log --oneline --graph --all</code></td><td>브랜치 전체 이력을 간단한 그래프로 확인</td></tr><tr><td><code class="inline-code">git fetch origin</code></td><td>원격의 최신 이력만 받아옴. 내 작업 파일을 자동 병합하지 않음</td></tr><tr><td><code class="inline-code">git pull</code></td><td><code class="inline-code">fetch</code> 후 현재 설정/옵션에 따라 원격 이력을 현재 브랜치에 통합</td></tr><tr><td><code class="inline-code">git push -u origin &lt;브랜치&gt;</code></td><td>처음 브랜치를 원격에 올리고 upstream 연결</td></tr><tr><td><code class="inline-code">git switch &lt;브랜치&gt;</code></td><td>브랜치 전환</td></tr><tr><td><code class="inline-code">git switch -c &lt;새브랜치&gt;</code></td><td>새 브랜치 생성 + 전환</td></tr><tr><td><code class="inline-code">git restore &lt;파일&gt;</code></td><td>커밋하지 않은 파일 변경을 되돌릴 때 사용</td></tr><tr><td><code class="inline-code">git restore --staged &lt;파일&gt;</code></td><td>add한 파일을 스테이징에서 내림</td></tr><tr><td><code class="inline-code">git diff</code></td><td>아직 스테이징하지 않은 변경 비교</td></tr><tr><td><code class="inline-code">git diff --staged</code></td><td>다음 커밋에 들어갈 변경 비교</td></tr><tr><td><code class="inline-code">git remote -v</code></td><td>연결된 원격 주소 확인</td></tr></tbody></table></div>
-<h3 class="section-h2" id="git-commit-am-주의"><code class="inline-code">git commit -am</code> 주의<a class="heading-anchor" href="#git-commit-am-주의" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> commit -am &quot;Fix: 오류 수정&quot;</code></pre></div>
-<p><code class="inline-code">-a</code>는 <strong>Git이 이미 추적 중인 파일의 수정·삭제</strong>를 자동 스테이징합니다. 새로 만든 untracked 파일은 포함하지 않습니다.</p>
-<p>따라서 초보자에게는 다음 흐름이 더 명확합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> status
-<span class="tok-keyword">git</span> add &lt;필요한 파일&gt;
-<span class="tok-keyword">git</span> diff --staged
-<span class="tok-keyword">git</span> commit -m &quot;메시지&quot;</code></pre></div>
-<h3 class="section-h2" id="git-pull은-항상-merge만-하는-명령이-아니다"><code class="inline-code">git pull</code>은 항상 merge만 하는 명령이 아니다<a class="heading-anchor" href="#git-pull은-항상-merge만-하는-명령이-아니다" aria-label="이 섹션 링크">#</a></h3>
-<p><code class="inline-code">git pull</code>은 먼저 <code class="inline-code">fetch</code>한 뒤 원격 브랜치를 현재 브랜치에 통합합니다. 통합 방식은 옵션·설정에 따라 달라질 수 있습니다.</p>
-<p>대표 옵션:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> pull --ff-only     <span class="tok-comment"># fast-forward만 허용</span>
-<span class="tok-keyword">git</span> pull --rebase      <span class="tok-comment"># rebase 방식</span>
-<span class="tok-keyword">git</span> pull --no-rebase   <span class="tok-comment"># merge 방식</span>
-<span class="tok-keyword">git</span> pull --squash      <span class="tok-comment"># squash 방식</span></code></pre></div>
-<p>팀에서는 한 가지 정책을 정해두는 것이 좋습니다. 아직 Git이 익숙하지 않다면 문제가 생겼을 때 <code class="inline-code">git pull</code>을 반복하기보다 다음처럼 단계적으로 확인하면 이해하기 쉽습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> fetch origin
-<span class="tok-keyword">git</span> status
-<span class="tok-keyword">git</span> log --oneline --graph --all
-<span class="tok-keyword">git</span> diff HEAD origin/main</code></pre></div>
-<p>그다음 팀 정책에 맞게 merge/rebase 등을 진행합니다.</p>
-<h3 class="section-h2" id="강제-push-주의">강제 push 주의<a class="heading-anchor" href="#강제-push-주의" aria-label="이 섹션 링크">#</a></h3>
-<p>공용 브랜치(<code class="inline-code">main</code>, <code class="inline-code">develop</code>)에는 원칙적으로 force push하지 않습니다.</p>
-<p>내 개인 기능 브랜치에서 rebase 후 강제 push가 꼭 필요한 경우에도 일반 <code class="inline-code">--force</code>보다 <strong>원격이 예상 상태일 때만 덮어쓰는 <code class="inline-code">--force-with-lease</code></strong>를 우선 검토합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> push --force-with-lease</code></pre></div>
-<p>그래도 다른 사람이 같은 브랜치를 쓰고 있다면 먼저 합의합니다.</p>
+<h2 class="section-h1" id="4-자주-쓰는-명령어">4. 자주 쓰는 명령어<a class="heading-anchor" href="#4-자주-쓰는-명령어" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>명령어</th><th>언제 쓰나</th></tr></thead><tbody><tr><td><code class="inline-code">git status</code></td><td>지금 뭐가 바뀌었는지, 뭐가 스테이징됐는지 확인할 때</td></tr><tr><td><code class="inline-code">git add &lt;파일&gt;</code></td><td>특정 파일만 다음 commit에 포함시킬 때</td></tr><tr><td><code class="inline-code">git add .</code></td><td>지금까지 바뀐 걸 전부 포함시킬 때 (commit 전에 <code class="inline-code">git status</code>로 뭐가 담겼는지 확인하는 습관을 들이세요)</td></tr><tr><td><code class="inline-code">git commit -m "메시지"</code></td><td>스테이징된 변경을 하나의 기록으로 남길 때</td></tr><tr><td><code class="inline-code">git log --oneline</code></td><td>지금까지의 commit 기록을 간단히 볼 때</td></tr><tr><td><code class="inline-code">git switch &lt;branch&gt;</code></td><td>다른 branch로 옮겨갈 때</td></tr><tr><td><code class="inline-code">git switch -c &lt;새branch&gt;</code></td><td>새 branch를 만들면서 바로 옮겨갈 때</td></tr><tr><td><code class="inline-code">git restore &lt;파일&gt;</code></td><td>commit 안 한 수정을 취소하고 원래대로 되돌릴 때</td></tr><tr><td><code class="inline-code">git push -u origin &lt;branch&gt;</code></td><td>새로 만든 branch를 GitHub에 처음 올릴 때 (<code class="inline-code">-u</code>를 한 번 붙여두면 다음부터는 <code class="inline-code">git push</code>만 써도 됨)</td></tr></tbody></table></div>
 <hr>
-<h2 class="section-h1" id="8-되돌리기-단계별-취소">8. 되돌리기 (단계별 취소)<a class="heading-anchor" href="#8-되돌리기-단계별-취소" aria-label="이 섹션 링크">#</a></h2>
-<p>작업 취소는 <strong>어느 단계까지 진행됐는지</strong>에 따라 방법이 다르다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 워킹 디렉토리 수정 (add 전)      → 에디터/IDE에서 되돌리기
-2. 스테이징 반영 (add 이후)         → git reset 또는 git restore --staged .
-3. 로컬 저장소 반영 (commit 이후)    → git reset HEAD~1 (또는 --soft)
-4. 원격까지 배포 (push 이후)        → git revert &lt;커밋ID&gt;</code></pre></div>
-<div class="table-scroll"><table><thead><tr><th>상황</th><th>명령어</th><th>결과</th></tr></thead><tbody><tr><td>add 취소</td><td><code class="inline-code">git restore --staged .</code></td><td>스테이징 해제, 파일 수정 내용은 유지</td></tr><tr><td>마지막 커밋 취소 (unstaged로)</td><td><code class="inline-code">git reset HEAD~1</code> (<code class="inline-code">HEAD^</code>도 동일)</td><td>커밋이 취소되고 변경사항은 워킹 디렉토리로 되돌아감</td></tr><tr><td>마지막 커밋 취소 (staged 유지)</td><td><code class="inline-code">git reset --soft HEAD~1</code></td><td>커밋만 취소, 변경사항은 스테이징 상태로 유지</td></tr><tr><td>이미 push된 커밋 취소</td><td><code class="inline-code">git revert &lt;커밋ID&gt;</code></td><td>해당 커밋을 취소하는 <strong>새 커밋</strong>을 만들어 다시 push. vi 편집창이 뜨면 <code class="inline-code">:wq</code>로 저장</td></tr></tbody></table></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-3">기본 상식<a class="heading-anchor" href="#기본-상식-3" aria-label="이 섹션 링크">#</a></h4>
-<ul><li><code class="inline-code">git reset</code>은 이력 자체를 바꾸므로 <strong>이미 push한 커밋에는 쓰지 않는다.</strong> 다른 사람이 이미 받아간 이력이 꼬일 수 있다.</li><li>이미 공유된(push된) 커밋을 취소해야 한다면 <code class="inline-code">reset</code>이 아니라 <code class="inline-code">revert</code>를 쓴다 — 이력을 지우지 않고 “취소하는 커밋”을 추가하는 방식이라 안전하다.</li></ul>
-<hr></div>
-<h2 class="section-h1" id="9-git-pull과-충돌을-이해하기">9. <code class="inline-code">git pull</code>과 충돌을 이해하기<a class="heading-anchor" href="#9-git-pull과-충돌을-이해하기" aria-label="이 섹션 링크">#</a></h2>
-<p>충돌은 “같은 파일을 수정했기 때문”이 아니라 <strong>Git이 두 변경을 자동으로 합칠 수 없는 같은 부분(hunk)을 서로 다르게 수정했기 때문</strong>에 발생합니다.</p>
-<p>같은 파일의 서로 다른 줄을 수정했다면 자동 병합될 수도 있습니다.</p>
-<h3 class="section-h2" id="가장-안전한-확인-흐름">가장 안전한 확인 흐름<a class="heading-anchor" href="#가장-안전한-확인-흐름" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> fetch origin
-<span class="tok-keyword">git</span> status
-<span class="tok-keyword">git</span> log --oneline --graph --all</code></pre></div>
-<p>현재 브랜치와 원격 브랜치가 갈라졌는지 확인한 뒤 팀 정책에 따라 통합합니다.</p>
-<h4 class="section-h3" id="상황-1-원격에만-새-커밋이-있음">상황 1. 원격에만 새 커밋이 있음<a class="heading-anchor" href="#상황-1-원격에만-새-커밋이-있음" aria-label="이 섹션 링크">#</a></h4>
-<p>내 로컬에 별도 커밋이 없다면 fast-forward로 이동할 수 있습니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> pull --ff-only</code></pre></div>
-<h4 class="section-h3" id="상황-2-로컬과-원격-모두-새-커밋이-있음">상황 2. 로컬과 원격 모두 새 커밋이 있음<a class="heading-anchor" href="#상황-2-로컬과-원격-모두-새-커밋이-있음" aria-label="이 섹션 링크">#</a></h4>
-<p>브랜치가 diverged 상태입니다.</p>
-<p>선택지는 팀 정책에 따라:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> pull --no-rebase   <span class="tok-comment"># merge</span>
-<span class="tok-keyword">git</span> pull --rebase      <span class="tok-comment"># rebase</span></code></pre></div>
-<p>공용 브랜치에서 임의로 정책을 바꾸지 않습니다.</p>
-<h4 class="section-h3" id="상황-3-충돌-발생">상황 3. 충돌 발생<a class="heading-anchor" href="#상황-3-충돌-발생" aria-label="이 섹션 링크">#</a></h4>
-<p>예:</p>
+<h2 class="section-h1" id="5-되돌리기">5. 되돌리기<a class="heading-anchor" href="#5-되돌리기" aria-label="이 섹션 링크">#</a></h2>
+<div class="table-scroll"><table><thead><tr><th>상황</th><th>명령어</th></tr></thead><tbody><tr><td>commit 안 한 파일 수정을 취소하고 싶다</td><td><code class="inline-code">git restore &lt;파일&gt;</code></td></tr><tr><td>add까지만 했는데 취소하고 싶다</td><td><code class="inline-code">git restore --staged &lt;파일&gt;</code></td></tr><tr><td>방금 commit한 걸 취소하고 싶다 (아직 push 전)</td><td><code class="inline-code">git reset HEAD~1</code></td></tr><tr><td>이미 push까지 한 commit을 취소하고 싶다</td><td><code class="inline-code">git revert &lt;커밋ID&gt;</code></td></tr></tbody></table></div>
+<p><strong>핵심만 기억하세요</strong>: 아직 나만 보는 commit(push 전)은 <code class="inline-code">reset</code>으로 지워도 괜찮지만, <strong>이미 push해서 팀원도 보고 있는 commit은 <code class="inline-code">reset</code>으로 지우지 말고 <code class="inline-code">revert</code>를 씁니다.</strong> <code class="inline-code">revert</code>는 이력을 지우는 대신 "이걸 취소한다"는 새 commit을 추가하는 방식이라, 팀원의 기록과 어긋나지 않습니다.</p>
+<hr>
+<h2 class="section-h1" id="6-충돌-conflict-제대로-해결하기">6. 충돌(conflict) 제대로 해결하기<a class="heading-anchor" href="#6-충돌-conflict-제대로-해결하기" aria-label="이 섹션 링크">#</a></h2>
+<p><a href="Git·GitHub%20진짜%20최소%20기초.html">최소 기초 문서</a>에서 충돌이 뭔지 감을 잡았다면, 실제로 겪었을 때 확인할 순서입니다.</p>
+<h4 class="section-h3" id="pull이-local-changes가-덮어써진다-며-막힐-때">pull이 "local changes가 덮어써진다"며 막힐 때<a class="heading-anchor" href="#pull이-local-changes가-덮어써진다-며-막힐-때" aria-label="이 섹션 링크">#</a></h4>
+<p>commit하지 않은 내 수정이 남아있어서입니다. 셋 중 하나를 고르세요.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>A. 지금까지 작업이 의미 있으면 → 먼저 commit
+B. 잠깐 치워두고 싶으면 → git stash (임시 보관함에 넣어두기)
+C. 필요 없는 수정이면 → git restore &lt;파일&gt;로 되돌리기</code></pre></div>
+<h4 class="section-h3" id="충돌-표시가-나타났을-때">충돌 표시가 나타났을 때<a class="heading-anchor" href="#충돌-표시가-나타났을-때" aria-label="이 섹션 링크">#</a></h4>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 내 코드
 =======
-원격 코드
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main</code></pre></div>
-<p>해야 할 일:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 두 코드의 의도를 읽는다.
-2. 최종적으로 남길 코드로 직접 수정한다.
-3. 충돌 표시 문자를 모두 제거한다.
-4. 테스트한다.
-5. git add로 해결 완료 표시
-6. merge/rebase 절차를 마친다.</code></pre></div>
-<p>Merge 중이었다면 보통:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> add &lt;충돌해결파일&gt;
-<span class="tok-keyword">git</span> commit</code></pre></div>
-<p>Rebase 중이었다면:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> add &lt;충돌해결파일&gt;
-<span class="tok-keyword">git</span> rebase --continue</code></pre></div>
-<p>잘못 시작했다면:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> merge --abort
-<span class="tok-keyword">git</span> rebase --abort</code></pre></div>
-<h4 class="section-h3" id="상황-4-커밋하지-않은-로컬-수정-때문에-pull이-막힘">상황 4. 커밋하지 않은 로컬 수정 때문에 pull이 막힘<a class="heading-anchor" href="#상황-4-커밋하지-않은-로컬-수정-때문에-pull이-막힘" aria-label="이 섹션 링크">#</a></h4>
-<p>오류 예:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Your local changes ... would be overwritten</code></pre></div>
-<p>선택:</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>A. 작업이 의미 있는 단위면 먼저 커밋
-B. 잠시 치울 거면 git stash
-C. 필요 없는 수정이면 안전하게 되돌림</code></pre></div>
-<p>무조건 <code class="inline-code">reset --hard</code>부터 실행하지 않습니다.</p>
+팀원의 코드
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 팀원의 브랜치</code></pre></div>
+<ol><li>두 코드를 읽고 어떤 걸 남길지(또는 합칠지) 정합니다.</li><li><code class="inline-code">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>/<code class="inline-code">=======</code>/<code class="inline-code">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 표시를 전부 지우고, 최종 코드만 남깁니다.</li><li>실행해서 제대로 동작하는지 확인합니다.</li><li><code class="inline-code">git add &lt;파일&gt;</code> → <code class="inline-code">git commit</code>으로 마무리합니다.</li></ol>
+<p><strong>시작을 잘못했다면</strong> <code class="inline-code">git merge --abort</code>로 충돌 이전 상태로 되돌아갈 수 있습니다.</p>
+<p>같은 파일이라도 서로 다른 줄을 고쳤다면 Git이 자동으로 합쳐주기도 합니다 — 충돌은 "같은 파일"이 아니라 "같은 부분"을 다르게 고쳤을 때만 일어납니다.</p>
 <hr>
-<h2 class="section-h1" id="10-git-stash-작업-임시-저장">10. <code class="inline-code">git stash</code> — 작업 임시 저장<a class="heading-anchor" href="#10-git-stash-작업-임시-저장" aria-label="이 섹션 링크">#</a></h2>
-<p>브랜치를 전환해야 하는데 지금 작업이 끝나지 않았을 때, 커밋하지 않고 임시로 치워두는 명령이다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git stash                    # 워킹 디렉토리 변경사항을 임시 저장
-git stash list               # 저장된 작업 목록 확인 (스택 구조, 최근 것이 0번)
-git stash show -p 0          # 특정 인덱스의 상세 내용 확인
-git stash pop                # 가장 최근 저장분을 적용하면서 목록에서 제거
-git stash apply stash@{0}    # 목록에는 남긴 채 적용만
-git stash clear              # 전체 목록 삭제</code></pre></div>
+<h2 class="section-h1" id="7-branch-이름-규칙과-팀-저장소-운영">7. branch 이름 규칙과 팀 저장소 운영<a class="heading-anchor" href="#7-branch-이름-규칙과-팀-저장소-운영" aria-label="이 섹션 링크">#</a></h2>
+<p>branch 이름(<code class="inline-code">feature/*</code>, <code class="inline-code">bugfix/*</code> 등)과 팀 저장소를 어떻게 꾸릴지(개인 저장소+Collaborator, Organization, Fork 등)는 <strong>Git 자체 규칙이 아니라 팀마다 정하는 것</strong>입니다. 이 사이트에서는 두 가지로 따로 다룹니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>개발 협업 방식 선택 가이드 → 어떤 브랜치 전략을 쓸지 비교·선택
+팀 GitHub 협업 규칙 (CONTRIBUTING.md) → 우리 팀이 채택한 규칙을 확정해서 적어두는 문서</code></pre></div>
+<p>새 프로젝트에 들어가면 이 두 문서(또는 팀의 실제 CONTRIBUTING.md)부터 확인하세요.</p>
 <hr>
-<h2 class="section-h1" id="11-git-tag-버전-표시">11. <code class="inline-code">git tag</code> — 버전 표시<a class="heading-anchor" href="#11-git-tag-버전-표시" aria-label="이 섹션 링크">#</a></h2>
-<p>특정 커밋에 버전 이름을 붙여 릴리즈 시점을 표시한다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>git tag v1.0                       # 마지막 커밋에 태그
-git tag -a v1.0 -m &quot;메시지&quot;         # 메시지를 남기는 태그(annotated tag)
-git push origin v1.0               # 태그 push (소스코드 push와는 별개)
-git tag                            # 태그 목록 조회</code></pre></div>
-<p>GitHub에서 태그를 기준으로 Release를 만들면 해당 시점의 소스코드가 압축파일로 제공된다.</p>
+<h2 class="section-h1" id="8-자주-하는-실수">8. 자주 하는 실수<a class="heading-anchor" href="#8-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
+<ul><li><code class="inline-code">.env</code>·토큰·키 파일을 <code class="inline-code">.gitignore</code> 설정 전에 먼저 commit해버림</li><li>팀 공용 branch(<code class="inline-code">main</code>)에서 바로 작업하고 commit함</li><li><code class="inline-code">git reset</code>으로 이미 push된 commit을 지워버림 (→ <code class="inline-code">revert</code>를 썼어야 함)</li><li>PAT를 코드나 커밋 메시지에 그대로 남김</li><li>의미 없는 커밋 메시지("수정", "ㅇㅇ")로 commit</li></ul>
 <hr>
-<h2 class="section-h1" id="12-브랜치">12. 브랜치<a class="heading-anchor" href="#12-브랜치" aria-label="이 섹션 링크">#</a></h2>
-<h3 class="section-h2" id="12-1-브랜치란">12.1 브랜치란<a class="heading-anchor" href="#12-1-브랜치란" aria-label="이 섹션 링크">#</a></h3>
-<p>브랜치는 저장소의 특정 시점에서 작업을 분리해 독립적으로 개발할 수 있게 해주는 가상의 포인터다. 실무에서는 보통 <code class="inline-code">main</code>(배포용), <code class="inline-code">dev</code>/<code class="inline-code">develop</code>(개발 기준), 그리고 작업별 개별 브랜치를 함께 운영한다.</p>
-<h3 class="section-h2" id="12-2-브랜치-네이밍-팀마다-다름-자주-쓰이는-예시">12.2 브랜치 네이밍 (팀마다 다름 — 자주 쓰이는 예시)<a class="heading-anchor" href="#12-2-브랜치-네이밍-팀마다-다름-자주-쓰이는-예시" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>접두어</th><th>용도</th></tr></thead><tbody><tr><td><code class="inline-code">feature/*</code></td><td>새 기능 추가. 가장 많이 사용</td></tr><tr><td><code class="inline-code">bugfix/*</code></td><td>버그 수정</td></tr><tr><td><code class="inline-code">hotfix/*</code></td><td>긴급한 버그 수정</td></tr></tbody></table></div>
-<blockquote><p>이 바인더의 <code class="inline-code">CONTRIBUTING</code>는 <code class="inline-code">feat/fix/refactor/hotfix</code> 네이밍을 팀 규칙으로 이미 확정해두었다. 새 프로젝트에서는 그 규칙을 따르고, 이 절은 “왜 이런 접두어를 쓰는지”를 이해하는 배경 지식으로 참고한다.</p></blockquote>
-<h3 class="section-h2" id="12-3-현업에서-흔한-브랜치-작업-순서">12.3 현업에서 흔한 브랜치 작업 순서<a class="heading-anchor" href="#12-3-현업에서-흔한-브랜치-작업-순서" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 최신 main(또는 dev) 기준으로 로컬에서 feature 브랜치 생성
-2. 작업 후 git push origin feature/브랜치명
-3. Pull Request로 dev까지 merge
-4. dev에서 main으로 최종 merge
-5. 작업 완료된 브랜치 삭제</code></pre></div>
-<h3 class="section-h2" id="12-4-브랜치-관련-명령어">12.4 브랜치 관련 명령어<a class="heading-anchor" href="#12-4-브랜치-관련-명령어" aria-label="이 섹션 링크">#</a></h3>
-<div class="table-scroll"><table><thead><tr><th>명령어</th><th>설명</th></tr></thead><tbody><tr><td><code class="inline-code">git branch</code></td><td>로컬 브랜치 목록. <code class="inline-code">-a</code> 옵션으로 원격 브랜치까지 조회</td></tr><tr><td><code class="inline-code">git branch &lt;이름&gt;</code></td><td>현재 체크아웃된 브랜치를 기준으로 새 브랜치 생성</td></tr><tr><td><code class="inline-code">git switch &lt;브랜치&gt;</code></td><td>브랜치 전환</td></tr><tr><td><code class="inline-code">git switch -c &lt;브랜치&gt;</code></td><td>새 브랜치 생성과 전환을 동시에</td></tr><tr><td><code class="inline-code">git branch -d &lt;브랜치&gt;</code></td><td>병합된 로컬 브랜치를 안전하게 삭제</td></tr><tr><td><code class="inline-code">git branch -D &lt;브랜치&gt;</code></td><td><strong>강제 삭제</strong>. 병합되지 않은 커밋도 버릴 수 있으므로 필요성을 확인한 뒤 사용</td></tr><tr><td><code class="inline-code">git push origin --delete &lt;브랜치&gt;</code></td><td>원격 브랜치 삭제 (GitHub 화면에서 직접 삭제도 가능)</td></tr><tr><td><code class="inline-code">git fetch --all --prune</code></td><td>모든 브랜치 정보를 가져오면서, 원격에서 삭제된 브랜치 정보도 함께 정리</td></tr></tbody></table></div>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-4">기본 상식<a class="heading-anchor" href="#기본-상식-4" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>항상 최신화된 <code class="inline-code">main</code>(또는 <code class="inline-code">develop</code>) 기준으로 새 브랜치를 만든다. 오래된 브랜치에서 새로 갈라치면 나중에 병합 시 충돌이 커진다.</li><li>기능 브랜치는 작은 단위·짧은 기간으로 유지한다. 오래 살아있는 브랜치일수록 병합이 어려워진다.</li><li>같은 파일의 같은 영역을 여러 명이 동시에 수정하면 충돌 가능성이 커집니다. 공통 설정·라우터·패키지 파일처럼 모두가 건드리는 파일은 미리 공유합니다.</li></ul>
-<hr></div>
-<h2 class="section-h1" id="13-팀-저장소-운영-방식">13. 팀 저장소 운영 방식<a class="heading-anchor" href="#13-팀-저장소-운영-방식" aria-label="이 섹션 링크">#</a></h2>
-<div class="table-scroll"><table><thead><tr><th>방식</th><th>설명</th><th>적합한 경우</th></tr></thead><tbody><tr><td>개인 저장소 + Collaborator 초대</td><td>한 사람 계정에 저장소를 만들고 팀원을 Collaborator로 초대</td><td>소규모·단기 팀 프로젝트</td></tr><tr><td>Organization + 저장소</td><td>조직을 만들고 그 아래 저장소 생성, 팀원 초대</td><td>권한·팀 단위 관리가 필요한 경우, 회사에서 흔히 쓰는 방식</td></tr><tr><td>Fork</td><td>저장소에 대한 쓰기 권한이 없는 외부 기여자가 저장소를 통째로 복사해 PR로 기여</td><td>오픈소스 기여 등</td></tr></tbody></table></div>
-<h3 class="section-h2" id="13-1-브랜치-보호-규칙-권장">13.1 브랜치 보호 규칙 (권장)<a class="heading-anchor" href="#13-1-브랜치-보호-규칙-권장" aria-label="이 섹션 링크">#</a></h3>
-<ul><li>*Require pull request reviews before merging* 같은 규칙을 <code class="inline-code">main</code>/<code class="inline-code">develop</code>에 적용하면 리뷰 없는 머지를 막을 수 있다.</li><li>규칙 적용 대상 브랜치는 저장소 설정의 *targets*(또는 Branch protection rules)에서 지정한다.</li></ul>
-<div class="callout callout-concept"><div class="callout-label">💡 핵심 개념</div><h4 class="section-h3" id="기본-상식-5">기본 상식<a class="heading-anchor" href="#기본-상식-5" aria-label="이 섹션 링크">#</a></h4>
-<ul><li>이슈 관리 기능(GitHub Issues)만으로도 소규모 팀에서는 Jira 같은 별도 협업 툴 없이 작업을 추적할 수 있다.</li></ul>
-<hr></div>
-<h2 class="section-h1" id="14-Merge-전략-merge-rebase-squash">14. Merge 전략 — merge / rebase / squash<a class="heading-anchor" href="#14-Merge-전략-merge-rebase-squash" aria-label="이 섹션 링크">#</a></h2>
-<div class="table-scroll"><table><thead><tr><th>전략</th><th>방식</th><th>장점</th><th>주의점</th></tr></thead><tbody><tr><td><strong>Merge</strong></td><td>두 브랜치의 이력을 유지하면서 합침</td><td>분기·병합 기록이 명확</td><td>브랜치가 많으면 로그가 복잡해질 수 있음</td></tr><tr><td><strong>Rebase</strong></td><td>내 커밋을 다른 기준 커밋 위에 다시 적용</td><td>선형 이력을 만들기 좋음</td><td>커밋 ID가 바뀌므로 공유 이력에서 조심해야 함</td></tr><tr><td><strong>Squash merge</strong></td><td>PR의 여러 커밋을 기준 브랜치에 하나의 커밋으로 합침</td><td>기준 브랜치 이력이 단순</td><td>세부 작업 커밋은 기준 브랜치에 그대로 남지 않음</td></tr></tbody></table></div>
-<h3 class="section-h2" id="Rebase의-안전-기준">Rebase의 안전 기준<a class="heading-anchor" href="#Rebase의-안전-기준" aria-label="이 섹션 링크">#</a></h3>
-<p>“push한 브랜치는 절대 rebase 금지”라고 외우기보다 다음처럼 이해합니다.</p>
-<ul><li><strong>나 혼자 쓰는 기능 브랜치</strong>: 팀 규칙이 허용하면 rebase 가능. 이미 push했다면 이후 <code class="inline-code">--force-with-lease</code>가 필요할 수 있음</li><li><strong>여러 사람이 함께 쓰는 브랜치</strong>: rebase로 기존 커밋 ID를 바꾸면 다른 사람 이력과 어긋날 수 있으므로 임의로 하지 않음</li><li><strong>main/develop 같은 공용 기준 브랜치</strong>: 이력을 다시 쓰는 작업을 임의로 하지 않음</li></ul>
-<h3 class="section-h2" id="Squash-merge-후-브랜치">Squash merge 후 브랜치<a class="heading-anchor" href="#Squash-merge-후-브랜치" aria-label="이 섹션 링크">#</a></h3>
-<p>GitHub에서 Squash merge하면 기준 브랜치에는 새로운 하나의 커밋이 생깁니다. 작업 브랜치는 보통 삭제하고 다음 작업은 최신 기준 브랜치에서 새 브랜치를 만드는 편이 단순합니다.</p>
-<p><strong>어떤 전략이 더 “좋다”기보다 팀의 리뷰·배포 방식에 맞춰 하나의 규칙으로 통일하는 것이 중요</strong>합니다.</p>
-<hr>
-<h2 class="section-h1" id="15-자주-하는-실수">15. 자주 하는 실수<a class="heading-anchor" href="#15-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
-<ul><li><code class="inline-code">.env</code>, 토큰, 키 파일을 <code class="inline-code">.gitignore</code> 설정 전에 먼저 커밋해버림 (커밋 이후엔 캐시 삭제까지 필요)</li><li>팀 공용 브랜치(<code class="inline-code">main</code>, <code class="inline-code">develop</code>)에 <code class="inline-code">-force</code> push</li><li>이미 push된 브랜치를 rebase해서 팀원과 커밋ID가 어긋남</li><li>오래된 브랜치에서 새 기능 브랜치를 생성해 나중에 충돌이 커짐</li><li><code class="inline-code">git reset</code>으로 이미 공유된 커밋을 지워버림 (→ <code class="inline-code">revert</code>를 썼어야 함)</li><li>PAT를 코드나 커밋 메시지에 그대로 남김</li><li>커밋 메시지 없이 또는 의미 없는 메시지로 커밋</li></ul>
-<hr>
-<h2 class="section-h1" id="16-이-문서-사용법">16. 이 문서 사용법<a class="heading-anchor" href="#16-이-문서-사용법" aria-label="이 섹션 링크">#</a></h2>
-<p>이 문서는 특정 프로젝트의 브랜치 전략이 아니라 <strong>Git이라는 도구 자체</strong>를 다루는 공통 기초 문서다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>개발 협업 방식 선택 가이드
-→ 어떤 브랜치 전략·리뷰 방식을 쓸지 &quot;비교·선택&quot;하는 문서
-
-팀 GitHub 협업 규칙 (CONTRIBUTING.md)
-→ 이번 프로젝트가 채택한 규칙을 &quot;확정&quot;해서 적어두는 문서
-
-팀 개발 시작 가이드
-→ Git을 포함해 개발 전체 흐름에서 &quot;언제 무엇을 하는지&quot; 행동 순서를 정리한 문서
-
-Git·GitHub 기초 가이드 (이 문서)
-→ 브랜치 전략과 무관하게, Git 명령어·인증·충돌 해결을 다루는 &quot;도구 사용법&quot; 문서</code></pre></div>
-<p>프로젝트마다 달라지는 것은 위 세 문서에 적고, Git 자체에 대한 지식은 이 문서를 반복해서 참고한다.</p>
-<hr>
-<h2 class="section-h1" id="17-직접-실습해보기-Git-최소-실습">17. 직접 실습해보기 — Git 최소 실습<a class="heading-anchor" href="#17-직접-실습해보기-Git-최소-실습" aria-label="이 섹션 링크">#</a></h2>
-<p>연습용 저장소에서 다음 흐름을 직접 한 번 해봅니다.</p>
-<h3 class="section-h2" id="1단계-저장소-받기">1단계. 저장소 받기<a class="heading-anchor" href="#1단계-저장소-받기" aria-label="이 섹션 링크">#</a></h3>
+<h2 class="section-h1" id="9-직접-실습해보기">9. 직접 실습해보기<a class="heading-anchor" href="#9-직접-실습해보기" aria-label="이 섹션 링크">#</a></h2>
+<p>연습용 저장소나 새로 만든 빈 저장소에서 아래를 순서대로 해봅니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> clone &lt;저장소주소&gt;
 <span class="tok-keyword">cd</span> &lt;폴더&gt;
 <span class="tok-keyword">git</span> status
-<span class="tok-keyword">git</span> remote -v</code></pre></div>
-<h3 class="section-h2" id="2단계-기능-브랜치">2단계. 기능 브랜치<a class="heading-anchor" href="#2단계-기능-브랜치" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> switch main
-<span class="tok-keyword">git</span> pull --ff-only
-<span class="tok-keyword">git</span> switch -c feat/practice</code></pre></div>
-<h3 class="section-h2" id="3단계-파일-수정-후-커밋">3단계. 파일 수정 후 커밋<a class="heading-anchor" href="#3단계-파일-수정-후-커밋" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> status
-<span class="tok-keyword">git</span> add &lt;파일&gt;
-<span class="tok-keyword">git</span> diff --staged
-<span class="tok-keyword">git</span> commit -m &quot;Feat: 연습 기능 추가&quot;</code></pre></div>
-<h3 class="section-h2" id="4단계-원격에-처음-올리기">4단계. 원격에 처음 올리기<a class="heading-anchor" href="#4단계-원격에-처음-올리기" aria-label="이 섹션 링크">#</a></h3>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> push -u origin feat/practice</code></pre></div>
-<p>이후 GitHub에서 PR을 생성합니다.</p>
-<h3 class="section-h2" id="5단계-add-취소도-해보기">5단계. add 취소도 해보기<a class="heading-anchor" href="#5단계-add-취소도-해보기" aria-label="이 섹션 링크">#</a></h3>
+
+<span class="tok-keyword">git</span> switch -c feat/practice
+echo &quot;test&quot; &gt;&gt; practice.txt
+<span class="tok-keyword">git</span> add practice.txt
+<span class="tok-keyword">git</span> status
+<span class="tok-keyword">git</span> commit -m &quot;연습: 파일 추가&quot;
+<span class="tok-keyword">git</span> push -u origin feat/practice</code></pre></div>
+<p>이후 GitHub 웹사이트에서 PR을 직접 만들어봅니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> add practice.txt
 <span class="tok-keyword">git</span> restore --staged practice.txt</code></pre></div>
-<p>파일 내용은 남아 있고 staging만 풀리는지 확인합니다.</p>
-<h3 class="section-h2" id="6단계-stash-해보기">6단계. stash 해보기<a class="heading-anchor" href="#6단계-stash-해보기" aria-label="이 섹션 링크">#</a></h3>
+<p>파일 내용은 그대로 남고 staging만 풀리는지 확인해보세요.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> stash
 <span class="tok-keyword">git</span> status
 <span class="tok-keyword">git</span> stash pop</code></pre></div>
-<h3 class="section-h2" id="7단계-일부러-충돌-경험하기">7단계. 일부러 충돌 경험하기<a class="heading-anchor" href="#7단계-일부러-충돌-경험하기" aria-label="이 섹션 링크">#</a></h3>
-<p>연습 저장소에서 같은 줄을 두 브랜치에서 다르게 수정한 뒤 merge해봅니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">git</span> merge &lt;다른브랜치&gt;</code></pre></div>
-<p><code class="inline-code">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code class="inline-code">=======</code>, <code class="inline-code">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 표시를 직접 해결하고 <code class="inline-code">git add</code> → <code class="inline-code">git commit</code>까지 해봅니다.</p>
-<h4 class="section-h3" id="이-실습-후-설명할-수-있어야-하는-것">이 실습 후 설명할 수 있어야 하는 것<a class="heading-anchor" href="#이-실습-후-설명할-수-있어야-하는-것" aria-label="이 섹션 링크">#</a></h4>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Working Directory / Staging / Commit의 차이는?
-fetch와 pull은 무엇이 다른가?
-git add는 GitHub에 올리는 명령인가?
-commit과 push는 무엇이 다른가?
-같은 파일을 수정하면 항상 충돌하는가?
-reset과 revert는 언제 다르게 쓰는가?
--d와 -D는 무엇이 다른가?
-force push가 왜 위험한가?</code></pre></div>
+<p>작업을 잠깐 치웠다가(<code class="inline-code">stash</code>) 다시 꺼내는(<code class="inline-code">pop</code>) 흐름도 한 번 해보세요.</p>
 <details class="quiz-answer">
 <summary>정답 확인</summary>
 <div class="quiz-answer-body">
-<p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 실습을 제대로 끝낸 것입니다.</p>
+<p>아래 항목을 스스로 체크해보세요. 전부 "예"라면 이 문서를 제대로 끝낸 것입니다.</p>
 <ul>
-<li>&#9744; <code>git clone</code> 후 <code>git status</code>로 브랜치 상태를, <code>git remote -v</code>로 원격 주소를 확인했다</li>
-<li>&#9744; <code>feat/practice</code> 브랜치를 만들고 그 위에서만 작업했다 (main에서 직접 커밋하지 않았다)</li>
-<li>&#9744; <code>git add</code>는 로컬 staging 영역에만 올리는 명령이고, GitHub에 올라가는 건 <code>git push</code>뿐이라고 설명할 수 있다</li>
-<li>&#9744; <code>git restore --staged</code> 실행 후 파일 내용은 그대로 남고 staging만 풀리는 것을 확인했다</li>
-<li>&#9744; <code>git stash</code>로 작업을 잠시 치운 뒤 <code>git stash pop</code>으로 다시 꺼냈다</li>
-<li>&#9744; 일부러 충돌을 낸 뒤 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> / <code>=======</code> / <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 표시를 직접 지우고 원하는 내용으로 정리했다</li>
-<li>&#9744; 충돌 해결 후 <code>git add</code> → <code>git commit</code>까지 마쳤다</li>
-<li>&#9744; fetch(원격 정보만 받아옴)와 pull(받아온 뒤 merge까지)의 차이를 한 문장으로 설명할 수 있다</li>
+<li>&#9744; <code>git add</code>는 로컬 스테이징에만 올리는 것이고, GitHub에 올라가는 건 <code>git push</code>뿐이라고 설명할 수 있다</li>
+<li>&#9744; <code>git restore --staged</code> 실행 후 파일 내용은 그대로 남고 staging만 풀리는 걸 확인했다</li>
+<li>&#9744; <code>.gitignore</code>가 이미 추적 중인 파일은 자동으로 빼주지 않는다는 걸 안다</li>
+<li>&#9744; 아직 push 안 한 commit은 <code>reset</code>, 이미 push한 commit은 <code>revert</code>를 쓴다는 기준을 설명할 수 있다</li>
+<li>&#9744; 충돌 표시(<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>/<code>=======</code>/<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>)를 보면 무엇부터 해야 하는지 안다</li>
 </ul>
 </div>
 </details>
+<p>여기까지 익혔다면 팀 프로젝트에서 Git 때문에 막히는 일은 거의 없습니다. <code class="inline-code">rebase</code>, <code class="inline-code">fetch</code>, 태그, 브랜치 보호 규칙처럼 더 깊은 내용이 필요해지면 → <strong><a href="../개발%20중급%20가이드/Git·GitHub%20중급%20가이드.html">Git·GitHub 중급 가이드</a></strong>로 이어서 보세요.</p>
         <nav class="doc-nav"><a class="doc-nav-link prev" href="팀 개발 시작 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">팀 개발 시작 가이드</span></a><a class="doc-nav-link next" href="프론트엔드 기초 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">프론트엔드 기초 가이드</span></a></nav>
       </div>
     </main>
