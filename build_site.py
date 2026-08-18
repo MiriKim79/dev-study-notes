@@ -1250,7 +1250,9 @@ def render_prev_next(page_key):
     next_key = STUDY_ORDER[idx + 1] if idx < len(STUDY_ORDER) - 1 else None
 
     def label(k):
-        return "학습 대시보드" if k == "index" else PAGES_BY_KEY[k]["title"]
+        # "이전 학습"/"다음 학습" 방향 텍스트 뒤에 "학습 대시보드"가 붙으면
+        # "이전 학습학습 대시보드"처럼 "학습"이 겹쳐 보여서, 대시보드로 갈 때만 짧게 표기한다.
+        return "대시보드" if k == "index" else PAGES_BY_KEY[k]["title"]
 
     left = ""
     right = ""
@@ -1650,9 +1652,14 @@ DASHBOARD_TMPL = """<!doctype html>
     </div>
     <a class="news-static-link" href="https://www.jasoseol.com" target="_blank" rel="noopener">🔗 자소설닷컴 바로가기 — 채용공고·자소서·면접 후기 커뮤니티</a>
 
+    <a class="hero-cta" href="{first_steps_url}">
+      <span class="hero-cta-text">프로그래밍이 뭔지, 프론트/백엔드가 뭔지도 잘 모르겠어요 🌱 — <strong>웹 서비스 하나가 어떻게 구성되는지</strong>부터 5~10분 만에 큰 그림 잡고 싶다면?</span>
+      <span class="hero-cta-btn">🗺️ 개발 전체 지도부터 보기 →</span>
+    </a>
+
     <a class="hero-cta" href="{git_min_url}">
-      <span class="hero-cta-text">Git 진짜 하나도 몰라요 😭 — <strong>branch가 뭔지, commit이 뭔지</strong>부터 5분 만에 정리하고 싶다면?</span>
-      <span class="hero-cta-btn">🔰 최소 기초부터 시작하기 →</span>
+      <span class="hero-cta-text">개발 흐름은 대충 아는데 Git만 몰라요 😭 — <strong>branch가 뭔지, commit이 뭔지</strong>부터 5분 만에 정리하고 싶다면?</span>
+      <span class="hero-cta-btn">🔰 Git 최소 기초부터 시작하기 →</span>
     </a>
 
     <a class="hero-cta" href="{level_guide_url}">
@@ -1714,6 +1721,7 @@ def build_dashboard():
         n_total=n_beginner + n_mid + n_adv + n_cert + n_misc,
         asset_v=ASSET_VERSION,
         tier_nav=render_tier_nav("index"),
+        first_steps_url=url_of("first-steps"),
         git_min_url=url_of("git-min"),
         level_guide_url=url_of("playbook-hub") + "#나는-어디부터-봐야-하나-등급별-시작-기준",
         card_grid=render_card_grid(),
