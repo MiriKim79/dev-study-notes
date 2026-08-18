@@ -281,7 +281,7 @@ jobs:
       backend: ${{ steps.filter.outputs.backend }}
     steps:
       - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
+      - uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
@@ -347,7 +347,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write   # GITHUB_TOKEN의 packages 기본 권한은 read이므로, ghcr.io에 push하려면 write를 명시해야 함
+      packages: write   # 저장소/조직 설정에 따라 GITHUB_TOKEN의 packages 기본 권한이 read일 수 있어, ghcr.io에 push하려면 write를 명시해두는 것이 안전함
     steps:
       - uses: actions/checkout@v4
 
@@ -359,7 +359,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 이미지 빌드·푸시
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
@@ -370,7 +370,7 @@ jobs:
 
 - 태그를 `latest`가 아니라 커밋 SHA(`github.sha`)로 붙이면, 배포된 이미지가 어느 커밋에서 만들어졌는지 추적할 수 있고 문제 발생 시 이전 SHA로 즉시 롤백할 수 있습니다.
 - `cache-from`/`cache-to`로 Docker 레이어 캐시를 GitHub Actions 캐시에 저장해두면, 변경 없는 레이어(예: 의존성 설치 단계)는 다시 빌드하지 않아 속도가 크게 빨라집니다.
-- `GITHUB_TOKEN`으로 ghcr.io에 push하려면 `packages: write` 권한이 필요합니다. 기본적으로 `GITHUB_TOKEN`은 packages에 read 권한만 가지므로, 명시하지 않으면 push 단계에서 403 오류가 납니다.
+- `GITHUB_TOKEN`으로 ghcr.io에 push하려면 `packages: write` 권한이 필요합니다. 저장소·조직 설정에 따라 `GITHUB_TOKEN`의 기본 권한이 packages read로 제한되어 있을 수 있으므로(15장 참고), `permissions`에 명시하지 않으면 환경에 따라 push 단계에서 403 오류가 날 수 있습니다.
 
 **기본 상식**: 이미지에 소스코드의 `.env` 파일이나 시크릿을 그대로 복사해 넣지 않습니다. `.dockerignore`에 `.env`, `node_modules`, `.git` 등을 반드시 등록해 이미지 크기와 노출 위험을 함께 줄입니다.
 

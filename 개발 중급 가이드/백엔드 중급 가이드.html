@@ -285,10 +285,12 @@ log_event(&quot;course_enrolled&quot;, user_id=user.id, course_id=course.id)
 <h2 class="section-h1" id="12-헬스체크와-우아한-종료-Graceful-Shutdown">12. 헬스체크와 우아한 종료(Graceful Shutdown)<a class="heading-anchor" href="#12-헬스체크와-우아한-종료-Graceful-Shutdown" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="헬스체크">헬스체크<a class="heading-anchor" href="#헬스체크" aria-label="이 섹션 링크">#</a></h3>
 <p>로드밸런서나 오케스트레이터(쿠버네티스 등)가 "이 서버 인스턴스가 정상인지"를 주기적으로 확인하는 엔드포인트입니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code>@app.route(&quot;/health&quot;)
+<div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">from</span> sqlalchemy <span class="tok-keyword">import</span> text
+
+@app.route(&quot;/health&quot;)
 <span class="tok-keyword">def</span> health_check():
     <span class="tok-keyword">try</span>:
-        db.session.execute(&quot;SELECT <span class="tok-number">1</span>&quot;)   <span class="tok-comment"># DB 연결도 함께 확인</span>
+        db.session.execute(text(&quot;SELECT <span class="tok-number">1</span>&quot;))   <span class="tok-comment"># DB 연결도 함께 확인</span>
         <span class="tok-keyword">return</span> jsonify({&quot;status&quot;: &quot;ok&quot;}), <span class="tok-number">200</span>
     <span class="tok-keyword">except</span> Exception:
         <span class="tok-keyword">return</span> jsonify({&quot;status&quot;: &quot;error&quot;}), <span class="tok-number">503</span></code></pre></div>
