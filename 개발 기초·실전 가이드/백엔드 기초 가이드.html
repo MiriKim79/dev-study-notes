@@ -138,7 +138,7 @@ DELETE FROM courses WHERE id = 1;</code></pre></div>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">python</span><button class="copy-btn" type="button">복사</button></div><pre><code>course = Course.query.filter_by(id=<span class="tok-number">1</span>).first()
 course.price = <span class="tok-number">10000</span>
 db.session.commit()</code></pre></div>
-<p>ORM도 결국 내부적으로는 SQL로 변환됩니다. 성능 튜닝(N+1 문제 등)은 <strong>중급 가이드에서 다룹니다.</strong></p>
+<p>ORM도 결국 내부적으로는 SQL로 변환됩니다. 성능 튜닝(N+1 문제 등)은 <a href="../개발 중급 가이드/백엔드 중급 가이드.html">백엔드 중급 가이드</a>에서 다룹니다.</p>
 <p>ORM 모델에 컬럼을 추가한다고 실제 운영 DB가 자동으로 바뀌지는 않습니다. 이 변경 내역을 파일로 기록해 팀과 공유하는 방법을 <strong>마이그레이션</strong>이라고 합니다(도구 예: Alembic/Flask-Migrate, Django migrations). 팀 프로젝트에서는 DB 구조를 수동으로만 바꾸지 말고 마이그레이션 파일을 Git으로 공유합니다.</p>
 <h3 class="section-h2" id="트랜잭션">트랜잭션<a class="heading-anchor" href="#트랜잭션" aria-label="이 섹션 링크">#</a></h3>
 <p>여러 DB 작업을 하나의 단위로 묶어, 전부 성공하거나 전부 취소되게(롤백) 만드는 것을 <strong>트랜잭션</strong>이라고 합니다. 예를 들어 "결제 저장 → 수강 목록 추가 → 인원수 갱신" 중 하나라도 실패하면 전부 되돌립니다. 서로 연결된 여러 DB 작업은 트랜잭션으로 묶고, 실패 시 반드시 롤백되는지 테스트로 확인합니다.</p>
@@ -153,7 +153,7 @@ db.session.commit()</code></pre></div>
 <p>인증 방식은 크게 두 가지입니다.</p>
 <ul><li><strong>세션(Session) 기반</strong>: 서버가 로그인 상태를 세션 저장소에 보관하고, 클라이언트는 세션 ID(쿠키)만 가집니다.</li><li><strong>토큰 기반(JWT 등)</strong>: 로그인 시 서버가 <strong>토큰</strong>(로그인 상태를 문자열 하나로 표현한 것)을 발급하고, 이후 요청마다 헤더에 담아 보냅니다.</li></ul>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>Authorization: Bearer &lt;token&gt;</code></pre></div>
-<p>JWT는 비밀번호 같은 민감정보를 페이로드에 넣으면 안 되는 등 다루는 방법이 따로 있습니다. JWT 내부 구조, Refresh Token, CSRF 같은 심화 주제는 <strong>중급 가이드에서 다룹니다.</strong></p>
+<p>JWT는 비밀번호 같은 민감정보를 페이로드에 넣으면 안 되는 등 다루는 방법이 따로 있습니다. JWT 내부 구조, Refresh Token, CSRF 같은 심화 주제는 <a href="../개발 중급 가이드/백엔드 중급 가이드.html">백엔드 중급 가이드</a>에서 다룹니다.</p>
 <p>인가는 "일반 사용자는 자신의 정보만 조회 가능"처럼 역할별로 다르게 적용합니다. 인증과 인가는 항상 서버에서 최종 확인하며(프론트 화면 숨김만으로는 보안이 되지 않습니다), 다른 사용자의 데이터에 접근하는 요청인지 소유자 확인 로직을 반드시 둡니다(예: 남의 수강 정보 조회 방지).</p>
 <hr>
 <h2 class="section-h1" id="9-비밀번호-보안-환경변수">9. 비밀번호·보안·환경변수<a class="heading-anchor" href="#9-비밀번호-보안-환경변수" aria-label="이 섹션 링크">#</a></h2>
@@ -186,10 +186,10 @@ db_url = os.environ[&quot;DATABASE_URL&quot;] <span class="tok-comment"># 코드
 빌드      = 배포 가능한 형태로 준비
 배포      = 다른 사용자가 접속 가능한 서버에 올림</code></pre></div>
 <p>운영 서버는 개발 중 <code class="inline-code">python app.py</code>로 실행하는 것과 구조가 다를 수 있습니다. 서버가 정상 동작 중인지 확인하는 전용 엔드포인트를 <strong>Health Check</strong>라고 부릅니다(예: <code class="inline-code">GET /health</code> → <code class="inline-code">200 OK</code>).</p>
-<p>배포 전 확인할 것: 운영용 환경변수, 운영 DB 연결, CORS 허용 도메인, 마이그레이션 적용 여부, 비밀값 노출 여부. Reverse Proxy, Process Manager, 컨테이너(Docker) 같은 배포 인프라 구조와 배포 전략은 <strong>중급 가이드에서 다룹니다.</strong></p>
+<p>배포 전 확인할 것: 운영용 환경변수, 운영 DB 연결, CORS 허용 도메인, 마이그레이션 적용 여부, 비밀값 노출 여부. Reverse Proxy, Process Manager, 컨테이너(Docker) 같은 배포 인프라 구조와 배포 전략은 <a href="../개발 중급 가이드/백엔드 중급 가이드.html">백엔드 중급 가이드</a>에서 다룹니다.</p>
 <hr>
 <h2 class="section-h1" id="13-그-외-알아두면-좋은-것-나중에-배우기">13. 그 외 알아두면 좋은 것 (나중에 배우기)<a class="heading-anchor" href="#13-그-외-알아두면-좋은-것-나중에-배우기" aria-label="이 섹션 링크">#</a></h2>
-<p>캐싱, 페이지네이션(데이터를 나눠서 주는 것 — 첫 프로젝트에서도 최소한은 적용 권장), Background Job(오래 걸리는 처리를 분리하는 작업 큐), 외부 API 연동(타임아웃·재시도, API 키는 백엔드 환경변수로만 관리)은 이름과 개념만 기억해두고 필요할 때 찾아봅니다. <strong>중급 가이드에서 다룹니다.</strong></p>
+<p>캐싱, 페이지네이션(데이터를 나눠서 주는 것 — 첫 프로젝트에서도 최소한은 적용 권장), Background Job(오래 걸리는 처리를 분리하는 작업 큐), 외부 API 연동(타임아웃·재시도, API 키는 백엔드 환경변수로만 관리)은 이름과 개념만 기억해두고 필요할 때 찾아봅니다. 자세한 내용은 <a href="../개발 중급 가이드/백엔드 중급 가이드.html">백엔드 중급 가이드</a>에서 다룹니다.</p>
 <hr>
 <h2 class="section-h1" id="14-최종-핵심-원칙">14. 최종 핵심 원칙<a class="heading-anchor" href="#14-최종-핵심-원칙" aria-label="이 섹션 링크">#</a></h2>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>클라이언트가 보낸 값은 항상 다시 검증한다.

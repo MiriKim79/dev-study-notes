@@ -49,7 +49,7 @@
         <span class="page-kicker">🚀 개발 기초·실전 가이드</span>
         <h1 class="page-title">팀 개발 시작 가이드</h1>
         <p class="page-tagline">뭐부터 해야 할지 감이 안 잡힌다? 전체 그림부터 여기서 잡고 가세요.</p>
-        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row">이 문서는 <strong>처음으로 여러 명이 함께 개발 프로젝트를 진행하는 사람</strong>을 위한 가이드입니다. 첫 팀 프로젝트를 실제로 어떤 순서로 진행하면 되는지, 그 흐름만 다룹니다.</div><div class="intro-row"></div><div class="intro-row">프론트엔드·백엔드·생성형 AI의 세부 기술 지식은 각 분야 가이드(<strong>프론트엔드 기초 가이드</strong>, <strong>백엔드 기초 가이드</strong>, <strong>생성형 AI 기능 개발 기초 가이드</strong>)를 참고하세요. Git 명령어 자체도 <strong>Git·GitHub 기초 가이드</strong>에서 다루므로 여기서는 "팀 개발에서 왜, 언제 쓰는지"만 다룹니다.</div></div>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row">이 문서는 <strong>처음으로 여러 명이 함께 개발 프로젝트를 진행하는 사람</strong>을 위한 가이드입니다. 첫 팀 프로젝트를 실제로 어떤 순서로 진행하면 되는지, 그 흐름만 다룹니다.</div><div class="intro-row"></div><div class="intro-row">프론트엔드·백엔드·생성형 AI의 세부 기술 지식은 각 분야 가이드(<a href="프론트엔드 기초 가이드.html">프론트엔드 기초 가이드</a>, <a href="백엔드 기초 가이드.html">백엔드 기초 가이드</a>, <a href="생성형 AI 기능 개발 기초 가이드.html">생성형 AI 기능 개발 기초 가이드</a>)를 참고하세요. Git 명령어 자체도 <a href="Git·GitHub 기초 가이드.html">Git·GitHub 기초 가이드</a>에서 다루므로 여기서는 "팀 개발에서 왜, 언제 쓰는지"만 다룹니다.</div></div>
         <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 팀 개발은 혼자 개발과 무엇이 다른가</li><li>2. 요구사항 정리와 MVP 범위 정하기</li><li>3. 역할 분담과 작업 공간 나누기</li><li>4. Git·개발 환경 준비</li><li>5. 구현 — 소통하며 진행하기</li><li>6. 통합·테스트</li><li>7. 배포와 회고</li><li>8. 직접 실습해보기 — 이슈부터 PR까지 미니 시나리오</li></ol></div>
         
         <hr>
@@ -89,7 +89,7 @@
 <p>보통 프론트엔드·백엔드·(있다면) AI 담당으로 나누고, 각자의 책임 범위는 이렇게 구분됩니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>사용자 → 프론트엔드 화면 → 백엔드 API → DB / AI 모델 → 결과 정리 → 화면 표시</code></pre></div>
 <ul><li><strong>프론트엔드</strong>: 입력 받기, 요청 보내기, 결과 표시, 로딩·오류 처리</li><li><strong>백엔드</strong>: 입력값 검증, 인증·권한 확인, DB 조회/저장, 결과 가공, 오류 응답</li><li><strong>AI</strong>: 분류·추천·요약·생성 등 (프론트엔드가 AI API 키를 직접 쓰지 않고, 백엔드가 감싸서 호출)</li></ul>
-<p>각 분야의 기술 스택·개발 순서·체크리스트는 <strong>프론트엔드 기초 가이드 / 백엔드 기초 가이드 / 생성형 AI 기능 개발 기초 가이드</strong>를 참고하세요.</p>
+<p>각 분야의 기술 스택·개발 순서·체크리스트는 <a href="프론트엔드 기초 가이드.html">프론트엔드 기초 가이드</a> / <a href="백엔드 기초 가이드.html">백엔드 기초 가이드</a> / <a href="생성형 AI 기능 개발 기초 가이드.html">생성형 AI 기능 개발 기초 가이드</a>를 참고하세요.</p>
 <h3 class="section-h2" id="3-2-폴더-구조로-담당-구분">3.2 폴더 구조로 담당 구분<a class="heading-anchor" href="#3-2-폴더-구조로-담당-구분" aria-label="이 섹션 링크">#</a></h3>
 <p>파일 위치가 명확하면 팀원이 코드를 쉽게 찾고, 같은 기능을 중복 작성하지 않고, 파일 충돌도 줄어듭니다. 프론트엔드와 백엔드를 하나의 저장소에 담는 방식을 <strong>모노레포(Monorepo)</strong>라고 합니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>project/
@@ -97,7 +97,7 @@
 ├── backend/     # 백엔드 담당자 폴더
 ├── docs/        # 기획서, API 명세, 회의록
 └── README.md</code></pre></div>
-<p>폴더 이름만 보고도 "이 파일은 누구 것인지" 구분되어 충돌이 줄어듭니다. 내부를 더 세부적으로 나누는 방법은 프론트엔드/백엔드 기초 가이드를 참고하세요.</p>
+<p>폴더 이름만 보고도 "이 파일은 누구 것인지" 구분되어 충돌이 줄어듭니다. 내부를 더 세부적으로 나누는 방법은 <a href="프론트엔드 기초 가이드.html">프론트엔드</a>/<a href="백엔드 기초 가이드.html">백엔드 기초 가이드</a>를 참고하세요.</p>
 <hr>
 <h2 class="section-h1" id="4-Git-개발-환경-준비">4. Git·개발 환경 준비<a class="heading-anchor" href="#4-Git-개발-환경-준비" aria-label="이 섹션 링크">#</a></h2>
 <h3 class="section-h2" id="4-1-브랜치로-작업-공간-나누기">4.1 브랜치로 작업 공간 나누기<a class="heading-anchor" href="#4-1-브랜치로-작업-공간-나누기" aria-label="이 섹션 링크">#</a></h3>
@@ -108,7 +108,7 @@
     ├── feat/backend-auth
     └── feat/course-api</code></pre></div>
 <ul><li><code class="inline-code">main</code>: 배포 가능한 안정된 코드</li><li><code class="inline-code">develop</code>: 각자의 기능을 모으는 기준 브랜치</li><li><code class="inline-code">feat/...</code>: 기능 개발, <code class="inline-code">fix/...</code>: 오류 수정</li></ul>
-<p>작은 팀은 <code class="inline-code">main</code> + 기능 브랜치만 쓰는 더 단순한 구조도 충분합니다. 중요한 것은 브랜치 개수가 아니라 <strong>"어디서 갈라져서 어디로 합칠지"를 팀 전체가 같은 규칙으로 쓰는 것</strong>입니다. 브랜치 전략을 고르는 기준, merge/rebase 등 실제 Git 명령어는 <strong>Git·GitHub 기초 가이드</strong>를 참고하세요.</p>
+<p>작은 팀은 <code class="inline-code">main</code> + 기능 브랜치만 쓰는 더 단순한 구조도 충분합니다. 중요한 것은 브랜치 개수가 아니라 <strong>"어디서 갈라져서 어디로 합칠지"를 팀 전체가 같은 규칙으로 쓰는 것</strong>입니다. 브랜치 전략을 고르는 기준, merge/rebase 등 실제 Git 명령어는 <a href="Git·GitHub 기초 가이드.html">Git·GitHub 기초 가이드</a>를 참고하세요.</p>
 <h3 class="section-h2" id="4-2-개발-환경-확인">4.2 개발 환경 확인<a class="heading-anchor" href="#4-2-개발-환경-확인" aria-label="이 섹션 링크">#</a></h3>
 <p>필요한 언어·버전, 패키지 매니저, 프로젝트 의존성, 환경변수 파일, 개발 서버 실행, DB 연결, <code class="inline-code">.gitignore</code> — 프로젝트를 열면 가장 먼저 확인합니다. 실제 실행 명령은 프로젝트마다 다르므로 저장소의 <code class="inline-code">README</code>, <code class="inline-code">package.json</code>, <code class="inline-code">requirements.txt</code> 같은 설정 파일을 먼저 확인하세요.</p>
 <p>비밀번호·API 키처럼 환경마다 달라지는 값은 코드와 분리해 <code class="inline-code">.env</code> 파일에 두고, <code class="inline-code">.env</code>는 GitHub에 올리지 않습니다. 변수 이름만 담은 <code class="inline-code">.env.example</code>을 대신 공유합니다.</p>
@@ -140,7 +140,7 @@ SECRET_KEY=...</code></pre></div>
 <h3 class="section-h2" id="5-3-충돌-방지">5.3 충돌 방지<a class="heading-anchor" href="#5-3-충돌-방지" aria-label="이 섹션 링크">#</a></h3>
 <p>같은 부분을 두 사람이 고쳐서 Git이 자동으로 합치지 못하는 상태를 <strong>충돌(Conflict)</strong>이라고 합니다. 여러 명이 코드를 같이 쓰면 자연히 생기는 상황이지만, 아래 습관으로 빈도와 크기를 줄일 수 있습니다.</p>
 <ul><li>브랜치를 오래 붙들지 않고 작은 단위로 자주 머지한다.</li><li>작업 시작 전 <code class="inline-code">develop</code>을 최신 상태로 <code class="inline-code">pull</code> 한다.</li><li>여러 사람이 같이 건드리는 공통 파일은 미리 "누가 언제 수정할지" 정해두거나 수정 전 팀원에게 알린다.</li><li>다른 팀원이 작업 중인 파일을 알림 없이 함부로 고치지 않는다.</li></ul>
-<p>충돌이 나면 당황하지 말고 어느 부분이 겹쳤는지 확인한 뒤 팀원과 함께 어떤 코드를 남길지 정합니다. 실제 충돌 해결 명령어는 <strong>Git·GitHub 기초 가이드</strong>를 참고하세요.</p>
+<p>충돌이 나면 당황하지 말고 어느 부분이 겹쳤는지 확인한 뒤 팀원과 함께 어떤 코드를 남길지 정합니다. 실제 충돌 해결 명령어는 <a href="Git·GitHub 기초 가이드.html">Git·GitHub 기초 가이드</a>를 참고하세요.</p>
 <h3 class="section-h2" id="5-4-구현-중-행동-요령">5.4 구현 중 행동 요령<a class="heading-anchor" href="#5-4-구현-중-행동-요령" aria-label="이 섹션 링크">#</a></h3>
 <p><strong>작업 시작 전</strong>: 현재 브랜치 확인 → 최신 <code class="inline-code">develop</code> pull → 오늘 할 작업 한두 개 결정 → 관련 API 확인 → 공통 파일을 건드리는 작업인지 확인</p>
 <p><strong>작업 중</strong>: 작은 단위로 구현하고 바로 실행해서 확인 → 오류 메시지 끝까지 읽기 → 이해 못 한 코드는 바로 질문 → 다른 팀원 파일을 함부로 수정하지 않기 → 기능 단위로 커밋</p>
