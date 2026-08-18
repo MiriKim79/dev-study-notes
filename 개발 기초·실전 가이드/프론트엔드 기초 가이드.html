@@ -112,8 +112,7 @@
 ];
 
 <span class="tok-keyword">const</span> names = products.map((product) =&gt; product.name);
-<span class="tok-keyword">const</span> expensive = products.filter((product) =&gt; product.price &gt;= <span class="tok-number">40000</span>);
-<span class="tok-keyword">const</span> selected = products.find((product) =&gt; product.id === <span class="tok-number">2</span>);</code></pre></div>
+<span class="tok-keyword">const</span> expensive = products.filter((product) =&gt; product.price &gt;= <span class="tok-number">40000</span>);</code></pre></div>
 <p>서버 요청처럼 결과가 바로 오지 않는 작업은 <strong>비동기(Async)</strong>로 처리합니다. <code class="inline-code">Promise</code>(비동기 작업의 결과를 나중에 받기로 약속한 객체)를 동기 코드처럼 읽기 쉽게 쓰는 문법이 <code class="inline-code">async</code>/<code class="inline-code">await</code>입니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">js</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">async</span> <span class="tok-keyword">function</span> loadProducts() {
   <span class="tok-keyword">try</span> {
@@ -127,13 +126,7 @@
 }</code></pre></div>
 <hr>
 <h2 class="section-h1" id="6-브라우저와-DOM">6. 브라우저와 DOM<a class="heading-anchor" href="#6-브라우저와-DOM" aria-label="이 섹션 링크">#</a></h2>
-<p>브라우저는 HTML을 읽어서 JavaScript가 다룰 수 있는 객체 구조로 바꿉니다. 이걸 <strong>DOM(Document Object Model)</strong>이라고 합니다.</p>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">html</span><button class="copy-btn" type="button">복사</button></div><pre><code>&lt;button id=&quot;submitButton&quot;&gt;확인&lt;/button&gt;</code></pre></div>
-<div class="code-block"><div class="code-block-header"><span class="code-lang">js</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">const</span> button = document.querySelector(&quot;#submitButton&quot;);
-button.addEventListener(&quot;click&quot;, () =&gt; {
-  console.log(&quot;버튼 클릭&quot;);
-});</code></pre></div>
-<p>클릭, 입력처럼 사용자가 하는 행동을 <strong>이벤트(Event)</strong>라고 하고, "이 이벤트가 발생하면 이 함수를 실행해라"라고 등록하는 것을 <strong>이벤트 리스너(Event Listener)</strong>라고 합니다. React, Vue 같은 프레임워크도 결국은 이 DOM을 효율적으로 갱신해주는 도구입니다.</p>
+<p>브라우저는 HTML을 읽어서 JavaScript가 다룰 수 있는 객체 구조로 바꿉니다. 이걸 <strong>DOM(Document Object Model)</strong>이라고 합니다. 클릭, 입력처럼 사용자가 하는 행동을 <strong>이벤트(Event)</strong>라고 하고, "이 이벤트가 발생하면 이 함수를 실행해라"라고 등록하는 것을 <strong>이벤트 리스너(Event Listener)</strong>라고 합니다(React에서는 10장의 <code class="inline-code">onClick</code>처럼 더 간단하게 씁니다). React, Vue 같은 프레임워크도 결국은 이 DOM을 효율적으로 갱신해주는 도구입니다.</p>
 <hr>
 <h2 class="section-h1" id="7-클라이언트와-서버">7. 클라이언트와 서버<a class="heading-anchor" href="#7-클라이언트와-서버" aria-label="이 섹션 링크">#</a></h2>
 <p><strong>클라이언트</strong>(사용자의 브라우저)는 화면 표시, 입력 처리, API 요청을 담당합니다. <strong>서버</strong>(원격 컴퓨터에서 실행되는 프로그램)는 데이터 검증, 인증, 데이터베이스 접근, 비즈니스 로직을 담당합니다.</p>
