@@ -10,6 +10,77 @@
 
 Git은 인터넷 없이 내 컴퓨터 안에서만 써도 됩니다. GitHub는 그 기록을 팀원과 나눠 보기 위한 곳입니다.
 
+## 전체 흐름 한눈에 보기
+
+아래 10단계가 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.
+
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="clone부터 작업 브랜치 생성, 코드 수정, add, commit, push, PR, review, merge, pull까지 이어지는 Git 팀 작업 전체 흐름도" style="max-width:100%;height:auto;font-family:inherit">
+  <style>
+    .gb-branch{fill:var(--surface-soft-2);stroke:var(--border-strong);stroke-width:1.5}
+    .gb-main{fill:var(--callout-tip-bg);stroke:var(--callout-tip-border);stroke-width:1.5}
+    .gb-step{fill:var(--callout-concept-bg);stroke:var(--accent);stroke-width:1.5}
+    .gb-text{fill:var(--text);font-size:12px;text-anchor:middle}
+    .gb-sub{fill:var(--text-secondary);font-size:10px;text-anchor:middle}
+    .gb-note{fill:var(--text-faint);font-size:10.5px;text-anchor:middle}
+    .gb-arrow{stroke:var(--text-faint);stroke-width:1.5;fill:none;marker-end:url(#gbArrow2)}
+  </style>
+  <defs>
+    <marker id="gbArrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--text-faint)"/>
+    </marker>
+  </defs>
+
+  <!-- 1행: clone → branch 생성 → 수정·add·commit → push → PR -->
+  <rect x="10" y="20" width="90" height="42" rx="8" class="gb-step"/>
+  <text x="55" y="46" class="gb-text">clone</text>
+
+  <line x1="100" y1="41" x2="130" y2="41" class="gb-arrow"/>
+  <rect x="130" y="20" width="110" height="42" rx="8" class="gb-step"/>
+  <text x="185" y="46" class="gb-text">작업 브랜치 생성</text>
+
+  <line x1="240" y1="41" x2="270" y2="41" class="gb-arrow"/>
+  <rect x="270" y="20" width="140" height="42" rx="8" class="gb-step"/>
+  <text x="340" y="41" class="gb-text">코드 수정</text>
+  <text x="340" y="55" class="gb-sub">add → commit</text>
+
+  <line x1="410" y1="41" x2="440" y2="41" class="gb-arrow"/>
+  <rect x="440" y="20" width="90" height="42" rx="8" class="gb-step"/>
+  <text x="485" y="46" class="gb-text">push</text>
+
+  <line x1="530" y1="41" x2="560" y2="41" class="gb-arrow"/>
+  <rect x="560" y="20" width="90" height="42" rx="8" class="gb-step"/>
+  <text x="605" y="46" class="gb-text">PR</text>
+
+  <line x1="605" y1="62" x2="605" y2="100" class="gb-arrow"/>
+
+  <!-- 2행: 작업 브랜치 → review → main(또는 팀이 정한 브랜치) -->
+  <rect x="30" y="150" width="150" height="46" rx="8" class="gb-branch"/>
+  <text x="105" y="172" class="gb-text" style="font-weight:700">작업 브랜치</text>
+  <text x="105" y="187" class="gb-sub">내 작업 내용</text>
+
+  <line x1="180" y1="173" x2="250" y2="173" class="gb-arrow"/>
+  <text x="215" y="165" class="gb-sub">review</text>
+
+  <rect x="250" y="150" width="120" height="46" rx="8" class="gb-step"/>
+  <text x="310" y="177" class="gb-text">merge</text>
+
+  <line x1="370" y1="173" x2="440" y2="173" class="gb-arrow"/>
+  <rect x="440" y="150" width="220" height="46" rx="8" class="gb-main"/>
+  <text x="550" y="170" class="gb-text" style="font-weight:700">main (또는 팀이 정한 브랜치)</text>
+  <text x="550" y="185" class="gb-sub">배포·기준 코드</text>
+
+  <line x1="605" y1="100" x2="310" y2="150" class="gb-arrow"/>
+
+  <!-- pull: main → 내 컴퓨터로 되돌아오는 화살표 -->
+  <line x1="550" y1="196" x2="550" y2="225" class="gb-arrow"/>
+  <line x1="550" y1="225" x2="105" y2="225" class="gb-arrow"/>
+  <line x1="105" y1="225" x2="105" y2="196" class="gb-arrow"/>
+  <text x="327" y="218" class="gb-sub">pull — 팀원이 합친 최신 코드 받아오기</text>
+
+  <text x="350" y="270" class="gb-note">기본 흐름은 작업 브랜치 → PR → main(또는 팀이 정한 대상 브랜치)입니다.</text>
+  <text x="350" y="286" class="gb-note">중간에 develop 브랜치를 두고 거치는 팀도 있지만, 필수 단계는 아닙니다.</text>
+</svg>
+
 # 1. clone — 팀 저장소를 내 컴퓨터로 가져오기
 
 **저장소(repository, repo)**는 프로젝트 파일과 그 변경 기록이 저장되는 공간입니다. 팀 프로젝트에서 가장 먼저 할 일은, GitHub에 이미 있는 팀 저장소를 내 컴퓨터로 통째로 복사해오는 것입니다. 이걸 **clone**이라고 합니다.
