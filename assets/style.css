@@ -18,7 +18,7 @@
   --text-strong: #1E3553;    /* 큰 제목 */
   --text-heading: #24436B;   /* 중간 제목 */
   --text-secondary: #55677D; /* 설명, 보조 텍스트 — 본문/설명에 사용, AA 대비 확보(5.6:1) */
-  --text-faint: #7A8CA3;     /* 메타정보 전용(날짜·아이콘 옆 라벨 등) — 본문/설명에는 쓰지 않음 */
+  --text-faint: #5F7089;     /* 메타정보 전용(날짜·아이콘 옆 라벨 등) — AA 대비 확보(흰 배경 5:1), 본문/설명에는 쓰지 않음 */
 
   --border: #E5EBF3;         /* 기본 얇은 구분선 */
   --border-soft: #E8EEF7;    /* 사이드바 등 아주 옅은 구분선 */
@@ -535,7 +535,7 @@ body::before {
 }
 .tier-tab:hover { color: var(--text-heading); background: var(--surface-soft); }
 .tier-tab[aria-selected="true"] {
-  color: var(--accent); font-weight: 800; border-bottom-color: var(--accent);
+  color: var(--accent); font-weight: 800; border-bottom-color: var(--accent); background: var(--accent-weak);
 }
 .tier-tab-count {
   font-size: 12px; font-weight: 700; color: var(--text-secondary); background: var(--surface-soft-2);
@@ -678,18 +678,25 @@ table.overview-table td.name-cell { font-weight: 700; white-space: nowrap; color
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0; }
 .study-card {
   display: block; background: var(--card-bg); border: 1px solid var(--border-strong); border-radius: var(--radius-lg);
-  padding: 20px; transition: border-color .15s ease, background-color .15s ease;
+  padding: 18px 20px; transition: border-color .15s ease, background-color .15s ease;
 }
 .study-card:hover { border-color: var(--accent-border-strong); background: var(--surface-soft); text-decoration: none; }
 .study-card-icon {
-  font-size: 18px; margin-bottom: 12px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: 10px; display: inline-flex; align-items: center; justify-content: center;
   width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--accent-weak);
 }
-.study-card-title { font-size: 18px; font-weight: 800; color: var(--text-strong); margin-bottom: 7px; line-height: 1.35; }
-.study-card-desc { font-size: 15.5px; color: var(--text-secondary); line-height: 1.6; }
-.study-card-who { font-size: 13.5px; color: var(--text-secondary); margin-top: 8px; line-height: 1.55; }
+.study-card-title { font-size: 18px; font-weight: 800; color: var(--text-strong); margin-bottom: 6px; line-height: 1.35; }
+.study-card-desc {
+  font-size: 15.5px; color: var(--text-secondary); line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.study-card-who {
+  font-size: 13.5px; color: var(--text-secondary); margin-top: 7px; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+}
+/* 탭이 이미 단계를 구분하므로 태그는 주제만 작게 보조 표시 */
 .study-card-tag {
-  display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--card-accent, #315EA8);
+  display: inline-block; margin-top: 10px; font-size: 11.5px; font-weight: 600; color: var(--card-accent, #315EA8);
 }
 :root[data-theme="dark"] .study-card-tag { color: var(--card-accent, var(--accent)); }
 
