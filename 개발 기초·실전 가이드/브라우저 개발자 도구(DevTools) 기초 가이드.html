@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>브라우저 개발자 도구(DevTools) 기초 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=937f3b6fa0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="브라우저 개발자 도구(DevTools) 기초 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="브라우저에서 문제가 생겼을 때 DevTools를 열고 어느 탭을 봐야 하는지 바로 판단하기">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%8F%84%EA%B5%AC%28DevTools%29%20%EA%B8%B0%EC%B4%88%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="브라우저 개발자 도구(DevTools) 기초 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="브라우저에서 문제가 생겼을 때 DevTools를 열고 어느 탭을 봐야 하는지 바로 판단하기">
+<script src="../assets/search-index.js?v=937f3b6fa0" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 기초·실전 가이드.html">개발 기초·실전 가이드</a> <span>›</span><span class="current">브라우저 개발자 도구(DevTools) 기초 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<nav class="tier-nav"><div class="tier-nav-inner"><a class="tier-nav-link active" href="../개발 기초·실전 가이드.html">🔰 초급</a><a class="tier-nav-link" href="../개발 중급 가이드.html">📈 중급</a><a class="tier-nav-link" href="../개발 고급 가이드.html">🏔️ 고급</a><a class="tier-nav-link" href="../자격증 대비.html">🏅 자격증</a></div></nav>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-DevTools-여는-법">1. DevTools 여는 법</a></li><li class="toc-h1"><a href="#2-Elements-화면-HTML-CSS-확인">2. Elements — 화면(HTML/CSS) 확인</a><ul class="toc-h2-list"><li><a href="#2-1-HTML-구조-확인">2.1 HTML 구조 확인</a></li><li><a href="#2-2-CSS가-왜-적용되지-않는지-확인">2.2 CSS가 왜 적용되지 않는지 확인</a></li><li><a href="#2-3-임시-스타일-수정">2.3 임시 스타일 수정</a></li></ul></li><li class="toc-h1"><a href="#3-Console-JavaScript-오류-로그-확인">3. Console — JavaScript 오류·로그 확인</a><ul class="toc-h2-list"><li><a href="#3-1-JavaScript-오류-확인">3.1 JavaScript 오류 확인</a></li><li><a href="#3-2-console-log-활용">3.2 `console.log` 활용</a></li></ul></li><li class="toc-h1"><a href="#4-Network-API-요청-확인">4. Network — API 요청 확인</a><ul class="toc-h2-list"><li><a href="#Status-코드가-보이면-무엇부터-확인할지">Status 코드가 보이면 무엇부터 확인할지</a></li></ul></li><li class="toc-h1"><a href="#5-Application-저장된-데이터-확인">5. Application — 저장된 데이터 확인</a></li><li class="toc-h1"><a href="#6-Responsive-Device-Mode-모바일-화면-확인">6. Responsive/Device Mode — 모바일 화면 확인</a></li><li class="toc-h1"><a href="#7-캐시-문제일-때">7. 캐시 문제일 때</a></li><li class="toc-h1"><a href="#8-실제-상황-예시">8. 실제 상황 예시</a><ul class="toc-h2-list"><li><a href="#예시-1-버튼을-눌러도-아무-반응이-없음">예시 1. 버튼을 눌러도 아무 반응이 없음</a></li><li><a href="#예시-2-API-데이터가-화면에-안-나옴">예시 2. API 데이터가 화면에 안 나옴</a></li><li><a href="#예시-3-CSS가-적용되지-않음">예시 3. CSS가 적용되지 않음</a></li></ul></li><li class="toc-h1"><a href="#9-최종-원칙">9. 최종 원칙</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-misc);">
+        <span class="page-kicker">🔍 개발 기초·실전 가이드</span>
+        <h1 class="page-title">브라우저 개발자 도구(DevTools) 기초 가이드</h1>
+        <p class="page-tagline">Elements·Console·Network로 화면·JS·API 문제를 직접 확인하는 법.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 웹 개발을 처음 하는 사람</div><div class="intro-row"><strong>목적:</strong> 브라우저에서 문제가 생겼을 때 DevTools를 열고 어느 탭을 봐야 하는지 바로 판단하기</div><div class="intro-row"><strong>주의:</strong> 여기서는 Chrome DevTools 기준으로 설명합니다. Firefox·Edge·Safari에도 이름만 다를 뿐 거의 같은 기능이 있습니다. 이 문서는 도구 사용법이고, "어떤 순서로 원인을 찾는가"라는 흐름은 <a href="디버깅·오류%20해결%20기초%20가이드.html">디버깅·오류 해결 기초 가이드</a>에서 다룹니다 — 함께 읽으면 좋습니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. DevTools 여는 법</li><li>2. Elements — 화면(HTML/CSS) 확인</li><li>3. Console — JavaScript 오류·로그 확인</li><li>4. Network — API 요청 확인</li><li>5. Application — 저장된 데이터 확인</li><li>6. Responsive/Device Mode — 모바일 화면 확인</li><li>7. 캐시 문제일 때</li><li>8. 실제 상황 예시</li><li>9. 최종 원칙</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-DevTools-여는-법">1. DevTools 여는 법<a class="heading-anchor" href="#1-DevTools-여는-법" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>페이지 아무 곳이나 우클릭 → <strong>검사(Inspect)</strong></li><li>또는 단축키: Windows/Linux <code class="inline-code">F12</code> 또는 <code class="inline-code">Ctrl+Shift+I</code>, Mac <code class="inline-code">Cmd+Option+I</code></li></ul>
+<p>열리면 위쪽에 <strong>Elements / Console / Network / Application</strong> 같은 탭이 보입니다. 이 문서는 그중 초보자가 실제로 자주 쓰는 4개 탭만 다룹니다.</p>
+<hr>
+<h2 class="section-h1" id="2-Elements-화면-HTML-CSS-확인">2. Elements — 화면(HTML/CSS) 확인<a class="heading-anchor" href="#2-Elements-화면-HTML-CSS-확인" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="2-1-HTML-구조-확인">2.1 HTML 구조 확인<a class="heading-anchor" href="#2-1-HTML-구조-확인" aria-label="이 섹션 링크">#</a></h3>
+<p>Elements 탭은 지금 화면에 실제로 그려진 HTML을 보여줍니다(내가 작성한 소스 코드가 아니라, JS가 실행되고 난 <strong>최종 결과</strong>입니다). 왼쪽 위 화살표 아이콘(요소 선택 도구)을 누르고 화면의 요소를 클릭하면, Elements 탭이 그 요소의 HTML 위치로 자동으로 이동합니다. "이 버튼이 코드에서 어디에 해당하는지 모르겠다"일 때 가장 먼저 쓰는 기능입니다.</p>
+<h3 class="section-h2" id="2-2-CSS가-왜-적용되지-않는지-확인">2.2 CSS가 왜 적용되지 않는지 확인<a class="heading-anchor" href="#2-2-CSS가-왜-적용되지-않는지-확인" aria-label="이 섹션 링크">#</a></h3>
+<p>요소를 클릭하면 오른쪽에 <strong>Styles</strong> 패널이 뜹니다. 여기서 확인할 것:</p>
+<ul><li>내가 준 스타일이 목록에 <strong>있는지</strong> — 없으면 클래스 이름 오타나, 엉뚱한 요소에 스타일을 준 것입니다.</li><li>있는데 <strong>취소선</strong>이 그어져 있는지 — 다른 규칙이 그 스타일을 덮어쓰고 있다는 뜻입니다. 취소선 위에 있는 규칙(더 구체적이거나 나중에 선언된 규칙)이 이긴 것입니다.</li><li><strong>Computed</strong> 탭에서는 여러 규칙이 합쳐진 "최종 값"만 볼 수 있어, 실제로 지금 적용된 크기·색상·여백을 바로 확인할 때 편합니다.</li></ul>
+<h3 class="section-h2" id="2-3-임시-스타일-수정">2.3 임시 스타일 수정<a class="heading-anchor" href="#2-3-임시-스타일-수정" aria-label="이 섹션 링크">#</a></h3>
+<p>Styles 패널에서 값(예: <code class="inline-code">color: red</code>)을 직접 클릭해 바꿔볼 수 있습니다. <strong>이 수정은 새로고침하면 사라지고, 실제 코드 파일은 바뀌지 않습니다.</strong> "이 값을 이렇게 바꾸면 원하는 모양이 되는지" 빠르게 실험해보고, 맞으면 그 값을 실제 CSS 파일에 옮겨 적는 용도로 씁니다.</p>
+<hr>
+<h2 class="section-h1" id="3-Console-JavaScript-오류-로그-확인">3. Console — JavaScript 오류·로그 확인<a class="heading-anchor" href="#3-Console-JavaScript-오류-로그-확인" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="3-1-JavaScript-오류-확인">3.1 JavaScript 오류 확인<a class="heading-anchor" href="#3-1-JavaScript-오류-확인" aria-label="이 섹션 링크">#</a></h3>
+<p>화면이 이상하게 동작하면 가장 먼저 Console을 엽니다. 빨간 글씨로 에러가 찍혀 있다면, 그 메시지와 파일:줄번호를 확인합니다(에러 메시지 읽는 법과 stack trace는 <a href="디버깅·오류%20해결%20기초%20가이드.html">디버깅·오류 해결 기초 가이드</a> 2~3장 참고). 에러가 하나도 없는데 화면이 이상하다면 JS 자체 문제가 아니라 CSS나 데이터 문제일 가능성이 높습니다.</p>
+<h3 class="section-h2" id="3-2-console-log-활용">3.2 <code class="inline-code">console.log</code> 활용<a class="heading-anchor" href="#3-2-console-log-활용" aria-label="이 섹션 링크">#</a></h3>
+<p>코드 중간에 <code class="inline-code">console.log(값)</code>을 넣어두면 그 시점에 값이 무엇인지 여기서 확인할 수 있습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">js</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-keyword">function</span> handleSubmit(user) {
+  console.log(&quot;submit 시점의 user:&quot;, user);   <span class="tok-comment">// 여기서 user가 뭔지 확인</span>
+  <span class="tok-keyword">if</span> (!user.email) <span class="tok-keyword">return</span>;
+  <span class="tok-comment">// ...</span>
+}</code></pre></div>
+<p>"이 함수가 실행은 되는지", "이 시점에 이 값이 뭔지"가 궁금할 때 가장 빠른 확인 방법입니다. 확인이 끝난 <code class="inline-code">console.log</code>는 커밋 전에 지웁니다.</p>
+<hr>
+<h2 class="section-h1" id="4-Network-API-요청-확인">4. Network — API 요청 확인<a class="heading-anchor" href="#4-Network-API-요청-확인" aria-label="이 섹션 링크">#</a></h2>
+<p>Network 탭을 열어둔 채로 화면을 새로고침하거나 버튼을 눌러야 요청이 기록됩니다(탭을 늦게 열면 그 전 요청은 안 보입니다). 목록에서 요청 하나를 클릭하면 아래 정보를 확인할 수 있습니다.</p>
+<div class="table-scroll"><table><thead><tr><th>항목</th><th>확인 내용</th></tr></thead><tbody><tr><td><strong>URL</strong></td><td>정확한 주소로 요청이 갔는가 (오타, 잘못된 경로 없는지)</td></tr><tr><td><strong>Method</strong></td><td>GET/POST/PATCH/DELETE 등 의도한 메서드가 맞는가</td></tr><tr><td><strong>Status</strong></td><td>응답 상태 코드 (아래 5장 참고)</td></tr><tr><td><strong>Request</strong></td><td>내가 보낸 데이터(헤더, 바디)가 의도한 값이 맞는가</td></tr><tr><td><strong>Response</strong></td><td>서버가 실제로 뭘 돌려줬는가 — 화면에 안 보여도 응답 자체는 정상일 수 있습니다</td></tr></tbody></table></div>
+<h3 class="section-h2" id="Status-코드가-보이면-무엇부터-확인할지">Status 코드가 보이면 무엇부터 확인할지<a class="heading-anchor" href="#Status-코드가-보이면-무엇부터-확인할지" aria-label="이 섹션 링크">#</a></h3>
+<ul><li><strong>404</strong> — URL 자체가 틀림. 오타, 앞뒤 슬래시, 포트 번호부터 확인</li><li><strong>401</strong> — 로그인/인증 정보가 요청에 안 실렸거나 만료됨. Request 헤더에 토큰이 있는지 확인</li><li><strong>403</strong> — 인증은 됐지만 권한이 없음. 로그인한 계정의 권한을 확인</li><li><strong>500</strong> — 서버 내부 오류. Response 내용만으로는 부족할 때가 많아 서버 터미널 로그를 봐야 함</li></ul>
+<p>요청 자체가 목록에 아예 안 보인다면, 프론트엔드 코드에서 요청을 보내는 함수가 실행되지 않았다는 뜻이니 Console부터 다시 확인합니다.</p>
+<hr>
+<h2 class="section-h1" id="5-Application-저장된-데이터-확인">5. Application — 저장된 데이터 확인<a class="heading-anchor" href="#5-Application-저장된-데이터-확인" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>Application</strong> 탭 왼쪽의 <strong>Storage</strong> 항목에서 확인합니다.</p>
+<ul><li><strong>Local Storage</strong> — 브라우저를 꺼도 남아있는 저장 값(로그인 토큰 등)</li><li><strong>Session Storage</strong> — 탭을 닫으면 사라지는 저장 값</li><li><strong>Cookies</strong> — 서버 요청에 자동으로 실려가는 값</li></ul>
+<p>초보자가 이 탭을 여는 상황은 보통 정해져 있습니다: <strong>"로그인이 안 풀렸는데 왜 로그인 화면이 뜨지", "로그아웃했는데 값이 남아있다"</strong> 처럼 로그인 상태나 저장된 값 자체를 의심할 때입니다. 값을 직접 지우거나 수정해서 "저장된 값이 문제인지, 코드가 문제인지"를 구분할 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="6-Responsive-Device-Mode-모바일-화면-확인">6. Responsive/Device Mode — 모바일 화면 확인<a class="heading-anchor" href="#6-Responsive-Device-Mode-모바일-화면-확인" aria-label="이 섹션 링크">#</a></h2>
+<p>DevTools 왼쪽 위의 <strong>기기 아이콘</strong>(또는 <code class="inline-code">Ctrl+Shift+M</code>)을 누르면 화면을 모바일 크기로 바꿔 미리 볼 수 있습니다. 실제 폰이 없어도 "작은 화면에서 레이아웃이 깨지지 않는지"를 바로 확인할 수 있습니다. 상단에서 화면 폭(예: 375px, 390px)을 직접 입력해 여러 크기를 테스트해봅니다.</p>
+<hr>
+<h2 class="section-h1" id="7-캐시-문제일-때">7. 캐시 문제일 때<a class="heading-anchor" href="#7-캐시-문제일-때" aria-label="이 섹션 링크">#</a></h2>
+<p>"분명히 코드를 고쳤는데 화면이 안 바뀐다"면 브라우저가 예전 파일을 <strong>캐시</strong>(다시 안 받아오려고 저장해둔 예전 버전)해서 쓰고 있을 수 있습니다.</p>
+<ul><li>먼저 강력 새로고침: Windows <code class="inline-code">Ctrl+Shift+R</code>, Mac <code class="inline-code">Cmd+Shift+R</code></li><li>그래도 안 바뀌면 Network 탭에서 <strong>Disable cache</strong> 체크박스를 켜고(DevTools가 열려 있는 동안만 적용) 다시 새로고침</li></ul>
+<p>"내 컴퓨터에서만 옛날 화면이 보이고 남들은 새 화면이 보인다"는 대부분 이 문제입니다.</p>
+<hr>
+<h2 class="section-h1" id="8-실제-상황-예시">8. 실제 상황 예시<a class="heading-anchor" href="#8-실제-상황-예시" aria-label="이 섹션 링크">#</a></h2>
+<h3 class="section-h2" id="예시-1-버튼을-눌러도-아무-반응이-없음">예시 1. 버튼을 눌러도 아무 반응이 없음<a class="heading-anchor" href="#예시-1-버튼을-눌러도-아무-반응이-없음" aria-label="이 섹션 링크">#</a></h3>
+<ul><li><strong>증상</strong>: 버튼을 클릭했는데 아무 일도 안 일어남</li><li><strong>어느 탭</strong>: Console</li><li><strong>무엇을 확인</strong>: 빨간 에러가 있는지 본다. 있다면 그 시점에 코드 실행이 멈춘 것 (예: <code class="inline-code">onClick</code> 함수 안에서 에러가 나서 이후 로직이 실행 안 됨)</li><li><strong>다음 행동</strong>: 에러 메시지의 파일:줄번호로 이동해 그 지점부터 확인. 에러가 없다면 버튼에 이벤트가 실제로 연결됐는지 Elements에서 요소를 확인</li></ul>
+<h3 class="section-h2" id="예시-2-API-데이터가-화면에-안-나옴">예시 2. API 데이터가 화면에 안 나옴<a class="heading-anchor" href="#예시-2-API-데이터가-화면에-안-나옴" aria-label="이 섹션 링크">#</a></h3>
+<ul><li><strong>증상</strong>: 로딩은 끝났는데 목록이 비어있음</li><li><strong>어느 탭</strong>: Network</li><li><strong>무엇을 확인</strong>: 해당 요청의 Status가 200인지, Response에 실제로 데이터가 들어있는지 확인</li><li><strong>다음 행동</strong>: Status가 200이고 Response에 데이터도 있다면 프론트엔드가 응답을 화면에 그리는 코드 쪽 문제 → Console로 이동해 관련 에러가 있는지 확인. Status가 200이 아니라면 4장의 코드별 확인 순서로</li></ul>
+<h3 class="section-h2" id="예시-3-CSS가-적용되지-않음">예시 3. CSS가 적용되지 않음<a class="heading-anchor" href="#예시-3-CSS가-적용되지-않음" aria-label="이 섹션 링크">#</a></h3>
+<ul><li><strong>증상</strong>: 색이나 여백을 줬는데 화면에 그대로 반영 안 됨</li><li><strong>어느 탭</strong>: Elements</li><li><strong>무엇을 확인</strong>: 해당 요소를 클릭해 Styles 패널에서 내가 준 스타일이 목록에 있는지, 취소선이 그어져 있는지 확인</li><li><strong>다음 행동</strong>: 스타일 자체가 안 보이면 클래스 이름 오타 확인, 취소선이 있으면 어떤 규칙이 덮어쓰는지 확인 후 선택자를 더 구체적으로 바꾸거나 그 규칙을 수정</li></ul>
+<hr>
+<h2 class="section-h1" id="9-최종-원칙">9. 최종 원칙<a class="heading-anchor" href="#9-최종-원칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>화면 문제 → Elements, JS 동작 문제 → Console, 서버 통신 문제 → Network, 로그인/저장값 문제 → Application</li><li>Network 탭은 요청이 일어나기 <strong>전에</strong> 열어둔다</li><li>코드를 고쳤는데 안 바뀌면 캐시부터 의심한다(강력 새로고침)</li><li>Elements에서 고친 스타일은 저장되지 않는다 — 확인용으로만 쓰고 실제 파일에 옮겨 적는다</li></ul>
+<p>DevTools로 "어디가 문제인지" 확인했다면, 그다음 "어떤 순서로 원인을 좁히고 고치는지"는 <a href="디버깅·오류%20해결%20기초%20가이드.html">디버깅·오류 해결 기초 가이드</a>를 참고하세요.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="디버깅·오류 해결 기초 가이드.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">디버깅·오류 해결 기초 가이드</span></a><a class="doc-nav-link next" href="../개발 협업 방식 선택 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">개발 협업 방식 선택 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/search-core.js?v=937f3b6fa0" defer></script>
+<script src="../assets/main.js?v=937f3b6fa0" defer></script>
+</body>
+</html>

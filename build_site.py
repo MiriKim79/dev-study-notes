@@ -56,7 +56,7 @@ PAGES = [
         "cat": "start",
         "icon": "📚",
         "hub": None,
-        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging"],
+        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools"],
     },
     {
         "key": "first-steps",
@@ -182,6 +182,17 @@ PAGES = [
         "icon": "🐞",
         "hub": "playbook-hub",
         "tagline": "무작정 AI에게 붙여넣기 전에, 에러 메시지부터 스스로 읽고 범위를 좁히는 법.",
+    },
+    {
+        "key": "devtools",
+        "src": f"{PLAYBOOK_DIR}/브라우저 개발자 도구(DevTools) 기초 가이드.md",
+        "title": "브라우저 개발자 도구(DevTools) 기초 가이드",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "cat_label": "실전",
+        "icon": "🔍",
+        "hub": "playbook-hub",
+        "tagline": "Elements·Console·Network로 화면·JS·API 문제를 직접 확인하는 법.",
     },
     {
         "key": "collab-method",
@@ -522,6 +533,7 @@ STUDY_ORDER = [
     "vibe-coding",
     "agent-trends",
     "debugging",
+    "devtools",
     "collab-method",
     "github-hub",
     "contributing",
@@ -1539,9 +1551,10 @@ OVERVIEW_ROWS_MISC = [
     ("vibe-coding", "바이브 코딩으로 개발하기", "SPEC·context 전달 → 작업 분할 → 구현 → 검증 → Git → 배포 전 확인까지", "AI와 함께 실제 프로젝트를 진행하고 싶을 때"),
     ("agent-trends", "AI 코딩 에이전트 최신 트렌드", "하네스·루프·그래프 엔지니어링을 쉬운 사례로 이해하는 최신 트렌드", "요즘 자주 들리는 AI 코딩 용어가 궁금할 때"),
     ("debugging", "디버깅·오류 해결 기초 가이드", "에러 메시지·stack trace 읽기부터 원인 범위 좁히기, AI에게 잘 물어보는 법까지", "오류가 나서 어디부터 봐야 할지 막막할 때"),
+    ("devtools", "브라우저 개발자 도구(DevTools) 기초 가이드", "Elements·Console·Network·Application으로 화면·JS·API·저장값을 직접 확인하는 법", "브라우저에서 문제가 생겼는데 어디를 봐야 할지 모를 때"),
 ]
 
-DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging"]
+DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools"]
 
 OVERVIEW_ROWS_MID = [
     ("git-mid", "Git·GitHub 중급 가이드", "interactive rebase, cherry-pick, bisect, worktree, GitHub Actions, 브랜치 보호 심화", "Git 기본 명령이 손에 익은 뒤"),
