@@ -56,7 +56,7 @@ PAGES = [
         "cat": "start",
         "icon": "📚",
         "hub": None,
-        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools", "reading-docs"],
+        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools", "reading-docs", "readme-guide"],
     },
     {
         "key": "first-steps",
@@ -204,6 +204,17 @@ PAGES = [
         "icon": "📖",
         "hub": "playbook-hub",
         "tagline": "Quick Start·API Reference·버전 정보를 이용해 필요한 내용을 빠르게 찾는 법.",
+    },
+    {
+        "key": "readme-guide",
+        "src": f"{PLAYBOOK_DIR}/프로젝트 README 잘 작성하기.md",
+        "title": "프로젝트 README 잘 작성하기",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "cat_label": "실전",
+        "icon": "📝",
+        "hub": "playbook-hub",
+        "tagline": "프로젝트 소개·실행법·기술·역할·트러블슈팅을 한눈에 정리하는 README 작성법.",
     },
     {
         "key": "collab-method",
@@ -546,6 +557,7 @@ STUDY_ORDER = [
     "debugging",
     "devtools",
     "reading-docs",
+    "readme-guide",
     "collab-method",
     "github-hub",
     "contributing",
@@ -1565,9 +1577,10 @@ OVERVIEW_ROWS_MISC = [
     ("debugging", "디버깅·오류 해결 기초 가이드", "에러 메시지·stack trace 읽기부터 원인 범위 좁히기, AI에게 잘 물어보는 법까지", "오류가 나서 어디부터 봐야 할지 막막할 때"),
     ("devtools", "브라우저 개발자 도구(DevTools) 기초 가이드", "Elements·Console·Network·Application으로 화면·JS·API·저장값을 직접 확인하는 법", "브라우저에서 문제가 생겼는데 어디를 봐야 할지 모를 때"),
     ("reading-docs", "개발 공식 문서 읽는 법", "버전 확인, Quick Start/API Reference 읽는 법, 검색하는 법, AI와 함께 확인하는 법", "공식 문서를 어디서부터 봐야 할지 막막할 때"),
+    ("readme-guide", "프로젝트 README 잘 작성하기", "프로젝트 소개, 실행 방법, 환경변수, 기술 스택, 트러블슈팅 정리하는 법", "저장소는 만들었는데 README를 어떻게 써야 할지 모를 때"),
 ]
 
-DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools", "reading-docs"]
+DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools", "reading-docs", "readme-guide"]
 
 OVERVIEW_ROWS_MID = [
     ("git-mid", "Git·GitHub 중급 가이드", "interactive rebase, cherry-pick, bisect, worktree, GitHub Actions, 브랜치 보호 심화", "Git 기본 명령이 손에 익은 뒤"),

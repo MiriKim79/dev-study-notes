@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>프로젝트 README 잘 작성하기 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=937f3b6fa0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="프로젝트 README 잘 작성하기 · 개발 학습·실전 노트">
+<meta property="og:description" content="README를 예쁘게 꾸미는 법이 아니라, **다른 사람이 이 프로젝트를 빠르게 이해하고 직접 실행할 수 있게 만드는 법**을 익히기">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20README%20%EC%9E%98%20%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="프로젝트 README 잘 작성하기 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="README를 예쁘게 꾸미는 법이 아니라, **다른 사람이 이 프로젝트를 빠르게 이해하고 직접 실행할 수 있게 만드는 법**을 익히기">
+<script src="../assets/search-index.js?v=937f3b6fa0" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 기초·실전 가이드.html">개발 기초·실전 가이드</a> <span>›</span><span class="current">프로젝트 README 잘 작성하기</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<nav class="tier-nav"><div class="tier-nav-inner"><a class="tier-nav-link active" href="../개발 기초·실전 가이드.html">🔰 초급</a><a class="tier-nav-link" href="../개발 중급 가이드.html">📈 중급</a><a class="tier-nav-link" href="../개발 고급 가이드.html">🏔️ 고급</a><a class="tier-nav-link" href="../자격증 대비.html">🏅 자격증</a></div></nav>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-기본-흐름">1. 기본 흐름</a></li><li class="toc-h1"><a href="#2-가장-먼저-보여줄-것">2. 가장 먼저 보여줄 것</a></li><li class="toc-h1"><a href="#3-실행-방법">3. 실행 방법</a></li><li class="toc-h1"><a href="#4-환경변수-env-노출-주의">4. 환경변수 — `.env` 노출 주의</a></li><li class="toc-h1"><a href="#5-기술-스택-나열이-아니라-이유">5. 기술 스택 — 나열이 아니라 이유</a></li><li class="toc-h1"><a href="#6-프로젝트-구조-중요한-폴더만">6. 프로젝트 구조 — 중요한 폴더만</a></li><li class="toc-h1"><a href="#7-아키텍처-필요한-프로젝트에서만">7. 아키텍처 — 필요한 프로젝트에서만</a></li><li class="toc-h1"><a href="#8-팀-프로젝트-역할은-구체적으로">8. 팀 프로젝트 — 역할은 구체적으로</a></li><li class="toc-h1"><a href="#9-문제-해결-트러블슈팅-정리하기">9. 문제 해결(트러블슈팅) 정리하기</a></li><li class="toc-h1"><a href="#10-하지-말아야-할-것">10. 하지 말아야 할 것</a></li><li class="toc-h1"><a href="#11-짧은-기본-템플릿">11. 짧은 기본 템플릿</a></li><li class="toc-h1"><a href="#12-최종-원칙">12. 최종 원칙</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-misc);">
+        <span class="page-kicker">📝 개발 기초·실전 가이드</span>
+        <h1 class="page-title">프로젝트 README 잘 작성하기</h1>
+        <p class="page-tagline">프로젝트 소개·실행법·기술·역할·트러블슈팅을 한눈에 정리하는 README 작성법.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> GitHub에 프로젝트를 올렸지만 README를 어떻게 써야 할지 모르는 사람</div><div class="intro-row"><strong>목적:</strong> README를 예쁘게 꾸미는 법이 아니라, <strong>다른 사람이 이 프로젝트를 빠르게 이해하고 직접 실행할 수 있게 만드는 법</strong>을 익히기</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 기본 흐름</li><li>2. 가장 먼저 보여줄 것</li><li>3. 실행 방법</li><li>4. 환경변수 — `.env` 노출 주의</li><li>5. 기술 스택 — 나열이 아니라 이유</li><li>6. 프로젝트 구조 — 중요한 폴더만</li><li>7. 아키텍처 — 필요한 프로젝트에서만</li><li>8. 팀 프로젝트 — 역할은 구체적으로</li><li>9. 문제 해결(트러블슈팅) 정리하기</li><li>10. 하지 말아야 할 것</li><li>11. 짧은 기본 템플릿</li><li>12. 최종 원칙</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-기본-흐름">1. 기본 흐름<a class="heading-anchor" href="#1-기본-흐름" aria-label="이 섹션 링크">#</a></h2>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>프로젝트 소개 → 핵심 기능 → 실행 방법 → 환경설정 → 기술 스택
+→ 구조/아키텍처 → 사용 방법 → 팀/역할 → 문제 해결 → 링크</code></pre></div>
+<p>이 순서를 그대로 다 채워야 하는 것은 아닙니다. 작은 개인 프로젝트라면 앞의 4~5개만으로도 충분하고, 팀 프로젝트나 포트폴리오용이라면 뒤쪽까지 채우는 것이 좋습니다.</p>
+<hr>
+<h2 class="section-h1" id="2-가장-먼저-보여줄-것">2. 가장 먼저 보여줄 것<a class="heading-anchor" href="#2-가장-먼저-보여줄-것" aria-label="이 섹션 링크">#</a></h2>
+<p>README 맨 위에는 아래를 담습니다. 여기까지만 읽어도 "이게 뭔지, 왜 만들었는지"가 이해돼야 합니다.</p>
+<ul><li><strong>프로젝트 이름</strong></li><li><strong>한 줄 소개</strong> — "이게 뭐 하는 서비스인지" 한 문장</li><li><strong>왜 만들었는지</strong> — 학습 목적인지, 실제 불편을 해결하려 한 것인지</li><li><strong>핵심 기능 3~5개</strong> — 전체 기능이 아니라 가장 중요한 것만</li><li><strong>실제 화면/데모 링크</strong> — 있다면 반드시 넣습니다. 글보다 스크린샷 한 장이 훨씬 빠르게 이해시킵니다.</li></ul>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code># 오늘 뭐 배웠지
+스터디원끼리 학습 진도를 기록하고 공유하는 웹 앱입니다.
+
+혼자 공부하면 진도가 흐지부지되기 쉬워서, 매일 배운 걸 짧게 기록하고
+서로 확인할 수 있게 만들었습니다.
+
+## 주요 기능
+- 오늘 배운 내용 짧게 기록하기
+- 스터디원 진도를 한 화면에서 보기
+- 연속 기록일 표시
+
+데모: https://example.com</code></pre></div>
+<hr>
+<h2 class="section-h1" id="3-실행-방법">3. 실행 방법<a class="heading-anchor" href="#3-실행-방법" aria-label="이 섹션 링크">#</a></h2>
+<p>처음 보는 사람이 저장소를 clone한 뒤 그대로 따라 하면 실행되도록, 순서를 명확히 씁니다. <strong>명령어만 나열하지 말고, 왜 필요한지 한마디씩 붙입니다.</strong></p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># 1. 저장소 내려받기</span>
+<span class="tok-keyword">git</span> clone https://github.com/아이디/저장소.<span class="tok-keyword">git</span>
+<span class="tok-keyword">cd</span> 저장소
+
+<span class="tok-comment"># 2. 의존성 설치 (package.json에 적힌 라이브러리들을 설치)</span>
+<span class="tok-keyword">npm</span> install
+
+<span class="tok-comment"># 3. 환경변수 설정 (4장 참고)</span>
+cp .env.example .env
+
+<span class="tok-comment"># 4. 실행</span>
+<span class="tok-keyword">npm</span> run dev</code></pre></div>
+<p>명령어 하나하나가 "무엇을 위한 단계인지" 알면, 중간에 에러가 나도 어느 단계에서 막혔는지 스스로 판단할 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="4-환경변수-env-노출-주의">4. 환경변수 — <code class="inline-code">.env</code> 노출 주의<a class="heading-anchor" href="#4-환경변수-env-노출-주의" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>실제 <code class="inline-code">.env</code> 값이나 API 키를 README에 그대로 적지 않습니다.</strong> README는 저장소와 함께 공개되므로, 실제 비밀값을 적으면 그대로 유출됩니다.</p>
+<p>대신 아래처럼 <strong><code class="inline-code">.env.example</code></strong> 파일을 만들어, 어떤 변수 이름이 필요한지만 값 없이 공유합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">bash</span><button class="copy-btn" type="button">복사</button></div><pre><code><span class="tok-comment"># .env.example (실제 값은 비워두고 변수 이름만 안내)</span>
+DATABASE_URL=
+API_KEY=
+PORT=3000</code></pre></div>
+<p>README에는 이렇게 안내합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 환경변수
+`.env.example`을 복사해 `.env`를 만들고, 각자 발급받은 값을 채워 넣으세요.</code></pre></div>
+<p><code class="inline-code">.env</code>는 <code class="inline-code">.gitignore</code>에 포함해 저장소에 올라가지 않게 하고, <code class="inline-code">.env.example</code>만 공유합니다.</p>
+<hr>
+<h2 class="section-h1" id="5-기술-스택-나열이-아니라-이유">5. 기술 스택 — 나열이 아니라 이유<a class="heading-anchor" href="#5-기술-스택-나열이-아니라-이유" aria-label="이 섹션 링크">#</a></h2>
+<p>로고 이미지를 잔뜩 붙이는 것보다, <strong>실제로 사용한 기술</strong>과 <strong>왜 그 기술을 골랐는지</strong>(필요한 경우에만) 짧게 적는 것이 더 신뢰를 줍니다. 써보지 않은 기술을 장식으로 넣지 않습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 기술 스택
+- React — 컴포넌트 단위로 화면을 나누기 위해
+- Express + PostgreSQL — REST API와 사용자 데이터 저장
+- Socket.io — 실시간 알림 기능에 필요해서 사용</code></pre></div>
+<p>"왜 썼는지"는 모든 항목에 다 붙일 필요는 없습니다. 특별한 이유 없이 흔히 쓰는 조합이라면 이름만 나열해도 충분합니다.</p>
+<hr>
+<h2 class="section-h1" id="6-프로젝트-구조-중요한-폴더만">6. 프로젝트 구조 — 중요한 폴더만<a class="heading-anchor" href="#6-프로젝트-구조-중요한-폴더만" aria-label="이 섹션 링크">#</a></h2>
+<p>폴더 전체를 나열하지 말고, <strong>읽는 사람이 코드를 찾아갈 때 도움이 되는 상위 폴더만</strong> 간단히 보여줍니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>src/
+├─ components/   # 재사용하는 화면 조각
+├─ pages/        # 라우트 단위 화면
+├─ api/          # 서버 요청 함수 모음
+└─ hooks/        # 커스텀 훅</code></pre></div>
+<p>각 폴더가 하는 역할을 한 줄씩만 적으면 충분합니다. 세부 파일까지 다 적을 필요는 없습니다.</p>
+<hr>
+<h2 class="section-h1" id="7-아키텍처-필요한-프로젝트에서만">7. 아키텍처 — 필요한 프로젝트에서만<a class="heading-anchor" href="#7-아키텍처-필요한-프로젝트에서만" aria-label="이 섹션 링크">#</a></h2>
+<p>프론트/백엔드/DB가 어떻게 연결되는지 구조 설명이 필요한 프로젝트라면 간단한 그림이나 텍스트 다이어그램을 추가합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>[React 프론트엔드] → [Express API 서버] → [PostgreSQL]</code></pre></div>
+<p>혼자 만든 작은 프로젝트, 프론트엔드만 있는 프로젝트라면 이 항목은 생략해도 됩니다. <strong>모든 프로젝트에 거창한 아키텍처 다이어그램을 억지로 넣을 필요는 없습니다.</strong></p>
+<hr>
+<h2 class="section-h1" id="8-팀-프로젝트-역할은-구체적으로">8. 팀 프로젝트 — 역할은 구체적으로<a class="heading-anchor" href="#8-팀-프로젝트-역할은-구체적으로" aria-label="이 섹션 링크">#</a></h2>
+<p>팀 프로젝트라면 팀원과 각자 맡은 기능을 적습니다. <code class="inline-code">Frontend</code>/<code class="inline-code">Backend</code>처럼 직군만 적기보다, <strong>실제로 무엇을 구현했는지</strong>를 씁니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 팀
+| 이름 | 담당 |
+| --- | --- |
+| 김OO | 로그인/회원가입, JWT 인증 구현 |
+| 이OO | 게시글 목록·상세 API, 페이지네이션 |
+| 박OO | 전체 배포 환경 구성, CI 파이프라인 |</code></pre></div>
+<p>"Frontend 담당"보다 "로그인/회원가입, JWT 인증 구현"이 훨씬 구체적이라, 읽는 사람이 실제로 무엇을 했는지 바로 알 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="9-문제-해결-트러블슈팅-정리하기">9. 문제 해결(트러블슈팅) 정리하기<a class="heading-anchor" href="#9-문제-해결-트러블슈팅-정리하기" aria-label="이 섹션 링크">#</a></h2>
+<p>프로젝트를 진행하며 의미 있었던 문제 1~3개를 아래 형식으로 정리합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>## 트러블슈팅
+
+### 문제: 목록이 새로고침할 때마다 순서가 바뀜
+- 원인: 정렬 기준 없이 DB가 반환하는 순서 그대로 사용
+- 해결: 정렬 기준을 API 쿼리에 명시적으로 추가
+- 배운 점: DB가 &quot;기본 순서&quot;를 보장하지 않는다는 것을 알게 됨</code></pre></div>
+<p>이 섹션은 포트폴리오용 README에서 특히 유용합니다. 단순히 "다 만들었다"보다 <strong>"어떤 문제를 어떻게 풀었는지"</strong>가 실력을 더 잘 보여줍니다.</p>
+<hr>
+<h2 class="section-h1" id="10-하지-말아야-할-것">10. 하지 말아야 할 것<a class="heading-anchor" href="#10-하지-말아야-할-것" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>배지만 과도하게 붙이기 (배지 자체는 나쁘지 않지만, 내용보다 튀면 안 됩니다)</li><li>기술 스택만 잔뜩 나열하고 왜 썼는지는 하나도 없음</li><li>실행 방법이 아예 없음</li><li>오래돼서 지금 화면과 다른 스크린샷</li><li>클릭하면 안 열리는 깨진 링크</li><li><code class="inline-code">.env</code> 실제 값이나 API 키 노출</li><li>README와 실제 프로젝트 상태가 다름 (README엔 있는데 실제로는 없는 기능 등)</li></ul>
+<hr>
+<h2 class="section-h1" id="11-짧은-기본-템플릿">11. 짧은 기본 템플릿<a class="heading-anchor" href="#11-짧은-기본-템플릿" aria-label="이 섹션 링크">#</a></h2>
+<p>작은 프로젝트에 바로 가져다 쓸 수 있는 최소 구조입니다. 프로젝트 성격에 따라 필요 없는 섹션은 빼도 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code># 프로젝트 이름
+
+한 줄 소개
+
+## 주요 기능
+-
+-
+
+## 실행 방법
+\`\`\`bash
+git clone ...
+npm install
+npm run dev
+\`\`\`
+
+## 기술 스택
+-
+
+## 프로젝트 구조
+(중요한 폴더만)
+
+## 팀/역할
+(팀 프로젝트인 경우만)
+
+## 트러블슈팅
+(있다면)
+
+## 링크
+- 데모:
+- 배포:</code></pre></div>
+<hr>
+<h2 class="section-h1" id="12-최종-원칙">12. 최종 원칙<a class="heading-anchor" href="#12-최종-원칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>README는 예쁜 문서가 아니라 <strong>실행 가능한 안내서</strong>다</li><li>모든 섹션을 다 채우려 하지 말고, 프로젝트 규모에 맞게 고른다</li><li>실행 방법은 clone부터 실행까지 빠짐없이, 이유도 함께 적는다</li><li>비밀값은 절대 README나 저장소에 올리지 않는다</li><li>기술 스택은 나열보다 "왜"가 있을 때 더 설득력 있다</li></ul>
+<p>GitHub 프로필 자체를 어떻게 구성할지(Pinned Repository 고르는 기준 등)는 <a href="GitHub%20프로필%20꾸미기%20가이드.html">GitHub 프로필 꾸미기 가이드</a>를, 저장소를 clone하고 커밋·push하는 Git 명령어 자체는 <a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a>를, 팀 프로젝트에서 README를 언제 준비하면 좋은지는 <a href="팀%20개발%20시작%20가이드.html">팀 개발 시작 가이드</a>를, README에 정리한 트러블슈팅과 기능을 발표 자료로 옮기는 법은 <a href="개발자%20발표·데모%20잘하는%20법.html">개발자 발표·데모 잘하는 법</a>을 참고하세요.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="개발 공식 문서 읽는 법.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">개발 공식 문서 읽는 법</span></a><a class="doc-nav-link next" href="../개발 협업 방식 선택 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">개발 협업 방식 선택 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/search-core.js?v=937f3b6fa0" defer></script>
+<script src="../assets/main.js?v=937f3b6fa0" defer></script>
+</body>
+</html>
