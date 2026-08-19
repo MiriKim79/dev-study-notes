@@ -364,18 +364,18 @@
     fetch(src, { cache: "no-cache" })
       .then(function (res) { if (!res.ok) throw new Error("news-feed fetch failed"); return res.json(); })
       .then(function (data) {
-        var items = (data && data.items) || [];
+        var items = ((data && data.items) || []).slice(0, 5);
         if (!items.length) { el.innerHTML = '<div class="news-feed-empty">오늘은 불러올 소식이 없습니다.</div>'; return; }
-        el.innerHTML = items.map(function (it) {
+        el.innerHTML = items.map(function (it, i) {
           return (
-            '<a class="news-item" href="' + encodeURI(it.url) + '" target="_blank" rel="noopener">' +
-            '<div class="news-item-top"><span class="news-item-source">' + escapeHtml(it.source || "") + '</span>' +
-            '<span class="news-item-date">' + escapeHtml(it.date || "") + '</span></div>' +
+            '<a class="news-item' + (i === 0 ? ' news-item-featured' : '') + '" href="' + encodeURI(it.url) + '" target="_blank" rel="noopener">' +
             '<div class="news-item-title">' + escapeHtml(it.title || "") + '</div>' +
             (it.summary ? '<div class="news-item-summary">' + escapeHtml(it.summary) + '</div>' : "") +
+            '<div class="news-item-meta"><span class="news-item-source">' + escapeHtml(it.source || "") + '</span>' +
+            '<span class="news-item-date">' + escapeHtml(it.date || "") + '</span></div>' +
             '</a>'
           );
-        }).join("");
+        }).join("") + '<a class="news-more-link" href="https://news.hada.io" target="_blank" rel="noopener">GeekNews에서 더 보기 →</a>';
       })
       .catch(function () {
         el.innerHTML = '<div class="news-feed-empty">지금은 소식을 불러올 수 없습니다. 나중에 다시 확인해주세요.</div>';
