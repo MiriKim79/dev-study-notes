@@ -12,7 +12,7 @@ Git은 인터넷 없이 내 컴퓨터 안에서만 써도 됩니다. GitHub는 �
 
 ## 전체 흐름 한눈에 보기
 
-아래 10단계가 이 문서의 전부입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.
+아래 흐름이 이 문서의 핵심입니다. 나머지는 전부 이 흐름을 실제 명령어로 옮기는 방법일 뿐입니다.
 
 <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="clone부터 작업 브랜치 생성, 코드 수정, add, commit, push, PR, review, merge, pull까지 이어지는 Git 팀 작업 전체 흐름도" style="max-width:100%;height:auto;font-family:inherit">
   <style>
