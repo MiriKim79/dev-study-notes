@@ -17,8 +17,8 @@
   --text: #263648;           /* 본문 텍스트 — 순검정 대신 진한 네이비 그레이 */
   --text-strong: #1E3553;    /* 큰 제목 */
   --text-heading: #24436B;   /* 중간 제목 */
-  --text-secondary: #64748B; /* 설명, 보조 텍스트 */
-  --text-faint: #94A3B8;     /* 가장 옅은 보조 텍스트 */
+  --text-secondary: #55677D; /* 설명, 보조 텍스트 — 본문/설명에 사용, AA 대비 확보(5.6:1) */
+  --text-faint: #7A8CA3;     /* 메타정보 전용(날짜·아이콘 옆 라벨 등) — 본문/설명에는 쓰지 않음 */
 
   --border: #E5EBF3;         /* 기본 얇은 구분선 */
   --border-soft: #E8EEF7;    /* 사이드바 등 아주 옅은 구분선 */
@@ -93,8 +93,8 @@
   --text: #DCE4F2;
   --text-strong: #F1F5FC;
   --text-heading: #C9D9F4;
-  --text-secondary: #94A3B8;
-  --text-faint: #64748B;
+  --text-secondary: #A9B7CC;
+  --text-faint: #7C8CA5;
 
   --border: #263148;
   --border-soft: #263148;
@@ -136,7 +136,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", "Noto Sans KR", system-ui, -apple-system, sans-serif;
-  line-height: 1.8;
+  line-height: 1.65;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
@@ -162,6 +162,11 @@ img { max-width: 100%; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 ::selection { background: var(--accent-weak); }
+
+/* 색상만으로 상태를 구분하지 않도록, 키보드 포커스는 항상 뚜렷한 아웃라인으로 표시 */
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
+}
 
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
@@ -488,11 +493,56 @@ body::before {
 .dashboard-shell { max-width: 1100px; margin: 0 auto; padding: 44px 24px 88px; }
 .dashboard-intro { max-width: 720px; }
 .dashboard-title { font-size: 30px; font-weight: 800; margin: 0 0 12px; letter-spacing: -.01em; color: var(--text-strong); }
-.dashboard-desc { color: var(--text-secondary); font-size: 15.5px; line-height: 1.85; margin: 0 0 8px; }
+.dashboard-desc { color: var(--text-secondary); font-size: 15.5px; line-height: 1.7; margin: 0 0 8px; }
 .dashboard-footer {
   margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border-soft);
-  font-size: 12.5px; color: var(--text-faint); text-align: center;
+  font-size: 12.5px; color: var(--text-secondary); text-align: center;
 }
+
+/* ---- 히어로: 제목/설명/검색/시작 버튼만 ----------------------------------- */
+.dashboard-hero { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+.dashboard-hero .dashboard-desc { margin: 0 auto 20px; }
+.hero-search.search-box-desktop {
+  display: flex; align-items: center; gap: 8px; max-width: 420px; margin: 0 auto 16px;
+  background: var(--card-bg); border: 1px solid var(--border-strong); border-radius: var(--radius-lg);
+  padding: 12px 16px; font-size: 15px; color: var(--text-faint); cursor: pointer;
+}
+.hero-search.search-box-desktop input { font-size: 15px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.hero-action-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 11px 20px; border-radius: var(--radius-lg);
+  font-size: 14.5px; font-weight: 700; text-decoration: none;
+  background: var(--accent); color: #fff; border: 1px solid var(--accent);
+}
+.hero-action-btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); text-decoration: none; }
+.hero-action-btn-secondary {
+  background: var(--card-bg); color: var(--text-heading); border: 1px solid var(--border-strong);
+}
+.hero-action-btn-secondary:hover { background: var(--surface-soft); border-color: var(--accent-border-strong); }
+
+/* ---- 단계 탭: 유일한 단계 내비게이션 --------------------------------------- */
+.tier-tabs {
+  display: flex; gap: 4px; margin: 0 0 24px; padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-soft);
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.tier-tabs::-webkit-scrollbar { display: none; }
+.tier-tab {
+  flex: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  padding: 10px 14px; font-size: 14.5px; font-weight: 600; color: var(--text-secondary);
+  background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0; margin-bottom: -1px;
+}
+.tier-tab:hover { color: var(--text-heading); background: var(--surface-soft); }
+.tier-tab[aria-selected="true"] {
+  color: var(--accent); font-weight: 800; border-bottom-color: var(--accent);
+}
+.tier-tab-count {
+  font-size: 12px; font-weight: 700; color: var(--text-secondary); background: var(--surface-soft-2);
+  border-radius: 999px; padding: 1px 7px;
+}
+.tier-tab[aria-selected="true"] .tier-tab-count { color: var(--accent); }
+.tier-panel:focus { outline: none; }
 
 .dev-notes-toast {
   position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 12px);
@@ -524,7 +574,7 @@ a.stat-item:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover)
   padding: 4px 16px;
 }
 .news-feed-loading, .news-feed-empty {
-  font-size: 12.5px; color: var(--text-faint); padding: 14px 2px;
+  font-size: 13px; color: var(--text-secondary); padding: 14px 2px;
 }
 .news-item {
   display: block; padding: 14px 0; border-bottom: 1px solid var(--border-soft);
@@ -628,21 +678,18 @@ table.overview-table td.name-cell { font-weight: 700; white-space: nowrap; color
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0; }
 .study-card {
   display: block; background: var(--card-bg); border: 1px solid var(--border-strong); border-radius: var(--radius-lg);
-  padding: 20px; box-shadow: var(--shadow); transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  padding: 20px; transition: border-color .15s ease, background-color .15s ease;
 }
-.study-card:hover {
-  border-color: var(--accent-border-strong); box-shadow: var(--shadow-hover);
-  text-decoration: none; transform: translateY(-2px);
-}
+.study-card:hover { border-color: var(--accent-border-strong); background: var(--surface-soft); text-decoration: none; }
 .study-card-icon {
   font-size: 18px; margin-bottom: 12px; display: inline-flex; align-items: center; justify-content: center;
   width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--accent-weak);
 }
-.study-card-title { font-size: 15.5px; font-weight: 700; color: var(--text-heading); margin-bottom: 6px; }
-.study-card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
-.study-card-who { font-size: 12px; color: var(--text-faint); margin-top: 8px; line-height: 1.6; }
+.study-card-title { font-size: 18px; font-weight: 800; color: var(--text-strong); margin-bottom: 7px; line-height: 1.35; }
+.study-card-desc { font-size: 15.5px; color: var(--text-secondary); line-height: 1.6; }
+.study-card-who { font-size: 13.5px; color: var(--text-secondary); margin-top: 8px; line-height: 1.55; }
 .study-card-tag {
-  display: inline-block; margin-top: 12px; font-size: 11.5px; font-weight: 700; color: var(--card-accent, #315EA8);
+  display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--card-accent, #315EA8);
 }
 :root[data-theme="dark"] .study-card-tag { color: var(--card-accent, var(--accent)); }
 
@@ -681,8 +728,8 @@ table.overview-table td.name-cell { font-weight: 700; white-space: nowrap; color
 .search-result-item .r-snippet { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
 .search-result-item mark, .r-title mark { background: var(--accent-weak); color: #315EA8; border-radius: 3px; padding: 0 2px; }
 :root[data-theme="dark"] .search-result-item mark, :root[data-theme="dark"] .r-title mark { color: var(--accent); }
-.search-empty { padding: 30px 16px; text-align: center; color: var(--text-faint); font-size: 13px; }
-.search-empty-hint { margin-top: 6px; font-size: 12px; color: var(--text-faint); }
+.search-empty { padding: 30px 16px; text-align: center; color: var(--text-secondary); font-size: 13.5px; }
+.search-empty-hint { margin-top: 6px; font-size: 12.5px; color: var(--text-faint); }
 
 /* ---- 반응형 -------------------------------------------------------------------- */
 @media (min-width: 860px) {

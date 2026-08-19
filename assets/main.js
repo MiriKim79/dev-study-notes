@@ -172,6 +172,9 @@
 
     /* ---------- 오늘의 개발 소식(GeekNews) ---------- */
     initNewsFeed();
+
+    /* ---------- 메인 대시보드 단계 탭 ---------- */
+    initTierTabs();
   });
 
   /* ---------- 검색 핵심 로직 ----------
@@ -383,5 +386,71 @@
       .catch(function () {
         el.innerHTML = '<div class="news-feed-empty">지금은 소식을 불러올 수 없습니다. 나중에 다시 확인해주세요.</div>';
       });
+  }
+
+  /* ---------- 메인 대시보드 단계 탭 ----------
+     헤더의 중복 내비게이션(tier-nav)·통계 스트립(stat-strip)을 없애고, 이 탭 하나로만
+     초급/중급/고급/자격증/실전 단계를 고른다. location.hash로 상태를 표현해 직접 접근·
+     새로고침·뒤로가기가 자연스럽게 동작하게 한다(페이지 자체 리로드는 하지 않음). */
+  function initTierTabs() {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".tier-tab"));
+    if (!tabs.length) return;
+    var panels = Array.prototype.slice.call(document.querySelectorAll(".tier-panel"));
+    var validTiers = tabs.map(function (t) { return t.getAttribute("data-tier"); });
+
+    function activate(tier, opts) {
+      opts = opts || {};
+      if (validTiers.indexOf(tier) === -1) tier = validTiers[0];
+      tabs.forEach(function (tab) {
+        var selected = tab.getAttribute("data-tier") === tier;
+        tab.setAttribute("aria-selected", selected ? "true" : "false");
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach(function (panel) {
+        panel.hidden = panel.getAttribute("data-tier") !== tier;
+      });
+      if (opts.moveFocus) {
+        var activeTab = tabs.filter(function (t) { return t.getAttribute("data-tier") === tier; })[0];
+        if (activeTab) activeTab.focus();
+      }
+      if (opts.pushHash) {
+        var newHash = "#" + tier;
+        if (location.hash !== newHash) history.pushState(null, "", newHash);
+      }
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () {
+        activate(tab.getAttribute("data-tier"), { pushHash: true });
+      });
+      tab.addEventListener("keydown", function (e) {
+        var dir = 0;
+        if (e.key === "ArrowRight") dir = 1;
+        else if (e.key === "ArrowLeft") dir = -1;
+        else if (e.key === "Home") { e.preventDefault(); activate(validTiers[0], { pushHash: true, moveFocus: true }); return; }
+        else if (e.key === "End") { e.preventDefault(); activate(validTiers[validTiers.length - 1], { pushHash: true, moveFocus: true }); return; }
+        else return;
+        e.preventDefault();
+        var next = tabs[(i + dir + tabs.length) % tabs.length];
+        activate(next.getAttribute("data-tier"), { pushHash: true, moveFocus: true });
+      });
+    });
+
+    /* "프로젝트를 해봤어요" 같은 페이지 내부 #intermediate 링크도 탭 전환으로 처리 */
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var tier = a.getAttribute("href").slice(1);
+      if (validTiers.indexOf(tier) === -1) return;
+      e.preventDefault();
+      activate(tier, { pushHash: true });
+      document.querySelector(".tier-tabs").scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+
+    window.addEventListener("popstate", function () {
+      activate(location.hash.slice(1) || validTiers[0], {});
+    });
+
+    activate(location.hash.slice(1) || validTiers[0], {});
   }
 })();

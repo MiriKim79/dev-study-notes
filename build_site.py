@@ -1629,63 +1629,56 @@ DASHBOARD_TMPL = """<!doctype html>
     </div>
   </div>
 </header>
-{tier_nav}
 <div class="page-shell">
   <div class="dashboard-shell">
-    <div class="dashboard-intro">
+    <div class="dashboard-hero">
       <h1 class="dashboard-title">개발 공부 가이드</h1>
       <p class="dashboard-desc">{intro}</p>
+      <div class="hero-search search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <div class="hero-actions">
+        <a class="hero-action-btn" href="{first_steps_url}">🌱 처음 개발해요</a>
+        <a class="hero-action-btn hero-action-btn-secondary" href="#intermediate">🚀 프로젝트를 해봤어요</a>
+      </div>
     </div>
 
-    <div class="stat-strip">
-      <a class="stat-item" href="#tier-beginner"><div class="stat-num">{n_beginner}</div><div class="stat-label">🔰 초급</div></a>
-      <a class="stat-item" href="#tier-mid"><div class="stat-num">{n_mid}</div><div class="stat-label">📈 중급</div></a>
-      <a class="stat-item" href="#tier-adv"><div class="stat-num">{n_adv}</div><div class="stat-label">🏔️ 고급</div></a>
-      <a class="stat-item" href="#tier-cert"><div class="stat-num">{n_cert}</div><div class="stat-label">🏅 자격증</div></a>
-      <a class="stat-item" href="#tier-misc"><div class="stat-num">{n_misc}</div><div class="stat-label">🎈 실전·기타</div></a>
-      <div class="stat-item stat-item-total"><div class="stat-num">{n_total}</div><div class="stat-label">전체 학습 자료</div></div>
+    <div class="tier-tabs" role="tablist" aria-label="학습 단계 선택">
+      <button type="button" class="tier-tab" role="tab" id="tab-beginner" aria-controls="panel-beginner" aria-selected="true" tabindex="0" data-tier="beginner">🔰 초급 <span class="tier-tab-count">{n_beginner}</span></button>
+      <button type="button" class="tier-tab" role="tab" id="tab-intermediate" aria-controls="panel-intermediate" aria-selected="false" tabindex="-1" data-tier="intermediate">📈 중급 <span class="tier-tab-count">{n_mid}</span></button>
+      <button type="button" class="tier-tab" role="tab" id="tab-advanced" aria-controls="panel-advanced" aria-selected="false" tabindex="-1" data-tier="advanced">🏔️ 고급 <span class="tier-tab-count">{n_adv}</span></button>
+      <button type="button" class="tier-tab" role="tab" id="tab-cert" aria-controls="panel-cert" aria-selected="false" tabindex="-1" data-tier="cert">🏅 자격증 <span class="tier-tab-count">{n_cert}</span></button>
+      <button type="button" class="tier-tab" role="tab" id="tab-practical" aria-controls="panel-practical" aria-selected="false" tabindex="-1" data-tier="practical">🎈 실전 <span class="tier-tab-count">{n_misc}</span></button>
     </div>
 
-    <div class="section-heading" style="margin-top:28px;">📰 오늘의 개발 소식</div>
+    <section class="tier-panel" id="panel-beginner" role="tabpanel" aria-labelledby="tab-beginner" data-tier="beginner">
+      {card_grid}
+    </section>
+
+    <section class="tier-panel" id="panel-intermediate" role="tabpanel" aria-labelledby="tab-intermediate" data-tier="intermediate" hidden>
+      <p class="dashboard-desc" style="margin-bottom:20px;">기초 가이드로 혼자 힘으로 동작하는 앱을 만들 수 있게 됐다면, 다음은 실무에서 부딪히는 문제를 다루는 <a href="{mid_hub_url}">중급 가이드</a>로 이어집니다.</p>
+      {mid_card_grid}
+    </section>
+
+    <section class="tier-panel" id="panel-advanced" role="tabpanel" aria-labelledby="tab-advanced" data-tier="advanced" hidden>
+      <p class="dashboard-desc" style="margin-bottom:20px;">중급 가이드로 실무 문제를 다룰 수 있게 됐다면, 다음은 설계 판단과 팀 전체 관점을 다루는 <a href="{adv_hub_url}">고급 가이드</a>로 이어집니다.</p>
+      {adv_card_grid}
+    </section>
+
+    <section class="tier-panel" id="panel-cert" role="tabpanel" aria-labelledby="tab-cert" data-tier="cert" hidden>
+      <p class="dashboard-desc" style="margin-bottom:20px;">개발 실력과는 별개로, 공식적으로 검증받고 싶을 때 참고하는 <a href="{cert_hub_url}">자격증 대비 가이드</a>입니다. 연습문제는 직접 만든 것으로 실제 기출문제가 아니며, 진짜 기출은 각 문서 끝의 공식 링크를 이용하세요.</p>
+      {cert_card_grid}
+    </section>
+
+    <section class="tier-panel" id="panel-practical" role="tabpanel" aria-labelledby="tab-practical" data-tier="practical" hidden>
+      <p class="dashboard-desc" style="margin-bottom:20px;">핵심 학습 흐름은 아니지만, 실제 프로젝트를 진행하며 필요해지는 문서들입니다. 카드의 <strong>실전/선택/트렌드</strong> 표시로 성격을 구분했습니다.</p>
+      {misc_card_grid}
+    </section>
+
+    <div class="section-heading" style="margin-top:40px;">📰 오늘의 개발 소식</div>
     <p class="dashboard-desc" style="margin-bottom:12px;">GeekNews 최신 글을 매일 자동으로 가져옵니다(자소설닷컴은 공식 피드가 없어 자동 갱신 대신 바로가기만 제공합니다).</p>
     <div id="news-feed" class="news-feed" data-src="assets/news-feed.json">
       <div class="news-feed-loading">불러오는 중…</div>
     </div>
     <a class="news-jobs-link" href="https://www.jasoseol.com" target="_blank" rel="noopener"><span class="news-jobs-link-label">채용 정보</span>자소설닷컴 바로가기 — 채용공고·자소서·면접 후기 커뮤니티 ↗</a>
-
-    <a class="hero-cta" href="{first_steps_url}">
-      <span class="hero-cta-text">프로그래밍이 뭔지, 프론트/백엔드가 뭔지도 잘 모르겠어요 🌱 — <strong>웹 서비스 하나가 어떻게 구성되는지</strong>부터 5~10분 만에 큰 그림 잡고 싶다면?</span>
-      <span class="hero-cta-btn">🗺️ 개발 전체 지도부터 보기 →</span>
-    </a>
-
-    <a class="hero-cta" href="{git_min_url}">
-      <span class="hero-cta-text">개발 흐름은 대충 아는데 Git만 몰라요 😭 — <strong>branch가 뭔지, commit이 뭔지</strong>부터 5분 만에 정리하고 싶다면?</span>
-      <span class="hero-cta-btn">🔰 Git 최소 기초부터 시작하기 →</span>
-    </a>
-
-    <a class="hero-cta" href="{level_guide_url}">
-      <span class="hero-cta-text">나는 초급·중급·고급 중 <strong>어디부터 봐야 할지</strong> 잘 모르겠다면?</span>
-      <span class="hero-cta-btn">🧭 등급별 시작 기준 확인하기 →</span>
-    </a>
-
-    <div class="section-heading" id="tier-beginner">🔰 초급 학습 자료</div>
-    {card_grid}
-
-    <div class="section-heading" id="tier-mid" style="margin-top:40px;">📈 중급 학습 자료</div>
-    <p class="dashboard-desc" style="margin-bottom:20px;">기초 가이드로 혼자 힘으로 동작하는 앱을 만들 수 있게 됐다면, 다음은 실무에서 부딪히는 문제를 다루는 <a href="{mid_hub_url}">중급 가이드</a>로 이어집니다.</p>
-    {mid_card_grid}
-
-    <div class="section-heading" id="tier-adv" style="margin-top:40px;">🏔️ 고급 학습 자료</div>
-    <p class="dashboard-desc" style="margin-bottom:20px;">중급 가이드로 실무 문제를 다룰 수 있게 됐다면, 다음은 설계 판단과 팀 전체 관점을 다루는 <a href="{adv_hub_url}">고급 가이드</a>로 이어집니다.</p>
-    {adv_card_grid}
-
-    <div class="section-heading" id="tier-cert" style="margin-top:40px;">🏅 자격증 대비</div>
-    <p class="dashboard-desc" style="margin-bottom:20px;">개발 실력과는 별개로, 공식적으로 검증받고 싶을 때 참고하는 <a href="{cert_hub_url}">자격증 대비 가이드</a>입니다. 연습문제는 직접 만든 것으로 실제 기출문제가 아니며, 진짜 기출은 각 문서 끝의 공식 링크를 이용하세요.</p>
-    {cert_card_grid}
-
-    <div class="section-heading" id="tier-misc" style="margin-top:40px;">🎈 실전·기타 가이드</div>
-    <p class="dashboard-desc" style="margin-bottom:20px;">핵심 학습 흐름은 아니지만, 실제 프로젝트를 진행하며 필요해지는 문서들입니다. 카드의 <strong>실전/선택/트렌드</strong> 표시로 성격을 구분했습니다.</p>
-    {misc_card_grid}
 
     <div class="dashboard-footer">🐣 미리가 미리미리 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>
   </div>
@@ -1718,10 +1711,7 @@ def build_dashboard():
         n_misc=n_misc,
         n_total=n_beginner + n_mid + n_adv + n_cert + n_misc,
         asset_v=ASSET_VERSION,
-        tier_nav=render_tier_nav("index"),
         first_steps_url=url_of("first-steps"),
-        git_min_url=url_of("git-min"),
-        level_guide_url=url_of("playbook-hub") + "#나는-어디부터-봐야-하나-등급별-시작-기준",
         card_grid=render_card_grid(),
         mid_card_grid=render_card_grid(DASHBOARD_CARDS_MID, OVERVIEW_ROWS_MID),
         mid_hub_url=url_of("mid-hub"),
