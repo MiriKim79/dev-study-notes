@@ -644,6 +644,11 @@ a.stat-item:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover)
   letter-spacing: .05em; margin: 52px 0 16px;
 }
 
+/* 실전 탭 안에서만 쓰는 가벼운 그룹 구분 — 새 탭/필터 없이 subheading으로만 나눈다.
+   카드 제목(18px/800)보다 눈에 덜 띄게, section-heading(탭 전체 구분용)보다도 가볍게 만든다. */
+.misc-group-heading { font-size: 14.5px; font-weight: 700; color: var(--text-heading); margin: 16px 0 2px; }
+.misc-group-desc { font-size: 12.5px; color: var(--text-secondary); margin: 0 0 12px; }
+
 .overview-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
 table.overview-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
 table.overview-table th, table.overview-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; word-break: keep-all; overflow-wrap: break-word; }

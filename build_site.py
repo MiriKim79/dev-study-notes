@@ -1582,6 +1582,10 @@ OVERVIEW_ROWS_MISC = [
 
 DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging", "devtools", "reading-docs", "readme-guide"]
 
+# 실전 탭 안 subheading 2그룹(별도 탭/필터가 아니라 같은 패널 안에서 카드만 나눠 보여줌)
+DASHBOARD_CARDS_MISC_TROUBLESHOOT = ["debugging", "devtools", "reading-docs"]
+DASHBOARD_CARDS_MISC_PROJECT = ["vibe-coding", "readme-guide", "presentation", "profile-readme", "agent-trends"]
+
 OVERVIEW_ROWS_MID = [
     ("git-mid", "Git·GitHub 중급 가이드", "interactive rebase, cherry-pick, bisect, worktree, GitHub Actions, 브랜치 보호 심화", "Git 기본 명령이 손에 익은 뒤"),
     ("frontend-mid", "프론트엔드 중급 가이드", "성능 최적화, 상태관리 라이브러리 비교, 렌더링 전략(SSR/SSG), 테스트, Core Web Vitals", "화면 하나를 끝까지 만들어본 뒤"),
@@ -1722,7 +1726,14 @@ DASHBOARD_TMPL = """<!doctype html>
 
     <section class="tier-panel" id="panel-practical" role="tabpanel" aria-labelledby="tab-practical" data-tier="practical" hidden>
       <p class="dashboard-desc" style="margin-bottom:20px;">핵심 학습 흐름은 아니지만, 실제 프로젝트를 진행하며 필요해지는 문서들입니다. 카드의 <strong>실전/선택/트렌드</strong> 표시로 성격을 구분했습니다.</p>
-      {misc_card_grid}
+
+      <div class="misc-group-heading">🧯 막혔을 때 찾아보기</div>
+      <p class="misc-group-desc">오류가 나거나 원하는 대로 동작하지 않을 때</p>
+      {misc_card_grid_troubleshoot}
+
+      <div class="misc-group-heading" style="margin-top:32px;">🛠️ 프로젝트 만들고 활용하기</div>
+      <p class="misc-group-desc">프로젝트를 만들고 정리·공유하거나 AI를 활용할 때</p>
+      {misc_card_grid_project}
     </section>
 
     <div class="section-heading" style="margin-top:40px;">📰 오늘의 개발 소식</div>
@@ -1771,7 +1782,8 @@ def build_dashboard():
         adv_hub_url=url_of("adv-hub"),
         cert_card_grid=render_card_grid(DASHBOARD_CARDS_CERT, OVERVIEW_ROWS_CERT),
         cert_hub_url=url_of("cert-hub"),
-        misc_card_grid=render_card_grid(DASHBOARD_CARDS_MISC, OVERVIEW_ROWS_MISC),
+        misc_card_grid_troubleshoot=render_card_grid(DASHBOARD_CARDS_MISC_TROUBLESHOOT, OVERVIEW_ROWS_MISC),
+        misc_card_grid_project=render_card_grid(DASHBOARD_CARDS_MISC_PROJECT, OVERVIEW_ROWS_MISC),
         og_url=SITE_BASE_URL,
     )
     (ROOT / "index.html").write_text(html_out, encoding="utf-8")
