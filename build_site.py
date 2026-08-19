@@ -1651,7 +1651,7 @@ DASHBOARD_TMPL = """<!doctype html>
     <div id="news-feed" class="news-feed" data-src="assets/news-feed.json">
       <div class="news-feed-loading">불러오는 중…</div>
     </div>
-    <a class="news-static-link" href="https://www.jasoseol.com" target="_blank" rel="noopener">🔗 자소설닷컴 바로가기 — 채용공고·자소서·면접 후기 커뮤니티</a>
+    <a class="news-jobs-link" href="https://www.jasoseol.com" target="_blank" rel="noopener"><span class="news-jobs-link-label">채용 정보</span>자소설닷컴 바로가기 — 채용공고·자소서·면접 후기 커뮤니티 ↗</a>
 
     <a class="hero-cta" href="{first_steps_url}">
       <span class="hero-cta-text">프로그래밍이 뭔지, 프론트/백엔드가 뭔지도 잘 모르겠어요 🌱 — <strong>웹 서비스 하나가 어떻게 구성되는지</strong>부터 5~10분 만에 큰 그림 잡고 싶다면?</span>

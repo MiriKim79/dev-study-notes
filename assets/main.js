@@ -369,7 +369,10 @@
         el.innerHTML = items.map(function (it, i) {
           return (
             '<a class="news-item' + (i === 0 ? ' news-item-featured' : '') + '" href="' + encodeURI(it.url) + '" target="_blank" rel="noopener">' +
-            '<div class="news-item-title">' + escapeHtml(it.title || "") + '</div>' +
+            '<div class="news-item-title-row">' +
+            '<span class="news-item-title">' + escapeHtml(it.title || "") + '</span>' +
+            '<span class="news-item-arrow" aria-hidden="true">↗</span>' +
+            '</div>' +
             (it.summary ? '<div class="news-item-summary">' + escapeHtml(it.summary) + '</div>' : "") +
             '<div class="news-item-meta"><span class="news-item-source">' + escapeHtml(it.source || "") + '</span>' +
             '<span class="news-item-date">' + escapeHtml(it.date || "") + '</span></div>' +
