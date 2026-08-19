@@ -48,7 +48,7 @@
       <div class="doc-inner" style="--card-accent: var(--cat-misc);">
         <span class="page-kicker">🎤 개발 기초·실전 가이드</span>
         <h1 class="page-title">개발자 발표·데모 잘하는 법</h1>
-        <p class="page-tagline">데모데이 발표 앞두고 있다면 — 스톱워치로 리허설하는 법부터.</p>
+        <p class="page-tagline">기획부터 슬라이드 제작, 리허설, 데모까지 — 발표 준비 처음부터 끝까지.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 팀 프로젝트 데모데이, 코드 리뷰 발표, 기술 공유 세션을 앞두고 있는 사람</div><div class="intro-row"><strong>목적:</strong> 발표 준비를 "슬라이드 예쁘게 만들기"가 아니라 "정해진 시간 안에 핵심을 정확히 전달하기"로 바라보는 법</div><div class="intro-row"><strong>주의:</strong> 이 문서는 발표 스킬 자체에 관한 내용이라 기술 문서는 아니지만, 개발자에게 실전에서 꽤 자주 필요한 능력이라 함께 다룹니다.</div></div>
         <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 왜 개발자에게도 발표가 중요한가</li><li>2. 핵심 원칙: 시간은 목표가 아니라 제약이다</li><li>3. 발표 기획부터 슬라이드 제작까지</li><li>4. 스톱워치로 리허설하기</li><li>5. 데모데이 발표 구조 잡기</li><li>6. 라이브 데모 리스크 관리</li><li>7. 질의응답(Q&amp;A) 준비</li><li>8. 자주 하는 실수</li><li>9. 직접 해보기</li><li>10. 여기까지 이해했다면</li></ol></div>
         
@@ -87,7 +87,9 @@
 <p>핵심 메시지가 정해졌다면, 그것을 뒷받침하는 이야기 순서를 짭니다. 개발 프로젝트 발표에서 잘 통하는 흐름은 다음과 같습니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>문제/기획 의도 → 서비스 소개 → 핵심 기능(데모) → 아키텍처 → 기술 선택 이유
 → 기술적 챌린지와 문제 해결 과정 → 역할 분담 → 결과·한계 → 마무리</code></pre></div>
-<p>전부 다 넣을 필요는 없습니다. 발표 시간이 짧다면(3~5분) "문제 → 데모 → 챌린지 하나 → 마무리" 정도로 압축해도 됩니다.</p>
+<p>전부 다 넣을 필요는 없습니다. 발표 시간에 따라 아래처럼 내용을 조절하면 실전에서 안전합니다.</p>
+<div class="table-scroll"><table><thead><tr><th>시간</th><th>포함할 것</th><th>빼거나 최소화할 것</th></tr></thead><tbody><tr><td>3분</td><td>문제/기획 의도(짧게) → 핵심 기능 1~2개 데모 → 마무리</td><td>아키텍처, 기술적 챌린지, 역할 분담은 생략하거나 한 줄로만</td></tr><tr><td>5분</td><td>문제 → 서비스 소개 → 데모 → 아키텍처(간단히) → 챌린지 1개 → 마무리</td><td>여러 기술 스택 나열, 챌린지 여러 개</td></tr><tr><td>10분</td><td>문제 → 서비스 소개 → 데모 → 아키텍처(상세) → 기술 선택 이유 → 챌린지·문제 해결 → 역할 분담 → 결과/한계 → 마무리</td><td>그래도 한 슬라이드에 너무 많은 내용을 넣지 않기</td></tr></tbody></table></div>
+<p>시간이 짧을수록 "데모(보여주기)"의 비중을 지키고 설명(말하기)을 줄이는 것이 청중에게 더 잘 남습니다.</p>
 <h3 class="section-h2" id="3-4-PPT-목차-잡기">3-4. PPT 목차 잡기<a class="heading-anchor" href="#3-4-PPT-목차-잡기" aria-label="이 섹션 링크">#</a></h3>
 <p>스토리라인이 정해지면 이를 슬라이드 단위로 쪼갭니다. 각 슬라이드는 "한 슬라이드 = 한 메시지" 원칙을 지키는 것이 좋습니다. 예시 목차(5분 발표 기준):</p>
 <div class="table-scroll"><table><thead><tr><th>슬라이드</th><th>내용</th><th>배분</th></tr></thead><tbody><tr><td>1</td><td>표지 (팀명/프로젝트명)</td><td>-</td></tr><tr><td>2</td><td>문제/기획 의도</td><td>40초</td></tr><tr><td>3</td><td>서비스 소개 + 핵심 기능 요약</td><td>30초</td></tr><tr><td>4~5</td><td>라이브 데모</td><td>2분</td></tr><tr><td>6</td><td>아키텍처</td><td>40초</td></tr><tr><td>7</td><td>기술적 챌린지 1개</td><td>40초</td></tr><tr><td>8</td><td>역할 분담 + 결과/한계 + 마무리</td><td>30초</td></tr></tbody></table></div>

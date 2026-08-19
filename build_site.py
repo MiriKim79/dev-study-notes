@@ -134,9 +134,10 @@ PAGES = [
         "title": "GitHub 프로필 꾸미기 가이드",
         "kicker": "개발 기초·실전 가이드",
         "cat": "misc",
+        "cat_label": "선택",
         "icon": "✨",
         "hub": "playbook-hub",
-        "tagline": "학습 필수는 아니지만 재미로 — shields.io 배지, 통계 카드로 프로필 꾸며보기.",
+        "tagline": "꾸미기보다 먼저, 무엇을 보여줄지부터 — 대표 프로젝트·README·역할 정리법.",
     },
     {
         "key": "presentation",
@@ -144,9 +145,10 @@ PAGES = [
         "title": "개발자 발표·데모 잘하는 법",
         "kicker": "개발 기초·실전 가이드",
         "cat": "misc",
+        "cat_label": "실전",
         "icon": "🎤",
         "hub": "playbook-hub",
-        "tagline": "데모데이 발표 앞두고 있다면 — 스톱워치로 리허설하는 법부터.",
+        "tagline": "기획부터 슬라이드 제작, 리허설, 데모까지 — 발표 준비 처음부터 끝까지.",
     },
     {
         "key": "vibe-coding",
@@ -154,9 +156,10 @@ PAGES = [
         "title": "바이브 코딩으로 개발하기",
         "kicker": "개발 기초·실전 가이드",
         "cat": "misc",
+        "cat_label": "실전",
         "icon": "🌀",
         "hub": "playbook-hub",
-        "tagline": "AI에게 코드를 맡길 때, 언제는 괜찮고 언제는 위험한지 감 잡기.",
+        "tagline": "아이디어부터 배포 전 검증까지 — AI와 함께 개발하는 실제 작업 흐름.",
     },
     {
         "key": "agent-trends",
@@ -164,9 +167,10 @@ PAGES = [
         "title": "AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링",
         "kicker": "개발 기초·실전 가이드",
         "cat": "misc",
+        "cat_label": "트렌드",
         "icon": "🧩",
         "hub": "playbook-hub",
-        "tagline": "요즘 자주 들리는 그 용어들, 정확히 뭘 가리키는지 정리했습니다.",
+        "tagline": "AI 코딩을 시작하는 데 꼭 필요하진 않지만, 요즘 자주 들리는 그 용어들 정리.",
     },
     {
         "key": "collab-method",
@@ -1587,7 +1591,7 @@ def render_card_grid(keys=None, data=None):
             '<div class="study-card-desc">%s</div>'
             "%s"
             '<span class="study-card-tag">%s →</span></a>'
-            % (url_of(key), p["cat"], p["icon"], html.escape(p["title"]), html.escape(desc), who_html, html.escape(CAT_LABEL.get(p["cat"], "")))
+            % (url_of(key), p["cat"], p["icon"], html.escape(p["title"]), html.escape(desc), who_html, html.escape(p.get("cat_label", CAT_LABEL.get(p["cat"], ""))))
         )
     return '<div class="card-grid">%s</div>' % "".join(cards)
 
@@ -1638,7 +1642,7 @@ DASHBOARD_TMPL = """<!doctype html>
       <a class="stat-item" href="#tier-mid"><div class="stat-num">{n_mid}</div><div class="stat-label">📈 중급</div></a>
       <a class="stat-item" href="#tier-adv"><div class="stat-num">{n_adv}</div><div class="stat-label">🏔️ 고급</div></a>
       <a class="stat-item" href="#tier-cert"><div class="stat-num">{n_cert}</div><div class="stat-label">🏅 자격증</div></a>
-      <a class="stat-item" href="#tier-misc"><div class="stat-num">{n_misc}</div><div class="stat-label">🎈 기타</div></a>
+      <a class="stat-item" href="#tier-misc"><div class="stat-num">{n_misc}</div><div class="stat-label">🎈 실전·기타</div></a>
       <div class="stat-item stat-item-total"><div class="stat-num">{n_total}</div><div class="stat-label">전체 학습 자료</div></div>
     </div>
 
@@ -1679,8 +1683,8 @@ DASHBOARD_TMPL = """<!doctype html>
     <p class="dashboard-desc" style="margin-bottom:20px;">개발 실력과는 별개로, 공식적으로 검증받고 싶을 때 참고하는 <a href="{cert_hub_url}">자격증 대비 가이드</a>입니다. 연습문제는 직접 만든 것으로 실제 기출문제가 아니며, 진짜 기출은 각 문서 끝의 공식 링크를 이용하세요.</p>
     {cert_card_grid}
 
-    <div class="section-heading" id="tier-misc" style="margin-top:40px;">🎈 기타 — 가볍게 보기</div>
-    <p class="dashboard-desc" style="margin-bottom:20px;">학습 필수는 아니지만 재미로, 또는 요즘 트렌드가 궁금해서 보면 좋은 문서들입니다.</p>
+    <div class="section-heading" id="tier-misc" style="margin-top:40px;">🎈 실전·기타 가이드</div>
+    <p class="dashboard-desc" style="margin-bottom:20px;">핵심 학습 흐름은 아니지만, 실제 프로젝트를 진행하며 필요해지는 문서들입니다. 카드의 <strong>실전/선택/트렌드</strong> 표시로 성격을 구분했습니다.</p>
     {misc_card_grid}
 
     <div class="dashboard-footer">🐣 미리가 미리미리 만든 개발 공부 가이드 · 연호·이현이의 프롬프트 한 스푼 — 계속 업데이트되고 있습니다.</div>

@@ -48,7 +48,7 @@
       <div class="doc-inner" style="--card-accent: var(--cat-misc);">
         <span class="page-kicker">✨ 개발 기초·실전 가이드</span>
         <h1 class="page-title">GitHub 프로필 꾸미기 가이드</h1>
-        <p class="page-tagline">학습 필수는 아니지만 재미로 — shields.io 배지, 통계 카드로 프로필 꾸며보기.</p>
+        <p class="page-tagline">꾸미기보다 먼저, 무엇을 보여줄지부터 — 대표 프로젝트·README·역할 정리법.</p>
         <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> GitHub 계정은 있고, 프로필과 저장소를 신입/학생 채용 담당자·동료가 봤을 때 제대로 보이게 만들고 싶은 사람</div><div class="intro-row"><strong>목적:</strong> 배지·통계 카드 같은 "꾸미기"보다 먼저, <strong>무엇을 보여줘야 실제로 평가에 도움이 되는지</strong>를 잡는다.</div><div class="intro-row"><strong>핵심:</strong> 채용 담당자는 배지 개수를 보지 않습니다. Pinned Repository에 뭐가 있는지, README만 보고 이 프로젝트가 뭔지 이해되는지를 봅니다.</div></div>
         <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>0. 무엇을 보여주는 게 중요한가</li><li>1. 프로필 README란 무엇인가</li><li>2. 기본 구성 요소</li><li>3. 최소 예시</li><li>4. 통계 카드·잔디 넣기 (서드파티 서비스)</li><li>5. 자주 하는 실수</li><li>6. 여기까지 이해했다면</li></ol></div>
         
@@ -91,7 +91,7 @@ npm run dev
 https://example.com (또는 스크린샷 이미지 삽입)</code></pre></div>
 <h3 class="section-h2" id="0-4-프로필에서-역할-기술스택-드러내기">0-4. 프로필에서 역할·기술스택 드러내기<a class="heading-anchor" href="#0-4-프로필에서-역할-기술스택-드러내기" aria-label="이 섹션 링크">#</a></h3>
 <p>프로필 README 자기소개에는 "무엇을 공부하고 있다"보다 <strong>"무엇을 할 수 있다"</strong>가 더 명확히 드러나야 합니다.</p>
-<ul><li>막연한 나열 대신, 실제 사용 경험이 있는 기술만 적습니다. (이력서와 마찬가지로, 면접에서 질문받을 수 있다고 가정하세요.)</li><li>관심 분야(예: 프론트엔드/백엔드/풀스택)를 한 줄로 명시하면 채용 담당자가 어떤 포지션에 맞는지 빠르게 판단할 수 있습니다.</li></ul>
+<ul><li>막연한 나열 대신, 실제 사용 경험이 있는 기술만 적습니다. (이력서와 마찬가지로, 면접에서 질문받을 수 있다고 가정하세요.)</li><li><strong>실제 프로젝트에서 써본 기술</strong>과 <strong>튜토리얼만 따라 해본 기술</strong>을 섞어서 나열하지 마세요. 구분이 어렵다면 "능숙"/"사용 경험 있음"처럼 구간을 나누거나, 프로젝트에서 실제로 쓴 것 위주로만 적는 편이 안전합니다.</li><li>관심 분야(예: 프론트엔드/백엔드/풀스택)를 한 줄로 명시하면 채용 담당자가 어떤 포지션에 맞는지 빠르게 판단할 수 있습니다.</li></ul>
 <h3 class="section-h2" id="0-5-연락처-포트폴리오-블로그-링크-정리">0-5. 연락처·포트폴리오·블로그 링크 정리<a class="heading-anchor" href="#0-5-연락처-포트폴리오-블로그-링크-정리" aria-label="이 섹션 링크">#</a></h3>
 <ul><li>이력서/포트폴리오 사이트, 기술 블로그, 이메일(공개해도 되는 경우) 등을 프로필 README 상단이나 GitHub 프로필의 <code class="inline-code">bio</code>/<code class="inline-code">Social accounts</code> 항목에 정리합니다.</li><li>링크는 실제로 접속 가능한지, 최신 내용인지 확인 후 등록합니다. 방치된 블로그 링크는 안 넣느니만 못합니다.</li></ul>
 <hr>
@@ -128,7 +128,7 @@ https://example.com (또는 스크린샷 이미지 삽입)</code></pre></div>
 <p><code class="inline-code">github-readme-stats</code>, <code class="inline-code">github-readme-streak-stats</code> 같은 오픈소스 프로젝트는 내 GitHub 아이디를 넣은 이미지 URL을 만들어주고, 그 URL을 프로필 README에 붙이면 자동으로 통계 이미지가 렌더링됩니다.</p>
 <div class="code-block"><div class="code-block-header"><span class="code-lang">markdown</span><button class="copy-btn" type="button">복사</button></div><pre><code>![내 GitHub 통계](https://github-readme-stats.vercel.app/api?username=내아이디&amp;show_icons=true)</code></pre></div>
 <p><strong>알아두면 좋은 점</strong></p>
-<ul><li>이런 서비스는 대부분 <strong>개인이 운영하는 무료 공개 서버</strong>입니다. 공식 GitHub 기능이 아니므로 트래픽이 몰리면 일시적으로 이미지가 안 뜨거나 느릴 수 있습니다. 안 보인다고 내 설정이 잘못된 게 아닐 수 있으니, 시간을 두고 새로고침해보세요.</li><li>자기 서버에 직접 배포해서 쓰는 방법도 있지만(레포를 fork해서 Vercel 등에 배포), 처음에는 공개 인스턴스를 그대로 쓰는 것으로 충분합니다.</li><li>이런 서비스는 프로젝트마다 유지 상태가 다르므로, 사용 전에 저장소가 최근까지 관리되고 있는지 정도는 확인하는 게 좋습니다.</li></ul>
+<ul><li>이런 서비스는 대부분 <strong>개인이 운영하는 무료 공개 서버</strong>입니다. 공식 GitHub 기능이 아니므로 트래픽이 몰리면 일시적으로 이미지가 안 뜨거나 느릴 수 있습니다. 안 보인다고 내 설정이 잘못된 게 아닐 수 있으니, 시간을 두고 새로고침해보세요.</li><li>자기 서버에 직접 배포해서 쓰는 방법도 있지만(레포를 fork해서 Vercel 등에 배포), 처음에는 공개 인스턴스를 그대로 쓰는 것으로 충분합니다.</li><li>이런 서비스는 프로젝트마다 유지 상태가 다르므로, 사용 전에 저장소가 최근까지 관리되고 있는지 정도는 확인하는 게 좋습니다.</li><li><strong>기여 잔디(Contribution graph)가 빽빽하다고 실력이 좋다는 뜻은 아닙니다.</strong> 매일 커밋한다고 실력이 느는 것도 아니고, 채용 담당자도 잔디 개수를 실력 지표로 크게 보지 않습니다. 잔디를 채우는 데 시간을 쓰기보다 실제 프로젝트 완성도에 집중하세요.</li></ul>
 <hr>
 <h2 class="section-h1" id="5-자주-하는-실수">5. 자주 하는 실수<a class="heading-anchor" href="#5-자주-하는-실수" aria-label="이 섹션 링크">#</a></h2>
 <ul><li><strong>배지·카드를 너무 많이 붙여서 정작 자기소개 글이 안 보임.</strong> 3~5개 정도의 핵심 배지면 충분합니다.</li><li><strong>이메일·전화번호 같은 개인정보를 그대로 노출.</strong> 공개하고 싶은 정보만 신중하게 넣습니다.</li><li><strong>저장소 이름 오타.</strong> <code class="inline-code">내아이디/내아이디</code>가 정확히 일치해야 프로필에 표시됩니다. 대소문자는 GitHub 아이디 자체가 대소문자를 구분하지 않으므로 문제되지 않지만, 저장소 이름을 아이디와 다르게 지으면 그냥 평범한 저장소가 됩니다.</li><li><strong>화려하게 만드는 데 시간을 너무 많이 씀.</strong> 이건 재미로 하는 꾸미기입니다 — 실제 학습·프로젝트에 쓸 시간을 이걸로 크게 줄이지는 마세요.</li></ul>
