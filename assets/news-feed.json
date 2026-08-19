@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-19",
+  "updated_at": "2026-08-20",
   "items": [
     {
       "source": "GeekNews",
-      "title": "원치 않는 방해형 AI 기능을 끄거나 피하는 방법",
-      "url": "https://news.hada.io/topic?id=32624",
-      "date": "2026-08-19",
-      "summary": "운영체제·브라우저·업무 도구·메신저에 끼어든 원치 않는 AI 기능 을 줄일 수 있도록 제품별 비활성화 경로를 정리한 실용 가이드임 Adobe, Android/Gemini, Apple Intellig…"
+      "title": "시민 위생 — 경찰국가에 악용될 기술을 만들지 말 것 (2013)",
+      "url": "https://news.hada.io/topic?id=32673",
+      "date": "2026-08-20",
+      "summary": "공익을 위해 만든 데이터베이스도 정권이 바뀌면 시민을 탄압하는 감시 도구 로 전용될 수 있어, 현재가 아닌 다음 정부까지 고려한 설계가 필요함 성적 지향 정보 는 보건 서비스·출생률·학교 수요 계획…"
     },
     {
       "source": "GeekNews",
-      "title": "아마존세",
-      "url": "https://news.hada.io/topic?id=32623",
-      "date": "2026-08-19",
-      "summary": "Amazon Tax 는 실제 세금이 아니라, 공공 편익 없이 소비자에게서 비용을 가져가는 합법적 절도 를 가리키는 표현으로, 아마존이 검색 광고로 매주 약 10억 달러의 이익을 거두며 검색 결과를 …"
+      "title": "Moderna, 흑색종 mRNA 신생항원 치료제 최초의 긍정적 3상 결과 발표",
+      "url": "https://news.hada.io/topic?id=32672",
+      "date": "2026-08-20",
+      "summary": "Moderna와 Merck가 완전 절제된 IIB~IV기 흑색종 환자 를 대상으로 intismeran autogene과 KEYTRUDA 병용 보조요법의 긍정적인 3상 결과를 발표함 임상시험은 1차 평…"
     },
     {
       "source": "GeekNews",
-      "title": "Google, 파산한 Spirit 항공 데이터 150억원에 인수",
-      "url": "https://news.hada.io/topic?id=32622",
-      "date": "2026-08-19",
-      "summary": "Google이 2026년 5월 영업을 중단하고 청산에 들어간 미국 저비용 항공사 Spirit의 비식별 데이터 를 경매에서 약 1,000만 달러($10m)에 낙찰받음 인수 대상에는 이메일 1억 건, …"
+      "title": "농담으로 산 도메인이 지정학적 전쟁에 휘말린 과정",
+      "url": "https://news.hada.io/topic?id=32671",
+      "date": "2026-08-20",
+      "summary": "2018년 Habhub 리디렉션 으로 시작한 SondeHub는 독립적인 라디오존데 추적·예측 인프라로 성장해 정부·군·항공기관·우크라이나 작전팀까지 사용하는 서비스가 됨 지상까지 이어지는 비행 추적…"
     },
     {
       "source": "GeekNews",
-      "title": "Cursor, Origin 코드 호스팅 시작",
-      "url": "https://news.hada.io/topic?id=32621",
-      "date": "2026-08-19",
-      "summary": "Cursor가 자체 코드 호스팅 기능인 Origin을 오늘부터 모든 유료 플랜에 얼리 베타로 공개했다. 엔터프라이즈 조직은 관리자가 옵트아웃하면 제외된다. Origin 저장소 새로 생긴 Codeba…"
+      "title": "CSS, 받은편지함 속 폭탄",
+      "url": "https://news.hada.io/topic?id=32670",
+      "date": "2026-08-20",
+      "summary": "웹메일이 신뢰할 수 없는 HTML·CSS를 신뢰된 UI 안에서 렌더링하면서 생기는 파서·새니타이저 불일치 로 UI 조작, 토큰 유출, 외부 서비스 침해, 비밀번호 탈취까지 가능함 허용된 <label…"
     },
     {
       "source": "GeekNews",
-      "title": "Linux 7.3, VRAM 부족 상황에서 성능 개선",
-      "url": "https://news.hada.io/topic?id=32620",
-      "date": "2026-08-18",
-      "summary": "Linux 7.3에 포함될 VRAM 관리 패치 는 물리 VRAM을 초과한 게임 메모리를 시스템 RAM으로 내보낼 때 발생하는 충돌과 극심한 성능 저하를 줄이는 기반을 마련함 VRAM 초과 할당은 가…"
+      "title": "GrapheneOS 지원 Motorola 기기, 2027년 출시 예정",
+      "url": "https://news.hada.io/topic?id=32669",
+      "date": "2026-08-20",
+      "summary": "첫 Motorola 지원 기기 는 2027년 출시될 예정이며, Pixel보다 고성능·고가인 플래그십 모델로 시작함 보급형 기기는 업데이트 기간과 보안 기능이 요구 수준에 미치지 못해 지원까지 더 오…"
     },
     {
       "source": "GeekNews",
-      "title": "젊은 세대는 믿을 수 없을 정도로 AI CEO들을 싫어한다",
-      "url": "https://news.hada.io/topic?id=32618",
-      "date": "2026-08-18",
-      "summary": "미국 18~34세 성인 1,000명 이상 을 조사한 결과, 대다수는 조사 대상 AI 기업 경영자 9명 중 누구도 AI를 책임감 있게 다룰 것이라고 신뢰하지 않았음 팔란티어의 CEO Alex Karp…"
+      "title": "고착된 임금 규범이 예상 밖 인플레이션을 실질임금 손실로 바꾼 과정",
+      "url": "https://news.hada.io/topic?id=32668",
+      "date": "2026-08-20",
+      "summary": "미국 노동자 월 약 1,600만 명의 ADP 급여 자료 를 분석한 결과, 연례 명목임금 인상이 물가에 충분히 연동되지 않아 2021~2024년 같은 직장에 계속 근무한 노동자의 43%가 실질임금 하…"
     },
     {
       "source": "GeekNews",
-      "title": "희귀 서적 배송을 추적하자 Amazon AI 훈련 시설에 도착",
-      "url": "https://news.hada.io/topic?id=32617",
-      "date": "2026-08-18",
-      "summary": "가격에 민감하지 않은 익명 고객의 대량 도서 주문 이 이어지면서, AI 훈련용 스캔을 위한 구매라는 의혹이 커져 왔음 404 Media는 Biblio에서 약 1,000권을 주문한 고객 을 확인하고자…"
+      "title": "Fairphone, 미국에서 공식 판매 시작",
+      "url": "https://news.hada.io/topic?id=32667",
+      "date": "2026-08-20",
+      "summary": "미국 전용 웹숍을 열고 완전 언락된 Fairphone (Gen. 6+) 와 Fairbuds·Fairbuds XL을 처음으로 공식 판매함 Snapdragon 7s Gen 4 와 12GB DDR5 RA…"
     },
     {
       "source": "GeekNews",
-      "title": "아래쪽 화살표가 위쪽 화살표를 뒤집은 모양이 아닐 때 (2022)",
-      "url": "https://news.hada.io/topic?id=32616",
-      "date": "2026-08-18",
-      "summary": "macOS Big Sur 11.6에서 ⇧ 와 ⇩ 의 비율이 다른 원인은 Unicode가 아니라, 두 문자를 각각 Lucida Grande 와 STIXGeneral 로 표시하는 글꼴 대체 동작임 ⇧ …"
+      "title": "그래도 총을 든 사람들이 결국 하라고 명령한다",
+      "url": "https://news.hada.io/topic?id=32666",
+      "date": "2026-08-20",
+      "summary": "2011년 이집트 정부는 인터넷을 차단한 뒤 이동통신망으로 친정부 메시지를 발송했으며, Vodafone은 당국의 요구를 거부할 법적·현실적 수단이 없었다 고 밝힘 기술의 악용 가능성을 고려하는 시민…"
     }
   ]
 }
