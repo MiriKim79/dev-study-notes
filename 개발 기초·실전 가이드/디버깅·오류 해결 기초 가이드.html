@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>디버깅·오류 해결 기초 가이드 · 개발 학습·실전 노트</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css?v=937f3b6fa0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="개발 공부 가이드">
+<meta property="og:title" content="디버깅·오류 해결 기초 가이드 · 개발 학습·실전 노트">
+<meta property="og:description" content="에러가 뜨면 무작정 전체를 복사해 AI에게 붙여넣기 전에, 스스로 문제 범위를 줄이고 해결하는 기본 흐름을 익히기">
+<meta property="og:url" content="https://mirikim79.github.io/dev-study-notes/%EA%B0%9C%EB%B0%9C%20%EA%B8%B0%EC%B4%88%C2%B7%EC%8B%A4%EC%A0%84%20%EA%B0%80%EC%9D%B4%EB%93%9C/%EB%94%94%EB%B2%84%EA%B9%85%C2%B7%EC%98%A4%EB%A5%98%20%ED%95%B4%EA%B2%B0%20%EA%B8%B0%EC%B4%88%20%EA%B0%80%EC%9D%B4%EB%93%9C.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="디버깅·오류 해결 기초 가이드 · 개발 학습·실전 노트">
+<meta name="twitter:description" content="에러가 뜨면 무작정 전체를 복사해 AI에게 붙여넣기 전에, 스스로 문제 범위를 줄이고 해결하는 기본 흐름을 익히기">
+<script src="../assets/search-index.js?v=937f3b6fa0" defer></script>
+</head>
+<body data-root-prefix="../">
+<div id="reading-progress"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-btn" type="button" aria-label="목차 열기">☰</button>
+    <a class="brand" href="../index.html">개발 공부 가이드</a>
+    <nav class="breadcrumb"><a href="../index.html">대시보드</a> <span>›</span><a href="../개발 기초·실전 가이드.html">개발 기초·실전 가이드</a> <span>›</span><span class="current">디버깅·오류 해결 기초 가이드</span></nav>
+    <div class="header-actions">
+      <div class="search-box-desktop"><span>🔍</span><input type="text" placeholder="검색 (Ctrl+K)" readonly></div>
+      <a class="guestbook-btn" href="../방명록.html">💬 <span class="guestbook-btn-label">방명록</span></a>
+      <button class="search-btn" type="button" aria-label="검색">🔍</button>
+      <button class="theme-btn" type="button" aria-label="다크모드 전환">🌙</button>
+    </div>
+  </div>
+</header>
+<nav class="tier-nav"><div class="tier-nav-inner"><a class="tier-nav-link active" href="../개발 기초·실전 가이드.html">🔰 초급</a><a class="tier-nav-link" href="../개발 중급 가이드.html">📈 중급</a><a class="tier-nav-link" href="../개발 고급 가이드.html">🏔️ 고급</a><a class="tier-nav-link" href="../자격증 대비.html">🏅 자격증</a></div></nav>
+<div class="sidebar-overlay"></div>
+<button class="sidebar-reopen-btn" type="button" aria-label="사이드바 펼치기" title="목차 펼치기">»</button>
+<div class="page-shell">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title-row">
+        <div class="sidebar-title">목차</div>
+        <button class="sidebar-collapse-btn" type="button" aria-label="사이드바 접기" title="목차 접기">«</button>
+      </div>
+      <ul class="toc"><li class="toc-h1"><a href="#1-디버깅-기본-흐름">1. 디버깅 기본 흐름</a></li><li class="toc-h1"><a href="#2-에러-메시지에서-먼저-볼-것">2. 에러 메시지에서 먼저 볼 것</a></li><li class="toc-h1"><a href="#3-Stack-Trace-아주-쉽게-읽는-법">3. Stack Trace 아주 쉽게 읽는 법</a></li><li class="toc-h1"><a href="#4-브라우저-Console-vs-터미널-로그">4. 브라우저 Console vs 터미널 로그</a></li><li class="toc-h1"><a href="#5-자주-보는-오류">5. 자주 보는 오류</a></li><li class="toc-h1"><a href="#6-원인-범위를-줄이는-법">6. 원인 범위를 줄이는 법</a><ul class="toc-h2-list"><li><a href="#어제-됐는데-오늘-안-됨-일-때-확인-순서">&quot;어제 됐는데 오늘 안 됨&quot;일 때 확인 순서</a></li><li><a href="#이진-탐색하듯-범위-좁히기">이진 탐색하듯 범위 좁히기</a></li></ul></li><li class="toc-h1"><a href="#7-한-번에-하나씩만-고치기">7. 한 번에 하나씩만 고치기</a></li><li class="toc-h1"><a href="#8-검색할-때-좋은-키워드-만드는-법">8. 검색할 때 좋은 키워드 만드는 법</a></li><li class="toc-h1"><a href="#9-AI에게-질문할-때-빠뜨리면-안-되는-것">9. AI에게 질문할 때 빠뜨리면 안 되는 것</a></li><li class="toc-h1"><a href="#10-AI-답변을-그대로-적용하지-않고-확인하기">10. AI 답변을 그대로 적용하지 않고 확인하기</a></li><li class="toc-h1"><a href="#11-해결-후-짧게-기록하기">11. 해결 후 짧게 기록하기</a></li><li class="toc-h1"><a href="#12-최종-원칙">12. 최종 원칙</a></li></ul>
+      <a class="sidebar-footer-link" href="../index.html">← 학습 대시보드로</a>
+    </aside>
+    <main class="main-content">
+      <div class="doc-inner" style="--card-accent: var(--cat-misc);">
+        <span class="page-kicker">🐞 개발 기초·실전 가이드</span>
+        <h1 class="page-title">디버깅·오류 해결 기초 가이드</h1>
+        <p class="page-tagline">무작정 AI에게 붙여넣기 전에, 에러 메시지부터 스스로 읽고 범위를 좁히는 법.</p>
+        <div class="callout callout-intro"><div class="callout-label">📘 문서 소개</div><div class="intro-row"><strong>대상:</strong> 개발 중 오류를 처음 만나는 사람</div><div class="intro-row"><strong>목적:</strong> 에러가 뜨면 무작정 전체를 복사해 AI에게 붙여넣기 전에, 스스로 문제 범위를 줄이고 해결하는 기본 흐름을 익히기</div><div class="intro-row"><strong>주의:</strong> 이 문서는 오류 종류를 전부 나열한 사전이 아닙니다. "어떤 순서로 원인을 좁혀가는가"라는 흐름 자체를 다룹니다.</div></div>
+        <div class="callout callout-outline"><div class="callout-label">🗂️ 이 문서의 구성</div><ol><li>1. 디버깅 기본 흐름</li><li>2. 에러 메시지에서 먼저 볼 것</li><li>3. Stack Trace 아주 쉽게 읽는 법</li><li>4. 브라우저 Console vs 터미널 로그</li><li>5. 자주 보는 오류</li><li>6. 원인 범위를 줄이는 법</li><li>7. 한 번에 하나씩만 고치기</li><li>8. 검색할 때 좋은 키워드 만드는 법</li><li>9. AI에게 질문할 때 빠뜨리면 안 되는 것</li><li>10. AI 답변을 그대로 적용하지 않고 확인하기</li><li>11. 해결 후 짧게 기록하기</li><li>12. 최종 원칙</li></ol></div>
+        
+        <hr>
+<h2 class="section-h1" id="1-디버깅-기본-흐름">1. 디버깅 기본 흐름<a class="heading-anchor" href="#1-디버깅-기본-흐름" aria-label="이 섹션 링크">#</a></h2>
+<p>오류가 나면 아래 순서를 그대로 따라갑니다. 중간을 건너뛰고 바로 "고쳐야지"로 가면 대부분 엉뚱한 곳을 고치게 됩니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>오류 재현 → 에러 메시지 읽기 → 어디서 실패했는지 찾기
+→ 로그/Console 확인 → 원인 범위 줄이기 → 하나씩 수정
+→ 다시 실행 → 해결 확인</code></pre></div>
+<ul><li><strong>오류 재현</strong>: "가끔 난다"가 아니라 "이렇게 하면 항상 난다"를 먼저 확인합니다. 재현이 안 되면 원인도 못 찾습니다.</li><li><strong>에러 메시지 읽기</strong>: 2장 참고.</li><li><strong>어디서 실패했는지 찾기</strong>: stack trace(3장)나 어떤 요청이 실패했는지(Network 탭)를 봅니다.</li><li><strong>로그/Console 확인</strong>: 4장 참고.</li><li><strong>원인 범위 줄이기</strong>: 5장 참고.</li><li><strong>하나씩 수정</strong>: 6장 참고.</li><li><strong>다시 실행 → 해결 확인</strong>: 고쳤다고 끝이 아니라, 처음 재현했던 그 방법으로 다시 확인합니다.</li></ul>
+<hr>
+<h2 class="section-h1" id="2-에러-메시지에서-먼저-볼-것">2. 에러 메시지에서 먼저 볼 것<a class="heading-anchor" href="#2-에러-메시지에서-먼저-볼-것" aria-label="이 섹션 링크">#</a></h2>
+<p>에러 메시지는 대부분 아래 세 가지를 담고 있습니다. 전체 문장을 다 이해하려 하지 말고 이 세 가지부터 찾습니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>[에러 종류]                  ← 무슨 문제인지 (TypeError, 404 등)
+[대상]                       ← 무엇에 대한 문제인지 (어떤 변수, 어떤 URL)
+[위치]                       ← 어느 파일, 몇 번째 줄</code></pre></div>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>TypeError: Cannot read properties of undefined (reading &#x27;name&#x27;)
+    at CourseCard (CourseCard.jsx:12)</code></pre></div>
+<ul><li>에러 종류: <code class="inline-code">TypeError</code> — 값의 타입이 예상과 다름</li><li>대상: <code class="inline-code">undefined</code>의 <code class="inline-code">'name'</code> 속성을 읽으려 함 — 즉 <code class="inline-code">course</code>가 <code class="inline-code">undefined</code>인데 <code class="inline-code">course.name</code>을 읽으려 한 것</li><li>위치: <code class="inline-code">CourseCard.jsx</code> 12번째 줄</li></ul>
+<p>이 세 가지만 뽑아내면 "무엇이, 어디서, 왜" 문제인지 감이 잡힙니다. 에러 메시지를 읽지 않고 바로 코드를 이것저것 고치는 게 가장 흔한 실수입니다.</p>
+<hr>
+<h2 class="section-h1" id="3-Stack-Trace-아주-쉽게-읽는-법">3. Stack Trace 아주 쉽게 읽는 법<a class="heading-anchor" href="#3-Stack-Trace-아주-쉽게-읽는-법" aria-label="이 섹션 링크">#</a></h2>
+<p><strong>Stack trace</strong>는 에러가 나기까지 함수가 호출된 순서를 기록한 목록입니다. 위에서 아래로 갈수록 "더 먼저 호출된" 함수입니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>TypeError: Cannot read properties of undefined (reading &#x27;name&#x27;)
+    at CourseCard (CourseCard.jsx:12)      ← ① 실제로 에러가 발생한 지점
+    at CourseList (CourseList.jsx:25)      ← ② CourseCard를 호출한 곳
+    at App (App.jsx:8)                     ← ③ CourseList를 호출한 곳</code></pre></div>
+<p>읽는 순서: <strong>맨 위 줄(①)이 에러가 실제로 터진 지점</strong>입니다. 여기부터 확인합니다. 아래 줄들은 "그 함수를 누가 불렀는지"를 거슬러 올라가는 경로일 뿐이라, 처음엔 안 봐도 됩니다.</p>
+<p>단, 맨 위 줄이 <code class="inline-code">node_modules</code>나 라이브러리 내부 코드를 가리킬 때가 있습니다. 이럴 땐 stack trace를 아래로 훑어 내려가면서 <strong>내가 작성한 파일이 처음 나오는 줄</strong>을 찾습니다. 라이브러리 내부보다 그 지점이 실제로 고쳐야 할 곳일 확률이 높습니다.</p>
+<hr>
+<h2 class="section-h1" id="4-브라우저-Console-vs-터미널-로그">4. 브라우저 Console vs 터미널 로그<a class="heading-anchor" href="#4-브라우저-Console-vs-터미널-로그" aria-label="이 섹션 링크">#</a></h2>
+<p>둘은 서로 다른 곳에서 실행되는 코드의 기록이라 섞어서 보면 안 됩니다.</p>
+<div class="table-scroll"><table><thead><tr><th></th><th>브라우저 Console (F12)</th><th>터미널(서버) 로그</th></tr></thead><tbody><tr><td>무엇이 찍히나</td><td>프론트엔드(JS) 오류, <code class="inline-code">console.log</code>, 네트워크 요청 실패</td><td>백엔드(서버) 오류, 서버가 찍은 로그</td></tr><tr><td>실행 위치</td><td>사용자의 브라우저</td><td>서버가 돌아가는 컴퓨터</td></tr><tr><td>언제 봐야 하나</td><td>화면이 이상하게 동작할 때, 버튼이 안 눌릴 때</td><td>API 요청은 갔는데 응답이 이상하거나 500 에러가 날 때</td></tr></tbody></table></div>
+<p>화면이 깨졌는데 터미널 로그만 보거나, API가 500을 반환하는데 브라우저 Console만 보는 경우가 흔합니다. <strong>화면 문제면 Console, 서버 응답 문제면 터미널</strong>부터 엽니다. 참고로 브라우저 개발자 도구의 <strong>Network 탭</strong>을 보면 어떤 요청이 어떤 상태 코드로 응답했는지 한눈에 보여서, "프론트 문제인지 백엔드 문제인지"를 가장 먼저 구분하는 데 유용합니다.</p>
+<hr>
+<h2 class="section-h1" id="5-자주-보는-오류">5. 자주 보는 오류<a class="heading-anchor" href="#5-자주-보는-오류" aria-label="이 섹션 링크">#</a></h2>
+<p>전부 외울 필요는 없고, "이 번호대는 대략 이런 뜻이다"만 기억해둡니다.</p>
+<div class="table-scroll"><table><thead><tr><th>코드/오류</th><th>대략 이런 뜻</th><th>먼저 볼 곳</th></tr></thead><tbody><tr><td><code class="inline-code">404 Not Found</code></td><td>요청한 주소 자체가 없음</td><td>URL 오타, 라우트 경로</td></tr><tr><td><code class="inline-code">401 Unauthorized</code></td><td>로그인/인증이 안 된 상태</td><td>토큰이 안 실렸는지, 만료됐는지</td></tr><tr><td><code class="inline-code">403 Forbidden</code></td><td>인증은 됐지만 권한이 없음</td><td>로그인은 됐는데 권한/역할 문제인지</td></tr><tr><td><code class="inline-code">500 Internal Server Error</code></td><td>서버 코드 내부에서 에러 발생</td><td>서버 터미널 로그(정확한 원인이 거기 있음)</td></tr><tr><td><code class="inline-code">TypeError</code> / <code class="inline-code">undefined</code> 관련</td><td>값이 예상과 다른 타입이거나 아직 없음</td><td>그 값이 언제 채워지는지, 초기값은 뭔지</td></tr><tr><td><code class="inline-code">CORS</code> 에러</td><td>브라우저가 다른 출처로의 요청을 막음</td><td>프론트엔드 기초 가이드의 CORS 설명 참고</td></tr></tbody></table></div>
+<hr>
+<h2 class="section-h1" id="6-원인-범위를-줄이는-법">6. 원인 범위를 줄이는 법<a class="heading-anchor" href="#6-원인-범위를-줄이는-법" aria-label="이 섹션 링크">#</a></h2>
+<p>"뭐가 문제인지 전혀 모르겠다"일 때는 코드를 고치기 전에 <strong>범위부터 줄입니다.</strong></p>
+<h3 class="section-h2" id="어제-됐는데-오늘-안-됨-일-때-확인-순서">"어제 됐는데 오늘 안 됨"일 때 확인 순서<a class="heading-anchor" href="#어제-됐는데-오늘-안-됨-일-때-확인-순서" aria-label="이 섹션 링크">#</a></h3>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 정말 코드가 바뀌었는가 → git diff / git log로 최근 변경사항 확인
+2. 내가 바꾼 게 아니라면 → 의존성(패키지) 버전이 바뀌었는지 확인
+3. 그것도 아니라면 → 환경변수·설정 파일이 바뀌었는지 확인
+4. 그것도 아니라면 → 외부 서비스(API, DB)가 바뀌었거나 죽었는지 확인</code></pre></div>
+<p><strong>최근 변경사항 확인이 가장 먼저입니다.</strong> <code class="inline-code">git diff</code>나 <code class="inline-code">git log</code>로 최근에 무엇을 바꿨는지 보면, 절반 이상의 "이유 없이 안 됨"은 바로 원인이 보입니다. 방금 건드린 파일부터 의심하세요.</p>
+<h3 class="section-h2" id="이진-탐색하듯-범위-좁히기">이진 탐색하듯 범위 좁히기<a class="heading-anchor" href="#이진-탐색하듯-범위-좁히기" aria-label="이 섹션 링크">#</a></h3>
+<p>전체 코드 중 어디가 문제인지 모를 때는, 절반씩 잘라서 확인합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>전체 함수 실행이 실패한다
+→ 함수 중간에 console.log를 하나 찍어본다
+→ 거기까지는 찍히면: 문제는 그 아래쪽
+→ 거기까지도 안 찍히면: 문제는 그 위쪽
+→ 범위를 절반으로 줄여서 반복</code></pre></div>
+<p>이렇게 하면 코드 전체를 다 읽지 않고도 몇 번 만에 문제 지점을 좁힐 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="7-한-번에-하나씩만-고치기">7. 한 번에 하나씩만 고치기<a class="heading-anchor" href="#7-한-번에-하나씩만-고치기" aria-label="이 섹션 링크">#</a></h2>
+<p>원인을 좁혔다면, <strong>의심되는 걸 한 번에 여러 개 동시에 고치지 않습니다.</strong> 세 곳을 동시에 고치고 나서 문제가 해결되면, 셋 중 뭐가 실제 원인이었는지 영영 알 수 없습니다. 다음에 비슷한 문제가 또 나도 뭘 봐야 할지 배우지 못합니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>가설 하나 세우기 → 그것만 고치기 → 다시 실행 → 확인
+  → 해결 안 됐으면 되돌리고 다음 가설로
+  → 해결됐으면 왜 해결됐는지 이해하고 끝</code></pre></div>
+<p>수정 하나당 실행 한 번, 이 리듬을 지키는 것이 가장 빠른 길입니다.</p>
+<hr>
+<h2 class="section-h1" id="8-검색할-때-좋은-키워드-만드는-법">8. 검색할 때 좋은 키워드 만드는 법<a class="heading-anchor" href="#8-검색할-때-좋은-키워드-만드는-법" aria-label="이 섹션 링크">#</a></h2>
+<p>에러 메시지를 검색할 때는 아래처럼 다듬습니다.</p>
+<ul><li><strong>바뀌는 값은 지운다</strong>: 파일 경로, 변수명, 사용자 데이터처럼 나만의 값은 빼고 검색합니다. * ❌ <code class="inline-code">Cannot read properties of undefined (reading 'name') at CourseCard.jsx:12</code> * ✅ <code class="inline-code">Cannot read properties of undefined reading</code> + 사용 중인 라이브러리/프레임워크 이름</li><li><strong>에러 종류 + 핵심 상황</strong>으로 좁힙니다. 예: <code class="inline-code">React useEffect infinite loop</code>, <code class="inline-code">Flask 404 blueprint</code></li><li>검색 결과가 너무 없으면 키워드를 줄이고, 너무 많고 관련 없으면 프레임워크·언어 이름을 추가합니다.</li></ul>
+<hr>
+<h2 class="section-h1" id="9-AI에게-질문할-때-빠뜨리면-안-되는-것">9. AI에게 질문할 때 빠뜨리면 안 되는 것<a class="heading-anchor" href="#9-AI에게-질문할-때-빠뜨리면-안-되는-것" aria-label="이 섹션 링크">#</a></h2>
+<p>에러 메시지 한 줄만 붙여넣으면 AI도 추측만 하게 됩니다. 아래 다섯 가지를 함께 전달하면 답변 정확도가 크게 올라갑니다.</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>1. 하고 싶은 것        — 원래 의도한 동작
+2. 실제 결과           — 지금 실제로 무슨 일이 일어나는지
+3. 에러 원문           — 메시지를 요약하지 말고 그대로
+4. 관련 코드           — 에러가 난 지점과 그 주변 (파일 전체 X)
+5. 이미 해본 것        — 시도했지만 안 됐던 방법들</code></pre></div>
+<p>예시:</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>하고 싶은 것: 로그인 후 사용자 이름을 화면에 보여주고 싶습니다.
+실제 결과: 로그인은 되는데 이름 대신 화면이 하얗게 깨지고 아래 에러가 납니다.
+에러 원문: TypeError: Cannot read properties of undefined (reading &#x27;name&#x27;)
+    at CourseCard (CourseCard.jsx:12)
+관련 코드:
+  function CourseCard({ user }) {
+    return &lt;div&gt;{user.name}&lt;/div&gt;;   // 12번째 줄
+  }
+이미 해본 것: user에 console.log를 찍어봤더니 처음 렌더링될 때 undefined였다가
+나중에 값이 채워집니다. optional chaining(user?.name)은 아직 안 써봤습니다.</code></pre></div>
+<p>이 정도 정보면 "user가 아직 로딩되지 않은 시점에 렌더링되는 문제"라는 걸 AI도, 사람도 바로 짚어낼 수 있습니다. 좋은 질문을 만드는 습관은 AI와 함께 개발할 때 특히 중요한데, 이 부분은 <a href="바이브%20코딩으로%20개발하기.html">바이브 코딩으로 개발하기</a> 문서의 "좋은 요청과 나쁜 요청" 부분과도 이어집니다.</p>
+<hr>
+<h2 class="section-h1" id="10-AI-답변을-그대로-적용하지-않고-확인하기">10. AI 답변을 그대로 적용하지 않고 확인하기<a class="heading-anchor" href="#10-AI-답변을-그대로-적용하지-않고-확인하기" aria-label="이 섹션 링크">#</a></h2>
+<p>AI가 제안한 수정 코드는 항상 아래를 확인한 뒤에 적용합니다.</p>
+<ul><li><strong>왜 그렇게 고치는지 한 문장으로 설명할 수 있는가?</strong> 이해 안 되면 물어봐서 이해하고 넘어갑니다.</li><li><strong>실제로 실행해서 에러가 사라졌는지 확인했는가?</strong> 코드가 그럴듯해 보인다고 바로 커밋하지 않습니다.</li><li><strong>다른 곳을 망가뜨리지 않았는가?</strong> 수정한 부분과 관련된 다른 기능도 한 번씩 확인합니다.</li><li>존재하지 않는 함수나 라이브러리를 그럴듯하게 지어내는 경우(hallucination)도 있으므로, 낯선 함수/패키지가 나오면 실제로 있는지 확인합니다.</li></ul>
+<hr>
+<h2 class="section-h1" id="11-해결-후-짧게-기록하기">11. 해결 후 짧게 기록하기<a class="heading-anchor" href="#11-해결-후-짧게-기록하기" aria-label="이 섹션 링크">#</a></h2>
+<p>문제를 해결했다면 아래 세 줄 정도만 어딘가에 남겨둡니다(커밋 메시지, 이슈 댓글, 개인 메모 등 어디든 괜찮습니다).</p>
+<div class="code-block"><div class="code-block-header"><span class="code-lang">text</span><button class="copy-btn" type="button">복사</button></div><pre><code>문제: 로그인 직후 화면이 하얗게 깨짐
+원인: user 데이터가 로딩되기 전에 컴포넌트가 먼저 렌더링됨
+해결: user가 없을 때는 로딩 화면을 보여주도록 조건 추가</code></pre></div>
+<p>기록해두면 다음에 비슷한 에러가 났을 때 검색 시간이 줄고, 팀원이 같은 문제로 헤매는 것도 막을 수 있습니다.</p>
+<hr>
+<h2 class="section-h1" id="12-최종-원칙">12. 최종 원칙<a class="heading-anchor" href="#12-최종-원칙" aria-label="이 섹션 링크">#</a></h2>
+<ul><li>에러 메시지는 끝까지 읽는다 — 특히 첫 줄과 stack trace 맨 위 줄</li><li>재현되지 않는 문제는 고칠 수 없다 — 먼저 재현부터</li><li>한 번에 하나만 바꾸고 확인한다</li><li>"어제는 됐는데" 싶으면 <code class="inline-code">git diff</code>부터</li><li>AI에게 물어보기 전에 최소한의 원인 범위는 스스로 좁혀본다</li><li>AI 답변도 실행해서 확인한 뒤에만 적용한다</li></ul>
+<p>프론트엔드 화면 관련 에러는 <a href="프론트엔드%20기초%20가이드.html">프론트엔드 기초 가이드</a>의 "디버깅 순서"를, 서버·API 관련 에러는 <a href="백엔드%20기초%20가이드.html">백엔드 기초 가이드</a>의 "오류 처리"를, <code class="inline-code">git diff</code>·되돌리기 같은 Git 명령어는 <a href="Git·GitHub%20기초%20가이드.html">Git·GitHub 기초 가이드</a>를 함께 참고하면 좋습니다.</p>
+        <nav class="doc-nav"><a class="doc-nav-link prev" href="AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링.html"><span class="doc-nav-dir">← 이전 학습</span><span class="doc-nav-sep"> · </span><span class="doc-nav-title">AI 코딩 에이전트 최신 트렌드 — 하네스·루프·그래프 엔지니어링</span></a><a class="doc-nav-link next" href="../개발 협업 방식 선택 가이드.html"><span class="doc-nav-dir">다음 학습 →</span><span class="doc-nav-sep"> </span><span class="doc-nav-title">개발 협업 방식 선택 가이드</span></a></nav>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="search-overlay" id="search-overlay">
+  <div class="search-panel">
+    <input type="text" id="search-input" placeholder="키워드로 검색 — 유사어도 함께 찾아요 (예: 로그인, 머지, 상태)">
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+<script src="../assets/search-core.js?v=937f3b6fa0" defer></script>
+<script src="../assets/main.js?v=937f3b6fa0" defer></script>
+</body>
+</html>

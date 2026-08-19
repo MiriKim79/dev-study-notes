@@ -56,7 +56,7 @@ PAGES = [
         "cat": "start",
         "icon": "📚",
         "hub": None,
-        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends"],
+        "hub_children": ["first-steps", "git-min", "team-start", "frontend", "backend", "ai", "git", "profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging"],
     },
     {
         "key": "first-steps",
@@ -171,6 +171,17 @@ PAGES = [
         "icon": "🧩",
         "hub": "playbook-hub",
         "tagline": "AI 코딩을 시작하는 데 꼭 필요하진 않지만, 요즘 자주 들리는 그 용어들 정리.",
+    },
+    {
+        "key": "debugging",
+        "src": f"{PLAYBOOK_DIR}/디버깅·오류 해결 기초 가이드.md",
+        "title": "디버깅·오류 해결 기초 가이드",
+        "kicker": "개발 기초·실전 가이드",
+        "cat": "misc",
+        "cat_label": "실전",
+        "icon": "🐞",
+        "hub": "playbook-hub",
+        "tagline": "무작정 AI에게 붙여넣기 전에, 에러 메시지부터 스스로 읽고 범위를 좁히는 법.",
     },
     {
         "key": "collab-method",
@@ -510,6 +521,7 @@ STUDY_ORDER = [
     "presentation",
     "vibe-coding",
     "agent-trends",
+    "debugging",
     "collab-method",
     "github-hub",
     "contributing",
@@ -1526,9 +1538,10 @@ OVERVIEW_ROWS_MISC = [
     ("presentation", "개발자 발표·데모 잘하는 법", "발표 스토리라인부터 PPT·대본·데모·리허설·Q&A까지 준비 전 과정", "팀 프로젝트 데모데이나 발표를 앞두고 있을 때"),
     ("vibe-coding", "바이브 코딩으로 개발하기", "SPEC·context 전달 → 작업 분할 → 구현 → 검증 → Git → 배포 전 확인까지", "AI와 함께 실제 프로젝트를 진행하고 싶을 때"),
     ("agent-trends", "AI 코딩 에이전트 최신 트렌드", "하네스·루프·그래프 엔지니어링을 쉬운 사례로 이해하는 최신 트렌드", "요즘 자주 들리는 AI 코딩 용어가 궁금할 때"),
+    ("debugging", "디버깅·오류 해결 기초 가이드", "에러 메시지·stack trace 읽기부터 원인 범위 좁히기, AI에게 잘 물어보는 법까지", "오류가 나서 어디부터 봐야 할지 막막할 때"),
 ]
 
-DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends"]
+DASHBOARD_CARDS_MISC = ["profile-readme", "presentation", "vibe-coding", "agent-trends", "debugging"]
 
 OVERVIEW_ROWS_MID = [
     ("git-mid", "Git·GitHub 중급 가이드", "interactive rebase, cherry-pick, bisect, worktree, GitHub Actions, 브랜치 보호 심화", "Git 기본 명령이 손에 익은 뒤"),
