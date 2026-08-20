@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-08-21",
   "items": [
     {
       "source": "GeekNews",
-      "title": "시민 위생 — 경찰국가에 악용될 기술을 만들지 말 것 (2013)",
-      "url": "https://news.hada.io/topic?id=32673",
-      "date": "2026-08-20",
-      "summary": "공익을 위해 만든 데이터베이스도 정권이 바뀌면 시민을 탄압하는 감시 도구 로 전용될 수 있어, 현재가 아닌 다음 정부까지 고려한 설계가 필요함 성적 지향 정보 는 보건 서비스·출생률·학교 수요 계획…"
+      "title": "온디바이스에서 피아노를 자동 완성하는 1억 2,500만 매개변수 모델",
+      "url": "https://news.hada.io/topic?id=32709",
+      "date": "2026-08-21",
+      "summary": "MIDI 건반으로 연주한 몇 음을 실시간으로 이어가는 RollTab 을 14차례 실험 끝에 개발했으며, iPhone 15에서 초당 약 108개 음표 를 생성함 음높이·시작 간격·길이·세기를 하나의 …"
     },
     {
       "source": "GeekNews",
-      "title": "Moderna, 흑색종 mRNA 신생항원 치료제 최초의 긍정적 3상 결과 발표",
-      "url": "https://news.hada.io/topic?id=32672",
-      "date": "2026-08-20",
-      "summary": "Moderna와 Merck가 완전 절제된 IIB~IV기 흑색종 환자 를 대상으로 intismeran autogene과 KEYTRUDA 병용 보조요법의 긍정적인 3상 결과를 발표함 임상시험은 1차 평…"
+      "title": "프로그래머를 위한 음악 이론",
+      "url": "https://news.hada.io/topic?id=32708",
+      "date": "2026-08-21",
+      "summary": "악기를 다루지 못하는 개발자가 \"왜 하필 그 음들인가\"에 대한 설명 없이 암기만 시키는 음악 교육에 답답함을 느껴, Web Audio API와 JavaScript로 물리와 산수에서부터 음악 이론을 …"
     },
     {
       "source": "GeekNews",
-      "title": "농담으로 산 도메인이 지정학적 전쟁에 휘말린 과정",
-      "url": "https://news.hada.io/topic?id=32671",
-      "date": "2026-08-20",
-      "summary": "2018년 Habhub 리디렉션 으로 시작한 SondeHub는 독립적인 라디오존데 추적·예측 인프라로 성장해 정부·군·항공기관·우크라이나 작전팀까지 사용하는 서비스가 됨 지상까지 이어지는 비행 추적…"
+      "title": "Bun 1.4 출시 — Zig에서 Rust로 재작성, Node.js 호환성 역대 최대 폭 향상",
+      "url": "https://news.hada.io/topic?id=32707",
+      "date": "2026-08-21",
+      "summary": "2026년 8월 20일 Bun 1.4 발표. Node.js 테스트 스위트에서 1,517개 테스트가 새로 통과했고, 2,900개 이상의 이슈를 수정 유휴 CPU 사용량 5배 감소, 메모리 최대 35%…"
     },
     {
       "source": "GeekNews",
-      "title": "CSS, 받은편지함 속 폭탄",
-      "url": "https://news.hada.io/topic?id=32670",
-      "date": "2026-08-20",
-      "summary": "웹메일이 신뢰할 수 없는 HTML·CSS를 신뢰된 UI 안에서 렌더링하면서 생기는 파서·새니타이저 불일치 로 UI 조작, 토큰 유출, 외부 서비스 침해, 비밀번호 탈취까지 가능함 허용된 <label…"
+      "title": "AliExpress의 비가청 WebAudio 핑거프린팅이 Bluetooth 멀티포인트를 방해함",
+      "url": "https://news.hada.io/topic?id=32706",
+      "date": "2026-08-21",
+      "summary": "AliExpress 홈페이지의 난독화된 보안 스크립트가 두 개의 WebAudio 그래프 를 실행해, PC와 휴대폰에 동시 연결된 Bluetooth 헤드폰이 휴대폰 오디오로 전환되지 않음 collin…"
     },
     {
       "source": "GeekNews",
-      "title": "GrapheneOS 지원 Motorola 기기, 2027년 출시 예정",
-      "url": "https://news.hada.io/topic?id=32669",
+      "title": "실제 FlyWire 커넥톰으로 구동되는 macOS 데스크톱의 3D 초파리",
+      "url": "https://news.hada.io/topic?id=32705",
       "date": "2026-08-20",
-      "summary": "첫 Motorola 지원 기기 는 2027년 출시될 예정이며, Pixel보다 고성능·고가인 플래그십 모델로 시작함 보급형 기기는 업데이트 기간과 보안 기능이 요구 수준에 미치지 못해 지원까지 더 오…"
+      "summary": "DesktopFly는 macOS 데스크톱 위를 걷고 날고 손질하며 잠드는 3D 초파리로, FlyWire v783 커넥톰 의 실제 뉴런 연결망을 실시간 스파이킹 시뮬레이션에 사용함 668개 뉴런과 약…"
     },
     {
       "source": "GeekNews",
-      "title": "고착된 임금 규범이 예상 밖 인플레이션을 실질임금 손실로 바꾼 과정",
-      "url": "https://news.hada.io/topic?id=32668",
+      "title": "터미널을 되찾는 법",
+      "url": "https://news.hada.io/topic?id=32704",
       "date": "2026-08-20",
-      "summary": "미국 노동자 월 약 1,600만 명의 ADP 급여 자료 를 분석한 결과, 연례 명목임금 인상이 물가에 충분히 연동되지 않아 2021~2024년 같은 직장에 계속 근무한 노동자의 43%가 실질임금 하…"
+      "summary": "less 와 fzf 는 파일이나 후보 목록을 stdin 파이프 로 받으면서, 제어 터미널인 /dev/tty 를 별도 파일 디스크립터로 열어 키보드 입력을 읽음 각 프로세스는 fd 0과 fd 1이 터…"
     },
     {
       "source": "GeekNews",
-      "title": "Fairphone, 미국에서 공식 판매 시작",
-      "url": "https://news.hada.io/topic?id=32667",
+      "title": "모든 것을 위한 SQLite",
+      "url": "https://news.hada.io/topic?id=32703",
       "date": "2026-08-20",
-      "summary": "미국 전용 웹숍을 열고 완전 언락된 Fairphone (Gen. 6+) 와 Fairbuds·Fairbuds XL을 처음으로 공식 판매함 Snapdragon 7s Gen 4 와 12GB DDR5 RA…"
+      "summary": "SQLite는 내장형 데이터베이스를 넘어 관계형 DB와 전문 검색 , 문서 저장소·캐시·벡터 인덱스·파일 형식까지 하나의 라이브러리와 파일로 통합할 수 있음 2000년 처음 출시된 뒤 MC/DC 1…"
     },
     {
       "source": "GeekNews",
-      "title": "그래도 총을 든 사람들이 결국 하라고 명령한다",
-      "url": "https://news.hada.io/topic?id=32666",
+      "title": "모든 것을 위한 PostgreSQL",
+      "url": "https://news.hada.io/topic?id=32702",
       "date": "2026-08-20",
-      "summary": "2011년 이집트 정부는 인터넷을 차단한 뒤 이동통신망으로 친정부 메시지를 발송했으며, Vodafone은 당국의 요구를 거부할 법적·현실적 수단이 없었다 고 밝힘 기술의 악용 가능성을 고려하는 시민…"
+      "summary": "관계형 데이터베이스를 넘어 전문 검색·문서 저장·큐·시계열·벡터 검색·캐시 까지 처리해 별도 시스템 도입과 데이터 동기화, 운영 부담을 줄일 수 있음 1996년 첫 출시 이후 오랜 기간 버그를 다듬…"
     }
   ]
 }
