@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-21",
+  "updated_at": "2026-08-22",
   "items": [
     {
       "source": "GeekNews",
-      "title": "온디바이스에서 피아노를 자동 완성하는 1억 2,500만 매개변수 모델",
-      "url": "https://news.hada.io/topic?id=32709",
-      "date": "2026-08-21",
-      "summary": "MIDI 건반으로 연주한 몇 음을 실시간으로 이어가는 RollTab 을 14차례 실험 끝에 개발했으며, iPhone 15에서 초당 약 108개 음표 를 생성함 음높이·시작 간격·길이·세기를 하나의 …"
+      "title": "실수로 군사 기지로 걸려온 수십만 건의 전화를 기록하다",
+      "url": "https://news.hada.io/topic?id=32745",
+      "date": "2026-08-22",
+      "summary": "만료된 도메인을 5유로 에 등록하면서 Saint Helena·Diego Garcia·Ascension Island의 e164.arpa DNS 영역을 장악했고, 군사 기지로 향하는 통화의 ENUM 질…"
     },
     {
       "source": "GeekNews",
-      "title": "프로그래머를 위한 음악 이론",
-      "url": "https://news.hada.io/topic?id=32708",
-      "date": "2026-08-21",
-      "summary": "악기를 다루지 못하는 개발자가 \"왜 하필 그 음들인가\"에 대한 설명 없이 암기만 시키는 음악 교육에 답답함을 느껴, Web Audio API와 JavaScript로 물리와 산수에서부터 음악 이론을 …"
+      "title": "생물학을 사랑했어야 했다 (2020)",
+      "url": "https://news.hada.io/topic?id=32744",
+      "date": "2026-08-22",
+      "summary": "학교 생물학은 생명의 놀라운 작동 원리와 발견 과정 대신 용어와 결론 암기 에 집중해, 탐구심을 자극해야 할 분야를 무미건조하게 만듦 배아 분화는 화학적 농도 차이가 유전자 발현을 바꾸고 다시 정교…"
     },
     {
       "source": "GeekNews",
-      "title": "Bun 1.4 출시 — Zig에서 Rust로 재작성, Node.js 호환성 역대 최대 폭 향상",
-      "url": "https://news.hada.io/topic?id=32707",
-      "date": "2026-08-21",
-      "summary": "2026년 8월 20일 Bun 1.4 발표. Node.js 테스트 스위트에서 1,517개 테스트가 새로 통과했고, 2,900개 이상의 이슈를 수정 유휴 CPU 사용량 5배 감소, 메모리 최대 35%…"
+      "title": "전 세계 운영체제를 꿈꾼 일본의 TRON과 미국의 개입",
+      "url": "https://news.hada.io/topic?id=32743",
+      "date": "2026-08-22",
+      "summary": "1984년 시작된 TRON 은 가전의 마이크로컨트롤러부터 PC·메인프레임·통신망까지 일본의 디지털 기반 전체를 하나의 개방형 아키텍처 로 구축하려던 프로젝트였음 데스크톱용 BTRON 은 파일과 애플…"
     },
     {
       "source": "GeekNews",
-      "title": "AliExpress의 비가청 WebAudio 핑거프린팅이 Bluetooth 멀티포인트를 방해함",
-      "url": "https://news.hada.io/topic?id=32706",
-      "date": "2026-08-21",
-      "summary": "AliExpress 홈페이지의 난독화된 보안 스크립트가 두 개의 WebAudio 그래프 를 실행해, PC와 휴대폰에 동시 연결된 Bluetooth 헤드폰이 휴대폰 오디오로 전환되지 않음 collin…"
+      "title": "TikTok과 Instagram 시청이 인지 제어 네트워크를 비활성화한다는 연구",
+      "url": "https://news.hada.io/topic?id=32742",
+      "date": "2026-08-22",
+      "summary": "TikTok과 Instagram 시청이 인지 제어 네트워크를 비활성화한다는 연구"
     },
     {
       "source": "GeekNews",
-      "title": "실제 FlyWire 커넥톰으로 구동되는 macOS 데스크톱의 3D 초파리",
-      "url": "https://news.hada.io/topic?id=32705",
-      "date": "2026-08-20",
-      "summary": "DesktopFly는 macOS 데스크톱 위를 걷고 날고 손질하며 잠드는 3D 초파리로, FlyWire v783 커넥톰 의 실제 뉴런 연결망을 실시간 스파이킹 시뮬레이션에 사용함 668개 뉴런과 약…"
+      "title": "DeepSeek-v4-flash-vision-exp 비전 API",
+      "url": "https://news.hada.io/topic?id=32741",
+      "date": "2026-08-22",
+      "summary": "텍스트와 이미지를 함께 처리해 사진 설명, 스크린샷 문자 판독, 차트 분석 등을 수행하는 비전 모델임 OpenAI 호환 Chat Completions에서 Base64 데이터 URL, 외부 URL, …"
     },
     {
       "source": "GeekNews",
-      "title": "터미널을 되찾는 법",
-      "url": "https://news.hada.io/topic?id=32704",
-      "date": "2026-08-20",
-      "summary": "less 와 fzf 는 파일이나 후보 목록을 stdin 파이프 로 받으면서, 제어 터미널인 /dev/tty 를 별도 파일 디스크립터로 열어 키보드 입력을 읽음 각 프로세스는 fd 0과 fd 1이 터…"
+      "title": "Flock 카메라 파손 혐의를 받은 오하이오 남성, 대배심 불기소",
+      "url": "https://news.hada.io/topic?id=32740",
+      "date": "2026-08-22",
+      "summary": "자동 번호판 판독 카메라를 둘러싼 감시 논란이 커지는 가운데, 오하이오 대배심이 Cody Morelock을 기소하지 않기로 결정 해 중범죄 기물 파손 혐의가 기각됨 경찰은 Morelock이 6월 1…"
     },
     {
       "source": "GeekNews",
-      "title": "모든 것을 위한 SQLite",
-      "url": "https://news.hada.io/topic?id=32703",
-      "date": "2026-08-20",
-      "summary": "SQLite는 내장형 데이터베이스를 넘어 관계형 DB와 전문 검색 , 문서 저장소·캐시·벡터 인덱스·파일 형식까지 하나의 라이브러리와 파일로 통합할 수 있음 2000년 처음 출시된 뒤 MC/DC 1…"
+      "title": "Kagi, 검색 결과에서 유료벽 링크를 제외하는 설정 추가",
+      "url": "https://news.hada.io/topic?id=32739",
+      "date": "2026-08-22",
+      "summary": "2026년 8월 21일 Kagi Search에 유료벽 웹사이트 링크 를 검색 결과에서 자동으로 제외하는 사용자 설정이 추가됨 Stocks 위젯은 더 자주 노출되며 ETF 정보 와 선택 기간의 가격 …"
     },
     {
       "source": "GeekNews",
-      "title": "모든 것을 위한 PostgreSQL",
-      "url": "https://news.hada.io/topic?id=32702",
-      "date": "2026-08-20",
-      "summary": "관계형 데이터베이스를 넘어 전문 검색·문서 저장·큐·시계열·벡터 검색·캐시 까지 처리해 별도 시스템 도입과 데이터 동기화, 운영 부담을 줄일 수 있음 1996년 첫 출시 이후 오랜 기간 버그를 다듬…"
+      "title": "AI 기업이 실물 책을 파괴한다 — 너무 늦기 전에 희귀 도서를 스캔하자",
+      "url": "https://news.hada.io/topic?id=32738",
+      "date": "2026-08-22",
+      "summary": "여러 AI 기업이 2022년 이전의 기계가 건드리지 않은 학습 데이터 를 얻으려 중고책 수백만 권을 매입해 스캔한 뒤 폐기하면서, 디지털 사본이 기업 서버에만 남을 수 있음 Anthropic은 20…"
     }
   ]
 }
