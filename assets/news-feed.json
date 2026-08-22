@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-22",
+  "updated_at": "2026-08-23",
   "items": [
     {
       "source": "GeekNews",
-      "title": "실수로 군사 기지로 걸려온 수십만 건의 전화를 기록하다",
-      "url": "https://news.hada.io/topic?id=32745",
-      "date": "2026-08-22",
-      "summary": "만료된 도메인을 5유로 에 등록하면서 Saint Helena·Diego Garcia·Ascension Island의 e164.arpa DNS 영역을 장악했고, 군사 기지로 향하는 통화의 ENUM 질…"
+      "title": "역대 최대 2D 우주 지도 공개",
+      "url": "https://news.hada.io/topic?id=32775",
+      "date": "2026-08-23",
+      "summary": "DESI Legacy Imaging Surveys가 26만 3,407회 망원경 노출 을 결합해 가시광선·근적외선 영역에서 우주의 약 75%를 담은 역대 최대 2D 컬러 지도를 완성함 5.6조 픽셀 …"
     },
     {
       "source": "GeekNews",
-      "title": "생물학을 사랑했어야 했다 (2020)",
-      "url": "https://news.hada.io/topic?id=32744",
-      "date": "2026-08-22",
-      "summary": "학교 생물학은 생명의 놀라운 작동 원리와 발견 과정 대신 용어와 결론 암기 에 집중해, 탐구심을 자극해야 할 분야를 무미건조하게 만듦 배아 분화는 화학적 농도 차이가 유전자 발현을 바꾸고 다시 정교…"
+      "title": "무역 협상 결렬로 캐나다가 미국 관세에 ‘달러 대 달러’로 맞대응",
+      "url": "https://news.hada.io/topic?id=32774",
+      "date": "2026-08-23",
+      "summary": "미국이 협상 시한 직전 조건을 바꾸자 캐나다는 협상을 중단했고, Mark Carney 총리는 미국 상품에 동일 규모의 보복 관세 를 부과하기로 함 미국은 약 200억 달러 규모의 캐나다산 상품에 5…"
     },
     {
       "source": "GeekNews",
-      "title": "전 세계 운영체제를 꿈꾼 일본의 TRON과 미국의 개입",
-      "url": "https://news.hada.io/topic?id=32743",
-      "date": "2026-08-22",
-      "summary": "1984년 시작된 TRON 은 가전의 마이크로컨트롤러부터 PC·메인프레임·통신망까지 일본의 디지털 기반 전체를 하나의 개방형 아키텍처 로 구축하려던 프로젝트였음 데스크톱용 BTRON 은 파일과 애플…"
+      "title": "Sid Meier&#039;s Pirates!가 남긴 잊힌 유산",
+      "url": "https://news.hada.io/topic?id=32773",
+      "date": "2026-08-23",
+      "summary": "1987년 출시된 Sid Meier's Pirates! 는 차량 시뮬레이션과 전략 워게임으로 알려졌던 MicroProse의 정체성을 바꾼 성공작으로, 장르 문법보다 해적 세계의 주제를 앞세워 시스템…"
     },
     {
       "source": "GeekNews",
-      "title": "TikTok과 Instagram 시청이 인지 제어 네트워크를 비활성화한다는 연구",
-      "url": "https://news.hada.io/topic?id=32742",
-      "date": "2026-08-22",
-      "summary": "TikTok과 Instagram 시청이 인지 제어 네트워크를 비활성화한다는 연구"
+      "title": "새로운 세계: 우리는 J.G. Ballard와 William Gibson의 미래에 살고 있다",
+      "url": "https://news.hada.io/topic?id=32772",
+      "date": "2026-08-23",
+      "summary": "하늘을 나는 자동차는 없지만 로봇, AI, 생체인식, 자율주행이 일상에 스며들면서 Ballard와 Gibson이 상상한 미래 가 이미 현실이 됨 쇼핑몰의 정맥주사 클리닉부터 로봇 개, AI 음악가,…"
     },
     {
       "source": "GeekNews",
-      "title": "DeepSeek-v4-flash-vision-exp 비전 API",
-      "url": "https://news.hada.io/topic?id=32741",
-      "date": "2026-08-22",
-      "summary": "텍스트와 이미지를 함께 처리해 사진 설명, 스크린샷 문자 판독, 차트 분석 등을 수행하는 비전 모델임 OpenAI 호환 Chat Completions에서 Base64 데이터 URL, 외부 URL, …"
+      "title": "TUI를 그만 만드세요",
+      "url": "https://news.hada.io/topic?id=32771",
+      "date": "2026-08-23",
+      "summary": "LLM 에이전트가 SwiftUI 네이티브 UI 를 실용적인 수준으로 생성하면서, 시스템 프로그래머도 개인용 도구를 더 이상 터미널 화면으로 만들 필요가 없어짐 CLI는 자동화와 원격 제어에 대체 불…"
     },
     {
       "source": "GeekNews",
-      "title": "Flock 카메라 파손 혐의를 받은 오하이오 남성, 대배심 불기소",
-      "url": "https://news.hada.io/topic?id=32740",
+      "title": "Labor0를 만든 이유",
+      "url": "https://news.hada.io/topic?id=32769",
       "date": "2026-08-22",
-      "summary": "자동 번호판 판독 카메라를 둘러싼 감시 논란이 커지는 가운데, 오하이오 대배심이 Cody Morelock을 기소하지 않기로 결정 해 중범죄 기물 파손 혐의가 기각됨 경찰은 Morelock이 6월 1…"
+      "summary": "AI 에이전트 세션이 늘어나면 실행 자체보다 사람이 모든 진행 상황을 확인하고 조율하는 일이 병목이 됨 이를 줄이기 위해 큰 작업을 작은 PR 단위로 나누고, CI 실패 수정·머지 충돌 해결·리뷰 …"
     },
     {
       "source": "GeekNews",
-      "title": "Kagi, 검색 결과에서 유료벽 링크를 제외하는 설정 추가",
-      "url": "https://news.hada.io/topic?id=32739",
+      "title": "Rust Glancer - 메모리를 100배 적게 쓰는 Rust LSP",
+      "url": "https://news.hada.io/topic?id=32768",
       "date": "2026-08-22",
-      "summary": "2026년 8월 21일 Kagi Search에 유료벽 웹사이트 링크 를 검색 결과에서 자동으로 제외하는 사용자 설정이 추가됨 Stocks 위젯은 더 자주 노출되며 ETF 정보 와 선택 기간의 가격 …"
+      "summary": "Rust Glancer는 분석 결과를 파일 시스템에 보존해 합리적인 규모의 프로젝트에서 100MB 미만의 RAM 을 목표로 하며, 편집기를 재시작해도 기존 색인을 즉시 재사용함 rust-analyz…"
     },
     {
       "source": "GeekNews",
-      "title": "AI 기업이 실물 책을 파괴한다 — 너무 늦기 전에 희귀 도서를 스캔하자",
-      "url": "https://news.hada.io/topic?id=32738",
+      "title": "Claudette - Claude의 BuzzFeed식 말투를 평범한 영어로 바꾸는 도구",
+      "url": "https://news.hada.io/topic?id=32767",
       "date": "2026-08-22",
-      "summary": "여러 AI 기업이 2022년 이전의 기계가 건드리지 않은 학습 데이터 를 얻으려 중고책 수백만 권을 매입해 스캔한 뒤 폐기하면서, 디지털 사본이 기업 서버에만 남을 수 있음 Anthropic은 20…"
+      "summary": "/debuzz 는 Claude의 장황하고 극적인 답변을 Antigravity CLI 로 다시 작성해 평범한 영어로 바꾸는 Claude Code 스킬임 Claude가 변환 결과를 다시 다듬으면 기존 …"
     }
   ]
 }
