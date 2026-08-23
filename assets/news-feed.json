@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-23",
+  "updated_at": "2026-08-24",
   "items": [
     {
       "source": "GeekNews",
-      "title": "역대 최대 2D 우주 지도 공개",
-      "url": "https://news.hada.io/topic?id=32775",
+      "title": "Wi-Fi 8, 수년 만에 속도 경쟁에서 벗어난 무선 업그레이드",
+      "url": "https://news.hada.io/topic?id=32812",
+      "date": "2026-08-24",
+      "summary": "IEEE가 Ultra High Reliability 로 부르는 Wi-Fi 8은 최고 속도보다 간섭과 비이상적 환경에서의 신뢰성·실효 처리량·지연시간 개선에 집중함 Wi-Fi 7과 최대 전송률, 공간…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "GLM-5.3 오픈 웨이트, Anthropic·OpenAI 모델을 5분의 1 비용으로 제침",
+      "url": "https://news.hada.io/topic?id=32811",
+      "date": "2026-08-24",
+      "summary": "GLM-5.3 은 28개 실무 과제를 모두 통과하고 품질 점수 9.3을 받았으며, 전체 비용도 약 $0.28 로 gpt-5.5의 약 5분의 1에 그침 평가는 17개 모델에 동일한 프롬프트·API 호…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "슬로바키아, 과속 단속 카메라에서 러시아 백도어 발견",
+      "url": "https://news.hada.io/topic?id=32810",
+      "date": "2026-08-24",
+      "summary": "슬로바키아 국가안보국 NBU 는 NERO R-ONE 과속 단속 카메라에 SMS로 셸·네트워크 접근을 허용하는 백도어가 있다며 사용을 경고함 하드코딩된 러시아 전화번호 에서 SMS를 받으면 백도어가 …"
+    },
+    {
+      "source": "GeekNews",
+      "title": "태블릿 소유권을 되찾는 데 266달러와 AI 모델 4개를 썼고, GLM-5.3이 하루 만에 끝냈다",
+      "url": "https://news.hada.io/topic?id=32809",
+      "date": "2026-08-24",
+      "summary": "하루 최대 두 번 완전히 꺼지는 Amazon Fire HD 10에서 보호된 패키지를 제거하려고 5개월간 AI 모델 4개 를 동원했으며, 태블릿 가격의 두 배가 넘는 266.15달러 를 지출함 Kim…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Qwen 3.8 27B, 리버스 엔지니어링 작업을 30분 만에 완료",
+      "url": "https://news.hada.io/topic?id=32808",
+      "date": "2026-08-24",
+      "summary": "단일 머신에서 실행한 Qwen 3.8 27B 가 상용 앱의 라이선스 체계를 정적 분석하고, 약 30분 만에 작동하는 인증 우회 개념증명까지 만들어냄 앱을 실행하지 않은 채 수천 줄의 arm64 코드…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "Linus Torvalds가 AI로 Intel GPU 드라이버 버그를 추적한 과정",
+      "url": "https://news.hada.io/topic?id=32807",
+      "date": "2026-08-24",
+      "summary": "Intel Xe GPU 드라이버가 압축 하드웨어용 flat CCS 저장공간 일부를 VRAM으로 잘못 할당해 Battlemage G21 시스템에서 검은 화면과 gdm 재시작 루프를 일으킴 get_fl…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "끌어들이고, 붙잡고, 수집하고, 숨긴다: 중대 재판 첫 주에 공개된 Meta의 혐의 전략",
+      "url": "https://news.hada.io/topic?id=32805",
+      "date": "2026-08-24",
+      "summary": "California를 비롯한 미국 29개 주 는 Meta가 아동을 중독성 있게 설계된 서비스에 붙잡아 두고 데이터를 수집하며 피해를 숨겼다는 혐의로 소송을 제기함 핵심 쟁점은 부모 동의 없이 13세…"
+    },
+    {
+      "source": "GeekNews",
+      "title": "성숙 과정에서 얻은 세 가지 중요한 깨달음",
+      "url": "https://news.hada.io/topic?id=32804",
       "date": "2026-08-23",
-      "summary": "DESI Legacy Imaging Surveys가 26만 3,407회 망원경 노출 을 결합해 가시광선·근적외선 영역에서 우주의 약 75%를 담은 역대 최대 2D 컬러 지도를 완성함 5.6조 픽셀 …"
-    },
-    {
-      "source": "GeekNews",
-      "title": "무역 협상 결렬로 캐나다가 미국 관세에 ‘달러 대 달러’로 맞대응",
-      "url": "https://news.hada.io/topic?id=32774",
-      "date": "2026-08-23",
-      "summary": "미국이 협상 시한 직전 조건을 바꾸자 캐나다는 협상을 중단했고, Mark Carney 총리는 미국 상품에 동일 규모의 보복 관세 를 부과하기로 함 미국은 약 200억 달러 규모의 캐나다산 상품에 5…"
-    },
-    {
-      "source": "GeekNews",
-      "title": "Sid Meier&#039;s Pirates!가 남긴 잊힌 유산",
-      "url": "https://news.hada.io/topic?id=32773",
-      "date": "2026-08-23",
-      "summary": "1987년 출시된 Sid Meier's Pirates! 는 차량 시뮬레이션과 전략 워게임으로 알려졌던 MicroProse의 정체성을 바꾼 성공작으로, 장르 문법보다 해적 세계의 주제를 앞세워 시스템…"
-    },
-    {
-      "source": "GeekNews",
-      "title": "새로운 세계: 우리는 J.G. Ballard와 William Gibson의 미래에 살고 있다",
-      "url": "https://news.hada.io/topic?id=32772",
-      "date": "2026-08-23",
-      "summary": "하늘을 나는 자동차는 없지만 로봇, AI, 생체인식, 자율주행이 일상에 스며들면서 Ballard와 Gibson이 상상한 미래 가 이미 현실이 됨 쇼핑몰의 정맥주사 클리닉부터 로봇 개, AI 음악가,…"
-    },
-    {
-      "source": "GeekNews",
-      "title": "TUI를 그만 만드세요",
-      "url": "https://news.hada.io/topic?id=32771",
-      "date": "2026-08-23",
-      "summary": "LLM 에이전트가 SwiftUI 네이티브 UI 를 실용적인 수준으로 생성하면서, 시스템 프로그래머도 개인용 도구를 더 이상 터미널 화면으로 만들 필요가 없어짐 CLI는 자동화와 원격 제어에 대체 불…"
-    },
-    {
-      "source": "GeekNews",
-      "title": "Labor0를 만든 이유",
-      "url": "https://news.hada.io/topic?id=32769",
-      "date": "2026-08-22",
-      "summary": "AI 에이전트 세션이 늘어나면 실행 자체보다 사람이 모든 진행 상황을 확인하고 조율하는 일이 병목이 됨 이를 줄이기 위해 큰 작업을 작은 PR 단위로 나누고, CI 실패 수정·머지 충돌 해결·리뷰 …"
-    },
-    {
-      "source": "GeekNews",
-      "title": "Rust Glancer - 메모리를 100배 적게 쓰는 Rust LSP",
-      "url": "https://news.hada.io/topic?id=32768",
-      "date": "2026-08-22",
-      "summary": "Rust Glancer는 분석 결과를 파일 시스템에 보존해 합리적인 규모의 프로젝트에서 100MB 미만의 RAM 을 목표로 하며, 편집기를 재시작해도 기존 색인을 즉시 재사용함 rust-analyz…"
-    },
-    {
-      "source": "GeekNews",
-      "title": "Claudette - Claude의 BuzzFeed식 말투를 평범한 영어로 바꾸는 도구",
-      "url": "https://news.hada.io/topic?id=32767",
-      "date": "2026-08-22",
-      "summary": "/debuzz 는 Claude의 장황하고 극적인 답변을 Antigravity CLI 로 다시 작성해 평범한 영어로 바꾸는 Claude Code 스킬임 Claude가 변환 결과를 다시 다듬으면 기존 …"
+      "summary": "아버지의 죽음과 자신보다 젊은 동료가 많은 회사로의 이직을 계기로, 20대 이후 세계관을 바꾼 세 가지 깨달음 을 돌아봄 신념은 인정과 물질적 욕구 같은 인센티브 구조 에 영향을 받으므로, 스스로 …"
     }
   ]
 }
