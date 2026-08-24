@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-24",
+  "updated_at": "2026-08-25",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Wi-Fi 8, 수년 만에 속도 경쟁에서 벗어난 무선 업그레이드",
-      "url": "https://news.hada.io/topic?id=32812",
-      "date": "2026-08-24",
-      "summary": "IEEE가 Ultra High Reliability 로 부르는 Wi-Fi 8은 최고 속도보다 간섭과 비이상적 환경에서의 신뢰성·실효 처리량·지연시간 개선에 집중함 Wi-Fi 7과 최대 전송률, 공간…"
+      "title": "AI 의존이 코딩 전문성의 성장 경로를 무너뜨릴 수 있음",
+      "url": "https://news.hada.io/topic?id=32854",
+      "date": "2026-08-25",
+      "summary": "AI 코딩 도구는 숙련자가 조정·검토할 때 가장 유용하지만, 초보자가 전문성을 쌓는 데 필요한 시행착오와 마찰 을 우회해 차세대 개발자의 성장 경로를 약화할 수 있음 강한 AI 지원을 받은 초보자는…"
     },
     {
       "source": "GeekNews",
-      "title": "GLM-5.3 오픈 웨이트, Anthropic·OpenAI 모델을 5분의 1 비용으로 제침",
-      "url": "https://news.hada.io/topic?id=32811",
-      "date": "2026-08-24",
-      "summary": "GLM-5.3 은 28개 실무 과제를 모두 통과하고 품질 점수 9.3을 받았으며, 전체 비용도 약 $0.28 로 gpt-5.5의 약 5분의 1에 그침 평가는 17개 모델에 동일한 프롬프트·API 호…"
+      "title": "Skyrim을 함께 플레이하는 저지연 AI 동료 Varkos",
+      "url": "https://news.hada.io/topic?id=32853",
+      "date": "2026-08-25",
+      "summary": "Varkos 는 대화만 생성하는 NPC를 넘어 Skyrim의 실제 세계 상태를 인식하고 전투·수색·운반·아이템 전달과 다단계 명령을 수행하는 실시간 AI 동료 임 미래 사건을 기다리는 조건부 명령과…"
     },
     {
       "source": "GeekNews",
-      "title": "슬로바키아, 과속 단속 카메라에서 러시아 백도어 발견",
-      "url": "https://news.hada.io/topic?id=32810",
-      "date": "2026-08-24",
-      "summary": "슬로바키아 국가안보국 NBU 는 NERO R-ONE 과속 단속 카메라에 SMS로 셸·네트워크 접근을 허용하는 백도어가 있다며 사용을 경고함 하드코딩된 러시아 전화번호 에서 SMS를 받으면 백도어가 …"
+      "title": "MS Paint와 Photos, 로컬 생성 이미지에도 서버 발급 GUID를 보이지 않는 워터마크로 삽입",
+      "url": "https://news.hada.io/topic?id=32852",
+      "date": "2026-08-25",
+      "summary": "Microsoft Paint와 Photos는 기기에서 AI 이미지를 생성하더라도 프롬프트를 Microsoft 서버로 보내며, 서버가 발급한 GUID를 결과 이미지 픽셀에 삽입 함 Paint는 16바…"
     },
     {
       "source": "GeekNews",
-      "title": "태블릿 소유권을 되찾는 데 266달러와 AI 모델 4개를 썼고, GLM-5.3이 하루 만에 끝냈다",
-      "url": "https://news.hada.io/topic?id=32809",
-      "date": "2026-08-24",
-      "summary": "하루 최대 두 번 완전히 꺼지는 Amazon Fire HD 10에서 보호된 패키지를 제거하려고 5개월간 AI 모델 4개 를 동원했으며, 태블릿 가격의 두 배가 넘는 266.15달러 를 지출함 Kim…"
+      "title": "샤오미 새 CPU, 단일 스레드는 Apple급·멀티스레드는 더 빠르다고 주장",
+      "url": "https://news.hada.io/topic?id=32851",
+      "date": "2026-08-25",
+      "summary": "샤오미는 새 Xring O3 가 단일 스레드에서 Apple 코어와 대체로 비슷하고 멀티스레드에서는 훨씬 빠르다고 주장함 총 44MB 캐시 를 탑재해 대다수 노트북 CPU보다 크며, 많은 Intel …"
     },
     {
       "source": "GeekNews",
-      "title": "Qwen 3.8 27B, 리버스 엔지니어링 작업을 30분 만에 완료",
-      "url": "https://news.hada.io/topic?id=32808",
-      "date": "2026-08-24",
-      "summary": "단일 머신에서 실행한 Qwen 3.8 27B 가 상용 앱의 라이선스 체계를 정적 분석하고, 약 30분 만에 작동하는 인증 우회 개념증명까지 만들어냄 앱을 실행하지 않은 채 수천 줄의 arm64 코드…"
+      "title": "SELF - SQLite 데이터베이스 자체를 실행 파일로 쓰는 파일 포맷",
+      "url": "https://news.hada.io/topic?id=32849",
+      "date": "2026-08-25",
+      "summary": "SELF(Structured Executable & Linkable Format) 는 실행 파일 자체를 SQLite로 만들고, chmod +x 권한을 부여해 일반 바이너리처럼 실행하는 프로토타입 E…"
     },
     {
       "source": "GeekNews",
-      "title": "Linus Torvalds가 AI로 Intel GPU 드라이버 버그를 추적한 과정",
-      "url": "https://news.hada.io/topic?id=32807",
+      "title": "유럽은 어떻게 메이커와 영세 사업자를 고사시키는가",
+      "url": "https://news.hada.io/topic?id=32848",
       "date": "2026-08-24",
-      "summary": "Intel Xe GPU 드라이버가 압축 하드웨어용 flat CCS 저장공간 일부를 VRAM으로 잘못 할당해 Battlemage G21 시스템에서 검은 화면과 gdm 재시작 루프를 일으킴 get_fl…"
+      "summary": "2026년 8월 12일부터 일반 적용되는 EU 포장·포장폐기물 규정(PPWR) 은 폐기물 감축을 목표로 하지만, 판매자가 포장 폐기물이 발생하는 회원국마다 등록·보고·납부해야 해 영세 사업자에게 과…"
     },
     {
       "source": "GeekNews",
-      "title": "끌어들이고, 붙잡고, 수집하고, 숨긴다: 중대 재판 첫 주에 공개된 Meta의 혐의 전략",
-      "url": "https://news.hada.io/topic?id=32805",
+      "title": "내가 17살이라면 LLM을 처음부터 만드는 법을 배우겠다",
+      "url": "https://news.hada.io/topic?id=32846",
       "date": "2026-08-24",
-      "summary": "California를 비롯한 미국 29개 주 는 Meta가 아동을 중독성 있게 설계된 서비스에 붙잡아 두고 데이터를 수집하며 피해를 숨겼다는 혐의로 소송을 제기함 핵심 쟁점은 부모 동의 없이 13세…"
+      "summary": "Paul Graham은 지금 17살이라면 LLM을 처음부터 만드는 법을 배우고 , 접근 가능한 하드웨어로 가능한 한 강력한 모델을 직접 학습해볼 것이라고 말함 반대로 당장 스타트업을 시작하지는 않을…"
     },
     {
       "source": "GeekNews",
-      "title": "성숙 과정에서 얻은 세 가지 중요한 깨달음",
-      "url": "https://news.hada.io/topic?id=32804",
-      "date": "2026-08-23",
-      "summary": "아버지의 죽음과 자신보다 젊은 동료가 많은 회사로의 이직을 계기로, 20대 이후 세계관을 바꾼 세 가지 깨달음 을 돌아봄 신념은 인정과 물질적 욕구 같은 인센티브 구조 에 영향을 받으므로, 스스로 …"
+      "title": "다른 포럼에 Reddit의 최고 기능 복제하기",
+      "url": "https://news.hada.io/topic?id=32845",
+      "date": "2026-08-24",
+      "summary": "Reddit의 친구 표시 는 승인이나 알림 없이 특정 사용자를 지정하고, 이후 게시물과 댓글에서 이름을 강조해 온라인 공간을 커뮤니티처럼 느끼게 함 rolodex 는 TOML 파일의 사용자명을 읽어…"
     }
   ]
 }
