@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-26",
+  "updated_at": "2026-08-27",
   "items": [
     {
       "source": "GeekNews",
-      "title": "내 친구 Aaron",
-      "url": "https://news.hada.io/topic?id=32887",
-      "date": "2026-08-26",
-      "summary": "열한 살 때 만난 Aaron 은 뛰어난 재능과 강한 중독 성향을 보였지만 학업과 진로에 정착하지 못했고, 예측 시장에서 상속금까지 잃은 뒤 직접 거래소를 만들기 시작함 프로그래밍을 익힌 뒤 해커톤에…"
+      "title": "Corsair - AI 에이전트의 외부 서비스 연결과 권한을 관리하는 통합 레이어",
+      "url": "https://news.hada.io/topic?id=32927",
+      "date": "2026-08-27",
+      "summary": "AI 에이전트가 Gmail/Slack/GitHub/Notion/Stripe 같은 외부 서비스를 호출할 때 필요한 도구, 인증 정보, 실행 권한 을 한곳에서 관리하는 TypeScript 라이브러리 C…"
     },
     {
       "source": "GeekNews",
-      "title": "Nitter, X Corp.의 영구 중단 요구 서한을 받고 공식 서비스·개발 중단",
-      "url": "https://news.hada.io/topic?id=32886",
-      "date": "2026-08-26",
-      "summary": "X Corp.가 2026년 8월 24일 Nitter와 공개 인스턴스들에 서비스 및 프로젝트 저장소의 영구 중단을 요구하는 cease-and-desist 서한 을 보냄 Nitter 공식 인스턴스인 n…"
+      "title": "Git을 어떤 규모에서도 확장하는 법 - Cursor의 새 Git 저장 시스템 Continuity",
+      "url": "https://news.hada.io/topic?id=32926",
+      "date": "2026-08-27",
+      "summary": "Git은 로컬에서는 단순하지만 서버에서 대규모로 호스팅하면 packfile의 랜덤 접근 패턴, 강한 일관성 요구, 복제 비용 때문에 확장성과 운영 복잡도가 크게 올라감 GitHub의 Spokes는 …"
     },
     {
       "source": "GeekNews",
-      "title": "공중화장실은 모두 어디로 사라졌을까?",
-      "url": "https://news.hada.io/topic?id=32885",
-      "date": "2026-08-26",
-      "summary": "19세기 중반 파리는 콜레라 유행을 계기로 인체 배설물을 공중보건 위험 으로 인식했고, 1850년 노상 방뇨를 금지하면서 남성용 공중 소변기 pissoir 를 설치함 이전의 empeche pipi …"
+      "title": "Show GN: html2design - 웹페이지를 편집 가능한 Figma 노드로 변환하는 크롬 확장",
+      "url": "https://news.hada.io/topic?id=32925",
+      "date": "2026-08-27",
+      "summary": "스크린샷을 붙이는 방식이 아니라 Chrome DevTools Protocol의 DOMSnapshot으로 DOM, 계산된 스타일, 레이아웃을 읽어 Figma 노드로 재구성한다 flex/grid는 Au…"
     },
     {
       "source": "GeekNews",
-      "title": "Apple, M6·M5 Pro를 탑재한 새로운 Mac mini 공개",
-      "url": "https://news.hada.io/topic?id=32884",
-      "date": "2026-08-26",
-      "summary": "새 Mac mini는 초소형 폼팩터에서 AI/그래픽/저장 장치/연결 성능을 크게 높여 일반 데스크탑부터 상시 구동형 에이전틱 시스템과 프로 워크로드까지 지원함 M6 모델은 12코어 CPU/12코어 …"
+      "title": "모든 악의 근원의 근원",
+      "url": "https://news.hada.io/topic?id=32924",
+      "date": "2026-08-27",
+      "summary": "“premature optimization is the root of all evil”은 Donald Knuth의 1974년 논문 전체를 대표하는 원칙이 아니라, 구조적 프로그래밍과 goto 를 다…"
     },
     {
       "source": "GeekNews",
-      "title": "컨트리 음악의 전설 Dolly Parton, 80세로 별세",
-      "url": "https://news.hada.io/topic?id=32883",
-      "date": "2026-08-26",
-      "summary": "컨트리 음악을 대표한 싱어송라이터이자 배우·사업가·자선가인 Dolly Parton 이 80세로 별세했으며, 조카 Brian Seaver 가 사망 소식을 알림 하루 만에 쓴 Jolene 과 I Wil…"
+      "title": "쿼리 가능한 실행 파일",
+      "url": "https://news.hada.io/topic?id=32922",
+      "date": "2026-08-27",
+      "summary": "SELF 는 프로그램을 SQLite 데이터베이스로 구성해 코드뿐 아니라 웹사이트, 라우트, 방문 기록, 애플리케이션 상태까지 하나의 파일 에 저장함 Linux의 binfmt_misc 가 전용 인터프…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI GPT-5.6 Sol 가격 인하, 최소 2026년 11월 21일까지",
-      "url": "https://news.hada.io/topic?id=32882",
-      "date": "2026-08-26",
-      "summary": "최소 2026년 11월 21일까지 적용되는 GPT-5.6 Sol 프로모션 가격 은 Standard 단기 컨텍스트 기준 100만 토큰당 입력 $4·출력 $20임 플래그십 모델 요금은 Standard·…"
+      "title": "계속되는 Bambu Lab의 3D 프린터 AGPL 위반",
+      "url": "https://news.hada.io/topic?id=32921",
+      "date": "2026-08-27",
+      "summary": "Bambu Lab은 AGPLv3 기반 PrusaSlicer를 수정한 Bambu Studio 를 배포하면서 완전한 대응 소스를 제공하지 않았고, Software Freedom Conservancy(S…"
     },
     {
       "source": "GeekNews",
-      "title": "IPFS 유지보수 조직 Shipyard, 운영 종료 수순",
-      "url": "https://news.hada.io/topic?id=32881",
-      "date": "2026-08-26",
-      "summary": "Protocol Labs가 자금 지원을 갱신하지 않으면서 Shipyard의 IPFS 엔지니어링·유지보수·인프라 운영 이 2026년 9월 30일 종료됨 Kubo·Helia·Boxo·Rainbow 등 …"
+      "title": "Tailcat - Tailscale 계정 없이 두 머신을 연결하는 netcat",
+      "url": "https://news.hada.io/topic?id=32920",
+      "date": "2026-08-27",
+      "summary": "Tailscale의 오픈소스 데이터 평면 을 이용해, Tailscale 계정이나 제어 서버 없이 두 머신을 연결하는 netcat 형태의 CLI·Go 라이브러리 서버가 출력한 짧은 연결 토큰을 상대에…"
     },
     {
       "source": "GeekNews",
-      "title": "Apple, M5 Max·M5 Ultra를 탑재한 새로운 Mac Studio 공개",
-      "url": "https://news.hada.io/topic?id=32880",
-      "date": "2026-08-26",
-      "summary": "새 Mac Studio는 최대 4.3배 빨라진 AI 성능 , 최대 512GB 통합 메모리, Thunderbolt 5와 Wi-Fi 7을 지원하면서 로컬 AI와 고사양 프로 워크로드에 초점을 맞춤 M5…"
+      "title": "Nebula Sans",
+      "url": "https://news.hada.io/topic?id=32919",
+      "date": "2026-08-27",
+      "summary": "Nebula Sans 는 독립 크리에이터 스트리밍 서비스 Nebula가 디지털·인쇄 환경의 가독성을 높이기 위해 만든 현대적인 휴머니스트 산세리프 브랜드 서체임 Paul D. Hunt가 Adobe …"
     }
   ]
 }
