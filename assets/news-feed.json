@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-27",
+  "updated_at": "2026-08-28",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Corsair - AI 에이전트의 외부 서비스 연결과 권한을 관리하는 통합 레이어",
-      "url": "https://news.hada.io/topic?id=32927",
-      "date": "2026-08-27",
-      "summary": "AI 에이전트가 Gmail/Slack/GitHub/Notion/Stripe 같은 외부 서비스를 호출할 때 필요한 도구, 인증 정보, 실행 권한 을 한곳에서 관리하는 TypeScript 라이브러리 C…"
+      "title": "GitHub PR에 급증한 ‘Claude 같은’ 문체 - 46만 건의 어휘 변화 분석",
+      "url": "https://news.hada.io/topic?id=32970",
+      "date": "2026-08-28",
+      "summary": "GitHub 풀리퀘스트 46만 건을 어휘만으로 분류했더니, 2025년 초 0.7%에 불과했던 새로운 문체 집단이 2026년 중반 약 39%까지 증가 함 이 집단에는 load-bearing , pla…"
     },
     {
       "source": "GeekNews",
-      "title": "Git을 어떤 규모에서도 확장하는 법 - Cursor의 새 Git 저장 시스템 Continuity",
-      "url": "https://news.hada.io/topic?id=32926",
-      "date": "2026-08-27",
-      "summary": "Git은 로컬에서는 단순하지만 서버에서 대규모로 호스팅하면 packfile의 랜덤 접근 패턴, 강한 일관성 요구, 복제 비용 때문에 확장성과 운영 복잡도가 크게 올라감 GitHub의 Spokes는 …"
+      "title": "Google Antigravity Teamwork - 여러 AI 에이전트가 장기 연구·개발을 함께 수행하는 기능",
+      "url": "https://news.hada.io/topic?id=32969",
+      "date": "2026-08-28",
+      "summary": "여러 AI 에이전트가 수시간에서 수일 동안 해법을 제안하고 서로 비판·검증·개선하며 장기 연구와 엔지니어링 문제를 해결 하는 Antigravity의 다중 에이전트 기능 과제에 맞춰 코딩·증명·자체 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: html2design - 웹페이지를 편집 가능한 Figma 노드로 변환하는 크롬 확장",
-      "url": "https://news.hada.io/topic?id=32925",
-      "date": "2026-08-27",
-      "summary": "스크린샷을 붙이는 방식이 아니라 Chrome DevTools Protocol의 DOMSnapshot으로 DOM, 계산된 스타일, 레이아웃을 읽어 Figma 노드로 재구성한다 flex/grid는 Au…"
+      "title": "Route 53 Files 출시",
+      "url": "https://news.hada.io/topic?id=32968",
+      "date": "2026-08-28",
+      "summary": "Route 53 Files 는 Route 53 공개·비공개 호스팅 영역을 NFS 파일 시스템으로 마운트해, AWS 컴퓨팅 자원에서 표준 UNIX 도구로 DNS 레코드를 편집할 수 있게 하는 비공식 …"
     },
     {
       "source": "GeekNews",
-      "title": "모든 악의 근원의 근원",
-      "url": "https://news.hada.io/topic?id=32924",
-      "date": "2026-08-27",
-      "summary": "“premature optimization is the root of all evil”은 Donald Knuth의 1974년 논문 전체를 대표하는 원칙이 아니라, 구조적 프로그래밍과 goto 를 다…"
+      "title": "Gemini 3.5 Transcribe: 실시간·녹음 음성을 정밀하게 텍스트로 변환",
+      "url": "https://news.hada.io/topic?id=32967",
+      "date": "2026-08-28",
+      "summary": "Google이 배경 소음과 전문 용어, 말더듬, 자기 수정까지 처리해 정돈된 텍스트로 바꾸는 고정밀 음성-텍스트 모델 을 공개함 gemini-3.5-transcribe-live 는 Live API에…"
     },
     {
       "source": "GeekNews",
-      "title": "쿼리 가능한 실행 파일",
-      "url": "https://news.hada.io/topic?id=32922",
-      "date": "2026-08-27",
-      "summary": "SELF 는 프로그램을 SQLite 데이터베이스로 구성해 코드뿐 아니라 웹사이트, 라우트, 방문 기록, 애플리케이션 상태까지 하나의 파일 에 저장함 Linux의 binfmt_misc 가 전용 인터프…"
+      "title": "Show GN: 출퇴근길AI – 출퇴근길에 한 장씩 익히는 AI 기초 학습",
+      "url": "https://news.hada.io/topic?id=32966",
+      "date": "2026-08-28",
+      "summary": "토스 미니앱으로 출퇴근길에 부담 없이 AI 기초를 공부할 수 있는 ‘퇴근이’를 만들었습니다. AI를 공부해 보려고 해도 긴 강의나 교재는 시작하기 부담스러운 경우가 많았습니다. 그래서 출퇴근길처럼 …"
     },
     {
       "source": "GeekNews",
-      "title": "계속되는 Bambu Lab의 3D 프린터 AGPL 위반",
-      "url": "https://news.hada.io/topic?id=32921",
-      "date": "2026-08-27",
-      "summary": "Bambu Lab은 AGPLv3 기반 PrusaSlicer를 수정한 Bambu Studio 를 배포하면서 완전한 대응 소스를 제공하지 않았고, Software Freedom Conservancy(S…"
+      "title": "superfile - 멀티 패널을 지원하는 터미널 파일 관리자",
+      "url": "https://news.hada.io/topic?id=32965",
+      "date": "2026-08-28",
+      "summary": "터미널 안에서 파일을 화려한 UI로 탐색하고 복사/이동/삭제할 수 있는 현대적인 TUI 파일 관리자 사이드바, 파일 목록, 작업 진행 상황, 파일 정보, 클립보드와 명령 실행창을 한 화면에 표시 파…"
     },
     {
       "source": "GeekNews",
-      "title": "Tailcat - Tailscale 계정 없이 두 머신을 연결하는 netcat",
-      "url": "https://news.hada.io/topic?id=32920",
-      "date": "2026-08-27",
-      "summary": "Tailscale의 오픈소스 데이터 평면 을 이용해, Tailscale 계정이나 제어 서버 없이 두 머신을 연결하는 netcat 형태의 CLI·Go 라이브러리 서버가 출력한 짧은 연결 토큰을 상대에…"
+      "title": "Gemini Omni 1.1 Flash, 생성형 영상 제어와 4K 출력 강화",
+      "url": "https://news.hada.io/topic?id=32964",
+      "date": "2026-08-28",
+      "summary": "Google이 장면 연장, 키프레임 전환, 영상 참조, 고해상도 출력을 지원하는 프로덕션용 생성형 영상 모델 Gemini Omni 1.1 Flash를 Gemini API로 공개함 최대 10초의 이전…"
     },
     {
       "source": "GeekNews",
-      "title": "Nebula Sans",
-      "url": "https://news.hada.io/topic?id=32919",
-      "date": "2026-08-27",
-      "summary": "Nebula Sans 는 독립 크리에이터 스트리밍 서비스 Nebula가 디지털·인쇄 환경의 가독성을 높이기 위해 만든 현대적인 휴머니스트 산세리프 브랜드 서체임 Paul D. Hunt가 Adobe …"
+      "title": "소형 모델의 시대가 도래함",
+      "url": "https://news.hada.io/topic?id=32963",
+      "date": "2026-08-28",
+      "summary": "gpt-5.6-luna 는 약 100tps로 코드베이스·이메일·지식 기반을 처리하며, 복잡한 조사와 수천 개 이메일 검색도 수십 센트 수준에 실행할 수 있음 개인화 일일 뉴스 사이트의 생성 비용이 …"
     }
   ]
 }
