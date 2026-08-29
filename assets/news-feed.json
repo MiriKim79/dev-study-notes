@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-29",
   "items": [
     {
       "source": "GeekNews",
-      "title": "GitHub PR에 급증한 ‘Claude 같은’ 문체 - 46만 건의 어휘 변화 분석",
-      "url": "https://news.hada.io/topic?id=32970",
-      "date": "2026-08-28",
-      "summary": "GitHub 풀리퀘스트 46만 건을 어휘만으로 분류했더니, 2025년 초 0.7%에 불과했던 새로운 문체 집단이 2026년 중반 약 39%까지 증가 함 이 집단에는 load-bearing , pla…"
+      "title": "syncular - 로컬 SQLite를 서버와 동기화하는 오프라인 우선 엔진",
+      "url": "https://news.hada.io/topic?id=33000",
+      "date": "2026-08-29",
+      "summary": "각 클라이언트에 실제 SQLite DB 를 두고, 서버가 관리하는 순서 보장 커밋 로그와 동기화하는 서버 권위형 데이터 계층 읽기/조인/집계/인덱스 조회를 네트워크 요청 없이 로컬 SQL로 처리하므…"
     },
     {
       "source": "GeekNews",
-      "title": "Google Antigravity Teamwork - 여러 AI 에이전트가 장기 연구·개발을 함께 수행하는 기능",
-      "url": "https://news.hada.io/topic?id=32969",
-      "date": "2026-08-28",
-      "summary": "여러 AI 에이전트가 수시간에서 수일 동안 해법을 제안하고 서로 비판·검증·개선하며 장기 연구와 엔지니어링 문제를 해결 하는 Antigravity의 다중 에이전트 기능 과제에 맞춰 코딩·증명·자체 …"
+      "title": "Yap: 특정 유형의 AI 슬롭",
+      "url": "https://news.hada.io/topic?id=32999",
+      "date": "2026-08-29",
+      "summary": "LLM 생성 코드에는 실제 정보를 전달하지 않은 채 장황하기만 한 주석이 많으며, 이를 Yap 으로 명명하면 코드 리뷰에서 반복되는 문제를 빠르게 지적할 수 있음 주석은 맥락·용어·위치를 세심하게 …"
     },
     {
       "source": "GeekNews",
-      "title": "Route 53 Files 출시",
-      "url": "https://news.hada.io/topic?id=32968",
-      "date": "2026-08-28",
-      "summary": "Route 53 Files 는 Route 53 공개·비공개 호스팅 영역을 NFS 파일 시스템으로 마운트해, AWS 컴퓨팅 자원에서 표준 UNIX 도구로 DNS 레코드를 편집할 수 있게 하는 비공식 …"
+      "title": "EasyEffects를 모든 Linux 배포판에 포함해 노트북 스피커 음질을 개선해야 함",
+      "url": "https://news.hada.io/topic?id=32998",
+      "date": "2026-08-29",
+      "summary": "작은 노트북 스피커의 물리적 한계는 피할 수 없지만, Linux의 오디오 처리 기능과 EasyEffects 를 활용하면 얇고 거친 소리를 크게 개선할 수 있음 EasyEffects는 PipeWire…"
     },
     {
       "source": "GeekNews",
-      "title": "Gemini 3.5 Transcribe: 실시간·녹음 음성을 정밀하게 텍스트로 변환",
-      "url": "https://news.hada.io/topic?id=32967",
-      "date": "2026-08-28",
-      "summary": "Google이 배경 소음과 전문 용어, 말더듬, 자기 수정까지 처리해 정돈된 텍스트로 바꾸는 고정밀 음성-텍스트 모델 을 공개함 gemini-3.5-transcribe-live 는 Live API에…"
+      "title": "OpenOffice가 화요일에는 인쇄하지 못한 버그(2009)",
+      "url": "https://news.hada.io/topic?id=32997",
+      "date": "2026-08-29",
+      "summary": "Ubuntu의 OpenOffice에서 발생한 인쇄 실패 는 특정 요일에만 재현되는 이례적인 버그였음 PostScript에 기록된 %%CreationDate: (Tue...) 를 *NIX 유틸리티 f…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: 출퇴근길AI – 출퇴근길에 한 장씩 익히는 AI 기초 학습",
-      "url": "https://news.hada.io/topic?id=32966",
-      "date": "2026-08-28",
-      "summary": "토스 미니앱으로 출퇴근길에 부담 없이 AI 기초를 공부할 수 있는 ‘퇴근이’를 만들었습니다. AI를 공부해 보려고 해도 긴 강의나 교재는 시작하기 부담스러운 경우가 많았습니다. 그래서 출퇴근길처럼 …"
+      "title": "시니어 오픈소스 메인테이너 채용: 보수 0달러의 영구 자원봉사",
+      "url": "https://news.hada.io/topic?id=32996",
+      "date": "2026-08-29",
+      "summary": "수백만 개발자가 매일 의존하는 라이브러리의 기술·운영·보안·커뮤니티 업무를 전담할 영구 자원봉사자 를 구하며, 보수는 $0 이고 즉시 업무를 시작함 로드맵과 아키텍처부터 릴리스, CI, 패키지 배포…"
     },
     {
       "source": "GeekNews",
-      "title": "superfile - 멀티 패널을 지원하는 터미널 파일 관리자",
-      "url": "https://news.hada.io/topic?id=32965",
-      "date": "2026-08-28",
-      "summary": "터미널 안에서 파일을 화려한 UI로 탐색하고 복사/이동/삭제할 수 있는 현대적인 TUI 파일 관리자 사이드바, 파일 목록, 작업 진행 상황, 파일 정보, 클립보드와 명령 실행창을 한 화면에 표시 파…"
+      "title": "Nitter와 XCancel, 중단 요구서로 폐쇄",
+      "url": "https://news.hada.io/topic?id=32995",
+      "date": "2026-08-29",
+      "summary": "X Corp.는 2026년 8월 24일 Nitter 인스턴스와 프로젝트 저장소의 영구 삭제를 요구하는 중단 요구서(cease-and-desist letter)를 발송함 Nitter 는 JavaScr…"
     },
     {
       "source": "GeekNews",
-      "title": "Gemini Omni 1.1 Flash, 생성형 영상 제어와 4K 출력 강화",
-      "url": "https://news.hada.io/topic?id=32964",
-      "date": "2026-08-28",
-      "summary": "Google이 장면 연장, 키프레임 전환, 영상 참조, 고해상도 출력을 지원하는 프로덕션용 생성형 영상 모델 Gemini Omni 1.1 Flash를 Gemini API로 공개함 최대 10초의 이전…"
+      "title": "Orbify - 《인셉션》처럼 앞쪽 도로를 접어 보여주는 곡면 내비게이션 데모",
+      "url": "https://news.hada.io/topic?id=32994",
+      "date": "2026-08-29",
+      "summary": "영화 《인셉션》에서 도시가 위로 접혀 올라가는 장면처럼, 차량 앞쪽의 지형과 도로를 곡면으로 휘어 보여주는 내비게이션 콘셉트 자동차 내비게이션이 운전 시점·하향식 지도·거리뷰를 오갈 때 공간적 맥락…"
     },
     {
       "source": "GeekNews",
-      "title": "소형 모델의 시대가 도래함",
-      "url": "https://news.hada.io/topic?id=32963",
-      "date": "2026-08-28",
-      "summary": "gpt-5.6-luna 는 약 100tps로 코드베이스·이메일·지식 기반을 처리하며, 복잡한 조사와 수천 개 이메일 검색도 수십 센트 수준에 실행할 수 있음 개인화 일일 뉴스 사이트의 생성 비용이 …"
+      "title": "htmx 4.0 출시 - HTML 스트리밍과 화면 갱신 강화, 암묵적 동작은 명시적으로",
+      "url": "https://news.hada.io/topic?id=32993",
+      "date": "2026-08-29",
+      "summary": "htmx 4.0 이 출시돼 기존 사용 방식은 대체로 유지하면서, HTML 스트리밍과 화면 갱신 기능을 강화함 내부 통신을 XMLHttpRequest 에서 fetch() 로 전환 해 확장 구조를 재정…"
     }
   ]
 }
