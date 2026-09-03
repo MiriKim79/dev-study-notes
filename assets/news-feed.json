@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-03",
+  "updated_at": "2026-09-04",
   "items": [
     {
       "source": "GeekNews",
-      "title": "AI 시대에 가장 안전한 직업은 글쓰기일 수 있다",
-      "url": "https://news.hada.io/topic?id=33170",
-      "date": "2026-09-03",
-      "summary": "LLM은 코드 생성에서 빠르게 발전했지만 산문에서는 여전히 상투적인 리듬과 표현을 반복하며, 좋은 글을 쓰는 사람은 당분간 쉽게 대체되지 않을 것 글쓰기에는 명확한 명세와 종료 조건, 객관적인 정답…"
+      "title": "ARC-AGI-3에서 인간의 행동 효율성을 넘어선 OpenAI GPT-6 Astra",
+      "url": "https://news.hada.io/topic?id=33202",
+      "date": "2026-09-04",
+      "summary": "명시적 지시 없이 환경의 목표와 규칙을 추론하는 ARC-AGI-3 Semi-Private 에서 Standard 하네스는 62.7%, Provider Adapter는 99.9%를 기록함 Standar…"
     },
     {
       "source": "GeekNews",
-      "title": "Perplexity, 대량생산된 구매 가이드를 소프트웨어 추천의 근거로 제시",
-      "url": "https://news.hada.io/topic?id=33169",
-      "date": "2026-09-03",
-      "summary": "Perplexity에 380개 소프트웨어 분야를 질의한 결과, 7,534건의 인용 중 59.8%가 Tranco 10만 위 밖 의 출처로 연결돼 추천의 근거가 어디에서 오는지 조사함 공통 운영 정황을…"
+      "title": "Qwen 3.8 27B, Cerebras에서 초당 1,500토큰으로 제공",
+      "url": "https://news.hada.io/topic?id=33201",
+      "date": "2026-09-04",
+      "summary": "Cerebras가 공개 API에 Qwen 3.8 27B 를 추가해, 270억 매개변수 모델의 출력을 약 초당 1,500토큰 으로 생성할 수 있게 함 에이전트 코딩, 도구 사용, 리서치와 장시간 워크…"
     },
     {
       "source": "GeekNews",
-      "title": "Commodore 64, 1982년 9월 1일 출시",
-      "url": "https://news.hada.io/topic?id=33168",
-      "date": "2026-09-03",
-      "summary": "64KB 메모리 를 탑재하고 600달러 미만에 판매된 최초의 64KB 컴퓨터로, 출시 6개월 만에 50만 대가 팔림 정확한 출하 시점에는 이견이 있지만, 1982년 8월 유통사에 초도 물량을 보내 …"
+      "title": "Any Human Ever - 인류 역사상 살았던 1,000억 명 중 한 사람을 무작위로 만나기",
+      "url": "https://news.hada.io/topic?id=33200",
+      "date": "2026-09-04",
+      "summary": "출생 연도, 지역, 생애와 이야기를 단계별로 따라가며 , 역사 기록에서 사라진 평범한 사람의 삶을 통계로 그려보는 프로젝트 When → Where → Life → Story 순서로 당시의 인구와 정…"
     },
     {
       "source": "GeekNews",
-      "title": "Google, 광고 기술 독점 판결에도 사업 분할은 피하다",
-      "url": "https://news.hada.io/topic?id=33167",
-      "date": "2026-09-03",
-      "summary": "미국 연방법원이 Google의 광고 기술 독점 을 시정하도록 사업 관행 변경을 명령했지만, 법무부가 요구한 광고 거래소 매각과 사업 분할은 기각 함 법원은 Google이 퍼블리셔용 광고 도구와 퍼블…"
+      "title": "OpenAI, GPT-6 Astra 공개",
+      "url": "https://news.hada.io/topic?id=33199",
+      "date": "2026-09-04",
+      "summary": "사전학습, 강화학습과 정렬 연구를 결합해 코딩, 문서 제작, 과학 연구와 보안 작업까지 폭넓은 전문 업무를 수행하는 차세대 모델 컴퓨터와 브라우저를 직접 조작하는 작업의 속도와 정확도를 높이고, 사…"
     },
     {
       "source": "GeekNews",
-      "title": "Muse Spark 1.3 공개, 긴 에이전트 작업과 코딩 효율 개선",
-      "url": "https://news.hada.io/topic?id=33166",
-      "date": "2026-09-03",
-      "summary": "Meta가 장시간 이어지는 에이전트 워크플로와 코딩 작업 에 맞춰 Muse Spark 1.3을 개선하고, Muse Code와 Meta Model API에 공개함 하나의 긴 대화에서 여러 작업과 이전…"
+      "title": "정적 할당과 일정한 작업량",
+      "url": "https://news.hada.io/topic?id=33198",
+      "date": "2026-09-04",
+      "summary": "객체 풀은 use-after-free라는 논리 오류 를 막지 못하지만, 같은 타입끼리 메모리를 재사용하면 물리적 타입 혼동과 임의 코드 실행 가능성을 대부분 줄일 수 있음 타입 정보를 받는 할당자는…"
     },
     {
       "source": "GeekNews",
-      "title": "Mistral, Enterprise 제외 사용자 입출력을 기본 학습에 활용",
-      "url": "https://news.hada.io/topic?id=33165",
-      "date": "2026-09-03",
-      "summary": "Mistral은 대화·문서 등 사용자의 입출력 데이터 를 모델 학습에 포함할 수 있지만, 사용자는 언제든 참여를 거부할 수 있음 일반 Vibe 사용자는 기본 학습 대상 이며, Vibe Enterpr…"
+      "title": ".name 3단계 도메인 종료, 기존 2만 2천 개도 삭제 예정",
+      "url": "https://news.hada.io/topic?id=33197",
+      "date": "2026-09-04",
+      "summary": "Verisign이 이용 감소와 등록기관 지원 부족을 이유로 .name 3단계 도메인 등록 서비스를 종료 하고, 신규 등록뿐 아니라 기존 약 2만 2천 개도 삭제하기로 함 .name 의 firstna…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: Ratatosk - CNCF 주요 프로젝트 릴리스 노트에서 보안 수정, 브레이킹 체인지와 같은 중요한 정보를 골...",
-      "url": "https://news.hada.io/topic?id=33164",
-      "date": "2026-09-03",
-      "summary": "안녕하세요. 처음 글 써 봅니다. 쿠버네티스 를 실제로 운영해보면 여러 모듈들의 패치 속도가 너무 빠르다고 느낍니다. 게다가 쓸데없이 버전 업그레이드로 잘 돌아가는 시스템에 장애라도 생기면... 그…"
+      "title": "Polars 2.0 프리릴리스",
+      "url": "https://news.hada.io/topic?id=33196",
+      "date": "2026-09-04",
+      "summary": "첫 릴리스 후보 Polars 2.0rc1 은 대규모 기능 추가보다 기존 설계 제약을 없애고 기본 동작과 API를 개선하는 데 초점을 맞춤 모든 LazyFrame 쿼리가 기본적으로 스트리밍 엔진 을 …"
     },
     {
       "source": "GeekNews",
-      "title": "Google, 코딩과 에이전트를 강화한 Gemini 3.8 Flash 및 보안 특화 Flash Cyber 공개",
-      "url": "https://news.hada.io/topic?id=33161",
-      "date": "2026-09-03",
-      "summary": "Google이 6주 사이 세 번째 Flash 모델을 공개했으며, Gemini 3.8 Flash는 장기 코딩과 에이전트 작업 , Flash Cyber는 취약점 탐지와 자동 패치 에 초점을 맞춤 3.8…"
+      "title": "ChatGPT 페이지에서 404 오류 발생",
+      "url": "https://news.hada.io/topic?id=33195",
+      "date": "2026-09-04",
+      "summary": "404 오류 가 발생한 ChatGPT 페이지는 AI 대화 입력창과 사진·파일·웹 검색 기능을 제공함 로그인하면 저장된 대화를 검색해 이전 작업을 이어가고 맞춤형 답변 을 받을 수 있음 Deep re…"
     }
   ]
 }
