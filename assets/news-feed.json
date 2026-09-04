@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-04",
+  "updated_at": "2026-09-05",
   "items": [
     {
       "source": "GeekNews",
-      "title": "ARC-AGI-3에서 인간의 행동 효율성을 넘어선 OpenAI GPT-6 Astra",
-      "url": "https://news.hada.io/topic?id=33202",
-      "date": "2026-09-04",
-      "summary": "명시적 지시 없이 환경의 목표와 규칙을 추론하는 ARC-AGI-3 Semi-Private 에서 Standard 하네스는 62.7%, Provider Adapter는 99.9%를 기록함 Standar…"
+      "title": "IBM Bob",
+      "url": "https://news.hada.io/topic?id=33242",
+      "date": "2026-09-05",
+      "summary": "IBM Bob 은 개발자의 코드베이스 안에서 작업하며 고품질 소프트웨어를 더 빠르게 구축하도록 돕는 AI 개발 파트너임 독립된 컨텍스트·도구·기술을 갖춘 에이전트와 하위 에이전트 가 장기 작업을 병…"
     },
     {
       "source": "GeekNews",
-      "title": "Qwen 3.8 27B, Cerebras에서 초당 1,500토큰으로 제공",
-      "url": "https://news.hada.io/topic?id=33201",
-      "date": "2026-09-04",
-      "summary": "Cerebras가 공개 API에 Qwen 3.8 27B 를 추가해, 270억 매개변수 모델의 출력을 약 초당 1,500토큰 으로 생성할 수 있게 함 에이전트 코딩, 도구 사용, 리서치와 장시간 워크…"
+      "title": "성인 영화 제작사, 다작 ‘John Doe’ 토렌트 이용자를 Meta 임원으로 지목",
+      "url": "https://news.hada.io/topic?id=33241",
+      "date": "2026-09-05",
+      "summary": "Strike 3 Holdings는 익명 AT&T 가입자가 Meta Reality Labs 임원 이라며, 해당 저작권 사건을 최대 4억4,600만 달러 규모의 Meta 상대 소송과 연계해 달라고 요청…"
     },
     {
       "source": "GeekNews",
-      "title": "Any Human Ever - 인류 역사상 살았던 1,000억 명 중 한 사람을 무작위로 만나기",
-      "url": "https://news.hada.io/topic?id=33200",
-      "date": "2026-09-04",
-      "summary": "출생 연도, 지역, 생애와 이야기를 단계별로 따라가며 , 역사 기록에서 사라진 평범한 사람의 삶을 통계로 그려보는 프로젝트 When → Where → Life → Story 순서로 당시의 인구와 정…"
+      "title": "페르마의 마지막 정리 형식화",
+      "url": "https://news.hada.io/topic?id=33240",
+      "date": "2026-09-05",
+      "summary": "Anthropic은 Claude가 11일간 대부분 자율적으로 형식화한 최초의 종단 간 컴퓨터 검증형 페르마의 마지막 정리 증명 을 공개함 새로운 증명을 발견한 것이 아니라, 기존 증명을 Lean으로…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI, GPT-6 Astra 공개",
-      "url": "https://news.hada.io/topic?id=33199",
-      "date": "2026-09-04",
-      "summary": "사전학습, 강화학습과 정렬 연구를 결합해 코딩, 문서 제작, 과학 연구와 보안 작업까지 폭넓은 전문 업무를 수행하는 차세대 모델 컴퓨터와 브라우저를 직접 조작하는 작업의 속도와 정확도를 높이고, 사…"
+      "title": "Jane Street ASIC 리버스 엔지니어링 챌린지, 칩 배치도에서 회로를 복원해 풀기",
+      "url": "https://news.hada.io/topic?id=33239",
+      "date": "2026-09-05",
+      "summary": "GDS 파일로 주어진 ASIC을 시뮬레이션 가능한 회로로 변환하고, 120비트 입력에 숨겨진 정답 (* TWO STARS *) 를 찾아냄 gdstk 와 SKY130 문서를 이용해 도형, 레이어와 핀…"
     },
     {
       "source": "GeekNews",
-      "title": "정적 할당과 일정한 작업량",
-      "url": "https://news.hada.io/topic?id=33198",
-      "date": "2026-09-04",
-      "summary": "객체 풀은 use-after-free라는 논리 오류 를 막지 못하지만, 같은 타입끼리 메모리를 재사용하면 물리적 타입 혼동과 임의 코드 실행 가능성을 대부분 줄일 수 있음 타입 정보를 받는 할당자는…"
+      "title": "Show GN: 귀래당 앱 모음 - 설치도 로그인도 없이 브라우저에서 도는 작은 도구와 게임 84개",
+      "url": "https://news.hada.io/topic?id=33238",
+      "date": "2026-09-05",
+      "summary": "무엇인가 브라우저 안에서 바로 도는 도구와 게임을 모아 둔 곳입니다. QR 만들기, PDF 합치기와 나누기, 이미지 줄이기와 형식 바꾸기, 스도쿠와 오목 같은 하루 한 판 게임, 손없는날 달력, 비…"
     },
     {
       "source": "GeekNews",
-      "title": ".name 3단계 도메인 종료, 기존 2만 2천 개도 삭제 예정",
-      "url": "https://news.hada.io/topic?id=33197",
-      "date": "2026-09-04",
-      "summary": "Verisign이 이용 감소와 등록기관 지원 부족을 이유로 .name 3단계 도메인 등록 서비스를 종료 하고, 신규 등록뿐 아니라 기존 약 2만 2천 개도 삭제하기로 함 .name 의 firstna…"
+      "title": "Google AI Mode는 같은 제품을 기존 검색보다 21.6% 더 비싸게 보여줌",
+      "url": "https://news.hada.io/topic?id=33237",
+      "date": "2026-09-05",
+      "summary": "약 한달간 구글로 쇼핑 검색을 비교한 결과, 동일 제품의 대표 가격 에 대해 Google AI Mode가 기존 쇼핑 결과보다 평균 21.6% 높았음 전체 가격 표시 상품으로 범위를 넓히면 중앙값은 …"
     },
     {
       "source": "GeekNews",
-      "title": "Polars 2.0 프리릴리스",
-      "url": "https://news.hada.io/topic?id=33196",
-      "date": "2026-09-04",
-      "summary": "첫 릴리스 후보 Polars 2.0rc1 은 대규모 기능 추가보다 기존 설계 제약을 없애고 기본 동작과 API를 개선하는 데 초점을 맞춤 모든 LazyFrame 쿼리가 기본적으로 스트리밍 엔진 을 …"
+      "title": "단순한 프로그램이 꼭 작은 것은 아니다",
+      "url": "https://news.hada.io/topic?id=33236",
+      "date": "2026-09-05",
+      "summary": "프로그램의 단순함 은 코드나 도구의 크기가 아니라, 서로 다른 기능과 개념이 불필요하게 얽히지 않은 상태를 뜻함 Unix 파이프라인은 작은 도구를 조합하지만 sort | uniq --count 처럼…"
     },
     {
       "source": "GeekNews",
-      "title": "ChatGPT 페이지에서 404 오류 발생",
-      "url": "https://news.hada.io/topic?id=33195",
-      "date": "2026-09-04",
-      "summary": "404 오류 가 발생한 ChatGPT 페이지는 AI 대화 입력창과 사진·파일·웹 검색 기능을 제공함 로그인하면 저장된 대화를 검색해 이전 작업을 이어가고 맞춤형 답변 을 받을 수 있음 Deep re…"
+      "title": "Show GN: FlowSuite - 노코드 화면 자동화, AI 파일 정리 등 윈도우 생산성 도구 모음",
+      "url": "https://news.hada.io/topic?id=33235",
+      "date": "2026-09-05",
+      "summary": "업무를 하면서 매일 반복되는 단순 웹/시스템 로그인, 엑셀 취합, 지루한 클릭 노가다와 어지러운 다운로드 폴더 정리에 피로감을 느껴 주말마다 틈틈이 직접 만들어 쓰던 윈도우 생산성 유틸리티들을 모아…"
     }
   ]
 }
