@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-07",
+  "updated_at": "2026-09-08",
   "items": [
     {
       "source": "GeekNews",
-      "title": "둠스크롤링으로 스스로를 죽음으로 몰아가는 우리",
-      "url": "https://news.hada.io/topic?id=33295",
-      "date": "2026-09-07",
-      "summary": "학생의 독해력과 성인·아동의 여가 독서가 함께 줄어드는 가운데, James Marriott의 《The New Dark Ages》 는 문해력 쇠퇴가 문화와 정치, 민주주의에 미치는 영향을 추적함 변화…"
+      "title": "빌 게이츠의 MovieMaker 설치 시도(2003)",
+      "url": "https://news.hada.io/topic?id=33333",
+      "date": "2026-09-08",
+      "summary": "빌 게이츠 는 MovieMaker 다운로드와 Digital Plus 패키지 구매에 한 시간 넘게 매달렸지만 둘 다 이용하지 못했고, Windows 사용성과 프로그램 관리 조직의 대응을 강하게 비판함…"
     },
     {
       "source": "GeekNews",
-      "title": "Nitter와 XCancel, 법률 자문 후 서비스 재개",
-      "url": "https://news.hada.io/topic?id=33294",
-      "date": "2026-09-07",
-      "summary": "X Corp.가 Nitter 인스턴스와 프로젝트 저장소의 영구 폐쇄를 요구한 가운데, Nitter는 법률 자문을 거쳐 프로젝트를 계속 진행 하기로 함 Nitter는 개인정보 보호와 성능에 초점을 둔…"
+      "title": "2억 1,600만 대의 감시 TV — LG 스마트 TV의 문제 [영상]",
+      "url": "https://news.hada.io/topic?id=33332",
+      "date": "2026-09-08",
+      "summary": "Gamers Nexus와 보안 연구진이 LG TV에서 주변 기기 탐색·음성 전사 로그 저장 을 확인하고, 침해 후에는 몰래 녹음·촬영할 수 있음을 시연함 — 기본 데이터 수집과 공격자가 제어권을 확…"
     },
     {
       "source": "GeekNews",
-      "title": "AI로 도구를 만드는 것과 기업을 바꾸는 것은 다른 일이다",
-      "url": "https://news.hada.io/topic?id=33293",
-      "date": "2026-09-07",
-      "summary": "AI로 도구를 쉽게 만들거나 업무를 직접 처리할 수 있어도, 어떤 도구가 필요한지 발견하고 조직 전체가 쓰게 만드는 일 은 별개임 기업 소프트웨어는 표준화한 전용 시스템과 Excel·이메일을 활용한…"
+      "title": "BZip3 - BZip2의 더 낫고, 더 빠르고, 더 강력한 정신적 후속작",
+      "url": "https://news.hada.io/topic?id=33330",
+      "date": "2026-09-08",
+      "summary": "BZip3 는 BZip2의 정신적 후속 압축 도구로, 특히 텍스트와 코드 압축에 강점을 가지며 더 높은 압축률과 성능을 목표로 함 0차 문맥 혼합 엔트로피 코더 , 접미사 배열 기반 Burrows-…"
     },
     {
       "source": "GeekNews",
-      "title": "로봇 팔을 제어하는 GPT-6 Astra",
-      "url": "https://news.hada.io/topic?id=33292",
-      "date": "2026-09-07",
-      "summary": "Robocurve가 카메라 영상을 보고 로봇 팔을 움직이도록 한 실험에서, Astra는 블록을 집어 그릇에 넣는 작업을 20회 중 19회 성공 해 Claude Fable 5.1의 8회를 크게 앞섬 …"
+      "title": "1024바이트로 Python 인터프리터 만들기",
+      "url": "https://news.hada.io/topic?id=33329",
+      "date": "2026-09-08",
+      "summary": "매크로나 라이브러리 편법 없이 C 소스 1024바이트 에 Python 문법 일부를 실행하는 인터프리터를 담음 토큰화·AST·바이트코드 생성 대신 소스를 파싱하면서 즉시 실행 하며, 반복문과 함수 호…"
     },
     {
       "source": "GeekNews",
-      "title": "Artificial Analysis, AAII v4.2 발표 - 실제 업무 평가 강화, 비공개 테스트 확대",
-      "url": "https://news.hada.io/topic?id=33291",
-      "date": "2026-09-07",
-      "summary": "AI 모델의 종합 성능을 비교하는 Intelligence Index v4.2 를 공개하며, 복잡한 업무 수행과 장문 문서 분석을 평가에 추가함 수천 개의 자료를 활용하는 에이전트 지식 업무 와 여러…"
+      "title": "스위스 연방정부, 컴퓨터 3,000대에서 Microsoft를 대체한다",
+      "url": "https://news.hada.io/topic?id=33328",
+      "date": "2026-09-08",
+      "summary": "스위스 연방정부가 전체 인력의 약 7%인 3,000명 을 대상으로 Microsoft 365를 오픈소스 대안으로 전환하는 파일럿을 시작했으며, 2027년 말 완료를 목표로 함 직원 172명이 참여한 …"
     },
     {
       "source": "GeekNews",
-      "title": "UN, 지구 온난화 1.5°C 한계 초과 전망",
-      "url": "https://news.hada.io/topic?id=33290",
-      "date": "2026-09-07",
-      "summary": "UN 환경계획은 석탄·석유·가스 사용에 따른 온난화로 향후 몇 년 안에 산업화 이전 대비 1.5°C 한계를 넘을 것 으로 전망하며, 초과 폭을 억제한 뒤 기온을 다시 낮추는 대응을 권고함 1.5°C…"
+      "title": "브레인롯에서 벗어나기 위한 휴가",
+      "url": "https://news.hada.io/topic?id=33327",
+      "date": "2026-09-08",
+      "summary": "소프트웨어 엔지니어로서 업무에 익숙해지고 AI로 생산성도 높아졌지만 사고는 느리고 얕아졌다고 느껴, 2주간의 휴가 를 독서와 새로운 학습에 사용함 숏폼·게임·만화·TV 프로그램으로 지루할 틈이 없어…"
     },
     {
       "source": "GeekNews",
-      "title": "당신의 지적 바지 지퍼가 열려 있습니다 (2025)",
-      "url": "https://news.hada.io/topic?id=33289",
-      "date": "2026-09-07",
-      "summary": "LinkedIn에서 LLM에 게시물 작성을 맡기면 글쓴이 고유의 목소리가 사라지고, 독자가 내용의 진정성까지 의심하게 될 수 있음 이모지, 한 문장짜리 문단, 반복적인 대조 구문, 긴 대시 는 LL…"
+      "title": "Terence Tao: “AI만으로 수학 문제를 성급하게 푸는 것”의 위험",
+      "url": "https://news.hada.io/topic?id=33326",
+      "date": "2026-09-08",
+      "summary": "순수수학의 난제 는 정답뿐 아니라 해결 과정에서 새로운 통찰과 이론을 만드는 데 가치가 있으며, 과정을 공개하지 않는 AI 단독 해결은 이 역할을 훼손할 수 있음 Navier-Stokes 전역 정칙…"
     },
     {
       "source": "GeekNews",
-      "title": "NAS/백업에 어떤 파일시스템을 사용하고 있으며, 그 이유는 무엇인가요?",
-      "url": "https://news.hada.io/topic?id=33288",
+      "title": "GrapheneOS, 기본 앱과 보안 클립보드 전면 개편",
+      "url": "https://news.hada.io/topic?id=33325",
       "date": "2026-09-07",
-      "summary": "NAS와 백업에 어떤 파일시스템을 쓰고 왜 선택했는지 , 여러 디스크는 파일시스템 내장 RAID나 별도 도구로 어떻게 관리하는지 묻는 lobsters의 질문글 ZFS 는 오랜 운영 경험과 데이터 무…"
+      "summary": "기본 Messaging 앱 의 낡은 인터페이스를 Android Compose 로 전면 재작성하고 있으며, 여러 개선과 버그 수정을 담은 새 버전을 게시 당일 늦게 출시할 예정임 장기적으로 RCS 와…"
     }
   ]
 }
