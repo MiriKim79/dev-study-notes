@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
   "items": [
     {
       "source": "GeekNews",
-      "title": "빌 게이츠의 MovieMaker 설치 시도(2003)",
-      "url": "https://news.hada.io/topic?id=33333",
-      "date": "2026-09-08",
-      "summary": "빌 게이츠 는 MovieMaker 다운로드와 Digital Plus 패키지 구매에 한 시간 넘게 매달렸지만 둘 다 이용하지 못했고, Windows 사용성과 프로그램 관리 조직의 대응을 강하게 비판함…"
+      "title": "나비에-스토크스 해법 발표의 이면: 수학자가 공개한 OpenAI와의 협의 과정",
+      "url": "https://news.hada.io/topic?id=33379",
+      "date": "2026-09-09",
+      "summary": "수학자 Tristan Buckmaster가 Levent Alpöge와 진행한 유체 방정식 연구를 공개하면서, OpenAI의 나비에-스토크스 해법 발표에 앞서 진행된 협의 과정 을 성명으로 밝힘 두 …"
     },
     {
       "source": "GeekNews",
-      "title": "2억 1,600만 대의 감시 TV — LG 스마트 TV의 문제 [영상]",
-      "url": "https://news.hada.io/topic?id=33332",
-      "date": "2026-09-08",
-      "summary": "Gamers Nexus와 보안 연구진이 LG TV에서 주변 기기 탐색·음성 전사 로그 저장 을 확인하고, 침해 후에는 몰래 녹음·촬영할 수 있음을 시연함 — 기본 데이터 수집과 공격자가 제어권을 확…"
+      "title": "오래된 HTML 코드 조각과 유물들",
+      "url": "https://news.hada.io/topic?id=33378",
+      "date": "2026-09-09",
+      "summary": "과거 웹사이트에 남은 비표준 HTML 코드 에는 브라우저 경쟁, 외부 서비스 연동, 플랫폼별 기능과 그 부작용에 대응했던 흔적이 담겨 있음 Internet Explorer 전용 태그 는 문서 호환 …"
     },
     {
       "source": "GeekNews",
-      "title": "BZip3 - BZip2의 더 낫고, 더 빠르고, 더 강력한 정신적 후속작",
-      "url": "https://news.hada.io/topic?id=33330",
-      "date": "2026-09-08",
-      "summary": "BZip3 는 BZip2의 정신적 후속 압축 도구로, 특히 텍스트와 코드 압축에 강점을 가지며 더 높은 압축률과 성능을 목표로 함 0차 문맥 혼합 엔트로피 코더 , 접미사 배열 기반 Burrows-…"
+      "title": "ChatGPT Images 2.5",
+      "url": "https://news.hada.io/topic?id=33377",
+      "date": "2026-09-09",
+      "summary": "매주 30억 장 이상 의 이미지가 생성되는 ChatGPT Images와 GPT‑Image API에 새 모델을 도입해 참조 사진 재현도와 편집 정확도를 높이고, Images 2.0 대비 생성 지연 시…"
     },
     {
       "source": "GeekNews",
-      "title": "1024바이트로 Python 인터프리터 만들기",
-      "url": "https://news.hada.io/topic?id=33329",
-      "date": "2026-09-08",
-      "summary": "매크로나 라이브러리 편법 없이 C 소스 1024바이트 에 Python 문법 일부를 실행하는 인터프리터를 담음 토큰화·AST·바이트코드 생성 대신 소스를 파싱하면서 즉시 실행 하며, 반복문과 함수 호…"
+      "title": "DaVinci Resolve 21.1",
+      "url": "https://news.hada.io/topic?id=33376",
+      "date": "2026-09-09",
+      "summary": "편집·색보정용 새 도구와 제어 기능 100개 이상 을 담은 DaVinci Resolve 21.1이 출시됐으며, AI 어시스턴트 연동과 사진 포맷·멀티캠 지원을 확대하고 공식 웹사이트에서 무료 다운로…"
     },
     {
       "source": "GeekNews",
-      "title": "스위스 연방정부, 컴퓨터 3,000대에서 Microsoft를 대체한다",
-      "url": "https://news.hada.io/topic?id=33328",
-      "date": "2026-09-08",
-      "summary": "스위스 연방정부가 전체 인력의 약 7%인 3,000명 을 대상으로 Microsoft 365를 오픈소스 대안으로 전환하는 파일럿을 시작했으며, 2027년 말 완료를 목표로 함 직원 172명이 참여한 …"
+      "title": "손에 흙을 묻히는 것이 건강에 좋은 이유",
+      "url": "https://news.hada.io/topic?id=33375",
+      "date": "2026-09-09",
+      "summary": "흙·식물 같은 자연물과 접촉하면 피부 미생물 다양성 이 늘어나며, 어린이와 성인 대상 연구에서 피부뿐 아니라 면역 조절 지표 에도 변화가 나타남 다양한 미생물은 서로를 견제해 병원성 세균 이 우세해…"
     },
     {
       "source": "GeekNews",
-      "title": "브레인롯에서 벗어나기 위한 휴가",
-      "url": "https://news.hada.io/topic?id=33327",
-      "date": "2026-09-08",
-      "summary": "소프트웨어 엔지니어로서 업무에 익숙해지고 AI로 생산성도 높아졌지만 사고는 느리고 얕아졌다고 느껴, 2주간의 휴가 를 독서와 새로운 학습에 사용함 숏폼·게임·만화·TV 프로그램으로 지루할 틈이 없어…"
+      "title": "I-have-ADHD - 코딩 에이전트가 답을 묻어두지 않게 하는 스킬",
+      "url": "https://news.hada.io/topic?id=33374",
+      "date": "2026-09-09",
+      "summary": "코딩 도우미의 답변을 행동 우선 으로 바꿔, 긴 서두 대신 바로 실행할 작업과 번호가 매겨진 절차를 전달하는 스킬임 10가지 응답 규칙 으로 곁가지 설명을 억제하고, 매 응답에 현재 상태를 다시 명…"
     },
     {
       "source": "GeekNews",
-      "title": "Terence Tao: “AI만으로 수학 문제를 성급하게 푸는 것”의 위험",
-      "url": "https://news.hada.io/topic?id=33326",
-      "date": "2026-09-08",
-      "summary": "순수수학의 난제 는 정답뿐 아니라 해결 과정에서 새로운 통찰과 이론을 만드는 데 가치가 있으며, 과정을 공개하지 않는 AI 단독 해결은 이 역할을 훼손할 수 있음 Navier-Stokes 전역 정칙…"
+      "title": "Muse: Meta의 개인 AI 에이전트와 주요 기능",
+      "url": "https://news.hada.io/topic?id=33373",
+      "date": "2026-09-09",
+      "summary": "Muse 는 질문에 답하는 데 그치지 않고 웹과 연결된 앱에서 예약·구매·문서 작성 등 여러 단계의 작업을 대신 수행하는 Meta의 개인 AI 에이전트임 Muse Secure VM 은 브라우저를 갖…"
     },
     {
       "source": "GeekNews",
-      "title": "GrapheneOS, 기본 앱과 보안 클립보드 전면 개편",
-      "url": "https://news.hada.io/topic?id=33325",
-      "date": "2026-09-07",
-      "summary": "기본 Messaging 앱 의 낡은 인터페이스를 Android Compose 로 전면 재작성하고 있으며, 여러 개선과 버그 수정을 담은 새 버전을 게시 당일 늦게 출시할 예정임 장기적으로 RCS 와…"
+      "title": "LG TV, 오프라인·대기 모드에서도 감시한 사실 드러나",
+      "url": "https://news.hada.io/topic?id=33372",
+      "date": "2026-09-09",
+      "summary": "Gamers Nexus의 시판 LG OLED TV 조사에서 소유자와 가정에 관한 데이터를 거의 상시 기록·전송하며, 대기 모드나 인터넷 연결 해제 상태에서도 일부 수집을 이어가는 동작이 확인됨 패킷…"
     }
   ]
 }
