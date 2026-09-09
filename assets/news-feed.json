@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-09",
+  "updated_at": "2026-09-10",
   "items": [
     {
       "source": "GeekNews",
-      "title": "나비에-스토크스 해법 발표의 이면: 수학자가 공개한 OpenAI와의 협의 과정",
-      "url": "https://news.hada.io/topic?id=33379",
-      "date": "2026-09-09",
-      "summary": "수학자 Tristan Buckmaster가 Levent Alpöge와 진행한 유체 방정식 연구를 공개하면서, OpenAI의 나비에-스토크스 해법 발표에 앞서 진행된 협의 과정 을 성명으로 밝힘 두 …"
+      "title": "Rust: 빈 타입이 바닥 타입은 아닐 때",
+      "url": "https://news.hada.io/topic?id=33458",
+      "date": "2026-09-10",
+      "summary": "Rust의 never 타입 ! 을 모든 타입 표기에 허용하는 PR이 2026년 8월 25일 병합됐으며, Rust 1.100에 포함될 예정임 — 사용 범위가 넓어지는 ! 은 모든 타입의 하위 타입인 …"
     },
     {
       "source": "GeekNews",
-      "title": "오래된 HTML 코드 조각과 유물들",
-      "url": "https://news.hada.io/topic?id=33378",
-      "date": "2026-09-09",
-      "summary": "과거 웹사이트에 남은 비표준 HTML 코드 에는 브라우저 경쟁, 외부 서비스 연동, 플랫폼별 기능과 그 부작용에 대응했던 흔적이 담겨 있음 Internet Explorer 전용 태그 는 문서 호환 …"
+      "title": "노 맨즈 스카이: 출시 10주년 Cosmos 업데이트 - 이제 우주 정거장까지 운영",
+      "url": "https://news.hada.io/topic?id=33457",
+      "date": "2026-09-10",
+      "summary": "Cosmos 7.0 은 심우주를 고정된 탐사 지점에 다시 방문할 수 있는 공간으로 확장하고, 우주 정거장 운영·은하 동맹·궤도 기지 건설 을 추가함 항성계 지도 로 전초기지·소행성대·거대 난파선을 …"
     },
     {
       "source": "GeekNews",
-      "title": "ChatGPT Images 2.5",
-      "url": "https://news.hada.io/topic?id=33377",
-      "date": "2026-09-09",
-      "summary": "매주 30억 장 이상 의 이미지가 생성되는 ChatGPT Images와 GPT‑Image API에 새 모델을 도입해 참조 사진 재현도와 편집 정확도를 높이고, Images 2.0 대비 생성 지연 시…"
+      "title": "Apple Watch Series 12 공개 - 더 촘촘한 심박 측정과 운동 준비 상태 확인",
+      "url": "https://news.hada.io/topic?id=33456",
+      "date": "2026-09-10",
+      "summary": "새로운 심박 센서와 S11 칩 으로 심박수를 온종일 5초마다 측정 하고, 스트레스와 회복 상태를 파악하는 심박 변이 측정 빈도도 최대 24배 높임 활동, 훈련량, 활력 징후와 수면을 분석한 ‘준비 …"
     },
     {
       "source": "GeekNews",
-      "title": "DaVinci Resolve 21.1",
-      "url": "https://news.hada.io/topic?id=33376",
-      "date": "2026-09-09",
-      "summary": "편집·색보정용 새 도구와 제어 기능 100개 이상 을 담은 DaVinci Resolve 21.1이 출시됐으며, AI 어시스턴트 연동과 사진 포맷·멀티캠 지원을 확대하고 공식 웹사이트에서 무료 다운로…"
+      "title": "Apple Watch Ultra 4 공개",
+      "url": "https://news.hada.io/topic?id=33455",
+      "date": "2026-09-10",
+      "summary": "새로운 건강 감지 시스템과 S11 칩 으로 심박수를 온종일 5초마다 측정 하고, 스트레스와 회복 상태를 파악하는 심박 변이도 최대 24배 더 자주 측정함 활동, 훈련량, 활력 징후와 수면을 종합한 …"
     },
     {
       "source": "GeekNews",
-      "title": "손에 흙을 묻히는 것이 건강에 좋은 이유",
-      "url": "https://news.hada.io/topic?id=33375",
-      "date": "2026-09-09",
-      "summary": "흙·식물 같은 자연물과 접촉하면 피부 미생물 다양성 이 늘어나며, 어린이와 성인 대상 연구에서 피부뿐 아니라 면역 조절 지표 에도 변화가 나타남 다양한 미생물은 서로를 견제해 병원성 세균 이 우세해…"
+      "title": "Apple, iPhone 18 Pro와 iPhone 18 Pro Max 공개",
+      "url": "https://news.hada.io/topic?id=33454",
+      "date": "2026-09-10",
+      "summary": "iPhone 최초의 가변 조리개 를 48MP Fusion 메인 카메라에 적용해 빛의 양과 초점이 선명하게 맞는 범위를 조절하며, 카메라 앱에서 조리개와 셔터 속도, 화이트 밸런스를 직접 설정할 수 …"
     },
     {
       "source": "GeekNews",
-      "title": "I-have-ADHD - 코딩 에이전트가 답을 묻어두지 않게 하는 스킬",
-      "url": "https://news.hada.io/topic?id=33374",
-      "date": "2026-09-09",
-      "summary": "코딩 도우미의 답변을 행동 우선 으로 바꿔, 긴 서두 대신 바로 실행할 작업과 번호가 매겨진 절차를 전달하는 스킬임 10가지 응답 규칙 으로 곁가지 설명을 억제하고, 매 응답에 현재 상태를 다시 명…"
+      "title": "Visa와 Mastercard는 무슨 일을 할까? 카드 네트워크 입문",
+      "url": "https://news.hada.io/topic?id=33453",
+      "date": "2026-09-10",
+      "summary": "Visa와 Mastercard는 카드를 발급하는 은행이 아니라, 카드 소지자·발급사와 가맹점·매입사를 연결 해 거래를 성사시키고 네트워크 참여를 늘리는 사업자임 핵심 역할은 거래 메시지 전달 , 은…"
     },
     {
       "source": "GeekNews",
-      "title": "Muse: Meta의 개인 AI 에이전트와 주요 기능",
-      "url": "https://news.hada.io/topic?id=33373",
-      "date": "2026-09-09",
-      "summary": "Muse 는 질문에 답하는 데 그치지 않고 웹과 연결된 앱에서 예약·구매·문서 작성 등 여러 단계의 작업을 대신 수행하는 Meta의 개인 AI 에이전트임 Muse Secure VM 은 브라우저를 갖…"
+      "title": "Apple, AirPods 5 공개 - 기본 모델에도 노이즈 캔슬링 탑재",
+      "url": "https://news.hada.io/topic?id=33452",
+      "date": "2026-09-10",
+      "summary": "오픈형 이어폰 AirPods 5 두 모델 모두 액티브 노이즈 캔슬링(ANC) 을 탑재하며, Apple 발표 기준 AirPods 4 ANC 모델보다 최대 50% 더 많은 외부 소음을 제거함 음향 구조…"
     },
     {
       "source": "GeekNews",
-      "title": "LG TV, 오프라인·대기 모드에서도 감시한 사실 드러나",
-      "url": "https://news.hada.io/topic?id=33372",
-      "date": "2026-09-09",
-      "summary": "Gamers Nexus의 시판 LG OLED TV 조사에서 소유자와 가정에 관한 데이터를 거의 상시 기록·전송하며, 대기 모드나 인터넷 연결 해제 상태에서도 일부 수집을 이어가는 동작이 확인됨 패킷…"
+      "title": "Apple, 첫 폴더블 iPhone Duo 공개",
+      "url": "https://news.hada.io/topic?id=33450",
+      "date": "2026-09-10",
+      "summary": "19.3cm 내부 화면과 13.6cm 외부 화면 을 갖추고, 펼쳤을 때 역대 가장 얇은 iPhone으로 설계됨. 두 화면의 비율이 같아 접거나 펼쳐도 콘텐츠를 자연스럽게 이어 볼 수 있음 iPhon…"
     }
   ]
 }
