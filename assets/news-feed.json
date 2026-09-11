@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-11",
+  "updated_at": "2026-09-12",
   "items": [
     {
       "source": "GeekNews",
-      "title": "나는 인터넷이 싫은 것 같다",
-      "url": "https://news.hada.io/topic?id=33502",
-      "date": "2026-09-11",
-      "summary": "Meta 서비스 탈퇴 경험 과 Sarah Wynn-Williams의 『Careless People』을 읽은 충격이, 사람을 연결한다던 인터넷이 삶에 지나치게 깊숙이 들어왔다는 개인적 반감으로 이어짐…"
+      "title": "GrapheneOS, 재작성한 Messages 앱 출시",
+      "url": "https://news.hada.io/topic?id=33560",
+      "date": "2026-09-12",
+      "summary": "버전 13 은 기존 인터페이스를 Jetpack Compose와 Material 3 로 교체해 모든 화면을 다시 구현하고, 대화 관리·대화면 지원·메시지 처리 안정성을 개선함 대화 고정, 알림 일시 …"
     },
     {
       "source": "GeekNews",
-      "title": "Neki — PlanetScale의 샤딩 기반 Postgres 서비스",
-      "url": "https://news.hada.io/topic?id=33501",
-      "date": "2026-09-11",
-      "summary": "단일 머신의 한계에 도달한 Postgres를 여러 머신으로 확장 하는 Neki가 플랫폼 프리뷰로 공개됨. 각 샤드에서 실제 Postgres를 실행하는 PlanetScale의 서비스임 애플리케이션은 …"
+      "title": "Google 앱 광고에 220달러를 썼는데 설치의 60%가 로봇이었다",
+      "url": "https://news.hada.io/topic?id=33559",
+      "date": "2026-09-12",
+      "summary": "퍼즐 앱 Dayzle 의 Android 설치 광고에서 2주간 과금된 설치 56건 중 33건이 봇 의심 패턴 을 보였으며, 실제 이용자로 분류된 13명은 총 92게임을 완료함 설치당 목표 비용 1.5…"
     },
     {
       "source": "GeekNews",
-      "title": "ChatGPT Pro 구독 일시중단",
-      "url": "https://news.hada.io/topic?id=33500",
-      "date": "2026-09-11",
-      "summary": "Tibo 예고대로 200달러 플랜의 일시중단 100달러 플랜과 기존 구독자는 아무런 영향이 없음 ..."
+      "title": "Show HN: AI 없는 Hacker News",
+      "url": "https://news.hada.io/topic?id=33558",
+      "date": "2026-09-12",
+      "summary": "Show HN: AI 없는 Hacker News"
     },
     {
       "source": "GeekNews",
-      "title": "록 밴드 Muse, Meta의 새 AI 도구에 소셜 미디어 계정명 빼앗겨",
-      "url": "https://news.hada.io/topic?id=33499",
-      "date": "2026-09-11",
-      "summary": "기술 지배의 미래를 경고해 온 록 밴드 Muse 가 X와 Instagram의 계정명을 이번 주 출시된 Meta의 동명 개인용 AI 도구 에 넘긴 것으로 보여 팬들이 반발함 밴드의 계정명은 X에서 @…"
+      "title": "Show HN: AI 없는 Hacker News",
+      "url": "https://news.hada.io/topic?id=33557",
+      "date": "2026-09-12",
+      "summary": "unslop.news 는 Hacker News 게시물에 필터를 적용한 목록을 제공하며, 제공된 화면에서는 전체 179개 중 81개 가 남아 있음 각 항목에 원문 링크와 Hacker News 댓글 링…"
     },
     {
       "source": "GeekNews",
-      "title": "누구도 당신의 커다란 케이블 상자를 가져가지 못하게 하라",
-      "url": "https://news.hada.io/topic?id=33498",
-      "date": "2026-09-11",
-      "summary": "10년 넘게 보관한 케이블 두 개 를 마침내 썼다는 Tyler Gaw의 게시물에 공감한 Jim Nielsen이, 케이블을 보관하는 이유를 기억하려고 그 게시물을 자신의 상자 앞면에 붙임 Gaw는 상…"
+      "title": "EPA, 데이터센터 오염 관련 주민 공개 검토 규정 폐지 추진",
+      "url": "https://news.hada.io/topic?id=33556",
+      "date": "2026-09-12",
+      "summary": "미국 환경보호청 EPA 가 데이터센터와 관련 발전소 등 산업시설의 대기오염 배출 허가 전에 주정부가 주민에게 알리고 의견을 받도록 하는 연방 의무를 폐지 하려 함 주민 참여 여부·시점·기간을 주·지…"
     },
     {
       "source": "GeekNews",
-      "title": "Lotus Notes와 모든 것을 처음부터 만드는 것의 위험",
-      "url": "https://news.hada.io/topic?id=33497",
-      "date": "2026-09-11",
-      "summary": "1989년 출시된 Lotus Notes는 암호화, 첨부파일, 알림과 메시지 동기화를 갖춰 오늘날의 Slack과 이메일, 사내 앱 개발 도구를 합친 듯한 협업 환경 을 제공함 이메일 전용 프로그램이 …"
+      "title": "운동 강도는 심혈관·대사 건강과 연관되어 있음",
+      "url": "https://news.hada.io/topic?id=33554",
+      "date": "2026-09-12",
+      "summary": "사람 대상 운동 중재에서 전력 질주 인터벌 운동(SIE) 은 중강도 운동(MIE)보다 운동 직후 혈중 단백질·대사물질을 더 광범위하게 변화시켰으며, 이런 차이는 8주 훈련 후에도 상당 부분 유지됨 …"
     },
     {
       "source": "GeekNews",
-      "title": "화성을 위한 NASA의 색상 보정 기법, 이제 지구의 암벽화를 드러내다",
-      "url": "https://news.hada.io/topic?id=33496",
-      "date": "2026-09-11",
-      "summary": "NASA가 원격탐사·위성 영상 해석을 위해 개발한 비상관 스트레칭(decorrelation stretch) 이 고대 암벽화에서 보이지 않던 형상과 세부 묘사를 찾아내는 데 쓰이고 있음 단순히 대비를…"
+      "title": "전 세계 빙하 소멸 탐색기",
+      "url": "https://news.hada.io/topic?id=33553",
+      "date": "2026-09-12",
+      "summary": "지역 전체의 질량·면적 감소만으로는 드러나지 않는 개별 빙하의 예상 소멸 시점 을 지도에서 탐색하고, 온난화 시나리오에 따른 차이를 비교할 수 있음 빙하 면적이 0.01km² 미만 이 되거나 남은 …"
     },
     {
       "source": "GeekNews",
-      "title": "Cognition, Fable 5.1·GPT-Astra에 필적하는 코딩 모델 SWE-2 출시",
-      "url": "https://news.hada.io/topic?id=33494",
-      "date": "2026-09-11",
-      "summary": "2.8조 매개변수 Kimi K3를 추가 학습한 코딩 모델 로, 자체 FrontierCode 1.1 Main 평가에서 Fable 5.1과 0.9%p 차이인 50.0%를 기록하면서 작업당 비용은 64%…"
+      "title": "Proof of Capture - 스테가노그래피로 만든 오픈소스판 Apple Reference Image",
+      "url": "https://news.hada.io/topic?id=33552",
+      "date": "2026-09-12",
+      "summary": "Apple Reference Image처럼 촬영 시점에 사진에 디지털 서명을 남기는 오픈소스 카메라로, 서명을 사진과 별도로 보관하는 대신 픽셀 안에 보이지 않게 숨기는 스테가노그래피 를 사용함 공…"
     }
   ]
 }
