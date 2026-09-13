@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-13",
+  "updated_at": "2026-09-14",
   "items": [
     {
       "source": "GeekNews",
-      "title": "네이쥐안",
-      "url": "https://news.hada.io/topic?id=33598",
-      "date": "2026-09-13",
-      "summary": "네이쥐안(Neijuan, 内卷) 은 노력과 경쟁, 복잡성은 계속 늘어나지만 생산량이나 효율, 공동의 이익은 그만큼 증가하지 않는 상태를 뜻함 참여자들이 한정된 기회를 얻으려고 비슷한 전략을 채택하면…"
+      "title": "스타트업을 강력하게 만드는 법",
+      "url": "https://news.hada.io/topic?id=33659",
+      "date": "2026-09-14",
+      "summary": "매출을 늘리는 방법보다 회사를 더 강력하게 만드는 방법 을 물으면, 점진적 개선을 넘어 기업 가치를 몇 자릿수나 키울 수 있는 전환을 발견하기도 함 고객 관계와 자금 흐름 을 확보하고, 다른 기업이…"
     },
     {
       "source": "GeekNews",
-      "title": "Usenet-Rewind, Usenet 아카이브 검색 엔진",
-      "url": "https://news.hada.io/topic?id=33597",
-      "date": "2026-09-13",
-      "summary": "Usenet-Rewind 는 1981년부터 현재까지의 Usenet 뉴스그룹 텍스트 게시물을 검색하는 연구용 아카이브임 현대 웹 이전의 대화 를 담고 있으며, 초기 기술 지원과 소프트웨어 논쟁을 찾아…"
+      "title": "Claude Fable 5.1, 370년 된 암호문 Cyphral Distich 해독",
+      "url": "https://news.hada.io/topic?id=33658",
+      "date": "2026-09-14",
+      "summary": "Claude Fable 5.1 이 Sir Thomas Urquhart의 미해결 암호문 Cyphral Distich를 44분, 약 17만 6,000토큰, 추가 개입 없이 해독한 것으로 보임 해독의 열…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenStreetMap에서 첫 편집하기",
-      "url": "https://news.hada.io/topic?id=33596",
-      "date": "2026-09-13",
-      "summary": "JOSM과 Website Wizard 플러그인 으로 주변 상점이나 편의시설에 공식 웹사이트 태그를 추가하는, 15분 이내를 목표로 한 입문 튜토리얼임 website 태그 는 전화번호, 영업시간, 이…"
+      "title": "에이전트형 AI를 위한 데이터 준비하기",
+      "url": "https://news.hada.io/topic?id=33657",
+      "date": "2026-09-14",
+      "summary": "사람이 경험으로 알아채던 데이터 오류와 업무 맥락을 에이전트가 스스로 보완하리라 기대할 수는 없음. 데이터의 품질과 의미, 사용 권한을 시스템에 명시 해야 함 데이터의 형식과 최신성, 품질 기준을 …"
     },
     {
       "source": "GeekNews",
-      "title": "Dario에게 보내는 공개서한: 진심이라면 모델 가중치를 공개하라",
-      "url": "https://news.hada.io/topic?id=33595",
-      "date": "2026-09-13",
-      "summary": "프런티어 AI 개발 속도를 늦추기 위해, 기업이 대중에게 제공하는 모든 AI 모델의 가중치 공개를 법으로 의무화 하자고 제안함 공개 의무는 대중에게 제공하는 모델에만 적용 하며, 내부용 모델과 연구…"
+      "title": "엔지니어링 매니저의 네 가지 핵심 책임 영역",
+      "url": "https://news.hada.io/topic?id=33656",
+      "date": "2026-09-14",
+      "summary": "엔지니어링 매니저의 역할은 개인 기여를 넘어 팀 전체의 영향력을 높이는 것 임. 소통, 우선순위 조정, 목표 정렬, 의사결정을 지원해 팀이 공동 목표를 효과적으로 달성하도록 해야 함 사람 리더십 은…"
     },
     {
       "source": "GeekNews",
-      "title": "커넥톰과 물리학을 활용한 초파리 시뮬레이션",
-      "url": "https://news.hada.io/topic?id=33594",
-      "date": "2026-09-13",
-      "summary": "MuJoCo의 물리적 NeuroMechFly 신체, MaleCNS 연결체 데이터, 그리고 명시적 행동 제어기를 결합한 지역 과실파리 시뮬레이션. 주요 하이브리드 모드는 걷기, 냄새를 따라 먹이를 찾…"
+      "title": "연결을 끊지 않는 Lakebase Postgres의 오토스케일링",
+      "url": "https://news.hada.io/topic?id=33655",
+      "date": "2026-09-14",
+      "summary": "Lakebase Postgres 는 실행 중인 VM의 CPU와 메모리를 조정해 데이터베이스 연결을 끊지 않고 용량을 늘리거나 줄임. Neon의 프로덕션 데이터베이스는 평균적으로 월 32,016회 ,…"
     },
     {
       "source": "GeekNews",
-      "title": "AI 중심 콘텐츠의 우선순위를 낮춘 Hacker News",
-      "url": "https://news.hada.io/topic?id=33593",
-      "date": "2026-09-13",
-      "summary": "AI 중심 콘텐츠의 우선순위를 낮춘 Hacker News"
+      "title": "Wasmi 2.0 - 가장 빠른 Wasm 인터프리터를 만드는 기술",
+      "url": "https://news.hada.io/topic?id=33654",
+      "date": "2026-09-14",
+      "summary": "WebAssembly 인터프리터 Wasmi 2.0 이 8개월간의 엔진 개편을 마치고 출시됨. Apple M2 Pro의 자체 벤치마크에서 1.0보다 평균 약 2.2배 빠른 실행 성능 을 기록하면서 빠…"
     },
     {
       "source": "GeekNews",
-      "title": "Thelio Mira AI - GPU 메모리 192GB를 지원하는 Linux 워크스테이션",
-      "url": "https://news.hada.io/topic?id=33592",
-      "date": "2026-09-13",
-      "summary": "System76의 Thelio Mira AI 는 자체 하드웨어에서 AI 학습, 미세 조정, 반복 개발을 수행하도록 설계한 GPU 중심 워크스테이션임 NVIDIA RTX PRO 6000 두 개 로 G…"
+      "title": "저커버그의 이메일: “케임브리지 애널리티카” (2017)",
+      "url": "https://news.hada.io/topic?id=33653",
+      "date": "2026-09-14",
+      "summary": "2017년 1월 30일 Facebook 내부 이메일 에서 마크 저커버그는 트럼프 캠프의 광고 전략이 실제로 새로운 기술인지, 기존 마케팅 기법을 성공 이후 과장한 것인지 질문함 앤드루 보즈워스는 클…"
     },
     {
       "source": "GeekNews",
-      "title": "Android에서 트래픽을 유출하는 또 다른 방법 발견",
-      "url": "https://news.hada.io/topic?id=33591",
-      "date": "2026-09-13",
-      "summary": "Android 네트워크 스택에서 악성 앱이 VPN 터널 밖으로 트래픽을 전송 할 수 있는 문제가 발견됐으며, VPN 없는 모든 연결을 차단하는 설정을 켜도 발생함 공격에 특별한 권한이 필요하지 않으…"
+      "title": "크게 성공하거나 망하거나: 벤처 시장에서 사라지는 중간 지대",
+      "url": "https://news.hada.io/topic?id=33652",
+      "date": "2026-09-14",
+      "summary": "기업가치 1조 달러 스타트업 이 가능하다는 기대가 투자 기준을 바꾸면서, 자본과 유능한 창업자가 가장 거대한 성공을 노리는 분야로 몰리고 있음 투자자들이 유망하다고 보는 일부 AI 분야에는 자금과 …"
     }
   ]
 }
