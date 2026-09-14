@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-15",
   "items": [
     {
       "source": "GeekNews",
-      "title": "스타트업을 강력하게 만드는 법",
-      "url": "https://news.hada.io/topic?id=33659",
-      "date": "2026-09-14",
-      "summary": "매출을 늘리는 방법보다 회사를 더 강력하게 만드는 방법 을 물으면, 점진적 개선을 넘어 기업 가치를 몇 자릿수나 키울 수 있는 전환을 발견하기도 함 고객 관계와 자금 흐름 을 확보하고, 다른 기업이…"
+      "title": "Oracle, 추가 감원 속 직원들에게 오전 6시 해고 이메일 통보",
+      "url": "https://news.hada.io/topic?id=33713",
+      "date": "2026-09-15",
+      "summary": "Oracle 이 추가 감원에 착수하며 월요일 이른 아침 직원들에게 당일 해고를 통보함. 이번 감원 규모는 공개되지 않음 2026 회계연도 구조조정 비용 추정치 를 7억 달러 늘려 약 28억 달러 로…"
     },
     {
       "source": "GeekNews",
-      "title": "Claude Fable 5.1, 370년 된 암호문 Cyphral Distich 해독",
-      "url": "https://news.hada.io/topic?id=33658",
-      "date": "2026-09-14",
-      "summary": "Claude Fable 5.1 이 Sir Thomas Urquhart의 미해결 암호문 Cyphral Distich를 44분, 약 17만 6,000토큰, 추가 개입 없이 해독한 것으로 보임 해독의 열…"
+      "title": "Amazon 대 Perplexity 소송, 미국 제9연방항소법원",
+      "url": "https://news.hada.io/topic?id=33712",
+      "date": "2026-09-15",
+      "summary": "미국 제9연방항소법원이 Amazon에서 Comet의 AI 도구 사용을 막은 예비적 금지명령을 취소하고 사건을 환송 함 현재 소송기록상 Amazon 컴퓨터에 접근한 주체는 Perplexity가 아니라…"
     },
     {
       "source": "GeekNews",
-      "title": "에이전트형 AI를 위한 데이터 준비하기",
-      "url": "https://news.hada.io/topic?id=33657",
-      "date": "2026-09-14",
-      "summary": "사람이 경험으로 알아채던 데이터 오류와 업무 맥락을 에이전트가 스스로 보완하리라 기대할 수는 없음. 데이터의 품질과 의미, 사용 권한을 시스템에 명시 해야 함 데이터의 형식과 최신성, 품질 기준을 …"
+      "title": "Show GN: PhotoSlimmer - 아이폰 사진 정리 앱, 중복·유사·흐림·눈 감은 사진을 기기에서 찾아 삭제",
+      "url": "https://news.hada.io/topic?id=33711",
+      "date": "2026-09-15",
+      "summary": "혼자 만든 아이폰 사진 정리 앱입니다. 중복과 스크린샷은 직접 찾기 쉬운데, 흔들리거나 눈을 감은 사진은 수천 장을 넘겨야 나옵니다. 그 부분을 자동으로 찾아 주는 데 집중했습니다. 무엇을 하는가 …"
     },
     {
       "source": "GeekNews",
-      "title": "엔지니어링 매니저의 네 가지 핵심 책임 영역",
-      "url": "https://news.hada.io/topic?id=33656",
-      "date": "2026-09-14",
-      "summary": "엔지니어링 매니저의 역할은 개인 기여를 넘어 팀 전체의 영향력을 높이는 것 임. 소통, 우선순위 조정, 목표 정렬, 의사결정을 지원해 팀이 공동 목표를 효과적으로 달성하도록 해야 함 사람 리더십 은…"
+      "title": "Dario, 제발!",
+      "url": "https://news.hada.io/topic?id=33710",
+      "date": "2026-09-15",
+      "summary": "Dario Amodei의 AI 개발 속도 조절 제안은 안전을 명분으로 권력을 집중한다는 비판 을 받음. 오픈 웨이트 규제, 증류 단속, 독점금지법 예외가 Anthropic과 OpenAI만 신뢰하라는…"
     },
     {
       "source": "GeekNews",
-      "title": "연결을 끊지 않는 Lakebase Postgres의 오토스케일링",
-      "url": "https://news.hada.io/topic?id=33655",
-      "date": "2026-09-14",
-      "summary": "Lakebase Postgres 는 실행 중인 VM의 CPU와 메모리를 조정해 데이터베이스 연결을 끊지 않고 용량을 늘리거나 줄임. Neon의 프로덕션 데이터베이스는 평균적으로 월 32,016회 ,…"
+      "title": "수학의 시작",
+      "url": "https://news.hada.io/topic?id=33709",
+      "date": "2026-09-15",
+      "summary": "AI가 수학적 결과를 생산하는 능력과 인간의 수학적 이해 가 분리되고 있으며, 수학계는 논문과 정리 증명 중심의 평가 체계를 바꿀 필요가 있음 지켜야 할 것은 기존 학술 제도의 형태가 아니라 좋은 …"
     },
     {
       "source": "GeekNews",
-      "title": "Wasmi 2.0 - 가장 빠른 Wasm 인터프리터를 만드는 기술",
-      "url": "https://news.hada.io/topic?id=33654",
-      "date": "2026-09-14",
-      "summary": "WebAssembly 인터프리터 Wasmi 2.0 이 8개월간의 엔진 개편을 마치고 출시됨. Apple M2 Pro의 자체 벤치마크에서 1.0보다 평균 약 2.2배 빠른 실행 성능 을 기록하면서 빠…"
+      "title": "빠른 Tokio 애플리케이션을 위한 원칙",
+      "url": "https://news.hada.io/topic?id=33708",
+      "date": "2026-09-15",
+      "summary": "Tokio 성능은 공정성과 배치 처리, 경합과 격리의 균형 에 달려 있으며, 같은 작업도 런타임에서 함께 실행되는 작업에 따라 성능이 달라짐 최적화는 긴 폴링 자체를 없애기보다 실제 개선할 지표 에…"
     },
     {
       "source": "GeekNews",
-      "title": "저커버그의 이메일: “케임브리지 애널리티카” (2017)",
-      "url": "https://news.hada.io/topic?id=33653",
-      "date": "2026-09-14",
-      "summary": "2017년 1월 30일 Facebook 내부 이메일 에서 마크 저커버그는 트럼프 캠프의 광고 전략이 실제로 새로운 기술인지, 기존 마케팅 기법을 성공 이후 과장한 것인지 질문함 앤드루 보즈워스는 클…"
+      "title": "Microsoft, Windows와 Excel 패치로 오디오, 원격 접속, 붙여넣기 장애 초래",
+      "url": "https://news.hada.io/topic?id=33707",
+      "date": "2026-09-15",
+      "summary": "Microsoft가 최신 보안 업데이트 로 원격 데스크톱 서비스, 일부 USB 오디오 장치, Excel 붙여넣기에 문제가 발생할 수 있음을 확인함 원격 데스크톱 서비스(RDS) 장애는 여러 Wind…"
     },
     {
       "source": "GeekNews",
-      "title": "크게 성공하거나 망하거나: 벤처 시장에서 사라지는 중간 지대",
-      "url": "https://news.hada.io/topic?id=33652",
-      "date": "2026-09-14",
-      "summary": "기업가치 1조 달러 스타트업 이 가능하다는 기대가 투자 기준을 바꾸면서, 자본과 유능한 창업자가 가장 거대한 성공을 노리는 분야로 몰리고 있음 투자자들이 유망하다고 보는 일부 AI 분야에는 자금과 …"
+      "title": "분산 시스템의 고전 논문들 (2017)",
+      "url": "https://news.hada.io/topic?id=33706",
+      "date": "2026-09-15",
+      "summary": "분산 시스템 연구에 영향을 준 고전 논문 10편 을 모아, 이 분야의 문제 영역을 더 잘 이해하기 위한 출발점으로 삼을 수 있는 목록임 시간과 사건 순서 , 분산 스냅샷을 통한 전역 상태 결정에 관…"
     }
   ]
 }
