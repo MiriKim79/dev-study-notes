@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-15",
+  "updated_at": "2026-09-16",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Oracle, 추가 감원 속 직원들에게 오전 6시 해고 이메일 통보",
-      "url": "https://news.hada.io/topic?id=33713",
-      "date": "2026-09-15",
-      "summary": "Oracle 이 추가 감원에 착수하며 월요일 이른 아침 직원들에게 당일 해고를 통보함. 이번 감원 규모는 공개되지 않음 2026 회계연도 구조조정 비용 추정치 를 7억 달러 늘려 약 28억 달러 로…"
+      "title": "디스토피아적 감시가 현실이 되고 있음",
+      "url": "https://news.hada.io/topic?id=33757",
+      "date": "2026-09-16",
+      "summary": "Apple Watch에 도입될 예정인 Audio Intelligence 는 대화를 상시 청취하고 전사해 하루가 끝날 때 요약하며, 대화 상대는 인지하거나 동의하지 않은 채 기록될 수 있음 개인 일지…"
     },
     {
       "source": "GeekNews",
-      "title": "Amazon 대 Perplexity 소송, 미국 제9연방항소법원",
-      "url": "https://news.hada.io/topic?id=33712",
-      "date": "2026-09-15",
-      "summary": "미국 제9연방항소법원이 Amazon에서 Comet의 AI 도구 사용을 막은 예비적 금지명령을 취소하고 사건을 환송 함 현재 소송기록상 Amazon 컴퓨터에 접근한 주체는 Perplexity가 아니라…"
+      "title": "25분 만에 Baseten의 프로덕션 GitHub 관리자 권한을 확보함",
+      "url": "https://news.hada.io/topic?id=33756",
+      "date": "2026-09-16",
+      "summary": "자율 해킹 에이전트 Strix 가 자격 증명이나 소스 코드 없이 Baseten을 점검해, 약 25분 만에 내부 저장소 관리자 권한이 있는 유효한 GitHub 토큰 을 발견함 공개된 Harbor 컨테…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: PhotoSlimmer - 아이폰 사진 정리 앱, 중복·유사·흐림·눈 감은 사진을 기기에서 찾아 삭제",
-      "url": "https://news.hada.io/topic?id=33711",
-      "date": "2026-09-15",
-      "summary": "혼자 만든 아이폰 사진 정리 앱입니다. 중복과 스크린샷은 직접 찾기 쉬운데, 흔들리거나 눈을 감은 사진은 수천 장을 넘겨야 나옵니다. 그 부분을 자동으로 찾아 주는 데 집중했습니다. 무엇을 하는가 …"
+      "title": "Google, 대화하며 추론하는 Gemini 3.8 Live와 Extended Thinking 출시",
+      "url": "https://news.hada.io/topic?id=33755",
+      "date": "2026-09-16",
+      "summary": "음성으로 대화하면서 복잡한 작업을 수행하는 두 모델로, Live는 비용 효율과 대규모 활용 , Extended Thinking은 고난도 작업과 다단계 추론에 초점을 맞춤 Gemini 3.8 Live…"
     },
     {
       "source": "GeekNews",
-      "title": "Dario, 제발!",
-      "url": "https://news.hada.io/topic?id=33710",
-      "date": "2026-09-15",
-      "summary": "Dario Amodei의 AI 개발 속도 조절 제안은 안전을 명분으로 권력을 집중한다는 비판 을 받음. 오픈 웨이트 규제, 증류 단속, 독점금지법 예외가 Anthropic과 OpenAI만 신뢰하라는…"
+      "title": "UNIX 도메인 소켓에 어떻게 낭만을 느끼지 않을 수 있을까?",
+      "url": "https://news.hada.io/topic?id=33754",
+      "date": "2026-09-16",
+      "summary": "DEFCON 34 무대에서 충돌한 iOS 데모를 조사하다, 1985년부터 이어져 온 커널 버그 를 발견함 기기를 재부팅한 뒤 첫 실행에서만 문제가 생겼으며, 원인은 같은 UNIX 도메인 소켓의 식별…"
     },
     {
       "source": "GeekNews",
-      "title": "수학의 시작",
-      "url": "https://news.hada.io/topic?id=33709",
-      "date": "2026-09-15",
-      "summary": "AI가 수학적 결과를 생산하는 능력과 인간의 수학적 이해 가 분리되고 있으며, 수학계는 논문과 정리 증명 중심의 평가 체계를 바꿀 필요가 있음 지켜야 할 것은 기존 학술 제도의 형태가 아니라 좋은 …"
+      "title": "미국 운전면허증 정보 유출은 국가안보 재앙이다",
+      "url": "https://news.hada.io/topic?id=33753",
+      "date": "2026-09-16",
+      "summary": "다크웹 서비스 Nexus 가 미국과 캐나다 시민의 운전면허증 1억 5,300만 건과 여행 관련 신분 문서 300만 건에 대한 접근권을 판매했으며, 자료의 진위와 미국 고위 공직자의 정보 포함 여부도…"
     },
     {
       "source": "GeekNews",
-      "title": "빠른 Tokio 애플리케이션을 위한 원칙",
-      "url": "https://news.hada.io/topic?id=33708",
-      "date": "2026-09-15",
-      "summary": "Tokio 성능은 공정성과 배치 처리, 경합과 격리의 균형 에 달려 있으며, 같은 작업도 런타임에서 함께 실행되는 작업에 따라 성능이 달라짐 최적화는 긴 폴링 자체를 없애기보다 실제 개선할 지표 에…"
+      "title": "Wayback Machine, 대량 봇 트래픽 차단 중 정상 사용자도 차단",
+      "url": "https://news.hada.io/topic?id=33752",
+      "date": "2026-09-16",
+      "summary": "Internet Archive가 대량 자동화 트래픽 이 반복적으로 몰리는 Wayback Machine의 운영을 유지하기 위해 보호 조치를 적용함 최근 요청이 차단될 때 표시되는 HTTP 429 오류…"
     },
     {
       "source": "GeekNews",
-      "title": "Microsoft, Windows와 Excel 패치로 오디오, 원격 접속, 붙여넣기 장애 초래",
-      "url": "https://news.hada.io/topic?id=33707",
-      "date": "2026-09-15",
-      "summary": "Microsoft가 최신 보안 업데이트 로 원격 데스크톱 서비스, 일부 USB 오디오 장치, Excel 붙여넣기에 문제가 발생할 수 있음을 확인함 원격 데스크톱 서비스(RDS) 장애는 여러 Wind…"
+      "title": "Jev, 비용은 40~400배 저렴하고 속도는 20~200배 빠른 새로운 프런티어 모델",
+      "url": "https://news.hada.io/topic?id=33751",
+      "date": "2026-09-16",
+      "summary": "TypeSafe AI가 소프트웨어에서 직접 사용할 구조화된 판단 에 특화한 System One Model의 첫 모델 Jev 를 얼리 액세스로 공개함 문자열 생성 대신 사전에 정의한 타입의 값과 확률…"
     },
     {
       "source": "GeekNews",
-      "title": "분산 시스템의 고전 논문들 (2017)",
-      "url": "https://news.hada.io/topic?id=33706",
-      "date": "2026-09-15",
-      "summary": "분산 시스템 연구에 영향을 준 고전 논문 10편 을 모아, 이 분야의 문제 영역을 더 잘 이해하기 위한 출발점으로 삼을 수 있는 목록임 시간과 사건 순서 , 분산 스냅샷을 통한 전역 상태 결정에 관…"
+      "title": "대부분의 사람은 전통 건축을 선호한다",
+      "url": "https://news.hada.io/topic?id=33750",
+      "date": "2026-09-16",
+      "summary": "1990년대 이후 적절한 표본을 갖춘 건축 시각 선호도 조사 약 20건에서 모두 응답자의 60% 이상이 전통 건축을 선호 했으며, 여러 조사에서는 85%를 넘었음 사진의 각도, 날씨, 주변 환경이 …"
     }
   ]
 }
