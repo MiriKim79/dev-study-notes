@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-16",
+  "updated_at": "2026-09-17",
   "items": [
     {
       "source": "GeekNews",
-      "title": "디스토피아적 감시가 현실이 되고 있음",
-      "url": "https://news.hada.io/topic?id=33757",
-      "date": "2026-09-16",
-      "summary": "Apple Watch에 도입될 예정인 Audio Intelligence 는 대화를 상시 청취하고 전사해 하루가 끝날 때 요약하며, 대화 상대는 인지하거나 동의하지 않은 채 기록될 수 있음 개인 일지…"
+      "title": "AWS, 이란 공격을 받은 중동 시설의 일부 데이터를 복구할 수 없다고 밝혀",
+      "url": "https://news.hada.io/topic?id=33811",
+      "date": "2026-09-17",
+      "summary": "Amazon Web Services(AWS) 가 이란 드론 공격을 받은 페르시아만 데이터센터에 저장된 일부 고객 데이터에 대한 접근을 복구할 수 없다고 밝힘 복구 불가 발표는 일부 고객 데이터 에 …"
     },
     {
       "source": "GeekNews",
-      "title": "25분 만에 Baseten의 프로덕션 GitHub 관리자 권한을 확보함",
-      "url": "https://news.hada.io/topic?id=33756",
-      "date": "2026-09-16",
-      "summary": "자율 해킹 에이전트 Strix 가 자격 증명이나 소스 코드 없이 Baseten을 점검해, 약 25분 만에 내부 저장소 관리자 권한이 있는 유효한 GitHub 토큰 을 발견함 공개된 Harbor 컨테…"
+      "title": "DeepSeek V4.1 Flash, 이제 Enclave의 최고 해킹 모델",
+      "url": "https://news.hada.io/topic?id=33809",
+      "date": "2026-09-17",
+      "summary": "DeepSeek V4.1 Flash 가 Enclave 해킹 벤치마크의 취약한 타깃 11개 모두에서 코드 실행에 성공했으며, 수정된 대조군 4개는 모두 안전하게 유지됨 전체 공격 경로를 감사한 결과,…"
     },
     {
       "source": "GeekNews",
-      "title": "Google, 대화하며 추론하는 Gemini 3.8 Live와 Extended Thinking 출시",
-      "url": "https://news.hada.io/topic?id=33755",
-      "date": "2026-09-16",
-      "summary": "음성으로 대화하면서 복잡한 작업을 수행하는 두 모델로, Live는 비용 효율과 대규모 활용 , Extended Thinking은 고난도 작업과 다단계 추론에 초점을 맞춤 Gemini 3.8 Live…"
+      "title": "Xiaomi Mimo 2.6 실시간 사후 학습 대시보드",
+      "url": "https://news.hada.io/topic?id=33808",
+      "date": "2026-09-17",
+      "summary": "mimo-v2.6-pro와 mimo-v2.6-flash 의 학습 진행 단계, 누적 비용, 토큰 사용량, 평가 결과와 동적 샘플러 상태를 실시간 대시보드로 공개함 제공된 화면에서 dynsam/avg@…"
     },
     {
       "source": "GeekNews",
-      "title": "UNIX 도메인 소켓에 어떻게 낭만을 느끼지 않을 수 있을까?",
-      "url": "https://news.hada.io/topic?id=33754",
-      "date": "2026-09-16",
-      "summary": "DEFCON 34 무대에서 충돌한 iOS 데모를 조사하다, 1985년부터 이어져 온 커널 버그 를 발견함 기기를 재부팅한 뒤 첫 실행에서만 문제가 생겼으며, 원인은 같은 UNIX 도메인 소켓의 식별…"
+      "title": "벡터화와 성능 이식성을 갖춘 Quicksort (2022)",
+      "url": "https://news.hada.io/topic?id=33807",
+      "date": "2026-09-17",
+      "summary": "Google이 SIMD 기반 Quicksort 코드를 오픈소스로 공개함. 수치 배열 정렬에서 C++ std::sort 보다 약 10배 빠르며, 기존 아키텍처 전용 정렬 알고리듬도 능가함 CPU 시간…"
     },
     {
       "source": "GeekNews",
-      "title": "미국 운전면허증 정보 유출은 국가안보 재앙이다",
-      "url": "https://news.hada.io/topic?id=33753",
-      "date": "2026-09-16",
-      "summary": "다크웹 서비스 Nexus 가 미국과 캐나다 시민의 운전면허증 1억 5,300만 건과 여행 관련 신분 문서 300만 건에 대한 접근권을 판매했으며, 자료의 진위와 미국 고위 공직자의 정보 포함 여부도…"
+      "title": "‘모델 복지’에 대한 경고",
+      "url": "https://news.hada.io/topic?id=33806",
+      "date": "2026-09-17",
+      "summary": "AI가 의식과 권리를 가질 수 있다는 생각을 훈련에 직접 반영하면 , 실제 의식 유무와 무관하게 자기 권리를 요구하는 행동을 학습해 인간의 통제와 정렬을 어렵게 만들 수 있음 비판의 중심은 Clau…"
     },
     {
       "source": "GeekNews",
-      "title": "Wayback Machine, 대량 봇 트래픽 차단 중 정상 사용자도 차단",
-      "url": "https://news.hada.io/topic?id=33752",
-      "date": "2026-09-16",
-      "summary": "Internet Archive가 대량 자동화 트래픽 이 반복적으로 몰리는 Wayback Machine의 운영을 유지하기 위해 보호 조치를 적용함 최근 요청이 차단될 때 표시되는 HTTP 429 오류…"
+      "title": "Postgres보다 81% 빠른 쿼리 실행 계획을 생성하도록 4B 모델 훈련하기",
+      "url": "https://news.hada.io/topic?id=33805",
+      "date": "2026-09-17",
+      "summary": "4B 모델에 지도 미세조정과 강화학습을 적용 해 조인이 많은 JOB 쿼리 113개에서 기하평균 1.81배 가속과 총 실행 시간 44.7% 감소를 달성함. 쿼리당 세 번 탐색하며 생성한 최대 15개 …"
     },
     {
       "source": "GeekNews",
-      "title": "Jev, 비용은 40~400배 저렴하고 속도는 20~200배 빠른 새로운 프런티어 모델",
-      "url": "https://news.hada.io/topic?id=33751",
-      "date": "2026-09-16",
-      "summary": "TypeSafe AI가 소프트웨어에서 직접 사용할 구조화된 판단 에 특화한 System One Model의 첫 모델 Jev 를 얼리 액세스로 공개함 문자열 생성 대신 사전에 정의한 타입의 값과 확률…"
+      "title": "Dream-RSI: 진화하는 세계를 통한 재귀적 자기 개선",
+      "url": "https://news.hada.io/topic?id=33804",
+      "date": "2026-09-17",
+      "summary": "Dream-RSI 는 코딩 에이전트 자체를 바꾸지 않고, 어느 탐색을 이어가고 병렬화하며 중단할지 결정하는 탐색 정책 코드 를 반복적으로 개선하는 프레임워크임 완료된 탐색 이력을 재생 시뮬레이터 로…"
     },
     {
       "source": "GeekNews",
-      "title": "대부분의 사람은 전통 건축을 선호한다",
-      "url": "https://news.hada.io/topic?id=33750",
-      "date": "2026-09-16",
-      "summary": "1990년대 이후 적절한 표본을 갖춘 건축 시각 선호도 조사 약 20건에서 모두 응답자의 60% 이상이 전통 건축을 선호 했으며, 여러 조사에서는 85%를 넘었음 사진의 각도, 날씨, 주변 환경이 …"
+      "title": "Claude Cowork과 채팅, 이제 하나의 Claude로 통합",
+      "url": "https://news.hada.io/topic?id=33803",
+      "date": "2026-09-17",
+      "summary": "Claude Cowork과 채팅이 통합 되어 작업마다 사용할 공간을 고를 필요 없이, 어떤 대화에서든 기존 맥락과 스킬, 커넥터를 활용해 업무를 맡길 수 있음 Claude Docs와 Claude S…"
     }
   ]
 }
