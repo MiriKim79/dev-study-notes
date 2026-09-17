@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-17",
+  "updated_at": "2026-09-18",
   "items": [
     {
       "source": "GeekNews",
-      "title": "AWS, 이란 공격을 받은 중동 시설의 일부 데이터를 복구할 수 없다고 밝혀",
-      "url": "https://news.hada.io/topic?id=33811",
-      "date": "2026-09-17",
-      "summary": "Amazon Web Services(AWS) 가 이란 드론 공격을 받은 페르시아만 데이터센터에 저장된 일부 고객 데이터에 대한 접근을 복구할 수 없다고 밝힘 복구 불가 발표는 일부 고객 데이터 에 …"
+      "title": "왁스 모터",
+      "url": "https://news.hada.io/topic?id=33865",
+      "date": "2026-09-18",
+      "summary": "왁스 모터 는 왁스가 녹고 굳을 때의 부피 변화를 이용해 열에너지를 직선 운동으로 바꾸는 장치로, 왁스는 녹을 때 보통 5~20% 팽창 함 밀폐된 왁스가 가열되면 플런저 를 밀어내고, 냉각되어 수축…"
     },
     {
       "source": "GeekNews",
-      "title": "DeepSeek V4.1 Flash, 이제 Enclave의 최고 해킹 모델",
-      "url": "https://news.hada.io/topic?id=33809",
-      "date": "2026-09-17",
-      "summary": "DeepSeek V4.1 Flash 가 Enclave 해킹 벤치마크의 취약한 타깃 11개 모두에서 코드 실행에 성공했으며, 수정된 대조군 4개는 모두 안전하게 유지됨 전체 공격 경로를 감사한 결과,…"
+      "title": "Bend - CPU와 GPU에서 증명으로 AI의 실수를 차단하는 언어",
+      "url": "https://news.hada.io/topic?id=33864",
+      "date": "2026-09-18",
+      "summary": "Bend 는 지켜야 할 규칙을 코드로 선언하고 AI가 구현의 정확성을 증명하도록 하는 언어로, 자연어보다 정밀한 요구사항과 빠른 실행을 결합함 네이티브 코드 로 컴파일하며, 단일 코어에서 C에 가까…"
     },
     {
       "source": "GeekNews",
-      "title": "Xiaomi Mimo 2.6 실시간 사후 학습 대시보드",
-      "url": "https://news.hada.io/topic?id=33808",
-      "date": "2026-09-17",
-      "summary": "mimo-v2.6-pro와 mimo-v2.6-flash 의 학습 진행 단계, 누적 비용, 토큰 사용량, 평가 결과와 동적 샘플러 상태를 실시간 대시보드로 공개함 제공된 화면에서 dynsam/avg@…"
+      "title": "Astra for Law - 법률 업무용 AI",
+      "url": "https://news.hada.io/topic?id=33863",
+      "date": "2026-09-18",
+      "summary": "OpenAI가 GPT‑6 Astra에 법률 검색, 분석 및 작성 지침을 결합한 Astra for Law 를 공개함. 로펌과 법률 기술 기업이 자체 전문성을 바탕으로 AI 제품과 업무 흐름을 구축할 …"
     },
     {
       "source": "GeekNews",
-      "title": "벡터화와 성능 이식성을 갖춘 Quicksort (2022)",
-      "url": "https://news.hada.io/topic?id=33807",
-      "date": "2026-09-17",
-      "summary": "Google이 SIMD 기반 Quicksort 코드를 오픈소스로 공개함. 수치 배열 정렬에서 C++ std::sort 보다 약 10배 빠르며, 기존 아키텍처 전용 정렬 알고리듬도 능가함 CPU 시간…"
+      "title": "모두가 제정신을 잃었다",
+      "url": "https://news.hada.io/topic?id=33862",
+      "date": "2026-09-18",
+      "summary": "AI 대응이 하루 업무의 75% 이상을 차지하면서 일의 즐거움까지 잃은 경험 에서 출발해, 윤리와 실제 효과를 따지지 않는 조직의 AI 도입 열풍을 비판함 보안의 병목은 취약점을 찾는 것이 아니라 …"
     },
     {
       "source": "GeekNews",
-      "title": "‘모델 복지’에 대한 경고",
-      "url": "https://news.hada.io/topic?id=33806",
-      "date": "2026-09-17",
-      "summary": "AI가 의식과 권리를 가질 수 있다는 생각을 훈련에 직접 반영하면 , 실제 의식 유무와 무관하게 자기 권리를 요구하는 행동을 학습해 인간의 통제와 정렬을 어렵게 만들 수 있음 비판의 중심은 Clau…"
+      "title": "Mysetup - 다른 사람의 AI 도구와 실제 작업 방식을 살펴보는 커뮤니티",
+      "url": "https://news.hada.io/topic?id=33861",
+      "date": "2026-09-18",
+      "summary": "어떤 모델을 쓰는지뿐 아니라 에이전트, 스킬, 연결 도구를 어떻게 조합해 일하는지 공개하고 서로 배우는 공간 개인별 페이지에 작업 흐름과 설정, 시행착오를 정리하며, 변경 이력과 팔로우 로 다른 사…"
     },
     {
       "source": "GeekNews",
-      "title": "Postgres보다 81% 빠른 쿼리 실행 계획을 생성하도록 4B 모델 훈련하기",
-      "url": "https://news.hada.io/topic?id=33805",
-      "date": "2026-09-17",
-      "summary": "4B 모델에 지도 미세조정과 강화학습을 적용 해 조인이 많은 JOB 쿼리 113개에서 기하평균 1.81배 가속과 총 실행 시간 44.7% 감소를 달성함. 쿼리당 세 번 탐색하며 생성한 최대 15개 …"
+      "title": "셀프스토리지라는 미국의 종교",
+      "url": "https://news.hada.io/topic?id=33860",
+      "date": "2026-09-18",
+      "summary": "미국은 세계 셀프스토리지 보관 용량의 약 90% 를 차지하며, 연간 매출은 400억 달러 이상으로 추산됨. 집에 둘 곳이 없는 물건을 보관하는 사업이 기관투자자도 투자하는 부동산 자산군으로 성장함 …"
     },
     {
       "source": "GeekNews",
-      "title": "Dream-RSI: 진화하는 세계를 통한 재귀적 자기 개선",
-      "url": "https://news.hada.io/topic?id=33804",
-      "date": "2026-09-17",
-      "summary": "Dream-RSI 는 코딩 에이전트 자체를 바꾸지 않고, 어느 탐색을 이어가고 병렬화하며 중단할지 결정하는 탐색 정책 코드 를 반복적으로 개선하는 프레임워크임 완료된 탐색 이력을 재생 시뮬레이터 로…"
+      "title": "항공유 절약하기",
+      "url": "https://news.hada.io/topic?id=33859",
+      "date": "2026-09-18",
+      "summary": "Scikit-decide, OpenAP, NOAA 바람 데이터 를 결합하면 바람 조건을 반영해 연료 소비를 줄이는 비행 경로를 오픈소스로 탐색할 수 있음 항공기 성능 모델과 경로 탐색 을 연결해 기…"
     },
     {
       "source": "GeekNews",
-      "title": "Claude Cowork과 채팅, 이제 하나의 Claude로 통합",
-      "url": "https://news.hada.io/topic?id=33803",
-      "date": "2026-09-17",
-      "summary": "Claude Cowork과 채팅이 통합 되어 작업마다 사용할 공간을 고를 필요 없이, 어떤 대화에서든 기존 맥락과 스킬, 커넥터를 활용해 업무를 맡길 수 있음 Claude Docs와 Claude S…"
+      "title": "가동률 백분율 표기, 이제 그만하면 안 될까?",
+      "url": "https://news.hada.io/topic?id=33858",
+      "date": "2026-09-18",
+      "summary": "서비스 상태 페이지가 인프라 전문가뿐 아니라 일반 사용자도 보는 공개 인터페이스 가 된 만큼, 가동률 백분율만으로는 장애의 체감 규모를 전달하기 어려움 99.9%와 99.99% 는 비슷해 보이지만,…"
     }
   ]
 }
