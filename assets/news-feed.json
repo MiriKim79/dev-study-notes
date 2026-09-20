@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-20",
+  "updated_at": "2026-09-21",
   "items": [
     {
       "source": "GeekNews",
-      "title": "TIN - PlanetScale의 Postgres 전문 검색 엔진",
-      "url": "https://news.hada.io/topic?id=33955",
-      "date": "2026-09-20",
-      "summary": "PlanetScale이 전문 검색 확장 TIN(Text INdex) 을 정식 출시했으며, 자사 Postgres와 Neki 데이터베이스에서 사용 가능 키워드 조합과 구문 검색, 퍼지/와일드카드/정규식…"
+      "title": "Ask GN: 3주간 코딩 에이전트에게 보낸 제 메시지를 분석해 봤습니다. 40%는 실제 작업이 아니었어요. 다른 분들...",
+      "url": "https://news.hada.io/topic?id=34012",
+      "date": "2026-09-21",
+      "summary": "여러 코딩 에이전트를 동시에 돌리고 있습니다. 주로 Claude Code와 Kimi를 쓰고, 가끔 Cursor와 Copilot도 씁니다. 요즘 작업 속도가 느리다는 느낌이 들어서, 지난 3주 동안 …"
     },
     {
       "source": "GeekNews",
-      "title": "과학은 오픈 소프트웨어다 (2025)",
-      "url": "https://news.hada.io/topic?id=33954",
-      "date": "2026-09-20",
-      "summary": "현대 과학, 적어도 계산과학에서 오픈소스 소프트웨어는 과학 그 자체 임. 소프트웨어는 예측 모델을 실행 가능한 형태로 담고 공유하는 수단이기 때문임 재현성 은 같은 결과를 반복하는 데 그치지 않음.…"
+      "title": "Pirate Face - LLM 모델을 삭제로부터 구하는 서비스",
+      "url": "https://news.hada.io/topic?id=34011",
+      "date": "2026-09-21",
+      "summary": "Pirate Face 는 Hugging Face의 오픈 모델을 체크섬으로 검증한 토렌트로 미러링하고, 단일 기업 대신 P2P 네트워크 가 보관하도록 하는 서비스임 토렌트에 내장된 Hugging Fa…"
     },
     {
       "source": "GeekNews",
-      "title": "Xcode 27.1 베타, iPhone Duo 시뮬레이터 지원",
-      "url": "https://news.hada.io/topic?id=33953",
-      "date": "2026-09-20",
-      "summary": "iPhone Duo 시뮬레이터 에서 앱을 실행하고 테스트할 수 있어, 실기기 없이 새 기기에 맞는 화면과 동작을 확인 가능 미리보기 캔버스에 Display 선택 항목 을 추가해, 기기의 다른 디스플…"
+      "title": "UTF-8000: 무제한 UTF-8",
+      "url": "https://news.hada.io/topic?id=34010",
+      "date": "2026-09-21",
+      "summary": "UTF-8000 은 ASCII와 UTF-8을 포함하면서 임의 크기의 정수를 인코딩하도록 확장한 독립 제안으로, Unicode Consortium이 승인하거나 대표하는 표준은 아님 UTF-8의 선두 …"
     },
     {
       "source": "GeekNews",
-      "title": "Microsoft, 네가 싫다",
-      "url": "https://news.hada.io/topic?id=33952",
-      "date": "2026-09-20",
-      "summary": "대학 기관 계정 으로 PowerPoint 문서를 열었지만, “이 계정으로는 Mac에서 편집할 수 없다”는 안내를 받아 편집이 막힘 대학이 Microsoft와 수십만 유로 규모로 추정되는 계약 을 맺…"
+      "title": "ZK-JPEG - 영지식 이미지 편집 및 압축",
+      "url": "https://news.hada.io/topic?id=34009",
+      "date": "2026-09-21",
+      "summary": "ZK-JPEG 은 비밀로 유지되는 커밋된 입력으로부터 이미지가 올바르게 JPEG 압축되었음을 증명하는 암호학적 도구임 카메라의 디지털 서명 은 이미지 출처를 증명하지만, 손실 압축이나 피사체 보호를…"
     },
     {
       "source": "GeekNews",
-      "title": "외국 중앙은행과 정부에 매력을 잃은 미국 국채",
-      "url": "https://news.hada.io/topic?id=33951",
-      "date": "2026-09-20",
-      "summary": "외국 중앙은행과 정부의 미국 국채 보유액이 2026년 7월 3조 7,700억 달러 로 줄었으며, 시장성 국채 잔액에서 차지하는 비중은 12.8% 로 1993년 이후 최저치를 기록함 미국의 막대한 재…"
+      "title": "Show GN: My Best Photo - 사진 후보를 비교 평가하고 선택 이유를 확인하는 서비스",
+      "url": "https://news.hada.io/topic?id=34007",
+      "date": "2026-09-21",
+      "summary": "제가 직접 만든 사진 비교·평가 웹서비스입니다. 후보 사진을 올리면 다른 사용자들이 두 장씩 비교하고, 등록한 사람은 선택 비율과 선택 이유를 확인할 수 있습니다. 프로필·일상·여행·반려동물 사진처…"
     },
     {
       "source": "GeekNews",
-      "title": "가장 중요한 제품 결정은 무엇을 만들지 않을 것인가",
-      "url": "https://news.hada.io/topic?id=33950",
-      "date": "2026-09-20",
-      "summary": "앱에 문서 목록과 알림 하나를 넣으려던 일이 요구사항을 더하다 보면 Google Drive와 Gmail을 어설프게 다시 만드는 작업 으로 커질 수 있음 기능을 만들지 않도록 설득하려면 초기 개발비보…"
+      "title": "Step 5 Preview: 파레토 경계 확장",
+      "url": "https://news.hada.io/topic?id=34006",
+      "date": "2026-09-21",
+      "summary": "StepFun이 에이전트 작업용 플래그십 모델 Step 5 Preview 를 공개함. 소프트웨어 엔지니어링과 전문 지식 업무, 특히 금융에 초점을 맞췄으며, 비슷한 지능 수준의 모델보다 작업 비용이…"
     },
     {
       "source": "GeekNews",
-      "title": "Stallman: 수천 명 사망, 수백만 명의 자유 박탈 (2001)",
-      "url": "https://news.hada.io/topic?id=33949",
-      "date": "2026-09-20",
-      "summary": "뉴욕과 워싱턴 테러 이후 의회가 자유를 빼앗는 예방 조치를 채택한다면, 공격에 대한 대응이 더 큰 2차 피해 를 일으킬 수 있음 무기만 확인하고 무기가 없는 사람의 기록을 남기지 않는 공항 검색 과…"
+      "title": "채팅 기반 대규모 언어 모델은 심령술사 사기의 작동 방식을 재현한다",
+      "url": "https://news.hada.io/topic?id=34005",
+      "date": "2026-09-21",
+      "summary": "LLMentalist 효과 는 챗봇에서 느끼는 지능이 모델 내부의 사고가 아니라, 통계적으로 그럴듯한 답변에서 개인적 의미를 찾는 사용자의 심리에서 비롯된다는 가설임 핵심 연결고리는 심령술사의 콜드…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI는 자체 LLM으로 Jalapeño 칩을 어떻게 설계했나",
-      "url": "https://news.hada.io/topic?id=33945",
-      "date": "2026-09-19",
-      "summary": "OpenAI는 자체 LLM으로 첫 AI 가속기 Jalapeño의 설계를 가속 했으며, 초기 아키텍처 구상부터 첫 실리콘까지 20개월 미만, 첫 RTL부터 제조용 설계 확정까지 9개월이 걸림 프로젝트…"
+      "title": "Qwen-Image-2.1, 소형 고효율 통합 이미지 생성 모델",
+      "url": "https://news.hada.io/topic?id=34004",
+      "date": "2026-09-21",
+      "summary": "Qwen-Image-2.1 이 오픈소스로 공개됨. 시각 생성 구성 요소가 7B 파라미터 인 단일 모델에 텍스트 기반 이미지 생성과 이미지 편집을 통합함 혼합 세분도 어텐션 과 KV 캐시 재사용 으로…"
     }
   ]
 }
