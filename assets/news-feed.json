@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-21",
+  "updated_at": "2026-09-22",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Ask GN: 3주간 코딩 에이전트에게 보낸 제 메시지를 분석해 봤습니다. 40%는 실제 작업이 아니었어요. 다른 분들...",
-      "url": "https://news.hada.io/topic?id=34012",
-      "date": "2026-09-21",
-      "summary": "여러 코딩 에이전트를 동시에 돌리고 있습니다. 주로 Claude Code와 Kimi를 쓰고, 가끔 Cursor와 Copilot도 씁니다. 요즘 작업 속도가 느리다는 느낌이 들어서, 지난 3주 동안 …"
+      "title": "미국, 광케이블 절단으로 동부 주요 공항 항공편 운항 중단",
+      "url": "https://news.hada.io/topic?id=34088",
+      "date": "2026-09-22",
+      "summary": "주 통신 회선 장애와 백업 광케이블 절단 이 겹치면서 FAA가 뉴욕, 보스턴, 필라델피아 등 미국 동부 주요 공항으로 향하는 항공편을 중단함 FlightAware 집계로 미국 내 5,600편 이상이…"
     },
     {
       "source": "GeekNews",
-      "title": "Pirate Face - LLM 모델을 삭제로부터 구하는 서비스",
-      "url": "https://news.hada.io/topic?id=34011",
-      "date": "2026-09-21",
-      "summary": "Pirate Face 는 Hugging Face의 오픈 모델을 체크섬으로 검증한 토렌트로 미러링하고, 단일 기업 대신 P2P 네트워크 가 보관하도록 하는 서비스임 토렌트에 내장된 Hugging Fa…"
+      "title": "Python Workers 정식 출시",
+      "url": "https://news.hada.io/topic?id=34087",
+      "date": "2026-09-22",
+      "summary": "Python Workers가 정식 출시(GA) 되어 Python이 Cloudflare 개발자 플랫폼의 완전 지원 언어가 됨. 기존 Python 코드와 라이브러리로 Workers를 개발하고 Cloud…"
     },
     {
       "source": "GeekNews",
-      "title": "UTF-8000: 무제한 UTF-8",
-      "url": "https://news.hada.io/topic?id=34010",
-      "date": "2026-09-21",
-      "summary": "UTF-8000 은 ASCII와 UTF-8을 포함하면서 임의 크기의 정수를 인코딩하도록 확장한 독립 제안으로, Unicode Consortium이 승인하거나 대표하는 표준은 아님 UTF-8의 선두 …"
+      "title": "NASA/ESA의 화성 시료 귀환 임무가 취소됨",
+      "url": "https://news.hada.io/topic?id=34086",
+      "date": "2026-09-22",
+      "summary": "미국 의회의 예산 절충안이 Mars Sample Return(MSR) 종료를 지지하면서 화성 암석을 지구로 가져오는 계획이 사실상 끝남. 다만 법안은 아직 상하원 통과와 대통령 서명이 필요함 비용 …"
     },
     {
       "source": "GeekNews",
-      "title": "ZK-JPEG - 영지식 이미지 편집 및 압축",
-      "url": "https://news.hada.io/topic?id=34009",
-      "date": "2026-09-21",
-      "summary": "ZK-JPEG 은 비밀로 유지되는 커밋된 입력으로부터 이미지가 올바르게 JPEG 압축되었음을 증명하는 암호학적 도구임 카메라의 디지털 서명 은 이미지 출처를 증명하지만, 손실 압축이나 피사체 보호를…"
+      "title": "샤오미, MiMo-V2.6 공개 - 강화학습 과정을 공개한 멀티모달 모델",
+      "url": "https://news.hada.io/topic?id=34085",
+      "date": "2026-09-22",
+      "summary": "텍스트, 이미지, 영상, 오디오를 함께 이해하고 코딩과 도구 사용, 컴퓨터 조작 을 수행하는 모델군으로, 고성능 Pro와 비용 효율적인 Flash를 공개함 Pro는 발표 기준 Artificial A…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: My Best Photo - 사진 후보를 비교 평가하고 선택 이유를 확인하는 서비스",
-      "url": "https://news.hada.io/topic?id=34007",
-      "date": "2026-09-21",
-      "summary": "제가 직접 만든 사진 비교·평가 웹서비스입니다. 후보 사진을 올리면 다른 사용자들이 두 장씩 비교하고, 등록한 사람은 선택 비율과 선택 이유를 확인할 수 있습니다. 프로필·일상·여행·반려동물 사진처…"
+      "title": "Mac에서 Apple Intelligence 기능 끄기 및 접근 제한하기",
+      "url": "https://news.hada.io/topic?id=34084",
+      "date": "2026-09-22",
+      "summary": "Mac의 시스템 설정과 개별 앱 설정 에서 Siri AI(베타), 요약, 개인화된 답장 등 Apple Intelligence 기능을 끌 수 있음 Siri AI 를 끈 뒤 Siri를 다시 켜면서 Si…"
     },
     {
       "source": "GeekNews",
-      "title": "Step 5 Preview: 파레토 경계 확장",
-      "url": "https://news.hada.io/topic?id=34006",
-      "date": "2026-09-21",
-      "summary": "StepFun이 에이전트 작업용 플래그십 모델 Step 5 Preview 를 공개함. 소프트웨어 엔지니어링과 전문 지식 업무, 특히 금융에 초점을 맞췄으며, 비슷한 지능 수준의 모델보다 작업 비용이…"
+      "title": "macOS 27에서 AI 모델 다운로드를 막고 저장 공간을 확보하는 방법",
+      "url": "https://news.hada.io/topic?id=34083",
+      "date": "2026-09-22",
+      "summary": "macOS 27에서 Siri를 꺼도 AI 모델이 다운로드되는 사례 가 있어, 다운로드를 막고 이미 설치된 모델 파일을 지우는 우회 방법이 공유됨 Siri를 끈 뒤 시스템과 다른 언어로 설정 하거나,…"
     },
     {
       "source": "GeekNews",
-      "title": "채팅 기반 대규모 언어 모델은 심령술사 사기의 작동 방식을 재현한다",
-      "url": "https://news.hada.io/topic?id=34005",
-      "date": "2026-09-21",
-      "summary": "LLMentalist 효과 는 챗봇에서 느끼는 지능이 모델 내부의 사고가 아니라, 통계적으로 그럴듯한 답변에서 개인적 의미를 찾는 사용자의 심리에서 비롯된다는 가설임 핵심 연결고리는 심령술사의 콜드…"
+      "title": "Raspberry Pi, RAM 칩 교체 차단",
+      "url": "https://news.hada.io/topic?id=34082",
+      "date": "2026-09-22",
+      "summary": "Raspberry Pi, RAM 칩 교체 차단"
     },
     {
       "source": "GeekNews",
-      "title": "Qwen-Image-2.1, 소형 고효율 통합 이미지 생성 모델",
-      "url": "https://news.hada.io/topic?id=34004",
-      "date": "2026-09-21",
-      "summary": "Qwen-Image-2.1 이 오픈소스로 공개됨. 시각 생성 구성 요소가 7B 파라미터 인 단일 모델에 텍스트 기반 이미지 생성과 이미지 편집을 통합함 혼합 세분도 어텐션 과 KV 캐시 재사용 으로…"
+      "title": "Fable 5, 높은 추론 설정에도 실제 추론량이 줄었다는 분석",
+      "url": "https://news.hada.io/topic?id=34081",
+      "date": "2026-09-22",
+      "summary": "Claude Code에서 Fable 5의 성능 저하를 체감한 개발자 가 사용 기록을 분석한 결과, 같은 높은 추론 설정에서도 8월의 추론 토큰이 7월보다 감소함 사용자 요청별 추론량 중앙값은 21.…"
     }
   ]
 }
