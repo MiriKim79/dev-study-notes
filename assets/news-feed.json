@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-22",
+  "updated_at": "2026-09-23",
   "items": [
     {
       "source": "GeekNews",
-      "title": "미국, 광케이블 절단으로 동부 주요 공항 항공편 운항 중단",
-      "url": "https://news.hada.io/topic?id=34088",
-      "date": "2026-09-22",
-      "summary": "주 통신 회선 장애와 백업 광케이블 절단 이 겹치면서 FAA가 뉴욕, 보스턴, 필라델피아 등 미국 동부 주요 공항으로 향하는 항공편을 중단함 FlightAware 집계로 미국 내 5,600편 이상이…"
+      "title": "“우리가 FBI를 해킹했다”, 해커 그룹이 FBI 전체 직원의 정보 탈취 주장",
+      "url": "https://news.hada.io/topic?id=34143",
+      "date": "2026-09-23",
+      "summary": "해킹 그룹 ShinyHunters 가 여러 FBI 관련 서비스에 침입해 모든 직원과 지원자의 데이터를 훔쳤다고 주장함. 요원의 이름, 집 주소, 전화번호, 배우자 정보가 포함됐다고 밝힘 404 Me…"
     },
     {
       "source": "GeekNews",
-      "title": "Python Workers 정식 출시",
-      "url": "https://news.hada.io/topic?id=34087",
-      "date": "2026-09-22",
-      "summary": "Python Workers가 정식 출시(GA) 되어 Python이 Cloudflare 개발자 플랫폼의 완전 지원 언어가 됨. 기존 Python 코드와 라이브러리로 Workers를 개발하고 Cloud…"
+      "title": "Claude Opus 5.5, 추론 설정별 성능과 비용 비교",
+      "url": "https://news.hada.io/topic?id=34142",
+      "date": "2026-09-23",
+      "summary": "AAII에서 최대 추론 설정의 Opus 5.5 max는 지능 지수 58점 을 기록했으며, 이전 Opus 5의 최고점 51점과 Fable 5.1의 53점을 넘어섬 추론 강도에 따라 medium 51점…"
     },
     {
       "source": "GeekNews",
-      "title": "NASA/ESA의 화성 시료 귀환 임무가 취소됨",
-      "url": "https://news.hada.io/topic?id=34086",
-      "date": "2026-09-22",
-      "summary": "미국 의회의 예산 절충안이 Mars Sample Return(MSR) 종료를 지지하면서 화성 암석을 지구로 가져오는 계획이 사실상 끝남. 다만 법안은 아직 상하원 통과와 대통령 서명이 필요함 비용 …"
+      "title": "2027년 GrapheneOS가 사전 설치된 기기가 판매될 가능성이 높음",
+      "url": "https://news.hada.io/topic?id=34141",
+      "date": "2026-09-23",
+      "summary": "Motorola Mobility(Lenovo) 가 GrapheneOS와 공식 파트너십을 맺고, 향후 출시할 일부 기기에 GrapheneOS를 지원하기 위해 협력 중임 첫 GrapheneOS 지원 기…"
     },
     {
       "source": "GeekNews",
-      "title": "샤오미, MiMo-V2.6 공개 - 강화학습 과정을 공개한 멀티모달 모델",
-      "url": "https://news.hada.io/topic?id=34085",
-      "date": "2026-09-22",
-      "summary": "텍스트, 이미지, 영상, 오디오를 함께 이해하고 코딩과 도구 사용, 컴퓨터 조작 을 수행하는 모델군으로, 고성능 Pro와 비용 효율적인 Flash를 공개함 Pro는 발표 기준 Artificial A…"
+      "title": "미 국방부 조사, AI 과잉 의존이 이란 학교 미사일 공격에 일조",
+      "url": "https://news.hada.io/topic?id=34140",
+      "date": "2026-09-23",
+      "summary": "미 국방부 내부 조사 관계자들에 따르면, 부실한 정보와 오래된 위성영상, AI 과잉 의존 이 겹치면서 이란 Minab의 초등학교를 군사시설로 오인해 공격했으며, 어린이 최소 123명을 포함해 150…"
     },
     {
       "source": "GeekNews",
-      "title": "Mac에서 Apple Intelligence 기능 끄기 및 접근 제한하기",
-      "url": "https://news.hada.io/topic?id=34084",
-      "date": "2026-09-22",
-      "summary": "Mac의 시스템 설정과 개별 앱 설정 에서 Siri AI(베타), 요약, 개인화된 답장 등 Apple Intelligence 기능을 끌 수 있음 Siri AI 를 끈 뒤 Siri를 다시 켜면서 Si…"
+      "title": "OpenAI가 Jev의 밥그릇을 빼앗을까?",
+      "url": "https://news.hada.io/topic?id=34139",
+      "date": "2026-09-23",
+      "summary": "문장 대신 선택지별 확률과 판단을 반환하는 Jev 가 인기를 얻고 있지만, OpenAI도 이미 도구 선택과 응답 종료 등에 토큰 확률을 활용하고 있어 비슷한 제품을 만들 기반을 갖추고 있음 더 큰 …"
     },
     {
       "source": "GeekNews",
-      "title": "macOS 27에서 AI 모델 다운로드를 막고 저장 공간을 확보하는 방법",
-      "url": "https://news.hada.io/topic?id=34083",
-      "date": "2026-09-22",
-      "summary": "macOS 27에서 Siri를 꺼도 AI 모델이 다운로드되는 사례 가 있어, 다운로드를 막고 이미 설치된 모델 파일을 지우는 우회 방법이 공유됨 Siri를 끈 뒤 시스템과 다른 언어로 설정 하거나,…"
+      "title": "GPT-6 Sol과 Luna 출시",
+      "url": "https://news.hada.io/topic?id=34138",
+      "date": "2026-09-23",
+      "summary": "GPT-6 Astra의 코딩, 전문 업무, 컴퓨터 사용 능력을 더 빠르고 저렴한 모델로 확장 하며, 사실 정확성과 사용자 지시를 따르는 능력도 개선함 API 가격은 이전 GPT-5.6 프로모션 가격…"
     },
     {
       "source": "GeekNews",
-      "title": "Raspberry Pi, RAM 칩 교체 차단",
-      "url": "https://news.hada.io/topic?id=34082",
-      "date": "2026-09-22",
-      "summary": "Raspberry Pi, RAM 칩 교체 차단"
+      "title": "분당 광고 9회: 2026 FIFA 월드컵, ‘아름다운 경기의 대가’",
+      "url": "https://news.hada.io/topic?id=34137",
+      "date": "2026-09-23",
+      "summary": "2026 FIFA 월드컵 전체 경기 영상에서 건강에 해로운 식음료, 주류, 도박, 투기성 상품의 브랜드 노출이 9만 3,000회 이상 확인됨 분석 대상은 중간 광고가 아닌 경기 영상에 삽입된 브랜딩…"
     },
     {
       "source": "GeekNews",
-      "title": "Fable 5, 높은 추론 설정에도 실제 추론량이 줄었다는 분석",
-      "url": "https://news.hada.io/topic?id=34081",
-      "date": "2026-09-22",
-      "summary": "Claude Code에서 Fable 5의 성능 저하를 체감한 개발자 가 사용 기록을 분석한 결과, 같은 높은 추론 설정에서도 8월의 추론 토큰이 7월보다 감소함 사용자 요청별 추론량 중앙값은 21.…"
+      "title": "Meta의 Muse에 파일시스템을 요청했더니 6.8GB를 보내왔다",
+      "url": "https://news.hada.io/topic?id=34136",
+      "date": "2026-09-23",
+      "summary": "Muse 에게 접근 가능한 파일을 압축해 Google Drive로 보내 달라고 요청하자, 세션에 할당된 Linux 실행 환경의 파일 이 전송됨. 압축 해제 후 6.8GB로 내부 문서, 통합 코드, …"
     }
   ]
 }
