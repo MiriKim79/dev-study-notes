@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-23",
+  "updated_at": "2026-09-24",
   "items": [
     {
       "source": "GeekNews",
-      "title": "“우리가 FBI를 해킹했다”, 해커 그룹이 FBI 전체 직원의 정보 탈취 주장",
-      "url": "https://news.hada.io/topic?id=34143",
-      "date": "2026-09-23",
-      "summary": "해킹 그룹 ShinyHunters 가 여러 FBI 관련 서비스에 침입해 모든 직원과 지원자의 데이터를 훔쳤다고 주장함. 요원의 이름, 집 주소, 전화번호, 배우자 정보가 포함됐다고 밝힘 404 Me…"
+      "title": "GitHub 위키는 안티패턴이다 (2022)",
+      "url": "https://news.hada.io/topic?id=34199",
+      "date": "2026-09-24",
+      "summary": "GitHub 프로젝트 문서는 위키보다 /docs 폴더 에 코드와 함께 관리하고 GitHub Pages 로 게시하는 방식을 권장함 문서를 코드와 함께 버전 관리하면 이전 버전의 문서 를 쉽게 찾을 수…"
     },
     {
       "source": "GeekNews",
-      "title": "Claude Opus 5.5, 추론 설정별 성능과 비용 비교",
-      "url": "https://news.hada.io/topic?id=34142",
-      "date": "2026-09-23",
-      "summary": "AAII에서 최대 추론 설정의 Opus 5.5 max는 지능 지수 58점 을 기록했으며, 이전 Opus 5의 최고점 51점과 Fable 5.1의 53점을 넘어섬 추론 강도에 따라 medium 51점…"
+      "title": "Stripe의 사내 업무용 AI 플랫폼, Kai",
+      "url": "https://news.hada.io/topic?id=34198",
+      "date": "2026-09-24",
+      "summary": "Stripe는 영업 전 고객 조사, 재무 분석, 규정 준수 검토 등을 돕는 사내 AI 플랫폼 Kai 를 구축했으며, 발표 시점 기준 직원 83%가 매주 사용 하고 있음 기존 도구로 만든 4,000개…"
     },
     {
       "source": "GeekNews",
-      "title": "2027년 GrapheneOS가 사전 설치된 기기가 판매될 가능성이 높음",
-      "url": "https://news.hada.io/topic?id=34141",
-      "date": "2026-09-23",
-      "summary": "Motorola Mobility(Lenovo) 가 GrapheneOS와 공식 파트너십을 맺고, 향후 출시할 일부 기기에 GrapheneOS를 지원하기 위해 협력 중임 첫 GrapheneOS 지원 기…"
+      "title": "기업 채용 사이트 공고의 28%, 90일 넘게 게시 중",
+      "url": "https://news.hada.io/topic?id=34197",
+      "date": "2026-09-24",
+      "summary": "기업 자체 채용 사이트의 공고 약 61만 개 를 조사한 결과, 게시일을 확인할 수 있는 공고의 28.3%가 90일 넘게 유지 되고 있었음 6개월 넘게 남아 있는 공고도 16.3% 에 달하며, 게시 …"
     },
     {
       "source": "GeekNews",
-      "title": "미 국방부 조사, AI 과잉 의존이 이란 학교 미사일 공격에 일조",
-      "url": "https://news.hada.io/topic?id=34140",
-      "date": "2026-09-23",
-      "summary": "미 국방부 내부 조사 관계자들에 따르면, 부실한 정보와 오래된 위성영상, AI 과잉 의존 이 겹치면서 이란 Minab의 초등학교를 군사시설로 오인해 공격했으며, 어린이 최소 123명을 포함해 150…"
+      "title": "DoorDash가 Mamdani의 시장 당선을 막으려 140만 달러를 쓴 이유가 이제 드러났다",
+      "url": "https://news.hada.io/topic?id=34196",
+      "date": "2026-09-24",
+      "summary": "DoorDash 가 배달 노동자 26만 4,000명의 임금 과소 지급과 관련해 뉴욕시와 1억 3,150만 달러 규모의 합의에 도달함. 뉴욕시 역사상 최대 노동자 관련 합의임 회사는 2025년 시장 …"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI가 Jev의 밥그릇을 빼앗을까?",
-      "url": "https://news.hada.io/topic?id=34139",
-      "date": "2026-09-23",
-      "summary": "문장 대신 선택지별 확률과 판단을 반환하는 Jev 가 인기를 얻고 있지만, OpenAI도 이미 도구 선택과 응답 종료 등에 토큰 확률을 활용하고 있어 비슷한 제품을 만들 기반을 갖추고 있음 더 큰 …"
+      "title": "Claude, CRISPR 유사 반복 서열을 가진 새로운 효소 시스템 발견",
+      "url": "https://news.hada.io/topic?id=34195",
+      "date": "2026-09-24",
+      "summary": "대규모 DNA 데이터베이스에서 이미 알려진 효소 주변의 반복 서열과 보조 단백질을 연결 해, 이전에 규명되지 않았던 효소 시스템 ART 를 찾아냄 약 950개 Claude 에이전트가 21시간 동안 …"
     },
     {
       "source": "GeekNews",
-      "title": "GPT-6 Sol과 Luna 출시",
-      "url": "https://news.hada.io/topic?id=34138",
-      "date": "2026-09-23",
-      "summary": "GPT-6 Astra의 코딩, 전문 업무, 컴퓨터 사용 능력을 더 빠르고 저렴한 모델로 확장 하며, 사실 정확성과 사용자 지시를 따르는 능력도 개선함 API 가격은 이전 GPT-5.6 프로모션 가격…"
+      "title": "Google, 목소리를 만들고 연기까지 지시하는 Gemini 3.8 TTS 공개",
+      "url": "https://news.hada.io/topic?id=34194",
+      "date": "2026-09-24",
+      "summary": "원하는 목소리와 말투를 자연어로 만들고 대사별로 연기를 지시하는 Gemini 3.8 Flash TTS 와, 대량 음성 생성의 비용 효율성을 높인 Flash-Lite TTS 를 공개함 Flash TT…"
     },
     {
       "source": "GeekNews",
-      "title": "분당 광고 9회: 2026 FIFA 월드컵, ‘아름다운 경기의 대가’",
-      "url": "https://news.hada.io/topic?id=34137",
-      "date": "2026-09-23",
-      "summary": "2026 FIFA 월드컵 전체 경기 영상에서 건강에 해로운 식음료, 주류, 도박, 투기성 상품의 브랜드 노출이 9만 3,000회 이상 확인됨 분석 대상은 중간 광고가 아닌 경기 영상에 삽입된 브랜딩…"
+      "title": "일일이 과금하기엔 너무 저렴한 토큰",
+      "url": "https://news.hada.io/topic?id=34193",
+      "date": "2026-09-24",
+      "summary": "AI 사용 비용이 계속 내려가면, 토큰을 얼마나 쓰느냐보다 원하는 품질을 얻을 수 있느냐 가 중요해지고 AI는 별도 제품을 넘어 컴퓨팅의 기본 인프라로 들어갈 수 있음 최상위 모델의 토큰 단가가 항…"
     },
     {
       "source": "GeekNews",
-      "title": "Meta의 Muse에 파일시스템을 요청했더니 6.8GB를 보내왔다",
-      "url": "https://news.hada.io/topic?id=34136",
-      "date": "2026-09-23",
-      "summary": "Muse 에게 접근 가능한 파일을 압축해 Google Drive로 보내 달라고 요청하자, 세션에 할당된 Linux 실행 환경의 파일 이 전송됨. 압축 해제 후 6.8GB로 내부 문서, 통합 코드, …"
+      "title": "시애틀 시의회, 식료품 판매에서 감시 기반 가격 책정 금지 법안 가결",
+      "url": "https://news.hada.io/topic?id=34192",
+      "date": "2026-09-24",
+      "summary": "시애틀 시의회가 소비자 개인정보로 식료품과 기타 필수품 가격을 달리 정하는 행위를 금지하는 Fair Pricing and Transparency Act(CB 121267) 를 가결함 금지 대상은 검…"
     }
   ]
 }
