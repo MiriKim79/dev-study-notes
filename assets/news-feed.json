@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-24",
+  "updated_at": "2026-09-25",
   "items": [
     {
       "source": "GeekNews",
-      "title": "GitHub 위키는 안티패턴이다 (2022)",
-      "url": "https://news.hada.io/topic?id=34199",
-      "date": "2026-09-24",
-      "summary": "GitHub 프로젝트 문서는 위키보다 /docs 폴더 에 코드와 함께 관리하고 GitHub Pages 로 게시하는 방식을 권장함 문서를 코드와 함께 버전 관리하면 이전 버전의 문서 를 쉽게 찾을 수…"
+      "title": "Toyota, Corolla 전기차 출시 준비",
+      "url": "https://news.hada.io/topic?id=34246",
+      "date": "2026-09-25",
+      "summary": "Toyota가 차세대 Corolla에 순수 전기차와 플러그인 하이브리드 모델을 처음 도입 할 예정이며, 가솔린과 하이브리드를 포함한 여러 동력계 구성을 준비 중임 차세대 모델은 현행 TNGA-C 플…"
     },
     {
       "source": "GeekNews",
-      "title": "Stripe의 사내 업무용 AI 플랫폼, Kai",
-      "url": "https://news.hada.io/topic?id=34198",
-      "date": "2026-09-24",
-      "summary": "Stripe는 영업 전 고객 조사, 재무 분석, 규정 준수 검토 등을 돕는 사내 AI 플랫폼 Kai 를 구축했으며, 발표 시점 기준 직원 83%가 매주 사용 하고 있음 기존 도구로 만든 4,000개…"
+      "title": "Whiteboard (YC W26) - 신중한 소프트웨어 설계를 위한 오픈소스 IDE",
+      "url": "https://news.hada.io/topic?id=34245",
+      "date": "2026-09-25",
+      "summary": "Whiteboard 는 사람과 코딩 에이전트가 공통 작업 공간에서 소프트웨어를 함께 설계하는 데스크톱 앱으로, Claude Code나 Codex에 연결해 에이전트가 SDK로 캔버스에 작업 내용을 그…"
     },
     {
       "source": "GeekNews",
-      "title": "기업 채용 사이트 공고의 28%, 90일 넘게 게시 중",
-      "url": "https://news.hada.io/topic?id=34197",
-      "date": "2026-09-24",
-      "summary": "기업 자체 채용 사이트의 공고 약 61만 개 를 조사한 결과, 게시일을 확인할 수 있는 공고의 28.3%가 90일 넘게 유지 되고 있었음 6개월 넘게 남아 있는 공고도 16.3% 에 달하며, 게시 …"
+      "title": "간은 왜 유독 재생 능력이 뛰어날까?",
+      "url": "https://news.hada.io/topic?id=34244",
+      "date": "2026-09-25",
+      "summary": "신체의 낮은 재생 능력은 단순한 결함이 아니라 암 위험을 억제하는 대가 일 수 있음. 다만 이는 여러 예외와 제약이 있는 추측적 생물학 통합 가설임 간 은 장에서 들어오는 독소와 병원체에 먼저 노출…"
     },
     {
       "source": "GeekNews",
-      "title": "DoorDash가 Mamdani의 시장 당선을 막으려 140만 달러를 쓴 이유가 이제 드러났다",
-      "url": "https://news.hada.io/topic?id=34196",
-      "date": "2026-09-24",
-      "summary": "DoorDash 가 배달 노동자 26만 4,000명의 임금 과소 지급과 관련해 뉴욕시와 1억 3,150만 달러 규모의 합의에 도달함. 뉴욕시 역사상 최대 노동자 관련 합의임 회사는 2025년 시장 …"
+      "title": "Rails World 2026 개막 기조연설 [영상]",
+      "url": "https://news.hada.io/topic?id=34243",
+      "date": "2026-09-25",
+      "summary": "DHH는 AI 에이전트가 코드 작성의 경제성을 바꾸고 있다 며, 개발자의 역할이 코드를 직접 쓰는 일에서 원하는 결과를 정의하고 만드는 일로 이동한다고 봄 37signals는 수작업 코드 작성을 예…"
     },
     {
       "source": "GeekNews",
-      "title": "Claude, CRISPR 유사 반복 서열을 가진 새로운 효소 시스템 발견",
-      "url": "https://news.hada.io/topic?id=34195",
-      "date": "2026-09-24",
-      "summary": "대규모 DNA 데이터베이스에서 이미 알려진 효소 주변의 반복 서열과 보조 단백질을 연결 해, 이전에 규명되지 않았던 효소 시스템 ART 를 찾아냄 약 950개 Claude 에이전트가 21시간 동안 …"
+      "title": "예산별 최고의 LLM, 매일 업데이트",
+      "url": "https://news.hada.io/topic?id=34242",
+      "date": "2026-09-25",
+      "summary": "Artificial Analysis Intelligence Index 점수와 API 가격을 비교해, 더 저렴하면서 성능이 같거나 높은 대안이 없는 모델을 가성비 경계선(value frontier) …"
     },
     {
       "source": "GeekNews",
-      "title": "Google, 목소리를 만들고 연기까지 지시하는 Gemini 3.8 TTS 공개",
-      "url": "https://news.hada.io/topic?id=34194",
-      "date": "2026-09-24",
-      "summary": "원하는 목소리와 말투를 자연어로 만들고 대사별로 연기를 지시하는 Gemini 3.8 Flash TTS 와, 대량 음성 생성의 비용 효율성을 높인 Flash-Lite TTS 를 공개함 Flash TT…"
+      "title": "Show HN: Times New Bastard 같은 괴상한 폰트 만들기",
+      "url": "https://news.hada.io/topic?id=34241",
+      "date": "2026-09-25",
+      "summary": "Bastardica 는 기본 폰트의 글리프를 일정 간격마다 다른 폰트의 글리프로 교체해 혼합 폰트를 만드는 도구임 결과물은 일반 OpenType 폰트 이며, liga 문맥 치환으로 글리프를 바꿔 브…"
     },
     {
       "source": "GeekNews",
-      "title": "일일이 과금하기엔 너무 저렴한 토큰",
-      "url": "https://news.hada.io/topic?id=34193",
-      "date": "2026-09-24",
-      "summary": "AI 사용 비용이 계속 내려가면, 토큰을 얼마나 쓰느냐보다 원하는 품질을 얻을 수 있느냐 가 중요해지고 AI는 별도 제품을 넘어 컴퓨팅의 기본 인프라로 들어갈 수 있음 최상위 모델의 토큰 단가가 항…"
+      "title": "대조 언어 모델",
+      "url": "https://news.hada.io/topic?id=34240",
+      "date": "2026-09-25",
+      "summary": "Contrastive Language Models(CLM) 는 상태와 행동을 대조 학습으로 연결하는 시스템 1 모델로, 현재 상태와 후보 행동의 임베딩을 비교해 가장 높은 점수의 행동을 선택함 공개…"
     },
     {
       "source": "GeekNews",
-      "title": "시애틀 시의회, 식료품 판매에서 감시 기반 가격 책정 금지 법안 가결",
-      "url": "https://news.hada.io/topic?id=34192",
-      "date": "2026-09-24",
-      "summary": "시애틀 시의회가 소비자 개인정보로 식료품과 기타 필수품 가격을 달리 정하는 행위를 금지하는 Fair Pricing and Transparency Act(CB 121267) 를 가결함 금지 대상은 검…"
+      "title": "폴란드 Starlink 지상국에서 화재, 방화 공격 의심",
+      "url": "https://news.hada.io/topic?id=34239",
+      "date": "2026-09-25",
+      "summary": "폴란드에서 Starlink가 사용하는 지상국 에 화재가 발생했으며, 디지털부 장관은 핵심 통신 인프라를 겨냥한 고의적 방화 로 판단함 해당 시설은 국영 통신사 Exatel 소유로, Starlink를…"
     }
   ]
 }
