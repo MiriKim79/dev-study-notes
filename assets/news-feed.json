@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-25",
+  "updated_at": "2026-09-26",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Toyota, Corolla 전기차 출시 준비",
-      "url": "https://news.hada.io/topic?id=34246",
-      "date": "2026-09-25",
-      "summary": "Toyota가 차세대 Corolla에 순수 전기차와 플러그인 하이브리드 모델을 처음 도입 할 예정이며, 가솔린과 하이브리드를 포함한 여러 동력계 구성을 준비 중임 차세대 모델은 현행 TNGA-C 플…"
+      "title": "Ollaya - 오픈소스 Jev 스타일 의사결정 모델을 위한 Ollama",
+      "url": "https://news.hada.io/topic?id=34288",
+      "date": "2026-09-26",
+      "summary": "Ollaya 는 텍스트나 JSON에 타입이 지정된 질문을 하고, 보정된 답을 로컬 하드웨어에서 얻는 오픈소스 의사결정 모델 실행 도구임 토큰을 순차 생성하지 않고 한 번의 순전파 로 답하며, RTX…"
     },
     {
       "source": "GeekNews",
-      "title": "Whiteboard (YC W26) - 신중한 소프트웨어 설계를 위한 오픈소스 IDE",
-      "url": "https://news.hada.io/topic?id=34245",
-      "date": "2026-09-25",
-      "summary": "Whiteboard 는 사람과 코딩 에이전트가 공통 작업 공간에서 소프트웨어를 함께 설계하는 데스크톱 앱으로, Claude Code나 Codex에 연결해 에이전트가 SDK로 캔버스에 작업 내용을 그…"
+      "title": "Oracle, 데이터센터에 전력이 공급되지 않아도 투자자에게 대금 지급 의무",
+      "url": "https://news.hada.io/topic?id=34287",
+      "date": "2026-09-26",
+      "summary": "Oracle, 데이터센터에 전력이 공급되지 않아도 투자자에게 대금 지급 의무"
     },
     {
       "source": "GeekNews",
-      "title": "간은 왜 유독 재생 능력이 뛰어날까?",
-      "url": "https://news.hada.io/topic?id=34244",
-      "date": "2026-09-25",
-      "summary": "신체의 낮은 재생 능력은 단순한 결함이 아니라 암 위험을 억제하는 대가 일 수 있음. 다만 이는 여러 예외와 제약이 있는 추측적 생물학 통합 가설임 간 은 장에서 들어오는 독소와 병원체에 먼저 노출…"
+      "title": "시험",
+      "url": "https://news.hada.io/topic?id=34286",
+      "date": "2026-09-26",
+      "summary": "기술 업계 거물들의 터무니없는 발언은, 의도적으로 설계하지 않았더라도 주변 사람이 어디까지 받아들이는지 가르는 복종의 시험 으로 작동함 Jensen Huang 은 아이들이 기초 수학을 잊는 것이 중…"
     },
     {
       "source": "GeekNews",
-      "title": "Rails World 2026 개막 기조연설 [영상]",
-      "url": "https://news.hada.io/topic?id=34243",
-      "date": "2026-09-25",
-      "summary": "DHH는 AI 에이전트가 코드 작성의 경제성을 바꾸고 있다 며, 개발자의 역할이 코드를 직접 쓰는 일에서 원하는 결과를 정의하고 만드는 일로 이동한다고 봄 37signals는 수작업 코드 작성을 예…"
+      "title": "제1원리 사고",
+      "url": "https://news.hada.io/topic?id=34285",
+      "date": "2026-09-26",
+      "summary": "축적한 경험은 변화한 환경에서 다른 접근을 어렵게 만들 수 있으며, 제1원리 사고 는 기존 답보다 지금 해결하려는 문제와 목적에서 출발함 막혔을 때는 결과에만 집중하기보다 실행 가능한 가장 작은 일…"
     },
     {
       "source": "GeekNews",
-      "title": "예산별 최고의 LLM, 매일 업데이트",
-      "url": "https://news.hada.io/topic?id=34242",
-      "date": "2026-09-25",
-      "summary": "Artificial Analysis Intelligence Index 점수와 API 가격을 비교해, 더 저렴하면서 성능이 같거나 높은 대안이 없는 모델을 가성비 경계선(value frontier) …"
+      "title": "SourceHut 빌드 로그를 통한 계정 탈취 취약점, ansi2html의 XSS",
+      "url": "https://news.hada.io/topic?id=34284",
+      "date": "2026-09-26",
+      "summary": "ansi2html의 XSS 취약점 으로 빌드 로그에 악성 문자열을 삽입한 공격자가 해당 로그를 열람하는 SourceHut 사용자의 계정을 탈취할 수 있었음 공격자는 OSC 8 하이퍼링크 처리의 허점…"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: Times New Bastard 같은 괴상한 폰트 만들기",
-      "url": "https://news.hada.io/topic?id=34241",
-      "date": "2026-09-25",
-      "summary": "Bastardica 는 기본 폰트의 글리프를 일정 간격마다 다른 폰트의 글리프로 교체해 혼합 폰트를 만드는 도구임 결과물은 일반 OpenType 폰트 이며, liga 문맥 치환으로 글리프를 바꿔 브…"
+      "title": "Oracle, 논란의 데이터센터 사업에서 자사 보호 위해 ‘불가항력’ 사유 내세워",
+      "url": "https://news.hada.io/topic?id=34283",
+      "date": "2026-09-26",
+      "summary": "Oracle 이 뉴멕시코에 건설 중인 대규모 데이터센터에서 비용 부담이 쌓이는 것을 막기 위한 조치에 나섬 사정을 아는 관계자들에 따르면, 개발사인 Blue Owl Capital 계열사 에 불가항력…"
     },
     {
       "source": "GeekNews",
-      "title": "대조 언어 모델",
-      "url": "https://news.hada.io/topic?id=34240",
-      "date": "2026-09-25",
-      "summary": "Contrastive Language Models(CLM) 는 상태와 행동을 대조 학습으로 연결하는 시스템 1 모델로, 현재 상태와 후보 행동의 임베딩을 비교해 가장 높은 점수의 행동을 선택함 공개…"
+      "title": "HTTP에서 가장 보기 흉한 부분, Vary 지원을 출시하다",
+      "url": "https://news.hada.io/topic?id=34282",
+      "date": "2026-09-26",
+      "summary": "Cloudflare가 모든 요금제의 Cache Rules에 Vary 지원 을 추가함. 원본 서버가 응답에 영향을 주는 요청 헤더를 지정하고, 운영자는 각 헤더 값을 캐시에 어떻게 반영할지 결정함 V…"
     },
     {
       "source": "GeekNews",
-      "title": "폴란드 Starlink 지상국에서 화재, 방화 공격 의심",
-      "url": "https://news.hada.io/topic?id=34239",
-      "date": "2026-09-25",
-      "summary": "폴란드에서 Starlink가 사용하는 지상국 에 화재가 발생했으며, 디지털부 장관은 핵심 통신 인프라를 겨냥한 고의적 방화 로 판단함 해당 시설은 국영 통신사 Exatel 소유로, Starlink를…"
+      "title": "기밀 추산으로 드러난 NSA의 수십억 달러 규모 AI 모델 테스트 지출",
+      "url": "https://news.hada.io/topic?id=34281",
+      "date": "2026-09-26",
+      "summary": "기밀 추산을 아는 소식통 2명에 따르면, NSA 는 올해 첨단 AI 모델 평가와 테스트에 수십억 달러의 세금 을 쓰고 있다고 의원들에게 알림 잇따른 해킹과 보안 사고 이후 NSA의 Artificia…"
     }
   ]
 }
