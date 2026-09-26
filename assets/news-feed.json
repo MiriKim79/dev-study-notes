@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-09-27",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Ollaya - 오픈소스 Jev 스타일 의사결정 모델을 위한 Ollama",
-      "url": "https://news.hada.io/topic?id=34288",
-      "date": "2026-09-26",
-      "summary": "Ollaya 는 텍스트나 JSON에 타입이 지정된 질문을 하고, 보정된 답을 로컬 하드웨어에서 얻는 오픈소스 의사결정 모델 실행 도구임 토큰을 순차 생성하지 않고 한 번의 순전파 로 답하며, RTX…"
+      "title": "Show HN: Reladraw - 요소를 어디에 놓을지 직접 정하는 다이어그램 언어",
+      "url": "https://news.hada.io/topic?id=34338",
+      "date": "2026-09-27",
+      "summary": "Reladraw 는 좌표 대신 요소 간 상대적 위치를 텍스트로 지정하는 다이어그램 언어로, 자동 배치와 수동 절대 좌표 편집 사이를 지향함 배치 관계는 소스가 결정 하고 엔진은 필요한 거리를 계산함…"
     },
     {
       "source": "GeekNews",
-      "title": "Oracle, 데이터센터에 전력이 공급되지 않아도 투자자에게 대금 지급 의무",
-      "url": "https://news.hada.io/topic?id=34287",
-      "date": "2026-09-26",
-      "summary": "Oracle, 데이터센터에 전력이 공급되지 않아도 투자자에게 대금 지급 의무"
+      "title": "Show GN: 자조모임 BBS 무료 게시판/대화방",
+      "url": "https://news.hada.io/topic?id=34337",
+      "date": "2026-09-27",
+      "summary": "의사로서 중독, 우울, 불안 환자를 치료하면서 왜 한국에는 자조모임이 없을까? 자조모임만큼 효과적인 것은 없는데! 라는 생각을 많이 했었죠 문화차이겠죠 그렇다면 온라인 자조모임이라도 활성화 될 수 …"
     },
     {
       "source": "GeekNews",
-      "title": "시험",
-      "url": "https://news.hada.io/topic?id=34286",
-      "date": "2026-09-26",
-      "summary": "기술 업계 거물들의 터무니없는 발언은, 의도적으로 설계하지 않았더라도 주변 사람이 어디까지 받아들이는지 가르는 복종의 시험 으로 작동함 Jensen Huang 은 아이들이 기초 수학을 잊는 것이 중…"
+      "title": "LLM 시대에도 프로그래밍을 계속 즐기는 법",
+      "url": "https://news.hada.io/topic?id=34336",
+      "date": "2026-09-27",
+      "summary": "코딩은 사람이 맡고 , LLM에는 계획 정리, 조사, 검토 등 주변 작업을 맡기는 방식으로 프로그래밍의 즐거움과 적당한 생산성 향상을 함께 추구할 수 있음 코드베이스에 대한 이해와 주도권 을 유지하…"
     },
     {
       "source": "GeekNews",
-      "title": "제1원리 사고",
-      "url": "https://news.hada.io/topic?id=34285",
-      "date": "2026-09-26",
-      "summary": "축적한 경험은 변화한 환경에서 다른 접근을 어렵게 만들 수 있으며, 제1원리 사고 는 기존 답보다 지금 해결하려는 문제와 목적에서 출발함 막혔을 때는 결과에만 집중하기보다 실행 가능한 가장 작은 일…"
+      "title": "Postgres 마이그레이션은 안전할까, 안전하지 않을까?",
+      "url": "https://news.hada.io/topic?id=34335",
+      "date": "2026-09-27",
+      "summary": "safe-not-safe 는 PostgreSQL 마이그레이션 SQL을 입력하고 검사하는 도구로, 브라우저 편집기와 CLI 실행 명령을 제공함 SQL 파싱에는 libpg_query 17의 WASM 버…"
     },
     {
       "source": "GeekNews",
-      "title": "SourceHut 빌드 로그를 통한 계정 탈취 취약점, ansi2html의 XSS",
-      "url": "https://news.hada.io/topic?id=34284",
-      "date": "2026-09-26",
-      "summary": "ansi2html의 XSS 취약점 으로 빌드 로그에 악성 문자열을 삽입한 공격자가 해당 로그를 열람하는 SourceHut 사용자의 계정을 탈취할 수 있었음 공격자는 OSC 8 하이퍼링크 처리의 허점…"
+      "title": "Johannes Doerfert를 추모하며",
+      "url": "https://news.hada.io/topic?id=34334",
+      "date": "2026-09-27",
+      "summary": "LLVM에 활발히 기여하며 존경받던 개발자 Johannes Doerfert 가 암 투병 끝에 2026년 9월 17일, 36세로 별세함 프로그램 전반의 함수와 인자 속성을 추론하고 전파하는 Attri…"
     },
     {
       "source": "GeekNews",
-      "title": "Oracle, 논란의 데이터센터 사업에서 자사 보호 위해 ‘불가항력’ 사유 내세워",
-      "url": "https://news.hada.io/topic?id=34283",
-      "date": "2026-09-26",
-      "summary": "Oracle 이 뉴멕시코에 건설 중인 대규모 데이터센터에서 비용 부담이 쌓이는 것을 막기 위한 조치에 나섬 사정을 아는 관계자들에 따르면, 개발사인 Blue Owl Capital 계열사 에 불가항력…"
+      "title": "급락하는 시험 성적은 서서히 진행되는 재앙이다",
+      "url": "https://news.hada.io/topic?id=34333",
+      "date": "2026-09-27",
+      "summary": "부유한 국가 학생들의 PISA 읽기, 수학, 과학 성적 이 2000년 평가 시작 이후 최저 수준으로 떨어짐 코로나19 봉쇄 는 수업에 큰 차질을 일으키고 PISA 성적 하락을 초래했지만, 이제 성적…"
     },
     {
       "source": "GeekNews",
-      "title": "HTTP에서 가장 보기 흉한 부분, Vary 지원을 출시하다",
-      "url": "https://news.hada.io/topic?id=34282",
-      "date": "2026-09-26",
-      "summary": "Cloudflare가 모든 요금제의 Cache Rules에 Vary 지원 을 추가함. 원본 서버가 응답에 영향을 주는 요청 헤더를 지정하고, 운영자는 각 헤더 값을 캐시에 어떻게 반영할지 결정함 V…"
+      "title": "PipePipe - SponsorBlock을 구현한 NewPipe 하드 포크",
+      "url": "https://news.hada.io/topic?id=34332",
+      "date": "2026-09-27",
+      "summary": "PipePipe 는 개발 철학의 차이로 2022년 초 NewPipe에서 분리돼 독립 개발 중인 프로젝트로, NewPipe와 업데이트를 주고받지 않음 SponsorBlock 으로 YouTube와 Bi…"
     },
     {
       "source": "GeekNews",
-      "title": "기밀 추산으로 드러난 NSA의 수십억 달러 규모 AI 모델 테스트 지출",
-      "url": "https://news.hada.io/topic?id=34281",
-      "date": "2026-09-26",
-      "summary": "기밀 추산을 아는 소식통 2명에 따르면, NSA 는 올해 첨단 AI 모델 평가와 테스트에 수십억 달러의 세금 을 쓰고 있다고 의원들에게 알림 잇따른 해킹과 보안 사고 이후 NSA의 Artificia…"
+      "title": "화제가 된 Giants 영상 속 엄마입니다. 제 남편 이야기를 들려드릴게요",
+      "url": "https://news.hada.io/topic?id=34331",
+      "date": "2026-09-27",
+      "summary": "San Francisco Giants 경기에서 아기와 음식을 함께 들고 있던 Erika의 영상이 퍼지면서 남편 Ramses에게 비난이 쏟아졌지만, 실제 대화는 방송 해설과 달랐음 Ramses는 아기…"
     }
   ]
 }
