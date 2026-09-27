@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-28",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show HN: Reladraw - 요소를 어디에 놓을지 직접 정하는 다이어그램 언어",
-      "url": "https://news.hada.io/topic?id=34338",
-      "date": "2026-09-27",
-      "summary": "Reladraw 는 좌표 대신 요소 간 상대적 위치를 텍스트로 지정하는 다이어그램 언어로, 자동 배치와 수동 절대 좌표 편집 사이를 지향함 배치 관계는 소스가 결정 하고 엔진은 필요한 거리를 계산함…"
+      "title": "Show HN: TinyAIArena, AI 에이전트들의 대결을 관전하는 서비스",
+      "url": "https://news.hada.io/topic?id=34390",
+      "date": "2026-09-28",
+      "summary": "TinyAIArena 는 AI 에이전트의 대결 순위와 경기 기록을 제공하며, 기록에서 경기를 클릭해 관전할 수 있음 순위는 완료된 경기의 Elo 로 계산하며, 모든 참가 모델은 1000점에서 시작함…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: 자조모임 BBS 무료 게시판/대화방",
-      "url": "https://news.hada.io/topic?id=34337",
-      "date": "2026-09-27",
-      "summary": "의사로서 중독, 우울, 불안 환자를 치료하면서 왜 한국에는 자조모임이 없을까? 자조모임만큼 효과적인 것은 없는데! 라는 생각을 많이 했었죠 문화차이겠죠 그렇다면 온라인 자조모임이라도 활성화 될 수 …"
+      "title": "Go 코드를 GitHub에 결합하지 말자",
+      "url": "https://news.hada.io/topic?id=34389",
+      "date": "2026-09-28",
+      "summary": "Go는 코드를 가져올 위치를 네임스페이스로 사용 해 중앙 패키지 관리 시스템 없이 라이브러리를 배포하고 가져올 수 있지만, 호스팅 주소를 그대로 쓰면 코드가 해당 제공업체에 결합됨 GitHub에서 …"
     },
     {
       "source": "GeekNews",
-      "title": "LLM 시대에도 프로그래밍을 계속 즐기는 법",
-      "url": "https://news.hada.io/topic?id=34336",
-      "date": "2026-09-27",
-      "summary": "코딩은 사람이 맡고 , LLM에는 계획 정리, 조사, 검토 등 주변 작업을 맡기는 방식으로 프로그래밍의 즐거움과 적당한 생산성 향상을 함께 추구할 수 있음 코드베이스에 대한 이해와 주도권 을 유지하…"
+      "title": "브라질, 온라인 베팅 금지",
+      "url": "https://news.hada.io/topic?id=34388",
+      "date": "2026-09-28",
+      "summary": "브라질 대통령 Luiz Inacio Lula da Silva가 온라인 베팅 영업을 금지하는 행정명령 을 발표함. 즉시 발효되지만 효력을 유지하려면 120일 이내 의회 승인 이 필요함 이용자는 10월…"
     },
     {
       "source": "GeekNews",
-      "title": "Postgres 마이그레이션은 안전할까, 안전하지 않을까?",
-      "url": "https://news.hada.io/topic?id=34335",
-      "date": "2026-09-27",
-      "summary": "safe-not-safe 는 PostgreSQL 마이그레이션 SQL을 입력하고 검사하는 도구로, 브라우저 편집기와 CLI 실행 명령을 제공함 SQL 파싱에는 libpg_query 17의 WASM 버…"
+      "title": "fakecloud - 통합 테스트를 위한 로컬 AWS 클라우드 에뮬레이터",
+      "url": "https://news.hada.io/topic?id=34387",
+      "date": "2026-09-28",
+      "summary": "fakecloud 는 기존 AWS SDK, CLI, IaC 도구를 그대로 사용하면서 애플리케이션과 AWS 서비스 간 동작을 로컬에서 테스트하는 환경임 애플리케이션은 일반 AWS API를 호출하고, …"
     },
     {
       "source": "GeekNews",
-      "title": "Johannes Doerfert를 추모하며",
-      "url": "https://news.hada.io/topic?id=34334",
-      "date": "2026-09-27",
-      "summary": "LLVM에 활발히 기여하며 존경받던 개발자 Johannes Doerfert 가 암 투병 끝에 2026년 9월 17일, 36세로 별세함 프로그램 전반의 함수와 인자 속성을 추론하고 전파하는 Attri…"
+      "title": "토성의 얼음 위성에서 생명체 존재 가능성에 관한 유망한 발견",
+      "url": "https://news.hada.io/topic?id=34386",
+      "date": "2026-09-28",
+      "summary": "Enceladus 의 바다가 기존 예상보다 생명체에 적합할 수 있으며, 생명체가 있다면 그 흔적을 더 쉽게 찾을 수 있다는 두 연구가 Science Advances 에 발표됨 바다에서 우주로 분출되…"
     },
     {
       "source": "GeekNews",
-      "title": "급락하는 시험 성적은 서서히 진행되는 재앙이다",
-      "url": "https://news.hada.io/topic?id=34333",
-      "date": "2026-09-27",
-      "summary": "부유한 국가 학생들의 PISA 읽기, 수학, 과학 성적 이 2000년 평가 시작 이후 최저 수준으로 떨어짐 코로나19 봉쇄 는 수업에 큰 차질을 일으키고 PISA 성적 하락을 초래했지만, 이제 성적…"
+      "title": "Lofi Cities - 픽셀 아트 도시의 밤과 브라우저에서 생성하는 로파이 음악",
+      "url": "https://news.hada.io/topic?id=34385",
+      "date": "2026-09-28",
+      "summary": "Lofi Cities 는 도시의 픽셀 아트 야경과 브라우저에서 실시간 생성하는 끝없는 로파이 음악을 결합한 무료 웹앱임 Web Audio API 로 코드, 드럼, 베이스, 멜로디를 합성하며, 샘플이…"
     },
     {
       "source": "GeekNews",
-      "title": "PipePipe - SponsorBlock을 구현한 NewPipe 하드 포크",
-      "url": "https://news.hada.io/topic?id=34332",
-      "date": "2026-09-27",
-      "summary": "PipePipe 는 개발 철학의 차이로 2022년 초 NewPipe에서 분리돼 독립 개발 중인 프로젝트로, NewPipe와 업데이트를 주고받지 않음 SponsorBlock 으로 YouTube와 Bi…"
+      "title": "“언어 모델로서”: 채팅 템플릿이 LLM의 자기 언급 말투를 전환함",
+      "url": "https://news.hada.io/topic?id=34384",
+      "date": "2026-09-28",
+      "summary": "채팅 템플릿 은 LLM이 자신에 대해 답하는 말투를 바꿈. 실험한 8개 지시 튜닝 모델 모두에서 템플릿을 적용하면 “저는 AI일 뿐입니다” 같은 한계 고지형 응답이 늘고, “저는 느낍니다” 같은 경…"
     },
     {
       "source": "GeekNews",
-      "title": "화제가 된 Giants 영상 속 엄마입니다. 제 남편 이야기를 들려드릴게요",
-      "url": "https://news.hada.io/topic?id=34331",
-      "date": "2026-09-27",
-      "summary": "San Francisco Giants 경기에서 아기와 음식을 함께 들고 있던 Erika의 영상이 퍼지면서 남편 Ramses에게 비난이 쏟아졌지만, 실제 대화는 방송 해설과 달랐음 Ramses는 아기…"
+      "title": "Google은 언제부터 이렇게 이상해졌을까?",
+      "url": "https://news.hada.io/topic?id=34383",
+      "date": "2026-09-28",
+      "summary": "오래된 농구 팬 밈을 찾으려던 Google 검색 에, Dario라는 남자에게 거절당한 사람을 위로하는 듯한 AI Overview 가 나타남 검색어 hes never coming over dario …"
     }
   ]
 }
