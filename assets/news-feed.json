@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-28",
+  "updated_at": "2026-09-29",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show HN: TinyAIArena, AI 에이전트들의 대결을 관전하는 서비스",
-      "url": "https://news.hada.io/topic?id=34390",
-      "date": "2026-09-28",
-      "summary": "TinyAIArena 는 AI 에이전트의 대결 순위와 경기 기록을 제공하며, 기록에서 경기를 클릭해 관전할 수 있음 순위는 완료된 경기의 Elo 로 계산하며, 모든 참가 모델은 1000점에서 시작함…"
+      "title": "업데이트된 Google Maps에 드러난 라파 도시의 파괴",
+      "url": "https://news.hada.io/topic?id=34465",
+      "date": "2026-09-29",
+      "summary": "Google Maps 가 업데이트되면서 가자 지구의 파괴된 모습이 지도에 나타남 공개된 지역은 가자 지구의 라파(Rafah) 에 해당함 업데이트된 지도에서 라파 도시의 파괴 를 확인할 수 있음 게시…"
     },
     {
       "source": "GeekNews",
-      "title": "Go 코드를 GitHub에 결합하지 말자",
-      "url": "https://news.hada.io/topic?id=34389",
-      "date": "2026-09-28",
-      "summary": "Go는 코드를 가져올 위치를 네임스페이스로 사용 해 중앙 패키지 관리 시스템 없이 라이브러리를 배포하고 가져올 수 있지만, 호스팅 주소를 그대로 쓰면 코드가 해당 제공업체에 결합됨 GitHub에서 …"
+      "title": "Flock, 자사 감시 카메라의 가장 상세한 지도 사이트 폐쇄 요구",
+      "url": "https://news.hada.io/topic?id=34464",
+      "date": "2026-09-29",
+      "summary": "보안 연구자 Joshua Michael이 Flock 자체 데이터베이스를 바탕으로 감시 장치 약 30만 대의 위치 지도 를 공개했으며, Flock을 대리한다고 밝힌 업체가 상표권 침해를 이유로 사이트…"
     },
     {
       "source": "GeekNews",
-      "title": "브라질, 온라인 베팅 금지",
-      "url": "https://news.hada.io/topic?id=34388",
-      "date": "2026-09-28",
-      "summary": "브라질 대통령 Luiz Inacio Lula da Silva가 온라인 베팅 영업을 금지하는 행정명령 을 발표함. 즉시 발효되지만 효력을 유지하려면 120일 이내 의회 승인 이 필요함 이용자는 10월…"
+      "title": "NobodyWho - 앱과 게임에 로컬 AI를 넣는 온디바이스 추론 엔진",
+      "url": "https://news.hada.io/topic?id=34463",
+      "date": "2026-09-29",
+      "summary": "클라우드 API 대신 사용자의 기기에서 AI 모델을 실행 해, 앱과 게임에 대화·이미지 이해·음성 기능을 넣는 오픈소스 추론 엔진 모델을 내려받으면 인터넷 연결이나 API 키 없이 실행 할 수 있으…"
     },
     {
       "source": "GeekNews",
-      "title": "fakecloud - 통합 테스트를 위한 로컬 AWS 클라우드 에뮬레이터",
-      "url": "https://news.hada.io/topic?id=34387",
-      "date": "2026-09-28",
-      "summary": "fakecloud 는 기존 AWS SDK, CLI, IaC 도구를 그대로 사용하면서 애플리케이션과 AWS 서비스 간 동작을 로컬에서 테스트하는 환경임 애플리케이션은 일반 AWS API를 호출하고, …"
+      "title": "전문가가 덧붙이는 별표 주석",
+      "url": "https://news.hada.io/topic?id=34462",
+      "date": "2026-09-29",
+      "summary": "초보자의 질문에 답하면서 학습자의 능력이나 필요와 동떨어진 세부사항을 덧붙이는 ‘ 전문가의 별표 주석(Expert Asterisk) ’은 도움을 주려는 의도에서 비롯되지만 학습자의 주의를 분산시킬 …"
     },
     {
       "source": "GeekNews",
-      "title": "토성의 얼음 위성에서 생명체 존재 가능성에 관한 유망한 발견",
-      "url": "https://news.hada.io/topic?id=34386",
-      "date": "2026-09-28",
-      "summary": "Enceladus 의 바다가 기존 예상보다 생명체에 적합할 수 있으며, 생명체가 있다면 그 흔적을 더 쉽게 찾을 수 있다는 두 연구가 Science Advances 에 발표됨 바다에서 우주로 분출되…"
+      "title": "그들을 뒤로하고",
+      "url": "https://news.hada.io/topic?id=34461",
+      "date": "2026-09-29",
+      "summary": "David Bushell이 AI 정책을 “현재 전문 업무에 AI를 사용하지 않는다”에서 “ AI를 사용하지 않으며 앞으로도 사용하지 않겠다 ”로 변경함 AI 산업이 노동을 비인간화하고 상품화 하도록…"
     },
     {
       "source": "GeekNews",
-      "title": "Lofi Cities - 픽셀 아트 도시의 밤과 브라우저에서 생성하는 로파이 음악",
-      "url": "https://news.hada.io/topic?id=34385",
-      "date": "2026-09-28",
-      "summary": "Lofi Cities 는 도시의 픽셀 아트 야경과 브라우저에서 실시간 생성하는 끝없는 로파이 음악을 결합한 무료 웹앱임 Web Audio API 로 코드, 드럼, 베이스, 멜로디를 합성하며, 샘플이…"
+      "title": "Lisp는 왜 읽기 어려울까?",
+      "url": "https://news.hada.io/topic?id=34460",
+      "date": "2026-09-29",
+      "summary": "Lisp가 읽기 어려운 이유는 단순히 익숙함의 문제 만이 아니라, 괄호 배치가 시각적 그룹화와 작업 기억에 주는 부담에도 있을 수 있음 C 스타일의 operation(arguments...) 는 인…"
     },
     {
       "source": "GeekNews",
-      "title": "“언어 모델로서”: 채팅 템플릿이 LLM의 자기 언급 말투를 전환함",
-      "url": "https://news.hada.io/topic?id=34384",
-      "date": "2026-09-28",
-      "summary": "채팅 템플릿 은 LLM이 자신에 대해 답하는 말투를 바꿈. 실험한 8개 지시 튜닝 모델 모두에서 템플릿을 적용하면 “저는 AI일 뿐입니다” 같은 한계 고지형 응답이 늘고, “저는 느낍니다” 같은 경…"
+      "title": "Jeff - 집에서 학습한 Jev 호환 0.8B 의사결정 모델, 약 30ms",
+      "url": "https://news.hada.io/topic?id=34459",
+      "date": "2026-09-29",
+      "summary": "Jeff 는 상황과 선택지를 자연어로 입력하면 단 한 번의 순전파로 선택지별 보정된 확률을 반환하는 소형 분류 모델임. 텍스트 생성이나 응답 파싱 없이 로컬 코드에 넣어 사용할 수 있음 Qwen3.…"
     },
     {
       "source": "GeekNews",
-      "title": "Google은 언제부터 이렇게 이상해졌을까?",
-      "url": "https://news.hada.io/topic?id=34383",
-      "date": "2026-09-28",
-      "summary": "오래된 농구 팬 밈을 찾으려던 Google 검색 에, Dario라는 남자에게 거절당한 사람을 위로하는 듯한 AI Overview 가 나타남 검색어 hes never coming over dario …"
+      "title": "World Labs, AMD에 합류",
+      "url": "https://news.hada.io/topic?id=34458",
+      "date": "2026-09-29",
+      "summary": "World Labs가 AMD 합류를 위한 본계약을 체결 함. 규제 승인과 기타 통상적인 종결 조건 충족을 전제로 2026년 말까지 거래를 종결 할 것으로 예상됨 공간과 물리적 세계의 문제를 해결하는…"
     }
   ]
 }
