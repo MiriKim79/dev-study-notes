@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-29",
+  "updated_at": "2026-09-30",
   "items": [
     {
       "source": "GeekNews",
-      "title": "업데이트된 Google Maps에 드러난 라파 도시의 파괴",
-      "url": "https://news.hada.io/topic?id=34465",
-      "date": "2026-09-29",
-      "summary": "Google Maps 가 업데이트되면서 가자 지구의 파괴된 모습이 지도에 나타남 공개된 지역은 가자 지구의 라파(Rafah) 에 해당함 업데이트된 지도에서 라파 도시의 파괴 를 확인할 수 있음 게시…"
+      "title": "SPA 자동화 테스트를 작성한 경험",
+      "url": "https://news.hada.io/topic?id=34516",
+      "date": "2026-09-30",
+      "summary": "오디오 플레이어 SPA인 Réécoute는 Playwright와 실제 브라우저 로 앱 전체를 테스트하며, 개별 단계보다 핵심 기능을 끝까지 수행하는 사용자 여정에 중점을 둠 테스트마다 환경을 격리하…"
     },
     {
       "source": "GeekNews",
-      "title": "Flock, 자사 감시 카메라의 가장 상세한 지도 사이트 폐쇄 요구",
-      "url": "https://news.hada.io/topic?id=34464",
-      "date": "2026-09-29",
-      "summary": "보안 연구자 Joshua Michael이 Flock 자체 데이터베이스를 바탕으로 감시 장치 약 30만 대의 위치 지도 를 공개했으며, Flock을 대리한다고 밝힌 업체가 상표권 침해를 이유로 사이트…"
+      "title": "CoW - Wayland용 스태킹 윈도 매니저",
+      "url": "https://news.hada.io/topic?id=34515",
+      "date": "2026-09-30",
+      "summary": "CoW 는 River를 컴포지터로 사용하는 Wayland용 스태킹 윈도 매니저임 FVWM과 MWM의 1990년대 룩앤필 을 재현하면서 현대적인 스타일도 허용하는 것을 목표로 함 직접 실행하는 명령과…"
     },
     {
       "source": "GeekNews",
-      "title": "NobodyWho - 앱과 게임에 로컬 AI를 넣는 온디바이스 추론 엔진",
-      "url": "https://news.hada.io/topic?id=34463",
-      "date": "2026-09-29",
-      "summary": "클라우드 API 대신 사용자의 기기에서 AI 모델을 실행 해, 앱과 게임에 대화·이미지 이해·음성 기능을 넣는 오픈소스 추론 엔진 모델을 내려받으면 인터넷 연결이나 API 키 없이 실행 할 수 있으…"
+      "title": "스태프 엔지니어를 위한 일감 발굴 가이드",
+      "url": "https://news.hada.io/topic?id=34513",
+      "date": "2026-09-30",
+      "summary": "엔지니어링 주도 플랫폼 팀에서는 다음에 무엇을 만들지 스스로 찾아야 하며 , 시스템, 사용자, 조직, 업계에서 개선할 일의 단서를 얻을 수 있음 장애, 비용, 반복적인 운영 작업은 개선 대상을 드러…"
     },
     {
       "source": "GeekNews",
-      "title": "전문가가 덧붙이는 별표 주석",
-      "url": "https://news.hada.io/topic?id=34462",
-      "date": "2026-09-29",
-      "summary": "초보자의 질문에 답하면서 학습자의 능력이나 필요와 동떨어진 세부사항을 덧붙이는 ‘ 전문가의 별표 주석(Expert Asterisk) ’은 도움을 주려는 의도에서 비롯되지만 학습자의 주의를 분산시킬 …"
+      "title": "Anthropic, “GLM-5.3의 익스플로잇 개발 능력은 Mythos Preview에 근접”",
+      "url": "https://news.hada.io/topic?id=34512",
+      "date": "2026-09-30",
+      "summary": "누구나 내려받을 수 있는 공개 가중치 모델 GLM-5.3가 제한 공개된 Claude Mythos Preview에 근접한 익스플로잇 개발 능력 을 기록함. Anthropic 평가에서 취약점을 찾아 실…"
     },
     {
       "source": "GeekNews",
-      "title": "그들을 뒤로하고",
-      "url": "https://news.hada.io/topic?id=34461",
-      "date": "2026-09-29",
-      "summary": "David Bushell이 AI 정책을 “현재 전문 업무에 AI를 사용하지 않는다”에서 “ AI를 사용하지 않으며 앞으로도 사용하지 않겠다 ”로 변경함 AI 산업이 노동을 비인간화하고 상품화 하도록…"
+      "title": "America.gov",
+      "url": "https://news.hada.io/topic?id=34511",
+      "date": "2026-09-30",
+      "summary": "America.gov 는 정부 관련 사항을 질문하면 공식 정부 출처만으로 간단한 답변을 제공하는 미국 정부의 AI 서비스임 29,000개 웹사이트 를 한곳에 모으며, 모든 답변은 연방/주/지방 정부…"
     },
     {
       "source": "GeekNews",
-      "title": "Lisp는 왜 읽기 어려울까?",
-      "url": "https://news.hada.io/topic?id=34460",
-      "date": "2026-09-29",
-      "summary": "Lisp가 읽기 어려운 이유는 단순히 익숙함의 문제 만이 아니라, 괄호 배치가 시각적 그룹화와 작업 기억에 주는 부담에도 있을 수 있음 C 스타일의 operation(arguments...) 는 인…"
+      "title": "ChatGPT, 월 500달러 Pro 요금제 추가…기존 Pro 200 사용량 축소",
+      "url": "https://news.hada.io/topic?id=34510",
+      "date": "2026-09-30",
+      "summary": "월 500달러의 ChatGPT Pro 500 을 추가해 Pro 요금제를 100달러·200달러·500달러의 세 등급으로 구성함 Pro 500은 Plus 대비 25배의 사용량과 Astra Ultrafa…"
     },
     {
       "source": "GeekNews",
-      "title": "Jeff - 집에서 학습한 Jev 호환 0.8B 의사결정 모델, 약 30ms",
-      "url": "https://news.hada.io/topic?id=34459",
-      "date": "2026-09-29",
-      "summary": "Jeff 는 상황과 선택지를 자연어로 입력하면 단 한 번의 순전파로 선택지별 보정된 확률을 반환하는 소형 분류 모델임. 텍스트 생성이나 응답 파싱 없이 로컬 코드에 넣어 사용할 수 있음 Qwen3.…"
+      "title": "AI, 데이터센터 투자 붐 정당화하려면 연 매출 6조 달러 필요",
+      "url": "https://news.hada.io/topic?id=34509",
+      "date": "2026-09-30",
+      "summary": "AI 인프라 투자를 지속하려면 2031년 연 매출 6조 달러 가 필요하다는 Bain의 추산으로, 연간 인프라 지출 1조 5,000억 달러를 매출의 25%로 유지한다는 계산임 필요한 매출 가운데 가장…"
     },
     {
       "source": "GeekNews",
-      "title": "World Labs, AMD에 합류",
-      "url": "https://news.hada.io/topic?id=34458",
-      "date": "2026-09-29",
-      "summary": "World Labs가 AMD 합류를 위한 본계약을 체결 함. 규제 승인과 기타 통상적인 종결 조건 충족을 전제로 2026년 말까지 거래를 종결 할 것으로 예상됨 공간과 물리적 세계의 문제를 해결하는…"
+      "title": "Relapse - PS5 펌웨어 7.00~13.60용 커널 익스플로잇 공개",
+      "url": "https://news.hada.io/topic?id=34508",
+      "date": "2026-09-30",
+      "summary": "PS5 펌웨어 7.00~13.60에서 커널 메모리를 읽고 쓰는 기능 을 확보하는 공개 익스플로잇으로, 브라우저 취약점과 커널 취약점을 연결함 브라우저 단계에서 JavaScriptCore의 메모리 취…"
     }
   ]
 }
