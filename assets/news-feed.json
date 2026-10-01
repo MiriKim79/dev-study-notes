@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "items": [
     {
       "source": "GeekNews",
-      "title": "SPA 자동화 테스트를 작성한 경험",
-      "url": "https://news.hada.io/topic?id=34516",
-      "date": "2026-09-30",
-      "summary": "오디오 플레이어 SPA인 Réécoute는 Playwright와 실제 브라우저 로 앱 전체를 테스트하며, 개별 단계보다 핵심 기능을 끝까지 수행하는 사용자 여정에 중점을 둠 테스트마다 환경을 격리하…"
+      "title": "뻐꾸기의 알",
+      "url": "https://news.hada.io/topic?id=34573",
+      "date": "2026-10-01",
+      "summary": "Clifford Stoll 의 1989년 논픽션으로, 연구소 컴퓨터 사용료의 75센트 오차 에서 시작해 소련 KGB에 정보를 팔던 해커를 추적한 과정을 1인칭으로 기록함 침입자는 GNU Emacs의…"
     },
     {
       "source": "GeekNews",
-      "title": "CoW - Wayland용 스태킹 윈도 매니저",
-      "url": "https://news.hada.io/topic?id=34515",
-      "date": "2026-09-30",
-      "summary": "CoW 는 River를 컴포지터로 사용하는 Wayland용 스태킹 윈도 매니저임 FVWM과 MWM의 1990년대 룩앤필 을 재현하면서 현대적인 스타일도 허용하는 것을 목표로 함 직접 실행하는 명령과…"
+      "title": "LinkedIn에서 생산적인 척하는 역할극 극대화하기",
+      "url": "https://news.hada.io/topic?id=34571",
+      "date": "2026-10-01",
+      "summary": "LinkedIn의 반복적인 컴퓨터 비전 시연 프로젝트 는 실제 쓸모나 기술적 개선보다 그럴듯한 자기 홍보가 앞선다는 비판을 받음 손동작 추적이나 포트홀 탐지처럼 비슷한 시연이 피드를 채우지만, 탐지…"
     },
     {
       "source": "GeekNews",
-      "title": "스태프 엔지니어를 위한 일감 발굴 가이드",
-      "url": "https://news.hada.io/topic?id=34513",
-      "date": "2026-09-30",
-      "summary": "엔지니어링 주도 플랫폼 팀에서는 다음에 무엇을 만들지 스스로 찾아야 하며 , 시스템, 사용자, 조직, 업계에서 개선할 일의 단서를 얻을 수 있음 장애, 비용, 반복적인 운영 작업은 개선 대상을 드러…"
+      "title": "Firebase SDK로 오늘 아침부터 모든 iOS 앱이 충돌하고 있음",
+      "url": "https://news.hada.io/topic?id=34570",
+      "date": "2026-10-01",
+      "summary": "Gergely Orosz가 Firebase SDK 를 사용하는 모든 iOS 앱의 갑작스러운 충돌을 알림 보고된 충돌 범위는 일부 실행이 아니라 모든 세션 임 영향을 받은 앱에서는 대응할 방법이 없는…"
     },
     {
       "source": "GeekNews",
-      "title": "Anthropic, “GLM-5.3의 익스플로잇 개발 능력은 Mythos Preview에 근접”",
-      "url": "https://news.hada.io/topic?id=34512",
-      "date": "2026-09-30",
-      "summary": "누구나 내려받을 수 있는 공개 가중치 모델 GLM-5.3가 제한 공개된 Claude Mythos Preview에 근접한 익스플로잇 개발 능력 을 기록함. Anthropic 평가에서 취약점을 찾아 실…"
+      "title": "Anthropic의 IPO 투자설명서에 담긴 AI 비전과 급증하는 비용",
+      "url": "https://news.hada.io/topic?id=34569",
+      "date": "2026-10-01",
+      "summary": "Anthropic 은 AI가 산업화, 전기, 인터넷보다 세계 경제를 더 크게 바꿀 것이라는 전망에 대규모 투자를 걸고 있으며, 향후 클라우드와 컴퓨팅, 인프라 관련 지출 의무가 5,180억 달러 에…"
     },
     {
       "source": "GeekNews",
-      "title": "America.gov",
-      "url": "https://news.hada.io/topic?id=34511",
-      "date": "2026-09-30",
-      "summary": "America.gov 는 정부 관련 사항을 질문하면 공식 정부 출처만으로 간단한 답변을 제공하는 미국 정부의 AI 서비스임 29,000개 웹사이트 를 한곳에 모으며, 모든 답변은 연방/주/지방 정부…"
+      "title": "Show GN: herdr web ui - 폰이나 브라우저에서 herdr 사용하는 플러그인",
+      "url": "https://news.hada.io/topic?id=34568",
+      "date": "2026-10-01",
+      "summary": "AI 안쓰고 쓴 글이라 두서가 없을수도 있습니다. AI slop 글에 피로를 느껴서 직접 작성합니다. 이게 뭐임 herdr(https://herdr.dev/) 를 브라우저, 폰에서 채팅이랑 터미널로…"
     },
     {
       "source": "GeekNews",
-      "title": "ChatGPT, 월 500달러 Pro 요금제 추가…기존 Pro 200 사용량 축소",
-      "url": "https://news.hada.io/topic?id=34510",
-      "date": "2026-09-30",
-      "summary": "월 500달러의 ChatGPT Pro 500 을 추가해 Pro 요금제를 100달러·200달러·500달러의 세 등급으로 구성함 Pro 500은 Plus 대비 25배의 사용량과 Astra Ultrafa…"
+      "title": "1+1이 필요했는데 함수형 프로그래밍 언어를 만들었다",
+      "url": "https://news.hada.io/topic?id=34567",
+      "date": "2026-10-01",
+      "summary": "산술식을 이진 트리로 변환하는 자료구조 과제에서 출발해, C로 graphLang 이라는 언어와 그래프 축약 엔진 을 구현함 덧셈과 뺄셈을 개별 연산으로 처리하는 대신 함수 적용 으로 일반화하고, 변…"
     },
     {
       "source": "GeekNews",
-      "title": "AI, 데이터센터 투자 붐 정당화하려면 연 매출 6조 달러 필요",
-      "url": "https://news.hada.io/topic?id=34509",
-      "date": "2026-09-30",
-      "summary": "AI 인프라 투자를 지속하려면 2031년 연 매출 6조 달러 가 필요하다는 Bain의 추산으로, 연간 인프라 지출 1조 5,000억 달러를 매출의 25%로 유지한다는 계산임 필요한 매출 가운데 가장…"
+      "title": "지난번 우리 가족이 기술로 대체되었을 때",
+      "url": "https://news.hada.io/topic?id=34566",
+      "date": "2026-10-01",
+      "summary": "프랑스 시골의 장제사였던 고조부 는 자동차가 등장한 뒤 정비사가 되었고, 말을 다루는 대신 엔진을 다루면서도 사람들이 이동하도록 돕는 목적을 이어감 AI 시대에 앞날을 걱정하는 개발자들의 불안은 트…"
     },
     {
       "source": "GeekNews",
-      "title": "Relapse - PS5 펌웨어 7.00~13.60용 커널 익스플로잇 공개",
-      "url": "https://news.hada.io/topic?id=34508",
-      "date": "2026-09-30",
-      "summary": "PS5 펌웨어 7.00~13.60에서 커널 메모리를 읽고 쓰는 기능 을 확보하는 공개 익스플로잇으로, 브라우저 취약점과 커널 취약점을 연결함 브라우저 단계에서 JavaScriptCore의 메모리 취…"
+      "title": "Tesla, 적자에 가까워지며 약 45조원 신용한도 확보",
+      "url": "https://news.hada.io/topic?id=34565",
+      "date": "2026-10-01",
+      "summary": "Tesla가 Citi와 Wells Fargo에서 총 300억 달러($30b)의 신용한도 를 확보함. 이익이 줄고 자본적 지출이 늘어나는 가운데 기존 50억 달러 한도를 대체함 2026년 자본적 지출…"
     }
   ]
 }
