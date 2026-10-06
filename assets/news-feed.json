@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-05",
+  "updated_at": "2026-10-06",
   "items": [
     {
       "source": "GeekNews",
-      "title": "영국 정부 기구, Prevent 프로그램 비판자에 관한 기록 보관",
-      "url": "https://news.hada.io/topic?id=34787",
-      "date": "2026-10-05",
-      "summary": "영국 내무부 연계 기구 Prevent Standards and Compliance Unit(StaCU) 이 정부의 극단주의 대응 프로그램인 Prevent를 온라인에서 비판한 사람들에 관한 기록을 수…"
+      "title": "Put-That-There - 1980년 MIT 음성·포인팅 데모를 브라우저에서 재현",
+      "url": "https://news.hada.io/topic?id=34863",
+      "date": "2026-10-06",
+      "summary": "지난달 OpenAI GPT-6 Astra 출시 영상이 오래된 MIT 실험 영상으로 시작하길래 뭔지 찾아봤습니다. 1980년 MIT Architecture Machine Group의 \"Put-That…"
     },
     {
       "source": "GeekNews",
-      "title": "미국 살인범의 형량, 법정에서 상영된 피해자 AI 영상 때문에 파기",
-      "url": "https://news.hada.io/topic?id=34786",
-      "date": "2026-10-05",
-      "summary": "미국 애리조나주 항소법원이 숨진 피해자를 재현한 AI 영상의 법정 상영이 부적절했다 고 판단해, 징역 10년을 선고받은 Gabriel Paul Horcasitas의 형량을 다시 정하도록 함 항소법원…"
+      "title": "샌프란시스코의 두 지점 사이에서 가장 평탄한 경로 찾기",
+      "url": "https://news.hada.io/topic?id=34862",
+      "date": "2026-10-06",
+      "summary": "Flatten SF 는 샌프란시스코에서 출발지와 목적지 사이의 최단 경로부터 가장 평탄한 경로까지, 거리와 오르막의 절충에 따라 경로를 탐색하는 서비스임 16만 개 도로 구간 을 대상으로 브라우저에…"
     },
     {
       "source": "GeekNews",
-      "title": "GitHub의 새 대시보드가 이제 기본 화면으로 적용됨",
-      "url": "https://news.hada.io/topic?id=34785",
-      "date": "2026-10-05",
-      "summary": "기능 미리보기로 제공하던 새 대시보드 가 모든 사용자의 기본 화면으로 전환됨 활성 에이전트 세션, 이슈, 풀 리퀘스트 를 한곳에서 확인하고, 필터로 각 영역에 표시할 항목을 선택할 수 있음 업데이트…"
+      "title": "고처리량 AI-SQL 엔진 구축하기",
+      "url": "https://news.hada.io/topic?id=34860",
+      "date": "2026-10-06",
+      "summary": "Quail 은 SQL 안에서 AI로 문서를 분류하거나 문서 간 관계를 판별하는 엔진으로, 데이터 전체에 걸친 수십만~수백만 번의 모델 호출을 빠르게 처리함 호출을 하나씩 추론 서버에 보내는 대신 쿼…"
     },
     {
       "source": "GeekNews",
-      "title": "Vx - 하나의 언어로 모든 칩을",
-      "url": "https://news.hada.io/topic?id=34784",
-      "date": "2026-10-05",
-      "summary": "Vx 는 CPU, GPU, NPU와 가속기 메모리를 타입 시스템에 포함하는 이기종 컴퓨팅용 시스템 프로그래밍 언어로, 호스트에서 장치 포인터를 역참조하면 런타임 오류 대신 컴파일 오류가 발생함 데이…"
+      "title": "Hack에서 Skip까지: 모든 것을 증분 처리하기",
+      "url": "https://news.hada.io/topic?id=34859",
+      "date": "2026-10-06",
+      "summary": "Facebook의 수천만 줄 PHP 코드에 타입 검사를 도입하면서, 코드를 조금 고칠 때마다 전체를 다시 검사하지 않는 방식 이 필요해짐 Hack에서 변경된 부분과 영향을 받는 코드만 다시 검사했지…"
     },
     {
       "source": "GeekNews",
-      "title": "Offrun - 모든 코딩 에이전트를 하나의 작업 공간에서 관리",
-      "url": "https://news.hada.io/topic?id=34783",
-      "date": "2026-10-05",
-      "summary": "기존 구독과 계정으로 Claude Code, Codex, Antigravity, Grok Build를 한 작업 공간에서 병렬 실행 하는 Mac용 앱 에이전트마다 별도의 Git worktree와 브랜…"
+      "title": "2026년 개발자 현황 조사",
+      "url": "https://news.hada.io/topic?id=34858",
+      "date": "2026-10-06",
+      "summary": "개발자 5,463명이 참여한 Devographics 조사 에서, 고용 불안과 불충분한 임금을 경험한 응답자가 각각 거의 절반에 달함 4분의 1 이상은 향후 5년 안에 자신의 통제를 벗어난 이유로 직…"
     },
     {
       "source": "GeekNews",
-      "title": "소화기까지 숨기는 Apple의 ‘깔끔한 디자인’은 어리석은 짓이다",
-      "url": "https://news.hada.io/topic?id=34782",
-      "date": "2026-10-05",
-      "summary": "소화기를 표시 없는 벽면 패널 뒤에 숨기는 설계 는 비상시에 장비를 찾기 어렵게 만드는 기능적 실패이며, 안전 규정에 어긋날 수 있음 Apple 매장이나 사무실의 설치 사례 로 알려진 이미지가 유통…"
+      "title": "전 아마존 부사장에게 묻는 사내 정치의 어두운 면 [영상]",
+      "url": "https://news.hada.io/topic?id=34857",
+      "date": "2026-10-06",
+      "summary": "전 Amazon VP Ethan Evans 는 성과만 내고 인정받기를 기다리기보다, 자신의 기여를 알리고 원하는 역할과 승진 조건을 직접 협의 해야 한다고 조언함 좋은 프로젝트를 확보하려면 수행 능…"
     },
     {
       "source": "GeekNews",
-      "title": "뉴욕시는 새로운 나무를 정밀 측정해야 한다",
-      "url": "https://news.hada.io/topic?id=34781",
-      "date": "2026-10-05",
-      "summary": "Wikipedia에 따르면 뉴욕시에서 정밀 측정된 가장 높은 나무는 Queens Giant 이지만, 인용된 측정 기록은 20년도 더 지난 2004년 의 것임 뉴욕시에서 가장 높은 나무의 다른 후보를…"
+      "title": "ChatGPT, 가짜 뉴요커 만화에 실제 만화가의 서명까지 넣음",
+      "url": "https://news.hada.io/topic?id=34856",
+      "date": "2026-10-06",
+      "summary": "ChatGPT가 New Yorker 스타일의 만화 를 생성하면서 실제 기고 만화가의 서명까지 붙이고 있음. 허가나 보상 없이 서명이 사용된 만화가는 확인된 사례만 15명을 넘음 만화가의 서명은 온라…"
     },
     {
       "source": "GeekNews",
-      "title": "부실한 가림 처리로 Google 데이터센터의 물과 전력 사용량 드러나",
-      "url": "https://news.hada.io/topic?id=34780",
-      "date": "2026-10-05",
-      "summary": "Google이 영업비밀로 가린 데이터센터 보고서 에서 해당 영역을 선택해 다른 문서에 복사해 붙여넣자, 물과 전력 사용 수치가 그대로 드러남 Google의 네브래스카주 링컨 데이터센터 는 최대 전력…"
+      "title": "OpenRig - Claude Code와 Codex를 팀으로 운영하는 멀티 에이전트 오케스트레이터",
+      "url": "https://news.hada.io/topic?id=34854",
+      "date": "2026-10-06",
+      "summary": "Claude Code, Codex, Pi 등의 코딩 에이전트를 역할과 공유 문맥을 갖춘 지속적인 팀 으로 구성하는 오픈소스 도구 개별 터미널 세션에 일일이 지시하는 대신 리드 에이전트에게 원하는 결…"
     }
   ]
 }
