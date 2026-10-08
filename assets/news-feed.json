@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-07",
+  "updated_at": "2026-10-08",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Octop - 가족과 소규모 팀이 함께 쓰는 셀프 호스팅 AI 비서",
-      "url": "https://news.hada.io/topic?id=34916",
-      "date": "2026-10-07",
-      "summary": "TencentCloud가 공개한 여러 사용자와 전문 에이전트를 지원하는 오픈소스 AI 비서 플랫폼 으로, 개인 컴퓨터나 자체 서버에서 운영 사용자마다 작업 공간, 기억, 모델과 도구를 갖춘 전문 에…"
+      "title": "pg-jev - 자연어 조건으로 데이터를 검색하고 분류하는 PostgreSQL 확장",
+      "url": "https://news.hada.io/topic?id=34981",
+      "date": "2026-10-08",
+      "summary": "SQL 안에 “고객이 화가 났는가”, “어느 팀이 처리해야 하는가” 같은 자연어 조건 을 넣어 행을 필터링하고 분류하거나 점수순으로 정렬하는 확장 자연어를 SQL로 바꾸는 도구가 아니라, 각 행의 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: brgr – Claude Code나 Codex가 다른 코딩 에이전트에게 일을 맡기는 herdr 플러그인",
-      "url": "https://news.hada.io/topic?id=34915",
-      "date": "2026-10-07",
-      "summary": "herdr에서 여러 코딩 에이전트를 동시에 돌리다보니, 매번 trust 확인이나 업데이트 제안에서 멈추게 되고, 끝나면 결과를 메인 에이전트로 직접 북붙하는게 귀찮아서 만들었습니다. 메인 에이전트(…"
+      "title": "a16z의 2026년 소비자 AI 앱 Top 100",
+      "url": "https://news.hada.io/topic?id=34980",
+      "date": "2026-10-08",
+      "summary": "ChatGPT가 웹·모바일 이용량과 미국 소비자 지출에서 선두 를 유지하며, Claude는 웹 3위로 올라 DeepSeek와 Perplexity를 앞섬 소비자 지출 분석을 처음 추가했으며, 상위 1…"
     },
     {
       "source": "GeekNews",
-      "title": "이메일을 직접 호스팅하는 분들, 무엇을 사용하시나요?",
-      "url": "https://news.hada.io/topic?id=34914",
-      "date": "2026-10-07",
-      "summary": "현재 여러 도메인의 메일함이나 캐치올 주소를 위해 maddy 로 이메일을 직접 호스팅하고 있으며, 사소한 문제 중 일부는 본인 쪽 원인이고 일부는 원인을 알 수 없음 가장 큰 불편은 iOS 기본 이…"
+      "title": "전 세계에서 소셜 미디어가 민주주의를 해친다고 보는 사람이 늘어남",
+      "url": "https://news.hada.io/topic?id=34979",
+      "date": "2026-10-08",
+      "summary": "Pew Research Center의 37개국 조사 에서, 과거와 비교 가능한 국가 대부분은 소셜 미디어가 민주주의에 해롭다고 보는 비율이 2022년 또는 2023년보다 유의하게 높아짐 부정적 평가…"
     },
     {
       "source": "GeekNews",
-      "title": "질량으로 따지면 지구에서 가장 우세한 종은 무엇일까?",
-      "url": "https://news.hada.io/topic?id=34912",
-      "date": "2026-10-07",
-      "summary": "단일 종의 생물량(biomass) 을 비교하면 인간이나 가축보다 북방림의 나무가 훨씬 앞서며, 검은가문비나무와 다우리아낙엽송이 유력한 최상위 후보임 동물에서는 소 가 약 6억 5,000만 톤으로 가…"
+      "title": "나무용 테이프 (2004)",
+      "url": "https://news.hada.io/topic?id=34978",
+      "date": "2026-10-08",
+      "summary": "네 살 Guy 가 ‘나무용 테이프’를 사려던 것은, 나무 위 집에서 체커 게임을 할 체커판 테이블 을 만들기 위해서였음 아버지는 아들이 직접 직원을 찾아 물건을 묻도록 하며 쇼핑을 주도하게 했지만 …"
     },
     {
       "source": "GeekNews",
-      "title": "파라마운트, 워너브라더스와 약 167조원 규모 합병 완료",
-      "url": "https://news.hada.io/topic?id=34911",
-      "date": "2026-10-07",
-      "summary": "파라마운트 스카이댄스가 워너브라더스 디스커버리와 1,110억 달러 규모 합병을 완료 함. 마지막 합병 저지 긴급 신청이 기각됐으며, 통합 회사 이름은 스카이댄스(Skydance) 로 정함 두 대형 …"
+      "title": "WorldCrafter - 이미지 한 장으로 탐색하고 돌아올 수 있는 AI 세계 만들기",
+      "url": "https://news.hada.io/topic?id=34977",
+      "date": "2026-10-08",
+      "summary": "Tencent ARC Lab과 베이징대학교가 개발한 영상 월드 모델 로, 이미지 한 장이나 텍스트 설명에서 시작해 카메라를 움직이며 탐색하는 장면을 생성 시선을 돌렸다 돌아왔을 때 앞서 본 사물과 …"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI, AI가 도출한 수학 연구 원고 722편과 증명 자료 공개",
-      "url": "https://news.hada.io/topic?id=34910",
-      "date": "2026-10-07",
-      "summary": "OpenAI가 미공개 내부 모델이 도출한 수학 연구 원고 722편 을 GitHub에 공개함. 관련 결과와 대안 증명, 후속 논문 등을 372개 결과 묶음 으로 구성함 모델에 약 4,000개 연구 문…"
+      "title": "Lemma - 사람과 AI 에이전트가 한 팀으로 일하는 오픈소스 작업 공간",
+      "url": "https://news.hada.io/topic?id=34976",
+      "date": "2026-10-08",
+      "summary": "여러 사람이 같은 AI 동료와 업무 데이터·문서·작업 흐름을 공유 하며 일하는 오픈소스 플랫폼 Claude Code, Codex, Cursor, OpenCode에 원하는 업무를 설명하면 앱 화면부터…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: 안심품 - KC인증 제품만 검색",
-      "url": "https://news.hada.io/topic?id=34909",
-      "date": "2026-10-07",
-      "summary": "안녕하세요. 아이를 키우다 보니 무언가 제품을 구매할 때 꼭 확인하는게 KC인증입니다. 최소한의 검증도 되지 않은 제품들은 내 아이가 만지고 닿고 하는 것들에서 혹여나 유해물질이 나올까 걱정이 되기…"
+      "title": "COSMIC DE가 KDE Plasma를 압도하고 있나?",
+      "url": "https://news.hada.io/topic?id=34975",
+      "date": "2026-10-08",
+      "summary": "COSMIC 은 KDE Plasma만큼 광범위한 맞춤 설정을 제공하지는 않지만, 외형 설정을 단순하게 구성하고 변경 결과를 즉시 반영하는 사용성에서 강점을 보임 모서리 곡률과 인터페이스 밀도 , 색…"
     },
     {
       "source": "GeekNews",
-      "title": "밀리초 단위로 벤치마크하기",
-      "url": "https://news.hada.io/topic?id=34908",
-      "date": "2026-10-07",
-      "summary": "마이크로벤치마크는 입력 크기를 조절해 약 300ms 동안 실행되도록 맞추는 것 을 권함. 고정 오버헤드의 영향을 줄이면서, 사람이 비교하기 쉽고 반복 실행도 빠른 시간 규모임 1~999의 정수 밀리…"
+      "title": "소프트웨어 개발자들은 괜찮지 않다",
+      "url": "https://news.hada.io/topic?id=34974",
+      "date": "2026-10-08",
+      "summary": "개발자와 UX 디자이너 사이에서 번아웃과 업계 이탈 이 나타나며, AI를 받아들였던 사람들조차 그것이 업계의 미래라면 더는 이 일을 하고 싶지 않다고 느끼고 있음 경영진의 유인 구조 는 인원과 비용…"
     }
   ]
 }
