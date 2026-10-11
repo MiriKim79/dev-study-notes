@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-10",
+  "updated_at": "2026-10-11",
   "items": [
     {
       "source": "GeekNews",
-      "title": "TypeSafe AI, 기업가치 약 11.3조원으로 약 1.3조원 투자 유치",
-      "url": "https://news.hada.io/topic?id=35089",
-      "date": "2026-10-10",
-      "summary": "TypeSafe AI 가 Andreessen Horowitz 주도로 기업가치 75억 달러($7.5b)에 8억 7,000만 달러($870m) 규모 시리즈 A 투자를 유치함 Sequoia Capital…"
+      "title": "아, 표준 C에서는 문자열의 부동소수점 변환 오류를 이식성 있게 검사할 수 없는 모양이다",
+      "url": "https://news.hada.io/topic?id=35139",
+      "date": "2026-10-11",
+      "summary": "표준 C의 문자열→부동소수점 변환 함수 는 math_errhandling 에 따라 오류 보고 방식이 달라지며, 언더플로 보고는 선택 사항 이라 모든 구현에서 검출을 보장할 수 없음 POSIX 는 표…"
     },
     {
       "source": "GeekNews",
-      "title": "vgpu - 브라우저와 Node.js에서 같은 코드로 쓰는 경량 WebGPU 라이브러리",
-      "url": "https://news.hada.io/topic?id=35088",
-      "date": "2026-10-10",
-      "summary": "셰이더 효과, 3D 장면, GPU 연산과 시각화를 만드는 개발자를 위한 TypeScript 기반 WebGPU 라이브러리 브라우저, 화면 없이 실행하는 Node.js, 테스트 환경에서 동일한 공개 A…"
+      "title": "전구형 컴퓨터",
+      "url": "https://news.hada.io/topic?id=35138",
+      "date": "2026-10-11",
+      "summary": "Lightbulb Computer 는 프로젝터와 컴퓨터 비전을 큰 전구 형태로 결합해, 일상 공간의 표면과 사물에 정보를 투사하는 기기 구상임 음성 명령과 손가락으로 가리키는 동작 을 인식하고 눈앞…"
     },
     {
       "source": "GeekNews",
-      "title": "프로그래밍은 특별하지 않다",
-      "url": "https://news.hada.io/topic?id=35087",
-      "date": "2026-10-10",
-      "summary": "프로그래밍도 예술이며, 기능적인 결과물을 만든다는 이유로 다른 창작 분야와 달리 AI 사용을 정당화할 수는 없음 예술은 초월적인 작품에만 한정되지 않으며, 광고 문구와 일상적인 코드처럼 실용적인 창…"
+      "title": "Mxc: Microsoft Execution Containers 버전 1.0.0",
+      "url": "https://news.hada.io/topic?id=35136",
+      "date": "2026-10-11",
+      "summary": "Microsoft Execution Containers(MXC) 가 정식 출시됨. 개발자와 IT 관리자가 에이전트에 허용할 파일과 네트워크 등의 자원을 선언하면, 컨테이너가 실행 중 해당 경계를 강…"
     },
     {
       "source": "GeekNews",
-      "title": "누구도 섬이 아니다 - AI가 지적 공동체를 해체할 때",
-      "url": "https://news.hada.io/topic?id=35086",
-      "date": "2026-10-10",
-      "summary": "개인의 지적 활동을 오래 지속하려면 인간 공동체가 필요하며, AI가 공동체를 해체하면 혼자 배우고 만드는 활동도 줄어듦 AI 에이전트에 업무를 맡기고 취미로 프로그래밍을 계속하리라는 기대와 달리, …"
+      "title": "Eurydice로 Rust를 읽기 쉬운 C로 컴파일하기",
+      "url": "https://news.hada.io/topic?id=35135",
+      "date": "2026-10-11",
+      "summary": "Eurydice 는 Rust 코드의 전체 구조를 유지하면서 C로 변환하는 도구로, 기존 C용 검증 및 규정 준수 도구를 사용하는 고신뢰성 소프트웨어와 Rust 컴파일러가 없는 환경을 겨냥함 기계어 …"
     },
     {
       "source": "GeekNews",
-      "title": "Python 3.15 정식 출시 - 지연 임포트, 불변 딕셔너리, UTF-8 기본 인코딩 도입",
-      "url": "https://news.hada.io/topic?id=35085",
-      "date": "2026-10-10",
-      "summary": "Python 3.15.0 정식 출시 로 UTF-8을 기본 인코딩으로 사용하고, 불변 딕셔너리 frozendict 와 고유한 표식 값을 만드는 sentinel 내장 타입 추가 명시적 지연 임포트 로 …"
+      "title": "FDA, 일부 독성 화학물질의 안전성 검토 없는 식품 첨가를 허용할 수도",
+      "url": "https://news.hada.io/topic?id=35134",
+      "date": "2026-10-11",
+      "summary": "미국 FDA가 포장재와 가공 장비 등 식품 접촉 물질에 적용하던 규제 임계치 면제(TOR) 를 식품에 직접 넣는 성분까지 확대하는 규칙을 제안함 현행 면제 기준은 비발암성 물질, 0.5ppb 미만 …"
     },
     {
       "source": "GeekNews",
-      "title": "유튜버, 경찰 추적용 Flock 방식 카메라를 만들자 경찰이 찾아왔다고 밝혀",
-      "url": "https://news.hada.io/topic?id=35084",
-      "date": "2026-10-10",
-      "summary": "캐나다 소프트웨어 엔지니어이자 유튜버인 Anthony Sistilli 가 경찰차 동선을 추적하는 자동 번호판 인식(ALPR) 카메라 를 직접 제작해 설치함 Sistilli에 따르면 Peel Regi…"
+      "title": "내 집값은 오르고 재산세는 내려가면 좋겠다",
+      "url": "https://news.hada.io/topic?id=35133",
+      "date": "2026-10-11",
+      "summary": "미국 여러 주가 자가 거주 주택의 재산세를 감면 하면서 학교와 경찰 등 공공서비스 비용 부담을 상업용 부동산 소유자, 다른 지방세, 주정부 재원으로 옮기고 있음 코로나19 이후 주택 가치 상승으로 …"
     },
     {
       "source": "GeekNews",
-      "title": "미국, 전직 ICC 판사의 노벨평화상 수상 몇 시간 뒤 ICC 제재",
-      "url": "https://news.hada.io/topic?id=35083",
-      "date": "2026-10-10",
-      "summary": "Trump 행정부 가 전직 국제형사재판소(ICC) 판사의 노벨평화상 수상 몇 시간 뒤 재판소 자체에 제재를 부과하며 유럽 동맹국들과 외교적 충돌을 빚음 기존 검사와 판사 개인에 대한 제재를 넘어 I…"
+      "title": "C 언어의 정의되지 않은 동작 줄이기",
+      "url": "https://news.hada.io/topic?id=35131",
+      "date": "2026-10-11",
+      "summary": "C 표준 위원회가 정의되지 않은 동작(UB) 을 줄이고 있으며, 진행 중인 C2y 초안 은 기존 표준의 약 100개 UB 항목 중 45개를 제거함 UB가 있는 프로그램에는 표준이 요구사항을 부과하지…"
     },
     {
       "source": "GeekNews",
-      "title": "AAA 지뢰찾기",
-      "url": "https://news.hada.io/topic?id=35082",
-      "date": "2026-10-10",
-      "summary": "AAA 지뢰찾기"
+      "title": "프리온 질환 치료제 후보물질 임상시험, 참가자 모집 시작",
+      "url": "https://news.hada.io/topic?id=35130",
+      "date": "2026-10-11",
+      "summary": "Broad Institute와 UMass Chan Medical School이 개발한 프리온 단백질 표적 siRNA 후보물질 이 첫 인체 시험에 들어감. 1상 임상시험 PRiSM에서 안전성과 내약성…"
     }
   ]
 }
