@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-11",
+  "updated_at": "2026-10-12",
   "items": [
     {
       "source": "GeekNews",
-      "title": "아, 표준 C에서는 문자열의 부동소수점 변환 오류를 이식성 있게 검사할 수 없는 모양이다",
-      "url": "https://news.hada.io/topic?id=35139",
-      "date": "2026-10-11",
-      "summary": "표준 C의 문자열→부동소수점 변환 함수 는 math_errhandling 에 따라 오류 보고 방식이 달라지며, 언더플로 보고는 선택 사항 이라 모든 구현에서 검출을 보장할 수 없음 POSIX 는 표…"
+      "title": "GitHub의 문제점",
+      "url": "https://news.hada.io/topic?id=35206",
+      "date": "2026-10-12",
+      "summary": "GNU Project는 GitHub 저장소 호스팅을 피할 것 을 권고함. 불명확한 라이선스 안내, 비자유 JavaScript 요구, 사용자가 통제할 수 없는 원격 서비스, Git의 중앙집중화를 주요…"
     },
     {
       "source": "GeekNews",
-      "title": "전구형 컴퓨터",
-      "url": "https://news.hada.io/topic?id=35138",
-      "date": "2026-10-11",
-      "summary": "Lightbulb Computer 는 프로젝터와 컴퓨터 비전을 큰 전구 형태로 결합해, 일상 공간의 표면과 사물에 정보를 투사하는 기기 구상임 음성 명령과 손가락으로 가리키는 동작 을 인식하고 눈앞…"
+      "title": "여전히 여기 있지만… 이곳에 글을 쓰지 않을 뿐인 나",
+      "url": "https://news.hada.io/topic?id=35205",
+      "date": "2026-10-12",
+      "summary": "여전히 여기 있지만… 이곳에 글을 쓰지 않을 뿐인 나"
     },
     {
       "source": "GeekNews",
-      "title": "Mxc: Microsoft Execution Containers 버전 1.0.0",
-      "url": "https://news.hada.io/topic?id=35136",
-      "date": "2026-10-11",
-      "summary": "Microsoft Execution Containers(MXC) 가 정식 출시됨. 개발자와 IT 관리자가 에이전트에 허용할 파일과 네트워크 등의 자원을 선언하면, 컨테이너가 실행 중 해당 경계를 강…"
+      "title": "패스키는 함정이다. 사용하지 말라",
+      "url": "https://news.hada.io/topic?id=35204",
+      "date": "2026-10-12",
+      "summary": "패스키는 보안성과 편의성을 높일 수 있지만, 서비스가 허용할 인증 방식과 소프트웨어를 제한해 사용자 통제권을 줄일 수 있음 같은 패스키 라는 이름 아래 복사, 이전, 하드웨어 보호, 사용자 확인 여…"
     },
     {
       "source": "GeekNews",
-      "title": "Eurydice로 Rust를 읽기 쉬운 C로 컴파일하기",
-      "url": "https://news.hada.io/topic?id=35135",
-      "date": "2026-10-11",
-      "summary": "Eurydice 는 Rust 코드의 전체 구조를 유지하면서 C로 변환하는 도구로, 기존 C용 검증 및 규정 준수 도구를 사용하는 고신뢰성 소프트웨어와 Rust 컴파일러가 없는 환경을 겨냥함 기계어 …"
+      "title": "Show GN: 알림지기 - 광고 알림을 걸러주고 중요한 연락은 놓치지 않게 해주는 앱",
+      "url": "https://news.hada.io/topic?id=35203",
+      "date": "2026-10-12",
+      "summary": "앱 알림을 전부 끄자니 필요한 알림까지 막히고 다 켜두자니 광고나 안내 알림 사이에 중요한 메시지가 묻히더라구요... 엄마랑 여자친구 핸드폰을 보니 저만 겪는 문제는 아니더라구요. 카카오페이만 몇십…"
     },
     {
       "source": "GeekNews",
-      "title": "FDA, 일부 독성 화학물질의 안전성 검토 없는 식품 첨가를 허용할 수도",
-      "url": "https://news.hada.io/topic?id=35134",
-      "date": "2026-10-11",
-      "summary": "미국 FDA가 포장재와 가공 장비 등 식품 접촉 물질에 적용하던 규제 임계치 면제(TOR) 를 식품에 직접 넣는 성분까지 확대하는 규칙을 제안함 현행 면제 기준은 비발암성 물질, 0.5ppb 미만 …"
+      "title": "LLM의 능력에 대한 인식 격차가 커지고 있다",
+      "url": "https://news.hada.io/topic?id=35202",
+      "date": "2026-10-12",
+      "summary": "LLM을 어설픈 챗봇으로 경험하는 대중과 대규모 작업을 맡기는 전문 사용자 사이에서 능력에 대한 인식 격차 가 커지고 있으며, 활용 분야와 시스템 접근 수준에 따라 경험이 크게 달라짐 Karpath…"
     },
     {
       "source": "GeekNews",
-      "title": "내 집값은 오르고 재산세는 내려가면 좋겠다",
-      "url": "https://news.hada.io/topic?id=35133",
-      "date": "2026-10-11",
-      "summary": "미국 여러 주가 자가 거주 주택의 재산세를 감면 하면서 학교와 경찰 등 공공서비스 비용 부담을 상업용 부동산 소유자, 다른 지방세, 주정부 재원으로 옮기고 있음 코로나19 이후 주택 가치 상승으로 …"
+      "title": "Show GN: PartsPlan - AI가 제조사 데이터시트의 쪽을 근거로 답하게 하는 MCP 서버",
+      "url": "https://news.hada.io/topic?id=35201",
+      "date": "2026-10-12",
+      "summary": "전자부품 설계 값(열저항, 절대 최대 정격, 그래프에만 있는 특성 값)은 수십~수백 쪽 데이터시트 안쪽 표와 그래프에 있습니다. AI에게 물으면 기억으로 답하거나, 어느 쪽에서 나온 값인지 대지 못…"
     },
     {
       "source": "GeekNews",
-      "title": "C 언어의 정의되지 않은 동작 줄이기",
-      "url": "https://news.hada.io/topic?id=35131",
-      "date": "2026-10-11",
-      "summary": "C 표준 위원회가 정의되지 않은 동작(UB) 을 줄이고 있으며, 진행 중인 C2y 초안 은 기존 표준의 약 100개 UB 항목 중 45개를 제거함 UB가 있는 프로그램에는 표준이 요구사항을 부과하지…"
+      "title": "북한의 지도 제작자",
+      "url": "https://news.hada.io/topic?id=35199",
+      "date": "2026-10-12",
+      "summary": "북한의 지도 제작자"
     },
     {
       "source": "GeekNews",
-      "title": "프리온 질환 치료제 후보물질 임상시험, 참가자 모집 시작",
-      "url": "https://news.hada.io/topic?id=35130",
-      "date": "2026-10-11",
-      "summary": "Broad Institute와 UMass Chan Medical School이 개발한 프리온 단백질 표적 siRNA 후보물질 이 첫 인체 시험에 들어감. 1상 임상시험 PRiSM에서 안전성과 내약성…"
+      "title": "직장인으로서 부를 쌓는 방법",
+      "url": "https://news.hada.io/topic?id=35198",
+      "date": "2026-10-12",
+      "summary": "직장 생활도 부를 쌓는 동력 이 될 수 있지만, 높은 소득 자체가 부는 아님. 일의 가치를 높이는 동시에 늘어난 소득의 상당 부분을 자산으로 전환 해야 함 성적은 첫 기회를 여는 데 도움이 되지만,…"
     }
   ]
 }
