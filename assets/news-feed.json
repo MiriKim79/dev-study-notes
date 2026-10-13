@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-12",
+  "updated_at": "2026-10-13",
   "items": [
     {
       "source": "GeekNews",
-      "title": "GitHub의 문제점",
-      "url": "https://news.hada.io/topic?id=35206",
-      "date": "2026-10-12",
-      "summary": "GNU Project는 GitHub 저장소 호스팅을 피할 것 을 권고함. 불명확한 라이선스 안내, 비자유 JavaScript 요구, 사용자가 통제할 수 없는 원격 서비스, Git의 중앙집중화를 주요…"
+      "title": "Ruby의 바이마르 시대 - AI로 생태계의 오래된 빈틈을 메우다",
+      "url": "https://news.hada.io/topic?id=35270",
+      "date": "2026-10-13",
+      "summary": "LLM 도구의 확산 은 Ruby를 다른 언어로 재작성하는 데만 쓰일 필요가 없으며, 오랫동안 해결하기 버거웠던 생태계의 빈틈을 메우는 기회이기도 함 PDF 생성, GUI, Parquet, gRPC …"
     },
     {
       "source": "GeekNews",
-      "title": "여전히 여기 있지만… 이곳에 글을 쓰지 않을 뿐인 나",
-      "url": "https://news.hada.io/topic?id=35205",
-      "date": "2026-10-12",
-      "summary": "여전히 여기 있지만… 이곳에 글을 쓰지 않을 뿐인 나"
+      "title": "StreamRender-H3 - 실시간 스트리밍 확산 렌더링으로 구현하는 코드 기반 인터랙티브 세계",
+      "url": "https://news.hada.io/topic?id=35269",
+      "date": "2026-10-13",
+      "summary": "코드 기반 게임 엔진 이 세계의 상태와 규칙을 관리하고, 비디오 모델이 엔진의 시맨틱 맵을 사실적인 영상으로 바꾸는 구조임 시맨틱 맵 은 장면 구조와 움직임을 전달하고, 참조 이미지와 프롬프트 는 …"
     },
     {
       "source": "GeekNews",
-      "title": "패스키는 함정이다. 사용하지 말라",
-      "url": "https://news.hada.io/topic?id=35204",
-      "date": "2026-10-12",
-      "summary": "패스키는 보안성과 편의성을 높일 수 있지만, 서비스가 허용할 인증 방식과 소프트웨어를 제한해 사용자 통제권을 줄일 수 있음 같은 패스키 라는 이름 아래 복사, 이전, 하드웨어 보호, 사용자 확인 여…"
+      "title": "AI는 도구이며, 잘 쓰려면 숙련이 필요하다",
+      "url": "https://news.hada.io/topic?id=35268",
+      "date": "2026-10-13",
+      "summary": "LLM은 사람이 목적에 맞게 다룰 수 있는 도구 이며, 유용성은 사용자가 지시하고 피드백을 해석하며 오류를 알아내 수정하는 능력에 달려 있음 예측 불가능성 은 중요한 한계지만, 예측 가능성과 신뢰성…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: 알림지기 - 광고 알림을 걸러주고 중요한 연락은 놓치지 않게 해주는 앱",
-      "url": "https://news.hada.io/topic?id=35203",
-      "date": "2026-10-12",
-      "summary": "앱 알림을 전부 끄자니 필요한 알림까지 막히고 다 켜두자니 광고나 안내 알림 사이에 중요한 메시지가 묻히더라구요... 엄마랑 여자친구 핸드폰을 보니 저만 겪는 문제는 아니더라구요. 카카오페이만 몇십…"
+      "title": "TurboPython - Python 코드를 C++를 거쳐 네이티브 실행 파일로 컴파일하는 언어",
+      "url": "https://news.hada.io/topic?id=35267",
+      "date": "2026-10-13",
+      "summary": "Python 문법으로 독립 실행 파일과 네이티브 라이브러리 를 만들려는 개발자를 위한 정적 타입 언어와 컴파일러 타입을 지정한 코드를 C++로 변환한 뒤 컴파일 하고, 생성된 프로그램은 CPytho…"
     },
     {
       "source": "GeekNews",
-      "title": "LLM의 능력에 대한 인식 격차가 커지고 있다",
-      "url": "https://news.hada.io/topic?id=35202",
-      "date": "2026-10-12",
-      "summary": "LLM을 어설픈 챗봇으로 경험하는 대중과 대규모 작업을 맡기는 전문 사용자 사이에서 능력에 대한 인식 격차 가 커지고 있으며, 활용 분야와 시스템 접근 수준에 따라 경험이 크게 달라짐 Karpath…"
+      "title": "AI 코딩 에이전트(Claude Code·Codex·Gemini CLI) 세팅이 실패하는 15가지 패턴과 해결법",
+      "url": "https://news.hada.io/topic?id=35266",
+      "date": "2026-10-13",
+      "summary": "코딩 에이전트를 몇 주 쓰다 보면 \"일은 많이 했는데 실제로 반영된 건 없는\" 상태가 돼요. 원인은 대부분 모델 성능이 아니라 운영 설정이에요. 증거 없는 \"완료\" : 완료 기준에 \"실행한 명령과 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: PartsPlan - AI가 제조사 데이터시트의 쪽을 근거로 답하게 하는 MCP 서버",
-      "url": "https://news.hada.io/topic?id=35201",
-      "date": "2026-10-12",
-      "summary": "전자부품 설계 값(열저항, 절대 최대 정격, 그래프에만 있는 특성 값)은 수십~수백 쪽 데이터시트 안쪽 표와 그래프에 있습니다. AI에게 물으면 기억으로 답하거나, 어느 쪽에서 나온 값인지 대지 못…"
+      "title": "Linus Torvalds, Claude Code로 Linux 커널의 대폭 개선 작업 진행 중",
+      "url": "https://news.hada.io/topic?id=35265",
+      "date": "2026-10-13",
+      "summary": "리누스 토발즈가 Claude Code 를 활용해 여러 스레드가 한 파일을 조금씩 읽을 때 발생하는 Linux 커널의 병목을 개선하고 있음 병목은 folio 참조 카운팅 경합 에서 발생하며, 패치 시…"
     },
     {
       "source": "GeekNews",
-      "title": "북한의 지도 제작자",
-      "url": "https://news.hada.io/topic?id=35199",
-      "date": "2026-10-12",
-      "summary": "북한의 지도 제작자"
+      "title": "Clojure 창시자 Rich Hickey: AI는 도구가 아니라 자동화다",
+      "url": "https://news.hada.io/topic?id=35264",
+      "date": "2026-10-13",
+      "summary": "도구는 사람이 직접 통제하며 다루는 것 인 반면, LLM은 요청을 받은 뒤 직접적인 인간 통제 없이 작동하는 자동화 라는 구분이 핵심임 도구 사용은 지속적인 기술과 에너지 투입, 감각적 피드백 을 …"
     },
     {
       "source": "GeekNews",
-      "title": "직장인으로서 부를 쌓는 방법",
-      "url": "https://news.hada.io/topic?id=35198",
-      "date": "2026-10-12",
-      "summary": "직장 생활도 부를 쌓는 동력 이 될 수 있지만, 높은 소득 자체가 부는 아님. 일의 가치를 높이는 동시에 늘어난 소득의 상당 부분을 자산으로 전환 해야 함 성적은 첫 기회를 여는 데 도움이 되지만,…"
+      "title": "OpenFatigue™ - 오픈은 새로운 폐쇄다",
+      "url": "https://news.hada.io/topic?id=35262",
+      "date": "2026-10-13",
+      "summary": "OpenFatigue™ 는 ‘Open’을 내세우지만 실제 이용 권한은 제한하는 브랜드와 플랫폼에 대한 피로를 풍자하는 사이트임 라이선스 열람과 사용 권한 , 소스 공개와 스크린샷 공개를 대비하며 이…"
     }
   ]
 }
