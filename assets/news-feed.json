@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-13",
+  "updated_at": "2026-10-14",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Ruby의 바이마르 시대 - AI로 생태계의 오래된 빈틈을 메우다",
-      "url": "https://news.hada.io/topic?id=35270",
-      "date": "2026-10-13",
-      "summary": "LLM 도구의 확산 은 Ruby를 다른 언어로 재작성하는 데만 쓰일 필요가 없으며, 오랫동안 해결하기 버거웠던 생태계의 빈틈을 메우는 기회이기도 함 PDF 생성, GUI, Parquet, gRPC …"
+      "title": "새롭고 좋은 소프트웨어는 다 어디에 있나?",
+      "url": "https://news.hada.io/topic?id=35319",
+      "date": "2026-10-14",
+      "summary": "AI 코딩이 그렇게 뛰어나다면 왜 새롭고 좋은 소프트웨어가 더 많이 보이지 않는지에 대해, 여러 가설 이 가능함. 다만 모두 추측적이며 일부는 큰 비중을 두기 어려움 개선이 새 제품보다 기존 소프트…"
     },
     {
       "source": "GeekNews",
-      "title": "StreamRender-H3 - 실시간 스트리밍 확산 렌더링으로 구현하는 코드 기반 인터랙티브 세계",
-      "url": "https://news.hada.io/topic?id=35269",
-      "date": "2026-10-13",
-      "summary": "코드 기반 게임 엔진 이 세계의 상태와 규칙을 관리하고, 비디오 모델이 엔진의 시맨틱 맵을 사실적인 영상으로 바꾸는 구조임 시맨틱 맵 은 장면 구조와 움직임을 전달하고, 참조 이미지와 프롬프트 는 …"
+      "title": "uv-build를 사용하지 말아 달라는 호소",
+      "url": "https://news.hada.io/topic?id=35318",
+      "date": "2026-10-14",
+      "summary": "Gentoo에서 핵심 의존성 하나가 uv-build 로 전환하면서 또다시 십여 개 패키지가 키워드를 잃었으며, 이를 계기로 순수 Python 패키지의 빌드 백엔드로 uv-build를 사용하지 말아 …"
     },
     {
       "source": "GeekNews",
-      "title": "AI는 도구이며, 잘 쓰려면 숙련이 필요하다",
-      "url": "https://news.hada.io/topic?id=35268",
-      "date": "2026-10-13",
-      "summary": "LLM은 사람이 목적에 맞게 다룰 수 있는 도구 이며, 유용성은 사용자가 지시하고 피드백을 해석하며 오류를 알아내 수정하는 능력에 달려 있음 예측 불가능성 은 중요한 한계지만, 예측 가능성과 신뢰성…"
+      "title": "Guitoro, 키보드로 줄을 튕겨 연주하는 가상 기타",
+      "url": "https://news.hada.io/topic?id=35316",
+      "date": "2026-10-14",
+      "summary": "Guitoro 는 설치나 회원가입 없이 브라우저에서 무료로 연주하는 가상 기타로, 키보드 왼손으로 코드를 잡고 오른손으로 스트로크하거나 터치 화면의 줄을 쓸어 연주함 실제 악기 녹음 샘플 을 사용하…"
     },
     {
       "source": "GeekNews",
-      "title": "TurboPython - Python 코드를 C++를 거쳐 네이티브 실행 파일로 컴파일하는 언어",
-      "url": "https://news.hada.io/topic?id=35267",
-      "date": "2026-10-13",
-      "summary": "Python 문법으로 독립 실행 파일과 네이티브 라이브러리 를 만들려는 개발자를 위한 정적 타입 언어와 컴파일러 타입을 지정한 코드를 C++로 변환한 뒤 컴파일 하고, 생성된 프로그램은 CPytho…"
+      "title": "OpenAI 엔지니어, 임원 회의실 도청 혐의로 체포",
+      "url": "https://news.hada.io/topic?id=35315",
+      "date": "2026-10-14",
+      "summary": "OpenAI 엔지니어 Abdulrahman Alfozan 이 샌프란시스코 본사 임원 회의실에 녹음 장치를 숨긴 혐의로 체포돼, 구두 대화를 가로채기 위해 장치를 사용하거나 사용을 시도한 혐의로 기소…"
     },
     {
       "source": "GeekNews",
-      "title": "AI 코딩 에이전트(Claude Code·Codex·Gemini CLI) 세팅이 실패하는 15가지 패턴과 해결법",
-      "url": "https://news.hada.io/topic?id=35266",
-      "date": "2026-10-13",
-      "summary": "코딩 에이전트를 몇 주 쓰다 보면 \"일은 많이 했는데 실제로 반영된 건 없는\" 상태가 돼요. 원인은 대부분 모델 성능이 아니라 운영 설정이에요. 증거 없는 \"완료\" : 완료 기준에 \"실행한 명령과 …"
+      "title": "Hacker News에 서비스를 소개했더니 AI 봇 트래픽이 밀려들었다",
+      "url": "https://news.hada.io/topic?id=35313",
+      "date": "2026-10-14",
+      "summary": "맞춤형 피드 리더 sprinklz.io 를 Hacker News에 소개한 뒤 사이트가 심하게 느려졌으며, 실제 로그인 사용자는 소수인데도 높은 서버 부하가 며칠 동안 지속 엔드포인트별 요청 로그를 …"
     },
     {
       "source": "GeekNews",
-      "title": "Linus Torvalds, Claude Code로 Linux 커널의 대폭 개선 작업 진행 중",
-      "url": "https://news.hada.io/topic?id=35265",
-      "date": "2026-10-13",
-      "summary": "리누스 토발즈가 Claude Code 를 활용해 여러 스레드가 한 파일을 조금씩 읽을 때 발생하는 Linux 커널의 병목을 개선하고 있음 병목은 folio 참조 카운팅 경합 에서 발생하며, 패치 시…"
+      "title": "Minions - 유휴 Mac의 GPU를 모아 머신러닝 추론 작업을 분산하는 Apple의 시스템",
+      "url": "https://news.hada.io/topic?id=35312",
+      "date": "2026-10-14",
+      "summary": "여러 Mac의 유휴 Apple Silicon GPU로 대규모 머신러닝 추론 작업을 나눠 처리 하는 Apple 연구진의 분산 시스템 기존 하드웨어를 활용해 GPU 추가 구매 부담을 줄이고, 자원이 부…"
     },
     {
       "source": "GeekNews",
-      "title": "Clojure 창시자 Rich Hickey: AI는 도구가 아니라 자동화다",
-      "url": "https://news.hada.io/topic?id=35264",
-      "date": "2026-10-13",
-      "summary": "도구는 사람이 직접 통제하며 다루는 것 인 반면, LLM은 요청을 받은 뒤 직접적인 인간 통제 없이 작동하는 자동화 라는 구분이 핵심임 도구 사용은 지속적인 기술과 에너지 투입, 감각적 피드백 을 …"
+      "title": "Ledger, 지갑 암호화폐 도난 원인으로 삽입된 스파이 칩 확인",
+      "url": "https://news.hada.io/topic?id=35311",
+      "date": "2026-10-14",
+      "summary": "Ledger가 동남아 리셀러 CryptoBilis 를 통해 판매된 일부 지갑의 암호화폐 도난과 관련해, 피해 기기에서 무단 하드웨어 삽입물 을 확인함 연구진이 분석한 Ledger X 삽입물은 화면 …"
     },
     {
       "source": "GeekNews",
-      "title": "OpenFatigue™ - 오픈은 새로운 폐쇄다",
-      "url": "https://news.hada.io/topic?id=35262",
-      "date": "2026-10-13",
-      "summary": "OpenFatigue™ 는 ‘Open’을 내세우지만 실제 이용 권한은 제한하는 브랜드와 플랫폼에 대한 피로를 풍자하는 사이트임 라이선스 열람과 사용 권한 , 소스 공개와 스크린샷 공개를 대비하며 이…"
+      "title": "Apple, 새로운 Apple TV 4K 공개",
+      "url": "https://news.hada.io/topic?id=35310",
+      "date": "2026-10-14",
+      "summary": "Apple이 Siri AI와 원거리 마이크 를 탑재한 Apple TV 4K 4세대를 발표함. 전체 화면에서 대화로 콘텐츠를 찾고, 리모컨 없이 재생을 제어할 수 있음 A19 는 이전 세대 대비 CP…"
     }
   ]
 }
