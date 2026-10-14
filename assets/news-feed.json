@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-14",
+  "updated_at": "2026-10-15",
   "items": [
     {
       "source": "GeekNews",
-      "title": "새롭고 좋은 소프트웨어는 다 어디에 있나?",
-      "url": "https://news.hada.io/topic?id=35319",
-      "date": "2026-10-14",
-      "summary": "AI 코딩이 그렇게 뛰어나다면 왜 새롭고 좋은 소프트웨어가 더 많이 보이지 않는지에 대해, 여러 가설 이 가능함. 다만 모두 추측적이며 일부는 큰 비중을 두기 어려움 개선이 새 제품보다 기존 소프트…"
+      "title": "군은 어떻게 선거를 해킹할 것인가",
+      "url": "https://news.hada.io/topic?id=35373",
+      "date": "2026-10-15",
+      "summary": "취재 결과에 따르면 미군 Task Force Raider 가 2026년 중간선거를 앞두고 범정부 선거 보안 활동에 참여하며, 투표 집계 조작보다 러시아와 중국의 여론 영향력 행사 에 더 집중하고 있…"
     },
     {
       "source": "GeekNews",
-      "title": "uv-build를 사용하지 말아 달라는 호소",
-      "url": "https://news.hada.io/topic?id=35318",
-      "date": "2026-10-14",
-      "summary": "Gentoo에서 핵심 의존성 하나가 uv-build 로 전환하면서 또다시 십여 개 패키지가 키워드를 잃었으며, 이를 계기로 순수 Python 패키지의 빌드 백엔드로 uv-build를 사용하지 말아 …"
+      "title": "Yandex 장애: 데이터에 따르면 악성 봇은 멈추지 않고 이동했음",
+      "url": "https://news.hada.io/topic?id=35372",
+      "date": "2026-10-15",
+      "summary": "Cloudflare 관측 데이터 에서 Yandex 장애로 줄어든 트래픽은 검색 크롤링과 일부 공격성 요청이었으며, 대규모 악성 자동화는 다른 호스팅 사업자로 이동함 Yandex Search 에서 사…"
     },
     {
       "source": "GeekNews",
-      "title": "Guitoro, 키보드로 줄을 튕겨 연주하는 가상 기타",
-      "url": "https://news.hada.io/topic?id=35316",
-      "date": "2026-10-14",
-      "summary": "Guitoro 는 설치나 회원가입 없이 브라우저에서 무료로 연주하는 가상 기타로, 키보드 왼손으로 코드를 잡고 오른손으로 스트로크하거나 터치 화면의 줄을 쓸어 연주함 실제 악기 녹음 샘플 을 사용하…"
+      "title": "OpenCode 2.0",
+      "url": "https://news.hada.io/topic?id=35371",
+      "date": "2026-10-15",
+      "summary": "OpenCode 2.0은 단일 백그라운드 서비스 를 자동 실행하며, TUI와 웹 인터페이스, 데스크톱 앱이 같은 중앙 프로세스에 연결되는 구조로 개편됨 Code Mode 는 MCP 서버와 OpenA…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI 엔지니어, 임원 회의실 도청 혐의로 체포",
-      "url": "https://news.hada.io/topic?id=35315",
-      "date": "2026-10-14",
-      "summary": "OpenAI 엔지니어 Abdulrahman Alfozan 이 샌프란시스코 본사 임원 회의실에 녹음 장치를 숨긴 혐의로 체포돼, 구두 대화를 가로채기 위해 장치를 사용하거나 사용을 시도한 혐의로 기소…"
+      "title": "중년 남성 자살률, 역대 최고치 기록",
+      "url": "https://news.hada.io/topic?id=35370",
+      "date": "2026-10-15",
+      "summary": "잉글랜드와 웨일스의 2025년 45~64세 남성 자살률 이 인구 10만 명당 23.8명으로, 1981년 통계 수집 시작 이후 최고치를 기록함 50~54세 남성 의 자살률은 10만 명당 28명으로 가…"
     },
     {
       "source": "GeekNews",
-      "title": "Hacker News에 서비스를 소개했더니 AI 봇 트래픽이 밀려들었다",
-      "url": "https://news.hada.io/topic?id=35313",
-      "date": "2026-10-14",
-      "summary": "맞춤형 피드 리더 sprinklz.io 를 Hacker News에 소개한 뒤 사이트가 심하게 느려졌으며, 실제 로그인 사용자는 소수인데도 높은 서버 부하가 며칠 동안 지속 엔드포인트별 요청 로그를 …"
+      "title": "Anthropic의 Scion은 Mononoke에서 큰 영향을 받음",
+      "url": "https://news.hada.io/topic?id=35369",
+      "date": "2026-10-15",
+      "summary": "Anthropic의 새 버전 관리 시스템 Scion 은 blame 같은 작업을 효율화하기 위해 ‘파생 데이터’를 사용하며, Mononoke 개발 참여자는 자신이 2022년에 소개한 Mononoke …"
     },
     {
       "source": "GeekNews",
-      "title": "Minions - 유휴 Mac의 GPU를 모아 머신러닝 추론 작업을 분산하는 Apple의 시스템",
-      "url": "https://news.hada.io/topic?id=35312",
-      "date": "2026-10-14",
-      "summary": "여러 Mac의 유휴 Apple Silicon GPU로 대규모 머신러닝 추론 작업을 나눠 처리 하는 Apple 연구진의 분산 시스템 기존 하드웨어를 활용해 GPU 추가 구매 부담을 줄이고, 자원이 부…"
+      "title": "Go 1.27의 HTTP/1 연결 재사용 개선",
+      "url": "https://news.hada.io/topic?id=35368",
+      "date": "2026-10-15",
+      "summary": "Go 1.27의 net/http.Transport 는 응답 본문을 닫을 때 읽지 않은 데이터가 남아 있으면 백그라운드에서 읽어 버려, HTTP/1 연결을 재사용할 수 있도록 함 자동으로 읽어 버리는…"
     },
     {
       "source": "GeekNews",
-      "title": "Ledger, 지갑 암호화폐 도난 원인으로 삽입된 스파이 칩 확인",
-      "url": "https://news.hada.io/topic?id=35311",
-      "date": "2026-10-14",
-      "summary": "Ledger가 동남아 리셀러 CryptoBilis 를 통해 판매된 일부 지갑의 암호화폐 도난과 관련해, 피해 기기에서 무단 하드웨어 삽입물 을 확인함 연구진이 분석한 Ledger X 삽입물은 화면 …"
+      "title": "은행들, 막 인수한 AI 데이터센터 부채를 매각하려 함",
+      "url": "https://news.hada.io/topic?id=35367",
+      "date": "2026-10-15",
+      "summary": "JPMorgan, Morgan Stanley, SMBC, MUFG가 AI 대출 위험의 외부 이전 을 검토 중임. AI 관련 익스포저가 은행 내부 한도에 가까워지면서 대출은 장부에 남기되 가장 위험한…"
     },
     {
       "source": "GeekNews",
-      "title": "Apple, 새로운 Apple TV 4K 공개",
-      "url": "https://news.hada.io/topic?id=35310",
-      "date": "2026-10-14",
-      "summary": "Apple이 Siri AI와 원거리 마이크 를 탑재한 Apple TV 4K 4세대를 발표함. 전체 화면에서 대화로 콘텐츠를 찾고, 리모컨 없이 재생을 제어할 수 있음 A19 는 이전 세대 대비 CP…"
+      "title": "암 진단을 받았을 때 알아둘 것들, 2026년판",
+      "url": "https://news.hada.io/topic?id=35366",
+      "date": "2026-10-15",
+      "summary": "2026년 5월 구강 편평세포암 진단 경험 을 바탕으로, 예약과 검사 진행을 환자가 직접 끈질기게 확인하고 후속 연락을 이어갈 것을 권함 AI가 증상의 심각성을 낮게 평가할 수 있음 에 유의해야 함…"
     }
   ]
 }
