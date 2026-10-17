@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-17",
+  "updated_at": "2026-10-18",
   "items": [
     {
       "source": "GeekNews",
-      "title": "모든 면에서 형편없는 Siri",
-      "url": "https://news.hada.io/topic?id=35497",
-      "date": "2026-10-17",
-      "summary": "모든 면에서 형편없는 Siri"
+      "title": "Around The World 게임에서 아름다운 하늘 렌더링하기",
+      "url": "https://news.hada.io/topic?id=35554",
+      "date": "2026-10-18",
+      "summary": "초기 개발 중인 해양 탐험 게임 Around The World 에서 구름의 빛 산란, 하늘의 색, 수평선, 톤 매핑을 조정해 바다와 하늘, 구름이 더 자연스럽게 어우러지도록 개선함 Rust로 직접 …"
     },
     {
       "source": "GeekNews",
-      "title": "탈옥한 PS5에서 llama.cpp로 모든 GGUF 모델을 콘솔에서 네이티브 실행",
-      "url": "https://news.hada.io/topic?id=35496",
-      "date": "2026-10-17",
-      "summary": "PS5LM 은 탈옥한 PS5의 GPU에 GGUF 모델을 올려 노트북, 휴대폰, 코딩 도구가 사용하는 가정용 모델 서버로 만듦. 실행 중에는 PC, 클라우드, 계정이 필요 없음 llama.cpp의 V…"
+      "title": "댐 철거로 미국 북동부 전역에 물고기가 돌아오고 있음",
+      "url": "https://news.hada.io/topic?id=35553",
+      "date": "2026-10-18",
+      "summary": "미국의 댐 철거는 대규모 서부 연어 하천뿐 아니라 동부의 작은 하천 에서도 진행되며, 막혔던 산란 경로를 다시 열고 회유성 어류를 회복시키고 있음 Massachusetts의 Town Brook 에서…"
     },
     {
       "source": "GeekNews",
-      "title": "Claude Code 팀의 코드 리뷰 방식",
-      "url": "https://news.hada.io/topic?id=35495",
-      "date": "2026-10-17",
-      "summary": "Claude가 자체 코드의 약 90%를 작성 하는 Claude Code 팀은 코드 읽기의 대부분을 자동화하고, 사람은 위험 판단과 결과 책임에 집중하도록 리뷰 과정을 바꿈 목표는 대부분의 PR을 작…"
+      "title": "에스토니아 온라인 투표 시스템의 소스 코드",
+      "url": "https://news.hada.io/topic?id=35552",
+      "date": "2026-10-18",
+      "summary": "IVXV 는 에스토니아 온라인 투표 시스템의 소스 코드를 누구나 검토할 수 있도록 공개하는 저장소임 이 저장소는 실제 개발 작업용으로 사용되지 않음 저장소를 최신 상태로 유지해 실제 선거에 사용되는…"
     },
     {
       "source": "GeekNews",
-      "title": "사과문: Elevation Lab, AirTag 무음화 도구 판매 중단",
-      "url": "https://news.hada.io/topic?id=35494",
-      "date": "2026-10-17",
-      "summary": "Elevation Lab 이 최근 출시한 AirTag 무음화 도구의 악용 가능성을 인정하고 제품을 철회함 이 도구는 자사 구성원들이 자전거에 부착한 AirTag 를 무음화하려는 용도로 만들었음 악의…"
+      "title": "Linux 7.2 커널 개발 통계",
+      "url": "https://news.hada.io/topic?id=35551",
+      "date": "2026-10-18",
+      "summary": "Linux 7.2에는 병합을 제외한 16,418개 커밋 과 약 60만 줄의 코드가 추가됐으며, 커밋 수 기준 커널 역사상 두 번째로 활발한 개발 주기였음 참여 개발자는 2,652명 , 첫 기여자는 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: Flipflop - Iroh 기반 파일 공유용 지속형 터널",
-      "url": "https://news.hada.io/topic?id=35493",
-      "date": "2026-10-17",
-      "summary": "Flipflop 은 두 대 이상의 기기 사이에 신뢰할 수 있는 터널을 설정해, 이후 언제든 서로 파일을 보낼 수 있게 함 Iroh 를 사용하며 Bluetooth, LAN뿐 아니라 인터넷을 통한 연결…"
+      "title": "9인치 달팽이",
+      "url": "https://news.hada.io/topic?id=35550",
+      "date": "2026-10-18",
+      "summary": "플로리다주 Hialeah에서 아프리카대왕달팽이 가 발견돼 약 300에이커 구역의 정원 폐기물과 벽돌 등의 반출입이 제한됨 이 달팽이는 빠르게 번식하며 농작물과 건물 외벽을 먹고 , 사람에게 심각한 …"
     },
     {
       "source": "GeekNews",
-      "title": "Anthropic, 6월에 투기등급 중 가장 높은 신용등급 받아",
-      "url": "https://news.hada.io/topic?id=35492",
-      "date": "2026-10-17",
-      "summary": "Anthropic, 6월에 투기등급 중 가장 높은 신용등급 받아"
+      "title": "Pele - Mermaid 다이어그램을 테마 적용 가능한 SVG로 렌더링하는 라이브러리",
+      "url": "https://news.hada.io/topic?id=35549",
+      "date": "2026-10-18",
+      "summary": "Pele 는 Mermaid 문법으로 작성한 다이어그램을 SVG로 렌더링하는 가벼운 오픈소스 라이브러리임 CSS 변수 로 색상과 글꼴을 설정하며, 색상 변경은 다시 렌더링하지 않아도 적용됨 자체 비교…"
     },
     {
       "source": "GeekNews",
-      "title": "Big Fish: OpenBSD의 37년 된 커널 버그 악용하기",
-      "url": "https://news.hada.io/topic?id=35491",
-      "date": "2026-10-17",
-      "summary": "16비트 공유 메모리 연결 카운터의 오버플로 가 경쟁 상태를 통해 해제 후 사용으로 이어졌으며, 별도의 커널 범위 밖 쓰기 취약점과 결합해 로컬 root 권한 상승이 가능했음 Calif는 KARL,…"
+      "title": "금, 이제 미국 최대 수출 품목이 되다",
+      "url": "https://news.hada.io/topic?id=35548",
+      "date": "2026-10-18",
+      "summary": "금 수출액 이 2025년 10월부터 거의 매달 미국의 다른 모든 수출 품목을 웃돌며, 기존 상위 품목인 석유, 의약품, 항공기 및 부품을 앞섬 수출 증가에는 금값의 사상 최고치 경신뿐 아니라 물량 …"
     },
     {
       "source": "GeekNews",
-      "title": "Waymo, 토론토에 자율주행 차량 호출 서비스 진출 준비",
-      "url": "https://news.hada.io/topic?id=35490",
-      "date": "2026-10-17",
-      "summary": "Waymo 가 캐나다 토론토에서 완전 자율주행 차량 호출 서비스를 준비하며, 2028년 첫 승객 탑승 을 목표로 현지 시설과 일자리에 투자함 초기에는 수동 운전 으로 현지 도로의 고정밀 지도를 만들…"
+      "title": "OpenAI, AI 에이전트의 일탈 사례 4건 추가 공개",
+      "url": "https://news.hada.io/topic?id=35547",
+      "date": "2026-10-18",
+      "summary": "OpenAI가 AI 에이전트의 일탈 사례 4건 을 추가 공개함. 모두 6월에 발생했으며, 이 중 3건은 수개월 뒤인 8월이나 9월에야 파악함 중대 등급 으로 분류한 2건에서는 정부 웹사이트의 접근 …"
     }
   ]
 }
