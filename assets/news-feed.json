@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-19",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Around The World 게임에서 아름다운 하늘 렌더링하기",
-      "url": "https://news.hada.io/topic?id=35554",
-      "date": "2026-10-18",
-      "summary": "초기 개발 중인 해양 탐험 게임 Around The World 에서 구름의 빛 산란, 하늘의 색, 수평선, 톤 매핑을 조정해 바다와 하늘, 구름이 더 자연스럽게 어우러지도록 개선함 Rust로 직접 …"
+      "title": "Anthropic의 고용은 어떻게 변하고 있는가",
+      "url": "https://news.hada.io/topic?id=35600",
+      "date": "2026-10-19",
+      "summary": "Anthropic은 빠르게 성장하면서도 주니어 기술직 채용 비중 을 줄이고 있음. 2025년 초 이후 기술직 신규 채용에서 주니어가 차지하는 비중은 27%에서 9%로 하락함 AI 에이전트 도입 이후…"
     },
     {
       "source": "GeekNews",
-      "title": "댐 철거로 미국 북동부 전역에 물고기가 돌아오고 있음",
-      "url": "https://news.hada.io/topic?id=35553",
-      "date": "2026-10-18",
-      "summary": "미국의 댐 철거는 대규모 서부 연어 하천뿐 아니라 동부의 작은 하천 에서도 진행되며, 막혔던 산란 경로를 다시 열고 회유성 어류를 회복시키고 있음 Massachusetts의 Town Brook 에서…"
+      "title": "Tesla, Roadster 예약자에게 차량을 인도할 수 있을지조차 “보장 불가”",
+      "url": "https://news.hada.io/topic?id=35599",
+      "date": "2026-10-19",
+      "summary": "Tesla의 새 Roadster 예약 약관 은 차량이 개발 중이며, 인도 시점뿐 아니라 실제 인도 여부도 보장할 수 없다 고 명시함 최대 25만 달러를 선납 하더라도 확정된 생산 물량을 배정받는 것…"
     },
     {
       "source": "GeekNews",
-      "title": "에스토니아 온라인 투표 시스템의 소스 코드",
-      "url": "https://news.hada.io/topic?id=35552",
-      "date": "2026-10-18",
-      "summary": "IVXV 는 에스토니아 온라인 투표 시스템의 소스 코드를 누구나 검토할 수 있도록 공개하는 저장소임 이 저장소는 실제 개발 작업용으로 사용되지 않음 저장소를 최신 상태로 유지해 실제 선거에 사용되는…"
+      "title": "Java sealed 타입의 함정 - 새 하위 타입이 기존 코드를 깨뜨릴 수 있다",
+      "url": "https://news.hada.io/topic?id=35598",
+      "date": "2026-10-19",
+      "summary": "Java의 sealed 클래스와 인터페이스 는 허용할 하위 타입을 제한해, 컴파일러가 switch 에서 모든 경우를 처리했는지 검사할 수 있게 함 모든 타입을 처리하면 default 분기 없이 작성…"
     },
     {
       "source": "GeekNews",
-      "title": "Linux 7.2 커널 개발 통계",
-      "url": "https://news.hada.io/topic?id=35551",
-      "date": "2026-10-18",
-      "summary": "Linux 7.2에는 병합을 제외한 16,418개 커밋 과 약 60만 줄의 코드가 추가됐으며, 커밋 수 기준 커널 역사상 두 번째로 활발한 개발 주기였음 참여 개발자는 2,652명 , 첫 기여자는 …"
+      "title": "플로리다의 주택소유자협회와 콘도 관리조합이 주거 위기를 악화시키고 있음",
+      "url": "https://news.hada.io/topic?id=35597",
+      "date": "2026-10-19",
+      "summary": "플로리다의 주택소유자협회(HOA)와 콘도 관리조합 은 관리비 인상뿐 아니라 체납에 따른 담보권 설정과 강제매각 소송으로 주거비, 매매 가능성, 거주 안정성을 압박함 HOA Spy가 수집한 기록에서 …"
     },
     {
       "source": "GeekNews",
-      "title": "9인치 달팽이",
-      "url": "https://news.hada.io/topic?id=35550",
-      "date": "2026-10-18",
-      "summary": "플로리다주 Hialeah에서 아프리카대왕달팽이 가 발견돼 약 300에이커 구역의 정원 폐기물과 벽돌 등의 반출입이 제한됨 이 달팽이는 빠르게 번식하며 농작물과 건물 외벽을 먹고 , 사람에게 심각한 …"
+      "title": "AI는 수학과 과학에 황금기를 가져올까, 암흑기를 가져올까?",
+      "url": "https://news.hada.io/topic?id=35596",
+      "date": "2026-10-19",
+      "summary": "LLM의 증명 능력이 발전해도 인간의 이해와 독립적인 연구 역량 이 함께 성장하지 않으면, 과학적 산출량 증가와 연구 공동체의 약화가 동시에 일어날 수 있음 기계가 검증할 수 있는 증명과 인간이 이…"
     },
     {
       "source": "GeekNews",
-      "title": "Pele - Mermaid 다이어그램을 테마 적용 가능한 SVG로 렌더링하는 라이브러리",
-      "url": "https://news.hada.io/topic?id=35549",
-      "date": "2026-10-18",
-      "summary": "Pele 는 Mermaid 문법으로 작성한 다이어그램을 SVG로 렌더링하는 가벼운 오픈소스 라이브러리임 CSS 변수 로 색상과 글꼴을 설정하며, 색상 변경은 다시 렌더링하지 않아도 적용됨 자체 비교…"
+      "title": "JDK 28 - 값 객체 프리뷰와 AOT 코드 컴파일을 포함할 Java SE 28 참조 구현",
+      "url": "https://news.hada.io/topic?id=35595",
+      "date": "2026-10-19",
+      "summary": "JDK 28 은 Java SE 28의 참조 구현이 될 릴리스로, 현재 개발 중이며 GPL 기반 사전 체험 바이너리를 제공함 현재 포함 대상으로 지정된 기능에는 값 객체 와 JVM의 엄격한 필드 초기…"
     },
     {
       "source": "GeekNews",
-      "title": "금, 이제 미국 최대 수출 품목이 되다",
-      "url": "https://news.hada.io/topic?id=35548",
-      "date": "2026-10-18",
-      "summary": "금 수출액 이 2025년 10월부터 거의 매달 미국의 다른 모든 수출 품목을 웃돌며, 기존 상위 품목인 석유, 의약품, 항공기 및 부품을 앞섬 수출 증가에는 금값의 사상 최고치 경신뿐 아니라 물량 …"
+      "title": "Chrome과 Edge의 XSLT 제거: 무엇이 깨지고 무엇은 그대로인가",
+      "url": "https://news.hada.io/topic?id=35594",
+      "date": "2026-10-19",
+      "summary": "Chrome 158 은 2026년 11월 17일 안정 버전 출시와 함께 브라우저 내 XSLT 지원을 제거할 예정임. Edge도 Chromium을 따르지만, Microsoft는 제거 날짜를 공개하지 …"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI, AI 에이전트의 일탈 사례 4건 추가 공개",
-      "url": "https://news.hada.io/topic?id=35547",
-      "date": "2026-10-18",
-      "summary": "OpenAI가 AI 에이전트의 일탈 사례 4건 을 추가 공개함. 모두 6월에 발생했으며, 이 중 3건은 수개월 뒤인 8월이나 9월에야 파악함 중대 등급 으로 분류한 2건에서는 정부 웹사이트의 접근 …"
+      "title": "Show HN: Ocarina of Time 리메이크 전에 살펴보는 Zelda 연대표",
+      "url": "https://news.hada.io/topic?id=35593",
+      "date": "2026-10-19",
+      "summary": "The Legend of Hyrule 는 Nintendo의 공식 연대표를 바탕으로 Hyrule의 역사와 각 게임의 사건을 정리한 사이트임 Ocarina of Time 이후 역사는 Link가 패배한 …"
     }
   ]
 }
