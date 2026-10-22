@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-22",
+  "updated_at": "2026-10-23",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Railway 보안 사고 공개",
-      "url": "https://news.hada.io/topic?id=35778",
-      "date": "2026-10-22",
-      "summary": "Railway 가 고객 환경 변수를 저장하는 시스템에서 이상 활동을 탐지했으며, 조사 결과 비인가 제3자가 암호화된 환경 변수에 접근하고 일부는 복호화된 내용까지 확보했을 가능성이 있음 환경 변수에…"
+      "title": "earcut보다 빠르게: 지도 폴리곤 370만 개를 489ms에 삼각분할하기",
+      "url": "https://news.hada.io/topic?id=35837",
+      "date": "2026-10-23",
+      "summary": "지도 엔진의 삼각분할기를 귀 자르기(ear clipping) 기반 earstrip 으로 교체해, M4 Pro 단일 코어에서 폴리곤 374만 개의 처리 시간을 기존 제약 Delaunay 방식의 2,9…"
     },
     {
       "source": "GeekNews",
-      "title": "GitLab 긴급 보안 패치 릴리스",
-      "url": "https://news.hada.io/topic?id=35777",
-      "date": "2026-10-22",
-      "summary": "GitLab CE/EE에서 비인증 사용자의 서버 임의 코드 실행 으로 이어질 수 있는 CVSS 10.0 취약점을 수정했으며, 자체 관리형 설치의 즉시 업그레이드를 강력히 권고함 핵심 취약점은 특수하…"
+      "title": "독일에서 GNU Taler 운영 준비에 나서다",
+      "url": "https://news.hada.io/topic?id=35836",
+      "date": "2026-10-23",
+      "summary": "유로화 기반 GNU Taler 결제 서비스 를 운영할 Taler Operations AG 가 독일 보훔에서 설립 중이며, 독일을 시작으로 유로존에서 결제를 지원할 계획임 Taler는 통화가 아니라 …"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI 모델과 Codex, Google Cloud에 도입",
-      "url": "https://news.hada.io/topic?id=35775",
-      "date": "2026-10-22",
-      "summary": "Google Cloud에서 OpenAI 모델과 Codex를 활용할 수 있게 됨 . GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna를 일부 기업 고객 대상 비공개 프리뷰로 제공하기 …"
+      "title": "Cloudflare, 대한민국 ISMS 인증 취득",
+      "url": "https://news.hada.io/topic?id=35835",
+      "date": "2026-10-23",
+      "summary": "• 인증 획득: 미국에 본사를 둔 클라우드플레어(Cloudflare)가 한국인터넷진흥원(KISA)이 임명한 감사원들과 함께 80개의 통제 항목을 검토한 끝에 South Korea’s Informat…"
     },
     {
       "source": "GeekNews",
-      "title": "Claude Duet - 업무를 맡아 처리하고 필요할 때 먼저 연락하는 개인 AI 에이전트",
-      "url": "https://news.hada.io/topic?id=35773",
-      "date": "2026-10-22",
-      "summary": "메시지로 업무를 맡기면 클라우드 컴퓨터에서 처리 하고, 필요할 때 먼저 연락하는 Anthroipic의 개인 AI 에이전트 . 노트북이나 휴대폰을 꺼도 작업을 계속하며, 완료하거나 결정이 필요하면 알…"
+      "title": "Arc 브라우저와의 작별, 12월 22일 서비스 종료",
+      "url": "https://news.hada.io/topic?id=35834",
+      "date": "2026-10-23",
+      "summary": "Arc가 2026년 12월 22일 종료 . macOS와 Windows용 브라우저는 작동을 멈추며, 기존 사용자는 그전까지 평소처럼 사용하고 기본 업데이트를 받을 수 있음 개발팀은 브라우저 보안 유지…"
     },
     {
       "source": "GeekNews",
-      "title": "Meta, 개인정보 보호에 관해 이용자를 속여 250억 달러 제재금 지급 명령",
-      "url": "https://news.hada.io/topic?id=35772",
-      "date": "2026-10-22",
-      "summary": "뉴멕시코 법원이 개인정보 수집과 보호 방식에 관해 이용자를 속인 Meta에 250억 달러의 민사 제재금 지급을 명령. Cambridge Analytica 사건에서 비롯된 소송으로, Meta는 항소 …"
+      "title": "OpenShell - AI 에이전트의 파일과 네트워크 접근을 제어하는 NVIDIA 런타임",
+      "url": "https://news.hada.io/topic?id=35833",
+      "date": "2026-10-23",
+      "summary": "AI 에이전트에게 작업 권한을 주면서도 파일과 비밀정보, 네트워크 접근 범위를 제한 하는 NVIDIA의 오픈소스 런타임. 에이전트별 정책을 선언하고 실행 중 강제 적용 각 에이전트를 격리된 샌드박스…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenAI ‘Patch the Planet’, AI가 발견하는 취약점에 대응할 5단계 공조 체계 제안",
-      "url": "https://news.hada.io/topic?id=35771",
-      "date": "2026-10-22",
-      "summary": "OpenAI가 오픈소스 유지관리자의 보안 대응을 지원하는 ‘Patch the Planet’을 통해 5단계 공조 체계를 제안 . AI가 취약점을 빠르게 찾아내는 만큼, 연구자와 보안업체, 인프라 제공…"
+      "title": "Tell HN: 저도 모르게 PHP RCE 엠바고를 어겼습니다. 죄송합니다.",
+      "url": "https://news.hada.io/topic?id=35832",
+      "date": "2026-10-23",
+      "summary": "CVE-2026-109618과 CVE-2026-109619 관련 PHP 원격 코드 실행(RCE) 취약점 을 공개 전에 HN에 게시해, 조율된 공개 일정에 상당한 파급 효과와 추가 업무를 초래한 데 …"
     },
     {
       "source": "GeekNews",
-      "title": "EA, BioWare 폐쇄하고 차기 Mass Effect 개발 중단",
-      "url": "https://news.hada.io/topic?id=35770",
-      "date": "2026-10-22",
-      "summary": "EA가 Mass Effect와 Dragon Age, Baldur’s Gate 등을 만든 BioWare를 폐쇄 하고, 초기 개발 단계였던 차기 Mass Effect 프로젝트도 중단. 30년 넘게 이어…"
+      "title": "캐나다 하원의원들, 도박 광고 제한 추진",
+      "url": "https://news.hada.io/topic?id=35831",
+      "date": "2026-10-23",
+      "summary": "캐나다 연방 하원이 스포츠 베팅 광고의 전국적 규제 체계 를 마련하는 법안 S-211 을 추진 중이며, 캐나다 문화유산 상임위원회가 다음 주 표결할 예정임 2026년 NHL 플레이오프 7경기 분석에…"
     },
     {
       "source": "GeekNews",
-      "title": "온갖 제약 속에서도 빛나는 타이포그래피",
-      "url": "https://news.hada.io/topic?id=35768",
-      "date": "2026-10-22",
-      "summary": "기차 전광판과 건물 안내판, 오래된 키보드에서도 타이포그래피의 세심한 디테일을 발견할 수 있음 . 작은 픽셀 격자와 좁은 공간, 플라스틱 조각 같은 제약 속에서 나온 글자와 장식의 사례들 움직이는 …"
+      "title": "HackiOS - Android 휴대폰에서 실제 iOS 16.5 실행하기",
+      "url": "https://news.hada.io/topic?id=35830",
+      "date": "2026-10-23",
+      "summary": "Android 휴대폰에서 실제 iOS 16.5의 홈 화면과 기본 앱을 구동 하는 연구 프로젝트. Apple의 오픈소스 XNU 커널을 이식하고, 그 위에서 iOS 사용자 공간을 실행 터치와 시스템 제…"
     }
   ]
 }
