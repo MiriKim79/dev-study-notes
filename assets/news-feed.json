@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-23",
+  "updated_at": "2026-10-24",
   "items": [
     {
       "source": "GeekNews",
-      "title": "earcut보다 빠르게: 지도 폴리곤 370만 개를 489ms에 삼각분할하기",
-      "url": "https://news.hada.io/topic?id=35837",
-      "date": "2026-10-23",
-      "summary": "지도 엔진의 삼각분할기를 귀 자르기(ear clipping) 기반 earstrip 으로 교체해, M4 Pro 단일 코어에서 폴리곤 374만 개의 처리 시간을 기존 제약 Delaunay 방식의 2,9…"
+      "title": "Google, Gmail과 Google Photos 데이터를 타깃 광고에 사용할 수도 있다고 밝힘",
+      "url": "https://news.hada.io/topic?id=35889",
+      "date": "2026-10-24",
+      "summary": "Google이 개인정보처리방침 을 변경해, 사용자가 Gmail, Drive, Google Photos 데이터를 맞춤형 광고를 지원하는 다른 Google 서비스에 제공하면 광고 개인화에 사용할 수 있…"
     },
     {
       "source": "GeekNews",
-      "title": "독일에서 GNU Taler 운영 준비에 나서다",
-      "url": "https://news.hada.io/topic?id=35836",
-      "date": "2026-10-23",
-      "summary": "유로화 기반 GNU Taler 결제 서비스 를 운영할 Taler Operations AG 가 독일 보훔에서 설립 중이며, 독일을 시작으로 유로존에서 결제를 지원할 계획임 Taler는 통화가 아니라 …"
+      "title": "SaaS 실적 발표에서 드러난 AI의 15가지 흐름",
+      "url": "https://news.hada.io/topic?id=35888",
+      "date": "2026-10-24",
+      "summary": "상장 SaaS 기업 67곳의 실적 발표 를 검토한 결과, 거의 모든 기업이 전망 초과, 전망 상향, 성장 가속, 수익성 개선 중 하나 이상을 기록했으며 AI 제품이 실제 계약과 매출에 기여 하고 있…"
     },
     {
       "source": "GeekNews",
-      "title": "Cloudflare, 대한민국 ISMS 인증 취득",
-      "url": "https://news.hada.io/topic?id=35835",
-      "date": "2026-10-23",
-      "summary": "• 인증 획득: 미국에 본사를 둔 클라우드플레어(Cloudflare)가 한국인터넷진흥원(KISA)이 임명한 감사원들과 함께 80개의 통제 항목을 검토한 끝에 South Korea’s Informat…"
+      "title": "에이전트 시대의 사고 모델",
+      "url": "https://news.hada.io/topic?id=35887",
+      "date": "2026-10-24",
+      "summary": "기존 사고 모델 은 여전히 유효하지만, 같은 명세로도 매번 다른 결과를 만드는 확률적 제품에 적용하면 자동화 범위, 권한, 검증, 투자에 대한 답이 달라짐 에이전트의 경제성은 토큰 단가보다 허용 기…"
     },
     {
       "source": "GeekNews",
-      "title": "Arc 브라우저와의 작별, 12월 22일 서비스 종료",
-      "url": "https://news.hada.io/topic?id=35834",
-      "date": "2026-10-23",
-      "summary": "Arc가 2026년 12월 22일 종료 . macOS와 Windows용 브라우저는 작동을 멈추며, 기존 사용자는 그전까지 평소처럼 사용하고 기본 업데이트를 받을 수 있음 개발팀은 브라우저 보안 유지…"
+      "title": "스스로 생각해도 된다는 허락: Thiel Fellowship의 초기 시절",
+      "url": "https://news.hada.io/topic?id=35886",
+      "date": "2026-10-24",
+      "summary": "대학 대신 자기 프로젝트에 도전하는 청년에게 2년간 10만 달러와 멘토링을 제공한 틸 펠로십의 초기 이야기 . Ethereum과 Figma, Anthropic 공동창업자들이 거쳐 간 프로그램의 선발…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenShell - AI 에이전트의 파일과 네트워크 접근을 제어하는 NVIDIA 런타임",
-      "url": "https://news.hada.io/topic?id=35833",
-      "date": "2026-10-23",
-      "summary": "AI 에이전트에게 작업 권한을 주면서도 파일과 비밀정보, 네트워크 접근 범위를 제한 하는 NVIDIA의 오픈소스 런타임. 에이전트별 정책을 선언하고 실행 중 강제 적용 각 에이전트를 격리된 샌드박스…"
+      "title": "OpenSSL 4.1.0 - DTLS 1.3과 GREASE 지원 추가",
+      "url": "https://news.hada.io/topic?id=35885",
+      "date": "2026-10-24",
+      "summary": "OpenSSL 4.1.0 은 DTLS 1.3, GREASE, SSL 리스너 API의 DTLS 지원을 추가한 기능 릴리스임 암호 연산 최적화 로 ppc64le 의 ML-DSA/ML-KEM NTT 연산…"
     },
     {
       "source": "GeekNews",
-      "title": "Tell HN: 저도 모르게 PHP RCE 엠바고를 어겼습니다. 죄송합니다.",
-      "url": "https://news.hada.io/topic?id=35832",
-      "date": "2026-10-23",
-      "summary": "CVE-2026-109618과 CVE-2026-109619 관련 PHP 원격 코드 실행(RCE) 취약점 을 공개 전에 HN에 게시해, 조율된 공개 일정에 상당한 파급 효과와 추가 업무를 초래한 데 …"
+      "title": "pgrust 제거: 쿼리별 전용 커널과 결과 캐싱을 이용한 벤치마크 부정행위",
+      "url": "https://news.hada.io/topic?id=35884",
+      "date": "2026-10-24",
+      "summary": "ClickBench에서 pgrust 항목을 제거하는 PR이 병합됨 . 제거 사유는 43개 벤치마크 쿼리에 맞춘 전용 실행 경로와 이전 실행 결과를 재사용하는 캐시가 벤치마크 규칙을 위반한다는 것임 …"
     },
     {
       "source": "GeekNews",
-      "title": "캐나다 하원의원들, 도박 광고 제한 추진",
-      "url": "https://news.hada.io/topic?id=35831",
-      "date": "2026-10-23",
-      "summary": "캐나다 연방 하원이 스포츠 베팅 광고의 전국적 규제 체계 를 마련하는 법안 S-211 을 추진 중이며, 캐나다 문화유산 상임위원회가 다음 주 표결할 예정임 2026년 NHL 플레이오프 7경기 분석에…"
+      "title": "캐나다인들이 C-22 법안에 반대할 시간이 얼마 남지 않음",
+      "url": "https://news.hada.io/topic?id=35883",
+      "date": "2026-10-24",
+      "summary": "정부의 감시 권한을 대폭 확대하는 C-22 법안 이 캐나다 하원을 통과해 상원에서 심의 중이며, 시민단체는 법안 저지를 위한 청원 참여를 촉구함 통신사와 메시징 앱 등에 감시 협조를 강제하고, “시…"
     },
     {
       "source": "GeekNews",
-      "title": "HackiOS - Android 휴대폰에서 실제 iOS 16.5 실행하기",
-      "url": "https://news.hada.io/topic?id=35830",
-      "date": "2026-10-23",
-      "summary": "Android 휴대폰에서 실제 iOS 16.5의 홈 화면과 기본 앱을 구동 하는 연구 프로젝트. Apple의 오픈소스 XNU 커널을 이식하고, 그 위에서 iOS 사용자 공간을 실행 터치와 시스템 제…"
+      "title": "Apple Music 404 페이지를 찾을 수 없음 오류",
+      "url": "https://news.hada.io/topic?id=35882",
+      "date": "2026-10-24",
+      "summary": "Apple Music 404 페이지를 찾을 수 없음 오류"
     }
   ]
 }
