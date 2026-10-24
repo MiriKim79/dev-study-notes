@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-24",
+  "updated_at": "2026-10-25",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Google, Gmail과 Google Photos 데이터를 타깃 광고에 사용할 수도 있다고 밝힘",
-      "url": "https://news.hada.io/topic?id=35889",
-      "date": "2026-10-24",
-      "summary": "Google이 개인정보처리방침 을 변경해, 사용자가 Gmail, Drive, Google Photos 데이터를 맞춤형 광고를 지원하는 다른 Google 서비스에 제공하면 광고 개인화에 사용할 수 있…"
+      "title": "Goose - 힙 없이 메모리 안전성을 제공하는 시스템 프로그래밍 언어",
+      "url": "https://news.hada.io/topic?id=35942",
+      "date": "2026-10-25",
+      "summary": "Goose 는 동적 값을 컴파일러가 관리하는 데이터 스택에 인라인으로 저장하는 시스템 언어로, 힙 할당기, GC, 참조 카운팅, 수명 표기 없이 메모리 안전성을 제공함 배열이 커져도 기존 참조가 유…"
     },
     {
       "source": "GeekNews",
-      "title": "SaaS 실적 발표에서 드러난 AI의 15가지 흐름",
-      "url": "https://news.hada.io/topic?id=35888",
-      "date": "2026-10-24",
-      "summary": "상장 SaaS 기업 67곳의 실적 발표 를 검토한 결과, 거의 모든 기업이 전망 초과, 전망 상향, 성장 가속, 수익성 개선 중 하나 이상을 기록했으며 AI 제품이 실제 계약과 매출에 기여 하고 있…"
+      "title": "Show HN: 내 비트코인을 훔쳐보세요",
+      "url": "https://news.hada.io/topic?id=35941",
+      "date": "2026-10-25",
+      "summary": "서버에 숨겨진 약 500달러 상당의 비트코인 키 를 찾아 지갑을 먼저 확보하는 사람이 이기는 도전임 키는 PHP 사용자 계정 에서 print-flag 바이너리를 통해 접근할 수 있음 서버의 PHP …"
     },
     {
       "source": "GeekNews",
-      "title": "에이전트 시대의 사고 모델",
-      "url": "https://news.hada.io/topic?id=35887",
-      "date": "2026-10-24",
-      "summary": "기존 사고 모델 은 여전히 유효하지만, 같은 명세로도 매번 다른 결과를 만드는 확률적 제품에 적용하면 자동화 범위, 권한, 검증, 투자에 대한 답이 달라짐 에이전트의 경제성은 토큰 단가보다 허용 기…"
+      "title": "덴마크 정부, MS Office 퇴출 계획을 조용히 철회",
+      "url": "https://news.hada.io/topic?id=35939",
+      "date": "2026-10-25",
+      "summary": "덴마크 디지털화부 가 Microsoft Office의 오픈소스 대안을 시험하던 시범사업을 조용히 중단함 시험 대상은 Collabora 로, 부처에서 광범위하게 사용하는 Office를 대체할 수 있는…"
     },
     {
       "source": "GeekNews",
-      "title": "스스로 생각해도 된다는 허락: Thiel Fellowship의 초기 시절",
-      "url": "https://news.hada.io/topic?id=35886",
-      "date": "2026-10-24",
-      "summary": "대학 대신 자기 프로젝트에 도전하는 청년에게 2년간 10만 달러와 멘토링을 제공한 틸 펠로십의 초기 이야기 . Ethereum과 Figma, Anthropic 공동창업자들이 거쳐 간 프로그램의 선발…"
+      "title": "GPU-unlock: Nvidia 3000 시리즈 카드의 FP/BF16 명령 발행 속도 제한 해제",
+      "url": "https://news.hada.io/topic?id=35938",
+      "date": "2026-10-25",
+      "summary": "GPU unlock 1.0.0 은 Nvidia 3000 시리즈 GPU의 FP/BF16 명령 발행 속도를 전문가용 제품 수준으로 해제하는 Linux 커널 모듈임 NVIDIA 드라이버가 GPU에 연결되…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenSSL 4.1.0 - DTLS 1.3과 GREASE 지원 추가",
-      "url": "https://news.hada.io/topic?id=35885",
-      "date": "2026-10-24",
-      "summary": "OpenSSL 4.1.0 은 DTLS 1.3, GREASE, SSL 리스너 API의 DTLS 지원을 추가한 기능 릴리스임 암호 연산 최적화 로 ppc64le 의 ML-DSA/ML-KEM NTT 연산…"
+      "title": "기술 부문 밖에서는 AI 성과의 징후가 없음",
+      "url": "https://news.hada.io/topic?id=35937",
+      "date": "2026-10-25",
+      "summary": "대규모 AI 투자와 높은 기대에도 기술 부문 밖 미국 기업 에서는 매출 성장이나 이익률 개선의 증거가 아직 없음 Mag 7 의 직원당 매출과 이익률은 상승하지만 S&P 493 에서는 정체돼 있으며,…"
     },
     {
       "source": "GeekNews",
-      "title": "pgrust 제거: 쿼리별 전용 커널과 결과 캐싱을 이용한 벤치마크 부정행위",
-      "url": "https://news.hada.io/topic?id=35884",
-      "date": "2026-10-24",
-      "summary": "ClickBench에서 pgrust 항목을 제거하는 PR이 병합됨 . 제거 사유는 43개 벤치마크 쿼리에 맞춘 전용 실행 경로와 이전 실행 결과를 재사용하는 캐시가 벤치마크 규칙을 위반한다는 것임 …"
+      "title": "미 국방부, 국토안보부의 국경 사용 목적 열선 무기 시험 허가",
+      "url": "https://news.hada.io/topic?id=35936",
+      "date": "2026-10-25",
+      "summary": "미 국방부가 국토안보부(DHS) 에 군용 열선 무기를 시험하고 미국 남부 국경에서의 잠재적 운용을 위한 전술을 개발하도록 허가함 Active Denial System(ADS) 은 보이지 않는 전자기…"
     },
     {
       "source": "GeekNews",
-      "title": "캐나다인들이 C-22 법안에 반대할 시간이 얼마 남지 않음",
-      "url": "https://news.hada.io/topic?id=35883",
-      "date": "2026-10-24",
-      "summary": "정부의 감시 권한을 대폭 확대하는 C-22 법안 이 캐나다 하원을 통과해 상원에서 심의 중이며, 시민단체는 법안 저지를 위한 청원 참여를 촉구함 통신사와 메시징 앱 등에 감시 협조를 강제하고, “시…"
+      "title": "Railpass - 실제 영상으로 즐기는 끝없는 기차 창밖 여행",
+      "url": "https://news.hada.io/topic?id=35935",
+      "date": "2026-10-25",
+      "summary": "Railpass 는 실제 촬영 영상으로 끝없이 이어지는 기차 여행의 창밖 풍경을 감상하는 서비스임 화면에 표시된 노선은 조지아의 Batumi–Tbilisi 구간임 Random 항목이 있음 Weath…"
     },
     {
       "source": "GeekNews",
-      "title": "Apple Music 404 페이지를 찾을 수 없음 오류",
-      "url": "https://news.hada.io/topic?id=35882",
-      "date": "2026-10-24",
-      "summary": "Apple Music 404 페이지를 찾을 수 없음 오류"
+      "title": "Roku 개발자 저장소, GitHub에서 GitLab으로 이전",
+      "url": "https://news.hada.io/topic?id=35934",
+      "date": "2026-10-25",
+      "summary": "Roku가 모든 개발자 리소스의 GitLab 이전을 완료 함. 개발자 문서, 샘플 앱, 도구 저장소를 하나의 중앙 위치로 통합함 저장소 이름은 유지 되며 호스트만 바뀜. 문서와 블로그의 링크는 갱신…"
     }
   ]
 }
