@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-25",
+  "updated_at": "2026-10-26",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Goose - 힙 없이 메모리 안전성을 제공하는 시스템 프로그래밍 언어",
-      "url": "https://news.hada.io/topic?id=35942",
-      "date": "2026-10-25",
-      "summary": "Goose 는 동적 값을 컴파일러가 관리하는 데이터 스택에 인라인으로 저장하는 시스템 언어로, 힙 할당기, GC, 참조 카운팅, 수명 표기 없이 메모리 안전성을 제공함 배열이 커져도 기존 참조가 유…"
+      "title": "Moderna와 Merck, mRNA 암 백신으로 사망 또는 재발 위험 42% 감소했다고 발표",
+      "url": "https://news.hada.io/topic?id=35995",
+      "date": "2026-10-26",
+      "summary": "Moderna와 Merck의 흑색종 3상 임상시험 에서 개인 맞춤형 mRNA 백신과 Keytruda 병용군의 재발 또는 사망 위험이 Keytruda와 위약을 받은 대조군보다 42% 낮았음 백신 in…"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: 내 비트코인을 훔쳐보세요",
-      "url": "https://news.hada.io/topic?id=35941",
-      "date": "2026-10-25",
-      "summary": "서버에 숨겨진 약 500달러 상당의 비트코인 키 를 찾아 지갑을 먼저 확보하는 사람이 이기는 도전임 키는 PHP 사용자 계정 에서 print-flag 바이너리를 통해 접근할 수 있음 서버의 PHP …"
+      "title": "JetBrains Thinkrail - 명세로 프로젝트 지식을 유지하는 에이전트 IDE",
+      "url": "https://news.hada.io/topic?id=35994",
+      "date": "2026-10-26",
+      "summary": "ThinkRail 은 pi 코딩 에이전트에 편집기, 터미널, 검토 도구를 결합하고, 지속적으로 갱신하는 명세와 재사용 가능한 스킬로 프로젝트 지식을 세션 너머까지 유지하는 IDE임 git workt…"
     },
     {
       "source": "GeekNews",
-      "title": "덴마크 정부, MS Office 퇴출 계획을 조용히 철회",
-      "url": "https://news.hada.io/topic?id=35939",
-      "date": "2026-10-25",
-      "summary": "덴마크 디지털화부 가 Microsoft Office의 오픈소스 대안을 시험하던 시범사업을 조용히 중단함 시험 대상은 Collabora 로, 부처에서 광범위하게 사용하는 Office를 대체할 수 있는…"
+      "title": "2026년에 Gopher로 블로그를 만드는 이유",
+      "url": "https://news.hada.io/topic?id=35993",
+      "date": "2026-10-26",
+      "summary": "옛 인터넷 프로토콜 Gopher에 블로그를 만드는 즐거움 은 도구의 작동 원리를 탐구하고, 현대 기술의 소음에서 잠시 벗어나는 데 있음 17세 자녀와 친구들이 단순한 기술을 찾는 모습을 보며, 그들…"
     },
     {
       "source": "GeekNews",
-      "title": "GPU-unlock: Nvidia 3000 시리즈 카드의 FP/BF16 명령 발행 속도 제한 해제",
-      "url": "https://news.hada.io/topic?id=35938",
-      "date": "2026-10-25",
-      "summary": "GPU unlock 1.0.0 은 Nvidia 3000 시리즈 GPU의 FP/BF16 명령 발행 속도를 전문가용 제품 수준으로 해제하는 Linux 커널 모듈임 NVIDIA 드라이버가 GPU에 연결되…"
+      "title": "온라인 검열이 인디 웹코믹을 짓누르고 있다",
+      "url": "https://news.hada.io/topic?id=35992",
+      "date": "2026-10-26",
+      "summary": "2011년부터 웹코믹을 만들어 온 Hazel & Bell이 플랫폼의 콘텐츠 차단과 결제 업체의 압력으로 창작과 생계가 어려워지는 현실 을 만화로 표현 Webtoon에서는 성적 콘텐츠, Bluesky…"
     },
     {
       "source": "GeekNews",
-      "title": "기술 부문 밖에서는 AI 성과의 징후가 없음",
-      "url": "https://news.hada.io/topic?id=35937",
-      "date": "2026-10-25",
-      "summary": "대규모 AI 투자와 높은 기대에도 기술 부문 밖 미국 기업 에서는 매출 성장이나 이익률 개선의 증거가 아직 없음 Mag 7 의 직원당 매출과 이익률은 상승하지만 S&P 493 에서는 정체돼 있으며,…"
+      "title": "Nikon 현미경 영상 공모전 우승작, 과학자들이 AI 흔적 지적한 뒤 수상 취소",
+      "url": "https://news.hada.io/topic?id=35991",
+      "date": "2026-10-26",
+      "summary": "Nikon의 현미경 영상 공모전 Small World in Motion 우승작이 AI 생성 의혹으로 재심사를 받은 뒤, 규정 위반 으로 수상 취소 어린이의 기도에서 움직이는 섬모를 담았다는 영상에서…"
     },
     {
       "source": "GeekNews",
-      "title": "미 국방부, 국토안보부의 국경 사용 목적 열선 무기 시험 허가",
-      "url": "https://news.hada.io/topic?id=35936",
-      "date": "2026-10-25",
-      "summary": "미 국방부가 국토안보부(DHS) 에 군용 열선 무기를 시험하고 미국 남부 국경에서의 잠재적 운용을 위한 전술을 개발하도록 허가함 Active Denial System(ADS) 은 보이지 않는 전자기…"
+      "title": "AI 사용 확산에 UC Berkeley 수학 교수, “과제 채점에 의미 없다”",
+      "url": "https://news.hada.io/topic?id=35990",
+      "date": "2026-10-26",
+      "summary": "UC 버클리의 필즈상 수상자 Richard Borcherds 교수 가 학생들의 AI 사용으로 높은 과제 점수가 이어지자, 정답 대신 완료 여부로 점수를 주는 방식 으로 전환 AI 사용을 피할 수 없…"
     },
     {
       "source": "GeekNews",
-      "title": "Railpass - 실제 영상으로 즐기는 끝없는 기차 창밖 여행",
-      "url": "https://news.hada.io/topic?id=35935",
-      "date": "2026-10-25",
-      "summary": "Railpass 는 실제 촬영 영상으로 끝없이 이어지는 기차 여행의 창밖 풍경을 감상하는 서비스임 화면에 표시된 노선은 조지아의 Batumi–Tbilisi 구간임 Random 항목이 있음 Weath…"
+      "title": "Dolly Parton&#039;s Imagination Library - 출생부터 5세까지 어린이에게 매달 무료 책을 보내는 프로그램",
+      "url": "https://news.hada.io/topic?id=35989",
+      "date": "2026-10-26",
+      "summary": "Dolly Parton's Imagination Library 는 출생부터 5세까지 어린이에게 책을 무료로 선물해 독서에 대한 애정을 키우는 프로그램임 연령에 맞춰 선정한 책 을 매달 집으로 직접 …"
     },
     {
       "source": "GeekNews",
-      "title": "Roku 개발자 저장소, GitHub에서 GitLab으로 이전",
-      "url": "https://news.hada.io/topic?id=35934",
-      "date": "2026-10-25",
-      "summary": "Roku가 모든 개발자 리소스의 GitLab 이전을 완료 함. 개발자 문서, 샘플 앱, 도구 저장소를 하나의 중앙 위치로 통합함 저장소 이름은 유지 되며 호스트만 바뀜. 문서와 블로그의 링크는 갱신…"
+      "title": "오리건 경찰, 경찰관 한 명의 기록 공개에 지역 언론사에 250만 달러 청구",
+      "url": "https://news.hada.io/topic?id=35988",
+      "date": "2026-10-26",
+      "summary": "오리건주 Eugene 경찰이 Double Sided Media 의 경찰관 비위 관련 정보공개 청구에 약 250만 달러의 비용 견적 을 통보하고, 선납해야 처리를 계속하겠다고 함 특정 경찰관에 관한 …"
     }
   ]
 }
