@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-10-27",
+  "updated_at": "2026-10-28",
   "items": [
     {
       "source": "GeekNews",
-      "title": "2026년, “AI 스킬”은 가치가 없다",
-      "url": "https://news.hada.io/topic?id=36075",
-      "date": "2026-10-27",
-      "summary": "모델을 더 잘 작동시키는 요령과 작업 방식은 효과가 있다면 몇 달 뒤 제품의 기본 경험 으로 흡수될 것이므로, 이를 익힌 데서 오는 가치는 오래가지 않을 수 있음 프롬프트 엔지니어링 요령도 이미 불…"
+      "title": "AI 시대의 개발자를 꿈꾸는 학생 개발자에게",
+      "url": "https://news.hada.io/topic?id=36135",
+      "date": "2026-10-28",
+      "summary": "2018년 글 「 백엔드 개발자를 꿈꾸는 학생개발자에게 」의 후속편으로, 학생들의 AI 시대 개발과 취업, 학습에 관한 질문에 답하는 글 AI 시대에 개발자의 역할은 어떻게 달라졌을까? 개발자는 A…"
     },
     {
       "source": "GeekNews",
-      "title": "이메일을 보내는 데 왜 이렇게 비쌀까?",
-      "url": "https://news.hada.io/topic?id=36073",
-      "date": "2026-10-27",
-      "summary": "이메일을 직접 보내 본 경험에서 어려웠던 부분은 발송 코드 구현 보다 여러 메일 서비스의 스팸 필터를 통과하는 일 이었음 SMTP 발송과 DNS 기반 발신자 인증을 구현하자 Gmail에는 정상적으로…"
+      "title": "지수 시간 가설은 거짓이다 [PDF]",
+      "url": "https://news.hada.io/topic?id=36134",
+      "date": "2026-10-28",
+      "summary": "모든 고정된 (k\\ge2)에 대해 k-CNF의 만족 할당 수를 준지수 시간과 다항 공간으로 정확히 계산하는 결정적 알고리듬 을 제안하며, 이를 통해 ETH를 반증한다고 주장하는 논문임 핵심은 변수들…"
     },
     {
       "source": "GeekNews",
-      "title": "개인 키가 유출된 eMudhra 중간 인증기관 안내",
-      "url": "https://news.hada.io/topic?id=36072",
-      "date": "2026-10-27",
-      "summary": "eMudhra 중간 인증기관 8곳의 개인 키가 유출 됐으며, 이 중 TLS 인증서를 발급하는 6곳의 키로는 어떤 웹사이트에 대해서든 유효해 보이는 인증서를 만들 수 있음 Apple은 2026년 10…"
+      "title": "Shitty Screenshare - WHIP으로 OBS와 FFmpeg를 화상회의에 직접 연결하기",
+      "url": "https://news.hada.io/topic?id=36133",
+      "date": "2026-10-28",
+      "summary": "WHIP 을 지원하는 화상회의 서비스에는 OBS나 FFmpeg를 직접 연결해, 사용자가 공유 영상의 품질 설정을 제어할 수 있음 화면 공유가 흐릿해지는 이유는 브라우저가 선택하는 비트레이트, 코덱,…"
     },
     {
       "source": "GeekNews",
-      "title": "Gram 3.4.0 출시, eMudhra 인증서 보안 수정과 Git 좌우 비교 뷰 추가",
-      "url": "https://news.hada.io/topic?id=36071",
-      "date": "2026-10-27",
-      "summary": "Gram에 포함된 인증서 관련 패키지가 eMudhra CA 문제 의 영향을 받아 보안 수정 버전을 출시함. 가능한 한 빨리 3.4.0으로 업그레이드하거나, 기존 버전의 소스를 최신 webpki 패키…"
+      "title": "LFM3 소개: 특화 지능을 위한 모든 모달리티",
+      "url": "https://news.hada.io/topic?id=36132",
+      "date": "2026-10-28",
+      "summary": "Liquid AI가 LFM3 를 공개함. 하나의 공통 백본에서 텍스트, 비전, 오디오, 옴니, 의사결정 모델을 파생한 약 2B 파라미터급 모델군으로, 용도에 맞는 모델을 선택해 로컬에서 미세조정하고…"
     },
     {
       "source": "GeekNews",
-      "title": "2달러 마이크로컨트롤러에서 SIMD로 컴퓨터 비전 가속하기",
-      "url": "https://news.hada.io/topic?id=36070",
-      "date": "2026-10-27",
-      "summary": "ESP32-S3의 128비트 SIMD 명령어 를 활용한 FAST 특징점 검출 구현으로 참조 구현 대비 약 2배의 성능을 달성했으며, QVGA(320×240) 프레임 처리에 약 6ms가 걸림 FAST…"
+      "title": "Survival LLM - 인터넷 없이 작동하는 AI 도우미와 비상 대응 자료실",
+      "url": "https://news.hada.io/topic?id=36130",
+      "date": "2026-10-28",
+      "summary": "Survival LLM 은 비상 대응 자료실과 AI 모델을 컴퓨터에 저장해, 초기 다운로드를 마치면 인터넷 없이 질문하고 자료를 검색 할 수 있는 무료 오픈소스 앱 정전 시 식품 보관, 물 정화, …"
     },
     {
       "source": "GeekNews",
-      "title": "학계와 협력해 과학적 이해 쌓기",
-      "url": "https://news.hada.io/topic?id=36069",
-      "date": "2026-10-27",
-      "summary": "OpenAI가 조화해석, 계산 복잡도, 양자장론 에서 AI로 얻은 세 가지 연구 결과를 발표하고, 이를 과학적 이해로 발전시키기 위해 외부 전문가와 협력함 AI가 만든 원고를 원시 연구 데이터 로 …"
+      "title": "Tailscale SSH 권한 상승 취약점 조사 중 - 불필요한 SSH 포워딩 비활성화 권고",
+      "url": "https://news.hada.io/topic?id=36129",
+      "date": "2026-10-28",
+      "summary": "Tailscale SSH 에서 확인된 문제 대부분은 이미 SSH 접속 권한이 있는 사용자가 특정 조건에서 지정된 로컬 계정의 권한 범위를 넘어 작업할 수 있는 문제임 SSH 포워딩이 불필요하면 ta…"
     },
     {
       "source": "GeekNews",
-      "title": "Type Server Protocol - Python 타입 분석 데이터를 조회하는 JSON-RPC 프로토콜",
-      "url": "https://news.hada.io/topic?id=36068",
-      "date": "2026-10-27",
-      "summary": "Type Server Protocol(TSP) 은 워크스페이스의 타입 분석 상태를 유지하는 서버에 Python 검색 경로, import 해석, 타입 정보를 요청하는 JSON-RPC 프로토콜임 타입 …"
+      "title": "Discord, 곧 누구나 Google에서 공개 서버 메시지를 찾을 수 있게 할 예정",
+      "url": "https://news.hada.io/topic?id=36128",
+      "date": "2026-10-28",
+      "summary": "Discord가 Discoverable Servers의 공개 채널 메시지 를 서버 웹페이지와 웹 검색에 노출할 예정이며, 메시지 공개는 2026년 12월 중순부터 점진적으로 시작됨 모든 Discov…"
     },
     {
       "source": "GeekNews",
-      "title": "EPA가 조용히 웹 아카이브를 없애고 있음",
-      "url": "https://news.hada.io/topic?id=36067",
-      "date": "2026-10-27",
-      "summary": "미국 환경보호청 EPA 가 웹페이지 배너를 통해 온라인 아카이브를 2026년 12월 31일 폐쇄 할 계획을 알렸으며, 공개된 환경 자료 수만 건이 웹에서 사라질 수 있음 아카이브에는 1990년대까지…"
+      "title": "Amazon, 거듭된 실패 끝에 AI 부문 대폭 축소",
+      "url": "https://news.hada.io/topic?id=36127",
+      "date": "2026-10-28",
+      "summary": "Amazon이 자체 AI 모델 Nova 대부분의 개발 목표를 축소 하고, 최우선 과제에 집중하도록 AI 개발 조직을 재편하고 있음 내부 관계자들에 따르면 텍스트와 이미지/영상 생성 모델은 지원을 중…"
     }
   ]
 }
