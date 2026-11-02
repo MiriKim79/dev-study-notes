@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-01",
+  "updated_at": "2026-11-02",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Anthropic, 더 큰 모델 학습에 조금이라도 관련된 작업을 하는 사용자를 차단",
-      "url": "https://news.hada.io/topic?id=36358&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "Jiahao Shao는 Claude로 연구 작업을 자동화 하다가 “경쟁 모델 학습”으로 분류돼 차단 등의 조치를 받았다고 밝힘 Shao에 따르면 Claude를 증류한 적은 없으며 , 롤아웃은 성능이…"
+      "title": "태평양의 작은 나라, 보편적 기본소득 시행",
+      "url": "https://news.hada.io/topic?id=36424&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "마셜제도 가 미국에서 유입된 뜻밖의 재원을 활용해 모든 국민에게 보편적 기본소득 을 지급함 미국은 제2차 세계대전 직후 , 빠르게 늘리던 핵무기를 시험할 장소로 마셜제도를 선택함 당시 마셜제도는 미…"
     },
     {
       "source": "GeekNews",
-      "title": "프랑스 하원, GB당 0.055유로 인터넷세 도입안 가결",
-      "url": "https://news.hada.io/topic?id=36357&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "프랑스 하원이 프랑스 이용자에게 전송하는 데이터에 GB당 0.055유로 를 부과하는 수정안을 가결함. 납세 대상은 이용자가 아닌 온라인 콘텐츠 공급자 임 인터넷 서비스 제공업체가 사업자별 전송량을 …"
+      "title": "JEPA로 플라톤적 표현 가설을 증명하고 개선하기",
+      "url": "https://news.hada.io/topic?id=36423&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "서로 다른 모달리티에서 독립적으로 학습한 JEPA가 동일한 세계 상태를 연결하는 양성 쌍 을 사용하면, 일정한 가정 아래 회전 변환만 다른 동일한 표현을 학습한다는 정리를 증명함 정렬을 좌우하는 핵…"
     },
     {
       "source": "GeekNews",
-      "title": "GPT-5.6 Sol, 평화 모드에서 Factorio 클리어 가능",
-      "url": "https://news.hada.io/topic?id=36356&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "GPT-5.6 Sol 이 Codex에서 낮은 사고 수준으로 실행돼, 바이터가 없는 Factorio 평화 모드를 게임 내 시간 13.5시간 만에 클리어함 게임 관리자와 Python 라이브러리 로 게임…"
+      "title": "영국 전역 기존 유선전화망, 100일 뒤 종료…기한 연장 없어",
+      "url": "https://news.hada.io/topic?id=36422&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "Openreach가 기존 공중교환전화망(PSTN)을 2027년 1월 31일 종료 하며, 기한을 더 미루지 않겠다고 통신사업자들에게 통보함 전화기뿐 아니라 결제 단말기, 화재/보안 경보, 돌봄 경보 …"
     },
     {
       "source": "GeekNews",
-      "title": "공백 문자인지 확인하는 일이 얼마나 어려울까?",
-      "url": "https://news.hada.io/topic?id=36354&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "공백 판별은 단순한 c == ' ' 비교로 끝나지 않으며, Unicode의 25개 공백 문자 와 런타임별 판정 기준을 구분해야 함 Java, Python, JavaScript 는 같은 문자도 다르게…"
+      "title": "Groff로 중편소설 쓰기",
+      "url": "https://news.hada.io/topic?id=36421&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "groff로 두 편의 중편소설을 조판 한 개인 작업 사례로, 작은 매크로 패키지와 텍스트 중심 도구만으로 책 형태의 PDF를 제작함 작고 빠르면서도 품질 좋은 출력 이 groff를 선택한 이유였으며…"
     },
     {
       "source": "GeekNews",
-      "title": "Jepsen: ParticleDB 1.1.4 - AI용 데이터베이스의 정합성 검증에서 96개 문제 발견",
-      "url": "https://news.hada.io/topic?id=36353&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "Jepsen이 AI 워크로드용 ParticleDB 1.1.4부터 1.1.18.11.rc-22까지 검사해 96개 문제를 발견함. 대부분은 서버와 클라이언트가 각각 하나이고 장애가 없는 환경에서도 발생…"
+      "title": "Show HN: OmniDiff - Rust로 만든 매우 빠른 콘텐츠 인식 오픈소스 Git diff 도구",
+      "url": "https://news.hada.io/topic?id=36420&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "OmniDiff 는 코드뿐 아니라 이미지, 폰트, 압축 파일, PDF도 내용에 맞는 방식으로 비교하며, 터미널에서 변경된 부분을 시각적으로 보여줌 코드는 tree-sitter 기반 구조 비교 를 2…"
     },
     {
       "source": "GeekNews",
-      "title": "TCP 해제 후 사용 취약점: CVE-2026-98432 / CVSS 9.8",
-      "url": "https://news.hada.io/topic?id=36352&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "Linux 4.4 이후 커널의 IPv4 TCP 핸드셰이크 에서 인증 없이 원격으로 도달할 수 있는 해제 후 사용(use-after-free) 취약점이 발견됐으며, 커널 CNA는 CVSS 3.1 9.…"
+      "title": "Show GN: 커뮤니티가 직접 빌드하고 배포하는 리눅스용 .NET SDK (Core 3.0부터 .NET 10까지)",
+      "url": "https://news.hada.io/topic?id=36419&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "Show GN: 커뮤니티가 직접 빌드하고 배포하는 리눅스용 .NET SDK (Core 3.0부터 .NET 10까지)"
     },
     {
       "source": "GeekNews",
-      "title": "HackerTube: HN에서 추천한 영상으로 만든 YouTube",
-      "url": "https://news.hada.io/topic?id=36351&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "HackerTube 는 Hacker News 댓글에서 추천한 YouTube 영상을 모아 YouTube 형태의 UI로 제공하는 사이트임 Opus 5.5 가 HN 댓글 전체를 내려받아 필터링하고, So…"
+      "title": "전력 시스템의 동기화로 발생하는 1분 주기 주파수 교란",
+      "url": "https://news.hada.io/topic?id=36417&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "5개 대륙의 12개 전력망에서 정확히 1분 주기 로 반복되는 주파수 변동을 확인했으며, 디지털 장치의 시계 기반 제어가 의도치 않게 동기화 되는 현상과 관련됐을 가능성을 뒷받침하는 증거를 확보함 현…"
     },
     {
       "source": "GeekNews",
-      "title": "1980년대의 Casio 시계",
-      "url": "https://news.hada.io/topic?id=36350&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-01",
-      "summary": "Casio는 1980년대에 계산기, 사전, 전화번호부, 센서 를 손목시계에 통합하며 시간을 알려주는 기기를 손목에 착용하는 정보 기기로 확장함 1983년에는 유리에 손가락으로 쓴 숫자와 수학 기호를…"
+      "title": "Seoul Viosys, 희토류 없는 백색 발광 소자 생산 시작",
+      "url": "https://news.hada.io/topic?id=36416&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-02",
+      "summary": "Seoul Viosys 가 희토류 없이 질화갈륨(GaN)만으로 백색광을 내는 WICOP 3 를 개발하고, 2026년 4분기 양산을 시작할 계획임 패키지를 없앤 칩 구조를 백색광으로 확장해 100µm…"
     }
   ]
 }
