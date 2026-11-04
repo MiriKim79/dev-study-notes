@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-03",
+  "updated_at": "2026-11-04",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Oracle, AI 인프라 확충 위해 약 26조원 규모 신주와 채권 발행 계획 제출",
-      "url": "https://news.hada.io/topic?id=36496&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "Oracle이 AI 인프라 확충을 위해 총 200억 달러($20b) 규모의 발행 계획을 미국 증권거래위원회에 제출함. 보통주와 선순위 채권 각각 100억 달러로 구성됨 지난주 투자자의 날에 이미 예…"
+      "title": "Safari 27.3에 Adaptive Dark Mode 도입",
+      "url": "https://news.hada.io/topic?id=36549&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "Safari 27.3 베타 의 Adaptive Dark Mode는 사용자가 활성화하면 다크 모드를 지원하지 않는 밝은 웹사이트를 어둡게 변환함 다크 모드 지원을 선언한 사이트 나 이미 어두운 페이지…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: 치이카와 닮은꼴 찾기",
-      "url": "https://news.hada.io/topic?id=36494&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "요즘 온세상이 치이카와길래 내가 어떤 치이카와 캐릭터 닮았을지 찾아주는 사이트를 만들어봤어요 원하는 이미지를 선택해서 넣으면 닮은 먼작귀 캐릭터로 전환돼요 사진은 브라우저 안에서만 처리하고 저장하거…"
+      "title": "에이전트가 일을 할 때의 비판적 사고",
+      "url": "https://news.hada.io/topic?id=36547&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "에이전트가 빠르고 매끄러우며 대체로 정확한 답을 내놓을수록, 사람이 다시 살펴볼 계기는 줄어듦. 에이전트 사용을 줄이기보다 비판적 사고를 작업 흐름에 의도적으로 넣어야 함 작업을 맡기면서 결과에 대…"
     },
     {
       "source": "GeekNews",
-      "title": "MyGo - Go UI와 웹 프런트엔드로 데스크톱 앱을 만드는 오픈소스",
-      "url": "https://news.hada.io/topic?id=36493&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "Go로 macOS, Windows, Linux용 데스크톱 앱을 개발 Go로 작성하고 직접 GPU로 그리는 UI와 운영체제 WebView 기반 웹 UI 를 지원하며, 한 앱이나 한 창 안에서도 두 방…"
+      "title": "Stringman, 800달러짜리 오픈소스 방 규모 그리퍼 로봇",
+      "url": "https://news.hada.io/topic?id=36546&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "Stringman 은 천장 근처 네 모서리에 고정한 케이블과 모터 4개로 그리퍼를 움직여, 방 안에서 물건을 집고 운반하는 로봇임 모터들이 들어 올리는 힘을 나눠 부담하며, 평균 적재량 1.9kg …"
     },
     {
       "source": "GeekNews",
-      "title": "Postgres 19 출시가 늦어지는 건 AI 때문이다 - 버그 발견이 수정을 앞지르다",
-      "url": "https://news.hada.io/topic?id=36491&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "LLM으로 발견한 버그 제보가 급증 하면서 PostgreSQL의 수정 부담이 커짐. PostgreSQL 19는 예년의 9~10월보다 늦은 11월 출시가 예상되며, 베타 후반에 대형 기능 3개도 철회…"
+      "title": "15년간 사망한 NFL 선수의 75%가 CTE를 앓았을 것으로 추정한 연구",
+      "url": "https://news.hada.io/topic?id=36545&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "2008~2023년 사망한 전직 NFL 선수를 분석한 연구에서 약 75%가 만성 외상성 뇌병증(CTE)의 징후 를 지녔을 것으로 추정됨 연구팀은 기증된 뇌 396개 와 다른 사망 선수 1,966명의…"
     },
     {
       "source": "GeekNews",
-      "title": "BYD, 지난달 미국의 한 분기 전체보다 많은 전기차 판매",
-      "url": "https://news.hada.io/topic?id=36489&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "BYD 가 2026년 10월 순수 전기차 30만 5,743대를 판매해 월간 최고 기록을 경신함. 미국 전체의 3분기 전기차 판매 추정치인 26만 2,500여 대를 웃돎 순수 전기차 판매는 전년 동월…"
+      "title": "어떤 규모에서도 Mac 운영하기",
+      "url": "https://news.hada.io/topic?id=36543&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "Namespace는 iOS 앱 빌드와 테스트에 필요한 Mac 인프라 를 확장하기 위해 MacBook 전용 랙, macOS 가상화, 대용량 VM 이미지 배포 체계를 구축함 MacBook 도입은 공급 …"
     },
     {
       "source": "GeekNews",
-      "title": "내가 가장 좋아하는 노트북",
-      "url": "https://news.hada.io/topic?id=36488&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "낡은 2015년형 ThinkPad X250 을 가장 좋아하는 이유는 어느 한 가지 뛰어난 사양이 아니라 휴대성, 배터리, 수리 가능성, 키보드, 저렴한 가격의 조합에 있음 A4 용지 안에 들어오는 …"
+      "title": "내 노트북의 Qwen 3.8 27B도 모델 가중치를 해석할 수 있다",
+      "url": "https://news.hada.io/topic?id=36542&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "노트북에서 실행한 Qwen 3.8 27B 가 도구나 코드 실행 없이 신경망 가중치만 읽고, 해당 모델이 학습한 게임 중 Pac-Man, Pong, Breakout을 식별함 실험은 단순화한 게임을 강…"
     },
     {
       "source": "GeekNews",
-      "title": "Ubuntu, 거의 3주째 Linux 제로데이 원격 코드 실행 취약점 패치 미출시",
-      "url": "https://news.hada.io/topic?id=36487&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "Ubuntu 22.04, 24.04, 26.04 LTS 에 심각한 커널 취약점 CVE-2026-98432 를 수정한 커널이 아직 배포되지 않음 해당 취약점의 심각도는 CVSS 9.8 이며, 영향받는…"
+      "title": "Kalshi와 공동창업자들, 유타주 도박법 위반 혐의로 중범죄 기소",
+      "url": "https://news.hada.io/topic?id=36541&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "유타주가 예측시장 Kalshi와 공동창업자 2명 을 각각 중범죄 13건과 경범죄 1건으로 기소함. 혐의는 플랫폼에서 제공한 스포츠 베팅에 근거함 트럼프 행정부의 상품선물거래위원회(CFTC) 는 유타…"
     },
     {
       "source": "GeekNews",
-      "title": "OpenBSD용 GEFS(Good Enough File System) 개발 진전",
-      "url": "https://news.hada.io/topic?id=36485&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-03",
-      "summary": "Ori Bernstein이 OpenBSD용 GEFS 코드를 갱신하고 리베이스했으며, 일반적인 사용을 위한 오류 처리와 도구 지원을 개선함 오류 처리 코드 를 점검하고 9front의 주요 버그 수정 …"
+      "title": "OpenAI가 Codex 대화의 모델 학습 사용을 알림 없이 다시 활성화하는 것으로 보임",
+      "url": "https://news.hada.io/topic?id=36540&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-04",
+      "summary": "한 이용자와 동료들이 꺼 두었던 Codex 데이터 공유 설정이 알림 없이 다시 활성화됐다고 보고함 이들은 회사 지식재산 유출 을 우려해 데이터 공유를 비활성화해 왔으며, 의식적으로 다시 동의한 적이…"
     }
   ]
 }
