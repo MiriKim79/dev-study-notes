@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-07",
+  "updated_at": "2026-11-08",
   "items": [
     {
       "source": "GeekNews",
-      "title": "UEFI를 활용한 베어메탈 프로그래밍 첫걸음",
-      "url": "https://news.hada.io/topic?id=36727&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "Linux 워크스테이션 에서 UEFI 펌웨어를 사용하는 PC용 베어메탈 애플리케이션을 개발하는 연재임 숙련된 Linux 개발자 를 대상으로 하며, UEFI 사전 지식은 필요하지 않음 개발에 필요한 …"
+      "title": "MaxxBench - “DeepSWE 점수는 좋네요. 그런데 진짜인가요?”",
+      "url": "https://news.hada.io/topic?id=36780&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "MaxxBench 는 DeepSWE의 89개 과제에서 요구사항이나 시작 코드를 조금 바꿔, 코딩 에이전트가 익숙한 정답 대신 달라진 작업에 적응하는지 평가함 참조 패치 증가량은 중앙값 17줄, 3.…"
     },
     {
       "source": "GeekNews",
-      "title": "Anthropic IPO 투자자들, 기업가치를 낮게는 약 1,430조원으로 예상",
-      "url": "https://news.hada.io/topic?id=36726&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "Anthropic 의 잠재 IPO 투자자 일부가 기업가치를 낮게는 1조 1,000억 달러($1,100b) 로 검토 중인 것으로 관계자를 통해 전해짐 선거 이후 거센 매도세 에 부딪히면서 잠재 투자자…"
+      "title": "Show HN: Coldframe, 슈퍼마켓 냉장 제어기로 위장하는 허니팟",
+      "url": "https://news.hada.io/topic?id=36779&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "Coldframe 은 냉장 제어기를 흉내 내 접속 출처, 시도한 비밀번호, 사용한 공개 익스플로잇을 기록하며, 실제 장비나 제어 기능은 제공하지 않는 허니팟임 Danfoss AK-SM 800A 와 …"
     },
     {
       "source": "GeekNews",
-      "title": "불확실한 사례만 Opus에 맡긴 Jev, 비용은 4분의 1로",
-      "url": "https://news.hada.io/topic?id=36725&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "서로 다른 사람의 고객 기록을 잘못 합쳤는지 판별하는 작업 에 저렴한 결정 모델 Jev를 먼저 사용하고, 판단 점수가 애매한 사례만 Opus에 넘기는 방식을 시험함. 평가는 합성 데이터로 진행 쉬운…"
+      "title": "모든 Windows 11 앱은 Electron을 버려야 한다, Discord가 그 이유를 보여줬다",
+      "url": "https://news.hada.io/topic?id=36778&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "Discord가 Electron 기반 데스크톱 앱을 Rust와 GPUI로 재구축 하고 있음. 시작 속도 비교 영상에서는 새 앱을 늦게 켰는데도 친구 목록이 먼저 뜸 새 클라이언트는 계정 2개를 동시…"
     },
     {
       "source": "GeekNews",
-      "title": "2000년대 초, 게임을 만드는 아이로 산다는 것",
-      "url": "https://news.hada.io/topic?id=36724&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "The Games Factory 는 대규모 전문가 팀만 게임을 만들 수 있다고 생각하던 어린 Jay Tholen에게 직접 가상 세계를 만드는 길을 열어줌 학교생활의 어려움과 잦은 이사 속에서 Kli…"
+      "title": "산마리노 여행 노트",
+      "url": "https://news.hada.io/topic?id=36777&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "이탈리아에 둘러싸인 인구 약 3만 3,500명의 산마리노는 작고 위협적이지 않은 국가라는 지위와 외교 를 활용해 수백 년간 독립을 유지해 왔음 세계에서 가장 오래 지속된 공화국을 자처하지만 301년…"
     },
     {
       "source": "GeekNews",
-      "title": "생존의 한계를 넘어 살아가기: 거대한 구덩이 함정에 갇힌 숲개미들 (2016)",
-      "url": "https://news.hada.io/topic?id=36723&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "생존의 한계를 넘어 살아가기: 거대한 구덩이 함정에 갇힌 숲개미들 (2016)"
+      "title": "10달러짜리 4G USB 동글로 홈 서버 돌리기",
+      "url": "https://news.hada.io/topic?id=36776&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "배송비 포함 10달러에 구매한 4G USB 동글(OpenStick) 에 Debian을 설치하고, Podman으로 DNS 차단, AI 에이전트, 모니터링, RSS 등을 운영하는 홈랩 구축 RAM 51…"
     },
     {
       "source": "GeekNews",
-      "title": "Ask HN: Ubuntu는 도대체 왜 이렇게 오래 걸리는 건가요?",
-      "url": "https://news.hada.io/topic?id=36722&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "Ubuntu가 CVE-2026-98432 의 심각도를 9.8 로 표시했지만, 거의 일주일째 수정 업데이트 없이 “work in progress” 상태이며 이제는 완화 조치가 안내되어 있음 완화 조치…"
+      "title": "에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까",
+      "url": "https://news.hada.io/topic?id=36775&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "Anthropic은 AI 에이전트가 다음 세션을 위해 무엇을 기억하고, 쌓인 기억을 어떻게 정리할지 Claude로 실험함 에이전트는 검증된 해결법이나 이어서 할 일을 노트로 남겨 다음 세션에서 다시…"
     },
     {
       "source": "GeekNews",
-      "title": "미국 FAA, 2028년까지 항공교통관제에서 플로피 디스크 단계적 퇴출 계획",
-      "url": "https://news.hada.io/topic?id=36721&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "미국 연방항공청(FAA)이 전국 400곳 이상의 항공교통관제 시설 에서 기상 등 핵심 정보 처리에 사용하는 플로피 디스크를 2028년 말까지 교체 할 계획임 Enterprise Information…"
+      "title": "요즘은 이런 걸 만들지 않는다: Borland Turbo Pascal 7",
+      "url": "https://news.hada.io/topic?id=36774&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "Turbo Pascal 7 은 Windows용 객체 지향 라이브러리, 그래픽 UI 설계 도구, 소스 수준 디버거를 하나의 IDE로 통합해 당시 복잡했던 Windows 프로그래밍의 진입 장벽을 낮춤 …"
     },
     {
       "source": "GeekNews",
-      "title": "이제 모든 것이 AI 사기다",
-      "url": "https://news.hada.io/topic?id=36720&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-07",
-      "summary": "20일 만에 근육질 몸을 만든다는 태극권, 무제한 무료 인터넷 USB, 방을 90초 만에 식힌다는 책 크기의 에어컨 까지, YouTube에 비현실적인 효능을 내세운 광고가 이어짐 스팸 메일도 작품 …"
+      "title": "Apple의 그레이 리스트: iPhone이 철자 입력을 도와주지 않는 단어와 문구들",
+      "url": "https://news.hada.io/topic?id=36773&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-08",
+      "summary": "Apple 운영체제에서 10만 개가 넘는 단어와 문구 의 예측 입력 완성을 제한하는 그레이 리스트 가 발견됨 제한된 문구는 예측 입력에 나타나지 않으며, 스와이프 입력 에서도 “United Irel…"
     }
   ]
 }
