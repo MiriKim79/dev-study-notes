@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-08",
+  "updated_at": "2026-11-09",
   "items": [
     {
       "source": "GeekNews",
-      "title": "MaxxBench - “DeepSWE 점수는 좋네요. 그런데 진짜인가요?”",
-      "url": "https://news.hada.io/topic?id=36780&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "MaxxBench 는 DeepSWE의 89개 과제에서 요구사항이나 시작 코드를 조금 바꿔, 코딩 에이전트가 익숙한 정답 대신 달라진 작업에 적응하는지 평가함 참조 패치 증가량은 중앙값 17줄, 3.…"
+      "title": "Show GN: ParalleLane - 워크트리 지원에 중점을 둔 Git 클라이언트",
+      "url": "https://news.hada.io/topic?id=36849&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "Conductor와 Orca의 UI에서 영감을 받아, 좌측 사이드바에 저장소와 워크트리를 펼쳐 보여 주는 Git 클라이언트를 만들었습니다. 다른 Git 클라이언트들이 다 좋은데 워크트리 삭제될 때 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: Coldframe, 슈퍼마켓 냉장 제어기로 위장하는 허니팟",
-      "url": "https://news.hada.io/topic?id=36779&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "Coldframe 은 냉장 제어기를 흉내 내 접속 출처, 시도한 비밀번호, 사용한 공개 익스플로잇을 기록하며, 실제 장비나 제어 기능은 제공하지 않는 허니팟임 Danfoss AK-SM 800A 와 …"
+      "title": "Nvidia CEO Jensen Huang이 불륜과 관련해 직원들에게 보낸 서한",
+      "url": "https://news.hada.io/topic?id=36848&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "Jensen Huang 이 직원들에게 보낸 이메일에서 중국 스파이로 의심받는 인물과 연인 관계를 맺었음을 인정함 아내와 자녀에게 상처를 준 데 대해 사과하고, 자신의 행동과 그로 인한 피해에 전적인…"
     },
     {
       "source": "GeekNews",
-      "title": "모든 Windows 11 앱은 Electron을 버려야 한다, Discord가 그 이유를 보여줬다",
-      "url": "https://news.hada.io/topic?id=36778&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "Discord가 Electron 기반 데스크톱 앱을 Rust와 GPUI로 재구축 하고 있음. 시작 속도 비교 영상에서는 새 앱을 늦게 켰는데도 친구 목록이 먼저 뜸 새 클라이언트는 계정 2개를 동시…"
+      "title": "5. 국내 오픈소스 소액 지원 사업 &#039;FOSS for All Microgrants 2026&#039; 수혜 프로젝트 5곳",
+      "url": "https://news.hada.io/topic?id=36847&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "자유·오픈소스 소프트웨어 생태계 활성화를 위해 FOSS for All 에서 올해 처음 진행한 기부금 모집 및 분배 사업 FOSS for All Microgrants 2026 의 최종 선정 결과가 발…"
     },
     {
       "source": "GeekNews",
-      "title": "산마리노 여행 노트",
-      "url": "https://news.hada.io/topic?id=36777&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "이탈리아에 둘러싸인 인구 약 3만 3,500명의 산마리노는 작고 위협적이지 않은 국가라는 지위와 외교 를 활용해 수백 년간 독립을 유지해 왔음 세계에서 가장 오래 지속된 공화국을 자처하지만 301년…"
+      "title": "인기 앱의 광고, 경찰이 사용자를 감시하는 강력한 도구가 되다",
+      "url": "https://news.hada.io/topic?id=36845&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "Webloc 은 일상적으로 사용하는 앱에서 나온 위치 데이터를 모아 전 세계 수억 대의 휴대전화를 추적하며, 최대 12개월의 이동 이력을 시간 단위로 갱신함 미국 법무부는 상업적으로 구매한 위치 데…"
     },
     {
       "source": "GeekNews",
-      "title": "10달러짜리 4G USB 동글로 홈 서버 돌리기",
-      "url": "https://news.hada.io/topic?id=36776&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "배송비 포함 10달러에 구매한 4G USB 동글(OpenStick) 에 Debian을 설치하고, Podman으로 DNS 차단, AI 에이전트, 모니터링, RSS 등을 운영하는 홈랩 구축 RAM 51…"
+      "title": "Dux: 파일 관리자와 테마 기능을 갖춘 무료 오픈소스 Wayland 데스크톱 셸",
+      "url": "https://news.hada.io/topic?id=36843&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "Dux Modular Shell 은 동적 테마와 애니메이션을 제공하는 무료 오픈소스 데스크톱 셸로, niri, Hyprland, mangowm, Sway, labwc, MiracleWM용 데스크톱 …"
     },
     {
       "source": "GeekNews",
-      "title": "에이전트 메모리 설계 - 무엇을 기억하고, 잘못된 기억은 어떻게 고칠까",
-      "url": "https://news.hada.io/topic?id=36775&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "Anthropic은 AI 에이전트가 다음 세션을 위해 무엇을 기억하고, 쌓인 기억을 어떻게 정리할지 Claude로 실험함 에이전트는 검증된 해결법이나 이어서 할 일을 노트로 남겨 다음 세션에서 다시…"
+      "title": "나는 AI로 인한 두뇌 과부하에 이렇게 대처한다",
+      "url": "https://news.hada.io/topic?id=36842&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "Claude Code나 Codex의 응답을 기다리며 작업을 늘리다 보면 여러 대화의 맥락을 동시에 붙잡게 됨. 이를 줄이기 위해 작업 순서와 맥락 관리 를 우선순위 큐처럼 구성하는 개인 실험을 진행…"
     },
     {
       "source": "GeekNews",
-      "title": "요즘은 이런 걸 만들지 않는다: Borland Turbo Pascal 7",
-      "url": "https://news.hada.io/topic?id=36774&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "Turbo Pascal 7 은 Windows용 객체 지향 라이브러리, 그래픽 UI 설계 도구, 소스 수준 디버거를 하나의 IDE로 통합해 당시 복잡했던 Windows 프로그래밍의 진입 장벽을 낮춤 …"
+      "title": "고든 게코 효과: 금융산업에서 문화의 역할(2016) [PDF]",
+      "url": "https://news.hada.io/topic?id=36841&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "기업문화 는 금전적 보상뿐 아니라 권위, 구성원의 가치관, 환경을 통해 행동을 형성하며, 부정적 가치를 전파해 금융 부정행위 가능성을 높일 수도 있음 리더십과 채용 은 문화를 강화하는 두 경로임. …"
     },
     {
       "source": "GeekNews",
-      "title": "Apple의 그레이 리스트: iPhone이 철자 입력을 도와주지 않는 단어와 문구들",
-      "url": "https://news.hada.io/topic?id=36773&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-08",
-      "summary": "Apple 운영체제에서 10만 개가 넘는 단어와 문구 의 예측 입력 완성을 제한하는 그레이 리스트 가 발견됨 제한된 문구는 예측 입력에 나타나지 않으며, 스와이프 입력 에서도 “United Irel…"
+      "title": "Outlook.com, DMARC 없는 도메인의 이메일을 조용히 거부 중",
+      "url": "https://news.hada.io/topic?id=36840&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-09",
+      "summary": "2026년 11월 5일부터 Microsoft의 소비자용 메일 서비스 가 DMARC 레코드 없는 도메인의 이메일 일부를 거부하고 있음. Outlook.com, Hotmail, Live, MSN 주소로…"
     }
   ]
 }
