@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-09",
+  "updated_at": "2026-11-10",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show GN: ParalleLane - 워크트리 지원에 중점을 둔 Git 클라이언트",
-      "url": "https://news.hada.io/topic?id=36849&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "Conductor와 Orca의 UI에서 영감을 받아, 좌측 사이드바에 저장소와 워크트리를 펼쳐 보여 주는 Git 클라이언트를 만들었습니다. 다른 Git 클라이언트들이 다 좋은데 워크트리 삭제될 때 …"
+      "title": "Fable 5.2가 조카가 꿈꾸던 게임을 한 번의 요청으로 구현함",
+      "url": "https://news.hada.io/topic?id=36929&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "Fable 5.2 가 조카의 그림과 기존 게임을 바탕으로, 한 번의 요청을 받아 밤사이 플레이 가능한 12스테이지 벨트스크롤 액션 게임을 완성함 기존 코드 대부분을 다시 작성하고 이미지 약 175개…"
     },
     {
       "source": "GeekNews",
-      "title": "Nvidia CEO Jensen Huang이 불륜과 관련해 직원들에게 보낸 서한",
-      "url": "https://news.hada.io/topic?id=36848&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "Jensen Huang 이 직원들에게 보낸 이메일에서 중국 스파이로 의심받는 인물과 연인 관계를 맺었음을 인정함 아내와 자녀에게 상처를 준 데 대해 사과하고, 자신의 행동과 그로 인한 피해에 전적인…"
+      "title": "Show GN: Daizy - 단어 암기에 특화된 예쁜 Anki/Quizlet Alternative",
+      "url": "https://news.hada.io/topic?id=36928&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "UI가 예쁜 Anki Alternative를 만들어보고자 시작된 단어암기 앱입니다. 주요기능 안드로이드, iOS, 웹 버전 지원 FSRS 알고리즘 기반 데일리 퀴즈 Anki 덱 Import / Ex…"
     },
     {
       "source": "GeekNews",
-      "title": "5. 국내 오픈소스 소액 지원 사업 &#039;FOSS for All Microgrants 2026&#039; 수혜 프로젝트 5곳",
-      "url": "https://news.hada.io/topic?id=36847&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "자유·오픈소스 소프트웨어 생태계 활성화를 위해 FOSS for All 에서 올해 처음 진행한 기부금 모집 및 분배 사업 FOSS for All Microgrants 2026 의 최종 선정 결과가 발…"
+      "title": "Show GN: Tacie – 지난 결정, 회의 중에 바로 찾아 주는 Mac용 AI 어시스턴트",
+      "url": "https://news.hada.io/topic?id=36925&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "회의에서 나온 질문은 “확인해 보고 공유드릴게요“로 넘어가고, 회의가 끝나면 뭘 정했는지 다시 묻는 일이 반복돼서 만들었습니다. 회의에서 찾아볼 질문이 나오면 GitHub, Linear, 노션에서 …"
     },
     {
       "source": "GeekNews",
-      "title": "인기 앱의 광고, 경찰이 사용자를 감시하는 강력한 도구가 되다",
-      "url": "https://news.hada.io/topic?id=36845&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "Webloc 은 일상적으로 사용하는 앱에서 나온 위치 데이터를 모아 전 세계 수억 대의 휴대전화를 추적하며, 최대 12개월의 이동 이력을 시간 단위로 갱신함 미국 법무부는 상업적으로 구매한 위치 데…"
+      "title": "1.58비트 터너리 양자화로 30B LLM을 맥북에서 돌리기: 0점에서 89.4%까지 복원한 기록",
+      "url": "https://news.hada.io/topic?id=36924&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "NVIDIA Nemotron 3.5 Lightning 30B(A3B)의 가중치를 -1, 0, +1 세 값으로만 표현하는 1.58비트 터너리 양자화로 약 60GB → 약 10GB 까지 줄이고, 24G…"
     },
     {
       "source": "GeekNews",
-      "title": "Dux: 파일 관리자와 테마 기능을 갖춘 무료 오픈소스 Wayland 데스크톱 셸",
-      "url": "https://news.hada.io/topic?id=36843&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "Dux Modular Shell 은 동적 테마와 애니메이션을 제공하는 무료 오픈소스 데스크톱 셸로, niri, Hyprland, mangowm, Sway, labwc, MiracleWM용 데스크톱 …"
+      "title": "ElevenLabs는 어떻게 영화 더빙에서 음성 AI 플랫폼으로 확장했나 [영상]",
+      "url": "https://news.hada.io/topic?id=36923&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "ElevenLabs는 오디오 모델을 직접 연구하고, 그 기술을 고객의 실제 업무에 적용 해 성장함. 영화 더빙에서 출발해 콘텐츠 제작과 콜센터 음성 에이전트로 확장함 출발점은 감정과 원래 목소리를 …"
     },
     {
       "source": "GeekNews",
-      "title": "나는 AI로 인한 두뇌 과부하에 이렇게 대처한다",
-      "url": "https://news.hada.io/topic?id=36842&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "Claude Code나 Codex의 응답을 기다리며 작업을 늘리다 보면 여러 대화의 맥락을 동시에 붙잡게 됨. 이를 줄이기 위해 작업 순서와 맥락 관리 를 우선순위 큐처럼 구성하는 개인 실험을 진행…"
+      "title": "왜 이 모든 OT 시스템이 네트워크에 연결돼 있는지 이야기해 보자",
+      "url": "https://news.hada.io/topic?id=36922&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "OT의 네트워크 연결 은 운영 효율을 높이고 원격 제어를 도입하며 유지보수 비용을 줄이는 결정이 누적된 결과로, 이제 전력과 수도, 식품 보관에 깊이 얽혀 있어 단순히 끊기 어려움 IT/OT 융합과…"
     },
     {
       "source": "GeekNews",
-      "title": "고든 게코 효과: 금융산업에서 문화의 역할(2016) [PDF]",
-      "url": "https://news.hada.io/topic?id=36841&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "기업문화 는 금전적 보상뿐 아니라 권위, 구성원의 가치관, 환경을 통해 행동을 형성하며, 부정적 가치를 전파해 금융 부정행위 가능성을 높일 수도 있음 리더십과 채용 은 문화를 강화하는 두 경로임. …"
+      "title": "DeepX, 2세대 AI 칩 DX-M2 테이프아웃 완료 - 5W 미만에서 최대 1,000억 파라미터 모델 추론 목표",
+      "url": "https://news.hada.io/topic?id=36920&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "한국 엣지 AI 반도체 스타트업 딥엑스가 2세대 가속기 DX-M2의 테이프아웃을 완료 함. 로봇과 드론처럼 전력과 발열 제약이 큰 기기에서 생성형 AI를 직접 실행하도록 설계함 5W 미만에서 전체 …"
     },
     {
       "source": "GeekNews",
-      "title": "Outlook.com, DMARC 없는 도메인의 이메일을 조용히 거부 중",
-      "url": "https://news.hada.io/topic?id=36840&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-09",
-      "summary": "2026년 11월 5일부터 Microsoft의 소비자용 메일 서비스 가 DMARC 레코드 없는 도메인의 이메일 일부를 거부하고 있음. Outlook.com, Hotmail, Live, MSN 주소로…"
+      "title": "CUI - C용 네이티브 UI 컴포넌트",
+      "url": "https://news.hada.io/topic?id=36919&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-10",
+      "summary": "CUI 는 하나의 C99 코드베이스로 Windows, Mac, Linux에서 사용하는 약 160개 UI 컴포넌트 를 제공하며, 스프링 모션과 전체 키보드 지원을 갖춤 즉시 모드(immediate m…"
     }
   ]
 }
