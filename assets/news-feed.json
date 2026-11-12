@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-12",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show HN: 스페인 발렌시아를 SimCity풍 아이소메트릭 뷰로 보기",
-      "url": "https://news.hada.io/topic?id=36968&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "Tiny València 는 발렌시아의 실제 건물을 같은 각도에서 내려다보는 형태로 그린 아이소메트릭 픽셀 아트 지도임 실제 3D 도시 데이터 를 고정된 카메라로 렌더링한 뒤, 선별한 픽셀 아트 스…"
+      "title": "젠슨 황, 직속 보고 임원과도 혼외 관계를 맺었다는 증언 나와",
+      "url": "https://news.hada.io/topic?id=37024&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "Nvidia CEO Jensen Huang이 자신에게 직접 보고하는 임원 Kimberly Powell과 혼외 관계를 맺었다고 전직 직원 5명이 증언함 Powell은 Nvidia의 헬스케어 부문 부사…"
     },
     {
       "source": "GeekNews",
-      "title": "Vercel agent-desktop - AI 에이전트가 데스크톱 앱을 조작하는 CLI",
-      "url": "https://news.hada.io/topic?id=36967&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "AI 에이전트가 맥/윈도우/리눅스에서 앱을 열고, 메뉴를 누르고, 입력란을 채울 수 있음 . 창 이동과 크기 조절, 클립보드 읽기와 쓰기도 지원 운영체제의 접근성 API로 버튼, 메뉴, 입력란을 J…"
+      "title": "Show GN: OpenPhoneUse – 화면을 보고 직접 탭하는 모바일용 Computer Use",
+      "url": "https://news.hada.io/topic?id=37020&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "Computer Use가 PC 화면을 보고 마우스와 키보드를 조작하듯, 안드로이드 폰 화면을 보고 직접 조작하는 AI 에이전트입니다. 할 일을 말하면 AI가 화면을 읽고 탭, 입력, 스크롤하며 여러…"
     },
     {
       "source": "GeekNews",
-      "title": "Toyota 브랜드 Scion이 돌아온다, 미국에서 경트럭 판매 예정",
-      "url": "https://news.hada.io/topic?id=36966&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "Toyota가 Scion by Toyota 로 브랜드를 부활시키며, 저렴하고 개성 있는 자동차 대신 디자인과 차량 콘셉트로 기존 이동 방식에 도전하는 실험 공간을 지향함 첫 양산 모델 KEI-01 …"
+      "title": "WSJ 보도에 따르면 Nvidia가 CEO Jensen Huang 해임을 준비 중",
+      "url": "https://news.hada.io/topic?id=37018&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "Watcher.Guru 게시물에 따르면 Nvidia 가 CEO Jensen Huang 의 해임을 준비 중임 게시물은 해당 소식의 출처로 WSJ 를 명시함 해임 완료가 아니라 해임 준비 소식을 전함 …"
     },
     {
       "source": "GeekNews",
-      "title": "끊임없는 감시가 아이와 부모에게 미치는 영향",
-      "url": "https://news.hada.io/topic?id=36965&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "영아 모니터부터 위치 추적 앱까지 이어지는 상시 감시 는 아이가 독립성을 기르는 과정뿐 아니라, 부모가 자녀에 대한 지식과 통제를 내려놓는 과정에도 영향을 줄 수 있음 위치 추적 은 픽업과 일정 조…"
+      "title": "OpenMAIC - 주제나 문서를 AI 교사와 토론하는 수업으로 만드는 오픈소스 플랫폼",
+      "url": "https://news.hada.io/topic?id=37017&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "배우고 싶은 주제를 적거나 자료를 올리면 슬라이드, 퀴즈, 조작해 볼 수 있는 시뮬레이션, 프로젝트 기반 학습(PBL) 을 포함한 수업을 자동 생성 AI 교사는 음성으로 설명하고 칠판에 수식이나 그…"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: 코딩 에이전트를 2019년 무렵의 JavaScript에서 최신 웹 기본 기능으로 이끌기",
-      "url": "https://news.hada.io/topic?id=36964&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "Modern Web Guidance 는 웹 플랫폼 전문 지식, 모범 사례, 브라우저 호환성 데이터를 코딩 에이전트에 제공하는 스킬 모음으로, 레거시 패턴 대신 최신 웹 기본 기능을 활용하도록 유도함…"
+      "title": "알고 있는 &quot;No AI&quot; 앱, 기업, 자료에는 어떤 것들이 있나요?",
+      "url": "https://news.hada.io/topic?id=37016&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "AI를 명시적으로 사용하지 않는 앱, 기업, 자료를 모은 유용한 목록을 찾고 있으며, 공개적으로 AI 반대를 표방할 필요는 없음 AI의 장단점이나 가치, 찬반 토론보다는 이 입장을 지지하는 링크나 …"
     },
     {
       "source": "GeekNews",
-      "title": "Starlink Mini 2 - 교체형 배터리를 탑재한 휴대용 위성 인터넷 단말기",
-      "url": "https://news.hada.io/topic?id=36963&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "교체형 배터리로 최대 4.5시간 작동하며, 별도 판매하는 예비 배터리로 교체할 수 있음 1세대는 DC 전원 케이블을 사용했고, Mini 2는 배터리 또는 60W USB-C 전원 으로 작동함. 충전 …"
+      "title": "실제로 셀프 호스팅을 안전하게 하려면 어떻게 해야 하나요?",
+      "url": "https://news.hada.io/topic?id=37015&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "셀프 호스팅 입문자로서 Raspberry Pi 에 정적 웹사이트를 호스팅하고, 향후 다른 기능도 추가해 보려 함 DDG와 Google로 먼저 검색했지만, 찾은 자료 대부분이 검색 최적화에 치중한 저…"
     },
     {
       "source": "GeekNews",
-      "title": "Synaptics의 특허 침해 주장으로 DisplayLink 드라이버 개발 중단",
-      "url": "https://news.hada.io/topic?id=36962&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "Linux용 DisplayLink 드라이버의 충돌을 해결하려던 개인 개발자가 Synaptics의 특허 침해 주장과 중단 요구 를 받고, 새 드라이버 Vino의 공개 저장소를 내리고 커널 제출을 중단…"
+      "title": "United Airlines, AI 에이전트의 여행객 대리 항공편 예약 금지",
+      "url": "https://news.hada.io/topic?id=37014&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "United Airlines는 미승인 제3자 AI 에이전트의 대리 예약을 금지 하기 위해 예약 및 발권 정책을 개정 중임. 자체 웹사이트와 앱뿐 아니라 여행사와 항공편 검색 서비스를 통한 간접 접근…"
     },
     {
       "source": "GeekNews",
-      "title": "Val Town, 단계적으로 서비스 종료",
-      "url": "https://news.hada.io/topic?id=36961&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-11",
-      "summary": "클라우드에서 스크립트를 실행하는 서비스 Val Town 이 클라우드 컴퓨팅 시장에서 경쟁하기 어려워 단계적으로 운영을 종료함 2026년 11월 10일 신규 가입, 요금제 업그레이드, 과금을 중단함.…"
+      "title": "Nvidia 이사회, 젠슨 황 CEO 해임 준비 중",
+      "url": "https://news.hada.io/topic?id=37013&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-12",
+      "summary": "WSJ는 Nvidia 이사회가 창업자 겸 CEO인 젠슨 황의 해임을 준비 중 이라고 보도함. 이르면 11월 11일(현지시간) 이사회를 열어 거취를 논의할 예정이라고 전했으며, 해임 결정은 아직 확인…"
     }
   ]
 }
