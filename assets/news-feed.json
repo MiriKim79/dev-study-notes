@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-13",
+  "updated_at": "2026-11-14",
   "items": [
     {
       "source": "GeekNews",
-      "title": "자애로운 수출 통제 기계",
-      "url": "https://news.hada.io/topic?id=37088&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "다리오 아모데이의 에세이 \"Machines of Loving Grace\" 을 패러디한 제목. 극성 인공지능 안전주의자들은 수출 통제를 맹목적으로 찬성하고, 국가 경쟁으로 규정함. 최근 반-개방 가중…"
+      "title": "FM-1 Workbench - FM1 펌웨어용 앱과 SDK의 라이선스 및 재배포 조건",
+      "url": "https://news.hada.io/topic?id=37138&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "FM1의 공개 APP 소스는 GPLv3 전용 라이선스 를 따르며, 별도 조건의 바이너리 SDK와 결합해 배포할 수 있도록 링크 예외를 둠 독점 엔진 SDK는 FM1 기기용으로만 개발, 실행, 바이너…"
     },
     {
       "source": "GeekNews",
-      "title": "nac - 긴 작업에서 원래 목표를 잃지 않게 하는 에이전트 하네스",
-      "url": "https://news.hada.io/topic?id=37085&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "실험, 모델 학습, 인프라 구축, 프로토타이핑처럼 오래 걸리는 작업을 처음 의도에 맞춰 이어가도록 설계된 오픈소스 하네스 중앙 오케스트레이터 가 전체 작업을 계획하고, 명령 실행과 파일 수정은 개별…"
+      "title": "Ace - 내 Mac에서 팀원과 AI 에이전트가 함께 작업하는 코딩 환경",
+      "url": "https://news.hada.io/topic?id=37137&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "채널에서 팀원과 구현 방향을 논의한 뒤 @ace 를 부르면 에이전트가 앞선 대화를 읽고 작업을 시작 에이전트가 작업 중 질문을 올리면 답을 아는 팀원이 바로 답해 작업을 이어갈 수 있음 같은 Tai…"
     },
     {
       "source": "GeekNews",
-      "title": "『Let Over Lambda』 전체를 이제 온라인에서 무료로 읽을 수 있음",
-      "url": "https://news.hada.io/topic?id=37084&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "Common Lisp 프로그래밍 서적 Let Over Lambda 전체가 2026년 업데이트를 통해 온라인에 무료로 공개됨 전문은 HTML과 PDF 두 형식으로 읽을 수 있음 책의 중심 주제는 프로…"
+      "title": "최소한 제3의 선택지가 필요한 이유",
+      "url": "https://news.hada.io/topic?id=37136&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "Android와 iOS를 벗어나는 실용적인 대안 이 필요함. Google 의존성을 제거한 ROM과 대체 앱 스토어만으로 충분하다는 기대와 달리, 사용자와 개발자가 기기와 앱을 통제할 여지가 줄고 있…"
     },
     {
       "source": "GeekNews",
-      "title": "데이터센터에 필요한 전력, 저소득층과 농촌 주민이 대가를 치른다",
-      "url": "https://news.hada.io/topic?id=37082&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "Cornell 연구진이 미국 주요 전력망 4곳을 분석한 결과, 2025년 데이터센터는 확장에 따른 전력 인프라 비용의 38% 만 부담했고 나머지 62%는 주로 주민에게 돌아감 기존의 과거 전력 소비…"
+      "title": "셀을 차지하지 않는 터미널 테두리",
+      "url": "https://news.hada.io/topic?id=37135&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "문자 대신 셀 가장자리의 선 으로 테두리를 그리는 터미널 프로토콜을 개발해 Ghostty 패치와 Ratatui 데모로 구현함 행과 열을 추가로 소비하지 않아 패널 경계에 탭을 배치하고, 한 줄 높이…"
     },
     {
       "source": "GeekNews",
-      "title": "태양을 한 바퀴 도는 데 약 280년 걸리는 왜소행성 후보 발견",
-      "url": "https://news.hada.io/topic?id=37081&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "칠레 Vera C. Rubin Observatory 관측 데이터에서 왜소행성 후보 2026 ED138 이 발견됨. 태양까지의 거리는 지구의 46배이며 공전 주기는 281.1년임 최근 10년간의 관측…"
+      "title": "“글루 워크는 해롭다”에 대한 반론",
+      "url": "https://news.hada.io/topic?id=37134&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "문서 정리나 온보딩 같은 글루 워크(glue work) 는 성과로 잘 드러나지 않아도, 팀이 같은 문제에 반복해서 시간을 쓰는 일을 줄여줌 기능 출시를 주로 보상하는 조직도 팀을 굴러가게 하는 글루…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: kr-career-skill - 채용 사이트 270 여곳의 공고 검색과 기업분석 및 자소서 초안 작성을 하는 한국 취...",
-      "url": "https://news.hada.io/topic?id=37079&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "취업·이직용 에이전트 스킬입니다. 퇴근하면 체력이 바닥나서 저녁 먹고 나면 이직 준비할 여력이 없다는 친구가 있어, 그 친구를 생각하며 만들었습니다. 공고를 찾고 초안을 잡는 일을 에이전트에게 맡기…"
+      "title": "음악 플레이어를 이렇게 만들지는 말자",
+      "url": "https://news.hada.io/topic?id=37133&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "인터넷 차단을 겪으며 오프라인 음악 재생의 필요성을 느낀 개발자가 Zig 기반 음악 플레이어 AMP 를 직접 만들기 시작함 기존 플레이어의 가사 표시가 불편해, 최소한의 기능과 C++ 의존성 배제,…"
     },
     {
       "source": "GeekNews",
-      "title": "Google Antigravity에 Orchestrator 추가, 코딩 중 Carbon과 Hydrogen 자동 전환",
-      "url": "https://news.hada.io/topic?id=37077&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "Google Antigravity의 모델 선택 메뉴에 Gemini 4 Hydrogen 과 Orchestrator 가 추가됨 Orchestrator 는 한 코딩 세션에서 작업 단계에 따라 Carbon…"
+      "title": "Haskell 생태계를 위한 기술 비전",
+      "url": "https://news.hada.io/topic?id=37132&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "Haskell Foundation 기술 리더십 위원회(TLC) 가 정식 활동을 시작해 개발 도구, 보안, 장기 호환성 개선 과제를 발굴하고 재단의 자금 지원 대상을 정함 AI가 코드를 생성할 때 타…"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: 300달러짜리 자수기에 구독이 필요해서 직접 앱을 만들었다",
-      "url": "https://news.hada.io/topic?id=37076&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-13",
-      "summary": "ZigZag 는 SVG 그림을 자수 바늘땀으로 변환하고 시각적으로 편집하는 Rust 앱으로, 자수기용 파일을 내보내거나 Brother Skitch에 직접 전송할 수 있음 MCP 를 내장해 AI 에이…"
+      "title": "빅테크는 우리를 실망시킨다",
+      "url": "https://news.hada.io/topic?id=37131&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-14",
+      "summary": "Microsoft Outlook, Teams, Copilot 장애 로 업무가 중단되고, 일부 중소기업은 정상적인 고객 지원 대신 소셜미디어로 연락을 받음 장애 영향은 기업을 넘어 학교, 대학, 법원…"
     }
   ]
 }
