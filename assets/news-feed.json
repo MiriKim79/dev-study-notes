@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-15",
+  "updated_at": "2026-11-16",
   "items": [
     {
       "source": "GeekNews",
-      "title": "OpenAI, 범용 모델이 로봇을 제어하기 시작하면서 로보틱스 팀 해체",
-      "url": "https://news.hada.io/topic?id=37180&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "OpenAI가 독립 로보틱스 팀을 해체 하고 인력을 기존 연구 및 응용 조직으로 재배치함. 회사는 로봇 개발 철수가 아니라 범용 로봇 개발을 가속하기 위한 개편이라고 밝힘 개편의 계기는 GPT-6 …"
+      "title": "주요 C 프로젝트 40개의 메모리 관리 방식 조사",
+      "url": "https://news.hada.io/topic?id=37234&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "주요 C 프로젝트 40개 중 malloc/free 방식만 사용하는 프로젝트는 8개 였으며, 다수는 영역 기반 할당, 참조 카운팅, 가비지 컬렉션 등 고수준 메모리 관리 방식을 함께 사용함 영역 기반…"
     },
     {
       "source": "GeekNews",
-      "title": "PyPI, 보안 신호를 더 명확히 보여주는 개편된 프로젝트 페이지 공개",
-      "url": "https://news.hada.io/topic?id=37178&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "PyPI 프로젝트 상세 페이지 개편 이 완료돼 적용됨. 새 보안 탭에서 릴리스의 출처 상태와 파일별 증명 정보를 확인할 수 있음 출처 상태 는 릴리스 파일의 증명 보유 여부로 계산함. 증명이 없다는…"
+      "title": "실전파 컴퓨터 과학자를 위한 도서 목록",
+      "url": "https://news.hada.io/topic?id=37232&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "2025년판 추천 목록 으로, 코드 작성 관행을 다루는 일반적인 프로그래머 추천서 대신 언어, 운영체제, 네트워크, 알고리듬, 계산 이론을 깊이 익히는 책에 초점을 맞춤 입문 목록은 C/C++와 R…"
     },
     {
       "source": "GeekNews",
-      "title": "SpaceX, Starship 포획으로 15차 비행 마무리",
-      "url": "https://news.hada.io/topic?id=37177&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "SpaceX, Starship 포획으로 15차 비행 마무리"
+      "title": "‘새대가리’는 잘못된 표현이다. 까마귀는 인간보다 빠르게 결정을 내린다",
+      "url": "https://news.hada.io/topic?id=37231&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "송장까마귀 두 마리를 대상으로 한 연구에서 시각적 단서를 처리하고 반응하는 속도 가 인간과 원숭이의 두 배에 달함 Science에 발표된 연구 는 조류의 의사결정에 관여하는 신경 처리 속도를 처음으…"
     },
     {
       "source": "GeekNews",
-      "title": "코끼리의 고립 심화로 사회적 연결망이 분절됨",
-      "url": "https://news.hada.io/topic?id=37176&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "UC San Diego 연구진이 스리랑카의 야생 암컷 아시아코끼리 440마리 이상을 12년간 분석 한 결과, 개체군 감소와 함께 사회 집단이 작아지고 서로 고립되는 변화를 확인함 개체 손실이 서서히…"
+      "title": "엘니뇨의 작동 원리를 짧게 설명하는 영상",
+      "url": "https://news.hada.io/topic?id=37229&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "엘니뇨 는 태평양 무역풍이 약해지고 따뜻한 표층수가 동쪽으로 이동하면서, 대류와 폭풍이 발생하는 위치까지 바뀌는 현상임 이동한 따뜻한 공기는 제트기류 를 더 동쪽과 남쪽으로 옮겨, 미국 남부에는 더…"
     },
     {
       "source": "GeekNews",
-      "title": "Microsoft 장애, 고객들에게 Microsoft 의존도를 뼈저리게 깨닫게 하다",
-      "url": "https://news.hada.io/topic?id=37175&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "Microsoft 365의 장시간 장애 로 이메일, Teams 메시징, 파일 접근, Copilot 등 여러 업무 서비스가 영향을 받으면서, 기업들이 Microsoft 생태계에 얼마나 깊이 의존하는지…"
+      "title": "“Duffy는 거짓말했다”: 항공 관제사들, 교통부 장관의 이륙 중단 설명 반박",
+      "url": "https://news.hada.io/topic?id=37228&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "미국 전역의 항공기 이륙 중단 으로 약 150만 명이 영향을 받은 가운데, 항공 관제사들이 Sean Duffy 교통부 장관의 장애 원인 설명에 의문을 제기함 기자가 취재한 관제사 60명 중 누구도 …"
     },
     {
       "source": "GeekNews",
-      "title": "Google은 왜 AI를 쓰지 않는 학교의 검색 접근까지 차단하나? 몇 가지 가설",
-      "url": "https://news.hada.io/topic?id=37174&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "Google은 학교가 학생의 검색 결과에서 AI Overviews를 끄려면 Google Search 접근도 함께 차단해야 한다 는 방침을 밝혀 학부모와 교육계의 반발을 사고 있음 교실 내 AI 사용…"
+      "title": "이탈리아, 사진 개인정보 침해로 Meta에 8억 500만 유로 과징금 부과",
+      "url": "https://news.hada.io/topic?id=37227&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "이탈리아 개인정보 보호 당국이 Android용 Facebook 앱에서 구체적인 동의와 적절한 안내 없이 사진, 동영상, 관련 메타데이터에 접근한 Meta에 8억 500만 유로 과징금 을 부과함 문제…"
     },
     {
       "source": "GeekNews",
-      "title": "FAA의 미국 전역 이륙 중단 조치 속 Amtrak 예약 시스템에 심각한 문제 발생",
-      "url": "https://news.hada.io/topic?id=37173&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "Amtrak 예약 시스템 이 미국 연방항공청(FAA)의 전국 이륙 중단 조치와 같은 시기에 네트워크 장애를 겪었으며, 금요일 오후 9시경부터 정상화되고 있음 열차 운행은 정상 이며, Amtrak은 …"
+      "title": "휴대폰 포렌식 도구는 잠긴 기기에서 어떻게 데이터를 꺼내나",
+      "url": "https://news.hada.io/topic?id=37225&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "상용 휴대폰 잠금 해제 도구의 차별점은 새로운 공격 기법보다 취약점 악용의 체계적 상품화 에 있음. 기기별 공격 코드를 확보하고 안정화해 비전문가도 사용할 수 있는 자동화 작업 흐름으로 묶음 And…"
     },
     {
       "source": "GeekNews",
-      "title": "미네소타 기타리스트의 발명품 ‘palmfrets’, 새로운 화음을 열다",
-      "url": "https://news.hada.io/topic?id=37172&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-15",
-      "summary": "기타리스트 Ben Ranson이 손바닥으로 현을 추가 프렛에 눌러 베이스 라인이나 멜로디를 연주하는 palmfrets 를 공개함 현을 뜯는 손의 손바닥 아래쪽 콩알뼈 로 현을 누르고 엄지로 뜯는 방…"
+      "title": "Emacs는 나의 브라우저",
+      "url": "https://news.hada.io/topic?id=37224&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-16",
+      "summary": "Emacs 내장 브라우저 EWW 를 며칠간 적극적으로 사용해 보니, 개인적인 웹 이용의 약 85~90% 를 처리할 수 있었음 Chromium/Firefox에서 추천 콘텐츠와 눈길을 끄는 요소 때문에…"
     }
   ]
 }
