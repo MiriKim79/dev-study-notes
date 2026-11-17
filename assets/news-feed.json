@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-17",
   "items": [
     {
       "source": "GeekNews",
-      "title": "주요 C 프로젝트 40개의 메모리 관리 방식 조사",
-      "url": "https://news.hada.io/topic?id=37234&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "주요 C 프로젝트 40개 중 malloc/free 방식만 사용하는 프로젝트는 8개 였으며, 다수는 영역 기반 할당, 참조 카운팅, 가비지 컬렉션 등 고수준 메모리 관리 방식을 함께 사용함 영역 기반…"
+      "title": "Squircles - 정사각형과 원 사이의 곡선, 구현 방식과 연속성 비교",
+      "url": "https://news.hada.io/topic?id=37332&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "스쿼클(squircle) 은 정사각형과 원 사이의 형태로, 하나의 수학적 정의가 아니라 여러 곡선으로 구현할 수 있으며 매개변수에 따라 원과 정사각형 사이에서 달라짐 슈퍼타원(superellipse…"
     },
     {
       "source": "GeekNews",
-      "title": "실전파 컴퓨터 과학자를 위한 도서 목록",
-      "url": "https://news.hada.io/topic?id=37232&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "2025년판 추천 목록 으로, 코드 작성 관행을 다루는 일반적인 프로그래머 추천서 대신 언어, 운영체제, 네트워크, 알고리듬, 계산 이론을 깊이 익히는 책에 초점을 맞춤 입문 목록은 C/C++와 R…"
+      "title": "Show GN: Subscale - 여러 Tailscale 계정 중 주소별로 나눠 연결해주는 CLI 도구",
+      "url": "https://news.hada.io/topic?id=37328&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "Tailscale 계정을 여러개 등록해 사용하는 경우 동시에 여러 계정을 활성화 할 수 없고 수동으로 스위칭하며 사용해야 하는 문제가 있습니다 제 경우 회사용 계정, 개인 계정을 동시에 사용할 수가…"
     },
     {
       "source": "GeekNews",
-      "title": "‘새대가리’는 잘못된 표현이다. 까마귀는 인간보다 빠르게 결정을 내린다",
-      "url": "https://news.hada.io/topic?id=37231&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "송장까마귀 두 마리를 대상으로 한 연구에서 시각적 단서를 처리하고 반응하는 속도 가 인간과 원숭이의 두 배에 달함 Science에 발표된 연구 는 조류의 의사결정에 관여하는 신경 처리 속도를 처음으…"
+      "title": "Windows 11, 사용하는 코딩 에이전트와 개발 도구 정보를 수집함",
+      "url": "https://news.hada.io/topic?id=37327&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "Windows의 MissionControlAggregator.dll 은 기존 시스템 이벤트에서 코딩 에이전트와 개발 도구 사용 여부를 감지해 로컬에 저장하고 진단 보고서를 생성함 보고서는 개발 도구…"
     },
     {
       "source": "GeekNews",
-      "title": "엘니뇨의 작동 원리를 짧게 설명하는 영상",
-      "url": "https://news.hada.io/topic?id=37229&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "엘니뇨 는 태평양 무역풍이 약해지고 따뜻한 표층수가 동쪽으로 이동하면서, 대류와 폭풍이 발생하는 위치까지 바뀌는 현상임 이동한 따뜻한 공기는 제트기류 를 더 동쪽과 남쪽으로 옮겨, 미국 남부에는 더…"
+      "title": "Branchless Programming - CPU 분기 예측과 분기 없는 프로그래밍 이해하기",
+      "url": "https://news.hada.io/topic?id=37325&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "현대 CPU는 파이프라인을 통해 여러 명령어의 처리 단계를 병렬적으로 진행하며, 조건 분기가 발생하면 분기 예측(Branch Prediction)을 통해 다음에 실행할 명령어를 미리 처리함. 하지만…"
     },
     {
       "source": "GeekNews",
-      "title": "“Duffy는 거짓말했다”: 항공 관제사들, 교통부 장관의 이륙 중단 설명 반박",
-      "url": "https://news.hada.io/topic?id=37228&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "미국 전역의 항공기 이륙 중단 으로 약 150만 명이 영향을 받은 가운데, 항공 관제사들이 Sean Duffy 교통부 장관의 장애 원인 설명에 의문을 제기함 기자가 취재한 관제사 60명 중 누구도 …"
+      "title": "Modern Web Guidance 1.0 - 코딩 에이전트에 최신 웹 개발 지침을 제공하는 스킬 모음",
+      "url": "https://news.hada.io/topic?id=37324&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "크롬팀의 Modern Web Guidance 1.0 은 코딩 에이전트에게 웹 플랫폼 전문 지식, 권장사항, 브라우저 호환성 데이터를 제공해 성능, 접근성, 보안을 개선하도록 지원함 현대화 워크플로 …"
     },
     {
       "source": "GeekNews",
-      "title": "이탈리아, 사진 개인정보 침해로 Meta에 8억 500만 유로 과징금 부과",
-      "url": "https://news.hada.io/topic?id=37227&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "이탈리아 개인정보 보호 당국이 Android용 Facebook 앱에서 구체적인 동의와 적절한 안내 없이 사진, 동영상, 관련 메타데이터에 접근한 Meta에 8억 500만 유로 과징금 을 부과함 문제…"
+      "title": "백준 온라인 저지 (BOJ) 11월 20일 재오픈",
+      "url": "https://news.hada.io/topic?id=37321&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "당초 2026.10.26. 재오픈 하려 했으나, PHP2Shell 대응 등으로 연기했었음. 재오픈 일정을 11월 17일 이메일을 통해 공지함. 서비스 재오픈 일정 재오픈 예정일: 2026년 11월 …"
     },
     {
       "source": "GeekNews",
-      "title": "휴대폰 포렌식 도구는 잠긴 기기에서 어떻게 데이터를 꺼내나",
-      "url": "https://news.hada.io/topic?id=37225&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "상용 휴대폰 잠금 해제 도구의 차별점은 새로운 공격 기법보다 취약점 악용의 체계적 상품화 에 있음. 기기별 공격 코드를 확보하고 안정화해 비전문가도 사용할 수 있는 자동화 작업 흐름으로 묶음 And…"
+      "title": "CI 시장은 세 갈래로 나뉘었다",
+      "url": "https://news.hada.io/topic?id=37320&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "CI 시장은 범용 러너 인프라, 오케스트레이션 플랫폼, 코드/빌드 엔지니어링 계층으로 나뉘며, 각각 실행 비용과 속도, 실행 환경 제어, 파이프라인 프로그래밍 가능성에 초점을 맞춤 GitHub Ac…"
     },
     {
       "source": "GeekNews",
-      "title": "Emacs는 나의 브라우저",
-      "url": "https://news.hada.io/topic?id=37224&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-16",
-      "summary": "Emacs 내장 브라우저 EWW 를 며칠간 적극적으로 사용해 보니, 개인적인 웹 이용의 약 85~90% 를 처리할 수 있었음 Chromium/Firefox에서 추천 콘텐츠와 눈길을 끄는 요소 때문에…"
+      "title": "세계 최대 브랜드들, Optimizely를 통해 악성코드에 감염",
+      "url": "https://news.hada.io/topic?id=37319&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-17",
+      "summary": "웹사이트 A/B 테스트 플랫폼 Optimizely Web 을 통해 BBC, Zoom, CNN, Salesforce, GitLab 등 178개 조직의 사이트 방문자에게 악성 JavaScript 가 배…"
     }
   ]
 }
