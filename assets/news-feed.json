@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Squircles - 정사각형과 원 사이의 곡선, 구현 방식과 연속성 비교",
-      "url": "https://news.hada.io/topic?id=37332&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "스쿼클(squircle) 은 정사각형과 원 사이의 형태로, 하나의 수학적 정의가 아니라 여러 곡선으로 구현할 수 있으며 매개변수에 따라 원과 정사각형 사이에서 달라짐 슈퍼타원(superellipse…"
+      "title": "이스라엘 대 Wikipedia",
+      "url": "https://news.hada.io/topic?id=37388&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "Tech for Palestine(T4P) 이 2001년 이후 Wikipedia를 친이스라엘 방향으로 조작하려 한 활동 17건을 정리한 보고서를 공개함. 공개 자료를 토대로 이 가운데 최소 9건이 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: Subscale - 여러 Tailscale 계정 중 주소별로 나눠 연결해주는 CLI 도구",
-      "url": "https://news.hada.io/topic?id=37328&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "Tailscale 계정을 여러개 등록해 사용하는 경우 동시에 여러 계정을 활성화 할 수 없고 수동으로 스위칭하며 사용해야 하는 문제가 있습니다 제 경우 회사용 계정, 개인 계정을 동시에 사용할 수가…"
+      "title": "Show HN: Alloy CSS, JavaScript를 꺼도 작동하는 대화상자, 메뉴, 탭",
+      "url": "https://news.hada.io/topic?id=37385&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "Alloy CSS 로 만든 가상의 청구서 관리 앱 Ledger 예제이며, 단일 HTML 파일로 구성되고 JavaScript를 사용하지 않음 대화상자, 메뉴, 탭 은 JavaScript를 꺼도 작동함…"
     },
     {
       "source": "GeekNews",
-      "title": "Windows 11, 사용하는 코딩 에이전트와 개발 도구 정보를 수집함",
-      "url": "https://news.hada.io/topic?id=37327&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "Windows의 MissionControlAggregator.dll 은 기존 시스템 이벤트에서 코딩 에이전트와 개발 도구 사용 여부를 감지해 로컬에 저장하고 진단 보고서를 생성함 보고서는 개발 도구…"
+      "title": "Show GN: Lightcap - 가볍고 빠른 맥용 화면 녹화/스크린샷 앱",
+      "url": "https://news.hada.io/topic?id=37384&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "맥에서 쓰는 가볍고 빠른 화면 녹화/스크린샷 앱입니다. 원래 CleanShot X랑 맥 기본 캡쳐를 썼는데, 앱이 무거워서 그런지 캡쳐도 녹화도 단축키를 눌렀는데 바로바로 실행이 안되더라구요.. 하…"
     },
     {
       "source": "GeekNews",
-      "title": "Branchless Programming - CPU 분기 예측과 분기 없는 프로그래밍 이해하기",
-      "url": "https://news.hada.io/topic?id=37325&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "현대 CPU는 파이프라인을 통해 여러 명령어의 처리 단계를 병렬적으로 진행하며, 조건 분기가 발생하면 분기 예측(Branch Prediction)을 통해 다음에 실행할 명령어를 미리 처리함. 하지만…"
+      "title": "Show GN: 깎깎 - 칼로 연필을 깎고 그 끝으로 그려 보는 3D iOS 게임",
+      "url": "https://news.hada.io/topic?id=37383&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "바이스에 물린 연필을 휠로 돌려 가며 칼로 한 겹씩 깎고, 다 깎은 끝으로 종이에 선을 그어 보는 게임입니다. 오늘 App Store 심사를 통과했고 Android(Google Play)에도 있습니…"
     },
     {
       "source": "GeekNews",
-      "title": "Modern Web Guidance 1.0 - 코딩 에이전트에 최신 웹 개발 지침을 제공하는 스킬 모음",
-      "url": "https://news.hada.io/topic?id=37324&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "크롬팀의 Modern Web Guidance 1.0 은 코딩 에이전트에게 웹 플랫폼 전문 지식, 권장사항, 브라우저 호환성 데이터를 제공해 성능, 접근성, 보안을 개선하도록 지원함 현대화 워크플로 …"
+      "title": "“X는 죽었다”는 말은 죽었다",
+      "url": "https://news.hada.io/topic?id=37382&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "Figma와 디자인 시스템은 여전히 쓰이지만, 팀 전체가 같은 도구와 순서로 일하던 방식 은 사라지고 있음. 디자이너마다 스케치, 구현, 리뷰에 서로 다른 도구를 조합함 도구 분산의 더 큰 동력은 …"
     },
     {
       "source": "GeekNews",
-      "title": "백준 온라인 저지 (BOJ) 11월 20일 재오픈",
-      "url": "https://news.hada.io/topic?id=37321&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "당초 2026.10.26. 재오픈 하려 했으나, PHP2Shell 대응 등으로 연기했었음. 재오픈 일정을 11월 17일 이메일을 통해 공지함. 서비스 재오픈 일정 재오픈 예정일: 2026년 11월 …"
+      "title": "Quad9의 프랑스 철수: 탄광 속 카나리아가 보내는 경고",
+      "url": "https://news.hada.io/topic?id=37381&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "스위스 비영리 재단 Quad9 이 저작권 침해 의심 도메인 미차단에 일일 금전 제재를 부과하는 프랑스 법원 결정 이후, 무료 공용 DNS 리졸버의 프랑스 철수를 발표함 Cloudflare는 공용 D…"
     },
     {
       "source": "GeekNews",
-      "title": "CI 시장은 세 갈래로 나뉘었다",
-      "url": "https://news.hada.io/topic?id=37320&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "CI 시장은 범용 러너 인프라, 오케스트레이션 플랫폼, 코드/빌드 엔지니어링 계층으로 나뉘며, 각각 실행 비용과 속도, 실행 환경 제어, 파이프라인 프로그래밍 가능성에 초점을 맞춤 GitHub Ac…"
+      "title": "SaaS에서 바이럴 루프 구현하고 측정하기",
+      "url": "https://news.hada.io/topic?id=37380&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "바이럴 루프 는 기존 사용자가 제품을 사용하는 과정에서 신규 사용자를 유입시키는 구조로, 공유 결과물이나 협업 초대를 핵심 사용 흐름에 넣으면 지속적인 고객 확보 채널이 될 수 있음 구현 방식은 입…"
     },
     {
       "source": "GeekNews",
-      "title": "세계 최대 브랜드들, Optimizely를 통해 악성코드에 감염",
-      "url": "https://news.hada.io/topic?id=37319&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-17",
-      "summary": "웹사이트 A/B 테스트 플랫폼 Optimizely Web 을 통해 BBC, Zoom, CNN, Salesforce, GitLab 등 178개 조직의 사이트 방문자에게 악성 JavaScript 가 배…"
+      "title": "chrome-capture - Chrome 탭의 화면과 소리를 최대 4K 120fps로 녹화하는 도구",
+      "url": "https://news.hada.io/topic?id=37379&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-18",
+      "summary": "URL과 녹화 시간을 지정하면 Chrome 탭의 화면과 소리를 AV1 MP4로 저장 함 기본값은 720p 60fps이며 탭 오디오도 함께 녹음 Chrome 153의 내장 녹화 API 를 사용해 브라…"
     }
   ]
 }
