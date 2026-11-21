@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-20",
+  "updated_at": "2026-11-21",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show GN: 법원 경매 예상 낙찰가 - 다음 매각기일 물건을 말로 찾고 지도로 보는 무료 사이트",
-      "url": "https://news.hada.io/topic?id=37502&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "법원경매정보에 공고된 다음 매각기일 물건(지금 8천여 건)을 매일 모아, 지난 낙찰 결과로 학습한 모델이 물건마다 예상 낙찰가와 범위를 붙여 보여 주는 사이트입니다. 베타 기간이라 무료이고, 가입 …"
+      "title": "Anthropic, IPO 직후 주가 급락…Nasdaq은 2026년 상승분 반납",
+      "url": "https://news.hada.io/topic?id=37557&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "Anthropic 주가가 상장 다음 날 9% 하락 하며 매도세를 이끌었고, 상반기 증시와 경제성장을 견인한 AI 투자 열풍의 지속 가능성에 대한 우려가 커짐 Nasdaq은 하루 5.3% 하락 해 연…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: OneHandy - 회원가입 없이 브라우저에서 쓰는 무료 웹 도구 123종 (계산기·변환기·텍스트·이미지)",
-      "url": "https://news.hada.io/topic?id=37499&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "직접 만들고 있는 무료 웹 도구 모음입니다. 설치도 회원가입도 없이 바로 열어서 쓸 수 있습니다. 도구 123종: 텍스트 변환, 개발자 유틸리티, 디자인·색상, 생산성, 이미지, SEO 도구, 그리…"
+      "title": "Codex로 일하는 새로운 방식 [영상]",
+      "url": "https://news.hada.io/topic?id=37556&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "Codex 하네스 가 CLI, 데스크톱 앱, ChatGPT, Slack, Dots, Agents API로 확장되며, 로컬 코딩뿐 아니라 클라우드 장기 작업과 여러 업무 도구를 연결하는 기반으로 쓰임…"
     },
     {
       "source": "GeekNews",
-      "title": "98% 슬롯머신: 유료 광고는 어떻게 착취적 세금이 되었나",
-      "url": "https://news.hada.io/topic?id=37498&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "유료 광고는 손익분기점에 조금 못 미치는 수익 으로 창업자가 광고비를 계속 투입하게 만드는 슬롯머신과 같다는 비판을 받음 광고 대시보드는 순손실보다 노출, 클릭률, 클릭당 비용의 개선 을 부각하고,…"
+      "title": "Cloudflare가 Raft 대신 QuePaxa를 선택한 이유",
+      "url": "https://news.hada.io/topic?id=37555&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "Cloudflare는 전 세계에 분산된 실험적 제어 평면 서비스 Meerkat 에 QuePaxa를 채택함. 인터넷의 지연 급증과 연결 장애에도 단일 리더에 의존하지 않고 합의를 이어가는 것이 핵심 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show HN: Cornhole News - Hacker News에서 영감을 받은 미국 중서부 뉴스 사이트",
-      "url": "https://news.hada.io/topic?id=37497&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "Cornhole News 는 미국 중서부 전역의 뉴스를 모아 보여주는 Hacker News 스타일의 사이트임 뉴스 목록은 외부 기사 링크 로 구성되며, 각 항목에 투표 화살표와 점수, 댓글 수가 표…"
+      "title": "‘확률적 앵무새’가 리만 가설을 증명한 모양이다",
+      "url": "https://news.hada.io/topic?id=37554&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "Levent Alpöge가 Anthropic 모델로 일반화 리만 가설을 증명했다 고 발표했으며, 결과물은 1,740만 줄의 Lean 코드 임 Scott Aaronson은 증명의 유효성을 확신하지는 …"
     },
     {
       "source": "GeekNews",
-      "title": "Kiri - 무료 ngrok 대안을 내장한 경량 Docker Desktop 대체재",
-      "url": "https://news.hada.io/topic?id=37496&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "기존 Docker 이미지와 명령을 그대로 사용 하는 컨테이너 런타임으로, 맥/윈도우/리눅스에서 실행 docker CLI, Compose, buildx와 Docker Engine API를 지원 해 기…"
+      "title": "Nvidia 회계 처리, SEC가 조사 중이라고 소식통 전해",
+      "url": "https://news.hada.io/topic?id=37553&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "미국 증권거래위원회(SEC) 가 Nvidia의 잠재적인 회계 문제를 조사 중이라고 Reuters가 보도함 Nvidia 주가는 금요일 약 14% 하락 하며 7거래일 연속 떨어졌고, 한 주 동안 시가총…"
     },
     {
       "source": "GeekNews",
-      "title": "이해 가능성을 위한 설계",
-      "url": "https://news.hada.io/topic?id=37494&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "LLM이 코드를 더 많이 작성할수록 개발자의 핵심 책임은 코드 품질 판단 과 검토에 있음. 생성된 코드를 이해하지 못하면 LLM은 복잡성을 빠르게 늘리는 도구에 그칠 수 있음 계약에 의한 설계 , …"
+      "title": "초대형 Git 저장소의 개발 속도 높이기",
+      "url": "https://news.hada.io/topic?id=37552&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "Google이 대규모 Git 프로젝트의 소스 동기화와 빌드 병목을 줄이는 ABFS(Another Build File Service) 를 오픈소스로 공개함 Android에서 체크아웃은 약 36분에서 …"
     },
     {
       "source": "GeekNews",
-      "title": "x86 CPU: 4004에서 486까지",
-      "url": "https://news.hada.io/topic?id=37493&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "x86의 독특한 레지스터와 주소 지정 방식은 일관된 설계의 결과라기보다, 세대마다 기존 소프트웨어 호환성 과 현실적 제약에 대응하며 누적된 결과임 리틀 엔디언과 패리티 플래그 는 Intel이 아닌 …"
+      "title": "SignuDoc - 내 계정에 배포해 운영하는 오픈소스 전자서명 앱",
+      "url": "https://news.hada.io/topic?id=37551&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "PDF에 서명과 입력란을 배치하고 이메일로 서명을 요청 하는 DocuSign 대체재 받는 사람은 가입 없이 링크를 열어 이름을 입력하거나 손으로 서명하며, 휴대폰에서도 이용 가능 최대 25명의 서명…"
     },
     {
       "source": "GeekNews",
-      "title": "브라우저에서 실행하는 Unreal Tournament 2004",
-      "url": "https://news.hada.io/topic?id=37492&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-20",
-      "summary": "Unreal Tournament 2004 웹 포트 는 개인이 취미로 유지보수하는 프로젝트임 Epic Games 와 제휴 관계가 없으며, 공식 보증을 받은 프로젝트도 아님 브라우저 버전은 데스크톱 사…"
+      "title": "항상 작동하는 에이전트 구축하기",
+      "url": "https://news.hada.io/topic?id=37550&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-21",
+      "summary": "상시 작동 에이전트 는 세션 간 맥락을 유지하고 직접적인 감독 없이 행동하며, 실제로는 대부분 대기하다가 이벤트가 발생할 때 짧게 실행되는 구조임 핵심은 새로운 에이전트 루프가 아니라 이벤트 수신함…"
     }
   ]
 }
