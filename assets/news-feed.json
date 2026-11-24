@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-24",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Nyx, 세계에서 가장 오래된 인터넷 서비스 제공업체",
-      "url": "https://news.hada.io/topic?id=37681&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "Nyx 는 무료 공개 접속 ISP로, 이메일과 웹 호스팅, Linux 셸 계정 등을 제공함 계정에는 가입비나 월 이용료가 없으며 , 세금 공제가 가능한 기부를 받음 Nyx Net 은 자원봉사자만으로…"
+      "title": "Show GN: Synology Markdown Note - Synology Note Station용 Markdown 편집기",
+      "url": "https://news.hada.io/topic?id=37757&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "Synology NAS의 Note Station에 쌓아 둔 노트를 Markdown으로 작성하고 관리할 수 있도록 Synology Markdown Note를 만들었습니다. 기존 책장과 메모장을 그대로…"
     },
     {
       "source": "GeekNews",
-      "title": "이제 우리는 모두 주니어 인재다",
-      "url": "https://news.hada.io/topic?id=37680&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "AI의 가치는 같은 일을 더 빨리 처리하는 효율화 보다, 기업이 할 수 있는 일 자체를 재구상 하는 데 있음 AI와 일하는 방식이 빠르게 바뀌면서 경력자도 새로 배워야 함 . 오래 쌓은 경험만으로 …"
+      "title": "Bored.com: 심심할 때 둘러볼 재미있고 흥미로운 웹사이트 모음",
+      "url": "https://news.hada.io/topic?id=37755&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "Bored.com 은 브라우저 게임, 인터랙티브 장난감, 퀴즈, 창작 도구와 탐색용 웹사이트를 주제별로 모아 둔 디렉터리임 게임 은 5분 정도 즐기는 미니 게임부터 RPG, 전략, 퍼즐, 방 탈출까…"
     },
     {
       "source": "GeekNews",
-      "title": "Automated System 장애로 애틀랜타 경유 델타항공 전 항공편 지연",
-      "url": "https://news.hada.io/topic?id=37679&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "Automated System 장애로 애틀랜타 경유 델타항공 전 항공편 지연"
+      "title": "Show GN: CRAMA FILE – 파일을 서버에 안 올리는 무료 PDF·이미지 도구 21종",
+      "url": "https://news.hada.io/topic?id=37753&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "PDF 합치기, 용량 줄이기, JPG→PDF, HEIC→JPG 같은 일을 하려고 변환 사이트에 들어가면, 회사 서류나 신분증 사본을 남의 서버에 올리는 게 늘 찜찜했습니다. 몇 번 쓰면 유료로 바뀌…"
     },
     {
       "source": "GeekNews",
-      "title": "Alessandro Masullo 원고의 Lean 형식화 진행 현황 지도",
-      "url": "https://news.hada.io/topic?id=37678&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "Alessandro Masullo 원고의 Lean 형식화 진행 현황 지도"
+      "title": "GPUI가 독립 저장소를 갖게 됨",
+      "url": "https://news.hada.io/topic?id=37752&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "GPUI 가 자체 저장소를 갖게 됨 저장소는 zed-industries/gpui 임 README 본문에는 “ 몇 주 후에 만나요 ”라는 짧은 안내가 있음 GPUI 웹사이트 링크를 제공함 crates…"
     },
     {
       "source": "GeekNews",
-      "title": "빠른 속도는 디자인 결정이다",
-      "url": "https://news.hada.io/topic?id=37677&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "웹사이트 제작은 프롬프트 하나로 가능해졌지만, 성능 비용 은 사라지지 않으며 느린 페이지의 대기 시간은 방문자가 부담함 페이지 로딩 속도는 서버와의 거리, HTML 생성 방식 뿐 아니라 캐시 정책,…"
+      "title": "NariQ: BF16 수준의 Qwen3.8-27B를 10GB 파일에 담다",
+      "url": "https://news.hada.io/topic?id=37749&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "NariQ v1 은 Qwen3.8-27B를 가중치당 3비트, 2.5비트, 2비트로 양자화한 GGUF 모델로, 3비트와 2.5비트 버전은 공개된 장기 에이전트 작업, 수학, 이미지 이해 평가에서 BF…"
     },
     {
       "source": "GeekNews",
-      "title": "Words - AI 응답을 실시간으로 표시하는 고속 Markdown 렌더러",
-      "url": "https://news.hada.io/topic?id=37676&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "OpenAI가 인수 예정인 Pierre Computer Company 의 고속 마크다운 렌더러 AI가 답변을 생성하는 동안 Markdown을 바로 렌더링 해, 전체 응답이 끝나기 전부터 서식 있는 …"
+      "title": "Jensen Huang의 복귀는 미국 역사상 최대 국가안보 스캔들",
+      "url": "https://news.hada.io/topic?id=37748&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "Nvidia 이사회 가 중국 정보기관 연계 의심 인물과의 불륜 및 수출통제 우회 파문으로 사임했던 Jensen Huang을 Donald Trump 대통령의 압박 아래 복귀시킴 첨단 AI 칩 은 미중…"
     },
     {
       "source": "GeekNews",
-      "title": "연구자가 AI 공급망에 카나리 200만 개를 심자 드러난 개인정보 보호 참사",
-      "url": "https://news.hada.io/topic?id=37675&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "약 200만 건의 AI 프롬프트 에 고유한 추적용 비밀정보를 넣은 실험에서, 제공업체 침해와 리셀러의 프롬프트 유출, 개인정보 보호 설정 위반이 확인됨 AI 라우터와 추론 리셀러 를 거치는 프롬프트…"
+      "title": "평가는 AI 엔지니어링에서 가장 과소평가된 역량이다",
+      "url": "https://news.hada.io/topic?id=37745&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "모델이나 프롬프트를 바꿨을 때 실제로 개선됐는지 판단하려면 , 평가 지표보다 실제 실패 사례 분석부터 시작해야 함. 운영 기록 100개 이상에서 실패를 분류하고 가장 빈번한 문제부터 평가함 입력과 …"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: XenoCI - GitHub Actions 맥 빌드를 Mac mini M4에서 돌리는 러너",
-      "url": "https://news.hada.io/topic?id=37673&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-23",
-      "summary": "XenoCI 만드는 사람이에요. iOS·맥 앱을 GitHub Actions 로 빌드하는 팀을 위한 맥 러너를 만들고 있어요. 워크플로는 그대로 두고 runs-on: macos-latest 를 run…"
+      "title": "Stalwart, 이제 Microsoft Exchange를 그대로 대체할 수 있음",
+      "url": "https://news.hada.io/topic?id=37744&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-24",
+      "summary": "Stalwart 1.2.0 이 MAPI over HTTP, EWS, Exchange ActiveSync, Autodiscover를 구현해 기존 Outlook과 Exchange 호환 앱에서 메일, 일…"
     }
   ]
 }
