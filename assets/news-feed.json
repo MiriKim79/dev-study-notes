@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-24",
+  "updated_at": "2026-11-25",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show GN: Synology Markdown Note - Synology Note Station용 Markdown 편집기",
-      "url": "https://news.hada.io/topic?id=37757&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "Synology NAS의 Note Station에 쌓아 둔 노트를 Markdown으로 작성하고 관리할 수 있도록 Synology Markdown Note를 만들었습니다. 기존 책장과 메모장을 그대로…"
+      "title": "Grafana 12.4.16, 13.0.14, 13.1.11, 13.2.7, 13.3.2 (여러 CVE 관련)",
+      "url": "https://news.hada.io/topic?id=37814&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "다운로드 페이지는 Grafana Enterprise 13.3.2 를 선택한 상태로 설치 패키지와 설정 방법을 제공함 Grafana Enterprise 는 OSS의 모든 기능을 포함하며 무료로 사용할…"
     },
     {
       "source": "GeekNews",
-      "title": "Bored.com: 심심할 때 둘러볼 재미있고 흥미로운 웹사이트 모음",
-      "url": "https://news.hada.io/topic?id=37755&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "Bored.com 은 브라우저 게임, 인터랙티브 장난감, 퀴즈, 창작 도구와 탐색용 웹사이트를 주제별로 모아 둔 디렉터리임 게임 은 5분 정도 즐기는 미니 게임부터 RPG, 전략, 퍼즐, 방 탈출까…"
+      "title": "Matrix Multiplication의 Θ(n^2.25) 시간 복잡도 [pdf]",
+      "url": "https://news.hada.io/topic?id=37813&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "Matrix Multiplication의 Θ(n^2.25) 시간 복잡도 [pdf]"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: CRAMA FILE – 파일을 서버에 안 올리는 무료 PDF·이미지 도구 21종",
-      "url": "https://news.hada.io/topic?id=37753&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "PDF 합치기, 용량 줄이기, JPG→PDF, HEIC→JPG 같은 일을 하려고 변환 사이트에 들어가면, 회사 서류나 신분증 사본을 남의 서버에 올리는 게 늘 찜찜했습니다. 몇 번 쓰면 유료로 바뀌…"
+      "title": "심장마비와 뇌졸중 위험, 수십 년 전에 감지 가능",
+      "url": "https://news.hada.io/topic?id=37812&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "심혈관질환 위험 요인의 장기 변화 를 추적하면 심장마비나 뇌졸중 발생 최대 30년 전부터 위험군을 예측하는 데 도움이 될 수 있다는 연구 결과가 나옴 에든버러대학교 주도 연구팀은 미국, 노르웨이, …"
     },
     {
       "source": "GeekNews",
-      "title": "GPUI가 독립 저장소를 갖게 됨",
-      "url": "https://news.hada.io/topic?id=37752&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "GPUI 가 자체 저장소를 갖게 됨 저장소는 zed-industries/gpui 임 README 본문에는 “ 몇 주 후에 만나요 ”라는 짧은 안내가 있음 GPUI 웹사이트 링크를 제공함 crates…"
+      "title": "Show GN: Tern - Ctrl+ㅊ 를 Ctrl-C 로 처리해주는 한글 특화 터미널 에뮬레이터 앱",
+      "url": "https://news.hada.io/topic?id=37811&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "저는 데스크탑에서 하던 작업을 어디서나 그대로 이어가기 위해 서버에 tmux를 켜놓고 SSH로 붙어서 사용하고 있습니다. 컴퓨터로 작업하다가 밥 먹으러 나와서 폰에서 SSH로 LLM들이 잘 하고 있…"
     },
     {
       "source": "GeekNews",
-      "title": "NariQ: BF16 수준의 Qwen3.8-27B를 10GB 파일에 담다",
-      "url": "https://news.hada.io/topic?id=37749&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "NariQ v1 은 Qwen3.8-27B를 가중치당 3비트, 2.5비트, 2비트로 양자화한 GGUF 모델로, 3비트와 2.5비트 버전은 공개된 장기 에이전트 작업, 수학, 이미지 이해 평가에서 BF…"
+      "title": "GPT-6 모델, 내재적 단백질 설계 능력 입증",
+      "url": "https://news.hada.io/topic?id=37808&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "OpenAI의 GPT-6 계열 모델 이 전문 생물학 모델을 호출하지 않고 추론과 범용 코딩 도구만으로 새로운 단백질의 3차원 구조와 아미노산 서열을 설계하는 능력을 보임 자연어 프롬프트 로 결합 위…"
     },
     {
       "source": "GeekNews",
-      "title": "Jensen Huang의 복귀는 미국 역사상 최대 국가안보 스캔들",
-      "url": "https://news.hada.io/topic?id=37748&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "Nvidia 이사회 가 중국 정보기관 연계 의심 인물과의 불륜 및 수출통제 우회 파문으로 사임했던 Jensen Huang을 Donald Trump 대통령의 압박 아래 복귀시킴 첨단 AI 칩 은 미중…"
+      "title": "AI 네이티브 서비스 비즈니스 모델의 내부 구조",
+      "url": "https://news.hada.io/topic?id=37807&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "AI 네이티브 서비스는 계약 검토 도구를 파는 대신 계약 검토를 직접 맡는 사업 임. 완성된 업무와 그에 대한 책임을 판매하며, 초기 매출이 발생해도 인력을 비례해서 늘리지 않고 품질과 업무량을 유…"
     },
     {
       "source": "GeekNews",
-      "title": "평가는 AI 엔지니어링에서 가장 과소평가된 역량이다",
-      "url": "https://news.hada.io/topic?id=37745&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "모델이나 프롬프트를 바꿨을 때 실제로 개선됐는지 판단하려면 , 평가 지표보다 실제 실패 사례 분석부터 시작해야 함. 운영 기록 100개 이상에서 실패를 분류하고 가장 빈번한 문제부터 평가함 입력과 …"
+      "title": "2026년 기업용 AI 현황",
+      "url": "https://news.hada.io/topic?id=37806&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "기업용 AI 활용 지출이 2026년 9월 기준 연환산 1,770억 달러 로 전년 대비 5.4배 증가함. 에이전트의 자율 병렬 실행으로 지출이 사용자 수보다 수행하는 업무량 에 연동되기 시작함 Ant…"
     },
     {
       "source": "GeekNews",
-      "title": "Stalwart, 이제 Microsoft Exchange를 그대로 대체할 수 있음",
-      "url": "https://news.hada.io/topic?id=37744&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-24",
-      "summary": "Stalwart 1.2.0 이 MAPI over HTTP, EWS, Exchange ActiveSync, Autodiscover를 구현해 기존 Outlook과 Exchange 호환 앱에서 메일, 일…"
+      "title": "오픈 소스에서 월 반복 매출 2만 달러까지: EmailEngine의 여정",
+      "url": "https://news.hada.io/topic?id=37804&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-25",
+      "summary": "이메일 계정을 REST API로 다루는 EmailEngine 은 무료 오픈소스와 선택적 상업용 라이선스 판매에서 사용에 유료 구독이 필요한 소스 공개형 소프트웨어 로 전환한 뒤, 월 반복 매출 2만…"
     }
   ]
 }
