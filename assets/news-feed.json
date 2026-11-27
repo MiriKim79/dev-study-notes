@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show GN: Herdr Git Mods - 레이아웃은 그대로, Git 작업은 하나의 Pane에",
-      "url": "https://news.hada.io/topic?id=37873&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "안녕하세요. 지난번에 올린 TUI 플러그인 Herdr Git 을 Herdr App용으로 다시 만들었습니다. 쓰던 레이아웃은 그대로 두고, Git 저장소의 터미널에서 ⌘G 를 누르면 같은 탭 오른쪽에…"
+      "title": "Show GN: RealView - 머스크가 공개한 테슬라 Reality View 구조를 코드로 구현, 맥북 한 대로 학습",
+      "url": "https://news.hada.io/topic?id=37934&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "11월 22일 일론 머스크가 테슬라 차량 화면(Reality View)을 어떻게 만드는지 X에 짧게 공개했습니다. 비전 인코더의 특징값을 별도의 확산 모델에 넣고, 확산 모델은 자기가 직전에 그린 …"
     },
     {
       "source": "GeekNews",
-      "title": "1인 조직이 온다",
-      "url": "https://news.hada.io/topic?id=37871&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "AI 에이전트와 지식 생산 시스템을 운영하면 혼자서도 연구기관처럼 일할 수 있음 . 보고서 한 편의 작성을 돕는 데서 나아가, 조사와 정리, 발행을 지속적으로 수행하는 조직을 만드는 방식임 전문가의…"
+      "title": "USAID Files - 빅테크 협력과 허위정보 대응에 관한 내부 자료",
+      "url": "https://news.hada.io/topic?id=37933&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "USAID의 내부 이메일, 브리핑, 기획 문서가 공개됐으며, 법률 자문에는 빅테크와의 협력이 언론에 드러나지 않도록 주의하라는 조언 이 포함돼 있음 함께 공개된 직원용 웨비나는 봇, 알고리듬 조작,…"
     },
     {
       "source": "GeekNews",
-      "title": "우리가 알던 기능 발견 방식의 종말",
-      "url": "https://news.hada.io/topic?id=37870&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "AI는 사용자가 새 기능을 더 잘 찾도록 돕는 데서 나아가, 기능을 직접 찾을 필요 자체를 줄일 수 있음 . 사용자가 원하는 결과를 말하면 AI가 필요한 기능을 골라 실행하는 방식으로 제품 사용이 …"
+      "title": "Show GN: ARCUS-STACK - 매번하는 반복을 조금 더 똑똑하게, 여러 AI 코딩 에이전트에게 시킬 수 있는 스킬팩",
+      "url": "https://news.hada.io/topic?id=37932&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "에이전트마다 스킬·룰 포맷이 달라서 불편해서 하나 만들어봤습니다. 스킬은 SKILL.md 표준으로만 작성해서 Antigravity(agy), Claude Code, Codex, Cursor, Ope…"
     },
     {
       "source": "GeekNews",
-      "title": "지금 효과를 내는 B2B GTM 전략 5가지와 실제 사례",
-      "url": "https://news.hada.io/topic?id=37868&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "이미 효과가 있는 고객 확보 채널을 AI와 자동화로 확장 한 B2B 성장 사례 5가지를 소개함. 광고 운영, 실무자의 추천, 구매 경로 분석, 대면 행사, 해커톤에 각각 다른 방식을 적용함 inci…"
+      "title": "리만 가설이란 무엇인가? 시각적으로 이해하기",
+      "url": "https://news.hada.io/topic?id=37931&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "리만 가설은 어떤 수까지 소수가 몇 개 있는지 추정할 때, 그 오차가 얼마나 커질 수 있는지 와 관련된 명제임. 가령 1조까지 소수는 약 376억 개이고, 가우스의 추정치와 실제 개수의 차이는 38…"
     },
     {
       "source": "GeekNews",
-      "title": "AI 검색 메타 분석 - 2026년 4분기",
-      "url": "https://news.hada.io/topic?id=37867&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "AI 검색 이용이 확대 되고 있지만, 이를 Google 검색의 대체 비율로 환산하기는 어려움. 이용자는 검색엔진과 챗봇을 오가며, 검토한 연구에서는 Google 이용 감소를 확인할 근거를 찾지 못함…"
+      "title": "State of AI 2026: 올해의 가장 큰 이슈와 2027년 AGI 가능성",
+      "url": "https://news.hada.io/topic?id=37930&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "『State of AI』 보고서를 써 온 Nathan Benaich 는 AI가 같은 시간 안에 법률, 금융, 투자 업무에서 자신보다 나은 결과를 낸다면 실용적으로 AGI에 가깝다 고 봄. 모델 성능…"
     },
     {
       "source": "GeekNews",
-      "title": "2026 앱 수익화 현황: 앱이 월 500달러에서 100만 달러까지 성장하는 방법",
-      "url": "https://news.hada.io/topic?id=37866&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "Superwall에서 수익이 발생한 앱 9,770개 의 12개월 데이터를 분석한 결과, 약 4개 중 1개가 다음 매출 구간으로 성장 함. 상위 앱은 결제 유도 화면을 더 많이 보여주기보다 노출당 수…"
+      "title": "AI 덕분에 셀프 호스팅이 다시 즐거워졌다",
+      "url": "https://news.hada.io/topic?id=37928&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "기존 서비스를 유지하는 데 그쳤던 개인 셀프 호스팅 환경에서 AI 코딩 에이전트 가 설정 변경과 실험의 수고를 줄이면서, 새로운 기술과 서비스를 시도하는 재미가 되살아남 Git 저장소 로 관리하던 …"
     },
     {
       "source": "GeekNews",
-      "title": "바이럴 제품 출시의 비밀",
-      "url": "https://news.hada.io/topic?id=37865&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "X에서 화제가 되는 스타트업 제품 출시는 우연보다 준비의 결과 임. 좋은 제품과 영상만 올리는 데 그치지 않고, 수주에서 수개월 동안 문구와 이야기, 지인과 파트너의 확산 참여까지 설계함 회사와 창…"
+      "title": "tidy - Prettier 스타일로 코드를 정리하는 Rust 기반 고속 포매터",
+      "url": "https://news.hada.io/topic?id=37927&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "Prettier와 같은 코드 스타일을 빠르게 적용 하는 포매터로, Node.js 없이 단일 실행 파일로 동작 JavaScript, TypeScript, JSX, HTML, Vue, CSS, SCSS…"
     },
     {
       "source": "GeekNews",
-      "title": "락 포이즈닝을 폐지하자",
-      "url": "https://news.hada.io/topic?id=37863&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-26",
-      "summary": "Rust의 뮤텍스 포이즈닝 은 패닉으로 깨진 불변식을 보호하려는 장치지만, 실제 코드에서는 복구보다 교착 상태와 연쇄 실패를 유발하는 사례가 많다는 비판을 받음 PoisonError 가 락 가드를 …"
+      "title": "Kamil Khan Mumtaz: 파키스탄에서는 존경받지만 해외에서는 거의 알려지지 않은 건축가",
+      "url": "https://news.hada.io/topic?id=37925&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-27",
+      "summary": "Kamil Khan Mumtaz 는 주택, 사무실, 모스크, 학교를 지으며 파키스탄, 특히 라호르의 오래된 건축 전통을 되살려 온 건축가임 런던에서 배운 모더니즘 을 의심 없이 받아들였지만, 자신의…"
     }
   ]
 }
