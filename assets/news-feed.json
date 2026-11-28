@@ -1,61 +1,61 @@
 {
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "items": [
     {
       "source": "GeekNews",
-      "title": "Show GN: RealView - 머스크가 공개한 테슬라 Reality View 구조를 코드로 구현, 맥북 한 대로 학습",
-      "url": "https://news.hada.io/topic?id=37934&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "11월 22일 일론 머스크가 테슬라 차량 화면(Reality View)을 어떻게 만드는지 X에 짧게 공개했습니다. 비전 인코더의 특징값을 별도의 확산 모델에 넣고, 확산 모델은 자기가 직전에 그린 …"
+      "title": "Citroën 유압 시스템",
+      "url": "https://news.hada.io/topic?id=37984&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "Citroën의 유압공압 서스펜션 은 압축 가능한 질소를 스프링으로, 유압유를 감쇠와 차고 조절 수단으로 사용해 부드러운 승차감과 차체 제어를 결합함 엔진 구동 고압 펌프 가 자동 수평 유지와 차고…"
     },
     {
       "source": "GeekNews",
-      "title": "USAID Files - 빅테크 협력과 허위정보 대응에 관한 내부 자료",
-      "url": "https://news.hada.io/topic?id=37933&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "USAID의 내부 이메일, 브리핑, 기획 문서가 공개됐으며, 법률 자문에는 빅테크와의 협력이 언론에 드러나지 않도록 주의하라는 조언 이 포함돼 있음 함께 공개된 직원용 웨비나는 봇, 알고리듬 조작,…"
+      "title": "“나는 두렵다”: 《Careless People》의 Sarah Wynn-Williams가 겪는 발언 금지 명령 아래의 삶",
+      "url": "https://news.hada.io/topic?id=37983&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "전직 Meta 직원 Sarah Wynn-Williams 는 폭로서 《Careless People》 출간 이후 Meta에 관한 공개 발언을 금지당했으며, 법적 대응과 파산에 대한 두려움 속에서 스스로…"
     },
     {
       "source": "GeekNews",
-      "title": "Show GN: ARCUS-STACK - 매번하는 반복을 조금 더 똑똑하게, 여러 AI 코딩 에이전트에게 시킬 수 있는 스킬팩",
-      "url": "https://news.hada.io/topic?id=37932&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "에이전트마다 스킬·룰 포맷이 달라서 불편해서 하나 만들어봤습니다. 스킬은 SKILL.md 표준으로만 작성해서 Antigravity(agy), Claude Code, Codex, Cursor, Ope…"
+      "title": "BUI: BlenderUI를 사용하는 세계 최대 2D 차트 라이브러리",
+      "url": "https://news.hada.io/topic?id=37980&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "BUI Charts 는 BUI용 차트 컴포넌트 모음으로, 차트 80종과 실행 가능한 예제 867개를 제공함 차트를 rsx! 컴포넌트 로 작성하고 class 로 스타일을 지정하며, 연결한 상태의 시그…"
     },
     {
       "source": "GeekNews",
-      "title": "리만 가설이란 무엇인가? 시각적으로 이해하기",
-      "url": "https://news.hada.io/topic?id=37931&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "리만 가설은 어떤 수까지 소수가 몇 개 있는지 추정할 때, 그 오차가 얼마나 커질 수 있는지 와 관련된 명제임. 가령 1조까지 소수는 약 376억 개이고, 가우스의 추정치와 실제 개수의 차이는 38…"
+      "title": "Jolt - C와 대화하는 Clojure",
+      "url": "https://news.hada.io/topic?id=37979&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "JVM 없이 Clojure를 실행 하고, C 라이브러리를 Clojure 함수처럼 직접 불러 쓰는 언어 구현체 SQLite, PostgreSQL, OpenSSL 등 기존 C 라이브러리와 연결 해 데이…"
     },
     {
       "source": "GeekNews",
-      "title": "State of AI 2026: 올해의 가장 큰 이슈와 2027년 AGI 가능성",
-      "url": "https://news.hada.io/topic?id=37930&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "『State of AI』 보고서를 써 온 Nathan Benaich 는 AI가 같은 시간 안에 법률, 금융, 투자 업무에서 자신보다 나은 결과를 낸다면 실용적으로 AGI에 가깝다 고 봄. 모델 성능…"
+      "title": "모두가 모든 것을 만들고 있다",
+      "url": "https://news.hada.io/topic?id=37978&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "개발 도구 업체들이 기존 제품을 버리는 피벗 대신, 다른 제품군으로의 확장 을 병행하고 있음 인증을 제공하던 WorkOS는 사내 앱 플랫폼을, 빌드에 집중하던 Depot은 Git 호스팅을 출시함. …"
     },
     {
       "source": "GeekNews",
-      "title": "AI 덕분에 셀프 호스팅이 다시 즐거워졌다",
-      "url": "https://news.hada.io/topic?id=37928&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "기존 서비스를 유지하는 데 그쳤던 개인 셀프 호스팅 환경에서 AI 코딩 에이전트 가 설정 변경과 실험의 수고를 줄이면서, 새로운 기술과 서비스를 시도하는 재미가 되살아남 Git 저장소 로 관리하던 …"
+      "title": "머신러닝의 불확실성 입문",
+      "url": "https://news.hada.io/topic?id=37976&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "모델은 데이터가 드문 상황에서 어떤 결과가 가능하고 얼마나 그럴듯한지 를 자체 가정에 기대어 판단함. 그 가정이 틀리면 평소에 잘 맞는 모델도 중요한 상황에서 확신을 갖고 틀릴 수 있음 인식적 불확…"
     },
     {
       "source": "GeekNews",
-      "title": "tidy - Prettier 스타일로 코드를 정리하는 Rust 기반 고속 포매터",
-      "url": "https://news.hada.io/topic?id=37927&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "Prettier와 같은 코드 스타일을 빠르게 적용 하는 포매터로, Node.js 없이 단일 실행 파일로 동작 JavaScript, TypeScript, JSX, HTML, Vue, CSS, SCSS…"
+      "title": "컴퓨터 검증을 통과한 거짓 증명",
+      "url": "https://news.hada.io/topic?id=37975&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "증명의 모든 단계를 검사한다는 프로그램에서도 건전성 버그(soundness bug) 가 보고됐으며, 거짓 명제를 통과시키는 데 실제로 악용할 수 있음이 입증된 사례도 많음 신뢰 컴퓨팅 기반(TCB)…"
     },
     {
       "source": "GeekNews",
-      "title": "Kamil Khan Mumtaz: 파키스탄에서는 존경받지만 해외에서는 거의 알려지지 않은 건축가",
-      "url": "https://news.hada.io/topic?id=37925&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
-      "date": "2026-11-27",
-      "summary": "Kamil Khan Mumtaz 는 주택, 사무실, 모스크, 학교를 지으며 파키스탄, 특히 라호르의 오래된 건축 전통을 되살려 온 건축가임 런던에서 배운 모더니즘 을 의심 없이 받아들였지만, 자신의…"
+      "title": "미국 주정부들, Grok의 비동의 성적 이미지 생성 및 유통 문제로 SpaceX 제소",
+      "url": "https://news.hada.io/topic?id=37974&utm_source=geeknews&utm_medium=rss&utm_campaign=news",
+      "date": "2026-11-28",
+      "summary": "버지니아주와 오리건주 법무장관이 SpaceX를 상대로 각각 소송을 제기 함. Grok의 비동의 성적 이미지 생성을 방치하면서도 X와 AI 도구의 안전성을 허위로 홍보했다는 혐의임 소송에 따르면 Gr…"
     }
   ]
 }
